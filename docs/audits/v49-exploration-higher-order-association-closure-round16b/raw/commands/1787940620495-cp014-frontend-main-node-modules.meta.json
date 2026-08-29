@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/ls",
+    "-ld",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules"
+  ],
+  "command": "/bin/ls -ld /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules",
+  "command_id": "1787940620495-cp014-frontend-main-node-modules",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-28T18:10:20Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-main-node-modules",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:10:20Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "817aacf5b2fecefe15594e6aca4d624910414b4f3431fb36b08e1f1b4910c395",
+  "timed_out": false
+}

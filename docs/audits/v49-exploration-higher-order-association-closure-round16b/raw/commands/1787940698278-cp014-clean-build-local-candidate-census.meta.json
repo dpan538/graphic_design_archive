@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/build_local_candidate_census.py"
+  ],
+  "command": "python3 -B scripts/trace_round16b/build_local_candidate_census.py",
+  "command_id": "1787940698278-cp014-clean-build-local-candidate-census",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 7879,
+  "end_timestamp_utc": "2026-08-28T18:11:46Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-clean-build-local-candidate-census",
+  "phase_id": "CHECKPOINT-014-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:38Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "19ecb2e42396c6b9b473baa0a06a21f31cd0e57ab7c641512b4a8e5175e3bb20",
+  "timed_out": false
+}

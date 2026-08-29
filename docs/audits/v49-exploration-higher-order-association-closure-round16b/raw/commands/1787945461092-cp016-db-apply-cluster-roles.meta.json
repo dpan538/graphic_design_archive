@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/psql",
+    "-X",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-h",
+    "/private/tmp/gda-v50-round16b-cp016-final/socket",
+    "-p",
+    "59474",
+    "-U",
+    "jarlgiovanni",
+    "-d",
+    "postgres",
+    "-f",
+    "database/roles/001_cluster_roles.sql"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/psql -X -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp016-final/socket -p 59474 -U jarlgiovanni -d postgres -f database/roles/001_cluster_roles.sql",
+  "command_id": "1787945461092-cp016-db-apply-cluster-roles",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 14,
+  "end_timestamp_utc": "2026-08-28T19:31:01Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-db-apply-cluster-roles",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:31:01Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c6e7c95ba91b07f51608a3f526cad21be62b28853f9e89113feaee3571bc2e54",
+  "timed_out": false
+}

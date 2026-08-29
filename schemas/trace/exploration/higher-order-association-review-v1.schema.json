@@ -1,0 +1,392 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace-exploration.example/schemas/trace/exploration/higher-order-association-review-v1.schema.json",
+  "title": "TRACE Round 16B governed higher-order association review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "association_revision_id",
+    "participants",
+    "evidence_items",
+    "source_bundle_synthesis",
+    "global_coherence",
+    "negative_or_conflicting_evidence",
+    "qualification",
+    "explicit_non_claims",
+    "rights_review",
+    "product_eligibility",
+    "pair_projection_authorized",
+    "final_disposition",
+    "review_state",
+    "verification",
+    "review_authority",
+    "review_version"
+  ],
+  "properties": {
+    "candidate_id": { "type": "string", "pattern": "^R16B-CAND:[0-9a-f]{64}$" },
+    "association_id": { "type": ["string", "null"], "pattern": "^R16B-ASSOC:[0-9a-f]{64}$" },
+    "association_revision_id": { "type": ["string", "null"], "pattern": "^R16B-ASSOC-REV:[0-9a-f]{64}$" },
+    "participants": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["vocabulary_id", "sense_id", "canonical_label", "role_ids", "semantic_ordinal"],
+        "properties": {
+          "vocabulary_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "sense_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "canonical_label": { "type": "string", "minLength": 1, "maxLength": 240 },
+          "role_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+          },
+          "semantic_ordinal": { "type": ["integer", "null"], "minimum": 0 }
+        }
+      }
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "source_id",
+          "source_version_id",
+          "locator_scheme",
+          "locator_value",
+          "accessed_at_utc",
+          "bounded_note",
+          "participating_sense_ids",
+          "incidental_sense_ids",
+          "exact_group_supported",
+          "evidence_class",
+          "hash_scope",
+          "evidence_sha256",
+          "rights_record_id",
+          "qualification",
+          "explicit_non_claims",
+          "observed_order_semantics",
+          "observed_role_bindings"
+        ],
+        "properties": {
+          "evidence_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "source_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "source_version_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "locator_scheme": { "type": "string", "minLength": 1, "maxLength": 100 },
+          "locator_value": { "type": "string", "minLength": 1, "maxLength": 2000 },
+          "accessed_at_utc": { "type": "string", "format": "date-time" },
+          "bounded_note": { "type": "string", "minLength": 1, "maxLength": 4000 },
+          "participating_sense_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+          },
+          "incidental_sense_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+          },
+          "exact_group_supported": { "type": "boolean" },
+          "evidence_class": {
+            "type": "string",
+            "enum": [
+              "DIRECT_GROUP",
+              "SAME_CASE_COMPONENT",
+              "PAIR_ONLY",
+              "CONCEPT_ONLY",
+              "METADATA_ONLY",
+              "COUNTEREVIDENCE",
+              "HARD_NEGATIVE"
+            ]
+          },
+          "hash_scope": {
+            "type": "string",
+            "enum": ["BOUNDED_NOTE", "COMPLIANT_EXTRACT", "SOURCE_VERSION", "DEPOSITED_ABSTRACT"]
+          },
+          "evidence_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "rights_record_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "qualification": { "type": "string", "minLength": 1, "maxLength": 4000 },
+          "explicit_non_claims": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+          },
+          "observed_order_semantics": {
+            "type": "string",
+            "enum": ["UNORDERED", "ORDERED", "PARTIALLY_ORDERED", "NOT_OBSERVED"]
+          },
+          "observed_role_bindings": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 1000 }
+          }
+        }
+      }
+    },
+    "source_bundle_synthesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_mode",
+        "same_case",
+        "scope_compatible",
+        "unsupported_bridge_count",
+        "synthesis_steps"
+      ],
+      "properties": {
+        "support_mode": {
+          "type": "string",
+          "enum": [
+            "DIRECT_GROUP",
+            "COHERENT_COMPOSITE",
+            "MIXED_DIRECT_AND_COMPOSITE",
+            "PAIR_ONLY",
+            "DISCOVERY_ONLY",
+            "NEGATIVE"
+          ]
+        },
+        "same_case": { "type": ["boolean", "null"] },
+        "scope_compatible": { "type": ["boolean", "null"] },
+        "unsupported_bridge_count": { "type": "integer", "minimum": 0 },
+        "synthesis_steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["step_id", "premise_evidence_ids", "bounded_inference", "qualification"],
+            "properties": {
+              "step_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+              "premise_evidence_ids": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+              },
+              "bounded_inference": { "type": "string", "minLength": 1, "maxLength": 4000 },
+              "qualification": { "type": "string", "minLength": 1, "maxLength": 4000 }
+            }
+          }
+        }
+      }
+    },
+    "global_coherence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bounded_senses",
+        "same_case",
+        "time",
+        "geography",
+        "institution",
+        "actors",
+        "mechanism",
+        "roles",
+        "order",
+        "topology",
+        "incidental_member",
+        "split_or_merge",
+        "overall"
+      ],
+      "properties": {
+        "bounded_senses": { "$ref": "#/$defs/ReviewResult" },
+        "same_case": { "$ref": "#/$defs/ReviewResult" },
+        "time": { "$ref": "#/$defs/ReviewResult" },
+        "geography": { "$ref": "#/$defs/ReviewResult" },
+        "institution": { "$ref": "#/$defs/ReviewResult" },
+        "actors": { "$ref": "#/$defs/ReviewResult" },
+        "mechanism": { "$ref": "#/$defs/ReviewResult" },
+        "roles": { "$ref": "#/$defs/ReviewResult" },
+        "order": { "$ref": "#/$defs/ReviewResult" },
+        "topology": { "$ref": "#/$defs/ReviewResult" },
+        "incidental_member": { "$ref": "#/$defs/ReviewResult" },
+        "split_or_merge": { "$ref": "#/$defs/ReviewResult" },
+        "overall": { "$ref": "#/$defs/ReviewResult" }
+      }
+    },
+    "negative_or_conflicting_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_id", "conflict_class", "effect_on_disposition"],
+        "properties": {
+          "evidence_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "conflict_class": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "effect_on_disposition": { "type": "string", "minLength": 1, "maxLength": 2000 }
+        }
+      }
+    },
+    "qualification": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "explicit_non_claims": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "NO_CAUSAL_CLAIM",
+          "NO_DIRECTIONAL_CLAIM",
+          "NO_CHRONOLOGICAL_CLAIM",
+          "NO_HIERARCHICAL_CLAIM",
+          "NO_INFLUENCE_CLAIM",
+          "NO_SIMILARITY_CLAIM",
+          "NO_EQUIVALENCE_CLAIM",
+          "NO_PAIR_PROJECTION"
+        ]
+      }
+    },
+    "rights_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completed", "blocking_record_count", "rights_record_ids"],
+      "properties": {
+        "completed": { "type": "boolean" },
+        "blocking_record_count": { "type": "integer", "minimum": 0 },
+        "rights_record_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+        }
+      }
+    },
+    "product_eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible", "status", "product_path", "reason"],
+      "properties": {
+        "eligible": { "type": "boolean" },
+        "status": {
+          "type": "string",
+          "enum": ["PRODUCT_ACTIVE", "RESEARCH_ONLY", "INELIGIBLE", "PENDING_BOUND_AUDIT"]
+        },
+        "product_path": { "type": ["string", "null"], "maxLength": 1000 },
+        "reason": { "type": "string", "minLength": 1, "maxLength": 4000 }
+      }
+    },
+    "pair_projection_authorized": { "const": false },
+    "final_disposition": {
+      "type": "string",
+      "enum": [
+        "DIRECT_HIGHER_ORDER_SUPPORT",
+        "COHERENT_COMPOSITE_SUPPORT",
+        "MIXED_DIRECT_AND_COMPOSITE_SUPPORT",
+        "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE",
+        "INQUIRY_ONLY_OR_UNRESOLVED",
+        "INSUFFICIENT_EVIDENCE",
+        "COOCCURRENCE_ONLY",
+        "BOUNDED_SENSE_OR_SCOPE_CONFLICT",
+        "TOPOLOGY_OR_ROLE_CONFLICT",
+        "HARD_NEGATIVE",
+        "DUPLICATE_IDENTITY_MERGED"
+      ]
+    },
+    "review_state": { "const": "FINAL" },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence", "semantic", "adversarial", "independent"],
+      "properties": {
+        "evidence": { "const": "PASS" },
+        "semantic": { "const": "PASS" },
+        "adversarial": { "const": "PASS" },
+        "independent": { "const": "PASS" }
+      }
+    },
+    "review_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method_version", "reviewer", "reviewed_at_utc", "source_sha"],
+      "properties": {
+        "method_version": { "const": "trace-round16b-higher-order-association-method-v1" },
+        "reviewer": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "reviewed_at_utc": { "type": "string", "format": "date-time" },
+        "source_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" }
+      }
+    },
+    "review_version": { "type": "integer", "minimum": 1 }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "final_disposition": {
+            "enum": [
+              "DIRECT_HIGHER_ORDER_SUPPORT",
+              "COHERENT_COMPOSITE_SUPPORT",
+              "MIXED_DIRECT_AND_COMPOSITE_SUPPORT"
+            ]
+          }
+        },
+        "required": ["final_disposition"]
+      },
+      "then": {
+        "properties": {
+          "evidence_items": { "minItems": 1 },
+          "source_bundle_synthesis": {
+            "properties": { "unsupported_bridge_count": { "const": 0 } }
+          },
+          "global_coherence": {
+            "properties": {
+              "overall": {
+                "properties": { "status": { "const": "PASS" } }
+              }
+            }
+          },
+          "rights_review": {
+            "properties": {
+              "completed": { "const": true },
+              "blocking_record_count": { "const": 0 }
+            }
+          },
+          "product_eligibility": {
+            "properties": {
+              "status": { "enum": ["PRODUCT_ACTIVE", "RESEARCH_ONLY", "INELIGIBLE"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "final_disposition": { "const": "DIRECT_HIGHER_ORDER_SUPPORT" } },
+        "required": ["final_disposition"]
+      },
+      "then": {
+        "properties": {
+          "evidence_items": {
+            "contains": {
+              "type": "object",
+              "properties": {
+                "evidence_class": { "const": "DIRECT_GROUP" },
+                "exact_group_supported": { "const": true }
+              },
+              "required": ["evidence_class", "exact_group_supported"]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "ReviewResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason", "evidence_refs"],
+      "properties": {
+        "status": { "type": "string", "enum": ["PASS", "FAIL", "NOT_APPLICABLE", "UNRESOLVED"] },
+        "reason": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "evidence_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+        }
+      }
+    }
+  }
+}

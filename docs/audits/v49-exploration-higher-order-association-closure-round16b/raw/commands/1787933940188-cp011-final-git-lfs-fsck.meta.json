@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "git",
+    "lfs",
+    "fsck",
+    "--objects",
+    "--pointers"
+  ],
+  "command": "git lfs fsck --objects --pointers",
+  "command_id": "1787933940188-cp011-final-git-lfs-fsck",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 2811,
+  "end_timestamp_utc": "2026-08-28T16:19:03Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-final-git-lfs-fsck",
+  "phase_id": "CHECKPOINT-011-FINAL-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T16:19:00Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9",
+  "timed_out": false
+}

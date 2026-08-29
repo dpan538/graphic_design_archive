@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/psql",
+    "-X",
+    "-Atq",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-h",
+    "/private/tmp/gda-v50-round16b-cp016-final/socket",
+    "-p",
+    "59474",
+    "-U",
+    "jarlgiovanni",
+    "-d",
+    "gda_v50_round16b_cp016_final_b",
+    "-c",
+    "SELECT metric||'='||value FROM (\\nSELECT 'PROJECT_SCHEMA_COUNT' metric,count(*)::bigint value FROM pg_namespace WHERE nspname = ANY (ARRAY['raw','core','provenance','research','rights','workflow','release','audit','api_v1','exploration_v3','api_v3'])\\nUNION ALL SELECT 'V3_ENUM',count(*) FROM pg_type t JOIN pg_namespace n ON n.oid=t.typnamespace WHERE n.nspname='exploration_v3' AND t.typtype='e'\\nUNION ALL SELECT 'V3_TABLE',count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND c.relkind='r'\\nUNION ALL SELECT 'V3_FUNCTION',count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='exploration_v3'\\nUNION ALL SELECT 'V3_CONSTRAINT_TRIGGER',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND NOT t.tgisinternal AND t.tgconstraint<>0\\nUNION ALL SELECT 'V3_SEMANTIC_REGULAR_TRIGGER',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND NOT t.tgisinternal AND t.tgconstraint=0 AND t.tgname='aggregate_seal_content_guard'\\nUNION ALL SELECT 'V3_RAW_NONCONSTRAINT_TRIGGER_CATALOG_COUNT',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND NOT t.tgisinternal AND t.tgconstraint=0\\nUNION ALL SELECT 'V50_ADDITIVE_VIEW',count(*) FROM pg_views WHERE schemaname IN ('api_v3','exploration_v3') OR (schemaname='audit' AND viewname='exploration_v3_inventory')\\nUNION ALL SELECT 'GOVERNED_TABLE_COUNT',count(*) FROM pg_tables WHERE schemaname = ANY (ARRAY['raw','core','provenance','research','rights','workflow','release','audit','exploration_v3'])\\nUNION ALL SELECT 'API_V3_VIEW_COUNT',count(*) FROM pg_views WHERE schemaname='api_v3'\\nUNION ALL SELECT 'REVIEWER_QUEUE_COUNT',(SELECT count(*) FROM exploration_v3.reviewer_association_queue)\\nUNION ALL SELECT 'V3_INVENTORY_NONZERO_METRIC_COUNT',(SELECT count(*) FROM audit.exploration_v3_inventory i CROSS JOIN LATERAL jsonb_each_text(to_jsonb(i)) e WHERE e.value::bigint<>0)\\n) m ORDER BY metric;"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp016-final/socket -p 59474 -U jarlgiovanni -d gda_v50_round16b_cp016_final_b -c 'SELECT metric||'\"'\"'='\"'\"'||value FROM (\\nSELECT '\"'\"'PROJECT_SCHEMA_COUNT'\"'\"' metric,count(*)::bigint value FROM pg_namespace WHERE nspname = ANY (ARRAY['\"'\"'raw'\"'\"','\"'\"'core'\"'\"','\"'\"'provenance'\"'\"','\"'\"'research'\"'\"','\"'\"'rights'\"'\"','\"'\"'workflow'\"'\"','\"'\"'release'\"'\"','\"'\"'audit'\"'\"','\"'\"'api_v1'\"'\"','\"'\"'exploration_v3'\"'\"','\"'\"'api_v3'\"'\"'])\\nUNION ALL SELECT '\"'\"'V3_ENUM'\"'\"',count(*) FROM pg_type t JOIN pg_namespace n ON n.oid=t.typnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND t.typtype='\"'\"'e'\"'\"'\\nUNION ALL SELECT '\"'\"'V3_TABLE'\"'\"',count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND c.relkind='\"'\"'r'\"'\"'\\nUNION ALL SELECT '\"'\"'V3_FUNCTION'\"'\"',count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"'\\nUNION ALL SELECT '\"'\"'V3_CONSTRAINT_TRIGGER'\"'\"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND NOT t.tgisinternal AND t.tgconstraint<>0\\nUNION ALL SELECT '\"'\"'V3_SEMANTIC_REGULAR_TRIGGER'\"'\"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND NOT t.tgisinternal AND t.tgconstraint=0 AND t.tgname='\"'\"'aggregate_seal_content_guard'\"'\"'\\nUNION ALL SELECT '\"'\"'V3_RAW_NONCONSTRAINT_TRIGGER_CATALOG_COUNT'\"'\"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND NOT t.tgisinternal AND t.tgconstraint=0\\nUNION ALL SELECT '\"'\"'V50_ADDITIVE_VIEW'\"'\"',count(*) FROM pg_views WHERE schemaname IN ('\"'\"'api_v3'\"'\"','\"'\"'exploration_v3'\"'\"') OR (schemaname='\"'\"'audit'\"'\"' AND viewname='\"'\"'exploration_v3_inventory'\"'\"')\\nUNION ALL SELECT '\"'\"'GOVERNED_TABLE_COUNT'\"'\"',count(*) FROM pg_tables WHERE schemaname = ANY (ARRAY['\"'\"'raw'\"'\"','\"'\"'core'\"'\"','\"'\"'provenance'\"'\"','\"'\"'research'\"'\"','\"'\"'rights'\"'\"','\"'\"'workflow'\"'\"','\"'\"'release'\"'\"','\"'\"'audit'\"'\"','\"'\"'exploration_v3'\"'\"'])\\nUNION ALL SELECT '\"'\"'API_V3_VIEW_COUNT'\"'\"',count(*) FROM pg_views WHERE schemaname='\"'\"'api_v3'\"'\"'\\nUNION ALL SELECT '\"'\"'REVIEWER_QUEUE_COUNT'\"'\"',(SELECT count(*) FROM exploration_v3.reviewer_association_queue)\\nUNION ALL SELECT '\"'\"'V3_INVENTORY_NONZERO_METRIC_COUNT'\"'\"',(SELECT count(*) FROM audit.exploration_v3_inventory i CROSS JOIN LATERAL jsonb_each_text(to_jsonb(i)) e WHERE e.value::bigint<>0)\\n) m ORDER BY metric;'",
+  "command_id": "1787946064755-cp016-db-measure-catalog-b",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 28,
+  "end_timestamp_utc": "2026-08-28T19:41:04Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp016-db-measure-catalog-b",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:41:04Z",
+  "stderr_sha256": "c5dddda991d4dfcd888b72b848f1d7ae6fbc7c6bb6a1f86e46f9e758b0e06cd3",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

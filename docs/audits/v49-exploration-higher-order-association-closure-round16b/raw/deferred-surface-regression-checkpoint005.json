@@ -1,0 +1,407 @@
+{
+  "authorized_source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "check_count": 60,
+  "checks": {
+    "ALL_44_METHOD_SURFACES_SELECTOR_ACCOUNTED_WITH_BLOCKERS_OPEN": {
+      "detail": [],
+      "pass": true
+    },
+    "ALL_CLOSURE_FLAGS_EXACTLY_FALSE": {
+      "detail": {
+        "COMPUTATIONAL_SPACE_CLOSURE": false,
+        "FUNCTION3_CLOSURE": false,
+        "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": false,
+        "HIGHER_ORDER_ASSOCIATION_CLOSURE": false,
+        "PAIR_ASSOCIATION_CLOSURE": false,
+        "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": false
+      },
+      "pass": true
+    },
+    "BIBLIOGRAPHY_108_TO_94_IDENTITIES_14_ALIASES": {
+      "detail": null,
+      "pass": true
+    },
+    "BIBLIOGRAPHY_MEANINGFUL_IDENTITY_PRECEDENCE": {
+      "detail": {
+        "DOI": 88,
+        "ISBN": 3,
+        "STABLE_URL": 3
+      },
+      "pass": true
+    },
+    "BIBLIOGRAPHY_MEMBERSHIP_AND_RIGHTS_QUEUE_ROW_EXACT": {
+      "detail": {
+        "membership": [],
+        "rights": []
+      },
+      "pass": true
+    },
+    "BUILD_RECEIPT_AUTHORITY_COUNTS_AND_NON_MUTATION_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "CENSUS_FULL_LEDGER_RECONCILIATION_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "CENSUS_SEMANTIC_BOUNDARY_AND_BLOCKERS_REMAIN_OPEN": {
+      "detail": null,
+      "pass": true
+    },
+    "CHECKPOINT003_BASELINE_COUNTS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "CHECKPOINT003_FAILED_IMPORT_PRESERVED_AND_HASH_BOUND": {
+      "detail": null,
+      "pass": true
+    },
+    "DATABASE_11_OCCURRENCES_4_NEW_FAMILIES_EXACT": {
+      "detail": {
+        "families": 4,
+        "occurrences": 11
+      },
+      "pass": true
+    },
+    "DATABASE_AIC_REJECTED_BAUHAUS_MATCH_EXCLUDED": {
+      "detail": {
+        "HISTORICALAICTRACE2026V1R0161": [
+          "Bauhaus"
+        ],
+        "HISTORICALAICTRACE2026V1R0206": [
+          "Bauhaus"
+        ]
+      },
+      "pass": true
+    },
+    "DATABASE_CAPTURE_LOCATORS_AND_UNICODE_BOUNDARIES_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "DATABASE_CAPTURE_SIX_LOCUS_CANDIDATES_EXACT": {
+      "detail": [
+        "CHWCONTEMP2026V1R0009",
+        "DGITRACE2026R0395",
+        "HISTORICALAICTRACE2026V1R0161",
+        "HISTORICALAICTRACE2026V1R0206",
+        "LOCTRACE2026I3172E16AA089B6",
+        "WHMZTRACE2026R0009"
+      ],
+      "pass": true
+    },
+    "DATABASE_CHW_TRANSLATION_AND_WHMZ_CROSS_SECTION_CONTROLS": {
+      "detail": null,
+      "pass": true
+    },
+    "DATABASE_CHW_WHMZ_CONTROL_OUTPUT_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "DATABASE_DISCOVERY_11_OCCURRENCE_OUTPUT_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "DATABASE_DISCOVERY_4_FAMILY_OUTPUT_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "DATABASE_LEXICON_53_LABELS_52_RESOLVED_SENSES": {
+      "detail": null,
+      "pass": true
+    },
+    "DATABASE_OUTPUT_RETAINS_AIC_REJECTED_MATCH_WITHOUT_PARTICIPANT_PROJECTION": {
+      "detail": null,
+      "pass": true
+    },
+    "DATABASE_SEARCH_DOCUMENTS_ARE_REJECTION_ONLY": {
+      "detail": 120,
+      "pass": true
+    },
+    "DATABASE_SEARCH_DOCUMENT_120_REJECTION_OUTPUT_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "DATABASE_TO_MERGED_FAMILY_RECONCILIATION_EXACT_NO_REJECTED_PARTICIPANTS": {
+      "detail": [],
+      "pass": true
+    },
+    "DATABASE_TO_MERGED_OCCURRENCE_RECONCILIATION_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "DATABASE_TRACE_DIRECT_OPPOSITE_NODE_LOCUS_SET_EXACT": {
+      "detail": [
+        "SURF-VAM20K-00867",
+        "SURF-VAM20K-03010",
+        "SURF-VAM20K-03052",
+        "SURF-VAM20K-03127",
+        "SURF-VAM20K-03163",
+        "SURF-VAM20K-03165",
+        "SURF-VAM20K-03166"
+      ],
+      "pass": true
+    },
+    "DEFERRED_SURFACE_EXECUTION_21_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "FROZEN_DATABASE_HASH_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "MERGED_FAMILY_LEDGER_PRESERVES_31_AND_ADDS_4": {
+      "detail": [],
+      "pass": true
+    },
+    "MERGED_OCCURRENCE_LEDGER_PRESERVES_348_AND_ADDS_11": {
+      "detail": [],
+      "pass": true
+    },
+    "METADATA_101_LEADS_OUTPUT_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "METADATA_RESULTS_COLLAPSE_TO_101_NON_SUPPORT_LEADS": {
+      "detail": null,
+      "pass": true
+    },
+    "ORIGINAL_21_DEFERRED_SOURCE_BINDINGS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "ORIGINAL_METHOD_SURFACE_PARTITION_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "OUTPUT_JSON_FIELDS_CANONICAL": {
+      "detail": null,
+      "pass": true
+    },
+    "OUTPUT_RECORD_HASHES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "OUTPUT_TSV_HEADERS_AND_ROW_COUNTS_EXACT": {
+      "detail": {
+        "candidate-trigger-occurrence-ledger-v2.tsv": 359,
+        "checkpoint003-receipt-import-failure-disposition-v2.tsv": 1,
+        "database-capture-locus-control-ledger-v2.tsv": 2,
+        "database-discovery-family-ledger-v2.tsv": 4,
+        "database-discovery-occurrence-ledger-v2.tsv": 11,
+        "database-search-document-rejection-ledger-v2.tsv": 120,
+        "deferred-surface-execution-ledger-v2.tsv": 21,
+        "deferred-zero-emission-control-ledger-v2.tsv": 3411,
+        "local-candidate-family-ledger-v2.tsv": 35,
+        "local-surface-disposition-ledger-v2.tsv": 44,
+        "metadata-search-lead-ledger-v2.tsv": 101,
+        "parameter-reconciliation-ledger-v2.tsv": 18,
+        "recursive-gap-ledger-checkpoint004-v2.tsv": 9,
+        "round16a-evidence-alias-ledger-v2.tsv": 61,
+        "round16a-query-result-alias-ledger-v2.tsv": 2325,
+        "source-canonical-rights-queue-v2.tsv": 94,
+        "source-identity-membership-ledger-v2.tsv": 108
+      },
+      "pass": true
+    },
+    "PARAMETER_18_ROWS_9_OBLIGATIONS_OUTPUT_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "R09_REJECTED_DEFERRED_ROWS_BLOCK_EMISSION": {
+      "detail": null,
+      "pass": true
+    },
+    "R10_GAPS_CREATE_NO_PUBLIC_LABEL": {
+      "detail": null,
+      "pass": true
+    },
+    "R10_ORDERED_PAIR_MATRIX_HAS_NO_ACTIVE_RULE": {
+      "detail": null,
+      "pass": true
+    },
+    "R11_CONSTRAINT_FIXTURE_ADVERSARIAL_CONTROLS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "R12_INQUIRY_SURFACES_MAX_ARITY_TWO_AND_INACTIVE": {
+      "detail": null,
+      "pass": true
+    },
+    "R13_PAIR_ACTIVATION_AND_HUMAN_REVIEW_BLOCKERS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "R14_NARY_RESULTS_SYNTHETIC_NOT_NEW_EMISSIONS": {
+      "detail": null,
+      "pass": true
+    },
+    "RECEIPT_19_OUTPUT_KEY_SET_AND_FILE_HASHES_EXACT": {
+      "detail": {
+        "actual": [
+          "candidate-trigger-occurrence-ledger-v2.tsv",
+          "checkpoint003-receipt-import-failure-disposition-v2.tsv",
+          "database-capture-locus-control-ledger-v2.tsv",
+          "database-discovery-family-ledger-v2.tsv",
+          "database-discovery-occurrence-ledger-v2.tsv",
+          "database-search-document-rejection-ledger-v2.tsv",
+          "deferred-surface-execution-ledger-v2.tsv",
+          "deferred-zero-emission-control-ledger-v2.tsv",
+          "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/07_DEFERRED_SURFACE_AND_DATABASE_CENSUS.md",
+          "local-candidate-census-v2.json",
+          "local-candidate-family-ledger-v2.tsv",
+          "local-surface-disposition-ledger-v2.tsv",
+          "metadata-search-lead-ledger-v2.tsv",
+          "parameter-reconciliation-ledger-v2.tsv",
+          "recursive-gap-ledger-checkpoint004-v2.tsv",
+          "round16a-evidence-alias-ledger-v2.tsv",
+          "round16a-query-result-alias-ledger-v2.tsv",
+          "source-canonical-rights-queue-v2.tsv",
+          "source-identity-membership-ledger-v2.tsv"
+        ],
+        "expected": [
+          "candidate-trigger-occurrence-ledger-v2.tsv",
+          "checkpoint003-receipt-import-failure-disposition-v2.tsv",
+          "database-capture-locus-control-ledger-v2.tsv",
+          "database-discovery-family-ledger-v2.tsv",
+          "database-discovery-occurrence-ledger-v2.tsv",
+          "database-search-document-rejection-ledger-v2.tsv",
+          "deferred-surface-execution-ledger-v2.tsv",
+          "deferred-zero-emission-control-ledger-v2.tsv",
+          "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/07_DEFERRED_SURFACE_AND_DATABASE_CENSUS.md",
+          "local-candidate-census-v2.json",
+          "local-candidate-family-ledger-v2.tsv",
+          "local-surface-disposition-ledger-v2.tsv",
+          "metadata-search-lead-ledger-v2.tsv",
+          "parameter-reconciliation-ledger-v2.tsv",
+          "recursive-gap-ledger-checkpoint004-v2.tsv",
+          "round16a-evidence-alias-ledger-v2.tsv",
+          "round16a-query-result-alias-ledger-v2.tsv",
+          "source-canonical-rights-queue-v2.tsv",
+          "source-identity-membership-ledger-v2.tsv"
+        ]
+      },
+      "pass": true
+    },
+    "RECEIPT_DATABASE_SELECTOR_CONTRACT_HASHES_AND_SAFETY_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "RECEIPT_INPUT_MANIFEST_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "RECURSIVE_GAP_LEDGER_RETAINS_ALL_CLOSURE_BLOCKERS": {
+      "detail": null,
+      "pass": true
+    },
+    "RESEARCH_NOTE_REPORTS_NON_SUPPORT_AND_NON_CLOSURE": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16A_18_PARAMETER_CONTROLS_9_SEMANTIC_9_NONSEMANTIC": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16A_2325_METADATA_ROWS_NOT_EVIDENCE": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16A_61_EVIDENCE_ALIASES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "ROUND16A_EVIDENCE_ALIAS_OUTPUT_61_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "ROUND16A_QUERY_ALIAS_OUTPUT_2325_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "ROUND16A_QUERY_LOG_465_BY_5_ALIASES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "VERIFIER_ACTIVE_ALLOWLIST_REGISTRATION_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "VERIFIER_DOES_NOT_IMPORT_GENERATOR": {
+      "detail": null,
+      "pass": true
+    },
+    "ZERO_ACTIVE_ASSOCIATIONS_OR_PREMATURE_FROZEN_IDENTITIES": {
+      "detail": null,
+      "pass": true
+    },
+    "ZERO_EMISSION_ALIAS_AND_BLOCKER_LINKS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "ZERO_EMISSION_CONTROL_UNIVERSE_ROW_EXACT": {
+      "detail": [],
+      "pass": true
+    }
+  },
+  "closure": {
+    "COMPUTATIONAL_SPACE_CLOSURE": false,
+    "FUNCTION3_CLOSURE": false,
+    "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": false,
+    "HIGHER_ORDER_ASSOCIATION_CLOSURE": false,
+    "PAIR_ASSOCIATION_CLOSURE": false,
+    "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": false
+  },
+  "failure_codes": [],
+  "failure_count": 0,
+  "format": "trace-round16b-deferred-surface-independent-verification-v1",
+  "generator_imported": false,
+  "parent_checkpoint_sha": "df8aa185910d501daf5a4a5dded8674fdc8a0d87",
+  "status": "PASS",
+  "verified_build_receipt_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json",
+  "verified_build_receipt_sha256": "1bce45095451f2e0b7cff8976c8f35116a6728f524afd7a5a16f34ee47fede16",
+  "verified_census_sha256": "b40e28810aa59a0e2ac926e403cf45ba9b032b465ee54a62fd7e32b2f6e4fe31",
+  "verified_counts": {
+    "active_facts_added": 0,
+    "bibliography_memberships": 108,
+    "canonical_source_identities": 94,
+    "database_capture_controls": 2,
+    "database_discovery_families": 4,
+    "database_discovery_occurrences": 11,
+    "database_search_document_controls": 120,
+    "deferred_surface_execution": 21,
+    "merged_candidate_families": 35,
+    "merged_trigger_occurrences": 359,
+    "metadata_search_leads": 101,
+    "method_surface_deferred": 0,
+    "method_surface_selector_accounted": 44,
+    "parameter_rows": 18,
+    "round16a_evidence_aliases": 61,
+    "round16a_query_result_aliases": 2325,
+    "semantic_parameter_obligations": 9,
+    "source_aliases": 14,
+    "zero_emission_controls": 3411
+  },
+  "verified_output_sha256": {
+    "candidate-trigger-occurrence-ledger-v2.tsv": "1685e5bfdab735657ce78499b2597e6a20aecd7402d97f515b162a5d16009cd6",
+    "checkpoint003-receipt-import-failure-disposition-v2.tsv": "c01d2af2162a7c09a94bf0b38438a338066c63dbcd57de6a0e578222f644685a",
+    "database-capture-locus-control-ledger-v2.tsv": "d58b2ade2e079ab0d9c3a936650e19f92130f8c0556fcf0ed7323f68edefec98",
+    "database-discovery-family-ledger-v2.tsv": "81e5240fdd80362c2530ebe8918e3702033ea08a00786df30bbd6e5b3e270465",
+    "database-discovery-occurrence-ledger-v2.tsv": "f0bd85a860bd4e14d2010ec3bf361a2830975a4ab9927373fc7d7f32fade3f13",
+    "database-search-document-rejection-ledger-v2.tsv": "c43e476b13180e78b1b59091a31ebe58de59a75c5d10cc51009b84e64810326e",
+    "deferred-surface-execution-ledger-v2.tsv": "0fcc4b2eb84df5d0d42bc9e313df11b38cc2db5850f081e9fc7c584f324d5fa4",
+    "deferred-zero-emission-control-ledger-v2.tsv": "da0f8913c2511de2355fe61122ad9b217cdac5a7fbdcb16ca8cb963b81c45a7d",
+    "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/07_DEFERRED_SURFACE_AND_DATABASE_CENSUS.md": "1ac640ca29139f0274dd938826c2e422565c1358bfe9a78f711013275ec79a35",
+    "local-candidate-census-v2.json": "b40e28810aa59a0e2ac926e403cf45ba9b032b465ee54a62fd7e32b2f6e4fe31",
+    "local-candidate-family-ledger-v2.tsv": "cd4c3ca997c0f4cd5919d4e29d89ca45291fae4f70f78a49742aafb9c76baea7",
+    "local-surface-disposition-ledger-v2.tsv": "518d4b823b619f6428a23217a48768ee6fa721972c5aea35b6ec8fbf40e2d084",
+    "metadata-search-lead-ledger-v2.tsv": "d566cec6043668fd628353c010a004fda5faf1bf2b6898fd7026323740383380",
+    "parameter-reconciliation-ledger-v2.tsv": "da45043f2414c9fd2f77c261507773ac3d768829d616b96a3db261518cb4a717",
+    "recursive-gap-ledger-checkpoint004-v2.tsv": "62c7ad95128682aecb8c19547ea926cba486494dbf074ae73b1fc74c60133bc1",
+    "round16a-evidence-alias-ledger-v2.tsv": "91a9f1bcab346d24715f4143368beb1ae52f8a8f276d41bfb52d2df12cfd7d4f",
+    "round16a-query-result-alias-ledger-v2.tsv": "511ba3f54dc37f212ce27a873aaa4c5b12450d78219f000b29199cc310b1b555",
+    "source-canonical-rights-queue-v2.tsv": "fd8e8b48b1d0f8da1e4194828d0cc6f273fadb4ecbe147a7f5f9e2319f08b960",
+    "source-identity-membership-ledger-v2.tsv": "5dd10561b64cd5ffdd180767e62a707f5597e5be47c15161494f2c66cd6537bf"
+  },
+  "verifier_path": "scripts/trace_round16b/verify_deferred_surface_census.py",
+  "verifier_sha256": "730ebf562cda41377bab21ff640320bbf90fced24c4e88f6f64fc197688b109c"
+}

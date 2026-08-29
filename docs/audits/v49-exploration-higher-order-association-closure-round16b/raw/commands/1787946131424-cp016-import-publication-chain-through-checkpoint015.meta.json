@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; set --; for cp016_receipt in $(awk -F \"\\t\" 'NR>1 {print $4}' docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv); do set -- \"$@\" --receipt \"$cp016_receipt\"; done; set -- \"$@\" --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787944897895454000-checkpoint-015.json; python3 -B scripts/trace_round16b/import_publication_receipts.py \"$@\" --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv"
+  ],
+  "command": "/bin/sh -c 'set -eu; set --; for cp016_receipt in $(awk -F \"\\t\" '\"'\"'NR>1 {print $4}'\"'\"' docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv); do set -- \"$@\" --receipt \"$cp016_receipt\"; done; set -- \"$@\" --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787944897895454000-checkpoint-015.json; python3 -B scripts/trace_round16b/import_publication_receipts.py \"$@\" --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv'",
+  "command_id": "1787946131424-cp016-import-publication-chain-through-checkpoint015",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 69,
+  "end_timestamp_utc": "2026-08-28T19:42:11Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-import-publication-chain-through-checkpoint015",
+  "phase_id": "CHECKPOINT-016-PUBLICATION-CHAIN-IMPORT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:42:11Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "fdf35b2916af36be18aad2ffd2ba7d978fef32a43e992efa28540a8db1c3427d",
+  "timed_out": false
+}

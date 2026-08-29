@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check"
+  ],
+  "command": "/bin/sh -c 'python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check'",
+  "command_id": "1787943288127-cp015-check-v3-semantic-independent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 717,
+  "end_timestamp_utc": "2026-08-28T18:54:48Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-check-v3-semantic-independent",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:54:48Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d494999d37603eb612c3500c46df73d3715c1c44448688b36bbcc681d72a1850",
+  "timed_out": false
+}

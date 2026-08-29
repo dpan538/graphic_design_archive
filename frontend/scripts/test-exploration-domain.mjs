@@ -19,7 +19,11 @@ import {
   instantiateExplorationImage,
   verifyExplorationImageBuildHash,
 } from "../src/lib/trace/exploration-domain.ts";
-import { auditActiveRepository, scanCandidateSource } from "./exploration-reset-guard.mjs";
+import {
+  auditActiveRepository,
+  evaluateGovernedDatabaseFreezeReceipt,
+  scanCandidateSource,
+} from "./exploration-reset-guard.mjs";
 
 const checks = [];
 const redTeam = [];
@@ -157,6 +161,29 @@ check("RenderedPng binds safe reconstruction metadata only", () => {
 check("active repository guard passes", () => {
   const audit = auditActiveRepository();
   assert.equal(audit.status, "PASS", JSON.stringify(audit.failures));
+});
+
+check("governed database freeze accepts additive v50 files with zero frozen drift", () => {
+  const audit = evaluateGovernedDatabaseFreezeReceipt({
+    status: "PASS",
+    databaseVersion: 50,
+    frozenPathDriftCount: 0,
+    unmanifestedV49DatabaseFileCount: 8,
+  });
+  assert.deepEqual(audit.failures, []);
+});
+
+check("governed database freeze rejects frozen-path drift", () => {
+  const audit = evaluateGovernedDatabaseFreezeReceipt({
+    status: "FAIL",
+    databaseVersion: 50,
+    frozenPathDriftCount: 1,
+    unmanifestedV49DatabaseFileCount: 8,
+  });
+  assert.deepEqual(audit.failures, [
+    "database freeze status is FAIL",
+    "database frozen-path drift count is 1",
+  ]);
 });
 
 expectRejected("A object ID added to ExplorationNode", () =>

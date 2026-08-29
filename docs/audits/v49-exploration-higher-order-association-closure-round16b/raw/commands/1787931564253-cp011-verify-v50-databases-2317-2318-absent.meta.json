@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/psql",
+    "-X",
+    "-At",
+    "-h",
+    "/private/tmp",
+    "-p",
+    "55439",
+    "-d",
+    "postgres",
+    "-c",
+    "SELECT datname FROM pg_catalog.pg_database WHERE datname IN ('gda_v50_round16b_2317','gda_v50_round16b_2318') ORDER BY datname COLLATE \"C\""
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/psql -X -At -h /private/tmp -p 55439 -d postgres -c 'SELECT datname FROM pg_catalog.pg_database WHERE datname IN ('\"'\"'gda_v50_round16b_2317'\"'\"','\"'\"'gda_v50_round16b_2318'\"'\"') ORDER BY datname COLLATE \"C\"'",
+  "command_id": "1787931564253-cp011-verify-v50-databases-2317-2318-absent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 28,
+  "end_timestamp_utc": "2026-08-28T15:39:24Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-verify-v50-databases-2317-2318-absent",
+  "phase_id": "CHECKPOINT-011-DATABASE-REPLAY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T15:39:24Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

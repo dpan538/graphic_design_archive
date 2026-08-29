@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_semantic_contract_independent.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check",
+  "command_id": "1787932996893-cp011-final-check-v3-semantic-independent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 967,
+  "end_timestamp_utc": "2026-08-28T16:03:17Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-final-check-v3-semantic-independent",
+  "phase_id": "CHECKPOINT-011-FINAL-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T16:03:16Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "98dd9a51ff467af75d5e680ef8cc9fe709dbd7152e26ce57a41111560a88f4a4",
+  "timed_out": false
+}

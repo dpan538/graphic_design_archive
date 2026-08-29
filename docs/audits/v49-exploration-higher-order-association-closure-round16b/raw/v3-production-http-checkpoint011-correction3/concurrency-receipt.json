@@ -1,0 +1,102 @@
+{
+  "checked_utc": "2026-08-28T15:58:59.462Z",
+  "concurrency_levels": [
+    1,
+    5,
+    10,
+    25,
+    50
+  ],
+  "failure_count": 0,
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "requests_per_level": 100,
+  "schema_version": "trace-exploration-v3-concurrency-receipt-v1",
+  "status": "PASS",
+  "workloads": [
+    {
+      "concurrency": 1,
+      "duration_ms": 543.1330000283197,
+      "failure_count": 0,
+      "latency_ms": {
+        "maximum": 3.0209579272195697,
+        "minimum": 1.0776669951155782,
+        "p50": 1.4693959965370595,
+        "p95": 2.1832065423950553,
+        "p99": 2.669755461392926
+      },
+      "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+      "request_count": 100,
+      "response_bytes": 104793,
+      "status": "PASS",
+      "throughput_requests_per_second": 184.11696581644986
+    },
+    {
+      "concurrency": 5,
+      "duration_ms": 109.08966697752476,
+      "failure_count": 0,
+      "latency_ms": {
+        "maximum": 8.38991696946323,
+        "minimum": 2.4408750468865037,
+        "p50": 5.265666521154344,
+        "p95": 7.454254094045609,
+        "p99": 8.288771621882915
+      },
+      "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+      "request_count": 100,
+      "response_bytes": 112892,
+      "status": "PASS",
+      "throughput_requests_per_second": 916.6771039882498
+    },
+    {
+      "concurrency": 10,
+      "duration_ms": 92.51804102677852,
+      "failure_count": 0,
+      "latency_ms": {
+        "maximum": 12.042875052429736,
+        "minimum": 2.785625052638352,
+        "p50": 8.920458960346878,
+        "p95": 11.008702154504135,
+        "p99": 11.784814662532883
+      },
+      "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+      "request_count": 100,
+      "response_bytes": 99971,
+      "status": "PASS",
+      "throughput_requests_per_second": 1080.870270167695
+    },
+    {
+      "concurrency": 25,
+      "duration_ms": 94.0487920306623,
+      "failure_count": 0,
+      "latency_ms": {
+        "maximum": 24.253875017166138,
+        "minimum": 3.7573750596493483,
+        "p50": 21.657729463186115,
+        "p95": 24.11223149392754,
+        "p99": 24.244222501292825
+      },
+      "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+      "request_count": 100,
+      "response_bytes": 108069,
+      "status": "PASS",
+      "throughput_requests_per_second": 1063.2778777998283
+    },
+    {
+      "concurrency": 50,
+      "duration_ms": 90.41741699911654,
+      "failure_count": 0,
+      "latency_ms": {
+        "maximum": 44.51187502127141,
+        "minimum": 5.673250067047775,
+        "p50": 39.73331244196743,
+        "p95": 43.24933988391422,
+        "p99": 43.64079873659649
+      },
+      "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+      "request_count": 100,
+      "response_bytes": 109571,
+      "status": "PASS",
+      "throughput_requests_per_second": 1105.9816053026275
+    }
+  ]
+}

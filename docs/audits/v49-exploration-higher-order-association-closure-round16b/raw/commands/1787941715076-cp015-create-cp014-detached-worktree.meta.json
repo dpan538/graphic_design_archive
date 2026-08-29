@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "git",
+    "worktree",
+    "add",
+    "--detach",
+    "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+    "024935e8d0c36cf0c4724b1960c71f28afef6595"
+  ],
+  "command": "git worktree add --detach /private/tmp/gda_round16b_cp015_clean_repro_024935e8 024935e8d0c36cf0c4724b1960c71f28afef6595",
+  "command_id": "1787941715076-cp015-create-cp014-detached-worktree",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 12324,
+  "end_timestamp_utc": "2026-08-28T18:28:47Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-create-cp014-detached-worktree",
+  "phase_id": "CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:28:35Z",
+  "stderr_sha256": "8f4daced009f7bccd04ac2611a5fc56465cb6b8be9979f0798c921947c67e603",
+  "stdout_sha256": "5fdc2e01c0c24654e8ea06d4b05a1b9ec969dc90bfd5fbe2ff754bfb1ae58faf",
+  "timed_out": false
+}

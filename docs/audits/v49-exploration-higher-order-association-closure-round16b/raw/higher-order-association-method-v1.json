@@ -1,0 +1,117 @@
+{
+  "activation_invariants": [
+    "Declared arity equals participant count; participant sense IDs are unique and resolve through the governed crosswalk.",
+    "Order constraints are acyclic and roles use governed role IDs; labels and role prose are display snapshots only.",
+    "PENDING_GOVERNED_REVIEW is never active.",
+    "Metadata, titles, keywords, categories, and database co-occurrence are never association evidence.",
+    "Pair connectivity never creates group support.",
+    "Group support never creates internal pair associations.",
+    "Every active group passes evidence, rights, bounded-sense, scope, counterevidence, global-coherence, authority, and product-eligibility gates.",
+    "No causal, directional, chronological, hierarchical, influence, similarity, or typed claim is inferred without explicit evidence and authority.",
+    "Composition identity and association identity remain separate and have separate counts.",
+    "Render topology is realization metadata and never participates in historical association identity."
+  ],
+  "association_object_boundary": {
+    "composition": "A governed visual or navigational realization supported by one or more association objects.",
+    "export": "A governed representation of one state and realization.",
+    "higher_order_association": "A three-or-more-member evidence-bearing semantic object that does not imply its pair projections.",
+    "interaction_state": "An immutable reachable product state over a composition.",
+    "pairwise_association": "A two-member evidence-bearing semantic object.",
+    "vocabulary_concept": "A governed bounded concept identity.",
+    "workflow": "A legal action path through interaction states."
+  },
+  "candidate_universe_definition": "The exact canonical union of all deterministic trigger outputs. Mathematical subsets outside that union are excluded at rule level as NO_GOVERNED_TRIGGER and are not historical negatives.",
+  "canonical_identity": {
+    "association_identity_fields": [
+      "association class",
+      "participant sense IDs",
+      "order semantics",
+      "governed stable role IDs and bindings",
+      "stable time scope IDs",
+      "stable geography IDs",
+      "stable institution IDs",
+      "stable actor-set IDs",
+      "stable case IDs",
+      "stable mechanism IDs",
+      "stable context IDs"
+    ],
+    "association_prefix": "R16B-ASSOC:",
+    "association_revision_fields": [
+      "association_id",
+      "evidence and evidence-bundle hashes",
+      "current disposition",
+      "review authority",
+      "review timestamp",
+      "qualifications",
+      "non-claims",
+      "uncertainty",
+      "activation status",
+      "product eligibility",
+      "revision version"
+    ],
+    "candidate_prefix": "R16B-CAND:",
+    "hash": "sha256(canonical-json)",
+    "non_identity_fields": [
+      "labels",
+      "free-text prose",
+      "search rank",
+      "retrieval order",
+      "UI category",
+      "render seed",
+      "file order",
+      "evidence status",
+      "authority",
+      "review authority",
+      "version"
+    ],
+    "ordered_participants": "Preserve governed position and role only when evidence and authority support them.",
+    "revision_rule": "association_id hashes stable semantic identity; association_revision_id hashes the canonical append-only revision content. Evidence, review, authority, timestamp, and version never alter association_id.",
+    "unordered_participants": "Sort by vocabulary_id, sense_id, role-or-empty, then participant authority; preserve no incidental source ordering."
+  },
+  "closure_gates": [
+    "every trigger output has one final disposition",
+    "every concrete exclusion has a proof and reopening condition",
+    "the rule-level no-trigger complement is independently reconstructed",
+    "every prior three-plus-node structure is reconciled",
+    "every active association has completed review and product disposition",
+    "no active evidence record is metadata-only, access-blocked, or pending human review",
+    "all isolated active vocabulary has an explicit resolution",
+    "independent incidence-semantic verification passes",
+    "clean offline deterministic reproduction passes",
+    "a final recursive gap audit has zero unresolved closure-blocking gaps"
+  ],
+  "format": "trace-round16b-higher-order-association-method-v1",
+  "frozen_date": "2026-08-28",
+  "global_coherence_dimensions": [
+    "bounded_senses",
+    "same_case",
+    "time",
+    "geography",
+    "institution",
+    "actors",
+    "mechanism",
+    "source_bundle_synthesis",
+    "roles",
+    "order",
+    "topology",
+    "decorative_or_incidental_member",
+    "counterevidence",
+    "split_or_merge_need"
+  ],
+  "lifecycle_states": [
+    "DISCOVERED",
+    "EVIDENCE_REVIEW_IN_PROGRESS",
+    "GOVERNED_REVIEW_COMPLETE",
+    "SUPERSEDED"
+  ],
+  "research_arity_policy": {
+    "higher_order_minimum_arity": 3,
+    "minimum_association_arity": 2,
+    "product_maximum_arity": "UNRESOLVED_REQUIRES_BOUND_AUDIT",
+    "research_schema_maximum_arity": null,
+    "rule": "Discovery is trigger-bounded rather than subset-enumeration-bounded. A source-supported group outside the current product bound remains a research association and cannot be truncated or projected into pairs."
+  },
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "version": 1
+}

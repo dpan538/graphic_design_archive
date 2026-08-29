@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/round16a_run_sequence.py",
+    "--cwd",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--commands-json",
+    "[\"git diff --exit-code fc11f033 HEAD -- docs/research/trace-v49-exploration-inquiry-flow-round1 docs/audits/v49-exploration-inquiry-flow-round1 scripts/trace-v49-exploration-inquiry-engine\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-inquiry-engine/validate.py\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-inquiry-engine/test_reference_engine.py\",\"npm --prefix frontend run test:exploration-inquiry-adapter\"]"
+  ],
+  "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --commands-json '[\"git diff --exit-code fc11f033 HEAD -- docs/research/trace-v49-exploration-inquiry-flow-round1 docs/audits/v49-exploration-inquiry-flow-round1 scripts/trace-v49-exploration-inquiry-engine\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-inquiry-engine/validate.py\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-inquiry-engine/test_reference_engine.py\",\"npm --prefix frontend run test:exploration-inquiry-adapter\"]'",
+  "command_id": "1787879401088-round12-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 1221,
+  "end_timestamp_utc": "2026-08-28T01:10:02Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round12-regression",
+  "phase_id": "POST_MIGRATION_REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:10:01Z",
+  "stderr_sha256": "c08094262a04136c0c8c52068b81f7f5ca45d0c4f8265c3d3b97034278060148",
+  "stdout_sha256": "ce153a0a25753097541ca0e53c1ab409e3ab95d176d80d40bde23b63357f9ac0",
+  "timed_out": false
+}

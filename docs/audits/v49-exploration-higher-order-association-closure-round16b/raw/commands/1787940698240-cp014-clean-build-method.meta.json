@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/build_method_checkpoint.py"
+  ],
+  "command": "python3 -B scripts/trace_round16b/build_method_checkpoint.py",
+  "command_id": "1787940698240-cp014-clean-build-method",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 569,
+  "end_timestamp_utc": "2026-08-28T18:11:38Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-clean-build-method",
+  "phase_id": "CHECKPOINT-014-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:38Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c153d0fb5d4950b235687e2c03cccbc19e9320a92ac4e6f986e776f6e8bc353b",
+  "timed_out": false
+}

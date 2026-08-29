@@ -1,0 +1,40 @@
+{
+  "format": "trace-round16b-large-file-policy/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "thresholds_bytes": {
+    "warning": 25000000,
+    "lfs_required": 50000000,
+    "ordinary_blob_hard_block": 90000000,
+    "hosting_enforced_limit": 100000000
+  },
+  "scope": {
+    "working_tree": "all Round 16B changed, staged, and untracked files",
+    "history": "all ordinary blobs introduced after source_sha",
+    "baseline_exception": "Inherited source objects are immutable baseline evidence; no new exception may be added."
+  },
+  "inherited_baseline": {
+    "ordinary_blob_ge_100000000_count": 0,
+    "maximum_ordinary_blob_bytes": 90895254,
+    "maximum_ordinary_blob_oid": "7efcc95620697d1938b491381d019cea8e8e318f",
+    "maximum_ordinary_blob_path": "frontend/public/data/public_surface_mock_v0.json"
+  },
+  "predicted_large_artifact_classes": [
+    "candidate-universe and exclusion ledgers",
+    "evidence-review and adaptive-search shards",
+    "Round 16A composition reconciliation ledgers",
+    "higher-order incidence, composition, state, transition, workflow, and export censuses",
+    "independent-verification cases and results",
+    "API, production HTTP, concurrency, memory, and export replay case ledgers"
+  ],
+  "required_lfs_attribute_rules": [
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large/** filter=lfs diff=lfs merge=lfs -text",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/search-shards/** filter=lfs diff=lfs merge=lfs -text",
+    "frontend/generated/trace-exploration-v2-higher-order/*.json filter=lfs diff=lfs merge=lfs -text"
+  ],
+  "sharding_policy": {
+    "target_max_hydrated_shard_bytes": 25000000,
+    "required_identity": "Every shard name and manifest row must include a deterministic tranche or range identity.",
+    "required_manifest": "Every sharded dataset must have ordered row counts, byte sizes, and SHA-256 hashes."
+  },
+  "decision": "Any changed file at or above 50,000,000 hydrated bytes must be LFS-managed. Any newly introduced ordinary blob at or above 90,000,000 bytes blocks commit and publication."
+}

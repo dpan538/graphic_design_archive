@@ -1,0 +1,313 @@
+{
+  "check_count": 51,
+  "checks": {
+    "ADAPTIVE_AND_FALSIFICATION_SEARCH_PRESENT": {
+      "detail": null,
+      "pass": true
+    },
+    "APPEND_ONLY_REVISION_ID_DEFINED": {
+      "detail": null,
+      "pass": true
+    },
+    "ASSOCIATION_OBJECT_CLASSES_DISTINCT": {
+      "detail": null,
+      "pass": true
+    },
+    "BUILD_RECEIPT_COUNTS_MATCH": {
+      "detail": null,
+      "pass": true
+    },
+    "BUILD_RECEIPT_OUTPUT_HASHES_MATCH": {
+      "detail": [],
+      "pass": true
+    },
+    "BUILD_RECEIPT_SCHEMA_HASHES_MATCH": {
+      "detail": [],
+      "pass": true
+    },
+    "CANDIDATE_PARTICIPANTS_MIN_THREE": {
+      "detail": null,
+      "pass": true
+    },
+    "CANDIDATE_SCHEMA_HAS_NO_MAX_ARITY": {
+      "detail": null,
+      "pass": true
+    },
+    "CANDIDATE_SCHEMA_REQUIRED_FIELDS": {
+      "detail": [
+        "arity",
+        "association_kind",
+        "authority",
+        "candidate_id",
+        "identity_hash",
+        "lifecycle_state",
+        "order_semantics",
+        "pair_projection_authorized",
+        "participants",
+        "proposed_disposition",
+        "roles_meaningful",
+        "scope",
+        "scope_ids",
+        "trigger_ids",
+        "trigger_record_refs",
+        "version"
+      ],
+      "pass": true
+    },
+    "CONCEPT_SENSE_CROSSWALK_TEMPLATE_COMPLETE": {
+      "detail": null,
+      "pass": true
+    },
+    "EVERY_EXCLUSION_HAS_PROOF_AND_REOPENING": {
+      "detail": null,
+      "pass": true
+    },
+    "EVERY_TRIGGER_HAS_COVERAGE_PROOF": {
+      "detail": null,
+      "pass": true
+    },
+    "EVIDENCE_SURFACE_FIELD_CONTRACTS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "GENERATOR_AND_VERIFIER_DISTINCT_FILES": {
+      "detail": null,
+      "pass": true
+    },
+    "GOVERNED_ASSOCIATION_HAS_NO_GLOBAL_MAX_ARITY": {
+      "detail": null,
+      "pass": true
+    },
+    "GOVERNED_ASSOCIATION_HAS_STABLE_AND_REVISION_IDS": {
+      "detail": null,
+      "pass": true
+    },
+    "GOVERNED_ASSOCIATION_SEPARATES_PAIR_PROJECTION": {
+      "detail": null,
+      "pass": true
+    },
+    "HIGHER_ORDER_MINIMUM_THREE": {
+      "detail": null,
+      "pass": true
+    },
+    "METADATA_EXPLICITLY_NOT_EVIDENCE": {
+      "detail": null,
+      "pass": true
+    },
+    "METHOD_CHECKPOINT_CROSSWALK_NOT_PREMATURELY_POPULATED": {
+      "detail": null,
+      "pass": true
+    },
+    "METHOD_CHECKPOINT_EVIDENCE_LEDGER_NOT_PREMATURELY_POPULATED": {
+      "detail": null,
+      "pass": true
+    },
+    "METHOD_CHECKPOINT_EXCLUSION_LEDGER_NOT_PREMATURELY_POPULATED": {
+      "detail": null,
+      "pass": true
+    },
+    "METHOD_CHECKPOINT_OCCURRENCE_LEDGER_NOT_PREMATURELY_POPULATED": {
+      "detail": null,
+      "pass": true
+    },
+    "METHOD_CHECKPOINT_REPORTS_OPEN_BLOCKERS": {
+      "detail": 11,
+      "pass": true
+    },
+    "METHOD_CHECKPOINT_RIGHTS_LEDGER_NOT_PREMATURELY_POPULATED": {
+      "detail": null,
+      "pass": true
+    },
+    "NO_FULL_TEXT_WITHOUT_AUTHORITY": {
+      "detail": null,
+      "pass": true
+    },
+    "NO_UNAUDITED_RESEARCH_MAXIMUM": {
+      "detail": null,
+      "pass": true
+    },
+    "ONLY_THREE_SUPPORT_CLASSES_POTENTIALLY_ACTIVE": {
+      "detail": [
+        "COHERENT_COMPOSITE_SUPPORT",
+        "DIRECT_HIGHER_ORDER_SUPPORT",
+        "MIXED_DIRECT_AND_COMPOSITE_SUPPORT"
+      ],
+      "pass": true
+    },
+    "PENDING_IS_NONFINAL": {
+      "detail": null,
+      "pass": true
+    },
+    "PENDING_NOT_A_FINAL_REVIEW_DISPOSITION": {
+      "detail": null,
+      "pass": true
+    },
+    "PRIOR_MULTI_NODE_SURFACES_INCLUDED": {
+      "detail": null,
+      "pass": true
+    },
+    "PRODUCT_BOUND_EXPLICITLY_UNRESOLVED": {
+      "detail": null,
+      "pass": true
+    },
+    "REQUIRED_DISPOSITIONS_PRESENT": {
+      "detail": [
+        "BOUNDED_SENSE_OR_SCOPE_CONFLICT",
+        "COHERENT_COMPOSITE_SUPPORT",
+        "COOCCURRENCE_ONLY",
+        "DIRECT_HIGHER_ORDER_SUPPORT",
+        "DUPLICATE_IDENTITY_MERGED",
+        "HARD_NEGATIVE",
+        "INQUIRY_ONLY_OR_UNRESOLVED",
+        "INSUFFICIENT_EVIDENCE",
+        "MIXED_DIRECT_AND_COMPOSITE_SUPPORT",
+        "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE",
+        "PENDING_GOVERNED_REVIEW",
+        "TOPOLOGY_OR_ROLE_CONFLICT"
+      ],
+      "pass": true
+    },
+    "REQUIRED_EXCLUSION_CLASSES_PRESENT": {
+      "detail": [
+        "ALIAS_OR_MERGED_IDENTITY",
+        "CATEGORY_OR_DATABASE_COINCIDENCE_ONLY",
+        "COOCCURRENCE_OR_CONCEPT_ONLY",
+        "DUPLICATE_CANDIDATE_IDENTITY",
+        "INCOMPATIBLE_CASE_OR_SCOPE",
+        "METADATA_DISCOVERY_ONLY",
+        "NO_GOVERNED_TRIGGER",
+        "OUTSIDE_AUTHORIZED_FUNCTION3_SCOPE",
+        "PAIR_DERIVED_WITHOUT_GROUP_REVIEW",
+        "RIGHTS_OR_ACCESS_BLOCKED",
+        "STRUCTURAL_ANNOTATION_NOT_ASSOCIATION",
+        "TOPOLOGY_OR_ROLE_CONFLICT",
+        "UNRESOLVED_SENSE",
+        "VOCABULARY_SUPPORT_ONLY"
+      ],
+      "pass": true
+    },
+    "REVIEW_SCHEMA_FORBIDS_PAIR_PROJECTION": {
+      "detail": null,
+      "pass": true
+    },
+    "REVIEW_SCHEMA_REQUIRED_FIELDS": {
+      "detail": [
+        "association_revision_id",
+        "candidate_id",
+        "evidence_items",
+        "explicit_non_claims",
+        "final_disposition",
+        "global_coherence",
+        "negative_or_conflicting_evidence",
+        "pair_projection_authorized",
+        "participants",
+        "product_eligibility",
+        "qualification",
+        "review_authority",
+        "review_state",
+        "review_version",
+        "rights_review",
+        "source_bundle_synthesis",
+        "verification"
+      ],
+      "pass": true
+    },
+    "REVIEW_SUPPORT_CONDITIONALS_PRESENT": {
+      "detail": null,
+      "pass": true
+    },
+    "RIGHTS_LEDGER_FIELDS_COMPLETE": {
+      "detail": null,
+      "pass": true
+    },
+    "RIGHTS_LEDGER_TEMPLATE_MATCHES_POLICY": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND10_NARY_SURFACES_INCLUDED": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16A_BASELINE_COUNTS_EXACT": {
+      "detail": {
+        "ACTIVE_PAIR_ASSOCIATIONS": "21",
+        "ACTIVE_VOCABULARY": "31",
+        "CANONICAL_PAIR_EDGE_SUBGRAPHS": "58",
+        "EXPORTS": "11520",
+        "LEGACY_COMPOSITIONS": "11",
+        "PRODUCTION_COMPOSITIONS": "228",
+        "STATES": "5760",
+        "TOPOLOGY_COMPOSITIONS": "81",
+        "TRANSITIONS": "749944",
+        "UNORDERED_PAIR_UNIVERSE": "465",
+        "VOCABULARY_CANDIDATES": "65",
+        "WORKFLOWS": "5760"
+      },
+      "pass": true
+    },
+    "SOURCE_SHA_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "SOURCE_TREE_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "STABLE_ASSOCIATION_ID_EXCLUDES_AUTHORITY_AND_VERSION": {
+      "detail": null,
+      "pass": true
+    },
+    "SURFACE_HASH_COUNT_AND_TRIGGER_RECONCILIATION": {
+      "detail": [],
+      "pass": true
+    },
+    "SURFACE_IDS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "SURFACE_INVENTORY_BROAD": {
+      "detail": 44,
+      "pass": true
+    },
+    "TRIGGER_IDS_COMPLETE": {
+      "detail": [
+        "TRG-001",
+        "TRG-002",
+        "TRG-003",
+        "TRG-004",
+        "TRG-005",
+        "TRG-006",
+        "TRG-007",
+        "TRG-008",
+        "TRG-009",
+        "TRG-010",
+        "TRG-011",
+        "TRG-012"
+      ],
+      "pass": true
+    },
+    "TRIGGER_NAMES_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "TRIGGER_UNIVERSE_NOT_ALL_SUBSETS": {
+      "detail": null,
+      "pass": true
+    },
+    "VERIFIER_DOES_NOT_IMPORT_GENERATOR": {
+      "detail": null,
+      "pass": true
+    }
+  },
+  "disposition_count": 12,
+  "evidence_surface_count": 44,
+  "exclusion_class_count": 14,
+  "failure_codes": [],
+  "failure_count": 0,
+  "format": "trace-round16b-method-independent-verification-v1",
+  "open_closure_blocking_gap_count": 11,
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS",
+  "trigger_count": 12
+}

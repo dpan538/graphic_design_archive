@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_v3_semantic_contract_independent.py",
+    "--check"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check",
+  "command_id": "1787945193834-cp016-clean-verify-v3-semantic-contract-independent",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 1275,
+  "end_timestamp_utc": "2026-08-28T19:26:35Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-clean-verify-v3-semantic-contract-independent",
+  "phase_id": "CHECKPOINT-016-FINAL-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:26:33Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d494999d37603eb612c3500c46df73d3715c1c44448688b36bbcc681d72a1850",
+  "timed_out": false
+}

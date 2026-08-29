@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; test -z \"$(ipcs -m -a | rg \"^m[[:space:]]+65537[[:space:]]\" || true)\"; count=$(ipcs -m -a | rg -c \"^m[[:space:]]+\"); test \"$count\" -eq 31; printf \"%s\\n\" STALE_IPC_ID_65537_ABSENT=PASS SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count"
+  ],
+  "command": "/bin/sh -c 'set -eu; test -z \"$(ipcs -m -a | rg \"^m[[:space:]]+65537[[:space:]]\" || true)\"; count=$(ipcs -m -a | rg -c \"^m[[:space:]]+\"); test \"$count\" -eq 31; printf \"%s\\n\" STALE_IPC_ID_65537_ABSENT=PASS SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count'",
+  "command_id": "1787941823538-cp015-prove-stale-ipc-65537-absent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 14,
+  "end_timestamp_utc": "2026-08-28T18:30:23Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-prove-stale-ipc-65537-absent",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:30:23Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "213f09c8fcfa6b87c19daa4ac644652b0a49ac5cdc29e1231da1e2b3a57d0d42",
+  "timed_out": false
+}

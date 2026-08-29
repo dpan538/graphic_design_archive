@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "node",
+    "--conditions=react-server",
+    "--experimental-strip-types",
+    "frontend/scripts/test-trace-exploration-v2.mjs"
+  ],
+  "command": "node --conditions=react-server --experimental-strip-types frontend/scripts/test-trace-exploration-v2.mjs",
+  "command_id": "1787834495513-api-v2-static-exhaustive-verification-retry1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 203412,
+  "end_timestamp_utc": "2026-08-27T12:44:59Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 1,
+  "operation_id": "api-v2-static-exhaustive-verification-retry1",
+  "phase_id": "GATE-6",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T12:41:35Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "f5e48810979904a2a5cf02f6ec35ac11e97f05fc8c15fc621962e560b0dcd338",
+  "timed_out": false
+}

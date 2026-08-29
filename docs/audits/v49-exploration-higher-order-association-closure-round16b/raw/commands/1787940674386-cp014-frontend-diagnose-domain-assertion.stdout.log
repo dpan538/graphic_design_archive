@@ -1,0 +1,46 @@
+  container = createExplorationContainer(instance, compiledImage.treeMap);
+  container.positions.push({ nodeId: "NODE-TEST-A", x: 8, y: 13 });
+  container.localEdits.push({
+    editId: "EDIT-TEST-A",
+    targetKind: "NODE",
+    targetId: "NODE-TEST-A",
+    editKind: "POSITION_NOTE",
+    valueRef: "VALUE-LOCAL-COMPOSITION-ONLY",
+  });
+  assertExplorationContainer(container);
+  assert.equal(await computeExplorationImageBuildSha256(compiledImage), compiledImage.buildSha256);
+});
+
+check("RenderedPng binds safe reconstruction metadata only", () => {
+  assertRenderedPng({
+    mediaType: "image/png",
+    metadataSchemaVersion: "PNG-METADATA-STRUCTURAL-TEST",
+    imageId: compiledImage.imageId,
+    imageVersion: compiledImage.imageVersion,
+    imageBuildSha256: compiledImage.buildSha256,
+    instanceId: instance.instanceId,
+    seed: instance.seed,
+    rendererVersion: "RENDERER-NOT-IMPLEMENTED",
+    pngIsSourceOfTruth: false,
+  });
+});
+
+check("active repository guard passes", () => {
+  const audit = auditActiveRepository();
+  assert.equal(audit.status, "PASS", JSON.stringify(audit.failures));
+});
+
+expectRejected("A object ID added to ExplorationNode", () =>
+  assertExplorationNode({ ...nodeA, archiveObjectId: "SURF-TEST" }),
+);
+expectRejected("B Search record DTO imported", () => {
+  assert.ok(scanCandidateSource('import { SearchRecord } from "@/features/search-v49"').length > 0);
+  throw new Error("guard rejection");
+});
+expectRejected("C external embedding helper added", () => {
+  assert.ok(scanCandidateSource("const encoder = new QwenEmbeddingHelper()").length > 0);
+  throw new Error("guard rejection");
+});
+expectRejected("D nearest-neighbor primitive added", () => {
+  assert.ok(scanCandidateSource("function nearestNeighbors() {}").length > 0);
+  throw new Error("guard rejection");

@@ -1,0 +1,17 @@
+
+> archive-box-frontend@0.1.0 test:exploration-api-v3
+> node --conditions=react-server --experimental-strip-types scripts/test-trace-exploration-v3.mjs
+
+{
+  "active_product_association_count": 0,
+  "active_product_transition_count": 0,
+  "check_count": 123,
+  "control_association_count": 14,
+  "control_class_count": 12,
+  "control_composition_count": 2,
+  "control_incidence_count": 37,
+  "higher_order_control_count": 5,
+  "read_model_sha256": "df452f70e5d4806fed3274cce68df861ded5d92b57f0129746ae326d92dafb7d",
+  "status": "PASS",
+  "transition_derivation_policy": "NONE_NO_V2_INHERITANCE"
+}

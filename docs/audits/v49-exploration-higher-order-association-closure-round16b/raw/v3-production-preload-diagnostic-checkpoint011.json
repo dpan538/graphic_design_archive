@@ -1,0 +1,78 @@
+{
+  "schema_version": "trace-exploration-v3-production-preload-diagnostic-v1",
+  "status": "CORRECTED_AND_VERIFIED",
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "next_version": "15.5.18",
+  "cause": {
+    "head_alias_causal": false,
+    "preload_entries_on_start_default_causal": true,
+    "unique_server_chunk_bytes_eagerly_loaded": 202060066,
+    "largest_module_observations": [
+      {
+        "chunk": "8872.js",
+        "bytes": 91035103,
+        "compile_duration_ms": 4881.789,
+        "rss_delta_bytes": 1280933888,
+        "heap_used_delta_bytes": 361592520
+      },
+      {
+        "chunk": "4713.js",
+        "bytes": 91036720,
+        "compile_duration_ms": 1400.845,
+        "rss_delta_bytes": 2777137152,
+        "heap_used_delta_bytes": 179529176
+      }
+    ]
+  },
+  "idle_no_request_reproduction": {
+    "peak_rss_bytes": 4273930240,
+    "peak_heap_used_bytes": 1017165344,
+    "peak_heap_total_bytes": 1050132480,
+    "peak_event_loop_delay_max_ms": 8942.256127,
+    "governed_runtime_probe_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-idle-preload-diagnostic-checkpoint011.jsonl",
+    "governed_runtime_probe_sha256": "f4f4b1c2d6fc1b9c4dc602cf7913ad096f506302ff010f25e34892828b3824b9",
+    "governed_module_trace_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-module-load-diagnostic-checkpoint011.jsonl",
+    "governed_module_trace_sha256": "29e3e4e790e09a27420fff713f3732578c69639e2303fd3befb3eb9b067be8b9",
+    "local_source_runtime_probe_path": "/private/tmp/trace-v3-idle-diagnostic.ppnJgZ/runtime-probe.jsonl",
+    "local_source_module_trace_path": "/private/tmp/trace-v3-module-diagnostic.pnxCHg/module-loads.jsonl"
+  },
+  "correction": {
+    "configuration": "experimental.preloadEntriesOnStart=false",
+    "built_configuration_verified": true,
+    "static_check_count": 128,
+    "static_check_failure_count": 0,
+    "full_production_case_count": 1053,
+    "full_production_case_failure_count": 0,
+    "production_output_directory_sha256": "fc98b200b4b3bde92678fb8e0ccea030afaf315ea343e887b0e428d2d415d1b4",
+    "production_verification_summary_sha256": "6fa6e1f292b79b1952cfa892b6da51617efbcc13789a7231e8bed5a8cb952e83"
+  },
+  "before_after": {
+    "root_head_latency_ms": {
+      "before": 8356.285167,
+      "after": 2.813459,
+      "reduction_percent": 99.966
+    },
+    "peak_rss_bytes": {
+      "before": 3774742528,
+      "after": 237830144,
+      "reduction_percent": 93.699
+    },
+    "peak_heap_used_bytes": {
+      "before": 1060267976,
+      "after": 85308416,
+      "reduction_percent": 91.954
+    },
+    "peak_heap_total_bytes": {
+      "before": 1092861952,
+      "after": 113819648,
+      "reduction_percent": 89.585
+    },
+    "peak_event_loop_delay_max_ms": {
+      "before": 8363.442175,
+      "after": 132.710399,
+      "reduction_percent": 98.413
+    }
+  },
+  "tradeoff": "Unrelated UI route entries now cold-load on first request instead of loading eagerly after server readiness.",
+  "remaining_observation": "The two approximately 91 MB embedded page chunks remain a separate long-term data-loading concern; this checkpoint makes no production SLO or capacity claim."
+}

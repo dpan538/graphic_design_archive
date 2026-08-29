@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "npm --prefix frontend run test:exploration-composition-engine"
+  ],
+  "command": "/bin/sh -c 'npm --prefix frontend run test:exploration-composition-engine'",
+  "command_id": "1787943313850-cp015-regress-exploration-composition-engine",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 169,
+  "end_timestamp_utc": "2026-08-28T18:55:14Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-regress-exploration-composition-engine",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:55:13Z",
+  "stderr_sha256": "9e1d767a1366b170b67d887fb99c15f0b3dfe54b365d6de0513e7e46c2eabdc1",
+  "stdout_sha256": "e03c6188f84fd838e6f55d7a303a5b3c1f42aebdc55afc016a2e5679ecaf0acc",
+  "timed_out": false
+}

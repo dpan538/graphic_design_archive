@@ -1,0 +1,5 @@
+ERROR:  40001: AGGREGATE_MEMBERSHIP_CONCURRENT_WRITE_RETRY
+CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 12 at RAISE
+SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(v_kind, v_id)"
+PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 57 at PERFORM
+LOCATION:  exec_stmt_raise, pl_exec.c:3911

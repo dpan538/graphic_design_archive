@@ -1,0 +1,609 @@
+{
+  "active_vocabulary": [
+    {
+      "academic_support": [
+        "COMP-SRC-013",
+        "COMP-SRC-014"
+      ],
+      "ambiguity_note": "Adaptation is situated agency, not passive transfer. Alternatives within one contact-zone model, not successive stages.",
+      "bounded_sense": "In governed Round 14 design-history evidence, adaptation is used on this bounded basis: A domain-aligned study explicitly presents adaptation and rejection as situated responses.; Two studies explicitly place adaptation within negotiated contact and resistance.. Adaptation is situated agency, not passive transfer.; Alternatives within one contact-zone model, not successive stages.",
+      "canonical_label": "adaptation",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "adaptation",
+      "scope_note": "Adaptation is situated agency, not passive transfer. Alternatives within one contact-zone model, not successive stages.",
+      "source_attestations": [
+        "R14-EVID-013-01",
+        "R14-EVID-013-02",
+        "R14-EVID-014-01"
+      ],
+      "vocabulary_id": "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+    },
+    {
+      "academic_support": [
+        "R16-SRC-003",
+        "R16-SRC-004"
+      ],
+      "ambiguity_note": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "bounded_sense": "In the governed Round 16 sources, advertising is bounded as follows: Historical study explicitly situating graphic design and advertising in consumer culture; vocabulary support only.; Scholarly analysis of graphic design and advertising around First Things First; vocabulary support only.",
+      "canonical_label": "advertising",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "advertising",
+      "scope_note": "Historical study explicitly situating graphic design and advertising in consumer culture; vocabulary support only. Scholarly analysis of graphic design and advertising around First Things First; vocabulary support only.",
+      "source_attestations": [
+        "R16-SRC-003:attestation:advertising",
+        "R16-SRC-004:attestation:advertising"
+      ],
+      "vocabulary_id": "TRV:d27a4a1080657098835b014b8f47529c5be746cb60b043fb2400fec1a6948185"
+    },
+    {
+      "academic_support": [
+        "GRAM-SRC-003",
+        "SRC-0007",
+        "SRC-0008"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: canon; professionalization; institutionalization.",
+      "bounded_sense": "In design-history scholarship, canonization is used to describe the process by which selected work becomes established as historically exemplary or authoritative.",
+      "canonical_label": "canonization",
+      "category_ids": [
+        "medium",
+        "movement"
+      ],
+      "normalized_label": "canonization",
+      "scope_note": "In scope: historical elevation and normative positioning. Out of scope: the canon as a mere list.",
+      "source_attestations": [
+        "ATT-0007",
+        "ATT-0008",
+        "GRAM-ATT-003"
+      ],
+      "vocabulary_id": "TRV:e581bd8a1b6363a295216bc7c9f8d958e26ef7406beab6becbf90ff8e2680bd5"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-004",
+        "COMP-SRC-005"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: appropriation; professionalization.",
+      "bounded_sense": "In design-history scholarship, commodification is used to describe design and institutions turning nature, craft, identity, or cultural material into marketable value.",
+      "canonical_label": "commodification",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "commodification",
+      "scope_note": "In scope: historical transformation into marketable value. Out of scope: all exchange or all production.",
+      "source_attestations": [
+        "R14-EVID-016-01",
+        "R14-EVID-016-02"
+      ],
+      "vocabulary_id": "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+    },
+    {
+      "academic_support": [
+        "R16-SRC-004"
+      ],
+      "ambiguity_note": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "bounded_sense": "In the governed Round 16 sources, consumer culture is bounded as follows: Historical study explicitly situating graphic design and advertising in consumer culture; vocabulary support only.",
+      "canonical_label": "consumer culture",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "consumer culture",
+      "scope_note": "Historical study explicitly situating graphic design and advertising in consumer culture; vocabulary support only.",
+      "source_attestations": [
+        "R16-SRC-004:attestation:consumer-culture"
+      ],
+      "vocabulary_id": "TRV:12c360cc0c3231a45d5841e63ee7f3377be76ee0fa28c3f4dda803186cbbc829"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-009",
+        "COMP-SRC-010"
+      ],
+      "ambiguity_note": "Spatial association does not assert a single linear market mechanism. The association does not make consumers passive endpoints.",
+      "bounded_sense": "In governed Round 14 design-history evidence, consumption is used on this bounded basis: Independent sources explicitly locate designed mediation within consumption and reception.; The sources explicitly frame designed channels and devices between production and consumption.. Spatial association does not assert a single linear market mechanism.; The association does not make consumers passive endpoints.",
+      "canonical_label": "consumption",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "consumption",
+      "scope_note": "Spatial association does not assert a single linear market mechanism. The association does not make consumers passive endpoints.",
+      "source_attestations": [
+        "R14-EVID-003-01",
+        "R14-EVID-003-03",
+        "R14-EVID-004-01",
+        "R14-EVID-004-02",
+        "R14-EVID-004-03"
+      ],
+      "vocabulary_id": "TRV:ad8c6f6e417a6d2db992c155701ed13494624142922d58eda2e4ad0fa4672fa8"
+    },
+    {
+      "academic_support": [
+        "R16-SRC-005"
+      ],
+      "ambiguity_note": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "bounded_sense": "In the governed Round 16 sources, craft is bounded as follows: Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+      "canonical_label": "craft",
+      "category_ids": [
+        "movement"
+      ],
+      "normalized_label": "craft",
+      "scope_note": "Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+      "source_attestations": [
+        "R14-EVID-020-01"
+      ],
+      "vocabulary_id": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-013",
+        "COMP-SRC-014"
+      ],
+      "ambiguity_note": "Negotiation does not imply voluntary, equal, or fully reciprocal participation. Negotiation must not imply voluntary or equal participation.",
+      "bounded_sense": "In governed design-history evidence, cultural negotiation denotes negotiation. Use requires Keraton Surakarta case; actual actors and unequal power required; specific encounter, actors, and power relation.",
+      "canonical_label": "cultural negotiation",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "cultural negotiation",
+      "scope_note": "The phrases are not synonyms or universal connectors: transfer requires source, content, route, receiver, and receiving agency; negotiation requires actual unequal counterparts; adaptation requires source, adapter, and changed artifact; transformation requires named T0/T1 states, forces, period, and material evidence.",
+      "source_attestations": [
+        "COMP-EVID-014",
+        "COMP-EVID-015"
+      ],
+      "vocabulary_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-011",
+        "COMP-SRC-012"
+      ],
+      "ambiguity_note": "The criticized donor model is not the case finding and cannot erase receiving agency. Transfer does not guarantee unchanged reception.",
+      "bounded_sense": "In governed design-history evidence, cultural transfer denotes contested transfer; transfer. Use requires early-modern print mobility; named content, route, receiving context, reception, and receiving agency.",
+      "canonical_label": "cultural transfer",
+      "category_ids": [
+        "region",
+        "theme",
+        "medium"
+      ],
+      "normalized_label": "cultural transfer",
+      "scope_note": "The phrases are not synonyms or universal connectors: transfer requires source, content, route, receiver, and receiving agency; negotiation requires actual unequal counterparts; adaptation requires source, adapter, and changed artifact; transformation requires named T0/T1 states, forces, period, and material evidence.",
+      "source_attestations": [
+        "COMP-EVID-012",
+        "COMP-EVID-013"
+      ],
+      "vocabulary_id": "TRV:c76c09a3f32430db9b00d1c47eaf288d54331355f666dfcb11e4f4ef3a965212"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-017",
+        "COMP-SRC-018"
+      ],
+      "ambiguity_note": "Broad theory cannot substitute for design-historical material evidence or a documented temporal transition. Transformation is not linear progress or a single external influence.",
+      "bounded_sense": "In governed design-history evidence, cultural transformation denotes comparative association; transformation. Use requires both historical states, period, forces, and material evidence required; comparative cross-sectional support only; no within-case T0-to-T1 claim.",
+      "canonical_label": "cultural transformation",
+      "category_ids": [
+        "region",
+        "movement"
+      ],
+      "normalized_label": "cultural transformation",
+      "scope_note": "The phrases are not synonyms or universal connectors: transfer requires source, content, route, receiver, and receiving agency; negotiation requires actual unequal counterparts; adaptation requires source, adapter, and changed artifact; transformation requires named T0/T1 states, forces, period, and material evidence.",
+      "source_attestations": [
+        "COMP-EVID-018",
+        "COMP-EVID-019"
+      ],
+      "vocabulary_id": "TRV:a7835c05c37c3352068d6c2aff509f141e085c6bc072303d3e6676035dc483d4"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-023",
+        "COMP-SRC-024",
+        "COMP-SRC-025"
+      ],
+      "ambiguity_note": "Application cites the prior genealogy; intellectual dependence is recorded. Diplomatic intent does not prove audience acceptance. The source calls it a metaphor; reciprocity belongs to negotiation, not assumed audience reception.",
+      "bounded_sense": "In governed design-history evidence, design diplomacy denotes diplomatic mechanism. Use requires Cold War international exhibition; documented diplomatic intent, negotiating counterparts, and contingent receiving context; Sweden in Sydney, 1954; application shares the design-diplomacy genealogy.",
+      "canonical_label": "design diplomacy",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "design diplomacy",
+      "scope_note": "No ordinary migration, trade, private collaboration, stylistic influence, or generic cross-border event.",
+      "source_attestations": [
+        "R14-EVID-005-01",
+        "R14-EVID-005-02",
+        "R14-EVID-006-01",
+        "R14-EVID-006-02"
+      ],
+      "vocabulary_id": "TRV:303eafd7c2afb63e99e140c4ba2abd1de5f78f9e8ebbb3040b4531b6df568639"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-001",
+        "COMP-SRC-002",
+        "R16-SRC-005",
+        "R16-SRC-006"
+      ],
+      "ambiguity_note": "The association is institutional and contextual, not a universal path to professional status.",
+      "bounded_sense": "In the governed Round 16 sources, design education is bounded as follows: Design-history review explicitly addressing graphic design education and institutions; vocabulary support only.; Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+      "canonical_label": "design education",
+      "category_ids": [
+        "movement"
+      ],
+      "normalized_label": "design education",
+      "scope_note": "Design-history review explicitly addressing graphic design education and institutions; vocabulary support only. Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+      "source_attestations": [
+        "R16-SRC-005:attestation:design-education",
+        "R16-SRC-006:attestation:design-education"
+      ],
+      "vocabulary_id": "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97"
+    },
+    {
+      "academic_support": [
+        "R16-SRC-005"
+      ],
+      "ambiguity_note": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "bounded_sense": "In the governed Round 16 sources, education is bounded as follows: Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+      "canonical_label": "education",
+      "category_ids": [
+        "movement"
+      ],
+      "normalized_label": "education",
+      "scope_note": "Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+      "source_attestations": [
+        "R14-EVID-020-01"
+      ],
+      "vocabulary_id": "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-023",
+        "COMP-SRC-024",
+        "COMP-SRC-025"
+      ],
+      "ambiguity_note": "Diplomatic intention does not guarantee audience reception or political effect. The assessment remains case-bounded and does not classify every exhibition as propaganda.",
+      "bounded_sense": "In governed Round 14 design-history evidence, exhibition is used on this bounded basis: Independent exposition histories directly discuss propagandistic functions of designed exhibitions.; Three independent histories directly analyze exhibitions as sites of design diplomacy.. Diplomatic intention does not guarantee audience reception or political effect.; The assessment remains case-bounded and does not classify every exhibition as propaganda.",
+      "canonical_label": "exhibition",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "exhibition",
+      "scope_note": "Diplomatic intention does not guarantee audience reception or political effect. The assessment remains case-bounded and does not classify every exhibition as propaganda.",
+      "source_attestations": [
+        "R14-EVID-005-02",
+        "R14-EVID-008-01"
+      ],
+      "vocabulary_id": "TRV:83a2bff84b1d599d9eed884a09666501c96224a0b3b7457699ef0be145e76e73"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-004",
+        "COMP-SRC-005"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: exclusion; canonization.",
+      "bounded_sense": "In design-history scholarship, gendering is used to describe things, practices, or categories being positioned through gendered distinctions and values.",
+      "canonical_label": "gendering",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "gendering",
+      "scope_note": "In scope: gendered positioning and valuation. Out of scope: biological determination or a fixed binary.",
+      "source_attestations": [
+        "R14-EVID-016-01",
+        "R14-EVID-016-02"
+      ],
+      "vocabulary_id": "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-006",
+        "COMP-SRC-007",
+        "COMP-SRC-008"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: piracy; appropriation; influence.",
+      "bounded_sense": "In design-history scholarship, imitation is used to describe designs or production practices deliberately following existing forms or models.",
+      "canonical_label": "imitation",
+      "category_ids": [
+        "medium"
+      ],
+      "normalized_label": "imitation",
+      "scope_note": "In scope: historically situated copying or modeling. Out of scope: automatic identity with piracy or exact duplication.",
+      "source_attestations": [
+        "R14-EVID-017-01",
+        "R14-EVID-017-03"
+      ],
+      "vocabulary_id": "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: professionalization; canonization.",
+      "bounded_sense": "In design-history scholarship, institutionalization is used to describe design becoming embedded in durable organizations, councils, standards, or educational structures.",
+      "canonical_label": "institutionalization",
+      "category_ids": [
+        "movement"
+      ],
+      "normalized_label": "institutionalization",
+      "scope_note": "In scope: embedding design in organizations and rules. Out of scope: professional identity alone.",
+      "source_attestations": [
+        "R14-EVID-001-02",
+        "R14-EVID-021-02"
+      ],
+      "vocabulary_id": "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-019",
+        "COMP-SRC-020"
+      ],
+      "ambiguity_note": "Commodity exchange can conceal production relations.",
+      "bounded_sense": "In governed design-history evidence, material displacement denotes material displacement. Use requires named material chain and consequences.",
+      "canonical_label": "material displacement",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "material displacement",
+      "scope_note": "Not every material movement: require a named material, origin, destination, chain or force, and material/labor/ecological consequences; never infer forced-human movement, semantic change, or strategy.",
+      "source_attestations": [
+        "R14-EVID-010-01"
+      ],
+      "vocabulary_id": "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-009",
+        "COMP-SRC-010"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: circulation; translation; reception.",
+      "bounded_sense": "In design-history scholarship, mediation is used to describe channels, representations, or designed things that shape connections between production, consumption, and meaning.",
+      "canonical_label": "mediation",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "mediation",
+      "scope_note": "In scope: intermediaries and channels that shape meaning. Out of scope: a claim that every intermediary works identically.",
+      "source_attestations": [
+        "R14-EVID-002-01",
+        "R14-EVID-002-03",
+        "R14-EVID-003-01"
+      ],
+      "vocabulary_id": "TRV:9e44dae2c5ca8dc916878b28f5ec3720e42ea22d2add139759780727e6f487ce"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-021",
+        "COMP-SRC-022"
+      ],
+      "ambiguity_note": "Mobility does not erase colonial violence or infer an abstract route. The noun identifies a role, not a universal relation.",
+      "bounded_sense": "In governed design-history evidence, mobile object denotes moved entity role. Use requires object biography and reception changes required; specific causes, routes, carriers, and receptions.",
+      "canonical_label": "mobile object",
+      "category_ids": [
+        "region",
+        "medium"
+      ],
+      "normalized_label": "mobile object",
+      "scope_note": "Not every moved object: require a bounded itinerary, origin, carrier or route, receiving context, and reception or material change; mobile object is a role, not a relation or automatic connector.",
+      "source_attestations": [
+        "COMP-EVID-022",
+        "COMP-EVID-023"
+      ],
+      "vocabulary_id": "TRV:a85f306d70c2839db5dad35765d50a5b17eec2c9d0dee0641333805efede7b28"
+    },
+    {
+      "academic_support": [
+        "R16-SRC-001"
+      ],
+      "ambiguity_note": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "bounded_sense": "In the governed Round 16 sources, photography is bounded as follows: Academic history of photographic montage in a graphic designer's practice; vocabulary support only.",
+      "canonical_label": "photography",
+      "category_ids": [
+        "medium"
+      ],
+      "normalized_label": "photography",
+      "scope_note": "Academic history of photographic montage in a graphic designer's practice; vocabulary support only.",
+      "source_attestations": [
+        "R14-EVID-018-01"
+      ],
+      "vocabulary_id": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-006",
+        "COMP-SRC-007",
+        "COMP-SRC-008"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: imitation; appropriation; plagiarism.",
+      "bounded_sense": "In design-history scholarship, piracy is used to describe unauthorized copying of designs within historically specific legal, commercial, and moral frameworks.",
+      "canonical_label": "piracy",
+      "category_ids": [
+        "medium"
+      ],
+      "normalized_label": "piracy",
+      "scope_note": "In scope: unauthorized copying under historical norms. Out of scope: maritime piracy or every instance of imitation.",
+      "source_attestations": [
+        "R14-EVID-017-01",
+        "R14-EVID-017-02",
+        "R14-EVID-017-03"
+      ],
+      "vocabulary_id": "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-009",
+        "COMP-SRC-010"
+      ],
+      "ambiguity_note": "Mediation is contextual, not a causal arrow from production. Spatial association does not assert a single linear market mechanism.",
+      "bounded_sense": "In governed Round 14 design-history evidence, production is used on this bounded basis: Independent design-history sources explicitly place mediating channels or devices in production contexts.; The sources explicitly frame designed channels and devices between production and consumption.. Mediation is contextual, not a causal arrow from production.; Spatial association does not assert a single linear market mechanism.",
+      "canonical_label": "production",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "production",
+      "scope_note": "Mediation is contextual, not a causal arrow from production. Spatial association does not assert a single linear market mechanism.",
+      "source_attestations": [
+        "R14-EVID-002-01",
+        "R14-EVID-002-03",
+        "R14-EVID-004-01",
+        "R14-EVID-004-02",
+        "R14-EVID-004-03"
+      ],
+      "vocabulary_id": "TRV:ab8e18ef4ebebeddc0b3152ce9c9006e14fc05242e3fc9ce32246ea6a9543074"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-020"
+      ],
+      "ambiguity_note": "Association is inferred within the source's explicit chain, not elevated to a universal relation. One bounded study and source family; confidence is moderate.",
+      "bounded_sense": "In governed Round 14 design-history evidence, production site is used on this bounded basis: The bounded source-level account supplies a contextual bridge between displacement and production site.; The study explicitly describes production sites as part of the material chain.. Association is inferred within the source's explicit chain, not elevated to a universal relation.; One bounded study and source family; confidence is moderate.",
+      "canonical_label": "production site",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "production site",
+      "scope_note": "Association is inferred within the source's explicit chain, not elevated to a universal relation. One bounded study and source family; confidence is moderate.",
+      "source_attestations": [
+        "COMP-EVID-021"
+      ],
+      "vocabulary_id": "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: institutionalization; canonization.",
+      "bounded_sense": "In design-history scholarship, professionalization is used to describe practices acquiring professional status through education, associations, standards, and recognition.",
+      "canonical_label": "professionalization",
+      "category_ids": [
+        "movement"
+      ],
+      "normalized_label": "professionalization",
+      "scope_note": "In scope: status formation through professional structures. Out of scope: a claim that status change is uniform or complete.",
+      "source_attestations": [
+        "R14-EVID-001-01"
+      ],
+      "vocabulary_id": "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-023",
+        "COMP-SRC-024",
+        "COMP-SRC-025"
+      ],
+      "ambiguity_note": "One bounded exposition case; no general identity between propaganda and trade. The assessment remains case-bounded and does not classify every exhibition as propaganda. The sources distinguish diplomacy from propaganda rather than equating them.",
+      "bounded_sense": "In governed Round 14 design-history evidence, propaganda is used on this bounded basis: Independent exposition histories directly discuss propagandistic functions of designed exhibitions.; One domain-aligned historical study explicitly treats propaganda and trade within the same designed display program.; The exhibition studies explicitly compare or combine diplomatic and propagandistic functions.. One bounded exposition case; no general identity between propaganda and trade.; The assessment remains case-bounded and does not classify every exhibition as propaganda.; The sources distinguish diplomacy from propaganda rather than equating them.",
+      "canonical_label": "propaganda",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "propaganda",
+      "scope_note": "One bounded exposition case; no general identity between propaganda and trade. The assessment remains case-bounded and does not classify every exhibition as propaganda. The sources distinguish diplomacy from propaganda rather than equating them.",
+      "source_attestations": [
+        "R14-EVID-006-03",
+        "R14-EVID-007-01",
+        "R14-EVID-008-02"
+      ],
+      "vocabulary_id": "TRV:c82d3d4865e41e2a263ff0427c4df2b8e3e43a85c835404d033d764468b3ba55"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-013"
+      ],
+      "ambiguity_note": "Alternatives within one contact-zone model, not successive stages. One conceptual source; no claim that rejection always constitutes negotiation.",
+      "bounded_sense": "In governed Round 14 design-history evidence, rejection is used on this bounded basis: A domain-aligned study explicitly presents adaptation and rejection as situated responses.; The source explicitly situates rejection within a negotiated contact-zone repertoire.. Alternatives within one contact-zone model, not successive stages.; One conceptual source; no claim that rejection always constitutes negotiation.",
+      "canonical_label": "rejection",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "rejection",
+      "scope_note": "Alternatives within one contact-zone model, not successive stages. One conceptual source; no claim that rejection always constitutes negotiation.",
+      "source_attestations": [
+        "R14-EVID-014-01",
+        "R14-EVID-015-01"
+      ],
+      "vocabulary_id": "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+    },
+    {
+      "academic_support": [
+        "GRAM-SRC-019",
+        "SRC-0033",
+        "SRC-0037"
+      ],
+      "ambiguity_note": "Do not expand beyond the governed scope-out. Confusable terms: cultural translation; canonization.",
+      "bounded_sense": "In design-history scholarship, self-exoticization is used to describe design discourse presenting its own national difference through expectations associated with outsiders.",
+      "canonical_label": "self-exoticization",
+      "category_ids": [
+        "region",
+        "theme"
+      ],
+      "normalized_label": "self-exoticization",
+      "scope_note": "In scope: reflexive performance of expected difference. Out of scope: all national branding or external exoticization.",
+      "source_attestations": [
+        "ATT-0040",
+        "ATT-0041",
+        "GRAM-ATT-020"
+      ],
+      "vocabulary_id": "TRV:448547bdedc22e5502256bdbd2714b8f2f4d7a5cbf8ce1dc30d21f16b18878a8"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-019",
+        "COMP-SRC-020"
+      ],
+      "ambiguity_note": "One bounded study and source family; confidence is moderate. The association does not reduce all material movement to one supply-chain model.",
+      "bounded_sense": "In governed Round 14 design-history evidence, supply chain is used on this bounded basis: The study explicitly describes production sites as part of the material chain.; Two design-history sources explicitly treat material movement through sites and chains.. One bounded study and source family; confidence is moderate.; The association does not reduce all material movement to one supply-chain model.",
+      "canonical_label": "supply chain",
+      "category_ids": [
+        "region"
+      ],
+      "normalized_label": "supply chain",
+      "scope_note": "One bounded study and source family; confidence is moderate. The association does not reduce all material movement to one supply-chain model.",
+      "source_attestations": [
+        "COMP-EVID-021"
+      ],
+      "vocabulary_id": "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+    },
+    {
+      "academic_support": [
+        "COMP-SRC-025"
+      ],
+      "ambiguity_note": "One bounded exposition case; no general identity between propaganda and trade. Single-case source support; diplomatic outcome is not asserted.",
+      "bounded_sense": "In governed Round 14 design-history evidence, trade is used on this bounded basis: A design-history exposition case directly joins diplomatic representation and trade.; One domain-aligned historical study explicitly treats propaganda and trade within the same designed display program.. One bounded exposition case; no general identity between propaganda and trade.; Single-case source support; diplomatic outcome is not asserted.",
+      "canonical_label": "trade",
+      "category_ids": [
+        "theme"
+      ],
+      "normalized_label": "trade",
+      "scope_note": "One bounded exposition case; no general identity between propaganda and trade. Single-case source support; diplomatic outcome is not asserted.",
+      "source_attestations": [
+        "R14-EVID-007-01",
+        "R14-EVID-009-01"
+      ],
+      "vocabulary_id": "TRV:276446ba01e3aa387c83b06f54fccc5ac65bdc6099157a2a828716eac9c6fd4d"
+    },
+    {
+      "academic_support": [
+        "R16-SRC-002"
+      ],
+      "ambiguity_note": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "bounded_sense": "In the governed Round 16 sources, typography is bounded as follows: Design-history review of typography research; vocabulary support only.",
+      "canonical_label": "typography",
+      "category_ids": [
+        "medium"
+      ],
+      "normalized_label": "typography",
+      "scope_note": "Design-history review of typography research; vocabulary support only.",
+      "source_attestations": [
+        "R14-EVID-018-01"
+      ],
+      "vocabulary_id": "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+    }
+  ],
+  "active_vocabulary_count": 31,
+  "active_vocabulary_hash": "0f7307ef46d5c5a15bae854254eb947e854c5f583d458eff86863e140588dbf5",
+  "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "universe_hash": "578ec61cac3a0dc43aa38cc3d75e15cd1bf46331f9333a872d9824d6ee648a8f"
+}

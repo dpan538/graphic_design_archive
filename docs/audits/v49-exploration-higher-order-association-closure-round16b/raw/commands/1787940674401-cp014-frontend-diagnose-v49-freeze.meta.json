@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "sed",
+    "-n",
+    "1,280p",
+    "scripts/repository/verify_v49_database_freeze.py"
+  ],
+  "command": "sed -n 1,280p scripts/repository/verify_v49_database_freeze.py",
+  "command_id": "1787940674401-cp014-frontend-diagnose-v49-freeze",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-28T18:11:14Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-diagnose-v49-freeze",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:14Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "fa1f9085a1d77304eaf3b8a74266c6feec6c286120ce81fd084588a201f9b7fb",
+  "timed_out": false
+}

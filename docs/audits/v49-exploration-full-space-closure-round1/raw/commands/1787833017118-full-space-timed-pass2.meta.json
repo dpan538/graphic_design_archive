@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16a/build_exploration_space.py"
+  ],
+  "command": "python3 scripts/trace_round16a/build_exploration_space.py",
+  "command_id": "1787833017118-full-space-timed-pass2",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 10182,
+  "end_timestamp_utc": "2026-08-27T12:17:07Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "full-space-timed-pass2",
+  "phase_id": "GATE4_7_BUILD_TIME",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T12:16:57Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590",
+  "timed_out": false
+}

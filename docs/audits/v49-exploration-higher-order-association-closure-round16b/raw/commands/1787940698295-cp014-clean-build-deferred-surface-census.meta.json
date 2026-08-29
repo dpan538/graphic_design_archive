@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/build_deferred_surface_census.py"
+  ],
+  "command": "python3 -B scripts/trace_round16b/build_deferred_surface_census.py",
+  "command_id": "1787940698295-cp014-clean-build-deferred-surface-census",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 57844,
+  "end_timestamp_utc": "2026-08-28T18:12:36Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-clean-build-deferred-surface-census",
+  "phase_id": "CHECKPOINT-014-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:38Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "7ffefe10e4c8d1ca42078de330a5d0d8f9748322084e016ca2df2c94ff59bef5",
+  "timed_out": false
+}

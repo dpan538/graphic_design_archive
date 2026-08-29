@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_runtime_independent.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check",
+  "command_id": "1787938039781-cp012-recheck-v3-runtime-independent-v4",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 263,
+  "end_timestamp_utc": "2026-08-28T17:27:20Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-recheck-v3-runtime-independent-v4",
+  "phase_id": "CHECKPOINT-012-CORRECTIVE-RUNTIME-BINDING",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:27:19Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "14cdadfb918aa7063c7d2860a642b39f681d07f9a06e6fb5899efc024eed299f",
+  "timed_out": false
+}

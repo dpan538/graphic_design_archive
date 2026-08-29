@@ -1,0 +1,4 @@
+/opt/homebrew/opt/postgresql@16/bin/postgres: illegal option -- V
+Try "postgres --help" for more information.
+no data was returned by command ""/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres" -V"
+initdb: error: program "postgres" is needed by initdb but was not found in the same directory as "/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb"

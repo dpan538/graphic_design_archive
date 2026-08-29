@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_runtime_independent.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check",
+  "command_id": "1787936487939-cp012-check-v3-runtime-independent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 625,
+  "end_timestamp_utc": "2026-08-28T17:01:28Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-check-v3-runtime-independent",
+  "phase_id": "CHECKPOINT-012-REGRESSION-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:01:27Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "9e039116b7ddab7589406315a888ed9089d1425580299d5907dc98208f6262b3",
+  "timed_out": false
+}

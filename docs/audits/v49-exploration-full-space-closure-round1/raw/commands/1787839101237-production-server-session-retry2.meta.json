@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16a/start_production_server.py",
+    "--frontend",
+    "frontend",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "3034",
+    "--receipt",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json",
+    "--probe",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl",
+    "--probe-module",
+    "scripts/trace_round16a/node_runtime_probe.cjs"
+  ],
+  "command": "python3 scripts/trace_round16a/start_production_server.py --frontend frontend --host 127.0.0.1 --port 3034 --receipt docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json --probe docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl --probe-module scripts/trace_round16a/node_runtime_probe.cjs",
+  "command_id": "1787839101237-production-server-session-retry2",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 1009732,
+  "end_timestamp_utc": "2026-08-27T14:15:11Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "production-server-session-retry2",
+  "phase_id": "GATE-10",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T13:58:21Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "a6918809504b65e96d8e75e60d39948df2602e89398ad3f7211b84c80d80a333",
+  "timed_out": false
+}

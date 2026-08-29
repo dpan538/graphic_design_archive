@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "if lsof -nP -iTCP:59474 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf \"%s\\n\" TCP_LISTENER_59474_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'if lsof -nP -iTCP:59474 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf \"%s\\n\" TCP_LISTENER_59474_ABSENT=PASS'",
+  "command_id": "1787945425109-cp016-db-prove-no-tcp-listener",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 56,
+  "end_timestamp_utc": "2026-08-28T19:30:25Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-db-prove-no-tcp-listener",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:30:25Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "81fc7fed3b0fab577f1191ad632a341bfa05b76aee7a3f3eb24f87002f305b5f",
+  "timed_out": false
+}

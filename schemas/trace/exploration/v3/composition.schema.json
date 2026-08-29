@@ -1,0 +1,437 @@
+{
+  "$defs": {
+    "compositionCoherenceReview": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "realm": {
+                "const": "PRODUCTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "authority": {
+                "properties": {
+                  "authority_kind": {
+                    "enum": [
+                      "RESEARCH_REVIEW",
+                      "EXTERNAL_HUMAN_REVIEW"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "const": "COHERENT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "authority": {
+                "properties": {
+                  "authority_state": {
+                    "const": "FINAL"
+                  }
+                }
+              },
+              "bounded_senses_compatible": {
+                "const": true
+              },
+              "case_scope_compatible": {
+                "const": true
+              },
+              "global_coherence": {
+                "const": "PASS"
+              },
+              "review_state": {
+                "const": "FINAL"
+              },
+              "roles_and_topology_supported": {
+                "const": true
+              },
+              "same_configuration": {
+                "const": true
+              },
+              "unsupported_bridge_count": {
+                "const": 0
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "association_realization_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "association_revision_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "authority": {
+          "$ref": "common.schema.json#/$defs/governedAuthority"
+        },
+        "bounded_senses_compatible": {
+          "type": "boolean"
+        },
+        "case_scope_compatible": {
+          "type": "boolean"
+        },
+        "composition_coherence_review_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "composition_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "COHERENT",
+            "INCOHERENT",
+            "UNRESOLVED"
+          ],
+          "type": "string"
+        },
+        "global_coherence": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNRESOLVED"
+          ],
+          "type": "string"
+        },
+        "incidence_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "realm": {
+          "enum": [
+            "PRODUCTION",
+            "SYNTHETIC_CONTROL"
+          ],
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "review_state": {
+          "enum": [
+            "PENDING",
+            "NONFINAL",
+            "FINAL"
+          ],
+          "type": "string"
+        },
+        "review_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "roles_and_topology_supported": {
+          "type": "boolean"
+        },
+        "same_configuration": {
+          "type": "boolean"
+        },
+        "semantic_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "unsupported_bridge_count": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "composition_coherence_review_id",
+        "composition_id",
+        "realm",
+        "review_state",
+        "authority",
+        "review_version",
+        "global_coherence",
+        "bounded_senses_compatible",
+        "case_scope_compatible",
+        "roles_and_topology_supported",
+        "same_configuration",
+        "unsupported_bridge_count",
+        "association_revision_ids",
+        "association_realization_ids",
+        "incidence_ids",
+        "decision",
+        "reasons",
+        "semantic_sha256"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://trace.example/schemas/exploration/v3/composition.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "else": {
+        "properties": {
+          "product_eligibility_disposition": {
+            "enum": [
+              "INELIGIBLE",
+              "DEFERRED",
+              "NOT_APPLICABLE_SYNTHETIC"
+            ]
+          },
+          "product_ineligibility_reason": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "product_path": {
+            "const": null
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "product_eligible": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "association_trace_complete": {
+            "const": true
+          },
+          "product_eligibility_disposition": {
+            "const": "ELIGIBLE"
+          },
+          "product_ineligibility_reason": {
+            "const": null
+          },
+          "product_path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "realm": {
+            "const": "PRODUCTION"
+          },
+          "renderability": {
+            "const": "PASS"
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "association_realizations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "association_realization_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "association_revision_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "presentation": {
+            "additionalProperties": false,
+            "properties": {
+              "layout": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "style": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "layout",
+              "style"
+            ],
+            "type": "object"
+          },
+          "presentation_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "realization_kind": {
+            "enum": [
+              "PAIR_EDGE",
+              "HYPEREDGE_HUB",
+              "HYPEREDGE_CONTOUR",
+              "LIST_GROUP"
+            ],
+            "type": "string"
+          },
+          "realized_incidence_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "semantic_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "association_realization_id",
+          "association_revision_id",
+          "realization_kind",
+          "realized_incidence_ids",
+          "semantic_sha256",
+          "presentation",
+          "presentation_sha256"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "association_trace_complete": {
+      "type": "boolean"
+    },
+    "composition_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "composition_node_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 2,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "composition_revision_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "global_coherence_review_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "presentation": {
+      "additionalProperties": false,
+      "properties": {
+        "layout": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "seed": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "layout",
+        "seed"
+      ],
+      "type": "object"
+    },
+    "presentation_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "product_eligibility_disposition": {
+      "enum": [
+        "ELIGIBLE",
+        "INELIGIBLE",
+        "DEFERRED",
+        "NOT_APPLICABLE_SYNTHETIC"
+      ],
+      "type": "string"
+    },
+    "product_eligible": {
+      "type": "boolean"
+    },
+    "product_ineligibility_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "product_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "realm": {
+      "enum": [
+        "PRODUCTION",
+        "SYNTHETIC_CONTROL"
+      ],
+      "type": "string"
+    },
+    "renderability": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ],
+      "type": "string"
+    },
+    "semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "topology_family": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "composition_id",
+    "composition_revision_id",
+    "realm",
+    "association_realizations",
+    "composition_node_ids",
+    "topology_family",
+    "renderability",
+    "global_coherence_review_id",
+    "association_trace_complete",
+    "product_eligible",
+    "product_path",
+    "product_eligibility_disposition",
+    "product_ineligibility_reason",
+    "semantic_sha256",
+    "presentation",
+    "presentation_sha256"
+  ],
+  "title": "TRACE Exploration v3 composition and association realization",
+  "type": "object"
+}

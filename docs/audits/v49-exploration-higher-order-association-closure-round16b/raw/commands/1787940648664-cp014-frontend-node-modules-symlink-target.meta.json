@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/readlink",
+    "frontend/node_modules"
+  ],
+  "command": "/usr/bin/readlink frontend/node_modules",
+  "command_id": "1787940648664-cp014-frontend-node-modules-symlink-target",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 5,
+  "end_timestamp_utc": "2026-08-28T18:10:48Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-node-modules-symlink-target",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:10:48Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "529b4f0a52b14bae7b52ae9c941f9b2aa2f2d63f5c6c41ce241c854713379209",
+  "timed_out": false
+}

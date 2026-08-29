@@ -1,0 +1,442 @@
+#!/usr/bin/env python3
+"""Independently verify Round 16B append-only execution and checkpoint evidence."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import re
+import shlex
+import subprocess
+from typing import Any
+
+
+SOURCE_SHA = "5419770959bdb8998b693fb2275b47e29b92367c"
+ROUND_SLUG = "v49-exploration-higher-order-association-closure-round16b"
+RAW_REL = Path(f"docs/audits/{ROUND_SLUG}/raw")
+RESEARCH_REL = Path(f"docs/research/trace-{ROUND_SLUG}")
+INTERRUPTED_LOGGER_COMMAND_ID = "1787942716881-cp015-db-capture-superseded-diagnostic"
+INTERRUPTED_LOGGER_EVENT_SEQUENCE = 1285
+INTERRUPTED_LOGGER_DIAGNOSTIC_ID = "R16B-CP015-DIAG-015"
+INTERRUPTED_LOGGER_EVENT_CANONICAL_SHA256 = (
+    "02897f6bbb225effcacae70c31fb0e21fedb6a8d092130745af64097af6a6411"
+)
+EMPTY_SHA256 = hashlib.sha256(b"").hexdigest()
+FORBIDDEN_COMMAND_PATTERNS = {
+    "FORCE_PUSH": re.compile(r"(?:^|\s)git\s+push\s+[^\n]*(?:--force(?:-with-lease)?|-f(?:\s|$)|\+refs/)", re.I),
+    "AMEND": re.compile(r"(?:^|\s)git\s+commit\s+[^\n]*--amend", re.I),
+    "REBASE": re.compile(r"(?:^|\s)git\s+rebase(?:\s|$)", re.I),
+    "HISTORY_MIGRATION": re.compile(r"(?:filter-repo|filter-branch|git\s+lfs\s+migrate)", re.I),
+    "TAG_MUTATION": re.compile(r"(?:^|\s)git\s+tag(?:\s|$)", re.I),
+    "MAIN_PUSH": re.compile(r"git\s+push[^\n]*(?:refs/heads/main|HEAD:main)", re.I),
+    "DEPLOYMENT": re.compile(r"(?:vercel\s+(?:deploy|--prod)|npm\s+run\s+deploy|kubectl\s+apply)", re.I),
+}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def hash_path(path: Path) -> str:
+    if not path.exists():
+        return "MISSING"
+    if path.is_file():
+        return sha256(path)
+    digest = hashlib.sha256()
+    for child in sorted(item for item in path.rglob("*") if item.is_file()):
+        digest.update(str(child.relative_to(path)).encode())
+        digest.update(b"\0")
+        digest.update(sha256(child).encode())
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
+def canonical_sha256(value: object) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+
+
+def run(repo: Path, *argv: str) -> subprocess.CompletedProcess[bytes]:
+    return subprocess.run(argv, cwd=repo, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+
+
+def parse_events(path: Path, failures: list[str]) -> list[dict[str, Any]]:
+    events: list[dict[str, Any]] = []
+    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip():
+            failures.append(f"EMPTY_EVENT_LINE:{line_number}")
+            continue
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            failures.append(f"INVALID_EVENT_JSON:{line_number}")
+            continue
+        events.append(event)
+    sequences = [event.get("sequence") for event in events]
+    if sequences != list(range(1, len(events) + 1)):
+        failures.append("NONCONTIGUOUS_EVENT_SEQUENCE")
+    return events
+
+
+def parse_ledger(path: Path, failures: list[str]) -> list[dict[str, str]]:
+    lines = path.read_text(encoding="utf-8").splitlines()
+    if not lines:
+        failures.append("EMPTY_COMMAND_LEDGER")
+        return []
+    header = lines[0].split("\t")
+    expected = [
+        "command_id", "phase_id", "operation_id", "started_utc", "ended_utc", "cwd",
+        "command", "exit_code", "stdout_path", "stderr_path", "meta_path",
+    ]
+    if header != expected:
+        failures.append("COMMAND_LEDGER_HEADER_MISMATCH")
+        return []
+    rows: list[dict[str, str]] = []
+    for line_number, line in enumerate(lines[1:], 2):
+        values = line.split("\t")
+        if len(values) != len(header):
+            failures.append(f"COMMAND_LEDGER_WIDTH:{line_number}")
+            continue
+        rows.append(dict(zip(header, values)))
+    return rows
+
+
+def resolve_recorded(repo: Path, value: str) -> Path:
+    path = Path(value)
+    if path.is_absolute():
+        return path
+    direct = repo / path
+    if direct.exists():
+        return direct
+    return repo / "docs/audits" / path
+
+
+def verify_pinned_interrupted_logger_event(
+    repo: Path,
+    raw: Path,
+    command_id: str,
+    group: list[dict[str, Any]],
+    row_by_command: dict[str, dict[str, str]],
+) -> bool:
+    """Accept one disclosed ENOSPC interruption without inventing completion data."""
+    if command_id != INTERRUPTED_LOGGER_COMMAND_ID:
+        return False
+    if len(group) != 1:
+        return False
+    event = group[0]
+    if canonical_sha256(event) != INTERRUPTED_LOGGER_EVENT_CANONICAL_SHA256:
+        return False
+    expected_event_fields = {
+        "sequence": INTERRUPTED_LOGGER_EVENT_SEQUENCE,
+        "status": "STARTED",
+        "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+        "operation_id": "cp015-db-capture-superseded-diagnostic",
+        "git_sha": "024935e8d0c36cf0c4724b1960c71f28afef6595",
+        "duration_ms": 0,
+    }
+    if any(event.get(key) != value for key, value in expected_event_fields.items()):
+        return False
+    if event.get("output_hashes") != {} or command_id in row_by_command:
+        return False
+    command_dir = raw / "commands"
+    stdout_path = command_dir / f"{command_id}.stdout.log"
+    stderr_path = command_dir / f"{command_id}.stderr.log"
+    meta_path = command_dir / f"{command_id}.meta.json"
+    if (
+        not stdout_path.is_file()
+        or not stderr_path.is_file()
+        or meta_path.exists()
+        or sha256(stdout_path) != EMPTY_SHA256
+        or sha256(stderr_path) != EMPTY_SHA256
+    ):
+        return False
+    diagnostic_path = raw / "parallel-diagnostic-event-ledger-checkpoint015.tsv"
+    if not diagnostic_path.is_file():
+        return False
+    diagnostic_rows = [
+        line.split("\t")
+        for line in diagnostic_path.read_text(encoding="utf-8").splitlines()[1:]
+        if line
+    ]
+    matching_rows = [
+        row for row in diagnostic_rows
+        if len(row) == 8
+        and row[0] == INTERRUPTED_LOGGER_DIAGNOSTIC_ID
+        and row[1] == "2026-08-28T18:45:16Z"
+        and row[3] == "LOGGER_ENOSPC_ZERO_BYTE_PARTIAL_OUTPUTS"
+        and command_id in row[4]
+        and row[6] == "PASS_INTERRUPTED_EVENT_AND_PARTIAL_FILES_PRESERVED_LATER_CAPTURE_REISSUED"
+        and row[7] == "PRESERVED_LOGGER_INFRASTRUCTURE_FAILURE_WITH_PINNED_EXCEPTION_AND_NO_SYNTHETIC_COMPLETION"
+    ]
+    return len(matching_rows) == 1
+
+
+def verify_command_artifact_set(
+    raw: Path,
+    row_by_command: dict[str, dict[str, str]],
+    failures: list[str],
+) -> None:
+    """Reject every ungoverned command artifact except the pinned interruption."""
+    command_dir = raw / "commands"
+    artifact_suffixes: dict[str, set[str]] = {}
+    expected_suffixes = {"stdout.log", "stderr.log", "meta.json"}
+    if not command_dir.is_dir():
+        failures.append("COMMAND_DIRECTORY_MISSING")
+        return
+    pattern = re.compile(r"^(.+)\.(stdout\.log|stderr\.log|meta\.json)$")
+    for path in command_dir.iterdir():
+        if not path.is_file():
+            failures.append(f"COMMAND_DIRECTORY_NONFILE:{path.name}")
+            continue
+        match = pattern.fullmatch(path.name)
+        if match is None:
+            failures.append(f"COMMAND_ARTIFACT_NAME_INVALID:{path.name}")
+            continue
+        artifact_suffixes.setdefault(match.group(1), set()).add(match.group(2))
+    expected_ids = set(row_by_command) | {INTERRUPTED_LOGGER_COMMAND_ID}
+    for command_id in sorted(set(artifact_suffixes) - expected_ids):
+        failures.append(f"ORPHAN_COMMAND_ARTIFACT_ID:{command_id}")
+    for command_id in sorted(expected_ids - set(artifact_suffixes)):
+        failures.append(f"COMMAND_ARTIFACT_ID_MISSING:{command_id}")
+    for command_id, suffixes in sorted(artifact_suffixes.items()):
+        expected = (
+            {"stdout.log", "stderr.log"}
+            if command_id == INTERRUPTED_LOGGER_COMMAND_ID
+            else expected_suffixes
+        )
+        if command_id in expected_ids and suffixes != expected:
+            failures.append(f"COMMAND_ARTIFACT_SUFFIX_SET:{command_id}")
+
+
+def verify_checkpoints(repo: Path, path: Path, failures: list[str]) -> dict[str, Any]:
+    if not path.exists():
+        return {"present": False, "checkpoint_count": 0}
+    lines = path.read_text(encoding="utf-8").splitlines()
+    expected_header = [
+        "checkpoint_id", "phase", "commit_sha", "timestamp_utc", "purpose",
+        "verification_operations", "known_limitations", "next_phase",
+    ]
+    if not lines or lines[0].split("\t") != expected_header:
+        failures.append("CHECKPOINT_LEDGER_HEADER_MISMATCH")
+        return {"present": True, "checkpoint_count": 0}
+    rows = [dict(zip(expected_header, line.split("\t"))) for line in lines[1:] if line]
+    ids = [row["checkpoint_id"] for row in rows]
+    expected_ids = [f"CHECKPOINT-{index:03d}" for index in range(1, len(rows) + 1)]
+    if ids != expected_ids:
+        failures.append("CHECKPOINT_SEQUENCE_MISMATCH")
+    prior: str | None = None
+    for row in rows:
+        commit = row["commit_sha"]
+        if run(repo, "git", "cat-file", "-e", f"{commit}^{{commit}}").returncode:
+            failures.append(f"CHECKPOINT_COMMIT_MISSING:{row['checkpoint_id']}:{commit}")
+            continue
+        if run(repo, "git", "merge-base", "--is-ancestor", SOURCE_SHA, commit).returncode:
+            failures.append(f"CHECKPOINT_NOT_SOURCE_DESCENDANT:{row['checkpoint_id']}")
+        if prior and run(repo, "git", "merge-base", "--is-ancestor", prior, commit).returncode:
+            failures.append(f"CHECKPOINT_ORDER_MISMATCH:{row['checkpoint_id']}")
+        prior = commit
+        if not row["purpose"] or not row["verification_operations"] or not row["next_phase"]:
+            failures.append(f"CHECKPOINT_REQUIRED_FIELD_EMPTY:{row['checkpoint_id']}")
+    return {"present": True, "checkpoint_count": len(rows), "checkpoint_ids": ids}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--repo", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    repo = args.repo.resolve()
+    raw = repo / RAW_REL
+    events_path = raw / "execution-events.jsonl"
+    ledger_path = raw / "command-ledger.tsv"
+    output_path = args.output if args.output.is_absolute() else repo / args.output
+    failures: list[str] = []
+    warnings: list[str] = []
+    if not events_path.exists():
+        failures.append("EVENT_STREAM_MISSING")
+        events: list[dict[str, Any]] = []
+    else:
+        events = parse_events(events_path, failures)
+    rows = parse_ledger(ledger_path, failures) if ledger_path.exists() else []
+    if not ledger_path.exists():
+        failures.append("COMMAND_LEDGER_MISSING")
+
+    row_by_command = {row["command_id"]: row for row in rows}
+    if len(row_by_command) != len(rows):
+        failures.append("DUPLICATE_COMMAND_LEDGER_ID")
+    verify_command_artifact_set(raw, row_by_command, failures)
+    event_groups: dict[str, list[dict[str, Any]]] = {}
+    legacy_events: list[dict[str, Any]] = []
+    for event in events:
+        command_id = event.get("command_id")
+        if command_id:
+            event_groups.setdefault(str(command_id), []).append(event)
+        else:
+            legacy_events.append(event)
+        command = str(event.get("command", ""))
+        for code, pattern in FORBIDDEN_COMMAND_PATTERNS.items():
+            if pattern.search(command):
+                failures.append(f"FORBIDDEN_COMMAND:{code}:{event.get('sequence')}")
+
+    if legacy_events:
+        if len(legacy_events) != 2 or [event.get("sequence") for event in legacy_events] != [1, 2]:
+            failures.append("UNEXPECTED_LEGACY_EVENT_SHAPE")
+        elif (
+            legacy_events[0].get("status") != "STARTED"
+            or legacy_events[1].get("status") not in {"PASS", "FAIL"}
+            or legacy_events[0].get("operation_id") != legacy_events[1].get("operation_id")
+            or legacy_events[0].get("command") != legacy_events[1].get("command")
+        ):
+            failures.append("LEGACY_BOOTSTRAP_EVENT_PAIR_MISMATCH")
+        else:
+            warnings.append("LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2")
+
+    for command_id, group in event_groups.items():
+        ordered = sorted(group, key=lambda event: int(event.get("sequence", 0)))
+        if len(ordered) != 2:
+            if verify_pinned_interrupted_logger_event(
+                repo, raw, command_id, ordered, row_by_command
+            ):
+                warnings.append(
+                    "PINNED_INTERRUPTED_LOGGER_ENOSPC_EVENT_PRESERVED=" + command_id
+                )
+                continue
+            failures.append(f"EVENT_PAIR_COUNT:{command_id}:{len(ordered)}")
+            continue
+        start, finish = ordered
+        if start.get("status") != "STARTED" or finish.get("status") not in {"PASS", "FAIL"}:
+            failures.append(f"EVENT_PAIR_STATUS:{command_id}")
+        for key in ["phase_id", "operation_id", "command", "cwd", "input_paths", "input_hashes"]:
+            if start.get(key) != finish.get(key):
+                failures.append(f"EVENT_PAIR_FIELD:{command_id}:{key}")
+        if command_id not in row_by_command:
+            failures.append(f"EVENT_WITHOUT_LEDGER_ROW:{command_id}")
+
+    meta_ids: set[str] = set()
+    for row in rows:
+        command_id = row["command_id"]
+        meta_path = resolve_recorded(repo, row["meta_path"])
+        stdout_path = resolve_recorded(repo, row["stdout_path"])
+        stderr_path = resolve_recorded(repo, row["stderr_path"])
+        for label, path in [("META", meta_path), ("STDOUT", stdout_path), ("STDERR", stderr_path)]:
+            if not path.is_file():
+                failures.append(f"{label}_MISSING:{command_id}:{path}")
+        if not meta_path.is_file():
+            continue
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        meta_ids.add(str(meta.get("command_id")))
+        if meta.get("command_id") != command_id:
+            failures.append(f"META_COMMAND_ID:{command_id}")
+        if str(meta.get("exit_code")) != row["exit_code"]:
+            failures.append(f"META_EXIT_CODE:{command_id}")
+        if stdout_path.is_file() and meta.get("stdout_sha256") != sha256(stdout_path):
+            failures.append(f"STDOUT_HASH:{command_id}")
+        if stderr_path.is_file() and meta.get("stderr_sha256") != sha256(stderr_path):
+            failures.append(f"STDERR_HASH:{command_id}")
+    if meta_ids != set(row_by_command):
+        failures.append("META_LEDGER_ID_SET_MISMATCH")
+
+    # Paths in the event stream are resolved from each command's recorded cwd,
+    # not from the primary checkout.  CP16 deliberately ran many commands in a
+    # detached reproduction worktree, so treating every relative path as
+    # primary-repository-relative conflates independent artifacts.  A later
+    # PASS input hash is also a valid terminal observation of a file that was
+    # intentionally edited between logged writer events (for example, the
+    # active-script allowlist consumed by the final hygiene gate).
+    latest_observation: dict[Path, dict[str, Any]] = {}
+    for event in events:
+        if event.get("status") == "PASS":
+            cwd = Path(str(event.get("cwd", repo))).resolve()
+            observations = (
+                ("INPUT", event.get("input_hashes", {})),
+                ("OUTPUT", event.get("output_hashes", {})),
+            )
+            for source, values in observations:
+                for raw_path, digest in values.items():
+                    path = Path(raw_path)
+                    if not path.is_absolute():
+                        path = cwd / path
+                    path = path.resolve()
+                    # Inputs are terminal observations only for a path that a
+                    # prior governed command declared as an output.  This
+                    # permits a later verification gate to attest an
+                    # intentional edit without turning every historical input
+                    # into a false immutability promise.
+                    if source == "INPUT" and path not in latest_observation:
+                        continue
+                    if digest == "MISSING":
+                        for prior in list(latest_observation):
+                            if prior != path and path in prior.parents:
+                                del latest_observation[prior]
+                    latest_observation[path] = {
+                        "digest": digest,
+                        "sequence": event.get("sequence"),
+                        "source": source,
+                        "recorded_path": raw_path,
+                    }
+            # `git worktree remove` is itself a deterministic terminal writer:
+            # a successful command guarantees that its exact worktree root no
+            # longer exists even when an older logger invocation omitted that
+            # path from `--output`.  Model only this narrowly parsed Git form.
+            try:
+                command_tokens = shlex.split(str(event.get("command", "")))
+            except ValueError:
+                command_tokens = []
+            if (
+                len(command_tokens) in {4, 5}
+                and command_tokens[:3] == ["git", "worktree", "remove"]
+                and (len(command_tokens) == 4 or command_tokens[3] == "--force")
+            ):
+                raw_removed = command_tokens[-1]
+                removed = Path(raw_removed)
+                if not removed.is_absolute():
+                    removed = cwd / removed
+                removed = removed.resolve()
+                for prior in list(latest_observation):
+                    if prior != removed and removed in prior.parents:
+                        del latest_observation[prior]
+                latest_observation[removed] = {
+                    "digest": "MISSING",
+                    "sequence": event.get("sequence"),
+                    "source": "INFERRED_PASS_WORKTREE_REMOVE",
+                    "recorded_path": raw_removed,
+                }
+    for path, observation in latest_observation.items():
+        actual = hash_path(path)
+        if actual != observation["digest"]:
+            failures.append(
+                "LATEST_OBSERVATION_HASH:"
+                f"{observation['sequence']}:{observation['source']}:"
+                f"{observation['recorded_path']}:{path}"
+            )
+
+    checkpoint_result = verify_checkpoints(repo, raw / "checkpoint-ledger.tsv", failures)
+    result = {
+        "schema_version": "trace-round16b-execution-log-verification/v1",
+        "source_sha": SOURCE_SHA,
+        "event_count": len(events),
+        "command_count": len(rows),
+        "started_event_count": sum(event.get("status") == "STARTED" for event in events),
+        "pass_event_count": sum(event.get("status") == "PASS" for event in events),
+        "fail_event_count": sum(event.get("status") == "FAIL" for event in events),
+        "legacy_event_count": len(legacy_events),
+        "checkpoint_verification": checkpoint_result,
+        "warning_codes": sorted(set(warnings)),
+        "failure_codes": sorted(set(failures)),
+        "status": "PASS" if not failures else "FAIL",
+    }
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(json.dumps({"status": result["status"], "event_count": len(events), "failure_count": len(result["failure_codes"])}, sort_keys=True))
+    return 0 if not failures else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

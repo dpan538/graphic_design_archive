@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-association-calibration"
+  ],
+  "command": "npm --prefix frontend run test:exploration-association-calibration",
+  "command_id": "1787940881682-cp014-regress-exploration-association-calibration",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 458,
+  "end_timestamp_utc": "2026-08-28T18:14:42Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-regress-exploration-association-calibration",
+  "phase_id": "CHECKPOINT-014-FRONTEND-GUARD-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:14:41Z",
+  "stderr_sha256": "03f87b2c7032be7a502c251bef6f68e6ed365a7d478c1cbbb2756ea22cbda504",
+  "stdout_sha256": "bf7b561e9a38170a65221bb68c295fa52c13fda0a0ee7d6ea5a8eef6c75d089c",
+  "timed_out": false
+}

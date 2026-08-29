@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_v3_production_http_checkpoint016_independent.py",
+    "--repo",
+    "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+    "--output-dir",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint016-final",
+    "--output",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_v3_production_http_checkpoint016_independent.py --repo /private/tmp/gda_round16b_cp016_clean_repro_d40ec811 --output-dir /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint016-final --output /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json",
+  "command_id": "1787946366248-cp016-http-verify-independent-correction2",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 72,
+  "end_timestamp_utc": "2026-08-28T19:46:06Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-http-verify-independent-correction2",
+  "phase_id": "CHECKPOINT-016-FRONTEND-AND-HTTP-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:46:06Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "109df184e19d5ddecf85b446304ef61d23dbb3f2386a2eee4802ffb72cdf503d",
+  "timed_out": false
+}

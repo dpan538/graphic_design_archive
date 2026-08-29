@@ -1,0 +1,869 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace-exploration.example/schemas/trace/exploration/v2/common.schema.json",
+  "title": "TRACE Exploration API v2 common contract",
+  "$defs": {
+    "Identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "Sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "GitCommit": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"
+    },
+    "DatabaseSnapshot": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "CategoryId": {
+      "type": "string",
+      "enum": ["region", "theme", "medium", "movement"]
+    },
+    "Action": {
+      "type": "string",
+      "enum": [
+        "SELECT_CATEGORY",
+        "FOCUS_NODE",
+        "EXPAND_NODE",
+        "COLLAPSE_NODE",
+        "MOVE_FOCUS",
+        "SELECT_COMPOSITION",
+        "RESET_CATEGORY",
+        "EXPORT_CURRENT_STATE"
+      ]
+    },
+    "Theme": {
+      "type": "string",
+      "enum": ["neutral-v1", "neutral-contrast-v1"]
+    },
+    "ExportPreset": {
+      "type": "string",
+      "const": "portrait_card"
+    },
+    "DatabaseRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "database_snapshot_id",
+        "database_schema_version",
+        "database_content_sha256",
+        "database_identity_sha256",
+        "release_id",
+        "source_sha"
+      ],
+      "properties": {
+        "database_snapshot_id": { "const": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e" },
+        "database_schema_version": { "const": 49 },
+        "database_content_sha256": { "const": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e" },
+        "database_identity_sha256": { "const": "ec21af8af43b1fb9d661a18ac9b0223f561d28b06176deba78849d60535a2d3c" },
+        "release_id": { "const": "v49" },
+        "source_sha": { "const": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e" },
+        "production_read_model_sha256": { "$ref": "#/$defs/Sha256" }
+      }
+    },
+    "CategoryRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category_id",
+        "category_entry_id",
+        "label",
+        "entry_label",
+        "description",
+        "composition_ids",
+        "initial_state_id"
+      ],
+      "properties": {
+        "category_id": { "$ref": "#/$defs/CategoryId" },
+        "category_entry_id": { "$ref": "#/$defs/Identifier" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "entry_label": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "composition_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "initial_state_id": { "$ref": "#/$defs/Identifier" }
+      }
+    },
+    "CategoryDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category_id", "category_entry_id", "label", "composition_ids", "initial_state_id"],
+      "properties": {
+        "category_id": { "$ref": "#/$defs/CategoryId" },
+        "category_entry_id": { "$ref": "#/$defs/Identifier" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "entry_label": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "composition_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "initial_state_id": { "$ref": "#/$defs/Identifier" }
+      }
+    },
+    "VocabularyRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vocabulary_id",
+        "canonical_label",
+        "attested_forms",
+        "language",
+        "scope_note",
+        "ambiguity_note",
+        "activation_status"
+      ],
+      "properties": {
+        "vocabulary_id": { "$ref": "#/$defs/Identifier" },
+        "canonical_label": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "attested_forms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "language": { "type": "string", "const": "en" },
+        "scope_note": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "ambiguity_note": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "activation_status": { "type": "string", "minLength": 1, "maxLength": 80 }
+      }
+    },
+    "VocabularyDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vocabulary_id", "canonical_label", "attested_forms", "language"],
+      "properties": {
+        "vocabulary_id": { "$ref": "#/$defs/Identifier" },
+        "canonical_label": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "attested_forms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "language": { "type": "string", "const": "en" },
+        "scope_note": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "ambiguity_note": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "activation_status": { "type": "string", "minLength": 1, "maxLength": 80 }
+      }
+    },
+    "AssociationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "association_id",
+        "endpoint_vocabulary_ids",
+        "endpoint_labels",
+        "support_status",
+        "strength",
+        "confidence",
+        "generic_association_only",
+        "association_accessible_description",
+        "explicit_non_claims"
+      ],
+      "properties": {
+        "association_id": { "$ref": "#/$defs/Identifier" },
+        "endpoint_vocabulary_ids": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "endpoint_labels": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "support_status": {
+          "type": "string",
+          "enum": ["ACTIVE_EXTERNALLY_SUPPORTED", "ACTIVE_SOURCE_SUPPORTED"]
+        },
+        "strength": { "type": "string", "minLength": 1 },
+        "confidence": { "type": "string", "minLength": 1 },
+        "generic_association_only": { "const": true },
+        "association_accessible_description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "explicit_non_claims": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 100 }
+        }
+      }
+    },
+    "AssociationDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "association_id",
+        "endpoint_vocabulary_ids",
+        "endpoint_labels",
+        "support_status",
+        "generic_association_only",
+        "association_accessible_description",
+        "explicit_non_claims"
+      ],
+      "properties": {
+        "association_id": { "$ref": "#/$defs/Identifier" },
+        "endpoint_vocabulary_ids": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "endpoint_labels": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "support_status": {
+          "type": "string",
+          "enum": ["ACTIVE_EXTERNALLY_SUPPORTED", "ACTIVE_SOURCE_SUPPORTED"]
+        },
+        "strength": { "type": ["string", "number"] },
+        "confidence": { "type": ["string", "number"] },
+        "generic_association_only": { "const": true },
+        "association_accessible_description": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "explicit_non_claims": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 100 }
+        }
+      }
+    },
+    "Composition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "composition_id",
+        "category_entry_id",
+        "seed_id",
+        "seed_node_id",
+        "node_ids",
+        "association_ids",
+        "topology_family",
+        "semantic_hash",
+        "label",
+        "description"
+      ],
+      "properties": {
+        "composition_id": { "$ref": "#/$defs/Identifier" },
+        "category_entry_id": { "$ref": "#/$defs/Identifier" },
+        "seed_id": { "$ref": "#/$defs/Identifier" },
+        "seed_node_id": { "$ref": "#/$defs/Identifier" },
+        "node_ids": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "association_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "topology_family": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "semantic_hash": { "$ref": "#/$defs/Sha256" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 1000 }
+      }
+    },
+    "State": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state_id",
+        "state_hash",
+        "category_entry_id",
+        "composition_id",
+        "seed_id",
+        "focused_node_id",
+        "expanded_node_ids",
+        "visible_node_ids",
+        "visible_association_ids",
+        "available_actions",
+        "semantic_hash",
+        "presentation_hash",
+        "database_snapshot"
+      ],
+      "properties": {
+        "state_id": { "$ref": "#/$defs/Identifier" },
+        "state_hash": { "$ref": "#/$defs/Sha256" },
+        "category_entry_id": { "$ref": "#/$defs/Identifier" },
+        "composition_id": { "$ref": "#/$defs/Identifier" },
+        "seed_id": { "$ref": "#/$defs/Identifier" },
+        "focused_node_id": { "$ref": "#/$defs/Identifier" },
+        "expanded_node_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "visible_node_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "visible_association_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "available_actions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Action" }
+        },
+        "semantic_hash": { "$ref": "#/$defs/Sha256" },
+        "presentation_hash": { "$ref": "#/$defs/Sha256" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" }
+      }
+    },
+    "Position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normalised_x", "normalised_y"],
+      "properties": {
+        "normalised_x": { "type": "number", "minimum": 0, "maximum": 1 },
+        "normalised_y": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "MapNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vocabulary_id",
+        "canonical_label",
+        "attested_forms",
+        "language",
+        "focused",
+        "expanded",
+        "position"
+      ],
+      "properties": {
+        "vocabulary_id": { "$ref": "#/$defs/Identifier" },
+        "canonical_label": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "attested_forms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "language": { "type": "string", "const": "en" },
+        "scope_note": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "ambiguity_note": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "activation_status": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "focused": { "type": "boolean" },
+        "expanded": { "type": "boolean" },
+        "position": { "$ref": "#/$defs/Position" }
+      }
+    },
+    "PlainTextTree": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tree_version",
+        "composition_id",
+        "root_node_id",
+        "tree_node_ids",
+        "tree_association_ids",
+        "visible_association_ids",
+        "plain_text_tree",
+        "plain_text_tree_ascii"
+      ],
+      "properties": {
+        "tree_version": { "const": "trace-exploration-plain-text-tree-v2" },
+        "composition_id": { "$ref": "#/$defs/Identifier" },
+        "root_node_id": { "$ref": "#/$defs/Identifier" },
+        "tree_node_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "tree_association_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "visible_association_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/Identifier" }
+        },
+        "plain_text_tree": { "type": "string", "minLength": 1, "maxLength": 5000 },
+        "plain_text_tree_ascii": { "type": "string", "minLength": 1, "maxLength": 5000 }
+      }
+    },
+    "MapRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category_id"],
+      "properties": {
+        "category_id": { "$ref": "#/$defs/CategoryId" },
+        "category_entry_id": { "$ref": "#/$defs/Identifier" },
+        "locale": { "const": "en" }
+      }
+    },
+    "ActionRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "expected_state_hash"],
+      "properties": {
+        "action": { "$ref": "#/$defs/Action" },
+        "target_id": { "$ref": "#/$defs/Identifier" },
+        "expected_state_hash": { "$ref": "#/$defs/Sha256" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" }
+      }
+    },
+    "ExportRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["map_id", "state_hash", "composition_id", "export_preset", "theme_token_set"],
+      "properties": {
+        "map_id": { "$ref": "#/$defs/Identifier" },
+        "state_hash": { "$ref": "#/$defs/Sha256" },
+        "composition_id": { "$ref": "#/$defs/Identifier" },
+        "export_preset": { "$ref": "#/$defs/ExportPreset" },
+        "theme_token_set": { "$ref": "#/$defs/Theme" }
+      }
+    },
+    "MapResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "api_version",
+        "database_snapshot",
+        "map_id",
+        "is_initial_state",
+        "category",
+        "state",
+        "composition",
+        "nodes",
+        "associations",
+        "plain_text_tree",
+        "map_summary"
+      ],
+      "properties": {
+        "api_version": { "const": "trace-exploration/v2" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" },
+        "map_id": { "$ref": "#/$defs/Identifier" },
+        "is_initial_state": { "type": "boolean" },
+        "category": { "$ref": "#/$defs/CategoryDto" },
+        "state": { "$ref": "#/$defs/State" },
+        "composition": { "$ref": "#/$defs/Composition" },
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": { "$ref": "#/$defs/MapNode" }
+        },
+        "associations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/AssociationDto" }
+        },
+        "plain_text_tree": { "$ref": "#/$defs/PlainTextTree" },
+        "map_summary": { "type": "string", "minLength": 1, "maxLength": 1000 }
+      }
+    },
+    "CategoriesResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["api_version", "database_snapshot", "categories"],
+      "properties": {
+        "api_version": { "const": "trace-exploration/v2" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" },
+        "categories": {
+          "type": "array",
+          "minItems": 81,
+          "maxItems": 81,
+          "items": { "$ref": "#/$defs/CategoryDto" }
+        }
+      }
+    },
+    "CapabilitiesResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "api_version",
+        "database_snapshot",
+        "category_count",
+        "category_entry_count",
+        "vocabulary_count",
+        "association_count",
+        "composition_count",
+        "state_count",
+        "transition_count",
+        "maximum_visible_nodes",
+        "supported_actions",
+        "topology_families",
+        "export"
+      ],
+      "properties": {
+        "api_version": { "const": "trace-exploration/v2" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" },
+        "category_count": { "type": "integer", "const": 4 },
+        "category_entry_count": { "const": 81 },
+        "vocabulary_count": { "const": 31 },
+        "association_count": { "const": 21 },
+        "composition_count": { "const": 228 },
+        "state_count": { "const": 5760 },
+        "transition_count": { "const": 749944 },
+        "maximum_visible_nodes": { "const": 8 },
+        "supported_actions": {
+          "const": [
+            "SELECT_CATEGORY",
+            "FOCUS_NODE",
+            "EXPAND_NODE",
+            "COLLAPSE_NODE",
+            "MOVE_FOCUS",
+            "SELECT_COMPOSITION",
+            "RESET_CATEGORY",
+            "EXPORT_CURRENT_STATE"
+          ]
+        },
+        "topology_families": {
+          "const": [
+            "BINARY_CONVERGENCE",
+            "BINARY_FORK",
+            "LINEAR_PATH"
+          ]
+        },
+        "export": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["presets", "theme_token_sets", "width", "height"],
+          "properties": {
+            "presets": {
+              "type": "array",
+              "const": ["portrait_card"]
+            },
+            "theme_token_sets": { "const": ["neutral-v1", "neutral-contrast-v1"] },
+            "width": { "const": 1080 },
+            "height": { "const": 1620 }
+          }
+        }
+      }
+    },
+    "VocabularyResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["api_version", "database_snapshot", "vocabulary"],
+      "properties": {
+        "api_version": { "const": "trace-exploration/v2" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" },
+        "vocabulary": { "$ref": "#/$defs/VocabularyDto" }
+      }
+    },
+    "AssociationResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["api_version", "database_snapshot", "association"],
+      "properties": {
+        "api_version": { "const": "trace-exploration/v2" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" },
+        "association": { "$ref": "#/$defs/AssociationDto" }
+      }
+    },
+    "ExportManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_version",
+        "api_version",
+        "render_version",
+        "export_id",
+        "database_snapshot",
+        "map_id",
+        "state_id",
+        "state_hash",
+        "category_entry_id",
+        "composition_id",
+        "seed_id",
+        "export_preset",
+        "theme_token_set",
+        "dimensions",
+        "category",
+        "nodes",
+        "associations",
+        "plain_text_tree",
+        "node_count",
+        "association_count",
+        "provenance_summary",
+        "semantic_hash",
+        "presentation_hash",
+        "export_alt_text",
+        "suggested_filename"
+      ],
+      "properties": {
+        "manifest_version": { "const": "trace-exploration-export-manifest-v2" },
+        "api_version": { "const": "trace-exploration/v2" },
+        "render_version": { "const": "trace-exploration-portrait-png-v2" },
+        "export_id": { "type": "string", "pattern": "^TEV2-[0-9a-f]{24}$" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" },
+        "map_id": { "$ref": "#/$defs/Identifier" },
+        "state_id": { "$ref": "#/$defs/Identifier" },
+        "state_hash": { "$ref": "#/$defs/Sha256" },
+        "category_entry_id": { "$ref": "#/$defs/Identifier" },
+        "composition_id": { "$ref": "#/$defs/Identifier" },
+        "seed_id": { "$ref": "#/$defs/Identifier" },
+        "export_preset": { "$ref": "#/$defs/ExportPreset" },
+        "theme_token_set": { "$ref": "#/$defs/Theme" },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["width", "height"],
+          "properties": {
+            "width": { "const": 1080 },
+            "height": { "const": 1620 }
+          }
+        },
+        "category": { "$ref": "#/$defs/CategoryDto" },
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": { "$ref": "#/$defs/MapNode" }
+        },
+        "associations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/AssociationDto" }
+        },
+        "plain_text_tree": { "$ref": "#/$defs/PlainTextTree" },
+        "node_count": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "association_count": { "type": "integer", "minimum": 0 },
+        "provenance_summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "association_count",
+            "externally_supported_count",
+            "source_supported_count",
+            "generic_association_only",
+            "source_locators_withheld_from_public_export"
+          ],
+          "properties": {
+            "association_count": { "type": "integer", "minimum": 0 },
+            "externally_supported_count": { "type": "integer", "minimum": 0 },
+            "source_supported_count": { "type": "integer", "minimum": 0 },
+            "generic_association_only": { "const": true },
+            "source_locators_withheld_from_public_export": { "const": true }
+          }
+        },
+        "semantic_hash": { "$ref": "#/$defs/Sha256" },
+        "presentation_hash": { "$ref": "#/$defs/Sha256" },
+        "export_alt_text": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "suggested_filename": {
+          "type": "string",
+          "pattern": "^trace-exploration-[a-z0-9_-]+-[0-9a-f]{12}-neutral(?:-contrast)?-v1\\.png$",
+          "maxLength": 180
+        }
+      }
+    },
+    "ErrorDisposition": {
+      "oneOf": [
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INVALID_REQUEST" }, "status": { "const": 400 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INVALID_ACTION" }, "status": { "const": 400 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INVALID_EXPORT_PRESET" }, "status": { "const": 400 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INVALID_CATEGORY" }, "status": { "const": 404 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INVALID_CATEGORY_ENTRY" }, "status": { "const": 404 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INVALID_VOCABULARY" }, "status": { "const": 404 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INVALID_ASSOCIATION" }, "status": { "const": 404 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "STATE_NOT_FOUND" }, "status": { "const": 404 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "METHOD_NOT_ALLOWED" }, "status": { "const": 405 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "ACTION_NOT_AVAILABLE" }, "status": { "const": 409 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "STALE_EXPLORATION_STATE" }, "status": { "const": 409 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "STATE_DATABASE_VERSION_MISMATCH" }, "status": { "const": 409 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "NO_EXPORTABLE_COMPOSITION" }, "status": { "const": 409 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "REQUEST_LIMIT_EXCEEDED" }, "status": { "const": 413 }, "retryable": { "const": false } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "RENDER_CAPACITY_EXCEEDED" }, "status": { "const": 503 }, "retryable": { "const": true } } },
+        { "required": ["code", "status", "retryable"], "properties": { "code": { "const": "INTERNAL_DATA_INTEGRITY_FAILURE" }, "status": { "const": 503 }, "retryable": { "const": true } } }
+      ]
+    },
+    "ApiError": {
+      "type": "object",
+      "additionalProperties": false,
+      "allOf": [{ "$ref": "#/$defs/ErrorDisposition" }],
+      "required": [
+        "schema_version",
+        "api_version",
+        "code",
+        "message",
+        "status",
+        "retryable",
+        "instance",
+        "database_snapshot"
+      ],
+      "properties": {
+        "schema_version": { "const": "trace-exploration-api-error-v2" },
+        "api_version": { "const": "trace-exploration/v2" },
+        "code": {
+          "type": "string",
+          "enum": [
+            "ACTION_NOT_AVAILABLE",
+            "INTERNAL_DATA_INTEGRITY_FAILURE",
+            "INVALID_ACTION",
+            "INVALID_ASSOCIATION",
+            "INVALID_CATEGORY",
+            "INVALID_CATEGORY_ENTRY",
+            "INVALID_EXPORT_PRESET",
+            "INVALID_REQUEST",
+            "INVALID_VOCABULARY",
+            "METHOD_NOT_ALLOWED",
+            "NO_EXPORTABLE_COMPOSITION",
+            "RENDER_CAPACITY_EXCEEDED",
+            "REQUEST_LIMIT_EXCEEDED",
+            "STALE_EXPLORATION_STATE",
+            "STATE_DATABASE_VERSION_MISMATCH",
+            "STATE_NOT_FOUND"
+          ]
+        },
+        "message": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "status": { "type": "integer", "minimum": 400, "maximum": 599 },
+        "retryable": { "type": "boolean" },
+        "instance": { "const": "/api/trace/v2/exploration" },
+        "database_snapshot": { "$ref": "#/$defs/DatabaseSnapshot" }
+      }
+    },
+    "ProductionCapabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "api_version",
+        "category_count",
+        "category_entry_count",
+        "vocabulary_count",
+        "association_count",
+        "topology_composition_count",
+        "production_composition_count",
+        "state_count",
+        "transition_count",
+        "workflow_count",
+        "export_variant_count",
+        "actions",
+        "themes",
+        "export_presets",
+        "maximum_node_count",
+        "generic_association_only"
+      ],
+      "properties": {
+        "api_version": { "const": "trace-exploration/v2" },
+        "category_count": { "const": 4 },
+        "category_entry_count": { "const": 81 },
+        "vocabulary_count": { "const": 31 },
+        "association_count": { "const": 21 },
+        "topology_composition_count": { "const": 81 },
+        "production_composition_count": { "const": 228 },
+        "state_count": { "const": 5760 },
+        "transition_count": { "const": 749944 },
+        "workflow_count": { "const": 5760 },
+        "export_variant_count": { "const": 11520 },
+        "actions": {
+          "type": "array",
+          "const": [
+            "SELECT_CATEGORY",
+            "FOCUS_NODE",
+            "EXPAND_NODE",
+            "COLLAPSE_NODE",
+            "MOVE_FOCUS",
+            "SELECT_COMPOSITION",
+            "RESET_CATEGORY",
+            "EXPORT_CURRENT_STATE"
+          ]
+        },
+        "themes": { "type": "array", "const": ["neutral-v1", "neutral-contrast-v1"] },
+        "export_presets": { "type": "array", "const": ["portrait_card"] },
+        "maximum_node_count": { "const": 8 },
+        "generic_association_only": { "const": true }
+      }
+    },
+    "ProductionReadModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "database",
+        "categories",
+        "vocabulary",
+        "associations",
+        "compositions",
+        "states",
+        "states_by_hash",
+        "transitions",
+        "capabilities"
+      ],
+      "properties": {
+        "database": { "$ref": "#/$defs/DatabaseRecord" },
+        "categories": {
+          "type": "array",
+          "minItems": 81,
+          "maxItems": 81,
+          "items": { "$ref": "#/$defs/CategoryRecord" }
+        },
+        "vocabulary": {
+          "type": "array",
+          "minItems": 31,
+          "maxItems": 31,
+          "items": { "$ref": "#/$defs/VocabularyRecord" }
+        },
+        "associations": {
+          "type": "array",
+          "minItems": 21,
+          "maxItems": 21,
+          "items": { "$ref": "#/$defs/AssociationRecord" }
+        },
+        "compositions": {
+          "type": "object",
+          "minProperties": 228,
+          "maxProperties": 228,
+          "propertyNames": { "$ref": "#/$defs/Identifier" },
+          "additionalProperties": { "$ref": "#/$defs/Composition" }
+        },
+        "states": {
+          "type": "object",
+          "minProperties": 5760,
+          "maxProperties": 5760,
+          "propertyNames": { "$ref": "#/$defs/Identifier" },
+          "additionalProperties": { "$ref": "#/$defs/State" }
+        },
+        "states_by_hash": {
+          "type": "object",
+          "minProperties": 5760,
+          "maxProperties": 5760,
+          "propertyNames": { "$ref": "#/$defs/Sha256" },
+          "additionalProperties": { "$ref": "#/$defs/Identifier" }
+        },
+        "transitions": { "$ref": "#/$defs/TransitionDerivation" },
+        "capabilities": { "$ref": "#/$defs/ProductionCapabilities" }
+      }
+    },
+    "TransitionDerivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["derivation_version", "key_format", "transition_count"],
+      "properties": {
+        "derivation_version": { "const": "trace-exploration-derived-transitions-v2" },
+        "key_format": { "const": "state_hash|action|target" },
+        "transition_count": { "const": 749944 }
+      }
+    }
+  }
+}

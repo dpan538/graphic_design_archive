@@ -1,0 +1,392 @@
+{
+  "$defs": {
+    "concept": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "lifecycle_state": {
+                "const": "ACTIVE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "association_eligible": {
+                "const": true
+              },
+              "authority": {
+                "properties": {
+                  "authority_state": {
+                    "const": "FINAL"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "realm": {
+                "const": "PRODUCTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "authority": {
+                "properties": {
+                  "authority_kind": {
+                    "enum": [
+                      "RESEARCH_REVIEW",
+                      "EXTERNAL_HUMAN_REVIEW"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "else": {
+            "properties": {
+              "product_eligibility_disposition": {
+                "enum": [
+                  "INELIGIBLE",
+                  "DEFERRED",
+                  "NOT_APPLICABLE_SYNTHETIC"
+                ]
+              },
+              "product_ineligibility_reason": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "product_path": {
+                "const": null
+              }
+            }
+          },
+          "if": {
+            "properties": {
+              "product_eligible": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "association_eligible": {
+                "const": true
+              },
+              "lifecycle_state": {
+                "const": "ACTIVE"
+              },
+              "product_eligibility_disposition": {
+                "const": "ELIGIBLE"
+              },
+              "product_ineligibility_reason": {
+                "const": null
+              },
+              "product_path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "realm": {
+                "const": "PRODUCTION"
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "association_eligible": {
+          "type": "boolean"
+        },
+        "authority": {
+          "$ref": "common.schema.json#/$defs/governedAuthority"
+        },
+        "canonical_label": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "concept_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "lifecycle_state": {
+          "enum": [
+            "INQUIRY_ONLY",
+            "INACTIVE",
+            "ACTIVE",
+            "REJECTED"
+          ],
+          "type": "string"
+        },
+        "product_eligibility_disposition": {
+          "enum": [
+            "ELIGIBLE",
+            "INELIGIBLE",
+            "DEFERRED",
+            "NOT_APPLICABLE_SYNTHETIC"
+          ],
+          "type": "string"
+        },
+        "product_eligible": {
+          "type": "boolean"
+        },
+        "product_ineligibility_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "product_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "realm": {
+          "enum": [
+            "PRODUCTION",
+            "SYNTHETIC_CONTROL"
+          ],
+          "type": "string"
+        },
+        "semantic_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "semantic_version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "concept_id",
+        "realm",
+        "canonical_label",
+        "semantic_version",
+        "lifecycle_state",
+        "association_eligible",
+        "authority",
+        "product_eligible",
+        "product_path",
+        "product_eligibility_disposition",
+        "product_ineligibility_reason",
+        "semantic_sha256"
+      ],
+      "type": "object"
+    },
+    "conceptSense": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "lifecycle_state": {
+                "const": "ACTIVE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "association_eligible": {
+                "const": true
+              },
+              "authority": {
+                "properties": {
+                  "authority_state": {
+                    "const": "FINAL"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "realm": {
+                "const": "PRODUCTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "authority": {
+                "properties": {
+                  "authority_kind": {
+                    "enum": [
+                      "RESEARCH_REVIEW",
+                      "EXTERNAL_HUMAN_REVIEW"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "else": {
+            "properties": {
+              "product_eligibility_disposition": {
+                "enum": [
+                  "INELIGIBLE",
+                  "DEFERRED",
+                  "NOT_APPLICABLE_SYNTHETIC"
+                ]
+              },
+              "product_ineligibility_reason": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "product_path": {
+                "const": null
+              }
+            }
+          },
+          "if": {
+            "properties": {
+              "product_eligible": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "association_eligible": {
+                "const": true
+              },
+              "lifecycle_state": {
+                "const": "ACTIVE"
+              },
+              "product_eligibility_disposition": {
+                "const": "ELIGIBLE"
+              },
+              "product_ineligibility_reason": {
+                "const": null
+              },
+              "product_path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "realm": {
+                "const": "PRODUCTION"
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "association_eligible": {
+          "type": "boolean"
+        },
+        "authority": {
+          "$ref": "common.schema.json#/$defs/governedAuthority"
+        },
+        "bounded_definition": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "concept_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "governed_scope_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "lifecycle_state": {
+          "enum": [
+            "INQUIRY_ONLY",
+            "INACTIVE",
+            "ACTIVE",
+            "REJECTED"
+          ],
+          "type": "string"
+        },
+        "product_eligibility_disposition": {
+          "enum": [
+            "ELIGIBLE",
+            "INELIGIBLE",
+            "DEFERRED",
+            "NOT_APPLICABLE_SYNTHETIC"
+          ],
+          "type": "string"
+        },
+        "product_eligible": {
+          "type": "boolean"
+        },
+        "product_ineligibility_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "product_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "realm": {
+          "enum": [
+            "PRODUCTION",
+            "SYNTHETIC_CONTROL"
+          ],
+          "type": "string"
+        },
+        "semantic_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "semantic_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sense_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "vocabulary_crosswalk_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "sense_id",
+        "concept_id",
+        "realm",
+        "bounded_definition",
+        "vocabulary_crosswalk_ids",
+        "governed_scope_ids",
+        "semantic_version",
+        "lifecycle_state",
+        "association_eligible",
+        "authority",
+        "product_eligible",
+        "product_path",
+        "product_eligibility_disposition",
+        "product_ineligibility_reason",
+        "semantic_sha256"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://trace.example/schemas/exploration/v3/concept.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRACE Exploration v3 governed vocabulary concepts and bounded senses"
+}

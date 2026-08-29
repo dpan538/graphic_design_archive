@@ -1,0 +1,37 @@
+{
+  "argv": [
+    "node",
+    "frontend/scripts/validate-trace-exploration-v2-http.mjs",
+    "--mode",
+    "functional",
+    "--repo",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--base-url",
+    "http://127.0.0.1:3034",
+    "--concurrency",
+    "25",
+    "--timeout-ms",
+    "30000",
+    "--case-ledger",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv",
+    "--output",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json"
+  ],
+  "command": "node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode functional --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --concurrency 25 --timeout-ms 30000 --case-ledger docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv --output docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json",
+  "command_id": "1787835423069-api-functional-http-exhaustive",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 388657,
+  "end_timestamp_utc": "2026-08-27T13:03:32Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 1,
+  "operation_id": "api-functional-http-exhaustive",
+  "phase_id": "GATE-10",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T12:57:03Z",
+  "stderr_sha256": "770b824ebd222e8afa75e5cd47666567e1d72ccd7ef46bfaeeeee16e50ea4610",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

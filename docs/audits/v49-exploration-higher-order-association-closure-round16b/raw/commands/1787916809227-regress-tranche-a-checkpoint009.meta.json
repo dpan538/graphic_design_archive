@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_evidence_disposition_tranche_a.py",
+    "--repo",
+    ".",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint009.json"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint009.json",
+  "command_id": "1787916809227-regress-tranche-a-checkpoint009",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 192,
+  "end_timestamp_utc": "2026-08-28T11:33:29Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "regress-tranche-a-checkpoint009",
+  "phase_id": "CHECKPOINT-009-REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:33:29Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "9a779ae4de9daaf17c4c42d19393a97f7ad2bf05533c493a536c59be1a8bb528",
+  "timed_out": false
+}

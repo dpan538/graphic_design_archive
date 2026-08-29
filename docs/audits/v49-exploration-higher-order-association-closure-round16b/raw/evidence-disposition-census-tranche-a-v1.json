@@ -1,0 +1,52 @@
+{
+  "active_pending_review_count": 0,
+  "association_activation_count": 0,
+  "association_identity_created_count": 0,
+  "builder_version": "trace-round16b-evidence-disposition-tranche-a-v1",
+  "checkpoint004_candidate_family_count": 35,
+  "checkpoint004_trigger_occurrence_count": 359,
+  "closure": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "conditional_queue_action_counts": {
+    "REROUTE_MODIFIED_TERM_TO_BINARY_ROLE_SCOPE": 1,
+    "REROUTE_REJECTED_CASE_LABEL_TO_PAIR_SCOPE": 1,
+    "SCOPED_CHILD_ASSOCIATION_REVIEW": 8
+  },
+  "conditional_scoped_child_or_reroute_queue_count": 10,
+  "final_parent_disposition_counts": {
+    "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 5,
+    "COOCCURRENCE_ONLY": 1,
+    "INQUIRY_ONLY_OR_UNRESOLVED": 3,
+    "INSUFFICIENT_EVIDENCE": 1,
+    "TOPOLOGY_OR_ROLE_CONFLICT": 1
+  },
+  "format": "trace-round16b-evidence-disposition-tranche-a-census-v1",
+  "internal_active_pair_count_distribution": {
+    "0": 2,
+    "1": 7,
+    "3": 2
+  },
+  "occurrence_evidence_class_counts": {
+    "EVIDENCE_BEARING": 13,
+    "NEGATIVE_CONTEXT": 1,
+    "SOURCE_CONTAINER_COOCCURRENCE": 4,
+    "STRUCTURAL_ECHO": 91,
+    "SYNTHETIC_CONTROL": 3
+  },
+  "pair_projection_created_count": 0,
+  "parent_checkpoint_sha": "068c92151a935cfb9e4adc36b150c6800a6de9a2",
+  "product_eligible_count": 0,
+  "remaining_undisposed_checkpoint004_family_count": 24,
+  "review_tranche": "CHECKPOINT-005-EVIDENCE-TRANCHE-A",
+  "semantic_boundary": "Final dispositions apply only to the eleven unsplit checkpoint-004 parent review families. Conditional scoped children and reroutes are inactive review queue records, not governed associations or support decisions.",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "tranche_family_count": 11,
+  "tranche_linked_occurrence_count": 112
+}

@@ -1,0 +1,3 @@
+ERROR:  55000: SEALED_AGGREGATE_CHILD_INSERT_FORBIDDEN
+CONTEXT:  PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 65 at RAISE
+LOCATION:  exec_stmt_raise, pl_exec.c:3911

@@ -1,0 +1,2 @@
+case_id	phase	method	path	expected_status	actual_status	outcome	latency_ms	response_bytes	response_sha256	error
+A001	ARTIFACT_CHECK	FILE	frontend/generated/trace-exploration-v3/CHECKSUMS.sha256	SHA256_BOUND	SHA256_BOUND	PASS	0.000000	151170	f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b	NONE

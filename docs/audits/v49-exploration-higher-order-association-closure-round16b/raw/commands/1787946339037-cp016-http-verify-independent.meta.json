@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_v3_production_http_checkpoint016_independent.py",
+    "--repo",
+    "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+    "--output-dir",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint016-final",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_v3_production_http_checkpoint016_independent.py --repo /private/tmp/gda_round16b_cp016_clean_repro_d40ec811 --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint016-final --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json",
+  "command_id": "1787946339037-cp016-http-verify-independent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 58,
+  "end_timestamp_utc": "2026-08-28T19:45:39Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp016-http-verify-independent",
+  "phase_id": "CHECKPOINT-016-FRONTEND-AND-HTTP-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:45:39Z",
+  "stderr_sha256": "73b1b228442c2f1524d8e2a5a544799e3d45e4299096e0aff0d36d30b2c51d6a",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

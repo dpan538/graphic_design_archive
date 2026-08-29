@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "wc",
+    "-l",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv"
+  ],
+  "command": "wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
+  "command_id": "1787908603915-snapshot-checkpoint-ledger-checkpoint007",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 5,
+  "end_timestamp_utc": "2026-08-28T09:16:43Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "snapshot-checkpoint-ledger-checkpoint007",
+  "phase_id": "CHECKPOINT-007-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T09:16:43Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "dd7ef7e6d506418783df816e2caaf051772061ec1734554bbfba0fbb6985534a",
+  "timed_out": false
+}

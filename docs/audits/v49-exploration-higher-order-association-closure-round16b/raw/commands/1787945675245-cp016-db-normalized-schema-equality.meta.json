@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; cp016_a=/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_a_schema.normalized.sql; cp016_b=/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_b_schema.normalized.sql; cmp -s \"$cp016_a\" \"$cp016_b\"; cp016_hash=$(shasum -a 256 \"$cp016_a\" | awk '{print $1}'); cp016_bytes=$(wc -c < \"$cp016_a\" | tr -d \" \"); test \"$cp016_hash\" = 1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4; test \"$cp016_bytes\" = 1090058; printf \"%s\\n\" NORMALIZED_SCHEMAS_IDENTICAL=PASS \"NORMALIZED_SCHEMA_SHA256=$cp016_hash\" \"NORMALIZED_SCHEMA_BYTES=$cp016_bytes\""
+  ],
+  "command": "/bin/sh -c 'set -eu; cp016_a=/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_a_schema.normalized.sql; cp016_b=/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_b_schema.normalized.sql; cmp -s \"$cp016_a\" \"$cp016_b\"; cp016_hash=$(shasum -a 256 \"$cp016_a\" | awk '\"'\"'{print $1}'\"'\"'); cp016_bytes=$(wc -c < \"$cp016_a\" | tr -d \" \"); test \"$cp016_hash\" = 1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4; test \"$cp016_bytes\" = 1090058; printf \"%s\\n\" NORMALIZED_SCHEMAS_IDENTICAL=PASS \"NORMALIZED_SCHEMA_SHA256=$cp016_hash\" \"NORMALIZED_SCHEMA_BYTES=$cp016_bytes\"'",
+  "command_id": "1787945675245-cp016-db-normalized-schema-equality",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 32,
+  "end_timestamp_utc": "2026-08-28T19:34:35Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-db-normalized-schema-equality",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:34:35Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "45ad99b1641b690d7ebb86f460e599ee74713c0c7aae996b638f3d07e2a412c8",
+  "timed_out": false
+}

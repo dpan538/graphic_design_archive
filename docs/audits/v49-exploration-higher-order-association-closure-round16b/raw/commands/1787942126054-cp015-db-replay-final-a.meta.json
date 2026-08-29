@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "env",
+    "PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket",
+    "PGPORT=59473",
+    "PGUSER=jarlgiovanni",
+    "PGDATABASE=gda_v50_round16b_cp015_final_a",
+    "GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql",
+    "GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb",
+    "GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb",
+    "sh",
+    "database/scripts/replay_v50_round16b.sh"
+  ],
+  "command": "env PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh",
+  "command_id": "1787942126054-cp015-db-replay-final-a",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 4490,
+  "end_timestamp_utc": "2026-08-28T18:35:30Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp015-db-replay-final-a",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:35:26Z",
+  "stderr_sha256": "94e5b8a3858f5670f59ff68544c982235cd40dd85e035a38383f369db266457d",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

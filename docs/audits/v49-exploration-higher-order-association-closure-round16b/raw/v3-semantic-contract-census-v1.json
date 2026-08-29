@@ -1,0 +1,81 @@
+{
+  "authority_cutoff_utc": "2026-08-28T09:18:21Z",
+  "closure_true_count": 0,
+  "composition_coherence_review_count": 2,
+  "contract_version": "trace-exploration-v3-semantic-contract-1.0.0",
+  "control_class_count": 10,
+  "control_count": 10,
+  "count_taxonomy": {
+    "associations": {
+      "production_active_association_count": 0,
+      "production_active_pending_review_count": 0,
+      "production_higher_order_revision_count": 0,
+      "production_pair_revision_count": 0,
+      "synthetic_active_higher_order_revision_count": 1,
+      "synthetic_active_pair_revision_count": 9,
+      "synthetic_higher_order_revision_count": 5,
+      "synthetic_pair_revision_count": 9
+    },
+    "incidence": {
+      "implicit_projected_pair_count": 0,
+      "production_incidence_count": 0,
+      "synthetic_incidence_count": 37
+    },
+    "interaction": {
+      "production_export_count": 0,
+      "production_state_count": 0,
+      "production_transition_count": 0,
+      "production_workflow_count": 0,
+      "synthetic_export_count": 1,
+      "synthetic_state_count": 1,
+      "synthetic_transition_count": 0,
+      "synthetic_workflow_count": 1
+    },
+    "realizations_and_compositions": {
+      "production_association_realization_count": 0,
+      "production_composition_coherence_review_count": 0,
+      "production_composition_count": 0,
+      "production_product_eligible_composition_count": 0,
+      "synthetic_association_realization_count": 10,
+      "synthetic_composition_coherence_review_count": 2,
+      "synthetic_composition_count": 2
+    },
+    "vocabulary": {
+      "production_active_concept_count": 0,
+      "synthetic_active_concept_count": 11,
+      "synthetic_active_concept_sense_count": 11,
+      "synthetic_concept_record_count": 21,
+      "synthetic_concept_sense_record_count": 21,
+      "synthetic_distinct_concept_count": 21,
+      "synthetic_scope_count": 6
+    }
+  },
+  "count_taxonomy_canonical_sha256": "1866bbf8e86b85cc063ce144ceb2d2f189c4d018c47293b13b4ca6d507f83cc3",
+  "count_taxonomy_reconstruction_status": "PASS",
+  "fixture_json_schema_validation_failure_count": 0,
+  "fixture_json_schema_validation_status": "PASS",
+  "governed_concept_count": 21,
+  "governed_concept_sense_count": 21,
+  "governed_scope_count": 6,
+  "hash_binding_contract_canonical_sha256": "8d3c5416dbd74b015d578e7de4a638f2d6de1901b700443a384207136ca71e24",
+  "hash_binding_count": 13,
+  "identity_branch_test_receipt_count": 4,
+  "implicit_pair_projection_count": 0,
+  "independent_verification_status": "PENDING_SEPARATE_IMPLEMENTATION",
+  "invalid_attempt_count": 2,
+  "negative_probe_count": 37,
+  "negative_probe_rejection_count": 37,
+  "open_closure_blocking_gap_count": 4,
+  "parent_checkpoint_sha": "e5ddbc443c4a0a28004034cba439340ecdeb9a75",
+  "production_activation_count": 0,
+  "production_active_concept_count": 0,
+  "production_active_concept_sense_count": 0,
+  "production_active_pending_review_count": 0,
+  "production_product_eligible_count": 0,
+  "schema_document_count": 11,
+  "schema_validation_failure_count": 0,
+  "schema_validation_status": "PASS",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "synthetic_fixture_validation_failure_count": 0,
+  "synthetic_fixture_validation_status": "PASS"
+}

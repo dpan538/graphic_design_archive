@@ -1,0 +1,42 @@
+{
+  "authorized_parent_sha": "76d826100df3a23fce1765ca62245eb348bff1c3",
+  "checkout_blocker": "REQUIRED_V50_RACE_LOGS_IGNORED_FROM_CLEAN_CHECKOUT",
+  "checkpoint_id": "CHECKPOINT-013",
+  "checksum_ledger_sha256": {
+    "gda_v50_round16b_2317": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+    "gda_v50_round16b_2318": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab"
+  },
+  "corrective_scope": {
+    "gitignore_exception_count": 2,
+    "gitignore_sha256": "1b954826314e07759ede2e0da3e339edf70988339ff4ebe25c3ca0181ed49db1",
+    "maximum_log_bytes": 411,
+    "required_log_bytes": 3830,
+    "required_log_count": 24,
+    "required_log_set_sha256": "a4e0ddc0366b9a5504ae655b2b3807eccb2ee1e0ddd08a88bc2a567359a4e787",
+    "tracked_directory_ids": [
+      "gda_v50_round16b_2317",
+      "gda_v50_round16b_2318"
+    ]
+  },
+  "disallowed_actions": {
+    "deployment_performed": false,
+    "force_push_used": false,
+    "history_rewritten": false,
+    "main_updated": false,
+    "production_activation_performed": false,
+    "rollback_tag_pushed": false
+  },
+  "publication_chain": {
+    "checkpoint012_receipt_sha256": "9116447efd5b86c8d82e5f38698bede1451dff58bf979534e716dbb0bcfd8bab",
+    "receipt_count_through_checkpoint012": 16,
+    "status": "PASS"
+  },
+  "schema_version": "trace-round16b-clean-reproduction-preflight/v1",
+  "status": "PASS_CANDIDATE_INDEX_REQUIRES_ORDINARY_PUBLICATION",
+  "verification": {
+    "all_checksum_entries_pass": true,
+    "candidate_index_required_log_count": 24,
+    "candidate_index_required_logs_present": true,
+    "v50_manifest_preflight": "PASS"
+  }
+}

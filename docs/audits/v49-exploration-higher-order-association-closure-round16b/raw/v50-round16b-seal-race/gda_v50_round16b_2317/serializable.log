@@ -1,0 +1,6 @@
+ERROR:  25000: AGGREGATE_MEMBERSHIP_WRITES_REQUIRE_READ_COMMITTED
+CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 4 at RAISE
+SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(
+    NEW.aggregate_kind, NEW.aggregate_id)"
+PL/pgSQL function exploration_v3.enforce_aggregate_seal_insert() line 4 at PERFORM
+LOCATION:  exec_stmt_raise, pl_exec.c:3911

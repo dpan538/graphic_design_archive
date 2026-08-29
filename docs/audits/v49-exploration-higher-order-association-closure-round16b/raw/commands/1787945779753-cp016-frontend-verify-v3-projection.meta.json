@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "verify:exploration-v3-projection"
+  ],
+  "command": "npm --prefix frontend run verify:exploration-v3-projection",
+  "command_id": "1787945779753-cp016-frontend-verify-v3-projection",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 266,
+  "end_timestamp_utc": "2026-08-28T19:36:20Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-frontend-verify-v3-projection",
+  "phase_id": "CHECKPOINT-016-FRONTEND-AND-HTTP-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:36:19Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "4348c4b252b3382a181aa6a521914a7252127152d77ee1ec8b230f8ca7b54075",
+  "timed_out": false
+}

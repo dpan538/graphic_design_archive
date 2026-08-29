@@ -1,0 +1,359 @@
+{
+  "association_activation_count": 0,
+  "association_identity_created_count": 0,
+  "builder_sha256": "d59b2434c573549cc151ac83a5f3904b6443a70bf1942e2380d510f663847501",
+  "check_count": 30,
+  "checks": [
+    {
+      "check_id": "REQUIRED_ARTIFACTS_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "IMMUTABLE_INPUT_SHA256_PINS_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CHECKPOINT004_FAMILY_UNIVERSE_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CHECKPOINT004_OCCURRENCE_UNIVERSE_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "GOVERNED_TRANCHE_SELECTOR_EXACT_11",
+      "status": "PASS"
+    },
+    {
+      "check_id": "SELECTED_OCCURRENCE_ID_SET_EXACT_112",
+      "detail": "87e345446cec2c78a5f8b7fc6d864e77ea5f70ba36bed8448e133478d701eaa0",
+      "status": "PASS"
+    },
+    {
+      "check_id": "SELECTED_SOURCE_OCCURRENCE_ROW_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "INDEPENDENT_OCCURRENCE_CLASS_DISTRIBUTION_EXACT",
+      "detail": {
+        "EVIDENCE_BEARING": 13,
+        "NEGATIVE_CONTEXT": 1,
+        "SOURCE_CONTAINER_COOCCURRENCE": 4,
+        "STRUCTURAL_ECHO": 91,
+        "SYNTHETIC_CONTROL": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "ALL_112_UPSTREAM_RECORDS_AND_CONTENT_HASHES_RECONSTRUCTED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_OCCURRENCE_COVERAGE_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_OCCURRENCE_RECORD_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_OCCURRENCE_ROWS_INDEPENDENTLY_RECONCILED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_FAMILY_COVERAGE_EXACT_11",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_FAMILY_RECORD_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "FAMILY_DISPOSITIONS_AND_ACTIVE_PAIRS_INDEPENDENTLY_RECONSTRUCTED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "FINAL_PARENT_DISPOSITION_DISTRIBUTION_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "PAIRWISE_CLIQUES_DO_NOT_BECOME_GROUP_SUPPORT",
+      "detail": [
+        "1d76bf657bbdec293265d051268a2a1153be0108b15a8d63ebbf2cb98cf6f06a",
+        "7e0a0ee4f78d2f565c4f7771653ecc5a27828dd9fb704139d1e068f2a5fdce64"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check_id": "CONDITIONAL_QUEUE_RECORD_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CONDITIONAL_QUEUE_COVERAGE_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CONDITIONAL_QUEUE_SEPARATE_INACTIVE_AND_BLOCKED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CONDITIONAL_QUEUE_DOES_NOT_MUTATE_FINAL_PARENT_DISPOSITIONS",
+      "status": "PASS"
+    },
+    {
+      "check_id": "INPUT_MANIFEST_ALL_17_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "RECURSIVE_GAPS_PRESERVED_AND_HASHED",
+      "detail": {
+        "GAP-010": "OPEN_24_FAMILIES",
+        "GAP-011": "OPEN_13_INPUTS",
+        "GAP-012": "OPEN_10_CONDITIONAL_RECORDS",
+        "GAP-013": "NOT_STARTED",
+        "GAP-014": "CONTROLLED_IN_TRANCHE_A_CONTINUES_GLOBALLY",
+        "GAP-015": "CONTROLLED_NO_PROJECTIONS",
+        "GAP-016": "OPEN"
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "RECURSIVE_GAPS_RETAIN_OPEN_AUTHORITY",
+      "detail": {
+        "GAP-010": "OPEN_24_FAMILIES",
+        "GAP-011": "OPEN_13_INPUTS",
+        "GAP-012": "OPEN_10_CONDITIONAL_RECORDS",
+        "GAP-013": "NOT_STARTED",
+        "GAP-014": "CONTROLLED_IN_TRANCHE_A_CONTINUES_GLOBALLY",
+        "GAP-015": "CONTROLLED_NO_PROJECTIONS",
+        "GAP-016": "OPEN"
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "CENSUS_COUNTS_AND_FAIL_CLOSED_BOUNDARY_EXACT",
+      "detail": {
+        "active_pending_review_count": 0,
+        "association_activation_count": 0,
+        "association_identity_created_count": 0,
+        "builder_version": "trace-round16b-evidence-disposition-tranche-a-v1",
+        "checkpoint004_candidate_family_count": 35,
+        "checkpoint004_trigger_occurrence_count": 359,
+        "closure": {
+          "computational_space_closure": false,
+          "function3_closure": false,
+          "global_composition_coherence_closure": false,
+          "higher_order_association_closure": false,
+          "pair_association_closure": false,
+          "product_association_reachability_closure": false
+        },
+        "conditional_queue_action_counts": {
+          "REROUTE_MODIFIED_TERM_TO_BINARY_ROLE_SCOPE": 1,
+          "REROUTE_REJECTED_CASE_LABEL_TO_PAIR_SCOPE": 1,
+          "SCOPED_CHILD_ASSOCIATION_REVIEW": 8
+        },
+        "conditional_scoped_child_or_reroute_queue_count": 10,
+        "final_parent_disposition_counts": {
+          "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 5,
+          "COOCCURRENCE_ONLY": 1,
+          "INQUIRY_ONLY_OR_UNRESOLVED": 3,
+          "INSUFFICIENT_EVIDENCE": 1,
+          "TOPOLOGY_OR_ROLE_CONFLICT": 1
+        },
+        "format": "trace-round16b-evidence-disposition-tranche-a-census-v1",
+        "internal_active_pair_count_distribution": {
+          "0": 2,
+          "1": 7,
+          "3": 2
+        },
+        "occurrence_evidence_class_counts": {
+          "EVIDENCE_BEARING": 13,
+          "NEGATIVE_CONTEXT": 1,
+          "SOURCE_CONTAINER_COOCCURRENCE": 4,
+          "STRUCTURAL_ECHO": 91,
+          "SYNTHETIC_CONTROL": 3
+        },
+        "pair_projection_created_count": 0,
+        "parent_checkpoint_sha": "068c92151a935cfb9e4adc36b150c6800a6de9a2",
+        "product_eligible_count": 0,
+        "remaining_undisposed_checkpoint004_family_count": 24,
+        "review_tranche": "CHECKPOINT-005-EVIDENCE-TRANCHE-A",
+        "semantic_boundary": "Final dispositions apply only to the eleven unsplit checkpoint-004 parent review families. Conditional scoped children and reroutes are inactive review queue records, not governed associations or support decisions.",
+        "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+        "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+        "tranche_family_count": 11,
+        "tranche_linked_occurrence_count": 112
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "ALL_SIX_CLOSURES_EXACTLY_FALSE",
+      "detail": {
+        "computational_space_closure": false,
+        "function3_closure": false,
+        "global_composition_coherence_closure": false,
+        "higher_order_association_closure": false,
+        "pair_association_closure": false,
+        "product_association_reachability_closure": false
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "BUILD_RECEIPT_ALL_OUTPUT_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BUILD_RECEIPT_COUNTS_AND_STATUS_EXACT",
+      "detail": {
+        "aggregate_output_sha256": "229bd7758e52178b726372aab6331dcef2cb13aa120145b24f8d37fa98b25520",
+        "association_activation_count": 0,
+        "association_identity_created_count": 0,
+        "builder_version": "trace-round16b-evidence-disposition-tranche-a-v1",
+        "closure_flags_true_count": 0,
+        "conditional_queue_count": 10,
+        "family_count": 11,
+        "format": "trace-round16b-evidence-disposition-tranche-a-build-receipt-v1",
+        "input_count": 17,
+        "input_manifest_sha256": "5c676ed015d0f1d5349a93ca672ce38375dfea758d89898c7df8bb714a585281",
+        "linked_occurrence_count": 112,
+        "occurrence_evidence_class_counts": {
+          "EVIDENCE_BEARING": 13,
+          "NEGATIVE_CONTEXT": 1,
+          "SOURCE_CONTAINER_COOCCURRENCE": 4,
+          "STRUCTURAL_ECHO": 91,
+          "SYNTHETIC_CONTROL": 3
+        },
+        "output_count_excluding_receipt": 7,
+        "output_hashes": {
+          "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv": {
+            "bytes": 17311,
+            "sha256": "abedad8a6e3df9ac964d3c3c7ee6923e0af610ac0459b6c510cb2873f6403716"
+          },
+          "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-a-v1.json": {
+            "bytes": 2077,
+            "sha256": "53930bf24fca0a1178926385b3fb44a54cddf09eecf64edc2aef41073db8b31f"
+          },
+          "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-input-manifest-tranche-a-v1.tsv": {
+            "bytes": 6810,
+            "sha256": "5c676ed015d0f1d5349a93ca672ce38375dfea758d89898c7df8bb714a585281"
+          },
+          "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv": {
+            "bytes": 162177,
+            "sha256": "fc5f9716838af109f3b1c5e097cbefe6c8dd58f37210e7562b67bd8c80e717a9"
+          },
+          "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv": {
+            "bytes": 20571,
+            "sha256": "5e77187942e0815a0291c24374bbc389cd09a78d9165977f5e73a63fad7fe7f0"
+          },
+          "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint005-tranche-a-v1.tsv": {
+            "bytes": 3247,
+            "sha256": "d11be30cc6ffb2d62889fe4d5a86c325facaf5d803c29b59a1c8f92875990238"
+          },
+          "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/08_EVIDENCE_DISPOSITION_TRANCHE_A.md": {
+            "bytes": 2481,
+            "sha256": "c9eb82463108611d41b1d7abd0aa482677ee648aaf30c24cac50d6a13ba009b6"
+          }
+        },
+        "pair_projection_created_count": 0,
+        "parent_checkpoint_sha": "068c92151a935cfb9e4adc36b150c6800a6de9a2",
+        "review_tranche": "CHECKPOINT-005-EVIDENCE-TRANCHE-A",
+        "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+        "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+        "status": "PASS_FAIL_CLOSED_TRANCHE_A"
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "GENERATOR_VERIFIER_IMPLEMENTATION_INDEPENDENCE",
+      "detail": {
+        "builder_sha256": "d59b2434c573549cc151ac83a5f3904b6443a70bf1942e2380d510f663847501",
+        "imported_modules": [
+          "__future__",
+          "argparse",
+          "ast",
+          "csv",
+          "hashlib",
+          "json",
+          "math",
+          "sys",
+          "collections",
+          "pathlib",
+          "typing"
+        ],
+        "verifier_sha256": "77413260293581bf04a6bae5304992ae9fa835633aa2b4ce1f56c4d664f6ed2c"
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "PRE_FINAL_DEVELOPMENT_ORACLE_FAILURES_PRESERVED",
+      "detail": [
+        {
+          "classification": "VERIFIER_DEVELOPMENT_ORACLE_BUG_NOT_EVIDENCE_MISMATCH",
+          "correction": "Pinned the independently reconstructed canonical-JSON set hash 87e345446cec2c78a5f8b7fc6d864e77ea5f70ba36bed8448e133478d701eaa0.",
+          "failure": "The first development run compared a canonical-JSON occurrence-ID-set hash against a newline-delimited-set hash constant.",
+          "status": "CORRECTED_BEFORE_FINAL_VERIFICATION"
+        },
+        {
+          "classification": "VERIFIER_DEVELOPMENT_ORACLE_BUG_NOT_EVIDENCE_MISMATCH",
+          "correction": "Reconstructed the topology index from canonical-composition-registry-v2.json:topology_compositions[].composition_id.",
+          "failure": "The second development run looked up topology_composition_id, while the immutable registry identifies topology records with composition_id.",
+          "status": "CORRECTED_BEFORE_FINAL_VERIFICATION"
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "closure": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "conditional_queue_count": 10,
+  "development_oracle_corrections": [
+    {
+      "classification": "VERIFIER_DEVELOPMENT_ORACLE_BUG_NOT_EVIDENCE_MISMATCH",
+      "correction": "Pinned the independently reconstructed canonical-JSON set hash 87e345446cec2c78a5f8b7fc6d864e77ea5f70ba36bed8448e133478d701eaa0.",
+      "failure": "The first development run compared a canonical-JSON occurrence-ID-set hash against a newline-delimited-set hash constant.",
+      "status": "CORRECTED_BEFORE_FINAL_VERIFICATION"
+    },
+    {
+      "classification": "VERIFIER_DEVELOPMENT_ORACLE_BUG_NOT_EVIDENCE_MISMATCH",
+      "correction": "Reconstructed the topology index from canonical-composition-registry-v2.json:topology_compositions[].composition_id.",
+      "failure": "The second development run looked up topology_composition_id, while the immutable registry identifies topology records with composition_id.",
+      "status": "CORRECTED_BEFORE_FINAL_VERIFICATION"
+    }
+  ],
+  "failure_count": 0,
+  "failures": [],
+  "final_parent_disposition_counts": {
+    "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 5,
+    "COOCCURRENCE_ONLY": 1,
+    "INQUIRY_ONLY_OR_UNRESOLVED": 3,
+    "INSUFFICIENT_EVIDENCE": 1,
+    "TOPOLOGY_OR_ROLE_CONFLICT": 1
+  },
+  "format": "trace-round16b-evidence-disposition-tranche-a-independent-verification-v1",
+  "generator_module_imported": false,
+  "input_manifest_sha256": "5c676ed015d0f1d5349a93ca672ce38375dfea758d89898c7df8bb714a585281",
+  "occurrence_evidence_class_counts": {
+    "EVIDENCE_BEARING": 13,
+    "NEGATIVE_CONTEXT": 1,
+    "SOURCE_CONTAINER_COOCCURRENCE": 4,
+    "STRUCTURAL_ECHO": 91,
+    "SYNTHETIC_CONTROL": 3
+  },
+  "pair_projection_created_count": 0,
+  "parent_checkpoint_sha": "068c92151a935cfb9e4adc36b150c6800a6de9a2",
+  "product_eligible_count": 0,
+  "review_tranche": "CHECKPOINT-005-EVIDENCE-TRANCHE-A",
+  "selected_family_count": 11,
+  "selected_occurrence_count": 112,
+  "selected_occurrence_id_set_sha256": "87e345446cec2c78a5f8b7fc6d864e77ea5f70ba36bed8448e133478d701eaa0",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS",
+  "verifier_sha256": "77413260293581bf04a6bae5304992ae9fa835633aa2b4ce1f56c4d664f6ed2c"
+}

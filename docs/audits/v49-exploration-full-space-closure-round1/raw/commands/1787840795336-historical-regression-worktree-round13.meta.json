@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "git",
+    "-C",
+    "/private/tmp/trace-round16a-regression-history",
+    "checkout",
+    "--detach",
+    "6dacbbfa"
+  ],
+  "command": "git -C /private/tmp/trace-round16a-regression-history checkout --detach 6dacbbfa",
+  "command_id": "1787840795336-historical-regression-worktree-round13",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 131,
+  "end_timestamp_utc": "2026-08-27T14:26:35Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "historical-regression-worktree-round13",
+  "phase_id": "GATE-13",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T14:26:35Z",
+  "stderr_sha256": "89cf95c99afb9d5598704b69a3f4609a6ab4427782e6f4711e24701c550805ad",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

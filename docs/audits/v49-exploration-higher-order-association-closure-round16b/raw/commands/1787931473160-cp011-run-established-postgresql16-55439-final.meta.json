@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/postgres",
+    "-D",
+    "/private/tmp/round3i-audit-pg.7bOBg4",
+    "-p",
+    "55439",
+    "-k",
+    "/private/tmp",
+    "-c",
+    "shared_memory_type=mmap",
+    "-c",
+    "dynamic_shared_memory_type=posix"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/postgres -D /private/tmp/round3i-audit-pg.7bOBg4 -p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix",
+  "command_id": "1787931473160-cp011-run-established-postgresql16-55439-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 949543,
+  "end_timestamp_utc": "2026-08-28T15:53:42Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-run-established-postgresql16-55439-final",
+  "phase_id": "CHECKPOINT-011-DATABASE-ENVIRONMENT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T15:37:53Z",
+  "stderr_sha256": "6f39eb43022a4973af9961002d88b897aaa7d855092d50426d83b91dcd4c933a",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

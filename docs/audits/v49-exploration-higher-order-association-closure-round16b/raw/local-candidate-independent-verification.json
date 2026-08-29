@@ -1,0 +1,626 @@
+{
+  "candidate_family_count": 31,
+  "check_count": 108,
+  "checks": {
+    "ACTIVE_TRV_RESOLUTION": {
+      "detail": null,
+      "pass": true
+    },
+    "ADDED_NO_LOSS_ROWS_MATCH_SOURCE_SEMANTICS": {
+      "detail": [],
+      "pass": true
+    },
+    "ADDED_NO_LOSS_SOURCE_ID_SETS_EXACT": {
+      "detail": {
+        "ROUND16A_ASSOCIATION_REPRESENTATION": 21,
+        "ROUND16A_CAPABILITY_FIELD": 16,
+        "ROUND16A_CATEGORY_REPRESENTATION": 81,
+        "ROUND16A_DATABASE_AUTHORITY_FIELD": 6,
+        "ROUND16A_LEGACY_RECONCILIATION": 11,
+        "ROUND16A_STATE_HASH_INDEX": 5760,
+        "ROUND16A_TRANSITION_DESCRIPTOR_FIELD": 3,
+        "ROUND16A_VOCABULARY_REPRESENTATION": 31,
+        "ROUND16_ASSOCIATION_REPRESENTATION": 21,
+        "ROUND16_CAPABILITY_FIELD": 11,
+        "ROUND16_CATEGORY_REPRESENTATION": 4,
+        "ROUND16_DATABASE_AUTHORITY_FIELD": 14,
+        "ROUND16_FAILED_ASSOCIATION_AUDIT": 14,
+        "ROUND16_SOURCE_INVENTORY_ENTRY": 10,
+        "ROUND16_STATE_HASH_INDEX": 52,
+        "ROUND16_VOCABULARY_REPRESENTATION": 26
+      },
+      "pass": true
+    },
+    "ADDED_R13_SELECTORS_MATCH_SOURCE_EXACTLY": {
+      "detail": [],
+      "pass": true
+    },
+    "ALL_FAMILIES_FAIL_CLOSED": {
+      "detail": null,
+      "pass": true
+    },
+    "BUILD_OUTPUT_HASHES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "BUILD_OUTPUT_KEY_SET_EXACT": {
+      "detail": [
+        "candidate-trigger-occurrence-ledger-v1.tsv",
+        "concept-sense-crosswalk-v1.tsv",
+        "isolated-active-term-audit-ledger-v1.tsv",
+        "local-candidate-census-v1.json",
+        "local-candidate-family-ledger-v1.tsv",
+        "local-candidate-input-manifest-v1.tsv",
+        "local-surface-disposition-ledger-v1.tsv",
+        "open-participant-resolution-ledger-v1.tsv",
+        "prior-artifact-file-manifest-v1.tsv",
+        "prior-object-reconciliation-universe-v1-core.tsv",
+        "prior-object-reconciliation-universe-v1-exports.tsv",
+        "prior-object-reconciliation-universe-v1-states.tsv",
+        "prior-object-reconciliation-universe-v1-workflows.tsv",
+        "prior-object-set-manifest-v1.tsv",
+        "prior-production-descendant-manifest-v1.tsv"
+      ],
+      "pass": true
+    },
+    "BUILD_RECEIPT_COUNTS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "CATEGORY_DISTRIBUTION_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "CENSUS_ALL_CLOSURES_FALSE": {
+      "detail": null,
+      "pass": true
+    },
+    "CENSUS_CANDIDATE_OBJECTS_MATCH_LEDGER": {
+      "detail": null,
+      "pass": true
+    },
+    "CENSUS_METRICS_MATCH_ALL_LEDGER_TOTALS": {
+      "detail": null,
+      "pass": true
+    },
+    "CONSUMER_CONTEXT_PRIMARY_AND_CORROBORATION": {
+      "detail": null,
+      "pass": true
+    },
+    "CONTROL_ONLY_FAMILY_COUNT_3": {
+      "detail": null,
+      "pass": true
+    },
+    "CROSSWALK_COUNT_65": {
+      "detail": 65,
+      "pass": true
+    },
+    "CROSSWALK_DISPOSITION_COUNTS": {
+      "detail": {
+        "ACTIVE": 31,
+        "MERGED_SUPERSEDED": 1,
+        "REJECTED": 12,
+        "RESEARCH_ONLY": 21
+      },
+      "pass": true
+    },
+    "CROSSWALK_IDS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "CROSSWALK_LABEL_SET_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "CROSSWALK_SENSE_ALGORITHM_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "CROSSWALK_SOURCE_FIELDS_AND_HASHES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "EXACTLY_TWO_EXPORTS_PER_STATE": {
+      "detail": null,
+      "pass": true
+    },
+    "EXTRA_FAMILY_COUNT_AND_DIGEST": {
+      "detail": null,
+      "pass": true
+    },
+    "FAMILY_COUNT_AND_ARITY": {
+      "detail": {
+        "3": 21,
+        "4": 4,
+        "5": 1,
+        "6": 4,
+        "8": 1
+      },
+      "pass": true
+    },
+    "FAMILY_IDENTITIES_CONTENT_AND_COUNTS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "FAMILY_IDS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "FAMILY_OCCURRENCE_PARTITIONS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "FAMILY_SENSE_DISTRIBUTION_EXACT": {
+      "detail": {
+        "ACTIVE": 30,
+        "REJECTED": 7,
+        "RESEARCH_ONLY": 6
+      },
+      "pass": true
+    },
+    "FULL_FAMILY_SET_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "GENERATOR_AND_VERIFIER_DISTINCT": {
+      "detail": null,
+      "pass": true
+    },
+    "IMPLEMENTED_SELECTOR_BOUNDARY_REJECTS_CANDIDATE_UNIVERSE_CLOSURE": {
+      "detail": null,
+      "pass": true
+    },
+    "INPUT_MANIFEST_IDS_AND_ORDER_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "INPUT_MANIFEST_USE_BOUNDARY_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "INPUT_PATH_HASH_SIZE_AND_RECEIPT_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "INPUT_PATH_SELECTOR_KEYS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "INPUT_SURFACE_IDS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "INPUT_SURFACE_PATHS_AND_SELECTORS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "INVALID_ENUMERATION_REJECTION_SET_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ISOLATED_ACTIVE_SET_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ISOLATED_IDENTITIES_AND_FAMILY_LINKS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "ISOLATED_TERMS_NOT_PREMATURELY_COMPOSABLE": {
+      "detail": null,
+      "pass": true
+    },
+    "MERGED_ALIAS_RESOLVES_EXACTLY": {
+      "detail": null,
+      "pass": true
+    },
+    "METHOD_SURFACE_23_ACCOUNTED_21_EXPLICIT_DEFERRALS": {
+      "detail": {
+        "DEFERRED_HUMAN_REVIEW_PENDING": 1,
+        "DEFERRED_LOCAL_SELECTOR_REVIEW": 15,
+        "DEFERRED_METADATA_QUERY_LOG_REVIEW": 1,
+        "DEFERRED_SOURCE_RIGHTS_AND_EVIDENCE_REVIEW": 3,
+        "DEFERRED_TRG009_DATABASE_DISCOVERY": 1,
+        "INSPECTED_ZERO_HIGHER_ORDER_EMISSION": 1,
+        "SELECTED_EXECUTION_INPUT": 22
+      },
+      "pass": true
+    },
+    "METHOD_SURFACE_INVENTORY_AND_LEDGER_IDS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "METHOD_SURFACE_SOURCE_BINDINGS_DISPOSITIONS_AND_HASHES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "NONACTIVE_HAS_NO_TRV": {
+      "detail": null,
+      "pass": true
+    },
+    "NORMALIZED_LABELS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "NO_HISTORY_OR_FORCE_OR_CLOSURE_CLAIM": {
+      "detail": null,
+      "pass": true
+    },
+    "OCCURRENCE_COUNT_348": {
+      "detail": 348,
+      "pass": true
+    },
+    "OCCURRENCE_IDENTITIES_RESOLVE": {
+      "detail": [],
+      "pass": true
+    },
+    "OCCURRENCE_IDS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "OPEN_BLOCKERS_PRESERVED": {
+      "detail": null,
+      "pass": true
+    },
+    "OPEN_ROLE_IDENTITIES_AND_SOURCE_FIELDS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "OPEN_ROLE_QUEUE_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "OPEN_ROLE_QUEUE_NOT_EMITTED": {
+      "detail": null,
+      "pass": true
+    },
+    "PRIOR_ARTIFACT_METADATA_COVERAGE_STATUS_AND_HASHES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "PRIOR_ARTIFACT_NAMESPACE_LS_TREE_EXACT": {
+      "detail": {
+        "counts": {
+          "ROUND15_16_16A_SCHEMA": 34,
+          "ROUND15_AUDIT": 31,
+          "ROUND15_GENERATOR": 6,
+          "ROUND15_RESEARCH": 13,
+          "ROUND16A_API": 2,
+          "ROUND16A_AUDIT": 1246,
+          "ROUND16A_GENERATOR": 22,
+          "ROUND16A_READ_MODEL": 1,
+          "ROUND16A_RESEARCH": 28,
+          "ROUND16A_RUNTIME": 9,
+          "ROUND16_API": 2,
+          "ROUND16_AUDIT": 39,
+          "ROUND16_GENERATOR": 4,
+          "ROUND16_READ_MODEL": 3,
+          "ROUND16_RESEARCH": 17,
+          "ROUND16_RUNTIME": 7
+        },
+        "failures": []
+      },
+      "pass": true
+    },
+    "PRIOR_ARTIFACT_PATHS_UNIQUE_ORDERED_AND_COMPLETE": {
+      "detail": null,
+      "pass": true
+    },
+    "PRIOR_ROWS_ALL_PENDING": {
+      "detail": null,
+      "pass": true
+    },
+    "PRIOR_ROW_EXACT_DISTRIBUTION": {
+      "detail": {
+        "ROUND15_FIXTURE": 25,
+        "ROUND15_FIXTURE_RESULT": 25,
+        "ROUND15_SEMANTIC_IMAGE": 25,
+        "ROUND16A_ACTIVE_PAIR_ASSOCIATION": 21,
+        "ROUND16A_ASSOCIATION_REPRESENTATION": 21,
+        "ROUND16A_ASSOCIATION_SUBGRAPH": 58,
+        "ROUND16A_CAPABILITY_FIELD": 16,
+        "ROUND16A_CATEGORY_ENTRY": 81,
+        "ROUND16A_CATEGORY_REPRESENTATION": 81,
+        "ROUND16A_DATABASE_AUTHORITY_FIELD": 6,
+        "ROUND16A_EXPORT": 11520,
+        "ROUND16A_LEGACY_RECONCILIATION": 11,
+        "ROUND16A_PAIR_CENSUS": 465,
+        "ROUND16A_PRODUCTION_COMPOSITION": 228,
+        "ROUND16A_ROUND15_ADAPTER_RECORD": 58,
+        "ROUND16A_SEED_VARIANT": 228,
+        "ROUND16A_STATE": 5760,
+        "ROUND16A_STATE_HASH_INDEX": 5760,
+        "ROUND16A_TOPOLOGY_COMPOSITION": 81,
+        "ROUND16A_TOPOLOGY_ENUMERATION_RESULT": 348,
+        "ROUND16A_TOPOLOGY_REJECTION": 277,
+        "ROUND16A_TRANSITION_DESCRIPTOR_FIELD": 3,
+        "ROUND16A_VOCABULARY_CANDIDATE": 65,
+        "ROUND16A_VOCABULARY_REPRESENTATION": 31,
+        "ROUND16A_WORKFLOW": 5760,
+        "ROUND16_ASSOCIATION_REPRESENTATION": 21,
+        "ROUND16_CAPABILITY_FIELD": 11,
+        "ROUND16_CATEGORY_REPRESENTATION": 4,
+        "ROUND16_DATABASE_AUTHORITY_FIELD": 14,
+        "ROUND16_EMBEDDED_SEMANTIC_IMAGE": 11,
+        "ROUND16_EXPORT": 104,
+        "ROUND16_FAILED_ASSOCIATION_AUDIT": 14,
+        "ROUND16_LEGACY_COMPOSITION": 11,
+        "ROUND16_MAP": 4,
+        "ROUND16_SOURCE_INVENTORY_ENTRY": 10,
+        "ROUND16_STATE": 52,
+        "ROUND16_STATE_HASH_INDEX": 52,
+        "ROUND16_TRANSITION": 816,
+        "ROUND16_TREE": 26,
+        "ROUND16_VOCABULARY_REPRESENTATION": 26,
+        "ROUND16_WORKFLOW": 5
+      },
+      "pass": true
+    },
+    "PRIOR_ROW_IDENTITIES_LINKS_STATUS_AND_HASHES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "PRIOR_ROW_ID_SETS_MATCH_MANIFEST": {
+      "detail": null,
+      "pass": true
+    },
+    "PRIOR_ROW_KEYS_UNIQUE": {
+      "detail": null,
+      "pass": true
+    },
+    "PRIOR_SET_COUNTS_HASHES_AND_SOURCES_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "PRIOR_SET_MANIFEST_COMPLETE": {
+      "detail": null,
+      "pass": true
+    },
+    "PRIOR_SHARDS_BELOW_WARNING": {
+      "detail": {
+        "prior-object-reconciliation-universe-v1-core.tsv": 3363890,
+        "prior-object-reconciliation-universe-v1-exports.tsv": 11541976,
+        "prior-object-reconciliation-universe-v1-states.tsv": 12307984,
+        "prior-object-reconciliation-universe-v1-workflows.tsv": 6110968
+      },
+      "pass": true
+    },
+    "PRIOR_SHARD_FILE_SET_EXACT": {
+      "detail": [
+        "prior-object-reconciliation-universe-v1-core.tsv",
+        "prior-object-reconciliation-universe-v1-exports.tsv",
+        "prior-object-reconciliation-universe-v1-states.tsv",
+        "prior-object-reconciliation-universe-v1-workflows.tsv"
+      ],
+      "pass": true
+    },
+    "PRODUCTION_ARITY_DISTRIBUTION": {
+      "detail": {
+        "2": 42,
+        "3": 162,
+        "4": 24
+      },
+      "pass": true
+    },
+    "PRODUCTION_DESCENDANT_IDS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "PRODUCTION_DESCENDANT_PARTITIONS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "PRODUCTION_SURFACE_ADDED": {
+      "detail": null,
+      "pass": true
+    },
+    "QUALIFIED_OVERLAP_ROWS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "R14_ACTIVE_LOCUS_GROUPS_EXACT": {
+      "detail": 10,
+      "pass": true
+    },
+    "R14_ARCHIVE_IDS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "RECEIPT_INPUT_HASH_KEY_SET_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "RECEIPT_SOURCE_AND_PARENT_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND10_CHAIN_TWO_PARTY_INACTIVE_NONTRANSITIVE_ZERO_EMISSION": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND10_DIRECT_IDS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND13_DIRECT_IDS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND13_INCIDENTAL_CONTROL_ID_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND13_MIRROR_NOT_DOUBLE_COUNTED": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND14_CONCEPT_ONLY_LEAD_MATCHES_SOURCES": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND14_CONCEPT_ONLY_LEAD_REFS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND15_ONE_TO_ONE": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16A_ENUMERATION_COMPLETE": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16A_VALID_INVALID_COUNTS": {
+      "detail": {
+        "INVALID": 267,
+        "VALID": 81
+      },
+      "pass": true
+    },
+    "ROUND16_COMPOSITION_SET_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16_DERIVED_COUNTS": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND16_LEGACY_DISPOSITIONS_PRESERVED": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND9_CANDIDATE_CROSSWALK_COMPLETE": {
+      "detail": null,
+      "pass": true
+    },
+    "ROUND9_COLLISION_IDS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "SEED_AND_PRODUCTION_BIJECTION_COUNTS": {
+      "detail": null,
+      "pass": true
+    },
+    "SELECTOR_VERSION_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "SELF_EXOTICIZATION_NOT_IN_FAMILIES": {
+      "detail": null,
+      "pass": true
+    },
+    "SOURCE_AND_PARENT_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "SOURCE_TREE_OBJECT_EXACT": {
+      "detail": "977d7e8e045c71857959750b775cd4df3d036686",
+      "pass": true
+    },
+    "STATE_FORMULA_ALL_COMPOSITIONS": {
+      "detail": null,
+      "pass": true
+    },
+    "STRUCTURAL_FAMILY_COUNT_AND_DIGEST": {
+      "detail": null,
+      "pass": true
+    },
+    "STRUCTURAL_OCCURRENCE_COUNT_319": {
+      "detail": null,
+      "pass": true
+    },
+    "STRUCTURAL_SOURCE_ID_SETS_EXACT": {
+      "detail": [],
+      "pass": true
+    },
+    "TOPOLOGY_DISTRIBUTIONS_EXACT": {
+      "detail": null,
+      "pass": true
+    },
+    "TRANSITION_ACTION_DISTRIBUTION": {
+      "detail": {
+        "COLLAPSE_NODE": 9240,
+        "EXPAND_NODE": 8112,
+        "EXPORT_CURRENT_STATE": 5760,
+        "FOCUS_NODE": 18480,
+        "MOVE_FOCUS": 7824,
+        "RESET_CATEGORY": 5760,
+        "SELECT_CATEGORY": 23040,
+        "SELECT_COMPOSITION": 671728
+      },
+      "pass": true
+    },
+    "TRANSITION_GLOBAL_COMMITMENT": {
+      "detail": null,
+      "pass": true
+    },
+    "TRANSITION_LEDGER_NOT_DUPLICATED": {
+      "detail": null,
+      "pass": true
+    },
+    "TRANSITION_REFERENCES_AND_FLAGS": {
+      "detail": [],
+      "pass": true
+    },
+    "TRIGGER_CLASS_COUNTS_EXACT": {
+      "detail": {
+        "EXPLICIT_CLUSTER_NEAR_MISS": 2,
+        "ROUND10_DIRECT_PASSAGE": 3,
+        "ROUND13_DIRECT_POSITIVE_FIELD_PASSAGE": 6,
+        "ROUND13_INCIDENTAL_CASE_LABEL_CONTROL": 1,
+        "ROUND13_QUALIFICATION_CONTEXT_EXTENSION": 1,
+        "ROUND14_ACTIVE_PAIR_SHARED_LOCUS_BUNDLE": 10,
+        "ROUND14_ARCHIVE_EXACT_CONTEXT_DUPLICATE": 4,
+        "ROUND14_CONCEPT_ONLY_HIGHER_ORDER_LEAD": 1,
+        "ROUND14_NARY_FIXTURE": 6,
+        "ROUND14_QUALIFIED_SHARED_LOCUS_OVERLAP": 1,
+        "ROUND15_COMPOSITION_FIXTURE": 24,
+        "ROUND16A_CONNECTED_SUBGRAPH": 37,
+        "ROUND16A_PRODUCTION_COMPOSITION": 186,
+        "ROUND16A_TOPOLOGY_COMPOSITION": 60,
+        "ROUND16_LEGACY_COMPOSITION": 4,
+        "ROUND16_VOCABULARY_ONLY_MULTI_TERM": 1,
+        "ROUND9_SOURCE_LOCATOR_CONTEXT_COLLISION": 1
+      },
+      "pass": true
+    },
+    "TRIGGER_ID_COUNTS_EXACT": {
+      "detail": {
+        "TRG-002": 17,
+        "TRG-003": 10,
+        "TRG-004": 311,
+        "TRG-006": 1,
+        "TRG-007": 8,
+        "TRG-008": 1
+      },
+      "pass": true
+    },
+    "VERIFIER_DOES_NOT_IMPORT_GENERATOR": {
+      "detail": null,
+      "pass": true
+    },
+    "WORKFLOW_TARGET_STATE_BIJECTION": {
+      "detail": null,
+      "pass": true
+    }
+  },
+  "closure_claimed": false,
+  "crosswalk_record_count": 65,
+  "deferred_method_surface_count": 21,
+  "failure_codes": [],
+  "failure_count": 0,
+  "format": "trace-round16b-local-candidate-independent-verification-v1",
+  "isolated_active_count": 5,
+  "method_surface_count": 44,
+  "open_role_queue_count": 10,
+  "parent_checkpoint_sha": "af056edadb43c1eb9e219217c42fd58b74ac5efd",
+  "prior_artifact_file_count": 1464,
+  "prior_artifact_namespace_count": 16,
+  "prior_row_exact_count": 32135,
+  "prior_transition_set_count": 749944,
+  "selected_method_surface_count": 23,
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS",
+  "trigger_occurrence_count": 348
+}

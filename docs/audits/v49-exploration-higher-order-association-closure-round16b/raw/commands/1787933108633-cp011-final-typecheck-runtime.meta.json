@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "typecheck:runtime"
+  ],
+  "command": "npm --prefix frontend run typecheck:runtime",
+  "command_id": "1787933108633-cp011-final-typecheck-runtime",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 22541,
+  "end_timestamp_utc": "2026-08-28T16:05:31Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-final-typecheck-runtime",
+  "phase_id": "CHECKPOINT-011-FINAL-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T16:05:08Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c349558037530c606c9c9103166fee8bf28aecbd115e11fb5287b9d73efc08d3",
+  "timed_out": false
+}

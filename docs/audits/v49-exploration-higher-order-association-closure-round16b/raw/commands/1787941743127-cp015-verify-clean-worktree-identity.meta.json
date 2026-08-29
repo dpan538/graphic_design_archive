@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; test \"$(git rev-parse HEAD)\" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test \"$(git rev-parse HEAD^{tree})\" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test -z \"$(git lfs status --porcelain)\"; printf \"%s\\n\" CLEAN_HEAD=024935e8d0c36cf0c4724b1960c71f28afef6595 CLEAN_TREE=28f8ab204378d75d16d98334bbd105d47641f37e CLEAN_GIT_STATUS=PASS CLEAN_LFS_STATUS=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; test \"$(git rev-parse HEAD)\" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test \"$(git rev-parse HEAD^{tree})\" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test -z \"$(git lfs status --porcelain)\"; printf \"%s\\n\" CLEAN_HEAD=024935e8d0c36cf0c4724b1960c71f28afef6595 CLEAN_TREE=28f8ab204378d75d16d98334bbd105d47641f37e CLEAN_GIT_STATUS=PASS CLEAN_LFS_STATUS=PASS'",
+  "command_id": "1787941743127-cp015-verify-clean-worktree-identity",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 408,
+  "end_timestamp_utc": "2026-08-28T18:29:03Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-verify-clean-worktree-identity",
+  "phase_id": "CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:29:03Z",
+  "stderr_sha256": "5fc0545d428edd9282b2febb382b9ab0ff33576c2707245b361d35807052cdaf",
+  "stdout_sha256": "7a839c1a2b8ae96b70c10d0b6589e3a67dc751a6a51dfb480c70b2145d698716",
+  "timed_out": false
+}

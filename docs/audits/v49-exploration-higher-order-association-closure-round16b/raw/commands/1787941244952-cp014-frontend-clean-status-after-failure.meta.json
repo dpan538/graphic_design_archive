@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "git",
+    "status",
+    "--porcelain=v1",
+    "--untracked-files=all"
+  ],
+  "command": "git status --porcelain=v1 --untracked-files=all",
+  "command_id": "1787941244952-cp014-frontend-clean-status-after-failure",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 328,
+  "end_timestamp_utc": "2026-08-28T18:20:45Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-clean-status-after-failure",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:20:44Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "sed",
+    "-n",
+    "1,285p",
+    "frontend/scripts/exploration-reset-guard.mjs"
+  ],
+  "command": "sed -n 1,285p frontend/scripts/exploration-reset-guard.mjs",
+  "command_id": "1787940685432-cp014-frontend-diagnose-active-repository-policy",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-28T18:11:25Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-diagnose-active-repository-policy",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:25Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "2df17a69b1a9016dc2606539663b242a91680f0697fe4139009fa275e3f9a693",
+  "timed_out": false
+}

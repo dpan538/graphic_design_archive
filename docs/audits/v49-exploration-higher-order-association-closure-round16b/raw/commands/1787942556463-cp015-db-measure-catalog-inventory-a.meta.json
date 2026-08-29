@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/psql",
+    "-X",
+    "-Atq",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-h",
+    "/private/tmp/gda-v50-round16b-cp015-final/socket",
+    "-p",
+    "59473",
+    "-U",
+    "jarlgiovanni",
+    "-d",
+    "gda_v50_round16b_cp015_final_a",
+    "-c",
+    "SELECT metric||'='||value FROM (SELECT 'PROJECT_SCHEMA_COUNT' metric,count(*)::bigint value FROM pg_namespace WHERE nspname = ANY (ARRAY['raw','core','provenance','research','rights','workflow','release','audit','api_v1','exploration_v3','api_v3']) UNION ALL SELECT 'V3_ENUM',count(*) FROM pg_type t JOIN pg_namespace n ON n.oid=t.typnamespace WHERE n.nspname='exploration_v3' AND t.typtype='e' UNION ALL SELECT 'V3_TABLE',count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND c.relkind='r' UNION ALL SELECT 'V3_FUNCTION',count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='exploration_v3' UNION ALL SELECT 'V3_CONSTRAINT_TRIGGER',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND NOT t.tgisinternal AND t.tgconstraint<>0 UNION ALL SELECT 'V3_REGULAR_TRIGGER',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND NOT t.tgisinternal AND t.tgconstraint=0 UNION ALL SELECT 'V50_ADDITIVE_VIEW',count(*) FROM pg_views WHERE schemaname IN ('api_v3','exploration_v3') OR (schemaname='audit' AND viewname='exploration_v3_inventory') UNION ALL SELECT 'GOVERNED_TABLE_COUNT',count(*) FROM pg_tables WHERE schemaname = ANY (ARRAY['raw','core','provenance','research','rights','workflow','release','audit','exploration_v3']) UNION ALL SELECT 'API_V3_VIEW_COUNT',count(*) FROM pg_views WHERE schemaname='api_v3' UNION ALL SELECT 'REVIEWER_QUEUE_COUNT',(SELECT count(*) FROM exploration_v3.reviewer_association_queue) UNION ALL SELECT 'V3_INVENTORY_NONZERO_METRIC_COUNT',(SELECT count(*) FROM audit.exploration_v3_inventory i CROSS JOIN LATERAL jsonb_each_text(to_jsonb(i)) e WHERE e.value::bigint<>0)) m ORDER BY metric;"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT metric||'\"'\"'='\"'\"'||value FROM (SELECT '\"'\"'PROJECT_SCHEMA_COUNT'\"'\"' metric,count(*)::bigint value FROM pg_namespace WHERE nspname = ANY (ARRAY['\"'\"'raw'\"'\"','\"'\"'core'\"'\"','\"'\"'provenance'\"'\"','\"'\"'research'\"'\"','\"'\"'rights'\"'\"','\"'\"'workflow'\"'\"','\"'\"'release'\"'\"','\"'\"'audit'\"'\"','\"'\"'api_v1'\"'\"','\"'\"'exploration_v3'\"'\"','\"'\"'api_v3'\"'\"']) UNION ALL SELECT '\"'\"'V3_ENUM'\"'\"',count(*) FROM pg_type t JOIN pg_namespace n ON n.oid=t.typnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND t.typtype='\"'\"'e'\"'\"' UNION ALL SELECT '\"'\"'V3_TABLE'\"'\"',count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND c.relkind='\"'\"'r'\"'\"' UNION ALL SELECT '\"'\"'V3_FUNCTION'\"'\"',count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' UNION ALL SELECT '\"'\"'V3_CONSTRAINT_TRIGGER'\"'\"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND NOT t.tgisinternal AND t.tgconstraint<>0 UNION ALL SELECT '\"'\"'V3_REGULAR_TRIGGER'\"'\"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND NOT t.tgisinternal AND t.tgconstraint=0 UNION ALL SELECT '\"'\"'V50_ADDITIVE_VIEW'\"'\"',count(*) FROM pg_views WHERE schemaname IN ('\"'\"'api_v3'\"'\"','\"'\"'exploration_v3'\"'\"') OR (schemaname='\"'\"'audit'\"'\"' AND viewname='\"'\"'exploration_v3_inventory'\"'\"') UNION ALL SELECT '\"'\"'GOVERNED_TABLE_COUNT'\"'\"',count(*) FROM pg_tables WHERE schemaname = ANY (ARRAY['\"'\"'raw'\"'\"','\"'\"'core'\"'\"','\"'\"'provenance'\"'\"','\"'\"'research'\"'\"','\"'\"'rights'\"'\"','\"'\"'workflow'\"'\"','\"'\"'release'\"'\"','\"'\"'audit'\"'\"','\"'\"'exploration_v3'\"'\"']) UNION ALL SELECT '\"'\"'API_V3_VIEW_COUNT'\"'\"',count(*) FROM pg_views WHERE schemaname='\"'\"'api_v3'\"'\"' UNION ALL SELECT '\"'\"'REVIEWER_QUEUE_COUNT'\"'\"',(SELECT count(*) FROM exploration_v3.reviewer_association_queue) UNION ALL SELECT '\"'\"'V3_INVENTORY_NONZERO_METRIC_COUNT'\"'\"',(SELECT count(*) FROM audit.exploration_v3_inventory i CROSS JOIN LATERAL jsonb_each_text(to_jsonb(i)) e WHERE e.value::bigint<>0)) m ORDER BY metric;'",
+  "command_id": "1787942556463-cp015-db-measure-catalog-inventory-a",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 26,
+  "end_timestamp_utc": "2026-08-28T18:42:36Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-db-measure-catalog-inventory-a",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:42:36Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d4e66316d7516f5b2c91e71823d5ecbcfe5a3ca0ff5a661f8fe0e70fbaa5c3b0",
+  "timed_out": false
+}

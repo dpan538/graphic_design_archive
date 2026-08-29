@@ -1,0 +1,3852 @@
+{
+  "checkpoint_ledger": {
+    "row_count": 9,
+    "shape_status": "PASS",
+    "unique_checkpoint_id_count": 9
+  },
+  "command_ledger": {
+    "artifact_inventory": [
+      {
+        "byte_size": 1219,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827661805-verify-worktree-invariants.meta.json",
+        "sha256": "a18e70efad5bd4aaba4cf9f00e546a79ac8eecc2a549d12038ad739a9b3762ae"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827661805-verify-worktree-invariants.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827661805-verify-worktree-invariants.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 854,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827737838-verify-database-freeze.meta.json",
+        "sha256": "1a4d52ad3ad93204ea0aa5ea18418e5599af4f55369f0815fff5f2b7f20281e0"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827737838-verify-database-freeze.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 236,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827737838-verify-database-freeze.stdout.log",
+        "sha256": "8cc11301f4c091522e41e55755c16bfffd45b665b3cddfd93f2bbc186ca57a4e"
+      },
+      {
+        "byte_size": 842,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827746040-inspect-sqlite-schema.meta.json",
+        "sha256": "485bb75f985ed03bd042467c44c7b37d3f43e8b4ecd8b26cb87652b053296799"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827746040-inspect-sqlite-schema.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1095,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787827746040-inspect-sqlite-schema.stdout.log",
+        "sha256": "62903061814eca3802cb7cdb4137fdd6d505f2c71e0564bb11bff3e3ee5bca4e"
+      },
+      {
+        "byte_size": 1165,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828242018-write-gate0-methods.meta.json",
+        "sha256": "38862fe5255831be2b169f9122f32bb0c879651b184fd0cb9ed1704b8cda3371"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828242018-write-gate0-methods.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828242018-write-gate0-methods.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 834,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828344773-capture-database-identity.meta.json",
+        "sha256": "bde86b826d0b16f4ee2013a4c5aacd5aaa0de54d7f2c5159a438907f1adc7283"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828344773-capture-database-identity.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 682,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828344773-capture-database-identity.stdout.log",
+        "sha256": "eda18ec570bf55b3f66191d5548858a956334ac11dee7c01e4dcac3ebc9fc2c1"
+      },
+      {
+        "byte_size": 692,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828608944-npm-ci.meta.json",
+        "sha256": "e38f37a7eaf21c17839a641891951d90cb3a52bf7fb3058e7e41f959d4356adb"
+      },
+      {
+        "byte_size": 1195,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828608944-npm-ci.stderr.log",
+        "sha256": "bb6985eafe8d1793f5947aeeb0b5da38e5ec1f64d9bafb24a8934bc6694b35e6"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828608944-npm-ci.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 702,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828626137-npm-ci.meta.json",
+        "sha256": "7042de138ecc14051cb7eea02d4aa8c8f531f7a6976af76a8e47f838ed9b6954"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828626137-npm-ci.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 334,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828626137-npm-ci.stdout.log",
+        "sha256": "b75d696dfaf0f3fb39e95d27d188f0cb53cd3abc825f8ff1288166786665638a"
+      },
+      {
+        "byte_size": 870,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828641889-round14-baseline-regression.meta.json",
+        "sha256": "0e7ecc696dd18775a8a034162a687169868fa4f9188bb9f4b6d666083e2d3ca4"
+      },
+      {
+        "byte_size": 1421,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828641889-round14-baseline-regression.stderr.log",
+        "sha256": "6bdef956141848289c1d0c9dca6e01fbfaa127a5723d5944f1d6d4b69f6a1c5e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828641889-round14-baseline-regression.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 860,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828647576-round15-baseline-regression.meta.json",
+        "sha256": "3ed915fa8912d2b390c9137c984989f3fc52d62aaab7b51535ee5072625078d5"
+      },
+      {
+        "byte_size": 1605,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828647576-round15-baseline-regression.stderr.log",
+        "sha256": "592a2fcf171c132d9c491225ca2fc0d65b65bcf937f17ced91d125d10c92659f"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828647576-round15-baseline-regression.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 834,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828693710-build-vocabulary-universe.meta.json",
+        "sha256": "8a1cf221983c15cf549248f22da7e1c228a5343c89de8936c244c22471305fbb"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828693710-build-vocabulary-universe.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 443,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787828693710-build-vocabulary-universe.stdout.log",
+        "sha256": "a0109f98f651abf194d8bd379e61d8cd1f28d9020cf9d9cdc2bf2d2cb82eaeed"
+      },
+      {
+        "byte_size": 1043,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829681926-vocabulary-universe-final-builder.meta.json",
+        "sha256": "e13ec7210bb11d2007af1d2acdd3c96a0766be55fc42eaa80268a4b5e2fcca7a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829681926-vocabulary-universe-final-builder.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 475,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829681926-vocabulary-universe-final-builder.stdout.log",
+        "sha256": "0eef69b6aa455212992d3ddcc5d67c376b32082c37739f1eb3e6d8b87e705000"
+      },
+      {
+        "byte_size": 842,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829688227-python-builder-static-compile.meta.json",
+        "sha256": "89ca826a1de74e7815c390aa525cdc3dd4a966092695923e5bc2c6bbc6132062"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829688227-python-builder-static-compile.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829688227-python-builder-static-compile.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1032,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829756021-vocabulary-eligibility-census.meta.json",
+        "sha256": "6957a936c88f5bf43b7b7906a44140e11755f1b8f760ed69082ac7ae18c07d60"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829756021-vocabulary-eligibility-census.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1225,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829756021-vocabulary-eligibility-census.stdout.log",
+        "sha256": "3991dfea7e3f9b4129d42ee14dbf07aca7b9c4f8a94df46913e2e864194c7dae"
+      },
+      {
+        "byte_size": 1062,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829807819-vocabulary-universe-determinism.meta.json",
+        "sha256": "1ad221adf50cd41f7d5ee9e4de567ed4227e53b57764dd089165e570bdfaf140"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829807819-vocabulary-universe-determinism.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 470,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829807819-vocabulary-universe-determinism.stdout.log",
+        "sha256": "ea8f92d1b9f2896fde8981d2dbce2187c8cd924b7d493031aaee8de94819432a"
+      },
+      {
+        "byte_size": 1055,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829817800-vocabulary-census-determinism.meta.json",
+        "sha256": "42a454d7456b4ae91403c8a6e8a6d46c7b2f1f97e7c18f11302a7a0c77f0589f"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829817800-vocabulary-census-determinism.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1220,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829817800-vocabulary-census-determinism.stdout.log",
+        "sha256": "8ede8e2d2d54cc42ed3101b12f7b689a1f9b0173f0b7d570a6e750646d6384c3"
+      },
+      {
+        "byte_size": 3926,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829837140-checkpoint-1-stage.meta.json",
+        "sha256": "1a08dc591d960d5cc5f028d05582ea7af7fa86eab8655a16193d586061e7ac3b"
+      },
+      {
+        "byte_size": 188,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829837140-checkpoint-1-stage.stderr.log",
+        "sha256": "75f0354ca1cab226d6c489b1a395004d1be0cca23ee0ad2c89a0b7d95149062a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829837140-checkpoint-1-stage.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3945,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829856939-checkpoint-1-stage-escalated.meta.json",
+        "sha256": "2dacaf4df847c174929e24506356f579064ef6cbe590cf50ab98ce078c871f77"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829856939-checkpoint-1-stage-escalated.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829856939-checkpoint-1-stage-escalated.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2854,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829908454-checkpoint-1-commit.meta.json",
+        "sha256": "bfdf69a429cb6d902bbdf6e1ce00980dd122dcd54d18f94b0630544771df1a88"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829908454-checkpoint-1-commit.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 5374,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829908454-checkpoint-1-commit.stdout.log",
+        "sha256": "98465f5f9b57ab5bcd8640a36425312dd2cc148b6dca980a53049c5ce8804ac0"
+      },
+      {
+        "byte_size": 1016,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829931505-pair-universe-enumeration.meta.json",
+        "sha256": "b8e1dda4c142e9704c1c0b35e5ab1feba4f02ba62206bafb29b88e20e41c623c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829931505-pair-universe-enumeration.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 554,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829931505-pair-universe-enumeration.stdout.log",
+        "sha256": "19f8c08ef537eefd6599d5606fdc8c336466f58afb147a69fd6b388df5ca7514"
+      },
+      {
+        "byte_size": 1358,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829960975-association-search-batch-001.meta.json",
+        "sha256": "bea9ce080bbc9cd30f66e0ae3409015fe7e80e561e94d4680ca2dc66ca7c3109"
+      },
+      {
+        "byte_size": 2151,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829960975-association-search-batch-001.stderr.log",
+        "sha256": "51cb394cb6248072ee8f62b1172303b746c1ad01b61935a20f1832f9d8e985fd"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787829960975-association-search-batch-001.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1369,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830068177-association-search-batch-001-retry.meta.json",
+        "sha256": "5168ad812cf5cfa2776ef41871b9aeaf076f5f7ba180f28a84b86cffb8a251dc"
+      },
+      {
+        "byte_size": 1637,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830068177-association-search-batch-001-retry.stderr.log",
+        "sha256": "f46d1dcf8c989354e61e4e1437a2ef1faa1754115985e3475505591e3b026a1f"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830068177-association-search-batch-001-retry.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1367,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830093596-association-search-batch-001-final.meta.json",
+        "sha256": "b50c3b86a82cbfdbe0146f3369e4c91e55783972267e732444e415a2352a801c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830093596-association-search-batch-001-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 626,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830093596-association-search-batch-001-final.stdout.log",
+        "sha256": "26d1d93c1faf4fa2c32108746e132bd69829f710534e6b47b943aac34915f0be"
+      },
+      {
+        "byte_size": 1361,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830137600-association-search-batch-002.meta.json",
+        "sha256": "521ba16fdefe7c326437c849e4bc923cfd740d3013f9941035a8eca1e658a86a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830137600-association-search-batch-002.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 629,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830137600-association-search-batch-002.stdout.log",
+        "sha256": "dc15e0b715305ac7924788f21e2552e642eae203cc632d766bf5e1c2134c8d06"
+      },
+      {
+        "byte_size": 1365,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830658046-association-search-batch-003.meta.json",
+        "sha256": "04368853737d002bb0041726fc186a268dc076fb829cc36bddb89ca257524fd2"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830658046-association-search-batch-003.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 633,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830658046-association-search-batch-003.stdout.log",
+        "sha256": "767edd9192a30adbc1add37f241dedff7474e33175935d6345ff36339441d809"
+      },
+      {
+        "byte_size": 1367,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830801939-association-search-batch-004.meta.json",
+        "sha256": "14507191f577ecbe475a26da09bef43ae457cd0c3147b21f54dd35e58dc5a4ab"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830801939-association-search-batch-004.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 634,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787830801939-association-search-batch-004.stdout.log",
+        "sha256": "6b19484c4fb49cdabda8002830ac138c3c59734a01d02fa98ed1ef79d32256c2"
+      },
+      {
+        "byte_size": 1367,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831442869-association-search-batch-005.meta.json",
+        "sha256": "20bb6e4e9a7aa82a3252efdccbad65d699cbc54fa52eb5c18be8c27e9d394a34"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831442869-association-search-batch-005.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 634,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831442869-association-search-batch-005.stdout.log",
+        "sha256": "f6cd1c615c286146a62de9867796c5026f135fdbc83f40c160990c6ce6ee117e"
+      },
+      {
+        "byte_size": 1367,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831587088-association-search-batch-006.meta.json",
+        "sha256": "742a76528b5cb459aec5141bb8814765ba37d6a9e1421541128b4e3c2e140149"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831587088-association-search-batch-006.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 634,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831587088-association-search-batch-006.stdout.log",
+        "sha256": "44dc21cf261076bdeda57520a8dfdca3bb008739a357729688c305ae4177b038"
+      },
+      {
+        "byte_size": 2769,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831731929-association-query-log-merge.meta.json",
+        "sha256": "f175a5143c8c2b2815fd5eed5e655d48c2c51bcca7c6a6b3edd10743618d4816"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831731929-association-query-log-merge.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 640,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831731929-association-query-log-merge.stdout.log",
+        "sha256": "21ab4708c9147c3250f58b6b011633a2deaedc6dfbef4b8ce299099fbc285563"
+      },
+      {
+        "byte_size": 837,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831872991-association-census-pass1.meta.json",
+        "sha256": "87ed2df913e7e30e53cd3e36c8cf9d32a1b0d027e6559caae6af68aa28e208aa"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831872991-association-census-pass1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 474,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831872991-association-census-pass1.stdout.log",
+        "sha256": "106cbb21bfa792bb4de7f172595cc72713dc34f3e1d5cd23344b787bc16539a5"
+      },
+      {
+        "byte_size": 837,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831884311-association-census-pass2.meta.json",
+        "sha256": "d49f81687cb1a7af3ea493c63ba70e251598345c81c76b8b077b98005ee45598"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831884311-association-census-pass2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 474,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831884311-association-census-pass2.stdout.log",
+        "sha256": "106cbb21bfa792bb4de7f172595cc72713dc34f3e1d5cd23344b787bc16539a5"
+      },
+      {
+        "byte_size": 839,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831938907-association-census-proof1.meta.json",
+        "sha256": "5f5f73252422b838564a7585c27e2db17939bda00042fa1dcd324d188f1e8579"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831938907-association-census-proof1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 474,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831938907-association-census-proof1.stdout.log",
+        "sha256": "106cbb21bfa792bb4de7f172595cc72713dc34f3e1d5cd23344b787bc16539a5"
+      },
+      {
+        "byte_size": 839,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831949604-association-census-proof2.meta.json",
+        "sha256": "b1ae4afd2d2454ccb51761ed438fcfa4ab563edc4f8ef322817661be07096ff4"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831949604-association-census-proof2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 474,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787831949604-association-census-proof2.stdout.log",
+        "sha256": "106cbb21bfa792bb4de7f172595cc72713dc34f3e1d5cd23344b787bc16539a5"
+      },
+      {
+        "byte_size": 3824,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832013790-checkpoint-2-stage.meta.json",
+        "sha256": "056b567b3a0db38398e4b2e464bd3f5f434df0f37a1f1d6c8c4b90f3583fb364"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832013790-checkpoint-2-stage.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832013790-checkpoint-2-stage.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2054,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832045166-checkpoint-2-commit.meta.json",
+        "sha256": "f53eaab8fc05a3b035b690b5f9e738a5a9af58a01a429fb6f9b50a248ea6eadf"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832045166-checkpoint-2-commit.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 195555,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832045166-checkpoint-2-commit.stdout.log",
+        "sha256": "cf7643f8ab0cccd9d89e5b8aaf7814cefc39954da4b4170fe4e850498b5cd08d"
+      },
+      {
+        "byte_size": 876,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832113092-full-space-syntax-check.meta.json",
+        "sha256": "8a4c0349dd5de49880de30c5db1a1271e7bd9f93fd38856978a4bcfeeaa0f484"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832113092-full-space-syntax-check.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832113092-full-space-syntax-check.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 845,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832134436-full-space-generation-pass1.meta.json",
+        "sha256": "fd40590501a06804a1ca2449bec5e01d6551df6673f6ded9c73196e593df9445"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832134436-full-space-generation-pass1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832134436-full-space-generation-pass1.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 845,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832172665-full-space-generation-pass2.meta.json",
+        "sha256": "d871d67bfe7a6d7a86483c19713582d0cc0ee94a92be44050aaaba9dbe49e0c2"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832172665-full-space-generation-pass2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832172665-full-space-generation-pass2.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 843,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832253755-full-space-mutation-proof1.meta.json",
+        "sha256": "ebc3ff2d8d55ff28ee99a999db568747450e8f2f6c7377782a5659321ccc20d2"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832253755-full-space-mutation-proof1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832253755-full-space-mutation-proof1.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 843,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832279053-full-space-mutation-proof2.meta.json",
+        "sha256": "fbba321ff163abc4f9eef27d445c5baf2ec09e0371d81c332fa20349effd4352"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832279053-full-space-mutation-proof2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832279053-full-space-mutation-proof2.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 837,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832364114-full-space-final-proof1.meta.json",
+        "sha256": "b3e7e87d348cd9201f53c9bb6df3a7bd512cb3e102489fd46b090b4b74402e84"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832364114-full-space-final-proof1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832364114-full-space-final-proof1.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 837,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832389368-full-space-final-proof2.meta.json",
+        "sha256": "db683cb4af16f3548664e1df5625e92638193be253e7ab803d1698d8c94a1620"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832389368-full-space-final-proof2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832389368-full-space-final-proof2.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 1127,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832664959-independent-core-verification.meta.json",
+        "sha256": "edd1e7d0a866b91fc61e9a93a8cbddcf88bdc92f8d709c499d32d9e7a5b3d362"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832664959-independent-core-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832664959-independent-core-verification.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1139,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832734431-independent-core-verification-retry.meta.json",
+        "sha256": "02358fc3cc98be478aaaae609bad2ba857d8d81612311104e8cdfa5e6e8eb4e5"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832734431-independent-core-verification-retry.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832734431-independent-core-verification-retry.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1008,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832947598-generator-instrumentation-syntax-check.meta.json",
+        "sha256": "7cdc71ba34ab7662511fedd3e3c8d721b7b7c7414a6cc5d12f0ef572c1be773f"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832947598-generator-instrumentation-syntax-check.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832947598-generator-instrumentation-syntax-check.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 842,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832961525-association-build-timed-pass1.meta.json",
+        "sha256": "13993e6e2add2282929bc8f3dee37446490611528b36149fc3146c0c5920b5b4"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832961525-association-build-timed-pass1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 474,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832961525-association-build-timed-pass1.stdout.log",
+        "sha256": "106cbb21bfa792bb4de7f172595cc72713dc34f3e1d5cd23344b787bc16539a5"
+      },
+      {
+        "byte_size": 842,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832973000-association-build-timed-pass2.meta.json",
+        "sha256": "030f398cf7f1ff9fe25444c58569376ea9132367b4c3da48d89ae78273cf640b"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832973000-association-build-timed-pass2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 474,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832973000-association-build-timed-pass2.stdout.log",
+        "sha256": "106cbb21bfa792bb4de7f172595cc72713dc34f3e1d5cd23344b787bc16539a5"
+      },
+      {
+        "byte_size": 828,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832990652-full-space-timed-pass1.meta.json",
+        "sha256": "dacb724bc52ea7806913e51fa8e637a3e294e7109cd3ab623828aa89bafcd0fa"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832990652-full-space-timed-pass1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787832990652-full-space-timed-pass1.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 828,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833017118-full-space-timed-pass2.meta.json",
+        "sha256": "486a1492b2efa716042bd68c43847f59b40c789d2c6c890de583737e1b6c182c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833017118-full-space-timed-pass2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 462,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833017118-full-space-timed-pass2.stdout.log",
+        "sha256": "b0a1595f734501ad4faf80b81fa788e4b8ea05bc2ae695c44cd30723765cb590"
+      },
+      {
+        "byte_size": 974,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833222403-compact-model-syntax-check.meta.json",
+        "sha256": "1ff87a116f05dd70c25a635d8278a88bdd3025394f7e80919e63148ae932a35e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833222403-compact-model-syntax-check.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833222403-compact-model-syntax-check.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 847,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833237122-compact-model-generation-pass1.meta.json",
+        "sha256": "469e55cb888e14cdaf4581476372a566e542e250fd5130b99f49e615254c7706"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833237122-compact-model-generation-pass1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 460,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833237122-compact-model-generation-pass1.stdout.log",
+        "sha256": "21008b6388f8e60ae727570db770e75e74b5a8fe1107783f831c7e3f6f1a97e2"
+      },
+      {
+        "byte_size": 848,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833261882-compact-model-generation-pass2.meta.json",
+        "sha256": "c3fc47d036d3fb88689f4941e2908796c14ed8a79e419f23f7bd601796b7e312"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833261882-compact-model-generation-pass2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 460,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833261882-compact-model-generation-pass2.stdout.log",
+        "sha256": "21008b6388f8e60ae727570db770e75e74b5a8fe1107783f831c7e3f6f1a97e2"
+      },
+      {
+        "byte_size": 1137,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833288026-independent-compact-model-verification.meta.json",
+        "sha256": "1d038e54894a4e321f09a454d6c6edff6f983895203a3c2923cc32c7cb0055c1"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833288026-independent-compact-model-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833288026-independent-compact-model-verification.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1149,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833353899-independent-compact-model-verification-retry.meta.json",
+        "sha256": "b17db14214227b66fef6d02ebe000ad31851127e5ab75567de0a5c7c29db3a6c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833353899-independent-compact-model-verification-retry.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833353899-independent-compact-model-verification-retry.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 5657,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833423225-checkpoint-3-stage.meta.json",
+        "sha256": "5785503897d66efda1a19e683b98d0a4784061248f24b48b10856d530a357d41"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833423225-checkpoint-3-stage.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833423225-checkpoint-3-stage.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3382,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833451939-checkpoint-3-commit.meta.json",
+        "sha256": "773e086de406dd1920f9ddf24a2809b41ade414cc05f382459d4002c3969a519"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833451939-checkpoint-3-commit.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 5388,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787833451939-checkpoint-3-commit.stdout.log",
+        "sha256": "64a83565692d90e709dc2621ca877eac7cf916f501ceccfa4eddacdf3158b247"
+      },
+      {
+        "byte_size": 1735,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834188656-api-harness-syntax-preflight.meta.json",
+        "sha256": "55ef261f0f962a5f22a8b69a54be75f738b5a5cc52ab5ecf1eb17cad9714f718"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834188656-api-harness-syntax-preflight.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834188656-api-harness-syntax-preflight.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 954,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834290777-api-v2-static-exhaustive-verification.meta.json",
+        "sha256": "cb9eb4ad758b9b22abb91bb80d69a0a847c65de288f17f9468b85b61ddbb73b5"
+      },
+      {
+        "byte_size": 588,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834290777-api-v2-static-exhaustive-verification.stderr.log",
+        "sha256": "9f76e2a8255fccef069163f0775879c2ca3739330a5936848e44feb88c39aa84"
+      },
+      {
+        "byte_size": 3035,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834290777-api-v2-static-exhaustive-verification.stdout.log",
+        "sha256": "25597dbb4e2c78e0f2dc8c117c2ac280b06bfcbeb4364fe35d49c2795fbb6754"
+      },
+      {
+        "byte_size": 969,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834495513-api-v2-static-exhaustive-verification-retry1.meta.json",
+        "sha256": "0bc1876cafa5863754487985f061e515e75b2fb874756430509b068980e5d8a6"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834495513-api-v2-static-exhaustive-verification-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3048,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834495513-api-v2-static-exhaustive-verification-retry1.stdout.log",
+        "sha256": "f5e48810979904a2a5cf02f6ec35ac11e97f05fc8c15fc621962e560b0dcd338"
+      },
+      {
+        "byte_size": 969,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834762144-api-v2-static-exhaustive-verification-retry2.meta.json",
+        "sha256": "c5643cdbdf907560b84acfb1ca4b52b681fae0b979380319b29c9a39053dbf11"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834762144-api-v2-static-exhaustive-verification-retry2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3012,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834762144-api-v2-static-exhaustive-verification-retry2.stdout.log",
+        "sha256": "b52a12f7a1a68c1e6de8032d1a1a75fb3464b0cd053afaf864c6eb4e740d992b"
+      },
+      {
+        "byte_size": 758,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834974279-typecheck-runtime.meta.json",
+        "sha256": "f3cb84f0ef66adca60a603260b2fae2c7158478f522a18018d6e52ca3d495cdb"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834974279-typecheck-runtime.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 113,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787834974279-typecheck-runtime.stdout.log",
+        "sha256": "c349558037530c606c9c9103166fee8bf28aecbd115e11fb5287b9d73efc08d3"
+      },
+      {
+        "byte_size": 778,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835000841-typecheck-full.meta.json",
+        "sha256": "f3bad3f6d6c203c43ecf9b8c47fd302670427f1198e460fb2ec26c53c229306a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835000841-typecheck-full.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835000841-typecheck-full.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 732,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835028679-production-build.meta.json",
+        "sha256": "6ed3237329c64ee3d2504c21ee82362be2bbd1d3ccbcfd5cf63a3bf50f99e984"
+      },
+      {
+        "byte_size": 910,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835028679-production-build.stderr.log",
+        "sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee"
+      },
+      {
+        "byte_size": 262,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835028679-production-build.stdout.log",
+        "sha256": "e73d8f3dbc2a924eba925cdd036302d833e29a1f424845ab6aa3c05111fdc44f"
+      },
+      {
+        "byte_size": 746,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835062093-production-build-retry1.meta.json",
+        "sha256": "a5adff02db637814520860df87d7b9a38ea2622ed929174d9ceaf1d6c6a2c78c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835062093-production-build-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3615,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835062093-production-build-retry1.stdout.log",
+        "sha256": "033d0bed9617b498d3738505e3406c20e2b528ae7b306ef13e8c27dd09815cc4"
+      },
+      {
+        "byte_size": 1421,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835172196-production-model-load-measurement.meta.json",
+        "sha256": "8fa8ac4ba3ba99ea859b9350999625024dfd6d8b4e065e3aa54bdfd167096027"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835172196-production-model-load-measurement.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1082,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835172196-production-model-load-measurement.stdout.log",
+        "sha256": "8a4f6e1e8621e7b2883f0f53e86b244d07bb5d75cb339e010bf45c8a4bbfad6a"
+      },
+      {
+        "byte_size": 4474,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835235163-checkpoint-4-stage.meta.json",
+        "sha256": "6a4e5b607bfc2b65bb298c25a759503cb3b6b6460de418f2a5744890e8d56829"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835235163-checkpoint-4-stage.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835235163-checkpoint-4-stage.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1583,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835287945-checkpoint-4-stage-ledger-whitespace-policy.meta.json",
+        "sha256": "ddfa70ca43721da9b5a30d52ab02611ac95ae50476468421f194e62fae12a0fe"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835287945-checkpoint-4-stage-ledger-whitespace-policy.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835287945-checkpoint-4-stage-ledger-whitespace-policy.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 838,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835305693-checkpoint-4-commit.meta.json",
+        "sha256": "c6b6dc9c0661d349c6e07702f6e74b50a1cc51ca1faa38c52c8e22e504d66574"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835305693-checkpoint-4-commit.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 5268,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835305693-checkpoint-4-commit.stdout.log",
+        "sha256": "229d9c036547a08a6215eccd9c959679f21376fd65179126bda87b86bbdd829f"
+      },
+      {
+        "byte_size": 1508,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835339069-production-server-session.meta.json",
+        "sha256": "706e56bd7fbf3151b34acba8115c1294e542d3bf8faed0b8ac71a65179d6be96"
+      },
+      {
+        "byte_size": 816,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835339069-production-server-session.stderr.log",
+        "sha256": "93088e9438702ad06b2cf4962db31f679ecd9bda1ef19eca9c6e383d8358ff32"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835339069-production-server-session.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1618,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.meta.json",
+        "sha256": "ce730b1b1f211047c6d918576724c7e2fe38202951c4c1567ea7b56cf79eaafa"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1205,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.stdout.log",
+        "sha256": "63684753fd1fec3430f4ae9c8516a687feea70284edd47309fbeffab49cf00db"
+      },
+      {
+        "byte_size": 1706,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835423069-api-functional-http-exhaustive.meta.json",
+        "sha256": "b8cc2a938f600c7a218821d8af8504aa62903b8ffe6425d1a19feacb27df81eb"
+      },
+      {
+        "byte_size": 688,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835423069-api-functional-http-exhaustive.stderr.log",
+        "sha256": "770b824ebd222e8afa75e5cd47666567e1d72ccd7ef46bfaeeeee16e50ea4610"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835423069-api-functional-http-exhaustive.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1720,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835902259-api-functional-http-exhaustive-retry1.meta.json",
+        "sha256": "3f1e2f4d288766e9b3076e716ff8ae1724a9c706be50cc1a3e1ed74a08cbe4e1"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835902259-api-functional-http-exhaustive-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 230,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835902259-api-functional-http-exhaustive-retry1.stdout.log",
+        "sha256": "c59a855333da2ab297a8c1078f5eb8b5714002bbe2ad991893d8e8b48955046f"
+      },
+      {
+        "byte_size": 1541,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836308481-export-validation-part-00.meta.json",
+        "sha256": "2c8b2438d176448d663c228a033ee8345968eda329680be4f028a726a540dc97"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836308481-export-validation-part-00.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 54,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836308481-export-validation-part-00.stdout.log",
+        "sha256": "b818daf301698f94b61e6571137b92370d050cde0e4d1def8a7c282ab69b9bd0"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836489186-export-validation-part-01.meta.json",
+        "sha256": "c20f9efa561b94f5aba8917d135e98d55617c1a701ca4a20762295a89d78724c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836489186-export-validation-part-01.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836489186-export-validation-part-01.stdout.log",
+        "sha256": "6d16e133972ee680d5c8b9841cf90eaac1cb71fb67a7db238ccab9e4fafec1f2"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836645193-export-validation-part-02.meta.json",
+        "sha256": "c14a8208cc7500ef5d8a9296712fe4239344ae61c31e923a545d98dd41195ced"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836645193-export-validation-part-02.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836645193-export-validation-part-02.stdout.log",
+        "sha256": "7660dbca0d4db0cff29355188cd7ae8cba7780b3d74a395e924e514ae7e8a2a3"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836798846-export-validation-part-03.meta.json",
+        "sha256": "644c38c7412b5d51ea4d23678f74c9899c7c3f8fdcb0728b464a557af5720298"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836798846-export-validation-part-03.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836798846-export-validation-part-03.stdout.log",
+        "sha256": "06245e24b4a26f855b486665ffc0c777ccac701e4b1eb03c406b6fbc79ba626f"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836953332-export-validation-part-04.meta.json",
+        "sha256": "381816973a2133db1fb26a2bf20a708955656193e328c5a5cf63cddf3afc1e70"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836953332-export-validation-part-04.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787836953332-export-validation-part-04.stdout.log",
+        "sha256": "f10680fd4cefa299031c646d518060da49068d82a0c689dc810bdb8c5585e275"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837103990-export-validation-part-05.meta.json",
+        "sha256": "50b998c6470077a228e106dcd545ac4336c2095b1d14726bac8b36d0194d5b20"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837103990-export-validation-part-05.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837103990-export-validation-part-05.stdout.log",
+        "sha256": "59d0d66b54042cf98286ef47557d9a95e0e0c39cb90d9c69127a6be9e432eba2"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837254081-export-validation-part-06.meta.json",
+        "sha256": "2a118c6f03b6bb8182f2cc09550c06071f83fda514dfd66f9b5e626ac59c9e26"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837254081-export-validation-part-06.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837254081-export-validation-part-06.stdout.log",
+        "sha256": "8366646a2e21c87d34396cd3582ad51b3eb444d93d0c36e809e9a0b8f113bad4"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837408006-export-validation-part-07.meta.json",
+        "sha256": "d886dd40f628de7077e04be8193b196975e1607482ac3e99c67a2de9d12a2640"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837408006-export-validation-part-07.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837408006-export-validation-part-07.stdout.log",
+        "sha256": "46681827a000ce7df40cbe023c15b6f1f39386e9f122366461733caf43168236"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837562202-export-validation-part-08.meta.json",
+        "sha256": "7c4e3d184261a10193b23f73ad4ff9c1aae4899b2b633a115405bf73f5ea3137"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837562202-export-validation-part-08.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837562202-export-validation-part-08.stdout.log",
+        "sha256": "412b868fcbec3c44af5a2638884e339acadeec3fc71097581fb16b5998ccd8b0"
+      },
+      {
+        "byte_size": 1547,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837713868-export-validation-part-09.meta.json",
+        "sha256": "0b80596553f75a1ad90d0cb869adc932352437a3e24791fe6baf7c53cb99a63d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837713868-export-validation-part-09.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837713868-export-validation-part-09.stdout.log",
+        "sha256": "8ce5ecde692f617fa2d1db8402fa27c075989bf04a702c2ca02785bd05cb619a"
+      },
+      {
+        "byte_size": 1549,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837864718-export-validation-part-10.meta.json",
+        "sha256": "76e54274d1fbc8ed8f5fa8cef953eba6b47aff3f4a34ba5c2768ac1c7b263124"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837864718-export-validation-part-10.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 58,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787837864718-export-validation-part-10.stdout.log",
+        "sha256": "f1926fdc24cf7208759def5085cba0760006e5c0811e55e19ae45b694e67d8ed"
+      },
+      {
+        "byte_size": 1546,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838015339-export-validation-part-11.meta.json",
+        "sha256": "2beb4b92de0e2d356ce66467f8a6b7e1a40505d55abd7cd9b7d56ddf7ac17b76"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838015339-export-validation-part-11.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 57,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838015339-export-validation-part-11.stdout.log",
+        "sha256": "ddca4d8883f7878e4ad5de094dfdaf7ddc0e5365ece91170edf1c2e4259573c6"
+      },
+      {
+        "byte_size": 3719,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838113142-export-validation-merge.meta.json",
+        "sha256": "2eb7e43f285b1708b03e3b3c8dab0bc1d8a2ca5f8b07fb56ec6a94282a9433f7"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838113142-export-validation-merge.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 47,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838113142-export-validation-merge.stdout.log",
+        "sha256": "13054645bbac273f0bf91bf9e114de727b8e53584feab63625e5573e7205229f"
+      },
+      {
+        "byte_size": 874,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838123430-workload-evidence-directory.meta.json",
+        "sha256": "5973be668a06ad4ca6cf1922ffa8f63902dee2d3a9536c16af50e883aa06ce7a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838123430-workload-evidence-directory.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838123430-workload-evidence-directory.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1681,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838153987-load-json-c1-warm.meta.json",
+        "sha256": "b6001f22c7b31b8f182a25bdac5a71fb87159d0ab1360a751199733125137a4a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838153987-load-json-c1-warm.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 162,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838153987-load-json-c1-warm.stdout.log",
+        "sha256": "1b1a2191f1b862bbca95d96a35a7416f922862deeeaa43ac32ffc0b7de8dd2e9"
+      },
+      {
+        "byte_size": 1646,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838189777-load-json-c5.meta.json",
+        "sha256": "e96cc8f092a85a4e11396a3d971b41c02a38db6b2de226c0963ca911087bf925"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838189777-load-json-c5.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 155,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838189777-load-json-c5.stdout.log",
+        "sha256": "5285337345b674662016971422950ac3d6fceebb0a3585a84bb1ac27c7568da8"
+      },
+      {
+        "byte_size": 1654,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838197796-load-json-c10.meta.json",
+        "sha256": "644c4a4547abfe4a2c1e1cded701ef4eb314b1f32130caa0435470caafa4f01a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838197796-load-json-c10.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 155,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838197796-load-json-c10.stdout.log",
+        "sha256": "1585dbabe5ad932fc00686c8f3aed01f025f7b30b633a90049132d879af13c7b"
+      },
+      {
+        "byte_size": 1654,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838204084-load-json-c25.meta.json",
+        "sha256": "2a7f73f6c224c7caf7782ff0342a9369c6fc850f256771d4ff3818d0502c4f64"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838204084-load-json-c25.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 156,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838204084-load-json-c25.stdout.log",
+        "sha256": "ed18ca51d9e2ab2efae675325bc220dd89d0af52453b302d49416f4c85ce772b"
+      },
+      {
+        "byte_size": 1672,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838211814-load-json-c50-burst.meta.json",
+        "sha256": "3483f8d51c10eaebbff6107b7c088bb9c876a37111e3c1bbc37bf06485aae684"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838211814-load-json-c50-burst.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 161,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838211814-load-json-c50-burst.stdout.log",
+        "sha256": "dae2beab1c8648c98d6e20be9ba5305ff6a723c6e4c280274b6e0b9861aad8a9"
+      },
+      {
+        "byte_size": 1645,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838219231-load-png-c1.meta.json",
+        "sha256": "9d5f5b972a9aef7954aa745bc9fab83bbc76c77a1662d9c1e11c00bef67ef34d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838219231-load-png-c1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 152,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838219231-load-png-c1.stdout.log",
+        "sha256": "59ddc79658ed9d8ff587fdfce51ece22ac61ec583f36a217b6115f06d52695a6"
+      },
+      {
+        "byte_size": 1645,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838237294-load-png-c2.meta.json",
+        "sha256": "81728d3fdc031b2bf6e72e72f150ed17a0863173e725faf359faedc8ba708007"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838237294-load-png-c2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 150,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838237294-load-png-c2.stdout.log",
+        "sha256": "23284d8abdfbc685efa91acca102d5df73ddc6e10d7419c7fa7d6f95acfbcd9f"
+      },
+      {
+        "byte_size": 1645,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838252317-load-png-c5.meta.json",
+        "sha256": "bb716084d34f0d22a17d8f4b7e389d46bce28fd3ee8cc5c9a7e395d7c49b5c6d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838252317-load-png-c5.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 144,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838252317-load-png-c5.stdout.log",
+        "sha256": "2f04ce8ab8aee86501afddc045be1dd3b96dfc87b729a9817a2fd93f17050ed8"
+      },
+      {
+        "byte_size": 1653,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838268577-load-png-c10.meta.json",
+        "sha256": "43013f502be1116eac53a35eb6a4fe91e1faee48c19ced497aa6761304377eaf"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838268577-load-png-c10.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 144,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838268577-load-png-c10.stdout.log",
+        "sha256": "eefae1b8147dff7d06fbe816715122ff7598ad3bc240dcd2aa1654b90f077d94"
+      },
+      {
+        "byte_size": 1343,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838299098-sustained-load-criterion-declaration.meta.json",
+        "sha256": "2f292dd034fde9498c4d88986e5f7314d488f2fccdf53e0e4014c86c33dab804"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838299098-sustained-load-criterion-declaration.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 278,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838299098-sustained-load-criterion-declaration.stdout.log",
+        "sha256": "3a4be228e92a411885a19f34c7451cc12c77e73c9840c4a32a7793b4b099eca3"
+      },
+      {
+        "byte_size": 1738,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838314996-sustained-mixed-load-c25.meta.json",
+        "sha256": "00e1338b219ef6936f6ebe67cf419b39b14e327a6b8e6135550005941cfe694f"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838314996-sustained-mixed-load-c25.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 168,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838314996-sustained-mixed-load-c25.stdout.log",
+        "sha256": "0ff0562588d00aceec7850be4a3165f89cfc85e164d3937e51b9103a2db6e474"
+      },
+      {
+        "byte_size": 842,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838753504-production-server-log-reconciliation.meta.json",
+        "sha256": "dc3ea7529281114a9054317829751cb40bc013650086a596955c54470b2b8ca6"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838753504-production-server-log-reconciliation.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 118,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838753504-production-server-log-reconciliation.stdout.log",
+        "sha256": "4667045a6892f2ebb3bf964a6a8c720bcc00c2d16734123c1f6c343b7771af61"
+      },
+      {
+        "byte_size": 1012,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838766397-production-runtime-summary.meta.json",
+        "sha256": "a248e34e99c751d31cf71987a8148acbdec4a03a20f485e1b9061bf77255eab6"
+      },
+      {
+        "byte_size": 514,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838766397-production-runtime-summary.stderr.log",
+        "sha256": "ab8dff68d4cfb32d8d45904b5af7730b30ad31f70d1fb4ebd57c184a6edb0b69"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787838766397-production-runtime-summary.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 898,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839083965-workload-evidence-directory-retry1.meta.json",
+        "sha256": "0f874c88fb109999e7e6576c69fc20fac8d13838f2fe72434e08570e02322de1"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839083965-workload-evidence-directory-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839083965-workload-evidence-directory-retry1.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1562,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839084123-sustained-load-criterion-declaration-retry1.meta.json",
+        "sha256": "553b54b284b6237b9ddbc514ebe863da75c7bc21582586be1be7da8b808eeab2"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839084123-sustained-load-criterion-declaration-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 384,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839084123-sustained-load-criterion-declaration-retry1.stdout.log",
+        "sha256": "8c06537c9d13c4e99f7dad604ea2aa5c79056f4c2963d10345b3e9c37015f33a"
+      },
+      {
+        "byte_size": 1525,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839101237-production-server-session-retry2.meta.json",
+        "sha256": "904b76be751e1e4411246c202fbc413fc62ae00fc995ac8d5bea3e0f0b47323c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839101237-production-server-session-retry2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1203,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839101237-production-server-session-retry2.stdout.log",
+        "sha256": "a6918809504b65e96d8e75e60d39948df2602e89398ad3f7211b84c80d80a333"
+      },
+      {
+        "byte_size": 1725,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839170005-load-json-c1-warm-retry1.meta.json",
+        "sha256": "08ed39223fa83e0d33d548ea3158565615896ee49246e4924c101eafd8497a96"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839170005-load-json-c1-warm-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 169,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839170005-load-json-c1-warm-retry1.stdout.log",
+        "sha256": "ff7ef5996a533f0b923243a904e2a12feefff79eba034f8ed481130082d336dd"
+      },
+      {
+        "byte_size": 1725,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839258364-load-json-c1-warm-retry2.meta.json",
+        "sha256": "68fa8921ed399ad1b7e7d88c0cec1b0975c87fa5129928c35f6c41a6f99ec6c2"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839258364-load-json-c1-warm-retry2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 166,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839258364-load-json-c1-warm-retry2.stdout.log",
+        "sha256": "67b7b2e435a9337d9d477ad6713397515c44bb93420078bff89fb1417ddb8485"
+      },
+      {
+        "byte_size": 1690,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839315777-load-json-c5-retry1.meta.json",
+        "sha256": "291997de4a6f3cf78f788d3d5b6095e1457d3fbb4a3283ba69eaf092e1a56f8d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839315777-load-json-c5-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 159,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839315777-load-json-c5-retry1.stdout.log",
+        "sha256": "61f377a6d9481829e115ba8430e74f1ec26b1deb2402876b6717cb6eedd6a035"
+      },
+      {
+        "byte_size": 1698,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839322983-load-json-c10-retry1.meta.json",
+        "sha256": "30a664aa488e9a5fae16ec0a8bce82cf571981aa666473e9aaeba6719f07f9a9"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839322983-load-json-c10-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 160,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839322983-load-json-c10-retry1.stdout.log",
+        "sha256": "58c3d657e2ed145d7d9b5968a4ebecb52165f025cb12d5ff47593f3be12d2884"
+      },
+      {
+        "byte_size": 1698,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839329339-load-json-c25-retry1.meta.json",
+        "sha256": "3de487732dac7ab45bcca0b9b7f5ed26e5996b75b8d86c2344e93b5d3670780d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839329339-load-json-c25-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 160,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839329339-load-json-c25-retry1.stdout.log",
+        "sha256": "e1a59ca8e826f7a18d8a6b26a1243721c0a21467eee027cf168f6e9277203af8"
+      },
+      {
+        "byte_size": 1716,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839336664-load-json-c50-burst-retry1.meta.json",
+        "sha256": "595eabee01f2bdb8040ed69e9d36bff8e18e7109e27d25bba259b50e369b8301"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839336664-load-json-c50-burst-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 166,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839336664-load-json-c50-burst-retry1.stdout.log",
+        "sha256": "6407193ece4793ebbe605d8e5a34e4baebbfcd41478783cb2a2614a389a484c0"
+      },
+      {
+        "byte_size": 1689,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839344792-load-png-c1-retry1.meta.json",
+        "sha256": "f1ed11f9e9aef19d71c85a44e1ba1c25de6b20ca34e466f010d1e8c00c2ba940"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839344792-load-png-c1-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 156,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839344792-load-png-c1-retry1.stdout.log",
+        "sha256": "4d2781ee8aac935738d8baeea526e78d039f23f8c2c73b6d2c5ab5d629a68ad9"
+      },
+      {
+        "byte_size": 1689,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839360441-load-png-c2-retry1.meta.json",
+        "sha256": "c0457e0b09b3ba664953464170bfb4153de2491bc2ae2a6a57ebae59c025da75"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839360441-load-png-c2-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 156,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839360441-load-png-c2-retry1.stdout.log",
+        "sha256": "4d7e06334aa56ed3ffd02c2412eaa67e329f0d30c49ac2b84f8b9981012c4ac3"
+      },
+      {
+        "byte_size": 1689,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839376535-load-png-c5-retry1.meta.json",
+        "sha256": "3fd87f8df2efbd27c55b071b77bd6d932dd866057af17b8aa08d57713d42eaae"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839376535-load-png-c5-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 157,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839376535-load-png-c5-retry1.stdout.log",
+        "sha256": "9173349b85a3f12cb70f36d7135fe7fbd03df928fa97523c2c4b0ac3e8981ac1"
+      },
+      {
+        "byte_size": 1697,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839391517-load-png-c10-retry1.meta.json",
+        "sha256": "9c36a1bc088ee5ec598e4a348bf05a7546d19c85d8deadd48860dc193cea356c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839391517-load-png-c10-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 157,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839391517-load-png-c10-retry1.stdout.log",
+        "sha256": "4066397a4a1848f0feb66a0864380c4912850778528dd5753697c11a3c57fc61"
+      },
+      {
+        "byte_size": 1804,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839426065-sustained-memory-stabilization-c25.meta.json",
+        "sha256": "5de7f09836c7ad2b213707b9531bdbd4fe281a8312e426317e47011e5ce524a5"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839426065-sustained-memory-stabilization-c25.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 177,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839426065-sustained-memory-stabilization-c25.stdout.log",
+        "sha256": "950659e0698804fb8127b0df8229da1c06b334194e9ad6b9f784ca461ddeaaaf"
+      },
+      {
+        "byte_size": 1246,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839748210-sustained-measurement-boundary-retry1.meta.json",
+        "sha256": "a910ba20fad453cb6034173327ca4196bb52da1c7a4e5b857123adfdc8eb9553"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839748210-sustained-measurement-boundary-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 232,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839748210-sustained-measurement-boundary-retry1.stdout.log",
+        "sha256": "5e8db819486d04786067b5c04e87dafbcb1b8229eae80781ac940da9b1731df7"
+      },
+      {
+        "byte_size": 1782,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839795789-sustained-mixed-load-c25-retry1.meta.json",
+        "sha256": "ed25ac9c23e36edcefb32f6262b32a073577170ee28410a3c9a6321f66467f55"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839795789-sustained-mixed-load-c25-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 173,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787839795789-sustained-mixed-load-c25-retry1.stdout.log",
+        "sha256": "ce70bd72db556d8ab785360069e05de72d2eec3ea90b358c5accf6248e62bdb1"
+      },
+      {
+        "byte_size": 1364,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840130456-production-runtime-summary.meta.json",
+        "sha256": "c41c56332777d0da65c9814a697e06589092370308091ff95b17555868403091"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840130456-production-runtime-summary.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 142,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840130456-production-runtime-summary.stdout.log",
+        "sha256": "c8baaced631c7c77fcd08a993b388af7002151f62056e03ce03a554a57c7dcd6"
+      },
+      {
+        "byte_size": 1244,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840235390-checkpoint-5-stage.meta.json",
+        "sha256": "9f3c14148bc15418aecf7bbcd6027ef351f1594968018e1947f9287e4a7c3c0d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840235390-checkpoint-5-stage.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840235390-checkpoint-5-stage.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 848,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840259350-checkpoint-5-commit.meta.json",
+        "sha256": "7d9027f5401b953035248832a57d591a775545aff28d1d6e71438da788b087f2"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840259350-checkpoint-5-commit.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 11613,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840259350-checkpoint-5-commit.stdout.log",
+        "sha256": "74a2fe06622c1fe24928c7c3a896732dc1c04c8f3df126d46b0585d9fec58576"
+      },
+      {
+        "byte_size": 1024,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840350839-authority-clarification-final.meta.json",
+        "sha256": "8a81d4d05f41bb5d7789d70a275b94a5851ea8125939db187a0de6f5f725b996"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840350839-authority-clarification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 127,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840350839-authority-clarification-final.stdout.log",
+        "sha256": "1b977b9e43298fd375b36bb1ba5b29bc20f6d64befca5d882f5c6a73df829847"
+      },
+      {
+        "byte_size": 1049,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840379421-independent-verification-final.meta.json",
+        "sha256": "556a305f0ca36bcbef668660683cc457cbe5375b702e1c841bd738982f0b89a0"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840379421-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840379421-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1233,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840581085-round8-regression.meta.json",
+        "sha256": "f948958e1392d289e8c16661225a8009d6d5188af776601198ad4309a373d155"
+      },
+      {
+        "byte_size": 568,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840581085-round8-regression.stderr.log",
+        "sha256": "3e81f59dcc06fb5d4ed62c843549cf8f5410b92044020664791458d1820a6d11"
+      },
+      {
+        "byte_size": 4078,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840581085-round8-regression.stdout.log",
+        "sha256": "cf27396c41762f0e936a8b64ae30e4c7ceb39107ca3f1443cf341c25e0015142"
+      },
+      {
+        "byte_size": 1153,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840581923-round9-regression.meta.json",
+        "sha256": "77032d6e47098a3aff4b75740a8ae9f899021f0a87f123d28e82fba23506da51"
+      },
+      {
+        "byte_size": 248808,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840581923-round9-regression.stderr.log",
+        "sha256": "d3452b13296367bb61d1ff4b3f18dfbcde6dbb83f33d10e74254e423cdb4f456"
+      },
+      {
+        "byte_size": 144,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840581923-round9-regression.stdout.log",
+        "sha256": "4249bdc7621d52713ae92d25e3ba287302aece503811ca49b02ed42f51b3a0e4"
+      },
+      {
+        "byte_size": 922,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840676842-historical-regression-worktree-create.meta.json",
+        "sha256": "62f830817f602cc7d70604b7bf028c836690c9933d5f61c73de7451f9292a628"
+      },
+      {
+        "byte_size": 3479,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840676842-historical-regression-worktree-create.stderr.log",
+        "sha256": "929b710b259a12fea0d5aa813bfe9f53daf288a1630aa83b6b9da61815024a1c"
+      },
+      {
+        "byte_size": 85,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840676842-historical-regression-worktree-create.stdout.log",
+        "sha256": "fbebe2edee97560ee19a1cfe76979fcaf68162872c7644e207702ccf378209ee"
+      },
+      {
+        "byte_size": 1769,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840697058-round9-regression.meta.json",
+        "sha256": "63d076cbfd6c80c4e18db13604083e486714e7bff01bf0eff753fc3cee8523d4"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840697058-round9-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 869,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840697058-round9-regression.stdout.log",
+        "sha256": "41fb7cba8246a8acd5c21b9ddb651bcce8f457b39210987eed219db1df9c3129"
+      },
+      {
+        "byte_size": 921,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840723823-historical-regression-worktree-round10.meta.json",
+        "sha256": "30589a601faf28d283be863177f748d44f95f11b77e810a86c72649c11a7bfbc"
+      },
+      {
+        "byte_size": 179,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840723823-historical-regression-worktree-round10.stderr.log",
+        "sha256": "d9d6224620009083cfea3b105f3bc73c12529da29bef66b490ec884de17b5459"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840723823-historical-regression-worktree-round10.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1795,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840734943-round10-regression.meta.json",
+        "sha256": "c85dcbd21d2f08e993a376d99d4e3ec7fb6c35ced30c14cd1549aee312fc4080"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840734943-round10-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1824,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840734943-round10-regression.stdout.log",
+        "sha256": "b0eca067a74530aafba6189a7a67e7ac7079c1cb67886a1f3910e7a3c75005d1"
+      },
+      {
+        "byte_size": 921,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840748235-historical-regression-worktree-round11.meta.json",
+        "sha256": "12780f98cf0039f5f5fd08f6435fd1c1097641175d23d7deda6a623dd6617d1d"
+      },
+      {
+        "byte_size": 191,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840748235-historical-regression-worktree-round11.stderr.log",
+        "sha256": "3ed8de86627e390d91ea286e6187e140725d8af6dc3779b24e6882e96c386f19"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840748235-historical-regression-worktree-round11.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1808,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840761706-round11-regression.meta.json",
+        "sha256": "bbda03e428c4d7d45ea82b58ca240dafbf39216c09296c3793ceb79a1724cf4d"
+      },
+      {
+        "byte_size": 576,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840761706-round11-regression.stderr.log",
+        "sha256": "9f3d444cf363ea7ad758b58fc49522670ee3b4d80a0ef93b2bc96050689513d3"
+      },
+      {
+        "byte_size": 5669,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840761706-round11-regression.stdout.log",
+        "sha256": "0da5260eec96eafbc69d62c0bd344674db676e50f5bb71b66622a21d81afbe3c"
+      },
+      {
+        "byte_size": 921,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840773059-historical-regression-worktree-round12.meta.json",
+        "sha256": "0dd82bd4b07a69cd1b669b2852bffbeb955316905884d6c275ad8ba4273add07"
+      },
+      {
+        "byte_size": 204,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840773059-historical-regression-worktree-round12.stderr.log",
+        "sha256": "9f99afd02bce782a6b093397f9f1437c92a4747f2251cd81ad8ff564da73d4ae"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840773059-historical-regression-worktree-round12.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2016,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840784610-round12-regression.meta.json",
+        "sha256": "edddb1f776a896ce466dfb273f84cb2b24359c41e16d3c8254694f1c1c141053"
+      },
+      {
+        "byte_size": 1784,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840784610-round12-regression.stderr.log",
+        "sha256": "0d58cf77dbbd0e7ce57f5b215e10f69338f7c255d5f1ed70137bb1bd9fc7367e"
+      },
+      {
+        "byte_size": 3497,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840784610-round12-regression.stdout.log",
+        "sha256": "ce153a0a25753097541ca0e53c1ab409e3ab95d176d80d40bde23b63357f9ac0"
+      },
+      {
+        "byte_size": 921,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840795336-historical-regression-worktree-round13.meta.json",
+        "sha256": "8c44471cde7033c698790eeb9f94f1c5f763f0ae2a08617691fe232ac6c4be87"
+      },
+      {
+        "byte_size": 212,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840795336-historical-regression-worktree-round13.stderr.log",
+        "sha256": "89cf95c99afb9d5598704b69a3f4609a6ab4427782e6f4711e24701c550805ad"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840795336-historical-regression-worktree-round13.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2063,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840806375-round13-regression.meta.json",
+        "sha256": "8db1ea0e009186198123f26cdcee6816f3cd9c4b0627d1752f3abc403f603463"
+      },
+      {
+        "byte_size": 1443,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840806375-round13-regression.stderr.log",
+        "sha256": "1ee657135bb3bfef9c9fd4f43a5370287b0da2e192b71bd450326c0c8b7c6c26"
+      },
+      {
+        "byte_size": 2776,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840806375-round13-regression.stdout.log",
+        "sha256": "7b290373a3a8dbcd5c0b12f7ffaff6fed55c478ae1af897aa277336a5e81237a"
+      },
+      {
+        "byte_size": 921,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840816785-historical-regression-worktree-round14.meta.json",
+        "sha256": "d21ed437d4ef298d2c0a717f77c00a933c1bea5d188cd7aa0da787675348450b"
+      },
+      {
+        "byte_size": 198,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840816785-historical-regression-worktree-round14.stderr.log",
+        "sha256": "2cd9e167045efb9edd539115a755e663b0e5ab3c1003c4693d8b2a4a787ca345"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840816785-historical-regression-worktree-round14.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2123,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840828092-round14-regression.meta.json",
+        "sha256": "b6cdb39436641bf3a0c3c66b2e8b7c035e6455941a29af255990e0f59014109e"
+      },
+      {
+        "byte_size": 2002,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840828092-round14-regression.stderr.log",
+        "sha256": "4550bd63e19b99e2c9d0b5179ac19148b81f3102a4040ead8af87dce22486678"
+      },
+      {
+        "byte_size": 1645,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840828092-round14-regression.stdout.log",
+        "sha256": "9dda20280bb48ac125feff989c2a2860f54f558f675cf057020680eb58937f55"
+      },
+      {
+        "byte_size": 921,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840837009-historical-regression-worktree-round15.meta.json",
+        "sha256": "cd90c41573a0ae941fb8531eba64f6bcc77df52d816899224e567b22ae25592b"
+      },
+      {
+        "byte_size": 171,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840837009-historical-regression-worktree-round15.stderr.log",
+        "sha256": "c37ee89affa1e2387b9b21a80ffe1a26833ca580a888ec56d6bc90699c0939a1"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840837009-historical-regression-worktree-round15.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2062,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840847311-round15-regression.meta.json",
+        "sha256": "e69db29800065792e0b75f26e4850749d7c87901c0121161adfecfccd4f09d18"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840847311-round15-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 20712,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840847311-round15-regression.stdout.log",
+        "sha256": "cdb7a4fb62633a1149f862ff2dd630ddd95e86515dcb10cd2fbbced3a4bb4bbd"
+      },
+      {
+        "byte_size": 999,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840895598-historical-regression-worktree-round15-source.meta.json",
+        "sha256": "0366594e553c6b4b28c83fa3daef7c3ac641ec080a8199b48c42eedaa5a43b28"
+      },
+      {
+        "byte_size": 167,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840895598-historical-regression-worktree-round15-source.stderr.log",
+        "sha256": "f5d34319e2d54c073e6ea0e7cd9b365d22c9db17443456b81a2014cf1343bce7"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840895598-historical-regression-worktree-round15-source.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2127,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840906884-round15-regression.meta.json",
+        "sha256": "9eecf0301c7ee950e7235f2312be42aabdccc1a2f90969b5a68bcb8d13b791bf"
+      },
+      {
+        "byte_size": 931,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840906884-round15-regression.stderr.log",
+        "sha256": "da90e1734b89f2256ae13959ed8299d7cdba47a595fb0951d6d9885cc233719c"
+      },
+      {
+        "byte_size": 498,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787840906884-round15-regression.stdout.log",
+        "sha256": "962a91e9e21eba7cba55a1baa24fc5cb6f3fccbe6c0342c7787bb02549ff73ac"
+      },
+      {
+        "byte_size": 1873,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841054657-round15-regression.meta.json",
+        "sha256": "4d1ef0edef31f30787fc10d7c0996b3db7050cc36cb77c8600d72bd5dc3423ef"
+      },
+      {
+        "byte_size": 2186,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841054657-round15-regression.stderr.log",
+        "sha256": "23b2b03e9db3a0e0d38958ba3a1aa14712fb6216bae4a7b9d7a075a16cc8a02f"
+      },
+      {
+        "byte_size": 1076,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841054657-round15-regression.stdout.log",
+        "sha256": "b2857d5f4bde9bf892f1c534f66f42e329defbdd515f10ed92e77482c9f9b6e1"
+      },
+      {
+        "byte_size": 1984,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841145790-round16-regression.meta.json",
+        "sha256": "fab86836e6142645daef5c830307ca1d7a7479b236bd7a741afbef4085d58175"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841145790-round16-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 806,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841145790-round16-regression.stdout.log",
+        "sha256": "3f0409c3d43e842e7889820644ff968e33be9782c73637c8025aaa63ae07e522"
+      },
+      {
+        "byte_size": 1223,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841274184-repository-boundary-verification.meta.json",
+        "sha256": "fae054149f1ac5901115d0c21327b01af78b90231cf9c9fda4a069d81c827c16"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841274184-repository-boundary-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 12114,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841274184-repository-boundary-verification.stdout.log",
+        "sha256": "598d1e25322e7a7af27db0a5a657e23ad5999539108ceed43a6cdda55ee6e36c"
+      },
+      {
+        "byte_size": 1223,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841312077-repository-boundary-verification.meta.json",
+        "sha256": "6c14361600e83676ce737557fe4868c5baff5c10d5274b33f96e772dfdc3328a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841312077-repository-boundary-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 12249,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841312077-repository-boundary-verification.stdout.log",
+        "sha256": "cc34fa2b1bedb8a7f9af383a00ea4e614e420e7ad49087b7b06aea2956eff94d"
+      },
+      {
+        "byte_size": 856,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841322048-database-freeze-final.meta.json",
+        "sha256": "71ac5b98fee1cc9a5ee7f0da5c4e40f8b4b59a5f7e9b2a4fee3fd005f37c21fc"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841322048-database-freeze-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 236,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841322048-database-freeze-final.stdout.log",
+        "sha256": "8cc11301f4c091522e41e55755c16bfffd45b665b3cddfd93f2bbc186ca57a4e"
+      },
+      {
+        "byte_size": 1063,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841329905-repository-hygiene-final.meta.json",
+        "sha256": "92e6fffaeed716a6705e30d077a06ecd38479add584b6de39fc1b79b651c24b7"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841329905-repository-hygiene-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 84,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841329905-repository-hygiene-final.stdout.log",
+        "sha256": "adb0f1aa99e8bd491ccc5ecf7dee1b0754285003f676b8a9f81d5b12e033e2b9"
+      },
+      {
+        "byte_size": 1824,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841350482-api-schema-validation.meta.json",
+        "sha256": "4bbfc5204a5203af65497b813d144e79ee067f823a60fceacb302a843525390d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841350482-api-schema-validation.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2384,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841350482-api-schema-validation.stdout.log",
+        "sha256": "ee0c182144087ac09a81432dac84619c9c44e0da66ca3d04152d7a688a446757"
+      },
+      {
+        "byte_size": 779,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841555910-typecheck-full.meta.json",
+        "sha256": "7e006af4410456c60e1a5e36b9bb8e1ede916aae1c438d75b2a48c58985b4801"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841555910-typecheck-full.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841555910-typecheck-full.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 746,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841583660-production-build-retry1.meta.json",
+        "sha256": "a1742412c8e9cea93d4d224622b6e871161567c93104bb7b2748569ed40cb09f"
+      },
+      {
+        "byte_size": 910,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841583660-production-build-retry1.stderr.log",
+        "sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee"
+      },
+      {
+        "byte_size": 262,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841583660-production-build-retry1.stdout.log",
+        "sha256": "e73d8f3dbc2a924eba925cdd036302d833e29a1f424845ab6aa3c05111fdc44f"
+      },
+      {
+        "byte_size": 747,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841617789-production-build-retry1.meta.json",
+        "sha256": "2ec7b238ec0977805f95da62fb232cec226fd2e0def105252f3b165a74794c4e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841617789-production-build-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3615,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841617789-production-build-retry1.stdout.log",
+        "sha256": "c84151956637811b1b48721f876d2a3bd7cd7fa691b9bf47fb0a548bb540772f"
+      },
+      {
+        "byte_size": 1062,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841742292-independent-verification-final.meta.json",
+        "sha256": "2d26bcd6d33b5514f3ec4a28c8eb177a48faf2febd95f98c57718eb69ad25591"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841742292-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841742292-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1062,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841845789-independent-verification-final.meta.json",
+        "sha256": "c3e7a8f83227e8b444da0701fa813bb35fba7bb55fd11e0bab1578dc351fff47"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841845789-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841845789-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1538,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841924162-checkpoint-6-stage.meta.json",
+        "sha256": "fb791c5394dac3c91f9c5389ab882559d3e33bf5ccaa35087288c672efc9854f"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841924162-checkpoint-6-stage.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841924162-checkpoint-6-stage.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 859,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841944599-checkpoint-6-commit.meta.json",
+        "sha256": "2c3d5fe4086d733429a544549b5386d5cc099cdf2e5ed39406a8a4aba7b6d5b4"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841944599-checkpoint-6-commit.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 5808,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841944599-checkpoint-6-commit.stdout.log",
+        "sha256": "e607cad78577b6920448c010bfc6e7771682ba78fd84416396f13c5c3adb15a3"
+      },
+      {
+        "byte_size": 996,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841987579-final-reproduction-worktree-create.meta.json",
+        "sha256": "febbf0b0afdc04921c4665b7a95fb7fae1cb779f2e1e1334e9b378a6b546ee5b"
+      },
+      {
+        "byte_size": 3655,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841987579-final-reproduction-worktree-create.stderr.log",
+        "sha256": "5f0a0dafbfaa2f580103c91c7fc34bd3fdfd7d2846fc69b8e4fbb2b0998f5eba"
+      },
+      {
+        "byte_size": 82,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787841987579-final-reproduction-worktree-create.stdout.log",
+        "sha256": "d2a4eec0e2cb03e4321a3526974d32206e5f267193e5a73cd165b439cc6b021f"
+      },
+      {
+        "byte_size": 1653,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842029323-deterministic-clean-worktree-reproduction-final.meta.json",
+        "sha256": "0c057491d9c1bee83c10612f64e0ff158189817f008f109bf07eacc07db047da"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842029323-deterministic-clean-worktree-reproduction-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 43519,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842029323-deterministic-clean-worktree-reproduction-final.stdout.log",
+        "sha256": "5bb084f34cb6a0f40a01e49832f12c58f25653e64463cb3ebbea481afa869ccc"
+      },
+      {
+        "byte_size": 1062,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842247062-independent-verification-final.meta.json",
+        "sha256": "a4613720b8d8b46b213bc1c28f3498ae28a167ebf7be17f1e4017c5ef4d4e413"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842247062-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842247062-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1060,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842300829-checkpoint-7-stage.meta.json",
+        "sha256": "9f75b8444840874d51ca91de76dacdb32ce7344750b561774b4e6a1aeec35d68"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842300829-checkpoint-7-stage.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842300829-checkpoint-7-stage.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 840,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842313106-checkpoint-7-commit.meta.json",
+        "sha256": "500877355a72aab14622ef8e5477fb38fb756d9feb5d24657117bb9e137e8271"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842313106-checkpoint-7-commit.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1098,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842313106-checkpoint-7-commit.stdout.log",
+        "sha256": "52079fa860ee6a40eac6fe4389dd2227db554cfe7c2ee654fd65ca5578fbefd4"
+      },
+      {
+        "byte_size": 992,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842368171-final-reproduction-worktree-update.meta.json",
+        "sha256": "6db298235455eecc3d512eec80c32e237b7b146c050847fc4f8f18c707259e04"
+      },
+      {
+        "byte_size": 167,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842368171-final-reproduction-worktree-update.stderr.log",
+        "sha256": "c9e8a4f4d6c5e1ae16d2429e6e93166f7a0a09ae5312f8490576e7dcd90abab4"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842368171-final-reproduction-worktree-update.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1653,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842384315-deterministic-clean-worktree-reproduction-final.meta.json",
+        "sha256": "2d0ecb7d8658cee9cbee67557a3fcd052201e26f64d44f0142267cd6b757fb58"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842384315-deterministic-clean-worktree-reproduction-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 43519,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842384315-deterministic-clean-worktree-reproduction-final.stdout.log",
+        "sha256": "5bf9d58c1fd2d3c1e33613eed257e632e51fc46e81baf991135b35e2d2d77f91"
+      },
+      {
+        "byte_size": 1062,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842443866-audit-seal-final.meta.json",
+        "sha256": "5a504e72b17defd3d08d1b47353144dd1849dec23d42d3674cc87e940806d116"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842443866-audit-seal-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1068,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842443866-audit-seal-final.stdout.log",
+        "sha256": "e3e0a47f934d159c9844dc0a0a83fadbb8c47b4425377f9259dbe803f0b909cf"
+      },
+      {
+        "byte_size": 878,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842499599-final-research-reports.meta.json",
+        "sha256": "61ece80c4b53a3f0f8550c8a76d8636f59c14f030f6d2d5a94c4b2ffafd89d37"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842499599-final-research-reports.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2291,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842499599-final-research-reports.stdout.log",
+        "sha256": "c1afa8a0a52fd0d2e35c854a6791cb728d0b1b66f3074ae5e3238d0774acb33e"
+      },
+      {
+        "byte_size": 878,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842598054-final-research-reports.meta.json",
+        "sha256": "5db39d606d3eebb90aa097c491bac8866b80cc43cddf15cd469fe837833eea2c"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842598054-final-research-reports.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2291,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787842598054-final-research-reports.stdout.log",
+        "sha256": "c1afa8a0a52fd0d2e35c854a6791cb728d0b1b66f3074ae5e3238d0774acb33e"
+      },
+      {
+        "byte_size": 2695,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787878687763-authorized-lfs-migration-verification.meta.json",
+        "sha256": "efd432468749dbfb8aa6ad0dc6e256b823fdc2d9a70aa22a47c725e1a39adfdf"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787878687763-authorized-lfs-migration-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 213,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787878687763-authorized-lfs-migration-verification.stdout.log",
+        "sha256": "816f37bb6f4293bceff9d4beceb42e25917338dc32f3852974aba61a82b1ac9a"
+      },
+      {
+        "byte_size": 2695,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879120772-authorized-lfs-migration-verification.meta.json",
+        "sha256": "6f7dc84f042211429b55a33dc9f0e80e7b68a95efd2a3c4712cf638b6e2c2b51"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879120772-authorized-lfs-migration-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 213,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879120772-authorized-lfs-migration-verification.stdout.log",
+        "sha256": "10c470f0559b7e5a9dc416756595d381e66a2ceecbe96f4cef4992e5eec1f570"
+      },
+      {
+        "byte_size": 1251,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879339583-round8-regression.meta.json",
+        "sha256": "2b8ed48b6b230c12c4600b6b2630f973b7bca83138b7c057d9b758f973195ffa"
+      },
+      {
+        "byte_size": 568,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879339583-round8-regression.stderr.log",
+        "sha256": "21c51b97415e4bdb29a7864905fdcae9fc5a2e8c6bdde570791bf74a248c5bf0"
+      },
+      {
+        "byte_size": 4078,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879339583-round8-regression.stdout.log",
+        "sha256": "cf27396c41762f0e936a8b64ae30e4c7ceb39107ca3f1443cf341c25e0015142"
+      },
+      {
+        "byte_size": 1787,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879342913-round9-regression.meta.json",
+        "sha256": "d52abe234ea5889b64162d178d36c2d28899b94def1e65ebe776d7a69b0e570d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879342913-round9-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 869,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879342913-round9-regression.stdout.log",
+        "sha256": "41fb7cba8246a8acd5c21b9ddb651bcce8f457b39210987eed219db1df9c3129"
+      },
+      {
+        "byte_size": 1813,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879372302-round10-regression.meta.json",
+        "sha256": "dc4e34a0acba3f4ee155f1790b5a66f57344ced0d78caf7a3435001e8e8ad2b8"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879372302-round10-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1824,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879372302-round10-regression.stdout.log",
+        "sha256": "b0eca067a74530aafba6189a7a67e7ac7079c1cb67886a1f3910e7a3c75005d1"
+      },
+      {
+        "byte_size": 1826,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879376543-round11-regression.meta.json",
+        "sha256": "52e5a9266f9979f8b86ec9f63dec7c5eb7c9621b20ddeb296226308d023061ba"
+      },
+      {
+        "byte_size": 576,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879376543-round11-regression.stderr.log",
+        "sha256": "4fcf44e6eede7e514b16a3472f3ea041988a2fb227aad7cb74c1c9cb051204c4"
+      },
+      {
+        "byte_size": 5673,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879376543-round11-regression.stdout.log",
+        "sha256": "e63f656d4e2ff059c1f8e271b0757d91fa530f63dcea97729e625abb45eb78fb"
+      },
+      {
+        "byte_size": 2034,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879401088-round12-regression.meta.json",
+        "sha256": "bd279a89eec98b38b455e427bf5e314296b127245bb2ba6fc3315ee28d3efd46"
+      },
+      {
+        "byte_size": 1784,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879401088-round12-regression.stderr.log",
+        "sha256": "c08094262a04136c0c8c52068b81f7f5ca45d0c4f8265c3d3b97034278060148"
+      },
+      {
+        "byte_size": 3497,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879401088-round12-regression.stdout.log",
+        "sha256": "ce153a0a25753097541ca0e53c1ab409e3ab95d176d80d40bde23b63357f9ac0"
+      },
+      {
+        "byte_size": 2081,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879405227-round13-regression.meta.json",
+        "sha256": "b7f1b427c3a484f4f7317d71390673e1ec6ebb992d07db691858bd256d952396"
+      },
+      {
+        "byte_size": 1443,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879405227-round13-regression.stderr.log",
+        "sha256": "d7d84fc4fefaf4a331547476ef3aaf5ecd44efbbe379e4f07c7cbac20265fb14"
+      },
+      {
+        "byte_size": 2776,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879405227-round13-regression.stdout.log",
+        "sha256": "7b290373a3a8dbcd5c0b12f7ffaff6fed55c478ae1af897aa277336a5e81237a"
+      },
+      {
+        "byte_size": 2141,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879436953-round14-regression.meta.json",
+        "sha256": "958261c49acd9d1972d9fd46745e1c10549c60efbda0b94801c3041e346cbeba"
+      },
+      {
+        "byte_size": 2002,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879436953-round14-regression.stderr.log",
+        "sha256": "b8377fc6b69dd5fafbc8094486497309b654f895bee3aff92f44bfa9673777d8"
+      },
+      {
+        "byte_size": 1645,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879436953-round14-regression.stdout.log",
+        "sha256": "9dda20280bb48ac125feff989c2a2860f54f558f675cf057020680eb58937f55"
+      },
+      {
+        "byte_size": 1891,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440082-round15-regression.meta.json",
+        "sha256": "a059f4d49c646e8290f091339d06ae411e17bc6241f955595275880ebf991694"
+      },
+      {
+        "byte_size": 2186,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440082-round15-regression.stderr.log",
+        "sha256": "0ae69c58aabade8cad6cb4262cbf2c0889eb390058e05ba270cd8ed026d740c3"
+      },
+      {
+        "byte_size": 1076,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440082-round15-regression.stdout.log",
+        "sha256": "b2857d5f4bde9bf892f1c534f66f42e329defbdd515f10ed92e77482c9f9b6e1"
+      },
+      {
+        "byte_size": 2002,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440506-round16-regression.meta.json",
+        "sha256": "424ffda16df8fd5a442b76f00003e026f3a43314fd12e1a5436381374237b4ee"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440506-round16-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 806,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440506-round16-regression.stdout.log",
+        "sha256": "3f0409c3d43e842e7889820644ff968e33be9782c73637c8025aaa63ae07e522"
+      },
+      {
+        "byte_size": 869,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-database-freeze-final.meta.json",
+        "sha256": "d5a3663392410a2ffe97fcb2dd26640f22f223aaab02561201164f7143a85186"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-database-freeze-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 236,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-database-freeze-final.stdout.log",
+        "sha256": "8cc11301f4c091522e41e55755c16bfffd45b665b3cddfd93f2bbc186ca57a4e"
+      },
+      {
+        "byte_size": 1236,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-repository-boundary-verification.meta.json",
+        "sha256": "3f93df7eb7dd7db5155358871cc39be3f11f9244d8ecf21aa96116fda5ebc3b6"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-repository-boundary-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 12249,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-repository-boundary-verification.stdout.log",
+        "sha256": "b6bcea0bd2e6389b5431873161877d860c69f253f7c0f2a18f356a97826921f8"
+      },
+      {
+        "byte_size": 1076,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491564-repository-hygiene-final.meta.json",
+        "sha256": "7477799161943ea8109080f6fce5092728cbae974ccbfead42098213a4f11b60"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491564-repository-hygiene-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 360,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491564-repository-hygiene-final.stdout.log",
+        "sha256": "64472f8c649c3271f5c85bee5cc1075520aa728da4fb62aa1ca908d9dcd06038"
+      },
+      {
+        "byte_size": 911,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879495586-git-lfs-fsck-final.meta.json",
+        "sha256": "964412c275b3ab710473da570c9c2d345af998d4aa9641238d8c22bbc400e978"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879495586-git-lfs-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 16,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879495586-git-lfs-fsck-final.stdout.log",
+        "sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9"
+      },
+      {
+        "byte_size": 797,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879497677-git-fsck-final.meta.json",
+        "sha256": "3a7aeaa1f89c8d47a8aad5651dea9f3a9ed0222631db85eee2482dc7af9011b8"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879497677-git-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879497677-git-fsck-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1113,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879600153-typecheck-full.meta.json",
+        "sha256": "f6a2979e21151d1523ea3bec8cb0eb28e5093825990c2e55bf4bb715ba8d2996"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879600153-typecheck-full.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 120,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879600153-typecheck-full.stdout.log",
+        "sha256": "00070d4ce43d38cf3ddb0e2fa1da3f095e29f19193a5d24a8a0ac7e131288bee"
+      },
+      {
+        "byte_size": 1096,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879607285-production-build-retry1.meta.json",
+        "sha256": "e6e716d02f8b6f164f1d7ebf2cb0b593e7324192d1d6c01464a7596928a8961a"
+      },
+      {
+        "byte_size": 910,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879607285-production-build-retry1.stderr.log",
+        "sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee"
+      },
+      {
+        "byte_size": 358,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879607285-production-build-retry1.stdout.log",
+        "sha256": "82fd43d9ff56aec794379c5a43188cd71624f01778094eee0674c9c9c9f8d7bc"
+      },
+      {
+        "byte_size": 1096,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879633481-production-build-retry1.meta.json",
+        "sha256": "252e55c98a15061cc5c9898bc07b06cef5d70a027ac28b2fbd514f001f32c532"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879633481-production-build-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3711,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879633481-production-build-retry1.stdout.log",
+        "sha256": "b0c28de2d9fb49c468029d4eacd000886ae9789f4cf99d41e6a674b70752d3b2"
+      },
+      {
+        "byte_size": 1076,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879764313-repository-hygiene-final.meta.json",
+        "sha256": "d5a32d1bcddfb968f4ee6b0f5c8581674c2421a4493b2d31247bbb027b864c81"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879764313-repository-hygiene-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 84,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879764313-repository-hygiene-final.stdout.log",
+        "sha256": "45208a52046f10734ba275e4588ad8d5aa035d45769dfd2028c9fb324c6ec88c"
+      },
+      {
+        "byte_size": 1837,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879797138-api-schema-validation.meta.json",
+        "sha256": "9ef74da658b872d4792a8f92438b569dce2035471a926e79cf0e2fbf887eea73"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879797138-api-schema-validation.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2384,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879797138-api-schema-validation.stdout.log",
+        "sha256": "ee0c182144087ac09a81432dac84619c9c44e0da66ca3d04152d7a688a446757"
+      },
+      {
+        "byte_size": 1075,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880013108-independent-verification-final.meta.json",
+        "sha256": "e992fd6e5eb59954cabc0062aeaa96840a9e1f1dbc18ffacd790e93910fbce29"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880013108-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880013108-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1658,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880136483-deterministic-clean-worktree-reproduction-final.meta.json",
+        "sha256": "34a1ebd323f71233d15bb3085d44d6394cbe7d54b0270444c5c386464313561e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880136483-deterministic-clean-worktree-reproduction-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 43740,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880136483-deterministic-clean-worktree-reproduction-final.stdout.log",
+        "sha256": "5cfc0d3749509e53b8e23b603779c500068a828fde8638c147636bc7c068efa3"
+      },
+      {
+        "byte_size": 1658,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880217986-deterministic-clean-worktree-reproduction-final.meta.json",
+        "sha256": "3cfc365200e7a6010532e2768de893463c007ffd09efd4084588451a7428d52e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880217986-deterministic-clean-worktree-reproduction-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 43519,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880217986-deterministic-clean-worktree-reproduction-final.stdout.log",
+        "sha256": "9834d612d090ce9ec982b6e19588d63acdf3f5716ea709457febca31c9e57da8"
+      },
+      {
+        "byte_size": 1084,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880305045-independent-verification-final.meta.json",
+        "sha256": "bc8d54a64b6663f19c9dd3af23e0382419037f554079e814d844881f325e8be9"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880305045-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880305045-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2410,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880359691-count-hash-reconciliation-final.meta.json",
+        "sha256": "8bf9546f2f48df04fbfb9c30afd34dc30b6dfb98798d86bee5c85685ea799000"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880359691-count-hash-reconciliation-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 5,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880359691-count-hash-reconciliation-final.stdout.log",
+        "sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+      },
+      {
+        "byte_size": 920,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880381165-git-lfs-fsck-final.meta.json",
+        "sha256": "175fe2b0d34be25ca1e06acec98be6bf96bfb8db31aa76a7f9cc1853489d48da"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880381165-git-lfs-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 16,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880381165-git-lfs-fsck-final.stdout.log",
+        "sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9"
+      },
+      {
+        "byte_size": 806,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880390979-git-fsck-final.meta.json",
+        "sha256": "c859b99a3e88e25aa2ce3d3162b1ddc91614efd7d3e236f5171d00ca4315634e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880390979-git-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880390979-git-fsck-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1071,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880506898-audit-seal-final.meta.json",
+        "sha256": "4a4446315b55ec89076ef26ba7be9033761442fcf581a78f9f0084675d8ec86a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880506898-audit-seal-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1068,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880506898-audit-seal-final.stdout.log",
+        "sha256": "e3e0a47f934d159c9844dc0a0a83fadbb8c47b4425377f9259dbe803f0b909cf"
+      },
+      {
+        "byte_size": 892,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880615992-final-research-reports.meta.json",
+        "sha256": "cb99c73eb8b604de8bf47449ea8036c9c41f0be1968338fe47d0de43eed7f451"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880615992-final-research-reports.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2291,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880615992-final-research-reports.stdout.log",
+        "sha256": "9541cd8b5b4f7222b521339ed73947449e4c901d84d313f1807263458026635a"
+      },
+      {
+        "byte_size": 892,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880673922-final-research-reports.meta.json",
+        "sha256": "018aaf181d0969159da31f673d9bf29c9e75be403d845b5df3f1b672502ad5bf"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880673922-final-research-reports.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2291,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880673922-final-research-reports.stdout.log",
+        "sha256": "9541cd8b5b4f7222b521339ed73947449e4c901d84d313f1807263458026635a"
+      },
+      {
+        "byte_size": 490,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0001.meta.json",
+        "sha256": "f990a37367c8abfe667121492e958038fdbd49c7c12e45b635e695dd12879e69"
+      },
+      {
+        "byte_size": 1,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0001.stderr.log",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "byte_size": 337,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0001.stdout.log",
+        "sha256": "a5e1b31dcc8b1b52914a178722e8758603a8abeafd79982a8dcda98fc991fa32"
+      },
+      {
+        "byte_size": 744,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0002.meta.json",
+        "sha256": "6ef93c76077035dea8242268596d4d7fdaf93d9e5e1851e5eda8d5291c134d75"
+      },
+      {
+        "byte_size": 1,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0002.stderr.log",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "byte_size": 344,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0002.stdout.log",
+        "sha256": "3e348e1d05acda6a82687ddb28e6f1eaece0562b4316a8d68d123cb0429471e4"
+      },
+      {
+        "byte_size": 435,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0003.meta.json",
+        "sha256": "e8c6858c393fae06e197e75f8d0b48a19434ed2ba9c8ed2318dd81b9394d34ab"
+      },
+      {
+        "byte_size": 416,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0003.stderr.log",
+        "sha256": "57ad0988319f278257178735d1b2bdae10a52703c5b693ccdf3a6e9cc9c19ed0"
+      },
+      {
+        "byte_size": 1,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0003.stdout.log",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      }
+    ],
+    "artifact_inventory_sha256": "6533dbcb72013b7a03842a29a6470a67d36f5cc66504446f04419d12ae0f8f4c",
+    "inflight_command_group_count": 0,
+    "legacy_bootstrap_meta_compatibility_count": 1,
+    "meta_file_count": 195,
+    "missing_recorded_stream_hash_count": 6,
+    "row_count": 195,
+    "stderr_log_count": 195,
+    "stdout_log_count": 195,
+    "truncation_policy_marker_count": 0,
+    "unique_command_id_count": 195,
+    "unledgered_completed_artifact_count": 0,
+    "verified_stream_hash_count": 384
+  },
+  "event_output_hashes": {
+    "completed_writer_observation_count": 440,
+    "existing_unhashed_started_output_count": 417,
+    "historical_local_file_hash_count": 411,
+    "historical_non_file_or_symbolic_output_hash_count": 21,
+    "historical_output_hash_observation_count": 437,
+    "latest_completed_writer_count": 154,
+    "latest_non_file_or_symbolic_writer_count": 15,
+    "mismatch_count": 0,
+    "non_file_or_symbolic_output_hash_count": 21,
+    "reconciliation_rule": "APPEND_ONLY_LATEST_COMPLETED_WRITER_V1",
+    "reconciliation_rule_description": "Execution events are append-only historical observations. For each mutable local file path, only the highest-sequence completed PASS or FAIL event that names that path is compared with the current file bytes; superseded event hashes remain schema-validated history and are never compared with later file contents.",
+    "superseded_completed_writer_count": 286,
+    "terminal_statuses": [
+      "FAIL",
+      "PASS"
+    ],
+    "verified": [
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "PROJECT_LOG.md",
+        "sha256": "306fbefa51549041ac0328581d236b30f4c9fb29f21f409594e5374310d6d982"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/BRANDING_SAFE_METRICS.md",
+        "sha256": "1a5184da2050a1763b729c031eebae49d8bea2ddc261f0567d2a1dbd6dba18b9"
+      },
+      {
+        "event_sequence": 34,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/active-vocabulary-v2.json",
+        "sha256": "1443748890fe41b59044327a826878d7b973fe98853580f6ba0f01cb4e8134d1"
+      },
+      {
+        "event_sequence": 145,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv",
+        "sha256": "dad0a42f8a3efd11fec8fad45de517eb5f641d6795d136e4f4ec5e8c1af70aaa"
+      },
+      {
+        "event_sequence": 145,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json",
+        "sha256": "1c61513c2d2dbb75dc280fab2a9171f3b44106d6b4379dcefad0dc4db1c06a3f"
+      },
+      {
+        "event_sequence": 368,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json",
+        "sha256": "62c83a0257b91462b0a07596f86f0497fa54430d1e2526e4c522a3432ea0e961"
+      },
+      {
+        "event_sequence": 122,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-export-case-ledger.tsv",
+        "sha256": "68bbfa3a4cb121580dabec5b3fd9edeb0c2ef6d02a2783c1fd50f93de5a1a63d"
+      },
+      {
+        "event_sequence": 122,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-model-case-ledger.tsv",
+        "sha256": "f6a0de3255b61b45a80abbc0791e6ab06953c789a6086eebfa28470fbcc1e09a"
+      },
+      {
+        "event_sequence": 122,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-service-dto-case-ledger.tsv",
+        "sha256": "6cca40d5ea5d0b7baa4014b1445481cbd85d0723ef3776be96635140f274cfd9"
+      },
+      {
+        "event_sequence": 122,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-transition-case-ledger.tsv",
+        "sha256": "3e7651a372d53b671042c685ce17be34277023d72b878c1fa2e5d99a6337c6c2"
+      },
+      {
+        "event_sequence": 122,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-workflow-replay-case-ledger.tsv",
+        "sha256": "58d9cc93b0a84456f354aa299f719dd0c61799243c78b79805a9959041ca14c8"
+      },
+      {
+        "event_sequence": 96,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-build-performance-v2.json",
+        "sha256": "16c141c71c46a4d28bedc85ab43a504cd28866b37616a79ef7d60661f59359b0"
+      },
+      {
+        "event_sequence": 96,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-build-summary-v2.json",
+        "sha256": "78bd23e00bbe7de764277d3663c5ad2f0b1bf1ea2f305158915869ccedad3735"
+      },
+      {
+        "event_sequence": 96,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-census-v2.json",
+        "sha256": "f52c2cc9b1576c7a59eaa80c66cf2cf0af89f57878fa08b5f72e155168746e3a"
+      },
+      {
+        "event_sequence": 96,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-census-v2.tsv",
+        "sha256": "7cbf14494b9862401c4cea03757dee9f2f2402612b9fb629b60fac9db9196ab3"
+      },
+      {
+        "event_sequence": 96,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-evidence-ledger-v2.tsv",
+        "sha256": "98f34158976b6f0b08c00d23047a667acecaee3e7daf8d47023564363d14230a"
+      },
+      {
+        "event_sequence": 60,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-log-v2.jsonl",
+        "sha256": "505f1d4c9a63f6d281dd09f5b6e8b51f4b49d2b97ab9c5c8d43c5615395c08f0"
+      },
+      {
+        "event_sequence": 48,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-001.jsonl",
+        "sha256": "b1401972c892ab2f28ad6645a02fdddf2089fa031628eebb737e2dda0cc566f9"
+      },
+      {
+        "event_sequence": 50,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-002.jsonl",
+        "sha256": "6629e6ac8b26dce320f866afed66cbe13ad66b667d9ac29381bfd00b7678c63c"
+      },
+      {
+        "event_sequence": 52,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-003.jsonl",
+        "sha256": "b8e96da86c12a44682528d2d15ed725428be956a5496674c476d4f0998e80a40"
+      },
+      {
+        "event_sequence": 54,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-004.jsonl",
+        "sha256": "422006971389e23a92b50cd4587bcb67f049b0f06fcfd0aabab4d390b26440d6"
+      },
+      {
+        "event_sequence": 56,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-005.jsonl",
+        "sha256": "2e6928e77a871eeb005033cb2f3b1845d1dbbcd85f379f7c33f16663d13246f4"
+      },
+      {
+        "event_sequence": 58,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-006.jsonl",
+        "sha256": "574553e6d71cf84b7a4c6205da6dccf1e759abe2da3ec0db861bd0ddb3b2808b"
+      },
+      {
+        "event_sequence": 384,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/audit-seal-result.json",
+        "sha256": "c21613c0486e7288d33c606e3f195e5a9363e60802d1814b50b4c94970c65a94"
+      },
+      {
+        "event_sequence": 240,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/authority-reconciliation-result.json",
+        "sha256": "3ba6c4e9428434d2a07e416fc4d0a3697cd79c32a0fc04f6b3704e282f2fd1a8"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/authorized-lfs-migration-receipt.json",
+        "sha256": "0d91721d84f0841fe0ec5d2e6ae4fc18c5cc2a8ac41c3ffe9f1d91a707d6d416"
+      },
+      {
+        "event_sequence": 234,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/build-time-computation-results.json",
+        "sha256": "5882417457e7301f96a3090d35caeb1840e3e69405459967043c3bf53fe523e6"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/canonical-composition-registry-v2.json",
+        "sha256": "51c3e29909a8aa5226a7d18ebaef896aa52c48be6725d722c869515874c6c24d"
+      },
+      {
+        "event_sequence": 14,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/category-authority-v2.tsv",
+        "sha256": "d915c7f86e756a8305b2349db8704c71651d5e4e6f474d851a86914b08cf5280"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/category-entry-census-v2.tsv",
+        "sha256": "ba7ae9c9c1b800457349e68e9886366fab3274913cb9592bc209fa06e5726549"
+      },
+      {
+        "event_sequence": 198,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.meta.json",
+        "sha256": "ce730b1b1f211047c6d918576724c7e2fe38202951c4c1567ea7b56cf79eaafa"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/composition-enumeration-v2.tsv",
+        "sha256": "75efbe8f0e5d18d431b1e525900da6eb30ff6abe1a97d407058e637680ada2cd"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/composition-rejection-ledger-v2.tsv",
+        "sha256": "dc10dbb41a9e4492ca682507bfa9b46df318039f83f022e16b7b3f3d8d485951"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/composition-statistics-v2.json",
+        "sha256": "262815bf9a579e780680e91dfe92e2d859a7ee89db61cf954ec238545a33d1a3"
+      },
+      {
+        "event_sequence": 234,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/concurrency-results.json",
+        "sha256": "fa7859e89b98912c343b3a9aeb7f367c616897315c057cc299c838ebc2b69d17"
+      },
+      {
+        "event_sequence": 14,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/database-identity-v2.json",
+        "sha256": "3f30c47eafc89876b4e685e8a0f567f69bf4af79e521c916d64eff000cd8fe33"
+      },
+      {
+        "event_sequence": 384,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/deterministic-artifact-sha-manifest-v2.json",
+        "sha256": "dacc1e7e37cd456ff2675c2c5d627448afb7de199d0420603a8c95e7d0a74db0"
+      },
+      {
+        "event_sequence": 8,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/environment.json",
+        "sha256": "3039109d1bcc8abb60b9461f8796a1241bf6e4f9c9c15e9ad5125683b65639d8"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/exploration-parameter-universe-v2.json",
+        "sha256": "6576b9d28ade5dbf95e8c067c44758a2022ca38640aa1ed99efe08fa3a26de2b"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv",
+        "sha256": "7e0e97e0c5848c34438705818fcb78bd1fc87bd705d238ea45e4cc4791f7f009"
+      },
+      {
+        "event_sequence": 30,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/future-vocabulary-candidates.tsv",
+        "sha256": "539f6d5afe66cfb171db9e81cda8062a4d3d587afcf5ce38dddd37da2edfe220"
+      },
+      {
+        "event_sequence": 96,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/graph-statistics-v2.json",
+        "sha256": "f24dde1568f4d5a53195a4f65750ecebf531ada937b6181594c66d4c0b640eb3"
+      },
+      {
+        "event_sequence": 242,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/headline-numbers.json",
+        "sha256": "2a1189f9fcd5703c262a99bef646222df78511248c35309ed91b23e94c0ac3bc"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/old-to-new-object-map.csv",
+        "sha256": "0460dd05558c15a442c724699a5ec9cf1d6083028ae18796db78790781cbf6e5"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/original-bundle.sha256",
+        "sha256": "5f7f8e5a84f0a86bdaef03b2ad3c2d4caa44920a350d8a26275b25a634419e8b"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/post-checkpoint-ledger.tsv",
+        "sha256": "9642ccc7f1c39a49bfeed566c93379c1f641d85a36fed02a7a5cb6c846cc0f65"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/post-ref-ledger.tsv",
+        "sha256": "6952125ee5307d66f65c7567863fdb0c068112ff15e61238ded824d1296f8f2f"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-checkpoint-ledger.tsv",
+        "sha256": "70ab54b2e9e7afdf9aff7642d82eb28e728f3178624a8c4c39bdd132dba70a5c"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-oversized-blobs.tsv",
+        "sha256": "f9bb0e9e01948609290c20f26b1c96b35c370aa3244fa82ce8803a1ad700174d"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-ref-ledger.tsv",
+        "sha256": "a3a7895c535b064ace2d9645c06d35e485655a14695a035c9f3724e4a52faf7a"
+      },
+      {
+        "event_sequence": 376,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
+        "sha256": "f30a639b70a226a0d38ed60bce40597f286f00b057dd848ddb03b7b7e1dfceaa"
+      },
+      {
+        "event_sequence": 376,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
+        "sha256": "794a16071edc9efce13c17de56c6b901aac86feb1dd5091fb490e1f20febf35f"
+      },
+      {
+        "event_sequence": 242,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/metric-dictionary.json",
+        "sha256": "65ada49d956450e4e1f51a982c91196c39631af666530f2d6a54c670aa12897b"
+      },
+      {
+        "event_sequence": 42,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/pair-universe-v2.json",
+        "sha256": "262bc89b468e8eaa4fd0321b7ac7990f97ff6ca1a3599251f8d5db9b723a45b5"
+      },
+      {
+        "event_sequence": 42,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/pair-universe-v2.tsv",
+        "sha256": "cc5522ef165b5222b614d84fe0cb5ec74e91a33471cf89ad18dd3c31c15765d3"
+      },
+      {
+        "event_sequence": 147,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv",
+        "sha256": "a8731dd9f1c9659dffbe75033c4541a8cfbc7260b8de80390967bc075276c0e1"
+      },
+      {
+        "event_sequence": 149,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv",
+        "sha256": "aed7174ea60275f0bb03e720e1cb11add04af8945f0f992b5bd756aac1c60765"
+      },
+      {
+        "event_sequence": 151,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv",
+        "sha256": "653b3f2b1fc06d5b806446acf54b13f13f861772b4a29be50711e282b9f24b45"
+      },
+      {
+        "event_sequence": 153,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv",
+        "sha256": "9e1f285f5a2e3ef41e89bf9b890f4dc3dfba0e2ae285b17cef61697748ff895d"
+      },
+      {
+        "event_sequence": 155,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv",
+        "sha256": "3ee428957d1c80d4c94a132dbbeea24d600d5116f80df58ffa4f276ec8245401"
+      },
+      {
+        "event_sequence": 157,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv",
+        "sha256": "07d7fd0226e6c81b04546e6f3dbbc296bb91f6697a36c311ce395e0997c35789"
+      },
+      {
+        "event_sequence": 159,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv",
+        "sha256": "3dd493bfc2c4ea73d8e7a8e00a7b2d043a638ebc2ae0ab0bd0a43c6326a32bff"
+      },
+      {
+        "event_sequence": 161,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv",
+        "sha256": "4d8ef1f8729cd7102268165bdbf4ada67336d02981e9d4bcc683c245048078be"
+      },
+      {
+        "event_sequence": 163,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv",
+        "sha256": "c78ece78ffa9c4c196f501d7096415d278b4f4568c7916163a8c440fed95c07a"
+      },
+      {
+        "event_sequence": 165,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv",
+        "sha256": "a5c0f178d1f09ebc986982d43cf72bc69c3628220592a908e8c011b9271d0c67"
+      },
+      {
+        "event_sequence": 167,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv",
+        "sha256": "1722417b49ede662c85259ad51f185ec3ea1e7d5340081e015d20e71706e19a5"
+      },
+      {
+        "event_sequence": 169,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv",
+        "sha256": "f4354179851bfd87a203ae45527da5bb52b38e34fa6894a913a1dd6d62780c40"
+      },
+      {
+        "event_sequence": 171,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv",
+        "sha256": "a8fdb2800c077d4779ba1f0847e51423e9d58928bdb740ef5f5e8ddf0ec564b5"
+      },
+      {
+        "event_sequence": 234,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/production-http-results.json",
+        "sha256": "34e1e25430dc2f18186f226bd3efc60f6e737879fca2b551b9d80e362aec3842"
+      },
+      {
+        "event_sequence": 132,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/production-model-load-v2.json",
+        "sha256": "d8cdf445be4e89b82acf8c4a7628092e3d386efcf339f86cba2a581a465a9260"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/production-read-model-metadata-v2.json",
+        "sha256": "4885f8beb309a0316ce94e55127f7ed448269c48eedc0180b96a12e515e089ee"
+      },
+      {
+        "event_sequence": 232,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json",
+        "sha256": "5c26518128224477df4bc741a41339d4cfbf7dc7b7dbf80f8e691fedaaa111c4"
+      },
+      {
+        "event_sequence": 242,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/quantitative-audit.json",
+        "sha256": "4b6c1134bd5079601b3b0fedffd55ab4012f5e4b403abc3809ac85366d8cb215"
+      },
+      {
+        "event_sequence": 353,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-boundary-receipt.json",
+        "sha256": "b6bcea0bd2e6389b5431873161877d860c69f253f7c0f2a18f356a97826921f8"
+      },
+      {
+        "event_sequence": 366,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json",
+        "sha256": "6be780b7489101545b577dab504552bd5ab0caeda18ebe00495d9bf5479e8329"
+      },
+      {
+        "event_sequence": 374,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json",
+        "sha256": "100aa75156a9cc5b6a24181cd15d92e719f0348fa579590f8a15ef27651b64b7"
+      },
+      {
+        "event_sequence": 234,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json",
+        "sha256": "b52a08c4b2fa5aa5374103162e64320ad92bdd66059441a859f2195faddba9b7"
+      },
+      {
+        "event_sequence": 232,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl",
+        "sha256": "97759181ba626fde03e2a27510835ce423e40a73af9b4cd522b0b27aadaf7db3"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/space-generation-performance-v2.json",
+        "sha256": "65f71e11fa0268bb7a500632c932f3fa7d5c4019ef9ad2fe97262cb2a1245731"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/space-generation-summary-v2.json",
+        "sha256": "6f12d10e9875ec9329f5d9e83530d40f12fb11de7c20ff086bfb5c203885ceb0"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/state-census-v2.tsv",
+        "sha256": "35bf2057b0e24bdd951988361eea152c173ba0b69fefc10c656b402f4ee630a5"
+      },
+      {
+        "event_sequence": 234,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/sustained-load-results.json",
+        "sha256": "112043c7058ad6dbb4db1d69399e09caff7af86b5c56475b4344b11cc032456b"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/transition-census-v2.tsv",
+        "sha256": "3a58b52f3c95fbc33ad992481ff55485b9a566418adc15daa1a39f86e9dd96a0"
+      },
+      {
+        "event_sequence": 96,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/validated-association-graph-v2.json",
+        "sha256": "1dee15d7cc0a9aa25f2a4a0fd7a352d2df5e7eacf88bd71badec5ebd476063bd"
+      },
+      {
+        "event_sequence": 32,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/vocabulary-candidate-universe-v2.json",
+        "sha256": "907eed1fb296f004dd4727ba3461c268f8d02f3c91f2f78d8ee266bb004074e3"
+      },
+      {
+        "event_sequence": 32,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/vocabulary-candidate-universe-v2.tsv",
+        "sha256": "69d9a6684764c1a8d9ad49edce694d5a704e295a19bdb881cb9747d675b91b2e"
+      },
+      {
+        "event_sequence": 34,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/vocabulary-census-v2.json",
+        "sha256": "da6e6e485a13b6224e293b8901df9dbb12a7ae7d7e77530ded316970ec5cad1a"
+      },
+      {
+        "event_sequence": 34,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/vocabulary-census-v2.tsv",
+        "sha256": "e7a9ca79a496bc1b40d51b0b84a720583c0e020f397f87cdb33d44714734e3de"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workflow-census-v2.tsv",
+        "sha256": "66a70a7f4d67a2f7052bb6a7f6da10004de8218faec4b05fb8d8a52904131b28"
+      },
+      {
+        "event_sequence": 209,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json",
+        "sha256": "0ff0653ece2d600b0f88f25a6c4ecf186107a6b29162be2edfb54cd68ffd4612"
+      },
+      {
+        "event_sequence": 213,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c10-run2.json",
+        "sha256": "d2a854b0e616e4727d862760bd46afaf7282e35fa700ff35b27dfbb33429eefa"
+      },
+      {
+        "event_sequence": 215,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c25-run2.json",
+        "sha256": "6d5414e438abc2ed1247dd5cee7c79dcd8247f1424deb3bb3677c40c16f71980"
+      },
+      {
+        "event_sequence": 211,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c5-run2.json",
+        "sha256": "ef4bfec9d2e69abba043aee7bfa02ce713985a7dd4cc0202dbbaa9a13fc31086"
+      },
+      {
+        "event_sequence": 217,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c50-burst-run2.json",
+        "sha256": "57ba2095fa046abb3f2e45688c49d05d381314d28ec9469b695455d13580317c"
+      },
+      {
+        "event_sequence": 227,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json",
+        "sha256": "bc956f72e1ffc0fe86025b2e8b4bc59e086600524341d334c23e3726a7caf864"
+      },
+      {
+        "event_sequence": 231,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-sustained-run2.json",
+        "sha256": "49264b0672c3e0ec03e3c156dfb2413d7a5ccfafc70fbac4de13c468e901adbd"
+      },
+      {
+        "event_sequence": 219,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c1-run2.json",
+        "sha256": "1c803be8475fe4afa068bc66007f7ae5079c708859e11e3d502e406764022ff3"
+      },
+      {
+        "event_sequence": 225,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c10-run2.json",
+        "sha256": "e621055d3ab60f6af593e6017bc2a2484875f1b4541371164e8b1d05b6a33803"
+      },
+      {
+        "event_sequence": 221,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c2-run2.json",
+        "sha256": "e619acbc961fa19d02fcaab051e36b737d5ce2a9f847706ece0380d4ed691aba"
+      },
+      {
+        "event_sequence": 223,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c5-run2.json",
+        "sha256": "c4afd718d25d8df03fd0e6bad046b087453ea7251fb05f6ded235b95fb5acc8a"
+      },
+      {
+        "event_sequence": 175,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c1-warm.json",
+        "sha256": "15d51ebf4a0cd6945102a3b5a9d7d5e49f50cc9507c21f5c647131abd37b8931"
+      },
+      {
+        "event_sequence": 179,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c10.json",
+        "sha256": "bc833c426b6d6a18a00ae544f94a1b681eba8dad4c302201e8f86598f08e9de8"
+      },
+      {
+        "event_sequence": 181,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c25.json",
+        "sha256": "81602eeaa31d01a73e5ca7c2b12de1545551e9d0bdce6d7eb2019a2fefa975a8"
+      },
+      {
+        "event_sequence": 177,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c5.json",
+        "sha256": "23f6279e58b0b268c767a9d9d49eb2b9353f4d1131e435ee44cb8d13668e3d0a"
+      },
+      {
+        "event_sequence": 183,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c50-burst.json",
+        "sha256": "8e98dd18115562dc14050777d56b9256bf5c00161f4d32dac1945eb83d5eab8c"
+      },
+      {
+        "event_sequence": 195,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/mixed-c25-sustained.json",
+        "sha256": "dac188ce06cab681b9c7be2617439a161967551c123d08a33c0226c58c20968a"
+      },
+      {
+        "event_sequence": 185,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c1.json",
+        "sha256": "4f859242482b5d3483f8db670cdc0c1b206f53b32a8bc41009f941993a548285"
+      },
+      {
+        "event_sequence": 191,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c10.json",
+        "sha256": "ae7d1c6fa31880974abbefd2510e14543bd7476f69149898a8ac6c294c1a4809"
+      },
+      {
+        "event_sequence": 187,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c2.json",
+        "sha256": "3b29ca43e3a60f27091afa02b0ee5abc1a02699a559bd7324c2ffe0b6a0641f9"
+      },
+      {
+        "event_sequence": 189,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c5.json",
+        "sha256": "244ae3161c3daa9ebb3dfb6dd80fd22df0188819be49ccff0dbb57597cf59614"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/EXPLORATION_CURRENT.md",
+        "sha256": "76fa5e01fa5e332cecd2d0c7b43919518393e94c5f271e006a0a41399c349463"
+      },
+      {
+        "event_sequence": 12,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/01_AUTHORITY_AND_ARCHITECTURE_RECONCILIATION.md",
+        "sha256": "c2266ecb42be772a90db6f34afb93eb7b2d17400ffc876d6e5b3044ddc1c403a"
+      },
+      {
+        "event_sequence": 12,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/02_ROUND16A_GOAL_AND_METHOD.md",
+        "sha256": "8dd7d3db1e3fff89e97c13c382031561342ef6644e8d6c5ea780d9df4c716e33"
+      },
+      {
+        "event_sequence": 326,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/03A_VOCABULARY_CENSUS.md",
+        "sha256": "4b991cc2481c72b0f5745745102d72419d766cc6ca8292a2a2c6b2f2d85613b2"
+      },
+      {
+        "event_sequence": 326,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/03B_VOCABULARY_DISPOSITION_RECONCILIATION.md",
+        "sha256": "03a5d95c0d8eb08280775adf10c09b1ceb5667627af659b20b3be91fdf305549"
+      },
+      {
+        "event_sequence": 12,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/03_VOCABULARY_UNIVERSE_METHOD.md",
+        "sha256": "eed66eb0b0ae556d12a37478de21ff91df89a7c2d4523370ec6c704c4d96b4b6"
+      },
+      {
+        "event_sequence": 12,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/04_ASSOCIATION_CENSUS_METHOD.md",
+        "sha256": "d6431bdc95fa380e89e5996bec4ef4e9413632df3070eedf2a210419bc9f53fc"
+      },
+      {
+        "event_sequence": 12,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/05_EVIDENCE_SEARCH_PROTOCOL.md",
+        "sha256": "ed5c542863ed92e273bdfe370b0b76fa3c8a9fa23030a72818f5228ae9d0f2fb"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/06_VALIDATED_GRAPH_REPORT.md",
+        "sha256": "6fcaf1e1475f332a8dc57b24a5422709fe3d833609e4921ab8a2ae7a5f18b923"
+      },
+      {
+        "event_sequence": 30,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/06_VOCABULARY_CENSUS.md",
+        "sha256": "4b991cc2481c72b0f5745745102d72419d766cc6ca8292a2a2c6b2f2d85613b2"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/07_PARAMETER_UNIVERSE.md",
+        "sha256": "76fa53daeb07ab5c58d563cdc481b63d36e816697f15326a0815707ae08339bf"
+      },
+      {
+        "event_sequence": 30,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/07_VOCABULARY_DISPOSITION_RECONCILIATION.md",
+        "sha256": "03a5d95c0d8eb08280775adf10c09b1ceb5667627af659b20b3be91fdf305549"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/08_COMPOSITION_ENUMERATION_METHOD.md",
+        "sha256": "436d24a2d9b66aac83bb33c9d245bc76e2088f38d8669fcdbc2709903b6270ec"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/09_CANONICALISATION_POLICY.md",
+        "sha256": "299c8560c159600e0887ae0526b42a67c112140227c0b052057baa9ded77e438"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/10_TOPOLOGY_CENSUS.md",
+        "sha256": "8caf78e0f35f1558b2f291281353883ee1e4d7b5440c3eb243e57c013d2f5fed"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/11_CATEGORY_ENTRY_CENSUS.md",
+        "sha256": "21b7f2ac85e0ae064b2c12a87c11410bbf700ab29b55f3f5f35455695b168d61"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/12_STATE_AND_TRANSITION_CENSUS.md",
+        "sha256": "d78961c41fa9b41edf98c31de62ae9a6b41968d2ad1336edadf5e047f04bc5c2"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/13_CANONICAL_WORKFLOW_CENSUS.md",
+        "sha256": "a9e276d72a58d6d7fc78a57b7866b13cdc3658477d2576c053119da5f7724647"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/14_EXPORT_CENSUS.md",
+        "sha256": "abca9cc7902f2a55b551fe6993bde0fedf79139397db9ddebb42519cf4653996"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/15_API_AND_READ_MODEL_DECISION.md",
+        "sha256": "a568d589d5c178c522109262928f32396e0b35d3bd9587c256e2f7cbe58ca315"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/16_PRODUCTION_LOAD_METHOD.md",
+        "sha256": "dd5911f56d59f64bdd782c0dd371e51b48fa95488d6633153ed41e2c1ee31d06"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/17_PRODUCTION_LOAD_RESULTS.md",
+        "sha256": "716701436ae6ccf1d5b18e3e643c88126d4e31b8627d58a89654952d4357b93c"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/18_STATISTICAL_CENSUS.md",
+        "sha256": "77c29c48bb53ab3d862b252d43eabe65305b2e3378b7ed1793763cab2091380f"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/19_INDEPENDENT_VERIFICATION.md",
+        "sha256": "74a8b9df7807d0938ae64082862424a13fccaf0cd5713ca4c3a4a3fad826c25c"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/20_REPRODUCIBILITY.md",
+        "sha256": "3f25782b5a5a24370374405fa44532c2f70f9978dccbfb562ee0549d9fd159bc"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/21_LIMITATIONS.md",
+        "sha256": "12f5bbdbbd32d3070753cd09be62b8b3970d64f52581896bda500cae396a189e"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/22_FUNCTION3_CLOSURE_DECISION.md",
+        "sha256": "63652697810d36078042e337d7850c20bf44c8da1b964d9499db7f49f50d413f"
+      },
+      {
+        "event_sequence": 388,
+        "event_status": "PASS",
+        "path": "docs/research/trace-v49-exploration-full-space-closure-round1/23_BRANDING_SAFE_METRICS.md",
+        "sha256": "1a5184da2050a1763b729c031eebae49d8bea2ddc261f0567d2a1dbd6dba18b9"
+      },
+      {
+        "event_sequence": 106,
+        "event_status": "PASS",
+        "path": "frontend/generated/trace-exploration-v2/production-read-model.json",
+        "sha256": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9"
+      }
+    ],
+    "verified_local_file_hash_count": 139
+  },
+  "execution_event_hash_failure_count": 0,
+  "execution_events": {
+    "event_count": 388,
+    "field_type_failure_count": 0,
+    "first_sequence": 1,
+    "last_sequence": 388,
+    "required_field_failure_count": 0,
+    "sequence_gap_count": 0,
+    "status_counts": {
+      "FAIL": 22,
+      "PASS": 173,
+      "STARTED": 193
+    },
+    "unique_sequence_count": 388
+  },
+  "execution_log_sequence_gap_count": 0,
+  "format": "trace-exploration-execution-log-verification-v1",
+  "full_command_log_ready": true,
+  "input_inventory_sha256": "a61adc638abeeab98703c838b126d529642331db599c546c98aac8ab39698c0d",
+  "inputs": [
+    {
+      "byte_size": 7310,
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/checkpoint-ledger.tsv",
+      "sha256": "e560af78f3efd4b259fab44cec9171cd098b83e8d5d25c00e61e36bef1612da2"
+    },
+    {
+      "byte_size": 163199,
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/command-ledger.tsv",
+      "sha256": "7361bd69a9fc74ef270150f39ad0380f6c1e01986fc78599a80ef8972dab0fec"
+    },
+    {
+      "byte_size": 818994,
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/execution-events.jsonl",
+      "sha256": "598e1038cb3059aef9789a0839221c8708bbd65261a518cb5301eb1c080425a6"
+    }
+  ],
+  "status": "PASS",
+  "validation": {
+    "checkpoint_ledger_shape": "PASS",
+    "command_ledger_reconciliation": "PASS",
+    "command_log_nontruncation": "PASS",
+    "command_stream_hashes_where_present": "PASS",
+    "content_addressed_legacy_bootstrap_meta": "PASS",
+    "execution_event_schema": "PASS",
+    "execution_event_sequence": "PASS",
+    "existing_output_hashes": "PASS",
+    "historical_output_hash_schema": "PASS",
+    "mutable_output_latest_writer_hashes": "PASS"
+  }
+}

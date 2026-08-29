@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 257,
+  "scriptCount": 320,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2492,6 +2492,636 @@
       "current_ci_required": false,
       "retained_audit_role": true,
       "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace_round16a/apply_authority_clarification.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_association_census.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_exploration_space.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_final_gate_evidence.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_operational_gate_receipts.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_pair_universe.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_research_reports.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_vocabulary_census.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/build_vocabulary_universe.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/capture_database_identity.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/capture_final_integration_evidence.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/node_runtime_probe.cjs",
+      "category": "CURRENT_V49_EXPLORATION_RUNTIME_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/run_logged.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/seal_audit_package.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/search_association_pairs.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/start_production_server.py",
+      "category": "CURRENT_V49_EXPLORATION_RUNTIME_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/summarize_runtime_results.py",
+      "category": "CURRENT_V49_EXPLORATION_RUNTIME_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/verify_authorized_lfs_migration.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/verify_execution_log.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/verify_full_space.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/verify_repository_boundary.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/verify_reproducibility.py",
+      "category": "CURRENT_V49_EXPLORATION_FULL_SPACE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/bootstrap_round16b.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_deferred_surface_census.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_evidence_disposition_tranche_a.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_evidence_disposition_tranche_b.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_evidence_disposition_tranche_c.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_adaptive_source_review_shard_1.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_adaptive_source_review_shard_1.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_adaptive_source_review_shard_2.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_adaptive_source_review_shard_2.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_evidence_disposition_tranche_c.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_evidence_disposition_tranche_b.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_local_candidate_census.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_method_checkpoint.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_round16a_global_reconciliation.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_recursive_gap_closure_audit.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_v3_semantic_contract.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_exploration_v3_runtime_read_model.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/capture_cp015_database_diagnostic.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/capture_source_lfs_manifest.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/import_publication_receipts.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/publish_checkpoint.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/run_logged.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_cp015_database_diagnostic.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_new_blob_policy.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_reachable_ordinary_blobs.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_deferred_surface_census.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_evidence_disposition_tranche_a.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_execution_log.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_local_candidate_census.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_method_checkpoint.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_round16a_global_reconciliation.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v3_semantic_contract_independent.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v3_runtime_independent.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v3_production_http.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/build_final_clean_reproduction_receipt.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/capture_v50_round16b_checkpoint016.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_final_clean_reproduction_independent.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v3_production_http_checkpoint016_independent.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v50_round16b_checkpoint016_independent.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
     },
     {
       "path": "scripts/v49_api_contract_prepare_fresh_c_release.sql",

@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/round16a_run_sequence.py",
+    "--cwd",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--commands-json",
+    "[\"git diff --exit-code 6dacbbfa HEAD -- docs/research/trace-v49-exploration-composition-review-round1 docs/audits/v49-exploration-composition-review-round1 scripts/trace-v49-exploration-composition-review\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-composition-review/validate_round1.py\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-composition-review/test_round1.py\",\"npm --prefix frontend run test:exploration-composition-review\"]"
+  ],
+  "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --commands-json '[\"git diff --exit-code 6dacbbfa HEAD -- docs/research/trace-v49-exploration-composition-review-round1 docs/audits/v49-exploration-composition-review-round1 scripts/trace-v49-exploration-composition-review\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-composition-review/validate_round1.py\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-composition-review/test_round1.py\",\"npm --prefix frontend run test:exploration-composition-review\"]'",
+  "command_id": "1787840806375-round13-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 426,
+  "end_timestamp_utc": "2026-08-27T14:26:46Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round13-regression",
+  "phase_id": "GATE-13",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T14:26:46Z",
+  "stderr_sha256": "1ee657135bb3bfef9c9fd4f43a5370287b0da2e192b71bd450326c0c8b7c6c26",
+  "stdout_sha256": "7b290373a3a8dbcd5c0b12f7ffaff6fed55c478ae1af897aa277336a5e81237a",
+  "timed_out": false
+}

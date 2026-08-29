@@ -1,0 +1,40 @@
+{
+  "api_version": "trace-exploration/v3",
+  "attempt_count": 4,
+  "build_id": "yzL_VTXYiU7I5dG_MIbcx",
+  "cold_start_ms": 532.4114590184763,
+  "command": [
+    "/usr/local/bin/node",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules/next/dist/bin/next",
+    "start",
+    "--hostname",
+    "127.0.0.1",
+    "--port",
+    "59447"
+  ],
+  "first_response_bytes": 4005,
+  "first_response_sha256": "01eac840347efa58ff68d4431a463f7d7dd610dacc575ad788217bbd1b9cacab",
+  "first_successful_request_ms": 349.04850006569177,
+  "host": "127.0.0.1",
+  "next_version": "15.5.18",
+  "port": 59447,
+  "preload_entries_on_start": false,
+  "probe_module": "scripts/trace_round16a/node_runtime_probe.cjs",
+  "probe_path": "runtime-probe.jsonl",
+  "probe_session_id": "f4a565f6-7523-4f2b-9af5-76721a04e12a",
+  "process_group_id": 77698,
+  "read_model_sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b",
+  "readiness_path": "/api/trace/v3/exploration/capabilities",
+  "ready_utc": "2026-08-28T16:02:07.130Z",
+  "recent_attempt_statuses": [
+    "ConnectionRefusedError:[Errno 61] Connection refused",
+    "ConnectionRefusedError:[Errno 61] Connection refused",
+    "ConnectionRefusedError:[Errno 61] Connection refused",
+    "200"
+  ],
+  "schema_version": "trace-exploration-v3-production-startup-receipt-v1",
+  "server_log_path": "server-output.txt",
+  "server_pid": 77698,
+  "started_utc": "2026-08-28T16:02:06.594Z",
+  "status": "READY"
+}

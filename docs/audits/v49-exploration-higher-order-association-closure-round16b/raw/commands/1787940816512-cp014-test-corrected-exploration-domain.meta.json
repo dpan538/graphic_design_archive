@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-domain"
+  ],
+  "command": "npm --prefix frontend run test:exploration-domain",
+  "command_id": "1787940816512-cp014-test-corrected-exploration-domain",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 855,
+  "end_timestamp_utc": "2026-08-28T18:13:37Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-test-corrected-exploration-domain",
+  "phase_id": "CHECKPOINT-014-FRONTEND-GUARD-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:13:36Z",
+  "stderr_sha256": "1d83ece31fbfc7e8b6e8b6aef51426dfaf6ec379124a21e46c88af1c7b65d092",
+  "stdout_sha256": "42fcb134c9e0289ec1f5e81aa36d1f789ccb3aef60c72ec6e5079f2bbc8da260",
+  "timed_out": false
+}

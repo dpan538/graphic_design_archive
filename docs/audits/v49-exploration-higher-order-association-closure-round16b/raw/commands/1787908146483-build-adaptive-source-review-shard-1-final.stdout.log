@@ -1,0 +1,75 @@
+{
+  "active_fact_created_count": 0,
+  "active_pending_review_count": 0,
+  "aggregate_output_sha256": "9718b8c5a11e8bc32b79048f210ebf3b2258d6eda9383c1f3e6a42320efc3b9b",
+  "association_activation_count": 0,
+  "builder_version": "trace-round16b-adaptive-source-review-shard-1-v1",
+  "canonical_identity_authority_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-higher-order-review-queue-tranche-c-v1.tsv",
+  "canonical_identity_authority_sha256": "d7ff7c13d75ad0ba14c1f84490b021956a23137d6e926f655057f2ea2009e22e",
+  "closure_flags_true_count": 0,
+  "evidence_authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+  "format": "trace-round16b-adaptive-source-review-build-receipt-shard-1-v1",
+  "governed_inquiry_only_association_identity_count": 2,
+  "open_gap_count": 8,
+  "output_count_excluding_receipt": 7,
+  "output_hashes": {
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-search-query-log-shard-1-v1.tsv": {
+      "bytes": 51791,
+      "sha256": "1c66945711164592b106aaf4cdfc70e26be993de8e9d017c6b765a76fa7014bc"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-1-v1.json": {
+      "bytes": 3148,
+      "sha256": "eb19089f691ef5344dc6ec5eb100683835fa50279b03612abf7eaa7fe5ce73c2"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-1-v1.tsv": {
+      "bytes": 25630,
+      "sha256": "0ed85ac002eb27b6130639acb4ecb2c3ebc9fbe0224f67550dc853f098324ecb"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-adaptive-source-shard-1-v1.tsv": {
+      "bytes": 5346,
+      "sha256": "dfcf94990753ab8f7bcde4e3438de90f60fb8688b8777cf6f72f731d10ffe180"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv": {
+      "bytes": 13131,
+      "sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-1-v1.tsv": {
+      "bytes": 8431,
+      "sha256": "062b61c2ee532118716b088939fd2758fb8b002adfe5546f6d4c68ba155536ce"
+    },
+    "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/13_ADAPTIVE_SOURCE_REVIEW_SHARD_1.md": {
+      "bytes": 3759,
+      "sha256": "71c58859dd1131cc9c3aaa4fda48a5881530a2f2d60a0f46cd9fe41b86e9b0a8"
+    }
+  },
+  "pair_projection_count": 0,
+  "pinned_input_hashes": {
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv": "dfc1751482f3e74de78c2a94fd46f20eb3538d26e8c6bbf94482cac9534e770a",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-b-v1.tsv": "302394dab22ebc85800ac1555db633e3282f83c552026deacec32665ea16389d",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json": "143266126e7ec3e06158b56647e91c416ed896fb6ebb067656f88db74d7c952f",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-b-v1.tsv": "1f6547e799963d14c45335569aaa9a5facf9eb1715afe6c462605acdae16a090",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv": "cd4c3ca997c0f4cd5919d4e29d89ca45291fae4f70f78a49742aafb9c76baea7",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scholarly-source-rights-policy.json": "b68037dff860421a4f413767a38ca07998cc9f215c75780f1e0019f32bf396ba",
+    "docs/research/trace-v49-design-history-relation-grammar-round1/03_GRAMMAR_SCHOLARLY_SOURCE_REGISTRY.tsv": "9db7d8eaf85b1e104b40cc9412dca274a20b0c5b5715941ec6f234f46c21bd3d",
+    "docs/research/trace-v49-design-history-relation-grammar-round1/07_GRAMMAR_ATTESTATION_REGISTRY.tsv": "62b56052829d23cd2cf820a232479f74cbf663d64465cdc242900e71220df2a8",
+    "docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv": "1f54c0956ca12dfaad472a6644c6102ee13b2e9a46f6c1794e21e1a2d7097dca",
+    "docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv": "c3d24a2a6f90d1e0b6ce7f0f483d04a752761cb3699294039c97778ed84dd714",
+    "docs/research/trace-v49-exploration-composition-review-round1/06_VOCABULARY_GAP_EVIDENCE.tsv": "a38600ead90276d12b97a394443a93cefab1009ea7b391c36aa8d141fcee1051",
+    "scripts/trace-v49-exploration-real-database/scholarly-source-additions-v1.tsv": "473eb44a3b43d3f63261076b13c05e09a1e8b2abb10de8cf73765b0aea597752"
+  },
+  "product_eligible_count": 0,
+  "query_batch_count": 10,
+  "query_count": 40,
+  "query_exact_timestamp_count": 36,
+  "query_explicit_uncaptured_timestamp_count": 4,
+  "remote_payload_retained_count": 0,
+  "remote_payload_sha256_count": 0,
+  "rights_record_count": 9,
+  "scoped_hypothesis_count": 9,
+  "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+  "source_review_count": 9,
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS_FAIL_CLOSED_ADAPTIVE_SOURCE_SHARD_1",
+  "subset_projection_count": 0
+}

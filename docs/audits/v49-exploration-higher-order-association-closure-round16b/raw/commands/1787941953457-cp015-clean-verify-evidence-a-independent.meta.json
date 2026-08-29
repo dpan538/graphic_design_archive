@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_evidence_disposition_tranche_a.py",
+    "--repo",
+    ".",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json",
+  "command_id": "1787941953457-cp015-clean-verify-evidence-a-independent",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 276,
+  "end_timestamp_utc": "2026-08-28T18:32:33Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-clean-verify-evidence-a-independent",
+  "phase_id": "CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:32:33Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d7c43e858556ebd683e1a37da83e334fe88c6321876f99d828a4bdb23f81a9fe",
+  "timed_out": false
+}

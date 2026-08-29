@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_production_http.py",
+    "--repo-root",
+    ".",
+    "--output-dir",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint012-artifact-check",
+    "--check-artifacts-only"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_production_http.py --repo-root . --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint012-artifact-check --check-artifacts-only",
+  "command_id": "1787938952280-cp012-regenerate-http-artifact-canonical-tsv",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 82,
+  "end_timestamp_utc": "2026-08-28T17:42:32Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-regenerate-http-artifact-canonical-tsv",
+  "phase_id": "CHECKPOINT-012-HYGIENE-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:42:32Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "3da6514bde3fd029eae2defdcfc5f4a482b407aea6fc61e2d9ad8e2d69e46d40",
+  "timed_out": false
+}

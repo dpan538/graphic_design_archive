@@ -1,0 +1,5 @@
+frontend/scripts/test-exploration-domain.mjs:22:import { auditActiveRepository, scanCandidateSource } from "./exploration-reset-guard.mjs";
+frontend/scripts/test-exploration-domain.mjs:158:  const audit = auditActiveRepository();
+frontend/scripts/exploration-reset-guard.mjs:170:export function auditActiveRepository() {
+frontend/scripts/exploration-reset-guard.mjs:227:    databaseFilesChanged: databaseChanges.length,
+frontend/scripts/exploration-reset-guard.mjs:262:  const result = auditActiveRepository();

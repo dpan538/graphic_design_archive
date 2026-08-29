@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; line=$(ipcs -m -a | rg \"^m[[:space:]]+65537[[:space:]]\"); test -n \"$line\"; set -- $line; test \"$2\" = 65537; test \"$5\" = jarlgiovanni; test \"$9\" = 0; creator_pid=${11}; if ps -p \"$creator_pid\" >/dev/null 2>&1; then printf \"%s\\n\" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi; printf \"%s\\n\" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=$creator_pid STALE_IPC_CREATOR_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; line=$(ipcs -m -a | rg \"^m[[:space:]]+65537[[:space:]]\"); test -n \"$line\"; set -- $line; test \"$2\" = 65537; test \"$5\" = jarlgiovanni; test \"$9\" = 0; creator_pid=${11}; if ps -p \"$creator_pid\" >/dev/null 2>&1; then printf \"%s\\n\" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi; printf \"%s\\n\" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=$creator_pid STALE_IPC_CREATOR_ABSENT=PASS'",
+  "command_id": "1787941798696-cp015-validate-stale-ipc-65537-before-scoped-removal",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 31,
+  "end_timestamp_utc": "2026-08-28T18:29:58Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-validate-stale-ipc-65537-before-scoped-removal",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:29:58Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "a977ab4b36617a0db4efafa06f6a16f215aa1753b342e6fced87bed072354c6e",
+  "timed_out": false
+}

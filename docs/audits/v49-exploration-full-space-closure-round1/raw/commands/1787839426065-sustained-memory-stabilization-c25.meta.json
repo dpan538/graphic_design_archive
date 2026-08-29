@@ -1,0 +1,43 @@
+{
+  "argv": [
+    "node",
+    "frontend/scripts/benchmark-trace-exploration-v2-http.mjs",
+    "--repo",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--base-url",
+    "http://127.0.0.1:3034",
+    "--mode",
+    "mixed",
+    "--concurrency",
+    "25",
+    "--requests",
+    "10000",
+    "--minimum-duration-ms",
+    "300000",
+    "--timeout-ms",
+    "30000",
+    "--scenario",
+    "memory_stabilization",
+    "--workload-id",
+    "mixed-c25-stabilization-run2",
+    "--output",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json"
+  ],
+  "command": "node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode mixed --concurrency 25 --requests 10000 --minimum-duration-ms 300000 --timeout-ms 30000 --scenario memory_stabilization --workload-id mixed-c25-stabilization-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json",
+  "command_id": "1787839426065-sustained-memory-stabilization-c25",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 303087,
+  "end_timestamp_utc": "2026-08-27T14:08:49Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "sustained-memory-stabilization-c25",
+  "phase_id": "GATE-11",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T14:03:46Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "950659e0698804fb8127b0df8229da1c06b334194e9ad6b9f784ca461ddeaaaf",
+  "timed_out": false
+}

@@ -1,0 +1,102 @@
+{
+  "active_association_count": 0,
+  "active_pending_review_count": 0,
+  "aggregate_output_sha256": "70a12c06b1e9213d427a5f9e0d065a23d090441250e0cb14270d16521dc4ce66",
+  "association_activation_count": 0,
+  "association_identity_created_count": 2,
+  "builder_version": "trace-round16b-evidence-disposition-tranche-c-v1",
+  "candidate_universe_closure": false,
+  "closure_flags_true_count": 0,
+  "cumulative_disposed_family_count": 35,
+  "cumulative_disposed_occurrence_count": 359,
+  "family_arity_counts": {
+    "4": 4,
+    "5": 1,
+    "6": 4,
+    "8": 1
+  },
+  "family_count": 10,
+  "final_parent_disposition_counts": {
+    "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 3,
+    "HARD_NEGATIVE": 2,
+    "INQUIRY_ONLY_OR_UNRESOLVED": 2,
+    "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 3
+  },
+  "format": "trace-round16b-evidence-disposition-tranche-c-build-receipt-v1",
+  "inherited_pairwise_clique_invalid_parent_count": 5,
+  "input_count": 24,
+  "input_manifest_sha256": "37949a4deb20d17037b0aedbf7910b10197c58eb16749cf783ab470fdd524177",
+  "linked_occurrence_count": 60,
+  "local_parent_disposition_coverage": true,
+  "occurrence_evidence_class_counts": {
+    "EVIDENCE_BEARING_INPUT": 4,
+    "GLOBAL_COHERENCE_NEGATIVE_CONTROL": 2,
+    "HARD_NEGATIVE_CONTROL": 3,
+    "PAIR_COMPONENT_CONTROL": 2,
+    "PAIR_GRAPH_RENDER_CONTROL": 2,
+    "STRUCTURAL_ECHO": 45,
+    "SYNTHETIC_CONTROL": 1,
+    "TEMPORAL_SCOPE_NEGATIVE_CONTROL": 1
+  },
+  "occurrence_source_class_counts": {
+    "R13_EXACT_EVIDENCE_RECORD": 2,
+    "R14_SHARED_LOCATOR_PROVENANCE": 2,
+    "R14_SYNTHETIC_NARY_CONTROL": 1,
+    "R15_RESEARCH_FIXTURE": 10,
+    "R16A_CONNECTED_SUBGRAPH": 14,
+    "R16A_PRESENTATION_TOPOLOGY": 6,
+    "R16A_PRODUCT_COMPOSITION": 24,
+    "R16_LEGACY_PRODUCT_COMPOSITION": 1
+  },
+  "output_count_excluding_receipt": 7,
+  "output_hashes": {
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-c-v1.json": {
+      "bytes": 4020,
+      "sha256": "0a983c8be4f98a4124bb9b42d2d365fe1a53bd5a5d1bf934f4ebc4bc66357fd7"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-input-manifest-tranche-c-v1.tsv": {
+      "bytes": 9671,
+      "sha256": "37949a4deb20d17037b0aedbf7910b10197c58eb16749cf783ab470fdd524177"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-c-v1.tsv": {
+      "bytes": 93594,
+      "sha256": "a93b920fcb42bab89ff9d7958434c3f18d38648091c391246f321e8bfe2a8f66"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-c-v1.tsv": {
+      "bytes": 24776,
+      "sha256": "560ac2574c3c0855387bfa423ece6ed99a17193771575c0014f2752a3fd820d5"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint007-tranche-c-v1.tsv": {
+      "bytes": 4605,
+      "sha256": "14272d3be247175fab22505dfba9309a122201dcc06e7615fcc4a63c577cbaa8"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-higher-order-review-queue-tranche-c-v1.tsv": {
+      "bytes": 24321,
+      "sha256": "d7ff7c13d75ad0ba14c1f84490b021956a23137d6e926f655057f2ea2009e22e"
+    },
+    "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/12_EVIDENCE_DISPOSITION_TRANCHE_C.md": {
+      "bytes": 3047,
+      "sha256": "a4f89895cfa257eb28d0e67cc3fd680a745c6ca4a92cef9f16926ddcc2e4b3dd"
+    }
+  },
+  "pair_projection_created_count": 0,
+  "parent_checkpoint_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+  "product_eligible_count": 0,
+  "product_path_created_count": 0,
+  "remaining_undisposed_local_family_count": 0,
+  "remaining_undisposed_local_occurrence_count": 0,
+  "review_tranche": "CHECKPOINT-007-EVIDENCE-TRANCHE-C",
+  "scoped_inquiry_identity_count": 2,
+  "scoped_review_queue_kind_counts": {
+    "DERIVATIVE_RECONCILIATION": 1,
+    "PARENT_CLOSE_CONTROL": 8,
+    "SCOPED_INQUIRY_IDENTITY": 2,
+    "SENSE_AND_CASE_SPLIT_REVIEW": 1
+  },
+  "scoped_review_queue_record_count": 12,
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS_FAIL_CLOSED_TRANCHE_C_LOCAL_PARENT_COVERAGE_ONLY",
+  "subset_projection_created_count": 0,
+  "unresolved_inquiry_association_count": 2
+}

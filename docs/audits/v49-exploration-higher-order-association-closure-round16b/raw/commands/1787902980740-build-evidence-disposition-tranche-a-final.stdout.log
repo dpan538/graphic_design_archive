@@ -1,0 +1,57 @@
+{
+  "aggregate_output_sha256": "229bd7758e52178b726372aab6331dcef2cb13aa120145b24f8d37fa98b25520",
+  "association_activation_count": 0,
+  "association_identity_created_count": 0,
+  "builder_version": "trace-round16b-evidence-disposition-tranche-a-v1",
+  "closure_flags_true_count": 0,
+  "conditional_queue_count": 10,
+  "family_count": 11,
+  "format": "trace-round16b-evidence-disposition-tranche-a-build-receipt-v1",
+  "input_count": 17,
+  "input_manifest_sha256": "5c676ed015d0f1d5349a93ca672ce38375dfea758d89898c7df8bb714a585281",
+  "linked_occurrence_count": 112,
+  "occurrence_evidence_class_counts": {
+    "EVIDENCE_BEARING": 13,
+    "NEGATIVE_CONTEXT": 1,
+    "SOURCE_CONTAINER_COOCCURRENCE": 4,
+    "STRUCTURAL_ECHO": 91,
+    "SYNTHETIC_CONTROL": 3
+  },
+  "output_count_excluding_receipt": 7,
+  "output_hashes": {
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv": {
+      "bytes": 17311,
+      "sha256": "abedad8a6e3df9ac964d3c3c7ee6923e0af610ac0459b6c510cb2873f6403716"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-a-v1.json": {
+      "bytes": 2077,
+      "sha256": "53930bf24fca0a1178926385b3fb44a54cddf09eecf64edc2aef41073db8b31f"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-input-manifest-tranche-a-v1.tsv": {
+      "bytes": 6810,
+      "sha256": "5c676ed015d0f1d5349a93ca672ce38375dfea758d89898c7df8bb714a585281"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv": {
+      "bytes": 162177,
+      "sha256": "fc5f9716838af109f3b1c5e097cbefe6c8dd58f37210e7562b67bd8c80e717a9"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv": {
+      "bytes": 20571,
+      "sha256": "5e77187942e0815a0291c24374bbc389cd09a78d9165977f5e73a63fad7fe7f0"
+    },
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint005-tranche-a-v1.tsv": {
+      "bytes": 3247,
+      "sha256": "d11be30cc6ffb2d62889fe4d5a86c325facaf5d803c29b59a1c8f92875990238"
+    },
+    "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/08_EVIDENCE_DISPOSITION_TRANCHE_A.md": {
+      "bytes": 2481,
+      "sha256": "c9eb82463108611d41b1d7abd0aa482677ee648aaf30c24cac50d6a13ba009b6"
+    }
+  },
+  "pair_projection_created_count": 0,
+  "parent_checkpoint_sha": "068c92151a935cfb9e4adc36b150c6800a6de9a2",
+  "review_tranche": "CHECKPOINT-005-EVIDENCE-TRANCHE-A",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS_FAIL_CLOSED_TRANCHE_A"
+}

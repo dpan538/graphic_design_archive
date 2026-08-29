@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_adaptive_source_review_shard_2.py"
+  ],
+  "command": "python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py",
+  "command_id": "1787915919002-build-adaptive-source-review-shard2-expanded",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 47,
+  "end_timestamp_utc": "2026-08-28T11:18:39Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "build-adaptive-source-review-shard2-expanded",
+  "phase_id": "CHECKPOINT-009-SOURCE-REVIEW",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:18:39Z",
+  "stderr_sha256": "8c92fa3abf5903d448f256510849006587fc688b2813e063131cef045aa1d328",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

@@ -1,0 +1,169 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/navigation-state.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bipartite_alternation_valid": {
+      "const": true,
+      "type": "boolean"
+    },
+    "composition_revision_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "focus_navigation_node_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "nodes": {
+      "items": {
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "else": {
+              "properties": {
+                "association_revision_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "concept_id": {
+                  "const": null
+                }
+              }
+            },
+            "if": {
+              "properties": {
+                "node_kind": {
+                  "const": "CONCEPT"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "association_revision_id": {
+                  "const": null
+                },
+                "concept_id": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "properties": {
+          "association_revision_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "concept_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "navigation_node_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "node_kind": {
+            "enum": [
+              "CONCEPT",
+              "ASSOCIATION"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "navigation_node_id",
+          "node_kind",
+          "concept_id",
+          "association_revision_id"
+        ],
+        "type": "object"
+      },
+      "minItems": 3,
+      "type": "array"
+    },
+    "path": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "from_navigation_node_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "incidence_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "to_navigation_node_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "from_navigation_node_id",
+          "incidence_id",
+          "to_navigation_node_id"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "presentation": {
+      "additionalProperties": false,
+      "properties": {
+        "focus_style": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "viewport": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "focus_style",
+        "viewport"
+      ],
+      "type": "object"
+    },
+    "presentation_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "realm": {
+      "enum": [
+        "PRODUCTION",
+        "SYNTHETIC_CONTROL"
+      ],
+      "type": "string"
+    },
+    "semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "state_id": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "state_id",
+    "realm",
+    "composition_revision_id",
+    "nodes",
+    "path",
+    "focus_navigation_node_id",
+    "bipartite_alternation_valid",
+    "semantic_sha256",
+    "presentation",
+    "presentation_sha256"
+  ],
+  "title": "TRACE Exploration v3 bipartite navigation state",
+  "type": "object"
+}

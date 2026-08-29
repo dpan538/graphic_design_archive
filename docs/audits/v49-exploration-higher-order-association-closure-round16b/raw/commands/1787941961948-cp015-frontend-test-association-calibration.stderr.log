@@ -1,0 +1,4 @@
+(node:57771) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///private/tmp/gda_round16b_cp015_clean_repro_024935e8/frontend/src/lib/trace/exploration-association-adapter.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /private/tmp/gda_round16b_cp015_clean_repro_024935e8/frontend/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)

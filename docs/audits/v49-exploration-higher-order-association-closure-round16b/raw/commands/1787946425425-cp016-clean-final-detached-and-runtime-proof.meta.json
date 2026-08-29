@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; test \"$(git rev-parse HEAD)\" = d40ec811c2b60cfcbf6892ba79741d2ee0fec95b; test \"$(git rev-parse HEAD^{tree})\" = 9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65; git diff --exit-code HEAD --; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test -z \"$(git lfs status --porcelain)\"; test ! -e frontend/node_modules; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; test ! -e /private/tmp/gda-v50-round16b-cp016-final; for cp016_pid in 79786 82654; do if cp016_rows=$(ps -p \"$cp016_pid\" -o pid=); then test -z \"$cp016_rows\"; else test \"$?\" -eq 1; fi; done; for cp016_port in 59474 45974; do if cp016_rows=$(lsof -nP -iTCP:$cp016_port -sTCP:LISTEN); then printf \"%s\\n\" \"$cp016_rows\" >&2; exit 1; else test \"$?\" -eq 1; fi; done; printf \"%s\\n\" DETACHED_HEAD_EXACT=PASS DETACHED_TREE_EXACT=PASS DETACHED_GIT_STATUS_CLEAN=PASS DETACHED_LFS_STATUS_CLEAN=PASS DEPENDENCY_LINK_ABSENT=PASS DATABASE_CLUSTER_ROOT_ABSENT=PASS SERVER_PIDS_ABSENT=PASS LISTENERS_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; test \"$(git rev-parse HEAD)\" = d40ec811c2b60cfcbf6892ba79741d2ee0fec95b; test \"$(git rev-parse HEAD^{tree})\" = 9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65; git diff --exit-code HEAD --; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test -z \"$(git lfs status --porcelain)\"; test ! -e frontend/node_modules; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; test ! -e /private/tmp/gda-v50-round16b-cp016-final; for cp016_pid in 79786 82654; do if cp016_rows=$(ps -p \"$cp016_pid\" -o pid=); then test -z \"$cp016_rows\"; else test \"$?\" -eq 1; fi; done; for cp016_port in 59474 45974; do if cp016_rows=$(lsof -nP -iTCP:$cp016_port -sTCP:LISTEN); then printf \"%s\\n\" \"$cp016_rows\" >&2; exit 1; else test \"$?\" -eq 1; fi; done; printf \"%s\\n\" DETACHED_HEAD_EXACT=PASS DETACHED_TREE_EXACT=PASS DETACHED_GIT_STATUS_CLEAN=PASS DETACHED_LFS_STATUS_CLEAN=PASS DEPENDENCY_LINK_ABSENT=PASS DATABASE_CLUSTER_ROOT_ABSENT=PASS SERVER_PIDS_ABSENT=PASS LISTENERS_ABSENT=PASS'",
+  "command_id": "1787946425425-cp016-clean-final-detached-and-runtime-proof",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 323,
+  "end_timestamp_utc": "2026-08-28T19:47:05Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-clean-final-detached-and-runtime-proof",
+  "phase_id": "CHECKPOINT-016-FINAL-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:47:05Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "9a8cbc9aca77628f1c9dc116805411395a85c804472dec247a00339005590c71",
+  "timed_out": false
+}

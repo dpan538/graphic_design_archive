@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "env",
+    "PGHOST=/private/tmp",
+    "PGPORT=55439",
+    "PGDATABASE=gda_v50_round16b_2316",
+    "GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql",
+    "database/scripts/replay_v50_round16b.sh"
+  ],
+  "command": "env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2316 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh",
+  "command_id": "1787927484337-cp011-v50-replay-2316",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 2714,
+  "end_timestamp_utc": "2026-08-28T14:31:27Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-v50-replay-2316",
+  "phase_id": "checkpoint011",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:31:24Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "12ff05fbf3ec0c743e091f95ff6b52d3a9a1bd54f3a9d42ed2a46d64b1a6955d",
+  "timed_out": false
+}

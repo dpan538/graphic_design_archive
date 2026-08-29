@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "env",
+    "PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp011_final_pycache",
+    "python3",
+    "-m",
+    "py_compile",
+    "scripts/trace_round16b/build_v3_semantic_contract.py",
+    "scripts/trace_round16b/verify_v3_semantic_contract_independent.py",
+    "scripts/trace_round16b/build_exploration_v3_runtime_read_model.py",
+    "scripts/trace_round16b/verify_v3_runtime_independent.py",
+    "scripts/trace_round16b/verify_v3_production_http.py",
+    "database/scripts/verify_v50_round16b_manifest.py"
+  ],
+  "command": "env PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp011_final_pycache python3 -m py_compile scripts/trace_round16b/build_v3_semantic_contract.py scripts/trace_round16b/verify_v3_semantic_contract_independent.py scripts/trace_round16b/build_exploration_v3_runtime_read_model.py scripts/trace_round16b/verify_v3_runtime_independent.py scripts/trace_round16b/verify_v3_production_http.py database/scripts/verify_v50_round16b_manifest.py",
+  "command_id": "1787933108648-cp011-final-pycompile-runtime-database",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 301,
+  "end_timestamp_utc": "2026-08-28T16:05:08Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-final-pycompile-runtime-database",
+  "phase_id": "CHECKPOINT-011-FINAL-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T16:05:08Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

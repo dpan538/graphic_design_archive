@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_production_http.py",
+    "--repo-root",
+    ".",
+    "--output-dir",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint012-artifact-check",
+    "--check-artifacts-only"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_production_http.py --repo-root . --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint012-artifact-check --check-artifacts-only",
+  "command_id": "1787938347063-cp012-production-http-artifact-check",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 89,
+  "end_timestamp_utc": "2026-08-28T17:32:27Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-production-http-artifact-check",
+  "phase_id": "CHECKPOINT-012-FINAL-CORRECTED-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:32:27Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "7e1892099c9b054e9ecb416fba8caf4e095cfc6be1f1e8a6f2dca7d4574b71e7",
+  "timed_out": false
+}

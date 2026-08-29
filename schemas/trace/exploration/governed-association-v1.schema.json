@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace-exploration.example/schemas/trace/exploration/governed-association-v1.schema.json",
+  "title": "TRACE governed association and append-only revision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "association_id",
+    "association_revision_id",
+    "revision_content_sha256",
+    "supersedes_revision_id",
+    "association_class",
+    "participant_sense_ids",
+    "arity",
+    "order_semantics",
+    "precedence_constraints",
+    "role_semantics",
+    "role_bindings",
+    "stable_scope_ids",
+    "support_mode",
+    "final_disposition",
+    "activation_status",
+    "product_eligibility",
+    "evidence_bundle_ids",
+    "qualifications",
+    "explicit_non_claims",
+    "pair_projection_policy",
+    "authorized_pair_association_revision_ids",
+    "authority",
+    "revision_version"
+  ],
+  "properties": {
+    "association_id": { "type": "string", "pattern": "^R16B-ASSOC:[0-9a-f]{64}$" },
+    "association_revision_id": { "type": "string", "pattern": "^R16B-ASSOC-REV:[0-9a-f]{64}$" },
+    "revision_content_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "supersedes_revision_id": {
+      "type": ["string", "null"],
+      "pattern": "^R16B-ASSOC-REV:[0-9a-f]{64}$"
+    },
+    "association_class": { "type": "string", "enum": ["PAIRWISE", "HIGHER_ORDER"] },
+    "participant_sense_ids": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+    },
+    "arity": { "type": "integer", "minimum": 2 },
+    "order_semantics": {
+      "type": "string",
+      "enum": ["UNORDERED", "ORDERED", "PARTIALLY_ORDERED"]
+    },
+    "precedence_constraints": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["before_sense_id", "after_sense_id", "authority_refs"],
+        "properties": {
+          "before_sense_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "after_sense_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "authority_refs": { "$ref": "#/$defs/IdentifierSet" }
+        }
+      }
+    },
+    "role_semantics": { "type": "string", "enum": ["NONE", "MEANINGFUL"] },
+    "role_bindings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["participant_sense_id", "role_id", "authority_refs"],
+        "properties": {
+          "participant_sense_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "role_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "authority_refs": { "$ref": "#/$defs/IdentifierSet" }
+        }
+      }
+    },
+    "stable_scope_ids": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["time", "geography", "institution", "actors", "case", "mechanism", "context"],
+      "properties": {
+        "time": { "$ref": "#/$defs/IdentifierSet" },
+        "geography": { "$ref": "#/$defs/IdentifierSet" },
+        "institution": { "$ref": "#/$defs/IdentifierSet" },
+        "actors": { "$ref": "#/$defs/IdentifierSet" },
+        "case": { "$ref": "#/$defs/IdentifierSet" },
+        "mechanism": { "$ref": "#/$defs/IdentifierSet" },
+        "context": { "$ref": "#/$defs/IdentifierSet" }
+      }
+    },
+    "scope_summary_snapshot": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "support_mode": {
+      "type": "string",
+      "enum": ["DIRECT_GROUP", "COHERENT_COMPOSITE", "MIXED_DIRECT_COMPOSITE", "NONE"]
+    },
+    "final_disposition": {
+      "type": "string",
+      "enum": [
+        "DIRECT_PAIRWISE_SUPPORT",
+        "DIRECT_HIGHER_ORDER_SUPPORT",
+        "COHERENT_COMPOSITE_SUPPORT",
+        "MIXED_DIRECT_AND_COMPOSITE_SUPPORT",
+        "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE",
+        "INQUIRY_ONLY_OR_UNRESOLVED",
+        "INSUFFICIENT_EVIDENCE",
+        "COOCCURRENCE_ONLY",
+        "BOUNDED_SENSE_OR_SCOPE_CONFLICT",
+        "TOPOLOGY_OR_ROLE_CONFLICT",
+        "HARD_NEGATIVE",
+        "SPLIT_TO_CHILD_CANDIDATES",
+        "DUPLICATE_IDENTITY_MERGED"
+      ]
+    },
+    "activation_status": { "type": "string", "enum": ["ACTIVE", "INQUIRY_ONLY", "INACTIVE"] },
+    "product_eligibility": {
+      "type": "string",
+      "enum": ["ELIGIBLE", "RESEARCH_ONLY", "INELIGIBLE", "PENDING_BOUND_AUDIT"]
+    },
+    "evidence_bundle_ids": { "$ref": "#/$defs/IdentifierSet" },
+    "qualifications": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 4000 }
+    },
+    "explicit_non_claims": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+    },
+    "pair_projection_policy": {
+      "type": "string",
+      "enum": ["NONE", "EXPLICIT_SUPPORTED_ONLY"]
+    },
+    "authorized_pair_association_revision_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^R16B-ASSOC-REV:[0-9a-f]{64}$" }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_sha", "method_version", "review_id", "reviewed_at_utc"],
+      "properties": {
+        "source_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "method_version": { "const": "trace-round16b-higher-order-association-method-v1" },
+        "review_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "reviewed_at_utc": { "type": "string", "format": "date-time" }
+      }
+    },
+    "revision_version": { "type": "integer", "minimum": 1 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "association_class": { "const": "PAIRWISE" } } },
+      "then": {
+        "properties": {
+          "participant_sense_ids": { "minItems": 2, "maxItems": 2 },
+          "arity": { "const": 2 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "association_class": { "const": "HIGHER_ORDER" } } },
+      "then": {
+        "properties": {
+          "participant_sense_ids": { "minItems": 3 },
+          "arity": { "minimum": 3 }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "pair_projection_policy": { "const": "NONE" } } },
+      "then": { "properties": { "authorized_pair_association_revision_ids": { "maxItems": 0 } } }
+    },
+    {
+      "if": { "properties": { "activation_status": { "const": "ACTIVE" } } },
+      "then": {
+        "properties": {
+          "final_disposition": {
+            "enum": [
+              "DIRECT_PAIRWISE_SUPPORT",
+              "DIRECT_HIGHER_ORDER_SUPPORT",
+              "COHERENT_COMPOSITE_SUPPORT",
+              "MIXED_DIRECT_AND_COMPOSITE_SUPPORT"
+            ]
+          },
+          "product_eligibility": { "enum": ["ELIGIBLE", "RESEARCH_ONLY", "INELIGIBLE"] }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "IdentifierSet": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+    }
+  }
+}

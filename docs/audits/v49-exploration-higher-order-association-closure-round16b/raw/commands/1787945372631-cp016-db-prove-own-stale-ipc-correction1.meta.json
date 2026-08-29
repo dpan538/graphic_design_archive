@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; cp016_ipc=$(ipcs -m -a | awk '$1==\"m\" && $2==458753 {print $5 \"|\" $7 \"|\" $9 \"|\" $10 \"|\" $11}'); test \"$cp016_ipc\" = \"jarlgiovanni|jarlgiovanni|0|56|79299\"; if ps -p 79299 >/dev/null 2>&1; then exit 1; fi; printf \"%s\\n\" \"IPC_ID_458753=$cp016_ipc\" IPC_ID_458753_PROVEN_STALE=PASS CREATOR_PID_79299_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; cp016_ipc=$(ipcs -m -a | awk '\"'\"'$1==\"m\" && $2==458753 {print $5 \"|\" $7 \"|\" $9 \"|\" $10 \"|\" $11}'\"'\"'); test \"$cp016_ipc\" = \"jarlgiovanni|jarlgiovanni|0|56|79299\"; if ps -p 79299 >/dev/null 2>&1; then exit 1; fi; printf \"%s\\n\" \"IPC_ID_458753=$cp016_ipc\" IPC_ID_458753_PROVEN_STALE=PASS CREATOR_PID_79299_ABSENT=PASS'",
+  "command_id": "1787945372631-cp016-db-prove-own-stale-ipc-correction1",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 17,
+  "end_timestamp_utc": "2026-08-28T19:29:32Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-db-prove-own-stale-ipc-correction1",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:29:32Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d518b1b2a99f90fb2f325ad2c1b7fee1e6bd3da2a53372baaa035fd1d3978bed",
+  "timed_out": false
+}

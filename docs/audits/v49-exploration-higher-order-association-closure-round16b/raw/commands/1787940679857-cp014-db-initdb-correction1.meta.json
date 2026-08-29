@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "env",
+    "LC_ALL=C.UTF-8",
+    "/opt/homebrew/opt/postgresql@16/bin/initdb",
+    "-D",
+    "/private/tmp/gda-v50-round16b-cp014-repro/data",
+    "--locale=C.UTF-8",
+    "--encoding=UTF8",
+    "--auth-local=trust",
+    "--auth-host=reject"
+  ],
+  "command": "env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject",
+  "command_id": "1787940679857-cp014-db-initdb-correction1",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 540,
+  "end_timestamp_utc": "2026-08-28T18:11:20Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp014-db-initdb-correction1",
+  "phase_id": "CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:19Z",
+  "stderr_sha256": "a75502088e358da06336e3a57471853650d943810857f7d9b16aa08f252a92d1",
+  "stdout_sha256": "a3831c3c74c834793e3952083a9201696caa0eb1bcafc4e64ff6ee935bfe87c9",
+  "timed_out": false
+}

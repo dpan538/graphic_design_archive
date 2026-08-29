@@ -1,0 +1,749 @@
+{
+  "artifact_pins": {
+    "checksums_sha256": "002d13c9175354054ee550b4d55d275ea2fad1c10693991bd726897aa50e8173",
+    "manifest_sha256": "2ee550028cb60749bee7efa456ed21ea4f0c6170bb5c68d8888017fc948fdd2c",
+    "read_model_sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b",
+    "round16a_reconciliation_census_sha256": "f2196eef23c560e24fd373956af6e711687440203edc4e0c96ab5de90c8c4537",
+    "semantic_census_sha256": "7df89f2248d169c1f4e6358425a7f01afbcdb27c02d1d0e3f583f35c67322c6e",
+    "semantic_fixture_sha256": "6e01a274dce52ebbfd008574136577e891c4f5d482d0761fe0c9a320afd26f3d",
+    "semantic_hash_binding_contract_sha256": "d5a8608316c768eb0e3c6ea597919f9de788ba2e7792ee4c43bb28edc7a5f70b"
+  },
+  "check_count": 15,
+  "checks": [
+    {
+      "check_id": "semantic_fixture_source",
+      "status": "PASS"
+    },
+    {
+      "check_id": "semantic_census_taxonomy",
+      "status": "PASS"
+    },
+    {
+      "check_id": "round16a_dispositions",
+      "status": "PASS"
+    },
+    {
+      "check_id": "round16a_transition_count",
+      "status": "PASS"
+    },
+    {
+      "check_id": "runtime_surface_keys",
+      "status": "PASS"
+    },
+    {
+      "check_id": "active_product_empty",
+      "status": "PASS"
+    },
+    {
+      "check_id": "runtime_control_counts",
+      "status": "PASS"
+    },
+    {
+      "check_id": "runtime_closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "runtime_source",
+      "status": "PASS"
+    },
+    {
+      "check_id": "manifest_read_model_sha",
+      "status": "PASS"
+    },
+    {
+      "check_id": "manifest_counts",
+      "status": "PASS"
+    },
+    {
+      "check_id": "corruption_rejection_coverage",
+      "status": "PASS"
+    },
+    {
+      "check_id": "corruption_all_rejected",
+      "status": "PASS"
+    },
+    {
+      "check_id": "primary_generator_not_imported",
+      "status": "PASS"
+    },
+    {
+      "check_id": "primary_generator_not_invoked",
+      "status": "PASS"
+    }
+  ],
+  "contract_version": "trace-exploration-v3-semantic-contract-1.0.0",
+  "control_verification": {
+    "control_class_count": 10,
+    "control_ids": {
+      "bounded_revision_id": "association-revision:v3:9b401d71032d466b32ffa477",
+      "clique_revision_id": "association-revision:v3:6cfb7776e6897fbc4be11b17",
+      "cross_case_revision_id": "association-revision:v3:53922f4a354f2180ea99fa86",
+      "isolated_concept_id": "concept:sparse-valid-five:3",
+      "pending_revision_id": "association-revision:v3:d9a20f1ea96123094f1389c4",
+      "renderable_composition_revision_id": "composition-revision:v3:1c00e4a73619968b0812168c",
+      "sparse_revision_id": "association-revision:v3:f02ac42a681d040c725235e9"
+    }
+  },
+  "corruption_control_count": 84,
+  "corruption_controls": [
+    {
+      "expected_error_code": "CONTROL_ALL_PAIRS_INVALID_GROUP",
+      "observed_error_code": "CONTROL_ALL_PAIRS_INVALID_GROUP",
+      "probe_id": "CORRUPT-ALL-PAIRS-INVALID-GROUP",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CONTROL_SPARSE_VALID_HYPEREDGE",
+      "observed_error_code": "CONTROL_SPARSE_VALID_HYPEREDGE",
+      "probe_id": "CORRUPT-SPARSE-VALID-HYPEREDGE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CONTROL_BOUNDED_SENSE_CONFLICT",
+      "observed_error_code": "CONTROL_BOUNDED_SENSE_CONFLICT",
+      "probe_id": "CORRUPT-BOUNDED-SENSE-CONFLICT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CONTROL_CROSS_CASE_BUNDLE",
+      "observed_error_code": "CONTROL_CROSS_CASE_BUNDLE",
+      "probe_id": "CORRUPT-CROSS-CASE-BUNDLE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CONTROL_ISOLATED_ACTIVE_TERM",
+      "observed_error_code": "CONTROL_ISOLATED_ACTIVE_TERM",
+      "probe_id": "CORRUPT-ISOLATED-ACTIVE-TERM",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CONTROL_RENDERABLE_WITHOUT_VALID_ASSOCIATION",
+      "observed_error_code": "CONTROL_RENDERABLE_WITHOUT_VALID_ASSOCIATION",
+      "probe_id": "CORRUPT-RENDERABLE-NO-VALID-ASSOCIATION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "IMPLICIT_HYPEREDGE_PROJECTION",
+      "observed_error_code": "IMPLICIT_HYPEREDGE_PROJECTION:association-revision:v3:f02ac42a681d040c725235e9",
+      "probe_id": "CORRUPT-IMPLICIT-HYPEREDGE-PROJECTION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CONTROL_ACTIVE_PENDING_REVIEW",
+      "observed_error_code": "CONTROL_ACTIVE_PENDING_REVIEW",
+      "probe_id": "CORRUPT-ACTIVE-PENDING-REVIEW",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_KEYS",
+      "observed_error_code": "STATE_KEYS:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "NAVIGATION_NODE_KEYS",
+      "observed_error_code": "NAVIGATION_NODE_KEYS:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-NAVIGATION-NODE-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "NAVIGATION_PATH_STEP_KEYS",
+      "observed_error_code": "NAVIGATION_PATH_STEP_KEYS:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-PATH-STEP-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_PRESENTATION_KEYS",
+      "observed_error_code": "STATE_PRESENTATION_KEYS:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-PRESENTATION-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_KEYS",
+      "observed_error_code": "WORKFLOW_KEYS:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "CORRUPT-RUNTIME-WORKFLOW-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_KEYS",
+      "observed_error_code": "EXPORT_KEYS:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "CORRUPT-RUNTIME-EXPORT-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_PRESENTATION_KEYS",
+      "observed_error_code": "EXPORT_PRESENTATION_KEYS:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "CORRUPT-RUNTIME-EXPORT-PRESENTATION-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_PROJECTION_RECORD_KEYS",
+      "observed_error_code": "EXPORT_PROJECTION_RECORD_KEYS:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "CORRUPT-RUNTIME-PROJECTION-RECORD-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_KEYS",
+      "observed_error_code": "TRANSITION_KEYS:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "CORRUPT-RUNTIME-TRANSITION-DTO-KEYS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_NODE_COUNT",
+      "observed_error_code": "STATE_NODE_COUNT:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-NODE-COUNT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_PATH_EMPTY",
+      "observed_error_code": "STATE_PATH_EMPTY:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-PATH-EMPTY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_PATH_DISCONTINUOUS",
+      "observed_error_code": "STATE_PATH_DISCONTINUOUS:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-PATH-DISCONTINUOUS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_TERMINAL_FOCUS",
+      "observed_error_code": "STATE_TERMINAL_FOCUS:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-TERMINAL-FOCUS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_NODE_OUTSIDE_COMPOSITION",
+      "observed_error_code": "STATE_NODE_OUTSIDE_COMPOSITION:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-CONCEPT-MEMBERSHIP",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_NODE_OUTSIDE_COMPOSITION",
+      "observed_error_code": "STATE_NODE_OUTSIDE_COMPOSITION:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-ASSOCIATION-MEMBERSHIP",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_COMPOSITION_REALM",
+      "observed_error_code": "STATE_COMPOSITION_REALM:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "CORRUPT-RUNTIME-STATE-COMPOSITION-REALM",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_INITIAL_STATE_MEMBERSHIP",
+      "observed_error_code": "WORKFLOW_INITIAL_STATE_MEMBERSHIP:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "CORRUPT-RUNTIME-WORKFLOW-INITIAL-STATE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_STATE_REALM",
+      "observed_error_code": "WORKFLOW_STATE_REALM:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "CORRUPT-RUNTIME-WORKFLOW-STATE-REALM",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_REALIZATION_EXACT_SET",
+      "observed_error_code": "WORKFLOW_REALIZATION_EXACT_SET:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "CORRUPT-RUNTIME-WORKFLOW-REALIZATION-SET",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_ASSOCIATION_EXACT_SET",
+      "observed_error_code": "WORKFLOW_ASSOCIATION_EXACT_SET:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "CORRUPT-RUNTIME-WORKFLOW-ASSOCIATION-SET",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_REACHABILITY",
+      "observed_error_code": "WORKFLOW_REACHABILITY:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "CORRUPT-RUNTIME-WORKFLOW-REACHABILITY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_REALM",
+      "observed_error_code": "TRANSITION_REALM:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "CORRUPT-RUNTIME-TRANSITION-REALM",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_ENDPOINT",
+      "observed_error_code": "TRANSITION_ENDPOINT:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "CORRUPT-RUNTIME-TRANSITION-ENDPOINT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_UNLISTED_BY_WORKFLOW",
+      "observed_error_code": "TRANSITION_UNLISTED_BY_WORKFLOW",
+      "probe_id": "WORKFLOW_UNLISTED_TRANSITION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_TRACE",
+      "observed_error_code": "TRANSITION_TRACE:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "CORRUPT-RUNTIME-TRANSITION-TRACE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_STATE_MUTATED",
+      "observed_error_code": "TRANSITION_STATE_MUTATED:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "CORRUPT-RUNTIME-TRANSITION-STATE-MUTATED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_TRACE_PARTIAL",
+      "observed_error_code": "TRANSITION_TRACE_PARTIAL:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "CORRUPT-RUNTIME-TRANSITION-PARTIAL-TRACE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_SURFACE_DISALLOWED",
+      "observed_error_code": "TRANSITION_SURFACE_DISALLOWED",
+      "probe_id": "CORRUPT-RUNTIME-TRANSITION-SURFACE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_REALM",
+      "observed_error_code": "EXPORT_REALM:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "CORRUPT-RUNTIME-EXPORT-REALM",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_REALIZATION_EXACT_SET",
+      "observed_error_code": "EXPORT_REALIZATION_EXACT_SET:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "CORRUPT-RUNTIME-EXPORT-REALIZATION-SET",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_ASSOCIATION_EXACT_SET",
+      "observed_error_code": "EXPORT_ASSOCIATION_EXACT_SET:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "CORRUPT-RUNTIME-EXPORT-ASSOCIATION-SET",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_COMPOSITION",
+      "observed_error_code": "STATE_COMPOSITION:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_MISSING_COMPOSITION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_BIPARTITE_FLAG",
+      "observed_error_code": "STATE_BIPARTITE_FLAG:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_FALSE_BIPARTITE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_FOCUS",
+      "observed_error_code": "STATE_FOCUS:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_MISSING_FOCUS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "NAVIGATION_NODE_DUPLICATE",
+      "observed_error_code": "NAVIGATION_NODE_DUPLICATE:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_DUPLICATE_NODES",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_NODE_OUTSIDE_COMPOSITION",
+      "observed_error_code": "STATE_NODE_OUTSIDE_COMPOSITION:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_BAD_DISCRIMINATOR_REFERENCE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_PATH_REFERENCE",
+      "observed_error_code": "STATE_PATH_REFERENCE:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_BAD_PATH_REFERENCE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_PATH_INCIDENCE_TRACE",
+      "observed_error_code": "STATE_PATH_INCIDENCE_TRACE:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_WRONG_INCIDENCE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_SEMANTIC_HASH",
+      "observed_error_code": "STATE_SEMANTIC_HASH:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_SEMANTIC_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_PRESENTATION_HASH",
+      "observed_error_code": "STATE_PRESENTATION_HASH:state:v3:d5454be64eb5ad08d6c9f7a7",
+      "probe_id": "STATE_PRESENTATION_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE_ID_HASH",
+      "observed_error_code": "STATE_ID_HASH:state:v3:000000000000000000000000",
+      "probe_id": "STATE_ID_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "STATE:FACT_BOUNDARY_KEYS",
+      "observed_error_code": "STATE:FACT_BOUNDARY_KEYS",
+      "probe_id": "STATE_FACT_BOUNDARY_EXTRA_KEY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_STATE_SET",
+      "observed_error_code": "WORKFLOW_STATE_SET:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_MISSING_STATE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_STATE_SET",
+      "observed_error_code": "WORKFLOW_STATE_SET:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_DUPLICATE_STATE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_TRANSITION_KIND",
+      "observed_error_code": "WORKFLOW_TRANSITION_KIND:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_INVALID_KIND",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_REALIZATION_EXACT_SET",
+      "observed_error_code": "WORKFLOW_REALIZATION_EXACT_SET:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_DUPLICATE_REALIZATION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_ASSOCIATION_EXACT_SET",
+      "observed_error_code": "WORKFLOW_ASSOCIATION_EXACT_SET:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_DUPLICATE_REVISION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_SEMANTIC_HASH",
+      "observed_error_code": "WORKFLOW_SEMANTIC_HASH:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_SEMANTIC_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_ID_HASH",
+      "observed_error_code": "WORKFLOW_ID_HASH:workflow:v3:000000000000000000000000",
+      "probe_id": "WORKFLOW_ID_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW:FACT_BOUNDARY_KEYS",
+      "observed_error_code": "WORKFLOW:FACT_BOUNDARY_KEYS",
+      "probe_id": "WORKFLOW_FACT_BOUNDARY_EXTRA_KEY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_TRANSITION_REFERENCE",
+      "observed_error_code": "WORKFLOW_TRANSITION_REFERENCE:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_FOREIGN_TRANSITION_SELECTION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_TRANSITION_IDS_DUPLICATE",
+      "observed_error_code": "WORKFLOW_TRANSITION_IDS_DUPLICATE:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_DUPLICATE_TRANSITION_SELECTION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_SELECTED_TRANSITION_SCOPE",
+      "observed_error_code": "WORKFLOW_SELECTED_TRANSITION_SCOPE:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_SELECTED_TRANSITION_FOREIGN_STATE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "WORKFLOW_REACHABILITY",
+      "observed_error_code": "WORKFLOW_REACHABILITY:workflow:v3:9be9541212f241d7d9b676e7",
+      "probe_id": "WORKFLOW_REACHABILITY_USES_EXACT_SELECTED_SUBSET",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_SURFACE_DISALLOWED",
+      "observed_error_code": "TRANSITION_SURFACE_DISALLOWED",
+      "probe_id": "WORKFLOW_SHARED_STATE_ALLOWED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "INTERACTION_TRANSITION:DUPLICATE",
+      "observed_error_code": "INTERACTION_TRANSITION:DUPLICATE",
+      "probe_id": "TRANSITION_DUPLICATE_ID",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_KIND",
+      "observed_error_code": "TRANSITION_KIND:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "TRANSITION_INVALID_KIND",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_SEMANTIC_HASH",
+      "observed_error_code": "TRANSITION_SEMANTIC_HASH:transition:v3:70f88db4e47c3a4901556727",
+      "probe_id": "TRANSITION_SEMANTIC_HASH_MISMATCH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION_ID_HASH",
+      "observed_error_code": "TRANSITION_ID_HASH:transition:v3:000000000000000000000000",
+      "probe_id": "TRANSITION_ID_HASH_MISMATCH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "TRANSITION:FACT_BOUNDARY_KEYS",
+      "observed_error_code": "TRANSITION:FACT_BOUNDARY_KEYS",
+      "probe_id": "TRANSITION_FACT_BOUNDARY_EXTRA_KEY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_TRACE",
+      "observed_error_code": "EXPORT_TRACE:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "EXPORT_MISSING_REFERENCES",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_WORKFLOW_STATE_COMPOSITION",
+      "observed_error_code": "EXPORT_WORKFLOW_STATE_COMPOSITION:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "EXPORT_COMPOSITION_MISMATCH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_TRACE",
+      "observed_error_code": "EXPORT_TRACE:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "EXPORT_FALSE_PRESERVATION_FLAG",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_PROJECTION_RECORD_SET",
+      "observed_error_code": "EXPORT_PROJECTION_RECORD_SET:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "EXPORT_INCOMPLETE_RECORDS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_PROJECTION_RECORD_TRACE",
+      "observed_error_code": "EXPORT_PROJECTION_RECORD_TRACE:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "EXPORT_INCORRECT_RECORD",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_SEMANTIC_HASH",
+      "observed_error_code": "EXPORT_SEMANTIC_HASH:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "EXPORT_SEMANTIC_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_PRESENTATION_HASH",
+      "observed_error_code": "EXPORT_PRESENTATION_HASH:export:v3:cc480debb3605e2a471cad9a",
+      "probe_id": "EXPORT_PRESENTATION_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT_ID_HASH",
+      "observed_error_code": "EXPORT_ID_HASH:export:v3:000000000000000000000000",
+      "probe_id": "EXPORT_ID_HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "EXPORT:FACT_BOUNDARY_KEYS",
+      "observed_error_code": "EXPORT:FACT_BOUNDARY_KEYS",
+      "probe_id": "EXPORT_FACT_BOUNDARY_EXTRA_KEY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "MANIFEST_READ_MODEL_SHA256",
+      "observed_error_code": "MANIFEST_READ_MODEL_SHA256",
+      "probe_id": "CORRUPT-MANIFEST-READ-MODEL-HASH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CHECKSUM_CONTENT",
+      "observed_error_code": "CHECKSUM_CONTENT",
+      "probe_id": "CORRUPT-CHECKSUMS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "PARTICIPANT_SCOPE_DIVERGENCE",
+      "observed_error_code": "PARTICIPANT_SCOPE_DIVERGENCE:association-revision:v3:1bd93793b578d5c0f1a99e34",
+      "probe_id": "PARTICIPANT_SCOPE_DIVERGENCE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CAPABILITY_ACTIVE_PENDING_REVIEW_DERIVED",
+      "observed_error_code": "CAPABILITY_ACTIVE_PENDING_REVIEW_DERIVED",
+      "probe_id": "DERIVED_ACTIVE_PENDING_REVIEW_COUNT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CAPABILITY_IMPLICIT_PROJECTION_DERIVED",
+      "observed_error_code": "CAPABILITY_IMPLICIT_PROJECTION_DERIVED",
+      "probe_id": "DERIVED_IMPLICIT_HYPEREDGE_PROJECTION_COUNT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "CAPABILITY_READ_PATH_PARITY",
+      "observed_error_code": "CAPABILITY_READ_PATH_PARITY",
+      "probe_id": "EXACT_ADVERTISED_READ_PATH_PARITY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "expected_error_code": "ACTIVE_PRODUCT_NOT_EMPTY",
+      "observed_error_code": "ACTIVE_PRODUCT_NOT_EMPTY:associations",
+      "probe_id": "CORRUPT-RUNTIME-ACTIVE-PRODUCT-PROMOTION",
+      "status": "PASS_REJECTED"
+    }
+  ],
+  "independence": {
+    "implementation": "STDLIB_ONLY_INDEPENDENT_PARSER_HASHER_AND_INVARIANT_RECONSTRUCTION",
+    "primary_generator_imported": false,
+    "primary_generator_invoked": false,
+    "primary_projection_code_reuse_reviewed_absent": true
+  },
+  "manifest_version": "trace-exploration-runtime-manifest-v3-1.0.0",
+  "production_boundary": {
+    "active_pending_review_count": 0,
+    "active_product_collection_count": 12,
+    "active_product_record_count": 0,
+    "closure_true_count": 0,
+    "implicit_hyperedge_projection_count": 0,
+    "production_activation_count": 0,
+    "transition_derivation_policy": "NONE_NO_V2_INHERITANCE",
+    "transitions_available": false
+  },
+  "read_model_version": "trace-exploration-runtime-read-model-v3-1.0.0",
+  "receipt_version": "trace-round16b-v3-runtime-independent-verifier-v4",
+  "reconstructed_count_taxonomy": {
+    "associations": {
+      "production_active_association_count": 0,
+      "production_active_pending_review_count": 0,
+      "production_higher_order_revision_count": 0,
+      "production_pair_revision_count": 0,
+      "synthetic_active_higher_order_revision_count": 1,
+      "synthetic_active_pair_revision_count": 9,
+      "synthetic_higher_order_revision_count": 5,
+      "synthetic_pair_revision_count": 9
+    },
+    "incidence": {
+      "implicit_projected_pair_count": 0,
+      "production_incidence_count": 0,
+      "synthetic_incidence_count": 37
+    },
+    "interaction": {
+      "production_export_count": 0,
+      "production_state_count": 0,
+      "production_transition_count": 0,
+      "production_workflow_count": 0,
+      "synthetic_export_count": 1,
+      "synthetic_state_count": 1,
+      "synthetic_transition_count": 0,
+      "synthetic_workflow_count": 1
+    },
+    "realizations_and_compositions": {
+      "production_association_realization_count": 0,
+      "production_composition_coherence_review_count": 0,
+      "production_composition_count": 0,
+      "production_product_eligible_composition_count": 0,
+      "synthetic_association_realization_count": 10,
+      "synthetic_composition_coherence_review_count": 2,
+      "synthetic_composition_count": 2
+    },
+    "vocabulary": {
+      "production_active_concept_count": 0,
+      "synthetic_active_concept_count": 11,
+      "synthetic_active_concept_sense_count": 11,
+      "synthetic_concept_record_count": 21,
+      "synthetic_concept_sense_record_count": 21,
+      "synthetic_distinct_concept_count": 21,
+      "synthetic_scope_count": 6
+    }
+  },
+  "round16a_reconciliation": {
+    "main_object_distributions": {
+      "ROUND16A_ASSOCIATION_SUBGRAPH": {
+        "CORRECTED": 11,
+        "INQUIRY": 18,
+        "REJECTED": 8,
+        "RETAINED": 21
+      },
+      "ROUND16A_CATEGORY_ENTRY": {
+        "CORRECTED": 27,
+        "INQUIRY": 15,
+        "REJECTED": 18,
+        "RETAINED": 21
+      },
+      "ROUND16A_EXPORT": {
+        "CORRECTED": 3888,
+        "INQUIRY": 4368,
+        "REJECTED": 2592,
+        "RETAINED": 672
+      },
+      "ROUND16A_LEGACY_RECONCILIATION": {
+        "INQUIRY": 2,
+        "REJECTED": 2,
+        "RETAINED": 7
+      },
+      "ROUND16A_PRODUCTION_COMPOSITION": {
+        "CORRECTED": 81,
+        "INQUIRY": 51,
+        "REJECTED": 54,
+        "RETAINED": 42
+      },
+      "ROUND16A_SEED_VARIANT": {
+        "CORRECTED": 81,
+        "INQUIRY": 51,
+        "REJECTED": 54,
+        "RETAINED": 42
+      },
+      "ROUND16A_STATE": {
+        "CORRECTED": 1944,
+        "INQUIRY": 2184,
+        "REJECTED": 1296,
+        "RETAINED": 336
+      },
+      "ROUND16A_TOPOLOGY_COMPOSITION": {
+        "CORRECTED": 27,
+        "INQUIRY": 15,
+        "REJECTED": 18,
+        "RETAINED": 21
+      },
+      "ROUND16A_WORKFLOW": {
+        "CORRECTED": 1944,
+        "INQUIRY": 2184,
+        "REJECTED": 1296,
+        "RETAINED": 336
+      }
+    },
+    "main_object_total_distribution": {
+      "CORRECTED": 203639,
+      "INQUIRY": 290372,
+      "REJECTED": 270370,
+      "RETAINED": 9290
+    },
+    "reconciled_row_count_including_topology_audit_records": 774296,
+    "transition_count": 749944,
+    "transition_outcome_distribution": {
+      "CORRECTED": 195636,
+      "INQUIRY": 281484,
+      "REJECTED": 265032,
+      "RETAINED": 7792
+    }
+  },
+  "runtime_collection_counts": {
+    "association_realizations": 10,
+    "associations": 14,
+    "composition_coherence_reviews": 2,
+    "compositions": 2,
+    "concept_senses": 21,
+    "concepts": 21,
+    "exports": 1,
+    "incidences": 37,
+    "navigation_states": 1,
+    "scopes": 6,
+    "transitions": 0,
+    "workflows": 1
+  },
+  "semantic_contract_parent_sha": "e5ddbc443c4a0a28004034cba439340ecdeb9a75",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS",
+  "verifier_path": "scripts/trace_round16b/verify_v3_runtime_independent.py",
+  "verifier_sha256": "f0bdc3c1a46384f7d8311ffec8472bb3d8b760026c1a55b2d370a3b58bda35a6"
+}

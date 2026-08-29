@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_reachable_ordinary_blobs.py",
+    "--self-check"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_reachable_ordinary_blobs.py --self-check",
+  "command_id": "1787942342356-cp015-reachable-ordinary-blob-self-check",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 48,
+  "end_timestamp_utc": "2026-08-28T18:39:02Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-reachable-ordinary-blob-self-check",
+  "phase_id": "CHECKPOINT-015-REACHABLE-BLOB-PROOF",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:39:02Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "cd42549def34226e0447bbfbaa2e47d2acfe07fab9ba833df07b23b4557b1a60",
+  "timed_out": false
+}

@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "command": "npm run build",
+  "command_id": "1787835028679-production-build",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/frontend",
+  "duration_ms": 15910,
+  "end_timestamp_utc": "2026-08-27T12:50:44Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 1,
+  "operation_id": "production-build",
+  "phase_id": "GATE-6",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T12:50:28Z",
+  "stderr_sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee",
+  "stdout_sha256": "e73d8f3dbc2a924eba925cdd036302d833e29a1f424845ab6aa3c05111fdc44f",
+  "timed_out": false
+}

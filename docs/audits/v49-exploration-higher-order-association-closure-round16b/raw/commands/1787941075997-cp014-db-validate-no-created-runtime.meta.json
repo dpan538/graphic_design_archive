@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; test ! -d /private/tmp/gda-v50-round16b-cp014-repro/data; test -z \"$(find /private/tmp/gda-v50-round16b-cp014-repro -type s -print -quit)\"; if pgrep -fl \"gda-v50-round16b-cp014-repro|59473\"; then exit 1; fi; if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf \"%s\\n\" CP14_PRECORRECTION_DATABASE_RUNTIME_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; test ! -d /private/tmp/gda-v50-round16b-cp014-repro/data; test -z \"$(find /private/tmp/gda-v50-round16b-cp014-repro -type s -print -quit)\"; if pgrep -fl \"gda-v50-round16b-cp014-repro|59473\"; then exit 1; fi; if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf \"%s\\n\" CP14_PRECORRECTION_DATABASE_RUNTIME_ABSENT=PASS'",
+  "command_id": "1787941075997-cp014-db-validate-no-created-runtime",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 43,
+  "end_timestamp_utc": "2026-08-28T18:17:56Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-db-validate-no-created-runtime",
+  "phase_id": "CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:17:55Z",
+  "stderr_sha256": "ab9ec9da6f215c2a2a8c372292779fc7d710e2bc06ab2f5b3cfc04257a439e0f",
+  "stdout_sha256": "e3325ea1a4e169bde830dc965819258ca612e68d4a9e5c72abc4613f72531e58",
+  "timed_out": false
+}

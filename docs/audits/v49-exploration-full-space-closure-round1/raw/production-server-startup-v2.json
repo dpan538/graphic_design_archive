@@ -1,0 +1,26 @@
+{
+  "cold_start_ms": 1177.4265830172226,
+  "first_request_including_model_import_ms": 916.7812920641154,
+  "first_response_bytes": 664,
+  "first_successful_request_ms": 916.7812920641154,
+  "host": "127.0.0.1",
+  "port": 3034,
+  "probe_path": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl",
+  "probe_session_id": "09b4d93c-ec3f-4605-9d83-cf40274f572c",
+  "readiness_attempt_count": 5,
+  "readiness_url": "http://127.0.0.1:3034/api/trace/v2/exploration/capabilities",
+  "ready_utc": "2026-08-27T13:58:22.774Z",
+  "schema_version": "trace-exploration-production-server-startup-v2",
+  "server_command": [
+    "/usr/local/bin/node",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/frontend/node_modules/next/dist/bin/next",
+    "start",
+    "--hostname",
+    "127.0.0.1",
+    "--port",
+    "3034"
+  ],
+  "server_pid": 83826,
+  "started_utc": "2026-08-27T13:58:21.596Z",
+  "status": "READY"
+}

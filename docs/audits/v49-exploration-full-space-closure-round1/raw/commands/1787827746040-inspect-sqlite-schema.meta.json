@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "sqlite3",
+    "-readonly",
+    "data/prefreeze_candidate_v48.sqlite",
+    ".tables"
+  ],
+  "command": "sqlite3 -readonly data/prefreeze_candidate_v48.sqlite .tables",
+  "command_id": "1787827746040-inspect-sqlite-schema",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 5,
+  "end_timestamp_utc": "2026-08-27T10:49:06Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "inspect-sqlite-schema",
+  "phase_id": "GATE_0_BOOTSTRAP",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T10:49:06Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "62903061814eca3802cb7cdb4137fdd6d505f2c71e0564bb11bff3e3ee5bca4e",
+  "timed_out": false
+}

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "zsh",
+    "-c",
+    "set -eu; left=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2311-schema.sql); right=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2312-schema.sql); expected=$(python3 -c 'import json; print(json.load(open(\"database/schema-manifest-v50-round16b.json\"))[\"normalizedSchemaSha256\"])'); test \"$left\" = \"$right\"; test \"$left\" = \"$expected\"; print -r -- \"V50_SCHEMA_REPLAY_EQUIVALENCE=PASS hash=$left replay_count=2\""
+  ],
+  "command": "zsh -c 'set -eu; left=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2311-schema.sql); right=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2312-schema.sql); expected=$(python3 -c '\"'\"'import json; print(json.load(open(\"database/schema-manifest-v50-round16b.json\"))[\"normalizedSchemaSha256\"])'\"'\"'); test \"$left\" = \"$right\"; test \"$left\" = \"$expected\"; print -r -- \"V50_SCHEMA_REPLAY_EQUIVALENCE=PASS hash=$left replay_count=2\"'",
+  "command_id": "1787924669044-hash-v50-replay-schemas-checkpoint011",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 133,
+  "end_timestamp_utc": "2026-08-28T13:44:29Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "hash-v50-replay-schemas-checkpoint011",
+  "phase_id": "CHECKPOINT-011-DATABASE",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T13:44:29Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "2141e55f45f7642a8a8d2b5df502af27041173224aef05c067826fdc0eb8601b",
+  "timed_out": false
+}

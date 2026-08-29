@@ -1,0 +1,45 @@
+{
+  "activation_gate": "Every supporting evidence record must have a stable evidence locator, completed rights/access review, and lawful retained representation.",
+  "archive_object_rights_do_not_govern_scholarly_text_rights": true,
+  "format": "trace-round16b-scholarly-source-rights-policy-v1",
+  "metadata_is_not_evidence": true,
+  "permitted_committed_material": [
+    "bibliographic_identity",
+    "stable_locator",
+    "retrieval_timestamp",
+    "access_condition",
+    "license_or_rights_status",
+    "content_hash_when_lawfully_obtained",
+    "bounded_research_note",
+    "compliant_short_extract",
+    "review_and_rejection_decision"
+  ],
+  "prohibited_without_explicit_redistribution_authority": [
+    "copyrighted_full_text",
+    "publisher_pdf",
+    "ebook_or_chapter_file",
+    "bulk_scraped_proprietary_content"
+  ],
+  "public_access_is_not_redistribution_permission": true,
+  "required_ledger_fields": [
+    "source_id",
+    "bibliographic_identity",
+    "stable_url",
+    "doi_or_identifier",
+    "retrieved_at_utc",
+    "access_status",
+    "access_condition",
+    "license_identifier",
+    "copyright_or_rights_holder",
+    "redistribution_authorized",
+    "retained_material_type",
+    "retained_path_or_locator",
+    "retained_sha256",
+    "extract_word_count",
+    "reviewer",
+    "review_status",
+    "notes"
+  ],
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "status": "ACTIVE_METHOD_CONTROL"
+}

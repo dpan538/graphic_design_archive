@@ -465,3 +465,93 @@ SPACETIME_STATUS=FROZEN
 `REAL_SEMANTIC_IMAGE_READY=false`
 
 `NEXT_RESEARCH_GATE=EXTERNAL_DOMAIN_REVIEW_AND_INQUIRY_GRAMMAR_ACTIVATION_RESEARCH`
+
+<!-- TRACE_ROUND16A_PROJECT_AUTHORITY_RECONCILIATION_V2 -->
+## TRACE v49 Round 16A — authority reconciliation
+
+- Activated the versioned `trace-exploration-authority-v2` clarification for Function 3 only; preserved all earlier Round 8–16 entries as historical evidence.
+- Superseded the active Round 16 object-facing/Search/Context/Spacetime dependency statements for Exploration v2 without modifying those separate project blocks.
+- Retained frozen database `v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` only for direct snapshot/public-held identity and the four governed category-entry types.
+- Recorded that generic association is evidence-qualified proximity only and that prior example counts do not demonstrate full-space closure.
+- Deferred every census, runtime, independent-verification, reproduction, integration, and final closure claim to the sealed Round 16A receipts.
+
+`ACTIVE_EXPLORATION_AUTHORITY_COUNT=1`
+
+`AUTHORITY_RECONCILIATION_READY=true`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+<!-- /TRACE_ROUND16A_PROJECT_AUTHORITY_RECONCILIATION_V2 -->
+
+<!-- TRACE_ROUND16A_PROJECT_LOG_V2 -->
+## TRACE v49 Round 16A — Exploration full-space census and functional closure
+
+- Froze 65 vocabulary candidates and 31 active product terms, enumerated all 465 unordered active pairs, and retained 21 evidence-qualified generic associations without database co-occurrence inference.
+- Enumerated 58 canonical association subgraphs, 81 valid topology compositions, 5760 states, 749944 transitions, 5760 canonical workflows, and 11520 export variants.
+- Grounded category entry directly in frozen database `v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` and evaluated the v2 Search/archive-object/Context/Spacetime dependency and public-exposure gates; the formal values are recorded in the Round 16A closure ledger.
+- Preserved Round 8–16 history and reconciled all 11 Round 16 legacy compositions through a versioned strict adapter. V1 is explicitly retired; v2 is documented and independently verified.
+- Final frontend implementation, public page, deployment, external human domain review, and overall project frontend readiness remain false/out of scope.
+
+`ROUND16A_DECISION=TRACE_EXPLORATION_FULLY_CLOSED`
+
+`FUNCTION3_FULL_SPACE_CENSUS_COMPLETE=true`
+
+`FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE=true`
+
+`TRACE_FUNCTION3_EXPLORATION_CLOSED=true`
+
+`MAIN_FAST_FORWARD_COMPLETED=false`
+
+`NEXT_GATE=SEPARATE_PROJECT_FRONTEND_READINESS_AND_EXTERNAL_REVIEW`
+<!-- /TRACE_ROUND16A_PROJECT_LOG_V2 -->
+
+<!-- TRACE_ROUND16A_PROJECT_LOG_V3 -->
+## TRACE v49 Round 16A — authorized LFS migration and review publication
+
+- Preserved the complete original unpublished Round 16A lineage in a verified local Git bundle, restored it cleanly, and recorded the bundle SHA-256 plus the five-blob oversized-object ledger.
+- Rewrote only the unpublished Round 16A branch and only the two authorized independent-verification paths, preserving all eight original checkpoint commits in order with identical authorship, timestamps, messages, and logical phase boundaries.
+- Left every existing public ref and `origin/main` unchanged, used no force push, pushed no rollback tag, and performed no deployment.
+- Froze 65 vocabulary candidates and 31 active product terms, enumerated all 465 unordered active pairs, and retained 21 evidence-qualified generic associations without database co-occurrence inference.
+- Enumerated 58 canonical association subgraphs, 81 valid topology compositions, 5760 states, 749944 transitions, 5760 canonical workflows, and 11520 export variants.
+- Grounded category entry directly in frozen database `v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` and evaluated the v2 Search/archive-object/Context/Spacetime dependency and public-exposure gates; the formal values are recorded in the Round 16A closure ledger.
+- Preserved Round 8–16 history and reconciled all 11 Round 16 legacy compositions through a versioned strict adapter. V1 is explicitly retired; v2 is documented and independently verified.
+- Final frontend implementation, public page, deployment, external human domain review, and overall project frontend readiness remain false/out of scope.
+
+`ROUND16A_DECISION=TRACE_EXPLORATION_FULLY_CLOSED`
+
+`FUNCTION3_FULL_SPACE_CENSUS_COMPLETE=true`
+
+`FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE=true`
+
+`TRACE_FUNCTION3_EXPLORATION_CLOSED=true`
+
+`MAIN_FAST_FORWARD_COMPLETED=false`
+
+`NEXT_GATE=INDEPENDENT_REVIEW_OF_PUBLISHED_ROUND16A_RESEARCH_BRANCH`
+<!-- /TRACE_ROUND16A_PROJECT_LOG_V3 -->
+
+<!-- TRACE_ROUND16B_METHOD_CHECKPOINT -->
+## TRACE v49 Round 16B — higher-order association method checkpoint
+
+- Reclassified Round 16A as pair-association and pair-derived computational baseline evidence rather than complete all-arity association closure.
+- Defined first-class pair and higher-order association objects separately from compositions, states, workflows, and exports; prohibited both automatic group-to-pair projection and pair-connectivity-to-group inference.
+- Hashed and counted 44 governed Round 9–16A/database evidence surfaces, including the Round 10 n-ary and Round 15/16 multi-node surfaces omitted by the Round 16A pair census input inventory.
+- Defined 12 candidate triggers, 12 disposition records, 14 exclusion classes, stable semantic association IDs, append-only revision IDs, source-rights controls, and independent method verification.
+- Recorded 11 open closure-blocking gaps. The concept-sense crosswalk, executable trigger occurrences, evidence and rights ledgers, candidate review, global coherence, v3 incidence product model, independent verification, and clean reproduction remain future checkpoints.
+- Preserved v2 and all Round 16A counts as immutable baseline receipts. No main update, tag push, force push, history rewrite, deployment, or Function 3 closure is authorized.
+
+`ROUND16B_METHOD_CHECKPOINT_READY=true`
+
+`ROUND16A_COMPLETE_ASSOCIATION_CLOSURE_SUPERSEDED=true`
+
+`PAIR_ASSOCIATION_CLOSURE=ROUND16A_BASELINE_ONLY`
+
+`HIGHER_ORDER_ASSOCIATION_CLOSURE=false`
+
+`GLOBAL_COMPOSITION_COHERENCE_CLOSURE=false`
+
+`PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE=false`
+
+`FUNCTION3_CLOSURE=false`
+
+`NEXT_GATE=CONCEPT_SENSE_CROSSWALK_AND_TRIGGERED_CANDIDATE_CENSUS`
+<!-- /TRACE_ROUND16B_METHOD_CHECKPOINT -->

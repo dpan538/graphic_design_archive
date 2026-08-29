@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; cp016_socket=/private/tmp/gda-v50-round16b-cp016-final/socket; if /opt/homebrew/opt/postgresql@16/bin/pg_isready -h \"$cp016_socket\" -p 59474 -d postgres -U jarlgiovanni >/dev/null 2>&1; then exit 1; fi; test ! -S \"$cp016_socket/.s.PGSQL.59474\"; test ! -e \"$cp016_socket/.s.PGSQL.59474.lock\"; test ! -e /private/tmp/gda-v50-round16b-cp016-final/data/postmaster.pid; if cp016_rows=$(ps -p 79786 -o pid=); then test -z \"$cp016_rows\"; else test \"$?\" -eq 1; fi; if cp016_rows=$(lsof -nP -iTCP:59474 -sTCP:LISTEN); then printf \"%s\\n\" \"$cp016_rows\" >&2; exit 1; else test \"$?\" -eq 1; fi; printf \"%s\\n\" POSTMASTER_PID_79786_ABSENT=PASS SOCKET_59474_ABSENT=PASS SOCKET_LOCK_59474_ABSENT=PASS PG_ISREADY_NOT_ACCEPTING=PASS TCP_LISTENER_59474_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; cp016_socket=/private/tmp/gda-v50-round16b-cp016-final/socket; if /opt/homebrew/opt/postgresql@16/bin/pg_isready -h \"$cp016_socket\" -p 59474 -d postgres -U jarlgiovanni >/dev/null 2>&1; then exit 1; fi; test ! -S \"$cp016_socket/.s.PGSQL.59474\"; test ! -e \"$cp016_socket/.s.PGSQL.59474.lock\"; test ! -e /private/tmp/gda-v50-round16b-cp016-final/data/postmaster.pid; if cp016_rows=$(ps -p 79786 -o pid=); then test -z \"$cp016_rows\"; else test \"$?\" -eq 1; fi; if cp016_rows=$(lsof -nP -iTCP:59474 -sTCP:LISTEN); then printf \"%s\\n\" \"$cp016_rows\" >&2; exit 1; else test \"$?\" -eq 1; fi; printf \"%s\\n\" POSTMASTER_PID_79786_ABSENT=PASS SOCKET_59474_ABSENT=PASS SOCKET_LOCK_59474_ABSENT=PASS PG_ISREADY_NOT_ACCEPTING=PASS TCP_LISTENER_59474_ABSENT=PASS'",
+  "command_id": "1787946314567-cp016-db-prove-runtime-stopped",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 53,
+  "end_timestamp_utc": "2026-08-28T19:45:14Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-db-prove-runtime-stopped",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:45:14Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "7d8c51e7103908c444c110b57683872210a3a6f1dcd7d4524300b162bed0ce80",
+  "timed_out": false
+}

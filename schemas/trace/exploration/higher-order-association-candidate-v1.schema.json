@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace-exploration.example/schemas/trace/exploration/higher-order-association-candidate-v1.schema.json",
+  "title": "TRACE Round 16B higher-order association candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "identity_hash",
+    "association_kind",
+    "participants",
+    "arity",
+    "order_semantics",
+    "roles_meaningful",
+    "scope",
+    "scope_ids",
+    "trigger_ids",
+    "trigger_record_refs",
+    "lifecycle_state",
+    "proposed_disposition",
+    "pair_projection_authorized",
+    "authority",
+    "version"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^R16B-CAND:[0-9a-f]{64}$"
+    },
+    "identity_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "association_kind": {
+      "type": "string",
+      "enum": [
+        "HIGHER_ORDER_GENERIC_PROXIMITY",
+        "HIGHER_ORDER_ROLE_BEARING",
+        "HIGHER_ORDER_ORDERED",
+        "STRUCTURAL_CANDIDATE_UNRESOLVED"
+      ]
+    },
+    "participants": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "vocabulary_id",
+          "sense_id",
+          "canonical_label",
+          "role_ids",
+          "role_label_snapshots",
+          "semantic_ordinal",
+          "partial_order_predecessor_sense_ids",
+          "participant_authority"
+        ],
+        "properties": {
+          "vocabulary_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "sense_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+          "canonical_label": { "type": "string", "minLength": 1, "maxLength": 240 },
+          "role_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+          },
+          "role_label_snapshots": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+          },
+          "semantic_ordinal": { "type": ["integer", "null"], "minimum": 0 },
+          "partial_order_predecessor_sense_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+          },
+          "participant_authority": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "maxLength": 512 }
+          }
+        }
+      }
+    },
+    "arity": { "type": "integer", "minimum": 3 },
+    "order_semantics": {
+      "type": "string",
+      "enum": ["UNORDERED", "ORDERED", "PARTIALLY_ORDERED"]
+    },
+    "roles_meaningful": { "type": "boolean" },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bounded_context",
+        "time",
+        "geography",
+        "institution",
+        "actors",
+        "case",
+        "mechanism"
+      ],
+      "properties": {
+        "bounded_context": { "type": ["string", "null"], "maxLength": 4000 },
+        "time": { "type": ["string", "null"], "maxLength": 1000 },
+        "geography": { "type": ["string", "null"], "maxLength": 1000 },
+        "institution": { "type": ["string", "null"], "maxLength": 1000 },
+        "actors": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 500 }
+        },
+        "case": { "type": ["string", "null"], "maxLength": 1000 },
+        "mechanism": { "type": ["string", "null"], "maxLength": 1000 }
+      }
+    },
+    "scope_ids": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["time", "geography", "institution", "actors", "case", "mechanism", "context"],
+      "properties": {
+        "time": { "$ref": "#/$defs/IdentifierSet" },
+        "geography": { "$ref": "#/$defs/IdentifierSet" },
+        "institution": { "$ref": "#/$defs/IdentifierSet" },
+        "actors": { "$ref": "#/$defs/IdentifierSet" },
+        "case": { "$ref": "#/$defs/IdentifierSet" },
+        "mechanism": { "$ref": "#/$defs/IdentifierSet" },
+        "context": { "$ref": "#/$defs/IdentifierSet" }
+      }
+    },
+    "trigger_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^TRG-[0-9]{3}$" }
+    },
+    "trigger_record_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 }
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "DISCOVERED",
+        "EVIDENCE_REVIEW_IN_PROGRESS",
+        "GOVERNED_REVIEW_COMPLETE",
+        "SUPERSEDED"
+      ]
+    },
+    "proposed_disposition": {
+      "type": "string",
+      "enum": [
+        "DIRECT_HIGHER_ORDER_SUPPORT",
+        "COHERENT_COMPOSITE_SUPPORT",
+        "MIXED_DIRECT_AND_COMPOSITE_SUPPORT",
+        "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE",
+        "INQUIRY_ONLY_OR_UNRESOLVED",
+        "INSUFFICIENT_EVIDENCE",
+        "COOCCURRENCE_ONLY",
+        "BOUNDED_SENSE_OR_SCOPE_CONFLICT",
+        "TOPOLOGY_OR_ROLE_CONFLICT",
+        "HARD_NEGATIVE",
+        "PENDING_GOVERNED_REVIEW",
+        "DUPLICATE_IDENTITY_MERGED"
+      ]
+    },
+    "pair_projection_authorized": { "const": false },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_sha", "method_version", "authority_status"],
+      "properties": {
+        "source_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "method_version": { "const": "trace-round16b-higher-order-association-method-v1" },
+        "authority_status": {
+          "type": "string",
+          "enum": ["RESEARCH_CANDIDATE", "GOVERNED_REVIEWED"]
+        }
+      }
+    },
+    "version": { "type": "integer", "minimum": 1 }
+  },
+  "$defs": {
+    "IdentifierSet": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 256 }
+    }
+  }
+}

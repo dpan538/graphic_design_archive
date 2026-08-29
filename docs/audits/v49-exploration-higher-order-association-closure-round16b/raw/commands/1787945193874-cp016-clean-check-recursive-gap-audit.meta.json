@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/build_recursive_gap_closure_audit.py",
+    "--check"
+  ],
+  "command": "python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py --check",
+  "command_id": "1787945193874-cp016-clean-check-recursive-gap-audit",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 179,
+  "end_timestamp_utc": "2026-08-28T19:26:34Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-clean-check-recursive-gap-audit",
+  "phase_id": "CHECKPOINT-016-FINAL-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:26:33Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "fa8e718f6e4a99092bd4528966a35e093839fec8eddfffaa2b4fd0c69c044732",
+  "timed_out": false
+}

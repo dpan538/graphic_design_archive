@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "sh",
+    "-c",
+    "set -eu\nfor tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x \"/opt/homebrew/opt/postgresql@16/bin/$tool\"; done\nversion=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)\ncase \"$version\" in *\"16.13\"*) ;; *) printf \"%s\\n\" \"unexpected PostgreSQL version: $version\" >&2; exit 1 ;; esac\nif lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf \"%s\\n\" CP14_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi\nprintf \"%s\\n\" \"POSTGRESQL_TOOLCHAIN=$version\" CP14_DATABASE_PORT_59473_FREE=PASS"
+  ],
+  "command": "sh -c 'set -eu\nfor tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x \"/opt/homebrew/opt/postgresql@16/bin/$tool\"; done\nversion=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)\ncase \"$version\" in *\"16.13\"*) ;; *) printf \"%s\\n\" \"unexpected PostgreSQL version: $version\" >&2; exit 1 ;; esac\nif lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf \"%s\\n\" CP14_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi\nprintf \"%s\\n\" \"POSTGRESQL_TOOLCHAIN=$version\" CP14_DATABASE_PORT_59473_FREE=PASS'",
+  "command_id": "1787940644228-cp014-db-toolchain-preflight",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 71,
+  "end_timestamp_utc": "2026-08-28T18:10:44Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-db-toolchain-preflight",
+  "phase_id": "CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:10:44Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "0f5a5b984b83524f0db17173a8fb0e8ece6c9b42803e597594bcffacb2430cb8",
+  "timed_out": false
+}

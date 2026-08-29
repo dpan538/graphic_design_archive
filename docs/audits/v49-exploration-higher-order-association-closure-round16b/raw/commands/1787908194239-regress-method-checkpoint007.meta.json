@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_method_checkpoint.py",
+    "--repo",
+    ".",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint007.json"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint007.json",
+  "command_id": "1787908194239-regress-method-checkpoint007",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 798,
+  "end_timestamp_utc": "2026-08-28T09:09:55Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "regress-method-checkpoint007",
+  "phase_id": "CHECKPOINT-007-REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T09:09:54Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e521fbaffa9560d47dc96c0e00df9709e46fd24ab733540f023e3495f1b18f21",
+  "timed_out": false
+}

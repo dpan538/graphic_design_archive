@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "ci"
+  ],
+  "command": "npm ci",
+  "command_id": "1787828608944-npm-ci",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 677,
+  "end_timestamp_utc": "2026-08-27T11:03:29Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 1,
+  "operation_id": "npm-ci",
+  "phase_id": "GATE_0_ENVIRONMENT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T11:03:28Z",
+  "stderr_sha256": "bb6985eafe8d1793f5947aeeb0b5da38e5ec1f64d9bafb24a8934bc6694b35e6",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

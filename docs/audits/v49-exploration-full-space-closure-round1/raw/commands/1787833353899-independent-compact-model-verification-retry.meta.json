@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16a/verify_full_space.py",
+    "--allow-incomplete-gates",
+    "--case-tsv",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv"
+  ],
+  "command": "python3 scripts/trace_round16a/verify_full_space.py --allow-incomplete-gates --case-tsv docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
+  "command_id": "1787833353899-independent-compact-model-verification-retry",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 27235,
+  "end_timestamp_utc": "2026-08-27T12:23:01Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "independent-compact-model-verification-retry",
+  "phase_id": "GATE8_PRODUCTION_MODEL",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T12:22:33Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

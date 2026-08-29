@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_reachable_ordinary_blobs.py",
+    "--repo",
+    "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+    "--ref",
+    "HEAD",
+    "--ledger",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv",
+    "--receipt",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json"
+  ],
+  "command": "python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_reachable_ordinary_blobs.py --repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --ref HEAD --ledger /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv --receipt /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json",
+  "command_id": "1787942353647-cp015-reachable-ordinary-blob-scan-cp014",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 749,
+  "end_timestamp_utc": "2026-08-28T18:39:14Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-reachable-ordinary-blob-scan-cp014",
+  "phase_id": "CHECKPOINT-015-REACHABLE-BLOB-PROOF",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:39:13Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c4283637ba1c164b19dda205a97f34f08253d1bad834dbb7a3306f5ee226e2a8",
+  "timed_out": false
+}

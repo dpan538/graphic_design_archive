@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16a/seal_audit_package.py",
+    "--repo-root",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--stage",
+    "pre-report"
+  ],
+  "command": "python3 -B scripts/trace_round16a/seal_audit_package.py --repo-root /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --stage pre-report",
+  "command_id": "1787880506898-audit-seal-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 1105,
+  "end_timestamp_utc": "2026-08-28T01:28:28Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "audit-seal-final",
+  "phase_id": "POST_MIGRATION_AUDIT_SEAL",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:28:26Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3e0a47f934d159c9844dc0a0a83fadbb8c47b4425377f9259dbe803f0b909cf",
+  "timed_out": false
+}

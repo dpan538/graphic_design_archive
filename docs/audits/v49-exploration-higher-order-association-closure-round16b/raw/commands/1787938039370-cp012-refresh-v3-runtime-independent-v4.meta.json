@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_runtime_independent.py"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_runtime_independent.py",
+  "command_id": "1787938039370-cp012-refresh-v3-runtime-independent-v4",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 268,
+  "end_timestamp_utc": "2026-08-28T17:27:19Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-refresh-v3-runtime-independent-v4",
+  "phase_id": "CHECKPOINT-012-CORRECTIVE-RUNTIME-BINDING",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:27:19Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "0d123fbb95f4bab1ad75c9dd0eeb86624ce8c40046f188a9bb74c3ef857e5fc4",
+  "timed_out": false
+}

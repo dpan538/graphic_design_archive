@@ -1,0 +1,24 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: synthetic controls cannot be made product eligible
+    at throws (file:///private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/scripts/test-trace-exploration-v3.mjs:68:10)
+    at file:///private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/scripts/test-trace-exploration-v3.mjs:220:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: Error: READ_MODEL_INVALID:control_product_disposition:controls.concepts
+      at validateControlProductIneligibility (/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/src/features/trace-v49/exploration-v3/read-model.server.ts:193:13)
+      at validateModel (/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/src/features/trace-v49/exploration-v3/read-model.server.ts:684:7)
+      at validateExplorationV3GeneratedArtifactSet (/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/src/features/trace-v49/exploration-v3/read-model.server.ts:788:17)
+      at file:///private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/scripts/test-trace-exploration-v3.mjs:221:9
+      at getActual (node:assert:609:5)
+      at Function.throws (node:assert:757:24)
+      at throws (file:///private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/scripts/test-trace-exploration-v3.mjs:68:10)
+      at file:///private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/scripts/test-trace-exploration-v3.mjs:220:1,
+  expected: /control_product_eligible/u,
+  operator: 'throws',
+  diff: 'simple'
+}
+
+Node.js v22.21.0

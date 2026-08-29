@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/usr/bin/printf",
+    "%s\\n",
+    "RETRY_PROTOCOL: preserve first FAIL; warm stabilization >=10000 requests AND >=300000ms at concurrency=25 and 90pct JSON+10pct PNG; then measured retry >=10000 requests AND >=300000ms; timeout=30000ms; zero failures/timeouts/5xx/corruption; telemetry>=80pct expected samples; UNCHANGED unbounded RSS rule iff final-window median growth>max(16MiB,10pct initial) AND positive OLS slope"
+  ],
+  "command": "/usr/bin/printf '%s\\n' 'RETRY_PROTOCOL: preserve first FAIL; warm stabilization >=10000 requests AND >=300000ms at concurrency=25 and 90pct JSON+10pct PNG; then measured retry >=10000 requests AND >=300000ms; timeout=30000ms; zero failures/timeouts/5xx/corruption; telemetry>=80pct expected samples; UNCHANGED unbounded RSS rule iff final-window median growth>max(16MiB,10pct initial) AND positive OLS slope'",
+  "command_id": "1787839084123-sustained-load-criterion-declaration-retry1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-27T13:58:04Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "sustained-load-criterion-declaration-retry1",
+  "phase_id": "GATE-11",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T13:58:04Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "8c06537c9d13c4e99f7dad604ea2aa5c79056f4c2963d10345b3e9c37015f33a",
+  "timed_out": false
+}

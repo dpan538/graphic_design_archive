@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "npm --prefix frontend run test:exploration-domain"
+  ],
+  "command": "/bin/sh -c 'npm --prefix frontend run test:exploration-domain'",
+  "command_id": "1787943312078-cp015-regress-exploration-domain",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 917,
+  "end_timestamp_utc": "2026-08-28T18:55:13Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-regress-exploration-domain",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:55:12Z",
+  "stderr_sha256": "3023e23c954b9ade53221a7b9a8cb933a79d460083a1ee7f0615860217f2afec",
+  "stdout_sha256": "ed92fd8fe43d33c4d927d2c8984d82da7efe3c7ba2796647916c3ed4cb2aa889",
+  "timed_out": false
+}

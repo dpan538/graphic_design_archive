@@ -1,2 +1,20 @@
 generated/public_surfaces_prefreeze_candidate_v48.json filter=lfs diff=lfs merge=lfs -text
 data/prefreeze_candidate_v48.sqlite filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/transition-census-v2.tsv filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-transition-case-ledger.tsv filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-service-dto-case-ledger.tsv filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/*.json filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/*.json filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-*-case-ledger.tsv -whitespace
+docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large/** filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/search-shards/** filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787914024116-staged-diff-check-checkpoint008-final.stdout.log -whitespace
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787914394968-staged-diff-check-checkpoint008-corrected-final.stdout.log -whitespace
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/*.stdout.log -whitespace
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/*.stderr.log -whitespace
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011*/http-cases.tsv -whitespace
+frontend/generated/trace-exploration-v2-higher-order/*.json filter=lfs diff=lfs merge=lfs -text

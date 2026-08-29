@@ -1,0 +1,85 @@
+IPC status from <running system> as of Sat Aug 29 04:12:09 AEST 2026
+T     ID     KEY        MODE       OWNER    GROUP
+Shared Memory:
+m  65536 0x0afd43f8 --rw------- jarlgiovanni    staff
+m  65537 0x0dcdbe4c --rw------- jarlgiovanni    staff
+m 393218 0x0dd13af6 --rw------- jarlgiovanni    staff
+m 720899 0x0de2bf3f --rw------- jarlgiovanni    staff
+m 393220 0x0de9ff5a --rw------- jarlgiovanni    staff
+m 393221 0x0deae069 --rw------- jarlgiovanni    staff
+m 327686 0x0deae0c6 --rw------- jarlgiovanni    staff
+m  65543 0x0df5a482 --rw------- jarlgiovanni    staff
+m 393224 0x0df663b2 --rw------- jarlgiovanni    staff
+m 589833 0x0e083d21 --rw------- jarlgiovanni    staff
+m 327690 0x0df66a2b --rw------- jarlgiovanni    staff
+m 327691 0x0df67168 --rw------- jarlgiovanni    staff
+m 393228 0x0df694ad --rw------- jarlgiovanni    staff
+m  65549 0x0df69510 --rw------- jarlgiovanni    staff
+m 393230 0x0df6dcab --rw------- jarlgiovanni    staff
+m 458767 0x0df8a603 --rw------- jarlgiovanni    staff
+m 393232 0x0df9006a --rw------- jarlgiovanni    staff
+m  65553 0x0df900f8 --rw------- jarlgiovanni    staff
+m 393234 0x0df9018e --rw------- jarlgiovanni    staff
+m  65555 0x0df925da --rw------- jarlgiovanni    staff
+m  65556 0x0df9269f --rw------- jarlgiovanni    staff
+m  65557 0x0df92801 --rw------- jarlgiovanni    staff
+m  65558 0x0df94f37 --rw------- jarlgiovanni    staff
+m  65559 0x0dfeffc1 --rw------- jarlgiovanni    staff
+m  65560 0x0dff0009 --rw------- jarlgiovanni    staff
+m 393241 0x0dff005d --rw------- jarlgiovanni    staff
+m  65562 0x0dff4556 --rw------- jarlgiovanni    staff
+m 393243 0x0dff45b3 --rw------- jarlgiovanni    staff
+m  65564 0x0dff6cd0 --rw------- jarlgiovanni    staff
+m  65565 0x0dff6d4a --rw------- jarlgiovanni    staff
+m 393246 0x0e026541 --rw------- jarlgiovanni    staff
+m  65567 0x0dff7910 --rw------- jarlgiovanni    staff
+
+POSTGRES_PROCESSES_BEGIN
+ 1774     1 /opt/homebrew/opt/postgresql@16/bin/postgres -D /opt/homebrew/var/postgresql@16
+ 1805  1774 postgres: checkpointer   
+ 1806  1774 postgres: background writer   
+ 1821  1774 postgres: walwriter   
+ 1822  1774 postgres: autovacuum launcher   
+ 1823  1774 postgres: logical replication launcher   
+19451     1 /opt/homebrew/Cellar/postgresql@16/16.13/bin/postgres -D /private/tmp/round3i-audit-pg.nUS445 -p 55440 -k /private/tmp
+19452 19451 postgres: checkpointer       
+19453 19451 postgres: background writer       
+19455 19451 postgres: walwriter       
+19456 19451 postgres: autovacuum launcher       
+19457 19451 postgres: logical replication launcher       
+19530     1 /opt/homebrew/Cellar/postgresql@16/16.13/bin/postgres -D /private/tmp/round3i-audit-pg.JgzD2V -p 55441 -k /private/tmp
+19531 19530 postgres: checkpointer       
+19532 19530 postgres: background writer       
+19534 19530 postgres: walwriter       
+19535 19530 postgres: autovacuum launcher       
+19536 19530 postgres: logical replication launcher       
+42202     1 /opt/homebrew/Cellar/postgresql@16/16.13/bin/postgres -D /private/tmp/round3j-pg16.WbxSgj/data -k /private/tmp/round3j-pg16.WbxSgj -p 55491
+42203 42202 postgres: checkpointer       
+42204 42202 postgres: background writer       
+42206 42202 postgres: walwriter       
+42207 42202 postgres: autovacuum launcher       
+42208 42202 postgres: logical replication launcher       
+54129     1 /opt/homebrew/Cellar/postgresql@16/16.13/bin/postgres -D /private/tmp/round3k-core-pg.TdHcE6/data -p 55577 -k /private/tmp/round3k-core-pg.TdHcE6/socket
+54130 54129 postgres: checkpointer       
+54131 54129 postgres: background writer       
+54133 54129 postgres: walwriter       
+54134 54129 postgres: autovacuum launcher       
+54135 54129 postgres: logical replication launcher       
+61955     1 /opt/homebrew/Cellar/postgresql@16/16.13/bin/postgres -D /private/tmp/coffee-round3k-pg16.aoVtxr/data -k /private/tmp/coffee-round3k-pg16.aoVtxr/socket -p 55434 -c listen_addresses=
+61956 61955 postgres: checkpointer         
+61957 61955 postgres: background writer         
+61959 61955 postgres: walwriter         
+61960 61955 postgres: autovacuum launcher         
+61961 61955 postgres: logical replication launcher         
+97062     1 /opt/homebrew/Cellar/postgresql@16/16.13/bin/postgres -D /tmp/coffee-round3b-pg16 -p 55433
+97063 97062 postgres: checkpointer     
+97064 97062 postgres: background writer     
+97066 97062 postgres: walwriter     
+97067 97062 postgres: autovacuum launcher     
+97068 97062 postgres: logical replication launcher     
+POSTGRES_PROCESSES_END
+kern.sysv.shmmax: 4194304
+kern.sysv.shmmin: 1
+kern.sysv.shmmni: 32
+kern.sysv.shmseg: 8
+kern.sysv.shmall: 1024

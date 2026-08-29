@@ -1,0 +1,956 @@
+{
+  "bindings": [
+    {
+      "collection_pointer": "/associations/*",
+      "hash_fields": [
+        {
+          "hash_field": "identity_material_sha256",
+          "material_name": "association_identity",
+          "representation": "LOWERCASE_HEX_64"
+        },
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "association_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        },
+        {
+          "hash_field": "presentation_sha256",
+          "material_name": "association_presentation",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "association_identity",
+          "identifier_field": "association_id",
+          "prefix": "association:v3:",
+          "suffix_rule": "NONE"
+        },
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "association_revision",
+          "identifier_field": "association_revision_id",
+          "prefix": "association-revision:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "association_kind",
+              "source_pointer": "/association_kind"
+            },
+            {
+              "item_field": null,
+              "operation": "PROJECT_PARTICIPANT_IDENTITY",
+              "output_key": "participants",
+              "source_pointer": "/participants"
+            },
+            {
+              "item_field": null,
+              "operation": "PROJECT_SCOPE_IDENTITY",
+              "output_key": "scope_identity",
+              "source_pointer": "/scope"
+            },
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "order_semantics",
+              "source_pointer": "/order_semantics"
+            },
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "roles_meaningful",
+              "source_pointer": "/roles_meaningful"
+            }
+          ],
+          "material_name": "association_identity",
+          "normalization_rules": [
+            "PROJECT_PARTICIPANTS_TO_CONCEPT_ID_SENSE_ID_ORDINAL_ROLE_ID",
+            "ORDERED_PRESERVES_STORED_PARTICIPANT_ORDER_AND_REQUIRES_CONTIGUOUS_ZERO_BASED_ORDINALS",
+            "UNORDERED_STORED_ORDER_IS_CANONICAL",
+            "UNORDERED_WITHOUT_ROLES_SORTS_BY_SENSE_ID_THEN_CONCEPT_ID",
+            "UNORDERED_WITH_ROLES_SORTS_BY_ROLE_ID_EMPTY_FIRST_THEN_SENSE_ID_THEN_CONCEPT_ID",
+            "SCOPE_TO_SCOPE_IDENTITY_RENAMES_SOURCE_KEY_SCOPE_TO_OUTPUT_KEY_SCOPE_IDENTITY",
+            "SCOPE_IDENTITY_EXACT_KEYS_SCOPE_ID_HISTORICAL_CASE_IDS_TIME_BOUNDS_GEOGRAPHIES_INSTITUTIONS_ACTORS_MECHANISMS",
+            "SCOPE_SET_ARRAYS_SORT_LEXICOGRAPHICALLY"
+          ],
+          "output_keys": [
+            "association_kind",
+            "participants",
+            "scope_identity",
+            "order_semantics",
+            "roles_meaningful"
+          ],
+          "recipe": "ASSOCIATION_IDENTITY",
+          "source_fields": [
+            "association_kind",
+            "participants",
+            "scope",
+            "order_semantics",
+            "roles_meaningful"
+          ],
+          "wrapper": "NONE"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "association_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "association_kind",
+            "realm",
+            "semantic_version",
+            "arity",
+            "order_semantics",
+            "roles_meaningful",
+            "identity_material_sha256",
+            "scope",
+            "participants",
+            "evidence",
+            "review",
+            "activation",
+            "uncertainty",
+            "lifecycle_state",
+            "pair_projection_policy",
+            "internal_pair_association_ids",
+            "internal_pair_links",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "association_kind",
+            "realm",
+            "semantic_version",
+            "arity",
+            "order_semantics",
+            "roles_meaningful",
+            "identity_material_sha256",
+            "scope",
+            "participants",
+            "evidence",
+            "review",
+            "activation",
+            "uncertainty",
+            "lifecycle_state",
+            "pair_projection_policy",
+            "internal_pair_association_ids",
+            "internal_pair_links",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "wrapper": "NONE"
+        },
+        {
+          "field_mappings": [
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "association_id",
+              "source_pointer": "/association_id"
+            },
+            {
+              "item_field": null,
+              "operation": "MERGE_OBJECT",
+              "output_key": "@merge",
+              "source_pointer": "@association_semantic"
+            }
+          ],
+          "material_name": "association_revision",
+          "normalization_rules": [],
+          "output_keys": [
+            "association_id",
+            "@association_semantic"
+          ],
+          "recipe": "ASSOCIATION_REVISION",
+          "source_fields": [
+            "association_id",
+            "@association_semantic"
+          ],
+          "wrapper": "MERGE_ASSOCIATION_ID_WITH_SEMANTIC"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "association_presentation",
+          "normalization_rules": [],
+          "output_keys": [
+            "presentation"
+          ],
+          "recipe": "DIRECT_FIELD_VALUE",
+          "source_fields": [
+            "presentation"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "ASSOCIATION_REVISION"
+    },
+    {
+      "collection_pointer": "/associations/*/participants/*",
+      "hash_fields": [],
+      "identifiers": [
+        {
+          "digest_hex_chars": 16,
+          "digest_material_name": "incidence_identifier",
+          "identifier_field": "incidence_id",
+          "prefix": "incidence:",
+          "suffix_rule": "ONE_BASED_CANONICAL_PARTICIPANT_POSITION_PAD2"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "incidence_identifier",
+          "normalization_rules": [
+            "USE_FIRST_16_HEX_OF_PARENT_IDENTITY_HASH",
+            "APPEND_ONE_BASED_CANONICAL_POSITION_PADDED_TO_TWO_DIGITS"
+          ],
+          "output_keys": [
+            "@parent.identity_material_sha256",
+            "@canonical_participant_position"
+          ],
+          "recipe": "INCIDENCE_IDENTIFIER",
+          "source_fields": [
+            "@parent.identity_material_sha256",
+            "@canonical_participant_position"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "PARTICIPANT_INCIDENCE"
+    },
+    {
+      "collection_pointer": "/compositions/*/association_realizations/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "realization_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        },
+        {
+          "hash_field": "presentation_sha256",
+          "material_name": "realization_presentation",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "realization_semantic",
+          "identifier_field": "association_realization_id",
+          "prefix": "realization:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "association_revision_id",
+              "source_pointer": "/association_revision_id"
+            },
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "incidence_ids",
+              "source_pointer": "/realized_incidence_ids"
+            },
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "realization_kind",
+              "source_pointer": "/realization_kind"
+            }
+          ],
+          "material_name": "realization_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "association_revision_id",
+            "realized_incidence_ids",
+            "realization_kind"
+          ],
+          "recipe": "REALIZATION_SEMANTIC_ALIASES",
+          "source_fields": [
+            "association_revision_id",
+            "realized_incidence_ids",
+            "realization_kind"
+          ],
+          "wrapper": "NONE"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "realization_presentation",
+          "normalization_rules": [],
+          "output_keys": [
+            "presentation"
+          ],
+          "recipe": "DIRECT_FIELD_VALUE",
+          "source_fields": [
+            "presentation"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "ASSOCIATION_REALIZATION"
+    },
+    {
+      "collection_pointer": "/compositions/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "composition_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        },
+        {
+          "hash_field": "presentation_sha256",
+          "material_name": "composition_presentation",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "composition_identity",
+          "identifier_field": "composition_id",
+          "prefix": "composition:v3:",
+          "suffix_rule": "NONE"
+        },
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "composition_revision",
+          "identifier_field": "composition_revision_id",
+          "prefix": "composition-revision:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [
+            {
+              "item_field": "association_realization_id",
+              "operation": "MAP_ARRAY_FIELD",
+              "output_key": "association_realization_ids",
+              "source_pointer": "/association_realizations"
+            },
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "node_ids",
+              "source_pointer": "/composition_node_ids"
+            },
+            {
+              "item_field": null,
+              "operation": "COPY",
+              "output_key": "topology_family",
+              "source_pointer": "/topology_family"
+            }
+          ],
+          "material_name": "composition_identity",
+          "normalization_rules": [],
+          "output_keys": [
+            "association_realizations",
+            "composition_node_ids",
+            "topology_family"
+          ],
+          "recipe": "COMPOSITION_IDENTITY_ALIASES",
+          "source_fields": [
+            "association_realizations",
+            "composition_node_ids",
+            "topology_family"
+          ],
+          "wrapper": "NONE"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "composition_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "realm",
+            "association_realizations",
+            "composition_node_ids",
+            "topology_family",
+            "renderability",
+            "global_coherence_review_id",
+            "association_trace_complete",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "realm",
+            "association_realizations",
+            "composition_node_ids",
+            "topology_family",
+            "renderability",
+            "global_coherence_review_id",
+            "association_trace_complete",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "wrapper": "NONE"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "composition_revision",
+          "normalization_rules": [],
+          "output_keys": [
+            "@composition_semantic",
+            "revision=1"
+          ],
+          "recipe": "COMPOSITION_REVISION",
+          "source_fields": [
+            "@composition_semantic",
+            "revision=1"
+          ],
+          "wrapper": "OBJECT_WITH_SEMANTIC_AND_REVISION_ONE"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "composition_presentation",
+          "normalization_rules": [],
+          "output_keys": [
+            "presentation"
+          ],
+          "recipe": "DIRECT_FIELD_VALUE",
+          "source_fields": [
+            "presentation"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "COMPOSITION_REVISION"
+    },
+    {
+      "collection_pointer": "/navigation_states/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "navigation_state_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        },
+        {
+          "hash_field": "presentation_sha256",
+          "material_name": "navigation_state_presentation",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "navigation_state_semantic",
+          "identifier_field": "state_id",
+          "prefix": "state:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "navigation_state_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "realm",
+            "composition_revision_id",
+            "nodes",
+            "path",
+            "focus_navigation_node_id",
+            "bipartite_alternation_valid"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "realm",
+            "composition_revision_id",
+            "nodes",
+            "path",
+            "focus_navigation_node_id",
+            "bipartite_alternation_valid"
+          ],
+          "wrapper": "NONE"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "navigation_state_presentation",
+          "normalization_rules": [],
+          "output_keys": [
+            "presentation"
+          ],
+          "recipe": "DIRECT_FIELD_VALUE",
+          "source_fields": [
+            "presentation"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "NAVIGATION_STATE"
+    },
+    {
+      "collection_pointer": "/transitions/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "transition_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "transition_semantic",
+          "identifier_field": "transition_id",
+          "prefix": "transition:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "transition_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "realm",
+            "from_state_id",
+            "to_state_id",
+            "transition_kind",
+            "incidence_id",
+            "association_revision_id",
+            "association_realization_id",
+            "state_mutated"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "realm",
+            "from_state_id",
+            "to_state_id",
+            "transition_kind",
+            "incidence_id",
+            "association_revision_id",
+            "association_realization_id",
+            "state_mutated"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "TRANSITION"
+    },
+    {
+      "collection_pointer": "/workflows/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "workflow_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "workflow_semantic",
+          "identifier_field": "workflow_id",
+          "prefix": "workflow:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "workflow_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "realm",
+            "initial_state_id",
+            "transition_kind",
+            "association_revision_ids",
+            "association_realization_ids",
+            "state_ids",
+            "transition_ids",
+            "reachable"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "realm",
+            "initial_state_id",
+            "transition_kind",
+            "association_revision_ids",
+            "association_realization_ids",
+            "state_ids",
+            "transition_ids",
+            "reachable"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "WORKFLOW"
+    },
+    {
+      "collection_pointer": "/exports/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "export_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        },
+        {
+          "hash_field": "presentation_sha256",
+          "material_name": "export_presentation",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "export_semantic",
+          "identifier_field": "export_id",
+          "prefix": "export:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "export_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "realm",
+            "workflow_id",
+            "state_id",
+            "association_revision_ids",
+            "association_realization_ids",
+            "projection_preservation_records",
+            "composition_revision_id",
+            "pair_projection_policy_preserved"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "realm",
+            "workflow_id",
+            "state_id",
+            "association_revision_ids",
+            "association_realization_ids",
+            "projection_preservation_records",
+            "composition_revision_id",
+            "pair_projection_policy_preserved"
+          ],
+          "wrapper": "NONE"
+        },
+        {
+          "field_mappings": [],
+          "material_name": "export_presentation",
+          "normalization_rules": [],
+          "output_keys": [
+            "presentation"
+          ],
+          "recipe": "DIRECT_FIELD_VALUE",
+          "source_fields": [
+            "presentation"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "EXPORT"
+    },
+    {
+      "collection_pointer": "/v2_pair_adapter_receipts/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "v2_pair_adapter_receipt_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "v2_pair_adapter_receipt_semantic",
+          "identifier_field": "adapter_id",
+          "prefix": "adapter:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "v2_pair_adapter_receipt_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "direction",
+            "source_contract",
+            "target_contract",
+            "source_pair_id",
+            "source_pair_fixture_sha256",
+            "source_endpoint_ids",
+            "target_association_revision_id",
+            "target_incidence_ids",
+            "endpoint_crosswalk",
+            "input_arity",
+            "output_association_kind",
+            "higher_order_input_allowed",
+            "reverse_conversion_allowed",
+            "semantic_claims_added"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "direction",
+            "source_contract",
+            "target_contract",
+            "source_pair_id",
+            "source_pair_fixture_sha256",
+            "source_endpoint_ids",
+            "target_association_revision_id",
+            "target_incidence_ids",
+            "endpoint_crosswalk",
+            "input_arity",
+            "output_association_kind",
+            "higher_order_input_allowed",
+            "reverse_conversion_allowed",
+            "semantic_claims_added"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "V2_PAIR_ADAPTER_RECEIPT"
+    },
+    {
+      "collection_pointer": "/concepts/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "vocabulary_concept_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 0,
+          "digest_material_name": null,
+          "identifier_field": "concept_id",
+          "prefix": "concept:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "vocabulary_concept_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "realm",
+            "canonical_label",
+            "semantic_version",
+            "lifecycle_state",
+            "association_eligible",
+            "authority",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "realm",
+            "canonical_label",
+            "semantic_version",
+            "lifecycle_state",
+            "association_eligible",
+            "authority",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "VOCABULARY_CONCEPT"
+    },
+    {
+      "collection_pointer": "/concept_senses/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "concept_sense_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 0,
+          "digest_material_name": null,
+          "identifier_field": "sense_id",
+          "prefix": "sense:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "concept_sense_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "concept_id",
+            "realm",
+            "bounded_definition",
+            "vocabulary_crosswalk_ids",
+            "governed_scope_ids",
+            "semantic_version",
+            "lifecycle_state",
+            "association_eligible",
+            "authority",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "concept_id",
+            "realm",
+            "bounded_definition",
+            "vocabulary_crosswalk_ids",
+            "governed_scope_ids",
+            "semantic_version",
+            "lifecycle_state",
+            "association_eligible",
+            "authority",
+            "product_eligible",
+            "product_path",
+            "product_eligibility_disposition",
+            "product_ineligibility_reason"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "CONCEPT_SENSE"
+    },
+    {
+      "collection_pointer": "/composition_coherence_reviews/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "composition_coherence_review_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "composition_coherence_review_semantic",
+          "identifier_field": "composition_coherence_review_id",
+          "prefix": "composition-review:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "composition_coherence_review_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "composition_id",
+            "realm",
+            "review_state",
+            "authority",
+            "review_version",
+            "global_coherence",
+            "bounded_senses_compatible",
+            "case_scope_compatible",
+            "roles_and_topology_supported",
+            "same_configuration",
+            "unsupported_bridge_count",
+            "association_revision_ids",
+            "association_realization_ids",
+            "incidence_ids",
+            "decision",
+            "reasons"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "composition_id",
+            "realm",
+            "review_state",
+            "authority",
+            "review_version",
+            "global_coherence",
+            "bounded_senses_compatible",
+            "case_scope_compatible",
+            "roles_and_topology_supported",
+            "same_configuration",
+            "unsupported_bridge_count",
+            "association_revision_ids",
+            "association_realization_ids",
+            "incidence_ids",
+            "decision",
+            "reasons"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "COMPOSITION_COHERENCE_REVIEW"
+    },
+    {
+      "collection_pointer": "/v2_pair_source_fixtures/*",
+      "hash_fields": [
+        {
+          "hash_field": "source_pair_fixture_sha256",
+          "material_name": "v2_pair_source_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 0,
+          "digest_material_name": null,
+          "identifier_field": "source_pair_id",
+          "prefix": "synthetic-v2-pair:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "v2_pair_source_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "source_pair_id",
+            "endpoints"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "source_pair_id",
+            "endpoints"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "V2_PAIR_SOURCE_FIXTURE"
+    }
+  ],
+  "canonicalization": {
+    "array_order_default": "PRESERVE_STORED_ORDER",
+    "digest_algorithm": "SHA-256",
+    "digest_representation": "LOWERCASE_HEX_64",
+    "item_separators": [
+      ",",
+      ":"
+    ],
+    "json_ensure_ascii": false,
+    "object_key_order": "LEXICOGRAPHIC_ASCENDING",
+    "text_encoding": "UTF-8",
+    "trailing_newline_in_digest_material": false
+  },
+  "contract_version": "trace-exploration-v3-hash-binding-contract-1.0.0"
+}

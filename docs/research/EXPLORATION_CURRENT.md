@@ -158,4 +158,114 @@ The server-only API materializes four deterministic maps, 52 immutable states, 8
 
 Next gate after Round 16: **Claude frontend design and frontend integration**. Final visual layout, production interaction components, public navigation, deployment, and any external academic-release review remain separate.
 
+## Round 16B current authority — higher-order correction
+
+Round 16A is now governed as the reproducible baseline for pair-association closure and a pair-derived finite computational space. Its 31 active terms, 465 unordered pairs, 21 active pair associations, 58 connected pair-edge subgraphs, 81 topology compositions, 228 production compositions, 5,760 states, 749,944 transitions, 5,760 workflows, and 11,520 exports do not establish complete all-arity association closure.
+
+Round 16B distinguishes vocabulary concepts, pair associations, higher-order associations, compositions, interaction states, workflows, and exports. A higher-order association is a first-class evidence-bearing object and never manufactures its internal pairs; a connected pair graph or renderable composition never manufactures group coherence. The governed method inventories 44 Round 9–16A and database surfaces, defines 12 candidate triggers, preserves 14 exclusion classes, and records 11 currently open closure-blocking gaps. It also separates stable semantic association identity from append-only evidence and review revisions.
+
+The concept-sense crosswalk, trigger-occurrence ledger, evidence ledger, rights ledger, candidate census, global-coherence review, production v3 incidence model, independent census verification, and clean reproduction remain incomplete at this method checkpoint. Existing v2 remains immutable baseline behavior. No higher-order association, product association, or Function 3 closure claim is active.
+
+`PAIR_ASSOCIATION_CLOSURE=ROUND16A_BASELINE_ONLY`
+
+`HIGHER_ORDER_ASSOCIATION_CLOSURE=false`
+
+`GLOBAL_COMPOSITION_COHERENCE_CLOSURE=false`
+
+`PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE=false`
+
+`FUNCTION3_CLOSURE=false`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+Next Round 16B gate: **stable concept-sense crosswalk, deterministic trigger occurrences, and resumable candidate-census tranches**.
+
 Governed Round 16 package: `docs/research/trace-v49-exploration-real-database-round1/`.
+
+<!-- TRACE_ROUND16A_AUTHORITY_CLARIFICATION_V2 -->
+## TRACE v49 Round 16A — active Exploration authority clarification
+
+This later versioned clarification supersedes only the active Round 16 statements that made archive objects, Search manifests, Context references, or Spacetime references normative/public Exploration inputs, and the claim that 11 curated compositions, 52 states, 816 transitions, or five workflows constituted full functional closure. Earlier sealed packages remain immutable historical evidence.
+
+The sole active user-facing authority is the conceptual vocabulary-and-generic-association Exploration Field defined by `trace-exploration-authority-v2`. Its public unit is a governed concept, not an archive object. Search is a separate project block; Context Canvas and Spacetime are separate TRACE functions; none is a semantic or runtime input to Exploration v2. Generic association means evidence-qualified proximity only, never a typed, causal, directional, temporal, hierarchical, similarity, equivalence, or importance claim.
+
+The frozen database `v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` remains authoritative only for snapshot/public-held identity and the four governed category-entry types: `region`, `theme`, `medium`, and `movement`. Object rows and internal witness references do not enter the production read model, public API, SVG, or PNG.
+
+The full-space counts, functional/backend result, and closure decision are governed by the later Round 16A census, production-HTTP, independent-verification, reproduction, regression, and seal receipts in `docs/research/trace-v49-exploration-full-space-closure-round1/` and `docs/audits/v49-exploration-full-space-closure-round1/raw/`. No pre-existing example count is a closure proof.
+
+`ACTIVE_EXPLORATION_AUTHORITY_COUNT=1`
+
+`SEARCH_STATUS=OUT_OF_SCOPE_NOT_EVALUATED`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+<!-- /TRACE_ROUND16A_AUTHORITY_CLARIFICATION_V2 -->
+
+<!-- TRACE_ROUND16A_CLOSURE_STATUS_V2 -->
+## TRACE v49 Round 16A — full-space closure status
+
+This later versioned clarification supersedes only the active Round 16 statements that made archive objects, Search manifests, Context references, or Spacetime references normative/public Exploration inputs, and the claim that 11 curated compositions, 52 states, or five workflows constituted full functional closure. Prior sealed packages remain historical evidence.
+
+The current v2 authority permits the frozen database only for snapshot identity and exactly four category-entry types. Its public contract prohibits archive object IDs/titles, record links, Context references, and Spacetime references; measured counts are `0`, `0`, `0`, `0`, and `0`. Its semantic layer is the frozen vocabulary/pair/graph/composition/state census; associations are generic evidence-qualified proximity only.
+
+`ROUND16A_DECISION=TRACE_EXPLORATION_FULLY_CLOSED`
+
+`FUNCTION3_FULL_SPACE_CENSUS_COMPLETE=true`
+
+`FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE=true`
+
+`TRACE_FUNCTION3_EXPLORATION_CLOSED=true`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+`FINAL_EXPLORATION_FRONTEND_IMPLEMENTED=false`
+
+`PUBLIC_EXPLORATION_PAGE_ADDED=false`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+
+`DEPLOYED=false`
+
+Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space-closure-round1/`.
+
+`NEXT_GATE=SEPARATE_PROJECT_FRONTEND_READINESS_AND_EXTERNAL_REVIEW`
+<!-- /TRACE_ROUND16A_CLOSURE_STATUS_V2 -->
+
+<!-- TRACE_ROUND16A_CLOSURE_STATUS_V3 -->
+## TRACE v49 Round 16A — post-migration review-branch handoff
+
+This additive handoff preserves the earlier Round 16A closure statement while recording the separately authorized, pre-publication LFS migration of the unpublished research branch. Prior sealed packages and every published Round 8–16 ref remain historical evidence; `origin/main` remains at the frozen source anchor.
+
+`HISTORY_REWRITTEN=true`
+
+`UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN=true`
+
+`PUBLIC_EXISTING_HISTORY_REWRITTEN=false`
+
+`ORIGIN_MAIN_REWRITTEN=false`
+
+`FORCE_PUSH_USED=false`
+
+The current v2 authority permits the frozen database only for snapshot identity and exactly four category-entry types. Its public contract prohibits archive object IDs/titles, record links, Context references, and Spacetime references; measured counts are `0`, `0`, `0`, `0`, and `0`. Its semantic layer is the frozen vocabulary/pair/graph/composition/state census; associations are generic evidence-qualified proximity only.
+
+`ROUND16A_DECISION=TRACE_EXPLORATION_FULLY_CLOSED`
+
+`FUNCTION3_FULL_SPACE_CENSUS_COMPLETE=true`
+
+`FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE=true`
+
+`TRACE_FUNCTION3_EXPLORATION_CLOSED=true`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+`FINAL_EXPLORATION_FRONTEND_IMPLEMENTED=false`
+
+`PUBLIC_EXPLORATION_PAGE_ADDED=false`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+
+`DEPLOYED=false`
+
+Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space-closure-round1/`.
+
+`NEXT_GATE=INDEPENDENT_REVIEW_OF_PUBLISHED_ROUND16A_RESEARCH_BRANCH`
+<!-- /TRACE_ROUND16A_CLOSURE_STATUS_V3 -->

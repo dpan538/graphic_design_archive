@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "npm --prefix frontend run verify:exploration-v3-projection"
+  ],
+  "command": "/bin/sh -c 'npm --prefix frontend run verify:exploration-v3-projection'",
+  "command_id": "1787943314172-cp015-regress-exploration-v3-projection",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 241,
+  "end_timestamp_utc": "2026-08-28T18:55:14Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-regress-exploration-v3-projection",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:55:14Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "4348c4b252b3382a181aa6a521914a7252127152d77ee1ec8b230f8ca7b54075",
+  "timed_out": false
+}

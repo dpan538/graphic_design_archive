@@ -1,0 +1,813 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/association.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "association_kind": {
+            "const": "PAIR"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "arity": {
+            "const": 2
+          },
+          "pair_projection_policy": {
+            "const": "NOT_APPLICABLE"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "association_kind": {
+            "const": "HIGHER_ORDER"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "arity": {
+            "minimum": 3
+          },
+          "pair_projection_policy": {
+            "const": "NONE"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "order_semantics": {
+            "const": "ORDERED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "participants": {
+            "items": {
+              "properties": {
+                "ordinal": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "order_semantics": {
+            "const": "UNORDERED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "participants": {
+            "items": {
+              "properties": {
+                "ordinal": {
+                  "const": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "else": {
+        "properties": {
+          "participants": {
+            "items": {
+              "properties": {
+                "role_id": {
+                  "const": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "roles_meaningful": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "participants": {
+            "items": {
+              "properties": {
+                "role_id": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "activation": {
+            "properties": {
+              "all_gates_pass": {
+                "const": true
+              },
+              "authority_gate": {
+                "const": true
+              },
+              "bounded_scope_gate": {
+                "const": true
+              },
+              "coherence_gate": {
+                "const": true
+              },
+              "conflict_gate": {
+                "const": true
+              },
+              "decision": {
+                "const": "ALLOW"
+              },
+              "evidence_gate": {
+                "const": true
+              },
+              "final_review_gate": {
+                "const": true
+              },
+              "product_policy_gate": {
+                "const": true
+              },
+              "requested_state": {
+                "const": "ACTIVE"
+              },
+              "rights_gate": {
+                "const": true
+              },
+              "synthesis_gate": {
+                "const": true
+              }
+            }
+          },
+          "evidence": {
+            "properties": {
+              "conflicts_resolved": {
+                "const": true
+              },
+              "evidence_complete": {
+                "const": true
+              },
+              "evidence_item_ids": {
+                "minItems": 1
+              },
+              "locator_ids": {
+                "minItems": 1
+              },
+              "negative_or_conflicting_evidence": {
+                "maxItems": 0
+              },
+              "rights_cleared_for_governed_use": {
+                "const": true
+              },
+              "same_configuration": {
+                "const": true
+              },
+              "support_mode": {
+                "enum": [
+                  "DIRECT_PAIR",
+                  "DIRECT_GROUP",
+                  "COHERENT_COMPOSITE",
+                  "MIXED"
+                ]
+              }
+            }
+          },
+          "review": {
+            "allOf": [
+              {
+                "properties": {
+                  "review_state": {
+                    "const": "FINAL"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "authority_state": {
+                    "const": "FINAL"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "global_coherence": {
+                    "const": "PASS"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "bounded_senses_compatible": {
+                    "const": true
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "case_scope_compatible": {
+                    "const": true
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "roles_and_topology_supported": {
+                    "const": true
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "unsupported_bridge_count": {
+                    "const": 0
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "disposition": {
+                    "enum": [
+                      "DIRECT_PAIRWISE_SUPPORT",
+                      "DIRECT_HIGHER_ORDER_SUPPORT",
+                      "COHERENT_COMPOSITE_SUPPORT",
+                      "MIXED_DIRECT_AND_COMPOSITE_SUPPORT"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "uncertainty": {
+            "properties": {
+              "activation_policy": {
+                "const": "ALLOWED_BOUNDED"
+              },
+              "status": {
+                "const": "RESOLVED_BOUNDED"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "realm": {
+            "const": "PRODUCTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {
+              "review_authority": {
+                "enum": [
+                  "RESEARCH_REVIEW",
+                  "EXTERNAL_HUMAN_REVIEW"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "association_kind": {
+            "const": "PAIR"
+          },
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          }
+        },
+        "required": [
+          "association_kind",
+          "lifecycle_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "evidence": {
+            "properties": {
+              "support_mode": {
+                "const": "DIRECT_PAIR"
+              }
+            }
+          },
+          "review": {
+            "properties": {
+              "disposition": {
+                "const": "DIRECT_PAIRWISE_SUPPORT"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "association_kind": {
+            "const": "HIGHER_ORDER"
+          },
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          }
+        },
+        "required": [
+          "association_kind",
+          "lifecycle_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "evidence": {
+            "properties": {
+              "support_mode": {
+                "enum": [
+                  "DIRECT_GROUP",
+                  "COHERENT_COMPOSITE",
+                  "MIXED"
+                ]
+              }
+            }
+          },
+          "review": {
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "DIRECT_HIGHER_ORDER_SUPPORT",
+                  "COHERENT_COMPOSITE_SUPPORT",
+                  "MIXED_DIRECT_AND_COMPOSITE_SUPPORT"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "association_kind": {
+            "const": "HIGHER_ORDER"
+          },
+          "evidence": {
+            "properties": {
+              "support_mode": {
+                "const": "DIRECT_GROUP"
+              }
+            }
+          },
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          }
+        },
+        "required": [
+          "association_kind",
+          "lifecycle_state",
+          "evidence"
+        ]
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {
+              "disposition": {
+                "const": "DIRECT_HIGHER_ORDER_SUPPORT"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "association_kind": {
+            "const": "HIGHER_ORDER"
+          },
+          "evidence": {
+            "properties": {
+              "support_mode": {
+                "const": "COHERENT_COMPOSITE"
+              }
+            }
+          },
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          }
+        },
+        "required": [
+          "association_kind",
+          "lifecycle_state",
+          "evidence"
+        ]
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {
+              "disposition": {
+                "const": "COHERENT_COMPOSITE_SUPPORT"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "association_kind": {
+            "const": "HIGHER_ORDER"
+          },
+          "evidence": {
+            "properties": {
+              "support_mode": {
+                "const": "MIXED"
+              }
+            }
+          },
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          }
+        },
+        "required": [
+          "association_kind",
+          "lifecycle_state",
+          "evidence"
+        ]
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "properties": {
+              "disposition": {
+                "const": "MIXED_DIRECT_AND_COMPOSITE_SUPPORT"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "else": {
+        "properties": {
+          "product_eligibility_disposition": {
+            "enum": [
+              "INELIGIBLE",
+              "DEFERRED",
+              "NOT_APPLICABLE_SYNTHETIC"
+            ]
+          },
+          "product_ineligibility_reason": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "product_path": {
+            "const": null
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "product_eligible": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "activation": {
+            "properties": {
+              "all_gates_pass": {
+                "const": true
+              },
+              "decision": {
+                "const": "ALLOW"
+              },
+              "product_policy_gate": {
+                "const": true
+              }
+            }
+          },
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          },
+          "product_eligibility_disposition": {
+            "const": "ELIGIBLE"
+          },
+          "product_ineligibility_reason": {
+            "const": null
+          },
+          "product_path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "realm": {
+            "const": "PRODUCTION"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle_state": {
+            "const": "ACTIVE"
+          },
+          "product_eligible": {
+            "const": false
+          },
+          "realm": {
+            "const": "PRODUCTION"
+          }
+        },
+        "required": [
+          "realm",
+          "lifecycle_state",
+          "product_eligible"
+        ]
+      },
+      "then": {
+        "properties": {
+          "product_eligibility_disposition": {
+            "enum": [
+              "INELIGIBLE",
+              "DEFERRED"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "activation": {
+      "$ref": "common.schema.json#/$defs/activationGate"
+    },
+    "arity": {
+      "minimum": 2,
+      "type": "integer"
+    },
+    "association_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "association_kind": {
+      "enum": [
+        "PAIR",
+        "HIGHER_ORDER"
+      ],
+      "type": "string"
+    },
+    "association_revision_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence": {
+      "$ref": "common.schema.json#/$defs/evidenceAssessment"
+    },
+    "identity_material_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "internal_pair_association_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "internal_pair_links": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "endpoint_sense_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "pair_association_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "pair_association_revision_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "pair_participant_incidence_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "participant_incidence_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "pair_association_id",
+          "pair_association_revision_id",
+          "participant_incidence_ids",
+          "pair_participant_incidence_ids",
+          "endpoint_sense_ids"
+        ],
+        "type": "object"
+      },
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "lifecycle_state": {
+      "enum": [
+        "INQUIRY_ONLY",
+        "INACTIVE",
+        "ACTIVE",
+        "REJECTED"
+      ],
+      "type": "string"
+    },
+    "order_semantics": {
+      "enum": [
+        "UNORDERED",
+        "ORDERED"
+      ],
+      "type": "string"
+    },
+    "pair_projection_policy": {
+      "enum": [
+        "NOT_APPLICABLE",
+        "NONE"
+      ],
+      "type": "string"
+    },
+    "participants": {
+      "items": {
+        "$ref": "common.schema.json#/$defs/participantIncidence"
+      },
+      "minItems": 2,
+      "type": "array"
+    },
+    "presentation": {
+      "additionalProperties": false,
+      "properties": {
+        "realization_hint": {
+          "enum": [
+            "PAIR_EDGE",
+            "HYPEREDGE_HUB"
+          ],
+          "type": "string"
+        },
+        "theme": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "realization_hint",
+        "theme"
+      ],
+      "type": "object"
+    },
+    "presentation_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "product_eligibility_disposition": {
+      "enum": [
+        "ELIGIBLE",
+        "INELIGIBLE",
+        "DEFERRED",
+        "NOT_APPLICABLE_SYNTHETIC"
+      ],
+      "type": "string"
+    },
+    "product_eligible": {
+      "type": "boolean"
+    },
+    "product_ineligibility_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "product_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "realm": {
+      "enum": [
+        "PRODUCTION",
+        "SYNTHETIC_CONTROL"
+      ],
+      "type": "string"
+    },
+    "review": {
+      "$ref": "common.schema.json#/$defs/governedReview"
+    },
+    "roles_meaningful": {
+      "type": "boolean"
+    },
+    "scope": {
+      "$ref": "common.schema.json#/$defs/scope"
+    },
+    "semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "semantic_version": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "uncertainty": {
+      "$ref": "common.schema.json#/$defs/uncertaintyAssessment"
+    }
+  },
+  "required": [
+    "association_id",
+    "association_revision_id",
+    "association_kind",
+    "realm",
+    "semantic_version",
+    "arity",
+    "order_semantics",
+    "roles_meaningful",
+    "scope",
+    "participants",
+    "evidence",
+    "review",
+    "activation",
+    "uncertainty",
+    "lifecycle_state",
+    "pair_projection_policy",
+    "internal_pair_association_ids",
+    "internal_pair_links",
+    "product_eligible",
+    "product_path",
+    "product_eligibility_disposition",
+    "product_ineligibility_reason",
+    "identity_material_sha256",
+    "semantic_sha256",
+    "presentation",
+    "presentation_sha256"
+  ],
+  "title": "TRACE Exploration v3 governed association revision",
+  "type": "object"
+}

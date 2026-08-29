@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_round16a_global_reconciliation.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/build_round16a_global_reconciliation.py --check",
+  "command_id": "1787937906763-cp012-final-check-round16a-primary",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 38848,
+  "end_timestamp_utc": "2026-08-28T17:25:45Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-final-check-round16a-primary",
+  "phase_id": "CHECKPOINT-012-FINAL-REGRESSION-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:25:06Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "bfbd807b614f0e85c6774b84f93cb53cbf32aeec00ad1841ed6f0c91c237823d",
+  "timed_out": false
+}

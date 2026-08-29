@@ -1,0 +1,1177 @@
+{
+  "closure_evidence_status": "PASS",
+  "conflicts": [],
+  "criterion_failures": [],
+  "failed_source_labels": [],
+  "metric_sources": {
+    "ACADEMICALLY_UNSUPPORTED_ACTIVE_VOCABULARY_COUNT": [
+      "independent#/metrics"
+    ],
+    "ACTIVE_ASSOCIATION_COUNT": [
+      "independent#/metrics"
+    ],
+    "ACTIVE_EXPLORATION_AUTHORITY_COUNT": [
+      "gate_status#/receipt"
+    ],
+    "ACTIVE_VOCABULARY_COUNT": [
+      "independent#/metrics"
+    ],
+    "ACTUAL_PRODUCTION_HTTP_TESTED": [
+      "api_functional",
+      "production_http"
+    ],
+    "ALL_DETERMINISTIC_ARTIFACTS_MATCH": [
+      "reproduction#/"
+    ],
+    "ALL_LEGAL_SUBGRAPHS_ENUMERATED": [
+      "independent#/metrics"
+    ],
+    "ALL_LEGAL_TOPOLOGIES_EVALUATED": [
+      "independent#/metrics"
+    ],
+    "ALL_REACHABLE_STATES_ENUMERATED": [
+      "independent#/metrics"
+    ],
+    "ALL_REQUIRED_HASHES_MATCH": [
+      "reproduction#/"
+    ],
+    "ALL_UNORDERED_PAIRS_ENUMERATED": [
+      "independent#/metrics"
+    ],
+    "API_CASE_COUNT": [
+      "independent#/metrics"
+    ],
+    "API_FAILURE_COUNT": [
+      "api_functional",
+      "independent#/metrics"
+    ],
+    "API_PASS_COUNT": [
+      "independent#/metrics"
+    ],
+    "API_SCHEMA_VALIDATION": [
+      "gate_status#/receipt"
+    ],
+    "API_UNEXPECTED_5XX_COUNT": [
+      "independent#/metrics"
+    ],
+    "ARTIFACT_SERIALIZATION_DURATION_MS": [
+      "build_time"
+    ],
+    "ASSOCIATION_ADMITTED_BY_ANY_COMPOSITION_COUNT": [
+      "independent#/metrics"
+    ],
+    "ASSOCIATION_EXPORTED_IN_ANY_CARD_COUNT": [
+      "independent#/metrics"
+    ],
+    "ASSOCIATION_USED_BY_ANY_COMPOSITION_COUNT": [
+      "independent#/metrics"
+    ],
+    "ASSOCIATION_VISIBLE_IN_ANY_STATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "AUDIT_SEAL": [
+      "audit_seal#/metrics",
+      "audit_seal#/receipt",
+      "gate_status#/receipt"
+    ],
+    "AUTHORITY_CONTRADICTION_COUNT": [
+      "gate_status#/receipt"
+    ],
+    "AUTHORITY_RECONCILIATION_READY": [
+      "gate_status#/receipt"
+    ],
+    "AUTHORIZED_LFS_MIGRATION": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt"
+    ],
+    "AUTHORIZED_LFS_PATH_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "CANONICALISATION_DURATION_MS": [
+      "build_time"
+    ],
+    "CANONICAL_ASSOCIATION_SUBGRAPH_COUNT": [
+      "independent#/metrics"
+    ],
+    "CANONICAL_COMPOSITION_COUNT_INDEPENDENTLY_VERIFIED": [
+      "independent#/metrics"
+    ],
+    "CATEGORY_ENTRY_COUNT": [
+      "independent#/metrics"
+    ],
+    "CHECKPOINT_COMMIT_COUNT": [
+      "execution_log",
+      "gate_status#/receipt"
+    ],
+    "CHECKPOINT_SEQUENCE_PRESERVED": [
+      "authorized_migration#/receipt"
+    ],
+    "CLEAN_WORKTREE_REPRODUCTION": [
+      "reproduction#/"
+    ],
+    "COLD_START_MS": [
+      "production_http"
+    ],
+    "COMMAND_LOG_COUNT": [
+      "execution_log"
+    ],
+    "COMPOSITION_ENUMERATION_DURATION_MS": [
+      "build_time"
+    ],
+    "COMPOSITION_REGISTRY_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "CONCURRENCY_TEST_COMPLETED": [
+      "concurrency"
+    ],
+    "CONCURRENT_PNG_TEST_COMPLETED": [
+      "concurrency"
+    ],
+    "CONTEXT_API_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "CONTEXT_CODE_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "CONTEXT_INDEX_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "CONTEXT_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "CONTEXT_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": [
+      "gate_status#/receipt"
+    ],
+    "CONTEXT_RUNTIME_DEPENDENCY_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "CONTEXT_SCHEMA_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "CONTEXT_SEMANTIC_INPUT_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "CONTINUOUS_PROCESS_LOG_READY": [
+      "gate_status#/receipt"
+    ],
+    "COUNT_HASH_RECONCILIATION": [
+      "gate_status#/receipt"
+    ],
+    "DATABASE_FREEZE": [
+      "gate_status#/receipt"
+    ],
+    "DEPLOYED": [
+      "gate_status#/receipt"
+    ],
+    "DETERMINISTIC_ARTIFACT_MISMATCH_COUNT": [
+      "reproduction#/"
+    ],
+    "DETERMINISTIC_REPRODUCTION": [
+      "gate_status#/receipt"
+    ],
+    "DIRECT_DATABASE_CATEGORY_BINDING_READY": [
+      "gate_status#/receipt"
+    ],
+    "DIRECT_DATABASE_SNAPSHOT_VALIDATED": [
+      "gate_status#/receipt"
+    ],
+    "ENUMERATION_PEAK_RSS_BYTES": [
+      "build_time"
+    ],
+    "ENUMERATION_TEMP_STORAGE_BYTES": [
+      "build_time"
+    ],
+    "EXECUTION_EVENT_COUNT": [
+      "execution_log"
+    ],
+    "EXECUTION_EVENT_HASH_FAILURE_COUNT": [
+      "execution_log"
+    ],
+    "EXECUTION_LOG_SEQUENCE_GAP_COUNT": [
+      "execution_log"
+    ],
+    "EXPORT_CENSUS_GENERATION_DURATION_MS": [
+      "build_time"
+    ],
+    "EXPORT_CENSUS_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "EXPORT_VALIDATION_DURATION_MS": [
+      "build_time"
+    ],
+    "EXPORT_VARIANT_COUNT": [
+      "independent#/metrics"
+    ],
+    "EXTERNAL_EVIDENCE_CACHE_BYTES": [
+      "build_time"
+    ],
+    "EXTERNAL_EVIDENCE_PROCESSING_DURATION_MS": [
+      "build_time"
+    ],
+    "EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED": [
+      "gate_status#/receipt"
+    ],
+    "FINAL_AUDIT_STORAGE_BYTES": [
+      "build_time"
+    ],
+    "FINAL_CODE_SHA": [
+      "reproduction#/"
+    ],
+    "FINAL_EXPLORATION_FRONTEND_IMPLEMENTED": [
+      "gate_status#/receipt",
+      "repository_boundary#/receipt"
+    ],
+    "FINAL_GATE_CRITERION_FAILURE_COUNT": [
+      "computed by build_final_gate_evidence.py"
+    ],
+    "FINAL_GATE_SOURCE_FAILURE_COUNT": [
+      "computed by build_final_gate_evidence.py"
+    ],
+    "FINAL_TREE_SHA": [
+      "reproduction#/"
+    ],
+    "FIRST_REQUEST_MS": [
+      "production_http"
+    ],
+    "FORCE_PUSH_COMMAND_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "FORCE_PUSH_USED": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
+    ],
+    "FROZEN_AUTHORITY_INPUT_HASH_MATCH": [
+      "reproduction#/"
+    ],
+    "FULL_AUDIT_CENSUS_BYTES": [
+      "build_time"
+    ],
+    "FULL_COMMAND_LOG_READY": [
+      "execution_log"
+    ],
+    "GIT_FSCK": [
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
+    ],
+    "GIT_LFS_FSCK": [
+      "gate_status#/receipt"
+    ],
+    "GRAPH_BUILD_DURATION_MS": [
+      "build_time"
+    ],
+    "GRAPH_COMPONENT_COUNT": [
+      "independent#/metrics"
+    ],
+    "GRAPH_DENSITY": [
+      "independent#/metrics"
+    ],
+    "GRAPH_EDGE_COUNT": [
+      "independent#/metrics"
+    ],
+    "GRAPH_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "GRAPH_ISOLATED_NODE_COUNT": [
+      "independent#/metrics"
+    ],
+    "GRAPH_NODE_COUNT": [
+      "independent#/metrics"
+    ],
+    "HELD_DATA_LEAK_COUNT": [
+      "api_functional"
+    ],
+    "HISTORY_REWRITE_AUTHORIZED": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt"
+    ],
+    "HISTORY_REWRITE_SCOPE_EXACT": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt"
+    ],
+    "HISTORY_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
+    ],
+    "HTTP_FAILURE_COUNT": [
+      "production_http"
+    ],
+    "HTTP_SUCCESS_COUNT": [
+      "production_http"
+    ],
+    "HTTP_TIMEOUT_COUNT": [
+      "production_http"
+    ],
+    "HYDRATED_CURRENT_PAYLOAD_HASH_MATCH_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "HYDRATED_PAYLOAD_HASH_MATCH": [
+      "authorized_migration#/receipt"
+    ],
+    "INDEPENDENT_COUNT_MISMATCH_COUNT": [
+      "independent#/metrics"
+    ],
+    "INDEPENDENT_HASH_MISMATCH_COUNT": [
+      "independent#/metrics"
+    ],
+    "INDEPENDENT_VERIFICATION": [
+      "gate_status#/receipt"
+    ],
+    "INDEPENDENT_VERIFICATION_HASH_MATCH": [
+      "reproduction#/"
+    ],
+    "INVALID_TARGET_ACCEPTED_COUNT": [
+      "api_functional"
+    ],
+    "INVALID_TOPOLOGY_CANDIDATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "INVENTED_ACTIVE_VOCABULARY_COUNT": [
+      "independent#/metrics"
+    ],
+    "JSON_API_MAX_MS": [
+      "production_http"
+    ],
+    "JSON_API_P50_MS": [
+      "production_http"
+    ],
+    "JSON_API_P95_MS": [
+      "production_http"
+    ],
+    "JSON_API_P99_MS": [
+      "production_http"
+    ],
+    "LFS_FSCK": [
+      "authorized_migration#/receipt"
+    ],
+    "LFS_POINTER_VALIDATION": [
+      "authorized_migration#/receipt"
+    ],
+    "LFS_POINTER_VERSION_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "LOCAL_UNAUTHORIZED_REF_CHANGE_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "MAPPED_COMMIT_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "MERGE_COMMIT_CREATED": [
+      "gate_status#/receipt"
+    ],
+    "NETWORK_REQUEST_COUNT": [
+      "authorized_migration#/metrics",
+      "reproduction#/"
+    ],
+    "ORDINARY_OVERSIZED_BLOB_COUNT_AFTER": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGINAL_CHECKPOINT_COUNT_AFTER": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGINAL_CHECKPOINT_COUNT_BEFORE": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGIN_MAIN_AFTER_SHA": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGIN_MAIN_BEFORE_SHA": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGIN_MAIN_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
+    ],
+    "PAIR_CANDIDATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "PAIR_CENSUS_DURATION_MS": [
+      "build_time"
+    ],
+    "PAIR_CENSUS_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "PAIR_UNIVERSE_COUNT": [
+      "independent#/metrics"
+    ],
+    "PARAMETER_UNIVERSE_FROZEN": [
+      "independent#/metrics"
+    ],
+    "PEAK_CPU_PERCENT": [
+      "runtime_memory"
+    ],
+    "PEAK_EVENT_LOOP_DELAY_MS": [
+      "runtime_memory"
+    ],
+    "PEAK_HEAP_USED_BYTES": [
+      "runtime_memory"
+    ],
+    "PEAK_RSS_BYTES": [
+      "runtime_memory"
+    ],
+    "PERFORMANCE_TIMING_HASH_COMPARISON_REQUIRED": [
+      "reproduction#/"
+    ],
+    "PNG_CORRUPTION_COUNT": [
+      "production_http"
+    ],
+    "PNG_FAILURE_COUNT": [
+      "independent#/metrics"
+    ],
+    "PNG_MANIFEST_VALIDATED_COUNT": [
+      "independent#/metrics"
+    ],
+    "PNG_MAX_MS": [
+      "production_http"
+    ],
+    "PNG_P50_MS": [
+      "production_http"
+    ],
+    "PNG_P95_MS": [
+      "production_http"
+    ],
+    "PNG_P99_MS": [
+      "production_http"
+    ],
+    "PNG_RENDERED_COUNT": [
+      "independent#/metrics"
+    ],
+    "PNG_REPLAY_MATCH_COUNT": [
+      "independent#/metrics"
+    ],
+    "PNG_VALIDATED_COUNT": [
+      "independent#/metrics"
+    ],
+    "PNG_VALIDATION_FAILURE_COUNT": [
+      "independent#/metrics"
+    ],
+    "POST_MIGRATION_CHECKPOINT_APPEND_COUNT": [
+      "authorized_migration#/receipt"
+    ],
+    "POST_MIGRATION_HARDENED_SHA": [
+      "gate_status#/receipt"
+    ],
+    "POST_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "PRE_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "PRIMARY_ROOT": [
+      "reproduction#/"
+    ],
+    "PRODUCTION_BUILD": [
+      "gate_status#/receipt"
+    ],
+    "PRODUCTION_COMPOSITION_COUNT": [
+      "independent#/metrics"
+    ],
+    "PRODUCTION_MODEL_HEAP_DELTA_BYTES": [
+      "build_time",
+      "production_http"
+    ],
+    "PRODUCTION_MODEL_LOAD_MS": [
+      "production_http"
+    ],
+    "PRODUCTION_MODEL_RSS_DELTA_BYTES": [
+      "build_time",
+      "production_http"
+    ],
+    "PRODUCTION_READ_MODEL_BYTES": [
+      "build_time",
+      "independent#/metrics"
+    ],
+    "PRODUCTION_READ_MODEL_HASH_MATCH": [
+      "reproduction#/"
+    ],
+    "PRODUCTION_READ_MODEL_SHA256": [
+      "independent#/metrics"
+    ],
+    "PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN": [
+      "gate_status#/receipt",
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_ARCHIVE_OBJECT_REFERENCE_COUNT": [
+      "independent#/metrics"
+    ],
+    "PUBLIC_CONTEXT_SPACETIME_REFERENCE_COUNT": [
+      "independent#/metrics"
+    ],
+    "PUBLIC_EXISTING_HISTORY_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_ID_COUNT": [
+      "api_functional",
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_REFERENCE_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_TITLE_COUNT": [
+      "api_functional",
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_CONTEXT_REFERENCE_COUNT": [
+      "api_functional",
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_DATABASE_INTERNAL_REFERENCE_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_HELD_DATA_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_PAGE_ADDED": [
+      "gate_status#/receipt",
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_RECORD_LINK_COUNT": [
+      "api_functional",
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_SEARCH_REFERENCE_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_SOURCE_INTERNAL_REFERENCE_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_SOURCE_LOCATOR_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_SPACETIME_REFERENCE_COUNT": [
+      "api_functional",
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_EXPLORATION_THUMBNAIL_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_NAVIGATION_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_REMOTE_REF_MAP_HASH_MATCH": [
+      "authorized_migration#/receipt"
+    ],
+    "PUBLIC_SEARCH_DEPENDENCY_COUNT": [
+      "independent#/metrics"
+    ],
+    "PUBLIC_V2_ALLOWED_NEGATIVE_REFERENCE_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "PUBLIC_V2_FORBIDDEN_EXPOSURE_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "REMOTE_BRANCH_EXISTED_BEFORE_MIGRATION": [
+      "authorized_migration#/receipt"
+    ],
+    "REMOTE_UNAUTHORIZED_REF_CHANGE_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "REPOSITORY_BOUNDARY": [
+      "gate_status#/receipt",
+      "repository_boundary#/receipt"
+    ],
+    "REPOSITORY_HYGIENE": [
+      "gate_status#/receipt"
+    ],
+    "REPRODUCIBILITY_VERIFICATION": [
+      "reproduction",
+      "reproduction#/"
+    ],
+    "REPRODUCTION_ROOT": [
+      "reproduction#/"
+    ],
+    "REWRITE_NONALLOWLIST_PATH_COUNT": [
+      "authorized_migration#/receipt"
+    ],
+    "ROUND10_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND11_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND12_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND13_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND14_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND15_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND16A_MAPPED_COMMIT_COUNT_AFTER": [
+      "authorized_migration#/receipt"
+    ],
+    "ROUND16A_MAPPED_COMMIT_COUNT_BEFORE": [
+      "authorized_migration#/receipt"
+    ],
+    "ROUND16_LEGACY_COMPOSITION_RECONCILED_COUNT": [
+      "independent#/metrics"
+    ],
+    "ROUND16_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND8_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "ROUND9_REGRESSION": [
+      "regression#/receipt"
+    ],
+    "SEARCH_API_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SEARCH_CODE_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SEARCH_INDEX_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SEARCH_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SEARCH_RUNTIME_DEPENDENCY_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SEARCH_SCHEMA_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SEARCH_SEMANTIC_INPUT_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SEARCH_STATUS": [
+      "repository_boundary#/receipt"
+    ],
+    "SEED_VARIANT_COUNT": [
+      "independent#/metrics"
+    ],
+    "SEMANTIC_HASH_MISMATCH_COUNT": [
+      "production_http"
+    ],
+    "SOURCE_SHA_PRESERVED": [
+      "authorized_migration#/receipt"
+    ],
+    "SOURCE_TREE_SHA": [
+      "reproduction#/"
+    ],
+    "SOURCE_TREE_SHA_PRESERVED": [
+      "authorized_migration#/receipt"
+    ],
+    "SPACETIME_API_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SPACETIME_CODE_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SPACETIME_INDEX_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SPACETIME_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SPACETIME_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": [
+      "gate_status#/receipt"
+    ],
+    "SPACETIME_RUNTIME_DEPENDENCY_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SPACETIME_SCHEMA_MUTATION_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "SPACETIME_SEMANTIC_INPUT_COUNT": [
+      "repository_boundary#/receipt"
+    ],
+    "STALE_STATE_ACCEPTED_COUNT": [
+      "api_functional"
+    ],
+    "STATE_CENSUS_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "STATE_CORRUPTION_COUNT": [
+      "production_http"
+    ],
+    "STATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "STATE_GENERATION_DURATION_MS": [
+      "build_time"
+    ],
+    "STATE_MUTATION_COUNT": [
+      "independent#/metrics"
+    ],
+    "SUSTAINED_DURATION_MS": [
+      "sustained_load"
+    ],
+    "SUSTAINED_LOAD_TEST_COMPLETED": [
+      "sustained_load"
+    ],
+    "SUSTAINED_MINIMUM_DURATION_MS": [
+      "sustained_load"
+    ],
+    "SUSTAINED_MINIMUM_REQUEST_COUNT": [
+      "sustained_load"
+    ],
+    "SUSTAINED_REQUEST_COUNT": [
+      "sustained_load"
+    ],
+    "TOPOLOGY_CANDIDATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "TOTAL_HTTP_REQUEST_COUNT": [
+      "production_http"
+    ],
+    "TRANSITION_CENSUS_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "TRANSITION_COUNT": [
+      "independent#/metrics"
+    ],
+    "TRANSITION_DIFFERENT_NEXT_STATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "TRANSITION_FAILURE_COUNT": [
+      "independent#/metrics"
+    ],
+    "TRANSITION_FAIL_COUNT": [
+      "independent#/metrics"
+    ],
+    "TRANSITION_GENERATION_DURATION_MS": [
+      "build_time"
+    ],
+    "TYPECHECK": [
+      "gate_status#/receipt"
+    ],
+    "UNATTESTED_ACTIVE_VOCABULARY_COUNT": [
+      "independent#/metrics"
+    ],
+    "UNAUTHORIZED_TREE_DELTA_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "UNBOUNDED_MEMORY_GROWTH_COUNT": [
+      "runtime_memory"
+    ],
+    "UNEXPECTED_5XX_COUNT": [
+      "api_functional",
+      "production_http"
+    ],
+    "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
+    ],
+    "UNREACHABLE_PRODUCTION_STATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "VALIDATED_ASSOCIATION_GRAPH_FROZEN": [
+      "independent#/metrics"
+    ],
+    "VALID_TOPOLOGY_COMPOSITION_COUNT": [
+      "independent#/metrics"
+    ],
+    "VOCABULARY_CANDIDATE_COUNT": [
+      "independent#/metrics"
+    ],
+    "VOCABULARY_CANDIDATE_UNIVERSE_COUNT": [
+      "independent#/metrics"
+    ],
+    "VOCABULARY_CANDIDATE_UNIVERSE_FROZEN": [
+      "independent#/metrics"
+    ],
+    "VOCABULARY_CENSUS_DURATION_MS": [
+      "build_time"
+    ],
+    "VOCABULARY_CENSUS_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "WORKFLOW_CENSUS_HASH_MATCH": [
+      "reproduction#/",
+      "reproduction#/hash_matches"
+    ],
+    "WORKFLOW_COUNT": [
+      "independent#/metrics"
+    ],
+    "WORKFLOW_GENERATION_DURATION_MS": [
+      "build_time"
+    ],
+    "WORKFLOW_LENGTH_MAX": [
+      "independent#/metrics"
+    ],
+    "WORKFLOW_LENGTH_MEAN": [
+      "independent#/metrics"
+    ],
+    "WORKFLOW_LENGTH_MEDIAN": [
+      "independent#/metrics"
+    ],
+    "WORKFLOW_LENGTH_MIN": [
+      "independent#/metrics"
+    ],
+    "WORKFLOW_REPLAY_COUNT": [
+      "independent#/metrics"
+    ],
+    "WORKFLOW_REPLAY_FAILURE_COUNT": [
+      "independent#/metrics"
+    ]
+  },
+  "metrics": {
+    "ACADEMICALLY_UNSUPPORTED_ACTIVE_VOCABULARY_COUNT": 0,
+    "ACTIVE_ASSOCIATION_COUNT": 21,
+    "ACTIVE_EXPLORATION_AUTHORITY_COUNT": 1,
+    "ACTIVE_VOCABULARY_COUNT": 31,
+    "ACTUAL_PRODUCTION_HTTP_TESTED": true,
+    "ALL_DETERMINISTIC_ARTIFACTS_MATCH": true,
+    "ALL_LEGAL_SUBGRAPHS_ENUMERATED": true,
+    "ALL_LEGAL_TOPOLOGIES_EVALUATED": true,
+    "ALL_REACHABLE_STATES_ENUMERATED": true,
+    "ALL_REQUIRED_HASHES_MATCH": true,
+    "ALL_UNORDERED_PAIRS_ENUMERATED": true,
+    "API_CASE_COUNT": 755855,
+    "API_FAILURE_COUNT": 0,
+    "API_PASS_COUNT": 755855,
+    "API_SCHEMA_VALIDATION": "PASS",
+    "API_UNEXPECTED_5XX_COUNT": 0,
+    "ARTIFACT_SERIALIZATION_DURATION_MS": 6334.108,
+    "ASSOCIATION_ADMITTED_BY_ANY_COMPOSITION_COUNT": 21,
+    "ASSOCIATION_EXPORTED_IN_ANY_CARD_COUNT": 21,
+    "ASSOCIATION_USED_BY_ANY_COMPOSITION_COUNT": 21,
+    "ASSOCIATION_VISIBLE_IN_ANY_STATE_COUNT": 21,
+    "AUDIT_SEAL": "PASS",
+    "AUTHORITY_CONTRADICTION_COUNT": 0,
+    "AUTHORITY_RECONCILIATION_READY": true,
+    "AUTHORIZED_LFS_MIGRATION": "PASS",
+    "AUTHORIZED_LFS_PATH_COUNT": 2,
+    "CANONICALISATION_DURATION_MS": 3.698,
+    "CANONICAL_ASSOCIATION_SUBGRAPH_COUNT": 58,
+    "CANONICAL_COMPOSITION_COUNT_INDEPENDENTLY_VERIFIED": true,
+    "CATEGORY_ENTRY_COUNT": 81,
+    "CHECKPOINT_COMMIT_COUNT": 9,
+    "CHECKPOINT_SEQUENCE_PRESERVED": true,
+    "CLEAN_WORKTREE_REPRODUCTION": true,
+    "COLD_START_MS": 1177.4265830172226,
+    "COMMAND_LOG_COUNT": 195,
+    "COMPOSITION_ENUMERATION_DURATION_MS": 20.423,
+    "COMPOSITION_REGISTRY_HASH_MATCH": true,
+    "CONCURRENCY_TEST_COMPLETED": true,
+    "CONCURRENT_PNG_TEST_COMPLETED": true,
+    "CONTEXT_API_MUTATION_COUNT": 0,
+    "CONTEXT_CODE_MUTATION_COUNT": 0,
+    "CONTEXT_INDEX_MUTATION_COUNT": 0,
+    "CONTEXT_MUTATION_COUNT": 0,
+    "CONTEXT_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": 0,
+    "CONTEXT_RUNTIME_DEPENDENCY_COUNT": 0,
+    "CONTEXT_SCHEMA_MUTATION_COUNT": 0,
+    "CONTEXT_SEMANTIC_INPUT_COUNT": 0,
+    "CONTINUOUS_PROCESS_LOG_READY": true,
+    "COUNT_HASH_RECONCILIATION": "PASS",
+    "DATABASE_FREEZE": "PASS",
+    "DEPLOYED": false,
+    "DETERMINISTIC_ARTIFACT_MISMATCH_COUNT": 0,
+    "DETERMINISTIC_REPRODUCTION": "PASS",
+    "DIRECT_DATABASE_CATEGORY_BINDING_READY": true,
+    "DIRECT_DATABASE_SNAPSHOT_VALIDATED": true,
+    "ENUMERATION_PEAK_RSS_BYTES": 684081152,
+    "ENUMERATION_TEMP_STORAGE_BYTES": 0,
+    "EXECUTION_EVENT_COUNT": 388,
+    "EXECUTION_EVENT_HASH_FAILURE_COUNT": 0,
+    "EXECUTION_LOG_SEQUENCE_GAP_COUNT": 0,
+    "EXPORT_CENSUS_GENERATION_DURATION_MS": 57.955,
+    "EXPORT_CENSUS_HASH_MATCH": true,
+    "EXPORT_VALIDATION_DURATION_MS": 1718921,
+    "EXPORT_VARIANT_COUNT": 11520,
+    "EXTERNAL_EVIDENCE_CACHE_BYTES": 2785894,
+    "EXTERNAL_EVIDENCE_PROCESSING_DURATION_MS": 740440,
+    "EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED": false,
+    "FINAL_AUDIT_STORAGE_BYTES": 1449063337,
+    "FINAL_CODE_SHA": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+    "FINAL_EXPLORATION_FRONTEND_IMPLEMENTED": false,
+    "FINAL_GATE_CRITERION_FAILURE_COUNT": 0,
+    "FINAL_GATE_SOURCE_FAILURE_COUNT": 0,
+    "FINAL_TREE_SHA": "5821075a7e69c4332c7cfb6ff36cae53a077495a",
+    "FIRST_REQUEST_MS": 916.7812920641154,
+    "FORCE_PUSH_COMMAND_COUNT": 0,
+    "FORCE_PUSH_USED": false,
+    "FROZEN_AUTHORITY_INPUT_HASH_MATCH": true,
+    "FULL_AUDIT_CENSUS_BYTES": 1449063337,
+    "FULL_COMMAND_LOG_READY": true,
+    "GIT_FSCK": "PASS",
+    "GIT_LFS_FSCK": "PASS",
+    "GRAPH_BUILD_DURATION_MS": 136,
+    "GRAPH_COMPONENT_COUNT": 15,
+    "GRAPH_DENSITY": 0.04516129032258064,
+    "GRAPH_EDGE_COUNT": 21,
+    "GRAPH_HASH_MATCH": true,
+    "GRAPH_ISOLATED_NODE_COUNT": 5,
+    "GRAPH_NODE_COUNT": 31,
+    "HELD_DATA_LEAK_COUNT": 0,
+    "HISTORY_REWRITE_AUTHORIZED": true,
+    "HISTORY_REWRITE_SCOPE_EXACT": true,
+    "HISTORY_REWRITTEN": true,
+    "HTTP_FAILURE_COUNT": 0,
+    "HTTP_SUCCESS_COUNT": 1069864,
+    "HTTP_TIMEOUT_COUNT": 0,
+    "HYDRATED_CURRENT_PAYLOAD_HASH_MATCH_COUNT": 2,
+    "HYDRATED_PAYLOAD_HASH_MATCH": true,
+    "INDEPENDENT_COUNT_MISMATCH_COUNT": 0,
+    "INDEPENDENT_HASH_MISMATCH_COUNT": 0,
+    "INDEPENDENT_VERIFICATION": "PASS",
+    "INDEPENDENT_VERIFICATION_HASH_MATCH": true,
+    "INVALID_TARGET_ACCEPTED_COUNT": 0,
+    "INVALID_TOPOLOGY_CANDIDATE_COUNT": 267,
+    "INVENTED_ACTIVE_VOCABULARY_COUNT": 0,
+    "JSON_API_MAX_MS": 525.904708,
+    "JSON_API_P50_MS": 0.7902500000000146,
+    "JSON_API_P95_MS": 21.36737499999981,
+    "JSON_API_P99_MS": 27.072249999999713,
+    "LFS_FSCK": "PASS",
+    "LFS_POINTER_VALIDATION": "PASS",
+    "LFS_POINTER_VERSION_COUNT": 5,
+    "LOCAL_UNAUTHORIZED_REF_CHANGE_COUNT": 0,
+    "MAPPED_COMMIT_COUNT": 8,
+    "MERGE_COMMIT_CREATED": false,
+    "NETWORK_REQUEST_COUNT": 0,
+    "ORDINARY_OVERSIZED_BLOB_COUNT_AFTER": 0,
+    "ORIGINAL_CHECKPOINT_COUNT_AFTER": 7,
+    "ORIGINAL_CHECKPOINT_COUNT_BEFORE": 7,
+    "ORIGIN_MAIN_AFTER_SHA": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "ORIGIN_MAIN_BEFORE_SHA": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "ORIGIN_MAIN_REWRITTEN": false,
+    "PAIR_CANDIDATE_COUNT": 465,
+    "PAIR_CENSUS_DURATION_MS": 58,
+    "PAIR_CENSUS_HASH_MATCH": true,
+    "PAIR_UNIVERSE_COUNT": 465,
+    "PARAMETER_UNIVERSE_FROZEN": true,
+    "PEAK_CPU_PERCENT": 294.0855355503724,
+    "PEAK_EVENT_LOOP_DELAY_MS": 670.564351,
+    "PEAK_HEAP_USED_BYTES": 1446408720,
+    "PEAK_RSS_BYTES": 6347472896,
+    "PERFORMANCE_TIMING_HASH_COMPARISON_REQUIRED": false,
+    "PNG_CORRUPTION_COUNT": 0,
+    "PNG_FAILURE_COUNT": 0,
+    "PNG_MANIFEST_VALIDATED_COUNT": 11520,
+    "PNG_MAX_MS": 886.959417,
+    "PNG_P50_MS": 159.2435000000005,
+    "PNG_P95_MS": 370.15808300000026,
+    "PNG_P99_MS": 670.1243750000003,
+    "PNG_RENDERED_COUNT": 11520,
+    "PNG_REPLAY_MATCH_COUNT": 11520,
+    "PNG_VALIDATED_COUNT": 11520,
+    "PNG_VALIDATION_FAILURE_COUNT": 0,
+    "POST_MIGRATION_CHECKPOINT_APPEND_COUNT": 1,
+    "POST_MIGRATION_HARDENED_SHA": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+    "POST_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": 0,
+    "PRE_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": 5,
+    "PRIMARY_ROOT": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "PRODUCTION_BUILD": "PASS",
+    "PRODUCTION_COMPOSITION_COUNT": 228,
+    "PRODUCTION_MODEL_HEAP_DELTA_BYTES": 22232328,
+    "PRODUCTION_MODEL_LOAD_MS": 37.79774999999999,
+    "PRODUCTION_MODEL_RSS_DELTA_BYTES": 43614208,
+    "PRODUCTION_READ_MODEL_BYTES": 8802929,
+    "PRODUCTION_READ_MODEL_HASH_MATCH": true,
+    "PRODUCTION_READ_MODEL_SHA256": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9",
+    "PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN": false,
+    "PUBLIC_ARCHIVE_OBJECT_REFERENCE_COUNT": 0,
+    "PUBLIC_CONTEXT_SPACETIME_REFERENCE_COUNT": 0,
+    "PUBLIC_EXISTING_HISTORY_REWRITTEN": false,
+    "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_ID_COUNT": 0,
+    "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_REFERENCE_COUNT": 0,
+    "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_TITLE_COUNT": 0,
+    "PUBLIC_EXPLORATION_CONTEXT_REFERENCE_COUNT": 0,
+    "PUBLIC_EXPLORATION_DATABASE_INTERNAL_REFERENCE_COUNT": 0,
+    "PUBLIC_EXPLORATION_HELD_DATA_COUNT": 0,
+    "PUBLIC_EXPLORATION_PAGE_ADDED": false,
+    "PUBLIC_EXPLORATION_RECORD_LINK_COUNT": 0,
+    "PUBLIC_EXPLORATION_SEARCH_REFERENCE_COUNT": 0,
+    "PUBLIC_EXPLORATION_SOURCE_INTERNAL_REFERENCE_COUNT": 0,
+    "PUBLIC_EXPLORATION_SOURCE_LOCATOR_COUNT": 0,
+    "PUBLIC_EXPLORATION_SPACETIME_REFERENCE_COUNT": 0,
+    "PUBLIC_EXPLORATION_THUMBNAIL_COUNT": 0,
+    "PUBLIC_NAVIGATION_MUTATION_COUNT": 0,
+    "PUBLIC_REMOTE_REF_MAP_HASH_MATCH": true,
+    "PUBLIC_SEARCH_DEPENDENCY_COUNT": 0,
+    "PUBLIC_V2_ALLOWED_NEGATIVE_REFERENCE_COUNT": 10,
+    "PUBLIC_V2_FORBIDDEN_EXPOSURE_COUNT": 0,
+    "REMOTE_BRANCH_EXISTED_BEFORE_MIGRATION": false,
+    "REMOTE_UNAUTHORIZED_REF_CHANGE_COUNT": 0,
+    "REPOSITORY_BOUNDARY": "PASS",
+    "REPOSITORY_HYGIENE": "PASS",
+    "REPRODUCIBILITY_VERIFICATION": "PASS",
+    "REPRODUCTION_ROOT": "/private/tmp/trace-round16a-final-reproduction",
+    "REWRITE_NONALLOWLIST_PATH_COUNT": 0,
+    "ROUND10_REGRESSION": "PASS",
+    "ROUND11_REGRESSION": "PASS",
+    "ROUND12_REGRESSION": "PASS",
+    "ROUND13_REGRESSION": "PASS",
+    "ROUND14_REGRESSION": "PASS",
+    "ROUND15_REGRESSION": "PASS",
+    "ROUND16A_MAPPED_COMMIT_COUNT_AFTER": 8,
+    "ROUND16A_MAPPED_COMMIT_COUNT_BEFORE": 8,
+    "ROUND16_LEGACY_COMPOSITION_RECONCILED_COUNT": 11,
+    "ROUND16_REGRESSION": "PASS",
+    "ROUND8_REGRESSION": "PASS",
+    "ROUND9_REGRESSION": "PASS",
+    "SEARCH_API_MUTATION_COUNT": 0,
+    "SEARCH_CODE_MUTATION_COUNT": 0,
+    "SEARCH_INDEX_MUTATION_COUNT": 0,
+    "SEARCH_MUTATION_COUNT": 0,
+    "SEARCH_RUNTIME_DEPENDENCY_COUNT": 0,
+    "SEARCH_SCHEMA_MUTATION_COUNT": 0,
+    "SEARCH_SEMANTIC_INPUT_COUNT": 0,
+    "SEARCH_STATUS": "OUT_OF_SCOPE_NOT_EVALUATED",
+    "SEED_VARIANT_COUNT": 228,
+    "SEMANTIC_HASH_MISMATCH_COUNT": 0,
+    "SOURCE_SHA_PRESERVED": true,
+    "SOURCE_TREE_SHA": "86c2ed7771034f6d3f0f2e10e7a37aeec0552c71",
+    "SOURCE_TREE_SHA_PRESERVED": true,
+    "SPACETIME_API_MUTATION_COUNT": 0,
+    "SPACETIME_CODE_MUTATION_COUNT": 0,
+    "SPACETIME_INDEX_MUTATION_COUNT": 0,
+    "SPACETIME_MUTATION_COUNT": 0,
+    "SPACETIME_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": 0,
+    "SPACETIME_RUNTIME_DEPENDENCY_COUNT": 0,
+    "SPACETIME_SCHEMA_MUTATION_COUNT": 0,
+    "SPACETIME_SEMANTIC_INPUT_COUNT": 0,
+    "STALE_STATE_ACCEPTED_COUNT": 0,
+    "STATE_CENSUS_HASH_MATCH": true,
+    "STATE_CORRUPTION_COUNT": 0,
+    "STATE_COUNT": 5760,
+    "STATE_GENERATION_DURATION_MS": 107.694,
+    "STATE_MUTATION_COUNT": 0,
+    "SUSTAINED_DURATION_MS": 300782.644459,
+    "SUSTAINED_LOAD_TEST_COMPLETED": true,
+    "SUSTAINED_MINIMUM_DURATION_MS": 300000,
+    "SUSTAINED_MINIMUM_REQUEST_COUNT": 10000,
+    "SUSTAINED_REQUEST_COUNT": 95008,
+    "TOPOLOGY_CANDIDATE_COUNT": 348,
+    "TOTAL_HTTP_REQUEST_COUNT": 1069864,
+    "TRANSITION_CENSUS_HASH_MATCH": true,
+    "TRANSITION_COUNT": 749944,
+    "TRANSITION_DIFFERENT_NEXT_STATE_COUNT": 738188,
+    "TRANSITION_FAILURE_COUNT": 0,
+    "TRANSITION_FAIL_COUNT": 0,
+    "TRANSITION_GENERATION_DURATION_MS": 2928.548,
+    "TYPECHECK": "PASS",
+    "UNATTESTED_ACTIVE_VOCABULARY_COUNT": 0,
+    "UNAUTHORIZED_TREE_DELTA_COUNT": 0,
+    "UNBOUNDED_MEMORY_GROWTH_COUNT": 0,
+    "UNEXPECTED_5XX_COUNT": 0,
+    "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": true,
+    "UNREACHABLE_PRODUCTION_STATE_COUNT": 0,
+    "VALIDATED_ASSOCIATION_GRAPH_FROZEN": true,
+    "VALID_TOPOLOGY_COMPOSITION_COUNT": 81,
+    "VOCABULARY_CANDIDATE_COUNT": 65,
+    "VOCABULARY_CANDIDATE_UNIVERSE_COUNT": 65,
+    "VOCABULARY_CANDIDATE_UNIVERSE_FROZEN": true,
+    "VOCABULARY_CENSUS_DURATION_MS": 106,
+    "VOCABULARY_CENSUS_HASH_MATCH": true,
+    "WORKFLOW_CENSUS_HASH_MATCH": true,
+    "WORKFLOW_COUNT": 5760,
+    "WORKFLOW_GENERATION_DURATION_MS": 324.911,
+    "WORKFLOW_LENGTH_MAX": 5,
+    "WORKFLOW_LENGTH_MEAN": 2.425,
+    "WORKFLOW_LENGTH_MEDIAN": 2.0,
+    "WORKFLOW_LENGTH_MIN": 0,
+    "WORKFLOW_REPLAY_COUNT": 11520,
+    "WORKFLOW_REPLAY_FAILURE_COUNT": 0
+  },
+  "missing_required_metrics": [],
+  "schema_version": "trace-round16a-final-gate-evidence/v2",
+  "sources": {
+    "api_functional": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json",
+      "schema_version": "trace-exploration-api-functional-validation-v2",
+      "sha256": "1c61513c2d2dbb75dc280fab2a9171f3b44106d6b4379dcefad0dc4db1c06a3f",
+      "status": "PASS"
+    },
+    "audit_seal": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/audit-seal-result.json",
+      "schema_version": "trace-exploration-round16a-audit-seal-gate-v2",
+      "sha256": "c21613c0486e7288d33c606e3f195e5a9363e60802d1814b50b4c94970c65a94",
+      "status": "PASS"
+    },
+    "authorized_migration": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/authorized-lfs-migration-receipt.json",
+      "schema_version": "trace-round16a-authorized-lfs-migration-receipt/v1",
+      "sha256": "0d91721d84f0841fe0ec5d2e6ae4fc18c5cc2a8ac41c3ffe9f1d91a707d6d416",
+      "status": "PASS"
+    },
+    "build_time": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/build-time-computation-results.json",
+      "schema_version": "trace-exploration-build-time-computation-results-v2",
+      "sha256": "5882417457e7301f96a3090d35caeb1840e3e69405459967043c3bf53fe523e6",
+      "status": "PASS"
+    },
+    "concurrency": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/concurrency-results.json",
+      "schema_version": "trace-exploration-concurrency-results-v2",
+      "sha256": "fa7859e89b98912c343b3a9aeb7f367c616897315c057cc299c838ebc2b69d17",
+      "status": "PASS"
+    },
+    "execution_log": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/execution-log-verification.json",
+      "schema_version": "trace-exploration-execution-log-verification-v1",
+      "sha256": "72e5cb5fb604d9b8c1df81b4cf28594f674e45b232740b26eb0c595340bb9a6d",
+      "status": "PASS"
+    },
+    "gate_status": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/gate-status-results.json",
+      "schema_version": "trace-round16a-gate-status-results/v2",
+      "sha256": "3b51836037d17ed7e50b2a1ab343c02354ac0d1ce8920e5673348eb15425dcf6",
+      "status": "PASS"
+    },
+    "independent": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
+      "schema_version": "trace-exploration-independent-verification-v2",
+      "sha256": "794a16071edc9efce13c17de56c6b901aac86feb1dd5091fb490e1f20febf35f",
+      "status": "PASS"
+    },
+    "production_http": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/production-http-results.json",
+      "schema_version": "trace-exploration-production-http-results-v2",
+      "sha256": "34e1e25430dc2f18186f226bd3efc60f6e737879fca2b551b9d80e362aec3842",
+      "status": "PASS"
+    },
+    "regression": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/regression-results.json",
+      "schema_version": "trace-round16a-regression-results/v1",
+      "sha256": "4d61a87eb40723f10e484471984247b8d14272dbb1f852907a387947519ab978",
+      "status": "PASS"
+    },
+    "repository_boundary": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-boundary-receipt.json",
+      "schema_version": "trace-round16a-repository-boundary-receipt/v1",
+      "sha256": "b6bcea0bd2e6389b5431873161877d860c69f253f7c0f2a18f356a97826921f8",
+      "status": "PASS"
+    },
+    "reproduction": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json",
+      "schema_version": "trace-exploration-round16a-reproducibility-verification-v2",
+      "sha256": "100aa75156a9cc5b6a24181cd15d92e719f0348fa579590f8a15ef27651b64b7",
+      "status": "PASS"
+    },
+    "runtime_memory": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json",
+      "schema_version": "trace-exploration-runtime-memory-results-v2",
+      "sha256": "b52a08c4b2fa5aa5374103162e64320ad92bdd66059441a859f2195faddba9b7",
+      "status": "PASS"
+    },
+    "sustained_load": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/sustained-load-results.json",
+      "schema_version": "trace-exploration-http-workload-v2",
+      "sha256": "112043c7058ad6dbb4db1d69399e09caff7af86b5c56475b4344b11cc032456b",
+      "status": "PASS"
+    }
+  },
+  "status": "PASS"
+}

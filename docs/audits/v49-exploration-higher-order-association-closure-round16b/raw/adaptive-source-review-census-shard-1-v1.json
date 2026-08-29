@@ -1,0 +1,71 @@
+{
+  "active_fact_created_count": 0,
+  "active_pending_review_count": 0,
+  "association_activation_count": 0,
+  "builder_version": "trace-round16b-adaptive-source-review-shard-1-v1",
+  "canonical_identity_authority_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-higher-order-review-queue-tranche-c-v1.tsv",
+  "canonical_identity_authority_sha256": "d7ff7c13d75ad0ba14c1f84490b021956a23137d6e926f655057f2ea2009e22e",
+  "closure": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "evidence_authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+  "exact_current_sense_same_case_direct_higher_order_support_count": 2,
+  "format": "trace-round16b-adaptive-source-review-census-shard-1-v1",
+  "governed_inquiry_only_association_identity_count": 2,
+  "hypothesis_arity_distribution": {
+    "2": 3,
+    "3": 4,
+    "4": 1,
+    "5": 1
+  },
+  "hypothesis_support_mode_counts": {
+    "ABSTRACT_BEARING_SCOPED_PAIR_SUPPORT": 1,
+    "COHERENT_COMPOSITE_SUPPORT": 1,
+    "DIRECT_HIGHER_ORDER_SUPPORT": 3,
+    "DIRECT_LOCAL_ATTESTATION": 1,
+    "DIRECT_SCOPED_PAIR_SUPPORT": 2,
+    "METHOD_LEVEL_RESEARCH_VALUE_EXACT_GROUP_BLOCKED": 1
+  },
+  "license_expression_counts": {
+    "CC BY 4.0": 2,
+    "CC BY 4.0 with third-party material exceptions": 1,
+    "CC BY 4.0; © authors": 1,
+    "CC BY-NC-ND 4.0": 1,
+    "LICENSE_NOT_VERIFIED": 1,
+    "Publisher Free Access; no Creative Commons license identified": 1,
+    "Redistribution license unknown": 1,
+    "© Author 2008 / Oxford University Press / Design History Society; all rights reserved": 1
+  },
+  "open_gap_count": 8,
+  "pair_projection_count": 0,
+  "product_eligible_count": 0,
+  "query_batch_count": 10,
+  "query_count": 40,
+  "query_purpose_counts": {
+    "COUNTEREVIDENCE_AND_LIMITATION": 8,
+    "EXACT_CONCEPT_AND_LOCATOR_FOLLOWUP": 4,
+    "GROUP_COHERENCE_AND_BOUNDARY": 4,
+    "PROFESSIONAL_EDUCATION_MECHANISM": 4,
+    "PROPAGANDA_FALSIFICATION": 4,
+    "RIGHTS_AND_LICENSE": 4,
+    "ROOT_SOURCE_CENTERED_DISCOVERY": 4,
+    "SOURCE_TEXT_DISCOVERY": 8
+  },
+  "query_with_exact_captured_timestamp_count": 36,
+  "query_with_explicit_uncaptured_timestamp_count": 4,
+  "remote_payload_retained_count": 0,
+  "remote_payload_sha256_count": 0,
+  "rights_record_count": 9,
+  "scoped_hypothesis_count": 9,
+  "semantic_boundary": "A source-level direct-support disposition is not association activation. COMP-SRC-025 and COMP-SRC-020 reference the two canonical tranche-C governed INQUIRY_ONLY identities; Hutton's exact active current-sense arity-five group remains blocked. All active facts, product eligibility, and pair/subset projections remain zero. Search results are discovery records only.",
+  "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+  "source_review_count": 9,
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "subset_projection_count": 0
+}

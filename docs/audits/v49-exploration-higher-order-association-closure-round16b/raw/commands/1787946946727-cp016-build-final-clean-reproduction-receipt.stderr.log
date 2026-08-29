@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_final_clean_reproduction_receipt.py", line 816, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_final_clean_reproduction_receipt.py", line 715, in main
+    http = validate_http(http_dir, documents["httpIndependentReceipt"])
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_final_clean_reproduction_receipt.py", line 389, in validate_http
+    require(summary_sha in set(recursive_values(independent)), "HTTP_INDEPENDENT_SUMMARY_BINDING")
+                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'

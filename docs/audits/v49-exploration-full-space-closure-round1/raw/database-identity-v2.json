@@ -1,0 +1,153 @@
+{
+  "canonical_population_sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+  "category_authority": {
+    "category_authority_artifact": "raw/category-authority-v2.tsv",
+    "category_without_eligible_binding_count": 0,
+    "category_without_real_folder_count": 0,
+    "expected_governed_folder_types": [
+      "region",
+      "theme",
+      "medium",
+      "movement"
+    ],
+    "governed_folder_type_count": 4,
+    "observed_governed_folder_types": [
+      "medium",
+      "movement",
+      "region",
+      "theme"
+    ]
+  },
+  "category_authority_sha256": "d915c7f86e756a8305b2349db8704c71651d5e4e6f474d851a86914b08cf5280",
+  "closure_metrics": {
+    "category_without_database_authority_count": 0,
+    "direct_database_category_binding_ready": true,
+    "direct_database_snapshot_validated": true
+  },
+  "database_content_sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "database_identity_sha256": "56f6db594b835543c0f0435d5bfa12ca575405f09c3b89072821563ef81f53f2",
+  "database_schema_version": 49,
+  "database_snapshot_id": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "eligibility": {
+    "database_id_set_mismatch_count": 0,
+    "eligible_count": 7995,
+    "eligible_held_overlap_count": 0,
+    "held_count": 7928,
+    "ledger_row_count": 15923
+  },
+  "eligibility_ledger_sha256": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01",
+  "format": "trace-exploration-database-identity-v2",
+  "freeze_manifest_sha256": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e",
+  "identity_basis": {
+    "database_content_sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "freeze_manifest_sha256": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e",
+    "release_id": "v49",
+    "release_manifest_sha256": "f43dcb183e0a03dd8fc7aba03743bf619d59757a84596ba4789c14bbb03616dd",
+    "schema_catalog_sha256": "1872381aa8837cd425b912e47b4980ccd623ccbc182c96cbbc8db2e1ee1915bb",
+    "schema_version": "prefreeze_candidate_v48_sqlite_v1"
+  },
+  "inputs": [
+    {
+      "byte_size": 421801984,
+      "path": "data/prefreeze_candidate_v48.sqlite",
+      "role": "sqlite_database",
+      "sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e"
+    },
+    {
+      "byte_size": 20744,
+      "path": "database/FREEZE_V49.json",
+      "role": "freeze_manifest",
+      "sha256": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e"
+    },
+    {
+      "byte_size": 91,
+      "path": "database/FREEZE_V49.sha256",
+      "role": "freeze_digest_ledger",
+      "sha256": "20dcf35a38f1767b54afd312147b6654691ee8e9ee21753d859dbf66763c6f49"
+    },
+    {
+      "byte_size": 4704202,
+      "path": "docs/audits/v49-phase2b-migration/18_SURFACE_ROW_LEDGER.tsv",
+      "role": "eligibility_ledger",
+      "sha256": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01"
+    },
+    {
+      "byte_size": 9000,
+      "path": "docs/audits/v49-phase2b-migration/MANIFEST.json",
+      "role": "eligibility_manifest",
+      "sha256": "2e33c625c81286d6406d54751fe28ca75d58ad04cd79ff28b2c89363c7ec0a56"
+    },
+    {
+      "byte_size": 1112,
+      "path": "docs/releases/v49/RELEASE_MANIFEST.json",
+      "role": "release_manifest",
+      "sha256": "f43dcb183e0a03dd8fc7aba03743bf619d59757a84596ba4789c14bbb03616dd"
+    },
+    {
+      "byte_size": 190067852,
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "role": "canonical_population_json",
+      "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48"
+    }
+  ],
+  "release_counts": {
+    "accepted_trace_count": 0,
+    "eligible_count": 7995,
+    "held_count": 7928,
+    "object_count": 15923,
+    "positive_rights_count": 0,
+    "relationship_count": 47982
+  },
+  "release_id": "v49",
+  "release_manifest_sha256": "f43dcb183e0a03dd8fc7aba03743bf619d59757a84596ba4789c14bbb03616dd",
+  "scope_boundary": {
+    "context_dependency_count": 0,
+    "database_metadata_inferred_relation_count": 0,
+    "database_text_cooccurrence_association_pass_count": 0,
+    "search_dependency_count": 0,
+    "spacetime_dependency_count": 0
+  },
+  "source_release_commit": "d78f496bcdf2cd6941791986007cd7a885c4c532",
+  "source_release_tag": "v49-data-api-closure-20260821",
+  "sqlite": {
+    "counts": {
+      "eligible_object_count": 7995,
+      "governed_folder_type_count": 4,
+      "held_object_count": 7928,
+      "object_count": 15923,
+      "object_folder_reference_count": 47982,
+      "orphan_folder_binding_count": 0,
+      "real_folder_count": 185
+    },
+    "observed_governed_folder_types": [
+      "medium",
+      "movement",
+      "region",
+      "theme"
+    ],
+    "pragma_application_id": 0,
+    "pragma_schema_version": 72,
+    "pragma_user_version": 0,
+    "query_only": true,
+    "quick_check": "ok",
+    "schema_catalog_object_count": 47,
+    "schema_catalog_sha256": "1872381aa8837cd425b912e47b4980ccd623ccbc182c96cbbc8db2e1ee1915bb",
+    "schema_meta": {
+      "active_object_count": "15923",
+      "candidate_status": "prefreeze_candidate_v48",
+      "official_release": "false",
+      "schema_version": "prefreeze_candidate_v48_sqlite_v1",
+      "source_payload": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "trace_influence_policy": "not_inferred"
+    }
+  },
+  "status": "PASS",
+  "validation": {
+    "four_category_authority": "PASS",
+    "freeze_release_reconciliation": "PASS",
+    "frozen_artifact_hashes": "PASS",
+    "public_held_reconciliation": "PASS",
+    "sqlite_read_only": "PASS",
+    "sqlite_schema_identity": "PASS"
+  }
+}

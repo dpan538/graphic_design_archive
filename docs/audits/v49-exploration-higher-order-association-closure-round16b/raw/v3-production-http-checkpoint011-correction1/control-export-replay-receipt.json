@@ -1,0 +1,27 @@
+{
+  "checked_utc": "2026-08-28T14:09:41.405Z",
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "postload_replay": {
+    "export_id": "export:v3:988252318e9039aeb84790d4",
+    "pair_projection_policy_preserved": true,
+    "presentation_sha256": "9ee6e1855ec26c4a6e40baec4b33f927ffaf296693dc6d4d3ace51179fc517c4",
+    "projection_preservation_record_count": 3,
+    "replay_count": 2,
+    "response_bytes": 2384,
+    "response_sha256": "dacf2b46caba5aa7f5af21af71578ba530c926d355e2487fc63da385e15d5aa6",
+    "semantic_sha256": "988252318e9039aeb84790d4e26835d8bc311b98063cae8324de420395fd91c3"
+  },
+  "preload_and_postload_bytes_equal": true,
+  "preload_replay": {
+    "export_id": "export:v3:988252318e9039aeb84790d4",
+    "pair_projection_policy_preserved": true,
+    "presentation_sha256": "9ee6e1855ec26c4a6e40baec4b33f927ffaf296693dc6d4d3ace51179fc517c4",
+    "projection_preservation_record_count": 3,
+    "replay_count": 5,
+    "response_bytes": 2384,
+    "response_sha256": "dacf2b46caba5aa7f5af21af71578ba530c926d355e2487fc63da385e15d5aa6",
+    "semantic_sha256": "988252318e9039aeb84790d4e26835d8bc311b98063cae8324de420395fd91c3"
+  },
+  "schema_version": "trace-exploration-v3-control-export-replay-receipt-v1",
+  "status": "PASS"
+}

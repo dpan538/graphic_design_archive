@@ -1,0 +1,73 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/transition.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "association_realization_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "association_revision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "from_state_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "incidence_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "realm": {
+      "enum": [
+        "PRODUCTION",
+        "SYNTHETIC_CONTROL"
+      ],
+      "type": "string"
+    },
+    "semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "state_mutated": {
+      "type": "boolean"
+    },
+    "to_state_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "transition_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "transition_kind": {
+      "enum": [
+        "FOLLOW_INCIDENCE",
+        "MOVE_FOCUS",
+        "EXPORT"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "transition_id",
+    "realm",
+    "from_state_id",
+    "to_state_id",
+    "transition_kind",
+    "incidence_id",
+    "association_revision_id",
+    "association_realization_id",
+    "state_mutated",
+    "semantic_sha256"
+  ],
+  "title": "TRACE Exploration v3 governed state transition",
+  "type": "object"
+}

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "sh",
+    "-c",
+    "test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf \"%s\\n\" CP14_DATABASE_CLUSTER_ROOT_ABSENT=PASS"
+  ],
+  "command": "sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf \"%s\\n\" CP14_DATABASE_CLUSTER_ROOT_ABSENT=PASS'",
+  "command_id": "1787940631054-cp014-db-prove-cluster-root-absent",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 6,
+  "end_timestamp_utc": "2026-08-28T18:10:31Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-db-prove-cluster-root-absent",
+  "phase_id": "CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:10:31Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "6a42eb7b6ab764d721329c1175cf3005a90868cb9bc2ddfcca3860528f1ee231",
+  "timed_out": false
+}

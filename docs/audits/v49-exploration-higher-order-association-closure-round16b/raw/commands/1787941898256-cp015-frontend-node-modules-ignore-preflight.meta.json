@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; test \"$(git rev-parse HEAD)\" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test ! -e frontend/node_modules; git check-ignore -q frontend/node_modules; git check-ignore -q frontend/node_modules/.cp15-probe; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf \"%s\\n\" FRONTEND_NODE_MODULES_TARGET_ABSENT=PASS FRONTEND_NODE_MODULES_IGNORE=PASS FRONTEND_NODE_MODULES_DESCENDANT_IGNORE=PASS INITIAL_GIT_STATUS=PASS MAIN_DEPENDENCY_DIRECTORY=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; test \"$(git rev-parse HEAD)\" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test ! -e frontend/node_modules; git check-ignore -q frontend/node_modules; git check-ignore -q frontend/node_modules/.cp15-probe; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf \"%s\\n\" FRONTEND_NODE_MODULES_TARGET_ABSENT=PASS FRONTEND_NODE_MODULES_IGNORE=PASS FRONTEND_NODE_MODULES_DESCENDANT_IGNORE=PASS INITIAL_GIT_STATUS=PASS MAIN_DEPENDENCY_DIRECTORY=PASS'",
+  "command_id": "1787941898256-cp015-frontend-node-modules-ignore-preflight",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 198,
+  "end_timestamp_utc": "2026-08-28T18:31:38Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-frontend-node-modules-ignore-preflight",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:31:38Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "79ce1d113e8252bef98464be75a4e4e679b25f595240a421ce5546b718554cb2",
+  "timed_out": false
+}

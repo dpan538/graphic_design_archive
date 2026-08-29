@@ -1,0 +1,51 @@
+{
+  "schema": "gda-v50.round16b-superseded-replay-receipt/v1",
+  "databaseVersion": 50,
+  "checkpoint": 11,
+  "status": "SUPERSEDED",
+  "supersededReason": "The 2315/2316 runs predate the final independent-audit corrections for canonical aggregate sealing, current-head dependency closure, exact positive API traces, scope-context revision snapshots, real two-session seal races, exact residue, and command-evidence verification.",
+  "supersededBy": {
+    "canonicalReceipt": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json",
+    "expectedFreshDatabases": [
+      "gda_v50_round16b_2317",
+      "gda_v50_round16b_2318"
+    ]
+  },
+  "preservedReceipt": {
+    "schema": "gda-v50.round16b-replay-receipt/v1",
+    "databaseVersion": 50,
+    "checkpoint": 11,
+    "status": "PASS",
+    "postgresqlVersion": "16.13",
+    "freshReplays": [
+      {
+        "database": "gda_v50_round16b_2315",
+        "replayStatus": "PASS",
+        "schemaCount": 11,
+        "testStatus": "PASS",
+        "fixtureResidue": 0,
+        "normalizedSchemaSha256": "0aa79fe54825d419b6fb28d0d803a75d9004bc4d2ef4c2a24fde123490d6f677"
+      },
+      {
+        "database": "gda_v50_round16b_2316",
+        "replayStatus": "PASS",
+        "schemaCount": 11,
+        "testStatus": "PASS",
+        "fixtureResidue": 0,
+        "normalizedSchemaSha256": "0aa79fe54825d419b6fb28d0d803a75d9004bc4d2ef4c2a24fde123490d6f677"
+      }
+    ],
+    "normalizedSchemasIdentical": true,
+    "normalizedSchemaSha256": "0aa79fe54825d419b6fb28d0d803a75d9004bc4d2ef4c2a24fde123490d6f677",
+    "governedCommandIds": [
+      "1787927433652-cp011-v50-replay-2315",
+      "1787927447803-cp011-v50-test-2315",
+      "1787927457494-cp011-v50-dump-2315",
+      "1787927463058-cp011-v50-schema-hash-2315",
+      "1787927484337-cp011-v50-replay-2316",
+      "1787927496154-cp011-v50-test-2316",
+      "1787927506098-cp011-v50-dump-2316",
+      "1787927518647-cp011-v50-schema-hash-2316"
+    ]
+  }
+}

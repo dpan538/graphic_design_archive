@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_method_checkpoint.py"
+  ],
+  "command": "python3 scripts/trace_round16b/build_method_checkpoint.py",
+  "command_id": "1787889124836-build-higher-order-method-checkpoint",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 541,
+  "end_timestamp_utc": "2026-08-28T03:52:05Z",
+  "exit_code": 0,
+  "operation_id": "build-higher-order-method-checkpoint",
+  "phase_id": "METHOD_AND_EVIDENCE_SURFACE_AUDIT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T03:52:04Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "42a3eb6e23bb242e5d7cc212c42e35189014e865309ed38def258bb76b4443c3",
+  "timed_out": false
+}

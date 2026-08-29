@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/round16a_run_sequence.py",
+    "--cwd",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--commands-json",
+    "[\"git diff --exit-code 5ca999b5 HEAD -- docs/research/trace-v49-exploration-constraint-kernel-round1 docs/audits/v49-exploration-constraint-kernel-round1 scripts/trace-v49-exploration-constraint-kernel\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-constraint-kernel/validate_round1.py\",\"npm --prefix frontend run test:exploration-constraint-kernel\"]"
+  ],
+  "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --commands-json '[\"git diff --exit-code 5ca999b5 HEAD -- docs/research/trace-v49-exploration-constraint-kernel-round1 docs/audits/v49-exploration-constraint-kernel-round1 scripts/trace-v49-exploration-constraint-kernel\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-constraint-kernel/validate_round1.py\",\"npm --prefix frontend run test:exploration-constraint-kernel\"]'",
+  "command_id": "1787879376543-round11-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 1054,
+  "end_timestamp_utc": "2026-08-28T01:09:37Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round11-regression",
+  "phase_id": "POST_MIGRATION_REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:09:36Z",
+  "stderr_sha256": "4fcf44e6eede7e514b16a3472f3ea041988a2fb227aad7cb74c1c9cb051204c4",
+  "stdout_sha256": "e63f656d4e2ff059c1f8e271b0757d91fa530f63dcea97729e625abb45eb78fb",
+  "timed_out": false
+}

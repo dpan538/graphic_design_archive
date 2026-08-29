@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/usr/bin/printf",
+    "%s\\n",
+    "FINAL_MEASUREMENT_BOUNDARY: criterion unchanged; >=10000 requests AND >=300000ms; concurrency=25; 90pct JSON+10pct PNG; zero failures/timeouts/5xx/corruption; unbounded RSS iff growth>max(16MiB,10pct initial) AND OLS slope positive"
+  ],
+  "command": "/usr/bin/printf '%s\\n' 'FINAL_MEASUREMENT_BOUNDARY: criterion unchanged; >=10000 requests AND >=300000ms; concurrency=25; 90pct JSON+10pct PNG; zero failures/timeouts/5xx/corruption; unbounded RSS iff growth>max(16MiB,10pct initial) AND OLS slope positive'",
+  "command_id": "1787839748210-sustained-measurement-boundary-retry1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-27T14:09:08Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "sustained-measurement-boundary-retry1",
+  "phase_id": "GATE-11",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T14:09:08Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "5e8db819486d04786067b5c04e87dafbcb1b8229eae80781ac940da9b1731df7",
+  "timed_out": false
+}

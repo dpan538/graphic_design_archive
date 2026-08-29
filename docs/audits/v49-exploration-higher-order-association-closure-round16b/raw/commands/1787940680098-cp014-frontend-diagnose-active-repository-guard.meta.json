@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "rg",
+    "-n",
+    "auditActiveRepository|databaseFilesChanged",
+    "frontend/src",
+    "frontend/scripts"
+  ],
+  "command": "rg -n 'auditActiveRepository|databaseFilesChanged' frontend/src frontend/scripts",
+  "command_id": "1787940680098-cp014-frontend-diagnose-active-repository-guard",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 65,
+  "end_timestamp_utc": "2026-08-28T18:11:20Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-diagnose-active-repository-guard",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:20Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "069078657843285948898bf46decb89ff5c3244f4ec0d71959f63876a2aeba19",
+  "timed_out": false
+}

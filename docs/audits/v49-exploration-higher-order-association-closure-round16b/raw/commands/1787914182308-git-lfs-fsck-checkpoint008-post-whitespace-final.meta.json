@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "git",
+    "lfs",
+    "fsck",
+    "--objects",
+    "--pointers"
+  ],
+  "command": "git lfs fsck --objects --pointers",
+  "command_id": "1787914182308-git-lfs-fsck-checkpoint008-post-whitespace-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 2026,
+  "end_timestamp_utc": "2026-08-28T10:49:44Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "git-lfs-fsck-checkpoint008-post-whitespace-final",
+  "phase_id": "CHECKPOINT-008-POST-CORRECTION-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T10:49:42Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9",
+  "timed_out": false
+}

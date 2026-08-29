@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; cp016_wrong=docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json; cp016_right=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json; test -f \"$cp016_wrong\"; test ! -L \"$cp016_wrong\"; cmp -s \"$cp016_wrong\" \"$cp016_right\"; rm -f \"$cp016_wrong\"; test ! -e \"$cp016_wrong\""
+  ],
+  "command": "/bin/sh -c 'set -eu; cp016_wrong=docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json; cp016_right=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json; test -f \"$cp016_wrong\"; test ! -L \"$cp016_wrong\"; cmp -s \"$cp016_wrong\" \"$cp016_right\"; rm -f \"$cp016_wrong\"; test ! -e \"$cp016_wrong\"'",
+  "command_id": "1787946391900-cp016-http-remove-wrong-locus-receipt",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 14,
+  "end_timestamp_utc": "2026-08-28T19:46:31Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-http-remove-wrong-locus-receipt",
+  "phase_id": "CHECKPOINT-016-FRONTEND-AND-HTTP-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:46:31Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

@@ -1,0 +1,16 @@
+
+> archive-box-frontend@0.1.0 test:exploration-composition-engine
+> node --experimental-strip-types scripts/test-exploration-composition-engine.mjs
+
+{
+  "status": "PASS",
+  "imageCount": 25,
+  "renderedSnapshotCount": 8,
+  "crossRuntimeDecisionMismatchCount": 0,
+  "crossRuntimeHashMismatchCount": 0,
+  "typescriptOnlySemanticRuleCount": 0,
+  "pythonNormative": true,
+  "typescriptNormativeSemanticEngine": false,
+  "publicRouteAdded": false,
+  "publicApiAdded": false
+}

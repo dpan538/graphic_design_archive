@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/pg_ctl",
+    "-D",
+    "/private/tmp/gda-v50-round16b-cp015-final/data",
+    "-l",
+    "/private/tmp/gda-v50-round16b-cp015-final/server.log",
+    "-w",
+    "-t",
+    "60",
+    "-o",
+    "-p 59473 -k /private/tmp/gda-v50-round16b-cp015-final/socket -c listen_addresses='' -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix -c unix_socket_permissions=0700",
+    "start"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/pg_ctl -D /private/tmp/gda-v50-round16b-cp015-final/data -l /private/tmp/gda-v50-round16b-cp015-final/server.log -w -t 60 -o '-p 59473 -k /private/tmp/gda-v50-round16b-cp015-final/socket -c listen_addresses='\"'\"''\"'\"' -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix -c unix_socket_permissions=0700' start",
+  "command_id": "1787941962609-cp015-db-start-final-cluster",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 213,
+  "end_timestamp_utc": "2026-08-28T18:32:42Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-db-start-final-cluster",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:32:42Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "66afd0411ccc09366e99fdd99b85f21899c8d2d064f5835126859618802153ad",
+  "timed_out": false
+}

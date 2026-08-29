@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/psql",
+    "-X",
+    "-Atq",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-h",
+    "/private/tmp/gda-v50-round16b-cp015-final/socket",
+    "-p",
+    "59473",
+    "-U",
+    "jarlgiovanni",
+    "-d",
+    "gda_v50_round16b_cp015_final_a",
+    "-c",
+    "SELECT c.relname||'|'||t.tgname||'|'||t.tgconstraint||'|'||coalesce(t.tgparentid,0) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='exploration_v3' AND NOT t.tgisinternal AND t.tgconstraint=0 ORDER BY c.relname,t.tgname;"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT c.relname||'\"'\"'|'\"'\"'||t.tgname||'\"'\"'|'\"'\"'||t.tgconstraint||'\"'\"'|'\"'\"'||coalesce(t.tgparentid,0) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='\"'\"'exploration_v3'\"'\"' AND NOT t.tgisinternal AND t.tgconstraint=0 ORDER BY c.relname,t.tgname;'",
+  "command_id": "1787942584523-cp015-db-diagnose-trigger-count-definition",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 18,
+  "end_timestamp_utc": "2026-08-28T18:43:04Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-db-diagnose-trigger-count-definition",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:43:04Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "675b4fbf5f0e882da192fbb974ead4169abcf8e0ba8786880f937561c805c4f1",
+  "timed_out": false
+}

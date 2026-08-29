@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-association-calibration"
+  ],
+  "command": "npm --prefix frontend run test:exploration-association-calibration",
+  "command_id": "1787941961948-cp015-frontend-test-association-calibration",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 366,
+  "end_timestamp_utc": "2026-08-28T18:32:42Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-frontend-test-association-calibration",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:32:41Z",
+  "stderr_sha256": "1fb1f7275d54ec06dd3e5def7b4a63dda4e43907b4c90e99031c18dffcf8a490",
+  "stdout_sha256": "bf7b561e9a38170a65221bb68c295fa52c13fda0a0ee7d6ea5a8eef6c75d089c",
+  "timed_out": false
+}

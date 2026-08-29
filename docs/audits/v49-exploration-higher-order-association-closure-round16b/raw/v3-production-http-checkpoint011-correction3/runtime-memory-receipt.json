@@ -1,0 +1,48 @@
+{
+  "checked_utc": "2026-08-28T15:59:09.291Z",
+  "peak_cpu_percent_interval": 120.97122612978484,
+  "peak_event_loop_delay_max_ms": 134.021119,
+  "peak_event_loop_delay_mean_ms": 18.058964292682926,
+  "peak_event_loop_delay_p95_ms": 74.448895,
+  "peak_event_loop_delay_p99_ms": 134.021119,
+  "peak_external_bytes": 4011981,
+  "peak_heap_total_bytes": 114081792,
+  "peak_heap_used_bytes": 78002008,
+  "peak_rss_bytes": 236142592,
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "probe_phase_counts": {
+    "EXIT": 1,
+    "SAMPLE": 11,
+    "START": 1
+  },
+  "probe_row_count": 13,
+  "probe_session_id": "934f9307-3cc1-424c-b699-776da2c4416d",
+  "process_count": 1,
+  "process_ids": [
+    76916
+  ],
+  "process_summaries": [
+    {
+      "first_phase": "START",
+      "first_rss_bytes": 39747584,
+      "last_phase": "EXIT",
+      "last_rss_bytes": 236142592,
+      "observed_rss_change_bytes": 196395008,
+      "peak_event_loop_delay_ms": 134.021119,
+      "peak_heap_total_bytes": 114081792,
+      "peak_heap_used_bytes": 78002008,
+      "peak_rss_bytes": 236142592,
+      "pid": 76916,
+      "sample_count": 13
+    }
+  ],
+  "schema_version": "trace-exploration-v3-runtime-memory-receipt-v1",
+  "status": "PASS",
+  "termination": {
+    "process_group_residual": false,
+    "return_code": 0,
+    "sigkill_used": false,
+    "terminated": true,
+    "termination_requested": true
+  }
+}

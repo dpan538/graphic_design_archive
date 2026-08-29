@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "command": "git diff --cached --check",
+  "command_id": "1787944595426-cp015-final-staged-diff-check-correction1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 68,
+  "end_timestamp_utc": "2026-08-28T19:16:35Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-final-staged-diff-check-correction1",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:16:35Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

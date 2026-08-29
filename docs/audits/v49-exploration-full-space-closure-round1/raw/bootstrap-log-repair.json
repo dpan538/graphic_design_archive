@@ -1,0 +1,9 @@
+{
+  "repair_count": 1,
+  "reason": "The first logger invocation wrote its STARTED machine event before a human-log placeholder formatting exception.",
+  "repair": "Removed the duplicate partial STARTED record introduced while documenting the failure, restored unique contiguous machine sequence numbers 1-4, ordered human events by sequence, and restored the original STARTED timestamp before the logger's first successful invocation.",
+  "data_loss": false,
+  "failure_preserved_as_event": 4,
+  "logger_fix": "Replace str.format with literal {sequence} placeholder substitution so JSON cumulative metrics cannot be interpreted as formatting keys.",
+  "future_log_policy": "After this pre-seal bootstrap repair, both logs are append-only."
+}

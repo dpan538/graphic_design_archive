@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--check",
+    "--cached"
+  ],
+  "command": "git diff --check --cached",
+  "command_id": "1787908648543-git-diff-check-cached-checkpoint007",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 58,
+  "end_timestamp_utc": "2026-08-28T09:17:28Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "git-diff-check-cached-checkpoint007",
+  "phase_id": "CHECKPOINT-007-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T09:17:28Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

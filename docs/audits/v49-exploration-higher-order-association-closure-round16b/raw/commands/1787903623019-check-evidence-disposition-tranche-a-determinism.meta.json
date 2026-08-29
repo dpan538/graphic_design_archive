@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_evidence_disposition_tranche_a.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/build_evidence_disposition_tranche_a.py --check",
+  "command_id": "1787903623019-check-evidence-disposition-tranche-a-determinism",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 93,
+  "end_timestamp_utc": "2026-08-28T07:53:43Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "check-evidence-disposition-tranche-a-determinism",
+  "phase_id": "EVIDENCE-DISPOSITION-TRANCHE-A",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T07:53:43Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "77fc54c327fb2b9a5f4e93774d2a2f506038e437fc1bb566329c681581ced574",
+  "timed_out": false
+}

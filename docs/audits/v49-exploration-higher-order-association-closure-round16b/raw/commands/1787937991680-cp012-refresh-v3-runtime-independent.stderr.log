@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_runtime_independent.py", line 2638, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_runtime_independent.py", line 2614, in main
+    receipt = build_receipt()
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_runtime_independent.py", line 2488, in build_receipt
+    enforce(sha256_bytes(manifest_raw) == EXPECTED_MANIFEST_SHA256, "FROZEN_MANIFEST_TRUST_ANCHOR")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_runtime_independent.py", line 214, in enforce
+    raise VerificationError(code)
+VerificationError: FROZEN_MANIFEST_TRUST_ANCHOR

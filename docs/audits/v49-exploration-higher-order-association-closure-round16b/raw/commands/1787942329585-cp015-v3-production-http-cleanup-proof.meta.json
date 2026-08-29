@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; pid=59281; pgid=59281; test -z \"$(ps -p \"$pid\" -o pid= || true)\"; test -z \"$(pgrep -g \"$pgid\" || true)\"; test -z \"$(lsof -nP -iTCP:45973 -sTCP:LISTEN || true)\"; printf \"%s\\n\" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; pid=59281; pgid=59281; test -z \"$(ps -p \"$pid\" -o pid= || true)\"; test -z \"$(pgrep -g \"$pgid\" || true)\"; test -z \"$(lsof -nP -iTCP:45973 -sTCP:LISTEN || true)\"; printf \"%s\\n\" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS'",
+  "command_id": "1787942329585-cp015-v3-production-http-cleanup-proof",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 43,
+  "end_timestamp_utc": "2026-08-28T18:38:49Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-v3-production-http-cleanup-proof",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:38:49Z",
+  "stderr_sha256": "0e514e8af37f95b7b9f306ad904724545756b303ebe415288fc8eda5a0694862",
+  "stdout_sha256": "b3d522fd90a63cc43d1b7c8cb21f3a66f56bf69f9e5b7c1cc959b15b08f6be57",
+  "timed_out": false
+}

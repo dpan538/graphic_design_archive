@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-constraint-kernel"
+  ],
+  "command": "npm --prefix frontend run test:exploration-constraint-kernel",
+  "command_id": "1787941961816-cp015-frontend-test-constraint-kernel",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 415,
+  "end_timestamp_utc": "2026-08-28T18:32:42Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-frontend-test-constraint-kernel",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:32:41Z",
+  "stderr_sha256": "167b44e9243f3bcc1b8b9b955fee6db8975395be1763e433c728af4641978caf",
+  "stdout_sha256": "ba8fc401293a0db5d8039e63b2eca4ddfe2cae7c47c24703c7a1f3fd8aebb002",
+  "timed_out": false
+}
