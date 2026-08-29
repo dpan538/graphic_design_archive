@@ -1,0 +1,139 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-5);
+  padding: var(--s-4) var(--page-gutter);
+  background: var(--paper);
+  border-bottom: var(--keyline);
+}
+
+/* ---- Brand lockup: ink monogram tile + wordmark ---- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  padding: 0 var(--s-3);
+  height: 44px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  color: var(--on-dark);
+  background: var(--ink);
+  border: var(--keyline-2);
+}
+
+.wordmark {
+  display: grid;
+  font-family: var(--font-statement);
+  font-size: clamp(1.15rem, 1.85vw, 1.55rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.wordmark span:last-child {
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+/* ---- Icon controls — larger, more air ---- */
+
+.nav {
+  flex: none;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--keyline-2);
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.control:hover {
+  background: var(--paper-2);
+}
+
+.control[data-active] {
+  color: var(--on-dark);
+  background: var(--ink);
+}
+
+/* ---- Hover / focus reveal, placed in empty page space ---- */
+
+.reveal {
+  position: absolute;
+  right: var(--page-gutter);
+  top: calc(100% + var(--s-6));
+  pointer-events: none;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--blue);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal span::after {
+  content: " ↘";
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.5em;
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+  .header {
+    gap: var(--s-3);
+    padding: var(--s-3) var(--page-gutter);
+  }
+  .wordmark {
+    font-size: 1.05rem;
+  }
+  .monogram {
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  .list {
+    gap: 8px;
+  }
+  .control {
+    width: 46px;
+    height: 46px;
+  }
+  .control svg {
+    width: 26px;
+    height: 26px;
+  }
+  .reveal {
+    display: none;
+  }
+}
