@@ -43,6 +43,7 @@
     "generate:open-inquiry-v1": "python3 ../scripts/trace_round16b_integration/build_open_inquiry_registry.py",
     "verify:open-inquiry-v1-projection": "python3 ../scripts/trace_round16b_integration/build_open_inquiry_registry.py --check",
     "test:open-inquiry-api-v1": "node --conditions=react-server --experimental-strip-types scripts/test-trace-open-inquiry-v1.mjs",
+    "test:open-inquiry-http-v1": "node scripts/validate-trace-open-inquiry-v1-http.mjs",
     "generate:exploration-real-v1": "python3 ../scripts/trace-v49-exploration-real-database/generate_round1.py",
     "verify:exploration-real-v1": "node --conditions=react-server --experimental-strip-types scripts/verify-exploration-real-v1.mjs",
     "verify:exploration-reset": "node scripts/exploration-reset-guard.mjs",
