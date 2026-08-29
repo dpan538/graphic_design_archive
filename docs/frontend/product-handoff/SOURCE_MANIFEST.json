@@ -1,7 +1,7 @@
 {
   "schema_version": "gda-product-handoff-source-manifest/v1",
   "handoff_version": "GLOBAL_SEARCH_SYSTEM_SUGGESTIONS_TRACE_20260829",
-  "bounded_instruction": "Begin with START_HERE.md and expand only through these paths. The TRACE-specific source manifest remains authoritative for deeper TRACE implementation.",
+  "bounded_instruction": "Begin with START_HERE.md and the global functional census. Do not scan the entire repository. Expand only through this bounded list or explicit source paths cited by the master census. The TRACE-specific source manifest remains authoritative for deeper TRACE implementation.",
   "status": {
     "frontend_final_visual_design_started": false,
     "deployment_performed": false,
@@ -9,6 +9,8 @@
     "trace_mobile_full_runtime_enabled": false
   },
   "documents": [
+    "docs/frontend/product-handoff/FRONTEND_FUNCTIONAL_ARCHITECTURE_AND_SCALE_CENSUS.md",
+    "docs/frontend/product-handoff/product-functional-census.v1.json",
     "docs/search/SEARCH_PRODUCT_CONTRACT.md",
     "docs/search/SEARCH_FIELD_MATRIX.md",
     "docs/search/search-field-matrix.v1.json",
@@ -52,6 +54,9 @@
     "frontend/scripts/test-search-v2-ui.mjs",
     "frontend/scripts/test-system-suggestions.mjs",
     "frontend/scripts/test-trace-system-suggestions-ui.mjs",
-    "scripts/generate_product_api_map.mjs"
+    "frontend/scripts/test-trace-exploration-v2.mjs",
+    "scripts/generate_product_api_map.mjs",
+    "frontend/scripts/generate-product-functional-census.mjs",
+    "frontend/scripts/verify-product-functional-census.mjs"
   ]
 }

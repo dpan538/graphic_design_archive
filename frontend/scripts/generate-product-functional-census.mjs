@@ -535,7 +535,7 @@ Each machine metric carries its exact definition, source path, SHA-256, and gene
 
 const census = buildCensus();
 const serialized = `${JSON.stringify(census, null, 2)}\n`;
-const master = `${renderMaster(census)}\n`;
+const master = `${renderMaster(census).trimEnd()}\n`;
 
 if (checkOnly) {
   if (!existsSync(outputPath) || readFileSync(outputPath, "utf8") !== serialized) throw new Error("product-functional-census.v1.json is stale");
