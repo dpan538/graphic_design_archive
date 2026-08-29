@@ -28,6 +28,7 @@
     "test:trace-system-suggestions-ui": "node scripts/test-trace-system-suggestions-ui.mjs",
     "setup:deepseek-key": "sh scripts/set-deepseek-key.sh",
     "verify:no-client-key": "node scripts/verify-client-key-absence.mjs",
+    "test:audit-search-guidance": "node scripts/audit-search-system-suggestions.mjs",
     "generate:context-v1": "node scripts/generate-trace-context-v1.mjs",
     "verify:context-v1-projection": "node scripts/generate-trace-context-v1.mjs --check",
     "test:context-api-v1": "node --conditions=react-server scripts/verify-context-api-v1.mjs",

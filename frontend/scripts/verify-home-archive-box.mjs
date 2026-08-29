@@ -103,9 +103,11 @@ const checks = {
     !home.includes("CountsCard") &&
     css.includes(".home-archive-summary summary strong") &&
     css.includes("font-size: 2.12rem"),
-  home_uses_frozen_archive_object_language:
-    home.includes("traceAtlas.counts.activeObjects") &&
-    home.includes("active, source-linked records") &&
+  home_uses_public_search_object_language:
+    home.includes("publicSearchFacets") &&
+    home.includes("searchable object pages") &&
+    home.includes("held included") &&
+    !home.includes("traceAtlas") &&
     !home.includes("<small>surfaces</small>"),
 };
 

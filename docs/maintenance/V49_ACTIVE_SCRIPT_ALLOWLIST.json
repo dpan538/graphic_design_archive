@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 321,
+  "scriptCount": 322,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -1082,6 +1082,16 @@
       "current_ci_required": false,
       "retained_audit_role": true,
       "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_product_api_map.mjs",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
     },
     {
       "path": "scripts/generate_region_geography_normalization_candidates_v1.py",
