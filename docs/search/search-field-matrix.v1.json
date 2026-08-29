@@ -25,7 +25,7 @@
       "normalization_policy": "NFKC plus deterministic case fold for exact lookup; display preserved.",
       "alias_policy": "No inferred aliases.",
       "rights_privacy_restriction": "No internal UUID or object URN.",
-      "implementation_status": "IMPLEMENTED_V1_EXTEND_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "title",
@@ -40,7 +40,7 @@
       "normalization_policy": "NFC/NFKC, punctuation and separator folding, safe Latin diacritic folding.",
       "alias_policy": "No generated aliases.",
       "rights_privacy_restriction": "Public presentation title only.",
-      "implementation_status": "IMPLEMENTED_V1_EXTEND_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "credited_label",
@@ -55,7 +55,7 @@
       "normalization_policy": "Same lexical channels as title; display preserved.",
       "alias_policy": "No authority expansion or inferred studio alias.",
       "rights_privacy_restriction": "Source-reported public credit only.",
-      "implementation_status": "PLANNED_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "display_date",
@@ -70,7 +70,7 @@
       "normalization_policy": "Trim only.",
       "alias_policy": "None.",
       "rights_privacy_restriction": "Public presentation value only.",
-      "implementation_status": "PLANNED_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "year_range",
@@ -85,7 +85,7 @@
       "normalization_policy": "Integer inclusive-overlap bounds; current dictionary range 1800 through 2026.",
       "alias_policy": "UI ranges compile to numeric bounds; no aliases in core data.",
       "rights_privacy_restriction": "Public normalized dates only.",
-      "implementation_status": "PLANNED_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "place",
@@ -100,7 +100,7 @@
       "normalization_policy": "Same lexical channels as title; display preserved.",
       "alias_policy": "No geocoding or inferred place aliases.",
       "rights_privacy_restriction": "Existing object-geography authority boundary applies.",
-      "implementation_status": "PLANNED_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "object_type",
@@ -115,7 +115,7 @@
       "normalization_policy": "Trim plus canonical dictionary ID; display preserved.",
       "alias_policy": "Existing canonical value only; no AI consolidation.",
       "rights_privacy_restriction": "Accepted public classification only.",
-      "implementation_status": "PLANNED_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "theme",
@@ -130,7 +130,7 @@
       "normalization_policy": "Canonical folder ID/title and deterministic code-point order.",
       "alias_policy": "Existing folder identity only.",
       "rights_privacy_restriction": "No inference; held/review assignments excluded.",
-      "implementation_status": "PLANNED_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "movement",
@@ -145,7 +145,7 @@
       "normalization_policy": "Canonical folder ID/title and deterministic code-point order.",
       "alias_policy": "Existing folder identity only.",
       "rights_privacy_restriction": "No inference; sparse coverage remains visible.",
-      "implementation_status": "PLANNED_V2"
+      "implementation_status": "IMPLEMENTED_V2"
     },
     {
       "canonical_field_name": "source_collection",
@@ -160,7 +160,7 @@
       "normalization_policy": "Trim; display preserved.",
       "alias_policy": "None.",
       "rights_privacy_restriction": "No raw locator, private note, or held collection text.",
-      "implementation_status": "PLANNED_V2_RESULT_METADATA"
+      "implementation_status": "IMPLEMENTED_V2_RESULT_METADATA"
     },
     {
       "canonical_field_name": "public_description",

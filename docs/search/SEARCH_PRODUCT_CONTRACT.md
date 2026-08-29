@@ -90,6 +90,18 @@ After deterministic results exist, the shared guidance service may add one or tw
 
 Guidance failure always degrades to a deterministic fallback and never changes the Search response.
 
+The implemented public routes are `GET /api/search/v1`, `GET /api/search/v1/facets`, and the optional shared `POST /api/system-suggestions/v1`. The guidance adapter is server-only, uses `https://api.deepseek.com/responses` with `deepseek-v4-flash` only when an unexposed server key is present, and otherwise returns static guidance. The model receives no result objects and cannot return an arbitrary URL or suggestion action.
+
+## Current implementation status
+
+```text
+SEARCH_MOBILE_FUNCTIONAL=true
+TRACE_MOBILE_FULL_RUNTIME_ENABLED=false
+SEARCH_CLIENT_BUNDLE_TRACE_IMPORT_COUNT=0
+PUBLIC_UI_AI_LABEL_COUNT=0
+SEARCH_FINAL_VISUAL_DESIGN_STARTED=false
+```
+
 ## Delivery boundary
 
 This implementation is a functional reference UI, not final visual design. It performs no manual deployment and introduces no production deployment configuration.

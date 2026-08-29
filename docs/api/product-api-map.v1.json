@@ -1,0 +1,1842 @@
+{
+  "schema_version": "gda-product-api-map/v1",
+  "catalog_version": "GLOBAL_SEARCH_SYSTEM_SUGGESTIONS_TRACE_20260829",
+  "generated_at": "2026-08-29T00:00:00Z",
+  "source_trace_catalog_sha256": "6373e77a6a6670383e0a952c7b78a8036fc9b11954212ebb2a92dc10df87fcd7",
+  "summary": {
+    "logical_route_template_count": 91,
+    "method_route_pair_count": 275,
+    "implemented_api_route_file_count": 12,
+    "implemented_product_api_uncatalogued_count": 0,
+    "catalog_route_without_implementation_count": 0,
+    "catalog_duplicate_method_route_count": 0,
+    "catalog_source_path_missing_count": 0,
+    "catalog_test_path_missing_count": 0,
+    "ai_none_route_count": 90,
+    "guidance_only_route_count": 1
+  },
+  "routes": [
+    {
+      "api_id": "search.public-objects.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/search/v1",
+      "product_area": "Global Search",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Query text and/or yearFrom, yearTo, objectType, theme, movement; optional first 1..50 and release/state-bound after cursor; allowlisted query parameters only.",
+      "response_summary": "Public result DTOs, exact count, bounded page info, aggregate summaries, release/checksum identity, plain-language explanation, and audit-only scoring metadata.",
+      "source_route_path": "frontend/src/app/api/search/v1/route.ts",
+      "service_repository_path": "frontend/src/features/search-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-search-v2-api.mjs",
+      "public_held_boundary": "PUBLIC_OBJECTS_ONLY; 7,995 source-verified documents; held, TRACE, Open Inquiry, raw source, and private notes excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED",
+      "known_limitation": "Relevance is the only product order; movement coverage is sparse and never inferred."
+    },
+    {
+      "api_id": "search.facets.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/search/v1/facets",
+      "product_area": "Global Search",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "No query parameters or body.",
+      "response_summary": "Release-bound year limits, 90 object types, 8 themes, 7 movements, counts, document total, and four deterministic starter queries.",
+      "source_route_path": "frontend/src/app/api/search/v1/facets/route.ts",
+      "service_repository_path": "frontend/src/features/search-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-search-v2-api.mjs",
+      "public_held_boundary": "PUBLIC_DICTIONARIES_ONLY; values derive from the 7,995 public Search documents; held values excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED",
+      "known_limitation": "Source-distinct object-type labels remain distinct; no inferred alias collapse."
+    },
+    {
+      "api_id": "guidance.system-suggestions.v1",
+      "methods": [
+        "POST",
+        "OPTIONS"
+      ],
+      "route": "/api/system-suggestions/v1",
+      "product_area": "Search and TRACE guidance",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "At most 16,384 bytes: surface, state hash, strict bounded public Search or TRACE context; server generates the allowed candidate list.",
+      "response_summary": "One or two bounded orientation sentences, zero to four approved structured suggestions, source class, prompt version, and safe provider status.",
+      "source_route_path": "frontend/src/app/api/system-suggestions/v1/route.ts",
+      "service_repository_path": "frontend/src/features/system-suggestions/service.server.ts",
+      "test_path": "frontend/scripts/test-system-suggestions.mjs",
+      "public_held_boundary": "BOUNDED_PUBLIC_SUMMARY_ONLY; no held record, private source text, internal note, user identity, secret, raw provider response, or reasoning.",
+      "ai_involvement": "GUIDANCE_ONLY",
+      "implementation_status": "IMPLEMENTED_OPTIONAL_FAIL_SAFE",
+      "known_limitation": "In-memory rate protection is process-local; guidance is non-persistent and optional."
+    },
+    {
+      "api_id": "trace.f3.validated.v1.retired-root",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ],
+      "route": "/api/trace/v1/exploration",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Any request to the retired v1 root or catch-all.",
+      "response_summary": "HTTP 410 trace-exploration-api-retirement-v1 payload; HEAD is bodyless.",
+      "source_route_path": "frontend/src/app/api/trace/v1/exploration/route.ts",
+      "service_repository_path": "frontend/src/app/api/trace/v1/exploration/route.ts",
+      "test_path": "frontend/scripts/validate-trace-exploration-v2-http.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "RETIRED_410",
+      "known_limitation": "OPTIONS intentionally returns the retirement payload rather than 204. No v1 data remains available."
+    },
+    {
+      "api_id": "trace.f3.validated.v1.retired-catchall",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ],
+      "route": "/api/trace/v1/exploration/{...path}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Any request to the retired v1 root or catch-all.",
+      "response_summary": "HTTP 410 trace-exploration-api-retirement-v1 payload; HEAD is bodyless.",
+      "source_route_path": "frontend/src/app/api/trace/v1/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/app/api/trace/v1/exploration/[...path]/route.ts",
+      "test_path": "frontend/scripts/validate-trace-exploration-v2-http.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "RETIRED_410",
+      "known_limitation": "OPTIONS intentionally returns the retirement payload rather than 204. No v1 data remains available."
+    },
+    {
+      "api_id": "trace.f3.open-inquiry.v1.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v1/open-inquiry",
+      "product_area": "TRACE Function 3 — Open Inquiry",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body and no query parameters.",
+      "response_summary": "OpenInquiryResponseEnvelope<OpenInquiryListData> with exactly 11 items.",
+      "source_route_path": "frontend/src/app/api/trace/v1/open-inquiry/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/open-inquiry-v1/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-open-inquiry-v1.mjs",
+      "public_held_boundary": "OPEN_INQUIRY_ONLY; unresolved and isolated from validated products; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY_ISOLATED",
+      "known_limitation": "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag. External human review remains pending."
+    },
+    {
+      "api_id": "trace.f3.open-inquiry.v1.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v1/open-inquiry/{inquiryId}",
+      "product_area": "TRACE Function 3 — Open Inquiry",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Exact R16B-HYPOTHESIS or R16B-SCOPED-HYPOTHESIS stable ID; no body or query.",
+      "response_summary": "OpenInquiryResponseEnvelope<OpenInquiryDetailData>.",
+      "source_route_path": "frontend/src/app/api/trace/v1/open-inquiry/[inquiryId]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/open-inquiry-v1/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-open-inquiry-v1.mjs",
+      "public_held_boundary": "OPEN_INQUIRY_ONLY; unresolved and isolated from validated products; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY_ISOLATED",
+      "known_limitation": "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag. External human review remains pending."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.root",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body/query.",
+      "response_summary": "HTTP 308 to /capabilities.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.associations.get",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/associations/{associationId}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Association ID; no body/query.",
+      "response_summary": "ExplorationV2AssociationDto",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.capabilities.get",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/capabilities",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body/query.",
+      "response_summary": "ExplorationV2CapabilitiesResponse",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.categories.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/categories",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body/query.",
+      "response_summary": "ExplorationV2CategoriesResponse",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.exports.svg",
+      "methods": [
+        "POST",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/export/svg",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "JSON ExplorationV2ExportRequest; body <=65536 bytes.",
+      "response_summary": "image/svg+xml bytes with semantic/presentation/state/export headers",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.exports.manifest",
+      "methods": [
+        "POST",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/exports/manifest",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "JSON ExplorationV2ExportRequest; body <=65536 bytes.",
+      "response_summary": "ExplorationV2ExportManifestDto",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.exports.png",
+      "methods": [
+        "POST",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/exports/png",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "JSON ExplorationV2ExportRequest; body <=65536 bytes.",
+      "response_summary": "image/png bytes with semantic/presentation/state/export headers",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.maps.create",
+      "methods": [
+        "POST",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/maps",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "JSON ExplorationV2MapRequest; body <=65536 bytes.",
+      "response_summary": "ExplorationV2MapDto",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.maps.get",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/maps/{mapId}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Map ID; optional state_id.",
+      "response_summary": "ExplorationV2MapDto",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.maps.actions",
+      "methods": [
+        "POST",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/maps/{mapId}/actions",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Map ID and JSON ExplorationV2ActionRequest; body <=65536 bytes.",
+      "response_summary": "ExplorationV2MapDto",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v2.vocabulary.get",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v2/exploration/vocabulary/{vocabularyId}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Vocabulary ID; no body/query.",
+      "response_summary": "ExplorationV2VocabularyDto",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.root",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body/query.",
+      "response_summary": "HTTP 308 to /capabilities.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.association-realizations.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/association-realizations",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationRealizationDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.association-realizations.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/association-realizations/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationRealizationDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.associations.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/associations",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.associations.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/associations/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.baseline-reconciliation.get",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/baseline/reconciliation",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope<{baseline_reconciliation}>",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.capabilities.get",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/capabilities",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope<{capabilities,contract_version,source_authority}>",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.composition-coherence-reviews.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/composition-coherence-reviews",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionCoherenceReviewDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.composition-coherence-reviews.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/composition-coherence-reviews/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionCoherenceReviewDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.compositions.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/compositions",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.compositions.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/compositions/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concept-senses.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/concept-senses",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptSenseDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concept-senses.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/concept-senses/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptSenseDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concepts.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/concepts",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concepts.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/concepts/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.association-realizations.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/association-realizations",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationRealizationDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.association-realizations.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/association-realizations/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationRealizationDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.associations.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/associations",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.associations.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/associations/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.composition-coherence-reviews.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/composition-coherence-reviews",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionCoherenceReviewDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.composition-coherence-reviews.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/composition-coherence-reviews/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionCoherenceReviewDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.compositions.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/compositions",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.compositions.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/compositions/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concept-senses.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/concept-senses",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptSenseDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concept-senses.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/concept-senses/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptSenseDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concepts.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/concepts",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concepts.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/concepts/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.exports.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/exports",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ExportDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.exports.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/exports/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ExportDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.incidences.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/incidences",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3IncidenceDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.incidences.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/incidences/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3IncidenceDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.navigation-states.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/navigation-states",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3NavigationStateDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.navigation-states.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/navigation-states/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3NavigationStateDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.scopes.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/scopes",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ScopeDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.scopes.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/scopes/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ScopeDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.transitions.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/transitions",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3TransitionDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.transitions.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/transitions/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3TransitionDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.workflows.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/workflows",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3WorkflowDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.workflows.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/controls/workflows/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3WorkflowDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.exports.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/exports",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ExportDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.exports.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/exports/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ExportDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.incidences.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/incidences",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3IncidenceDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.incidences.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/incidences/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3IncidenceDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.navigation-states.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/navigation-states",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3NavigationStateDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.navigation-states.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/navigation-states/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3NavigationStateDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.scopes.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/scopes",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3ScopeDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.scopes.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/scopes/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3ScopeDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.transitions.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/transitions",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3TransitionDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.transitions.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/transitions/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3TransitionDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.workflows.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/workflows",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope list of ExplorationV3WorkflowDto records with collection, count, and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.workflows.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/trace/v3/exploration/workflows/{id}",
+      "product_area": "TRACE Function 3 — Validated Exploration",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+      "response_summary": "ExplorationV3ResponseEnvelope containing one ExplorationV3WorkflowDto and data_class.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+    },
+    {
+      "api_id": "read.release.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Release alias or exact release ID; exact requests bind the manifest header.",
+      "response_summary": "Release identity/schema envelope.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "No public release listing endpoint."
+    },
+    {
+      "api_id": "read.archive-overview.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/archive/overview",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Release identity only.",
+      "response_summary": "Public archive overview counts.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "Selected release only."
+    },
+    {
+      "api_id": "read.claim-detail.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/claims/{claimId}",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Stable published claim ID.",
+      "response_summary": "One published claim or fail-closed 404.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "No claim is generated at request time."
+    },
+    {
+      "api_id": "read.corpus-detail.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/corpora/{corpusVersion}",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Stable published corpus version.",
+      "response_summary": "One published corpus descriptor or fail-closed 404.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "No unrestricted corpus payload."
+    },
+    {
+      "api_id": "read.folder-types.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/folder-types",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Release identity only.",
+      "response_summary": "Public folder-type summaries.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "No caller-selected order."
+    },
+    {
+      "api_id": "read.folders.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/folders",
+      "product_area": "Archive reading and object detail",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Optional type, first, and release-bound after cursor.",
+      "response_summary": "Cursor page of public folders.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "Repository-standard cursor pagination."
+    },
+    {
+      "api_id": "read.folder-detail.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/folders/{folderId}",
+      "product_area": "Archive reading and object detail",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Stable public folder ID.",
+      "response_summary": "One public folder detail.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "Unknown folder returns 404."
+    },
+    {
+      "api_id": "read.folder-members.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/folders/{folderId}/surfaces",
+      "product_area": "Archive reading and object detail",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Stable folder ID plus optional first and after cursor.",
+      "response_summary": "Cursor page of public object summaries in one folder.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "Public membership projection only."
+    },
+    {
+      "api_id": "read.release-manifest.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/manifest",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Release alias or exact release ID; exact requests bind the manifest header.",
+      "response_summary": "Release identity/schema envelope.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "Manifest response is the compact repository version envelope."
+    },
+    {
+      "api_id": "read.relation-detail.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/relations/{relationId}",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Stable published relation ID.",
+      "response_summary": "One published relation or fail-closed 404.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "No relation is inferred at request time."
+    },
+    {
+      "api_id": "read.legacy-search.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/search",
+      "product_area": "Archive reading and object detail",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "q, scope, first, and after; deterministic relevance.",
+      "response_summary": "Legacy release-scoped public Search result connection.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "Frozen v1 title/ID contract; Global Search v2 is /api/search/v1."
+    },
+    {
+      "api_id": "read.surface-detail.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/surfaces/{surfaceId}",
+      "product_area": "Archive reading and object detail",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "Public stable surface ID.",
+      "response_summary": "One public object detail used by Search result routes.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_READ_ONLY",
+      "known_limitation": "No image is implied by metadata availability."
+    },
+    {
+      "api_id": "trace.shared.read-v1.atlas",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/atlas",
+      "product_area": "shared TRACE infrastructure",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body/query.",
+      "response_summary": "Read API v1 envelope containing TraceAtlas; errors use the repository problem body.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+    },
+    {
+      "api_id": "trace.shared.read-v1.objects.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/objects",
+      "product_area": "shared TRACE infrastructure",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Optional layer, first (default 50, 1..100), and after cursor.",
+      "response_summary": "Read API v1 envelope containing Page<TraceObjectSummary>; errors use the repository problem body.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+    },
+    {
+      "api_id": "trace.f1.context.object-context.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/objects/{id}/context",
+      "product_area": "TRACE Function 1",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Release path and public stable object ID; an exact release requires Archive-Research-Manifest-Sha256; no body or query parameters.",
+      "response_summary": "Read API v1 envelope containing PublicContextDataset.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/context/governed/reader.server.ts",
+      "test_path": "frontend/scripts/verify-context-api-v1.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "known_limitation": "No pagination or client sorting. The workspace is not linked into public navigation by this integration."
+    },
+    {
+      "api_id": "trace.shared.read-v1.objects.neighborhood",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/objects/{id}/neighborhood",
+      "product_area": "shared TRACE infrastructure",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Object ID; no body/query.",
+      "response_summary": "Read API v1 envelope containing TraceGraph; errors use the repository problem body.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+    },
+    {
+      "api_id": "trace.shared.read-v1.relation-types.list",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/relation-types",
+      "product_area": "shared TRACE infrastructure",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "No body/query.",
+      "response_summary": "Read API v1 envelope containing RelationTypeDefinition[]; errors use the repository problem body.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+    },
+    {
+      "api_id": "trace.shared.read-v1.relation-types.detail",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/relation-types/{id}",
+      "product_area": "shared TRACE infrastructure",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Relation-type ID; no body/query.",
+      "response_summary": "Read API v1 envelope containing RelationTypeDefinition; errors use the repository problem body.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+    },
+    {
+      "api_id": "trace.f2.spacetime.atlas.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/spacetime/atlas",
+      "product_area": "TRACE Function 2",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Exactly one required period query parameter; no body.",
+      "response_summary": "Read API v1 envelope containing PublicSpacetimeAtlasDataset.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/spacetime/governed/reader.server.ts",
+      "test_path": "frontend/scripts/verify-spacetime-api-v1.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration."
+    },
+    {
+      "api_id": "trace.f2.spacetime.geography-records.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/spacetime/geographies/{geographyId}/records",
+      "product_area": "TRACE Function 2",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Geography path ID; exactly one period; optional first 1..100 (default 24) and projection-bound after cursor up to 2048 characters.",
+      "response_summary": "Read API v1 envelope containing PublicSpacetimeRecordPage.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/spacetime/governed/reader.server.ts",
+      "test_path": "frontend/scripts/verify-spacetime-api-v1.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration."
+    },
+    {
+      "api_id": "trace.f2.spacetime.periods.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/releases/{release}/trace/spacetime/periods",
+      "product_area": "TRACE Function 2",
+      "availability": "DESKTOP_ONLY",
+      "request_summary": "Release path; no query or body.",
+      "response_summary": "Read API v1 envelope containing PublicSpacetimePeriodsDataset.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/features/trace-v49/spacetime/governed/reader.server.ts",
+      "test_path": "frontend/scripts/verify-spacetime-api-v1.mjs",
+      "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration."
+    },
+    {
+      "api_id": "read.visual-registry-current.v1",
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "route": "/api/v1/visual-registries/current",
+      "product_area": "Shared release infrastructure",
+      "availability": "DESKTOP_AND_MOBILE",
+      "request_summary": "No body; current visual-registry lookup.",
+      "response_summary": "Fail-closed 404 problem because no visual registry is selected for the fixture release.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "service_repository_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "public_held_boundary": "NO_RECORD_PAYLOAD; fail-closed capability response.",
+      "ai_involvement": "NONE",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED",
+      "known_limitation": "No visual registry is selected."
+    }
+  ]
+}

@@ -906,6 +906,14 @@ function AboutPageMain() {
                 ))}
               </div>
             </Accordion>
+            <Accordion title="System-generated guidance" kicker="methodology">
+              <p>
+                Some short reading guides and suggested next steps may be generated with the assistance of DeepSeek V4 Flash. This guidance is used only to help visitors navigate the archive. It does not determine search results, ranking, archival metadata, public eligibility, TRACE associations, evidence status, Open Inquiry status, or historical conclusions. Core Search and TRACE outputs remain governed by deterministic data and evidence rules.
+              </p>
+              <p>
+                Only a limited public state summary is sent. No held records are sent, no API key is exposed to the browser, and guidance failure does not affect core functions.
+              </p>
+            </Accordion>
           </div>
         </section>
 
