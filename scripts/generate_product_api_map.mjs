@@ -82,7 +82,28 @@ const traceRoutes = traceCatalog.routes.map((route) => ({
   known_limitation: Array.isArray(route.limitations) ? route.limitations.join(" ") : String(route.limitations ?? "None recorded."),
 }));
 
-const routes = [...additions, ...traceRoutes].sort((left, right) => left.route.localeCompare(right.route) || left.api_id.localeCompare(right.api_id));
+const frontendRequiredIds = new Set([
+  "search.public-objects.v1", "search.facets.v1", "read.surface-detail.v1",
+  "trace.f1.context.object-context.v1", "trace.f2.spacetime.periods.v1", "trace.f2.spacetime.atlas.v1", "trace.f2.spacetime.geography-records.v1",
+  "trace.f3.validated.v2.associations.get", "trace.f3.validated.v2.capabilities.get", "trace.f3.validated.v2.categories.list",
+  "trace.f3.validated.v2.exports.svg", "trace.f3.validated.v2.exports.manifest", "trace.f3.validated.v2.exports.png",
+  "trace.f3.validated.v2.maps.create", "trace.f3.validated.v2.maps.get", "trace.f3.validated.v2.maps.actions", "trace.f3.validated.v2.vocabulary.get",
+  "trace.f3.open-inquiry.v1.list", "trace.f3.open-inquiry.v1.detail",
+]);
+
+function frontendConsumptionClass(apiId) {
+  if (frontendRequiredIds.has(apiId)) return "FRONTEND_REQUIRED_NOW";
+  if (apiId === "guidance.system-suggestions.v1") return "FRONTEND_OPTIONAL";
+  if (apiId.includes(".retired-")) return "RETIRED";
+  if (apiId.includes(".v3.control.")) return "INTERNAL_RESEARCH_CONTROL";
+  if (apiId.startsWith("trace.f3.validated.v3.") || apiId === "read.visual-registry-current.v1") return "FAIL_CLOSED";
+  if (["read.release.v1", "read.release-manifest.v1", "read.archive-overview.v1", "trace.f3.validated.v2.root"].includes(apiId)) return "SERVER_SIDE_SUPPORT";
+  return "LEGACY_COMPATIBILITY";
+}
+
+const routes = [...additions, ...traceRoutes]
+  .map((route) => ({ ...route, frontend_consumption_class: frontendConsumptionClass(route.api_id) }))
+  .sort((left, right) => left.route.localeCompare(right.route) || left.api_id.localeCompare(right.api_id));
 const seen = new Set();
 let duplicatePairs = 0;
 for (const route of routes) for (const method of route.methods) {
@@ -112,6 +133,13 @@ const summary = {
   catalog_test_path_missing_count: routes.filter((route) => !existsSync(resolve(root, route.test_path))).length,
   ai_none_route_count: routes.filter((route) => route.ai_involvement === "NONE").length,
   guidance_only_route_count: routes.filter((route) => route.ai_involvement === "GUIDANCE_ONLY").length,
+  frontend_required_now_count: routes.filter((route) => route.frontend_consumption_class === "FRONTEND_REQUIRED_NOW").length,
+  frontend_optional_count: routes.filter((route) => route.frontend_consumption_class === "FRONTEND_OPTIONAL").length,
+  server_side_support_count: routes.filter((route) => route.frontend_consumption_class === "SERVER_SIDE_SUPPORT").length,
+  internal_research_control_count: routes.filter((route) => route.frontend_consumption_class === "INTERNAL_RESEARCH_CONTROL").length,
+  legacy_compatibility_count: routes.filter((route) => route.frontend_consumption_class === "LEGACY_COMPATIBILITY").length,
+  retired_count: routes.filter((route) => route.frontend_consumption_class === "RETIRED").length,
+  fail_closed_count: routes.filter((route) => route.frontend_consumption_class === "FAIL_CLOSED").length,
 };
 const payload = {
   schema_version: "gda-product-api-map/v1",
@@ -123,8 +151,8 @@ const payload = {
 };
 const json = `${JSON.stringify(payload, null, 2)}\n`;
 const escape = (value) => String(value).replaceAll("|", "\\|").replaceAll("\n", " ");
-const table = routes.map((route) => `| ${route.methods.join(", ")} | \`${escape(route.route)}\` | ${escape(route.product_area)} | ${route.availability} | ${escape(route.request_summary)} | ${escape(route.response_summary)} | \`${route.source_route_path}\` | \`${route.service_repository_path}\` | \`${route.test_path}\` | ${escape(route.public_held_boundary)} | ${route.ai_involvement} | ${route.implementation_status} | ${escape(route.known_limitation)} |`).join("\n");
-const markdown = `# Product API map\n\nThis is the complete logical product API route table for Global Search, archive object/detail reading, shared System Suggestions, and all catalogued TRACE surfaces. The pre-existing exhaustive TRACE catalog remains the source for TRACE request/response detail; this map binds it into one cross-product inventory.\n\n## Integrity counters\n\n\`IMPLEMENTED_PRODUCT_API_UNCATALOGUED_COUNT=${summary.implemented_product_api_uncatalogued_count}\`\n\n\`CATALOG_ROUTE_WITHOUT_IMPLEMENTATION_COUNT=${summary.catalog_route_without_implementation_count}\`\n\n\`CATALOG_DUPLICATE_METHOD_ROUTE_COUNT=${summary.catalog_duplicate_method_route_count}\`\n\n\`CATALOG_SOURCE_PATH_MISSING_COUNT=${summary.catalog_source_path_missing_count}\`\n\n\`CATALOG_TEST_PATH_MISSING_COUNT=${summary.catalog_test_path_missing_count}\`\n\n\`PRODUCT_API_LOGICAL_ROUTE_TEMPLATE_COUNT=${summary.logical_route_template_count}\`\n\n\`PRODUCT_API_METHOD_ROUTE_PAIR_COUNT=${summary.method_route_pair_count}\`\n\n## Complete route table\n\n| Method | Exact route | Product area | Desktop/mobile | Request summary | Response summary | Source route | Service/repository | Test | Public/held boundary | AI involvement | Status | Known limitation |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n${table}\n\n## Interpretation\n\n\`NONE\` means no model participates. \`GUIDANCE_ONLY\` appears only on \`POST /api/system-suggestions/v1\`; it cannot retrieve Search candidates, rank or include results, change public eligibility or metadata, or mutate TRACE/evidence state. Unsupported methods are fail-closed and are not product methods in this table.\n`;
+const table = routes.map((route) => `| ${route.methods.join(", ")} | \`${escape(route.route)}\` | ${route.frontend_consumption_class} | ${escape(route.product_area)} | ${route.availability} | ${escape(route.request_summary)} | ${escape(route.response_summary)} | \`${route.source_route_path}\` | \`${route.service_repository_path}\` | \`${route.test_path}\` | ${escape(route.public_held_boundary)} | ${route.ai_involvement} | ${route.implementation_status} | ${escape(route.known_limitation)} |`).join("\n");
+const markdown = `# Product API map\n\nThis is the complete logical product API route table for Global Search, archive object/detail reading, shared System Suggestions, and all catalogued TRACE surfaces. The pre-existing exhaustive TRACE catalog remains the source for TRACE request/response detail; this map binds it into one cross-product inventory. The frontend-consumption class is a bounded handoff disposition, not a replacement for the API contract.\n\n## Integrity counters\n\n\`IMPLEMENTED_PRODUCT_API_UNCATALOGUED_COUNT=${summary.implemented_product_api_uncatalogued_count}\`\n\n\`CATALOG_ROUTE_WITHOUT_IMPLEMENTATION_COUNT=${summary.catalog_route_without_implementation_count}\`\n\n\`CATALOG_DUPLICATE_METHOD_ROUTE_COUNT=${summary.catalog_duplicate_method_route_count}\`\n\n\`CATALOG_SOURCE_PATH_MISSING_COUNT=${summary.catalog_source_path_missing_count}\`\n\n\`CATALOG_TEST_PATH_MISSING_COUNT=${summary.catalog_test_path_missing_count}\`\n\n\`PRODUCT_API_LOGICAL_ROUTE_TEMPLATE_COUNT=${summary.logical_route_template_count}\`\n\n\`PRODUCT_API_METHOD_ROUTE_PAIR_COUNT=${summary.method_route_pair_count}\`\n\n## Frontend-consumption counts\n\n\`FRONTEND_REQUIRED_NOW_COUNT=${summary.frontend_required_now_count}\`\n\n\`FRONTEND_OPTIONAL_COUNT=${summary.frontend_optional_count}\`\n\n\`SERVER_SIDE_SUPPORT_COUNT=${summary.server_side_support_count}\`\n\n\`INTERNAL_RESEARCH_CONTROL_COUNT=${summary.internal_research_control_count}\`\n\n\`LEGACY_COMPATIBILITY_COUNT=${summary.legacy_compatibility_count}\`\n\n\`RETIRED_COUNT=${summary.retired_count}\`\n\n\`FAIL_CLOSED_COUNT=${summary.fail_closed_count}\`\n\n## Complete route table\n\n| Method | Exact route | Frontend consumption | Product area | Desktop/mobile | Request summary | Response summary | Source route | Service/repository | Test | Public/held boundary | AI involvement | Status | Known limitation |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n${table}\n\n## Interpretation\n\n\`NONE\` means no model participates. \`GUIDANCE_ONLY\` appears only on \`POST /api/system-suggestions/v1\`; it cannot retrieve Search candidates, rank or include results, change public eligibility or metadata, or mutate TRACE/evidence state. Unsupported methods are fail-closed and are not product methods in this table.\n`;
 
 if (checkOnly) {
   if (!existsSync(jsonPath) || readFileSync(jsonPath, "utf8") !== json) throw new Error("product-api-map.v1.json is stale");

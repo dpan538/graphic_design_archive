@@ -13,7 +13,14 @@
     "catalog_source_path_missing_count": 0,
     "catalog_test_path_missing_count": 0,
     "ai_none_route_count": 90,
-    "guidance_only_route_count": 1
+    "guidance_only_route_count": 1,
+    "frontend_required_now_count": 19,
+    "frontend_optional_count": 1,
+    "server_side_support_count": 4,
+    "internal_research_control_count": 24,
+    "legacy_compatibility_count": 13,
+    "retired_count": 2,
+    "fail_closed_count": 28
   },
   "routes": [
     {
@@ -34,7 +41,8 @@
       "public_held_boundary": "PUBLIC_OBJECTS_ONLY; 7,995 source-verified documents; held, TRACE, Open Inquiry, raw source, and private notes excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED",
-      "known_limitation": "Relevance is the only product order; movement coverage is sparse and never inferred."
+      "known_limitation": "Relevance is the only product order; movement coverage is sparse and never inferred.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "search.facets.v1",
@@ -54,7 +62,8 @@
       "public_held_boundary": "PUBLIC_DICTIONARIES_ONLY; values derive from the 7,995 public Search documents; held values excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED",
-      "known_limitation": "Source-distinct object-type labels remain distinct; no inferred alias collapse."
+      "known_limitation": "Source-distinct object-type labels remain distinct; no inferred alias collapse.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "guidance.system-suggestions.v1",
@@ -73,7 +82,8 @@
       "public_held_boundary": "BOUNDED_PUBLIC_SUMMARY_ONLY; no held record, private source text, internal note, user identity, secret, raw provider response, or reasoning.",
       "ai_involvement": "GUIDANCE_ONLY",
       "implementation_status": "IMPLEMENTED_OPTIONAL_FAIL_SAFE",
-      "known_limitation": "In-memory rate protection is process-local; guidance is non-persistent and optional."
+      "known_limitation": "In-memory rate protection is process-local; guidance is non-persistent and optional.",
+      "frontend_consumption_class": "FRONTEND_OPTIONAL"
     },
     {
       "api_id": "trace.f3.validated.v1.retired-root",
@@ -97,7 +107,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "RETIRED_410",
-      "known_limitation": "OPTIONS intentionally returns the retirement payload rather than 204. No v1 data remains available."
+      "known_limitation": "OPTIONS intentionally returns the retirement payload rather than 204. No v1 data remains available.",
+      "frontend_consumption_class": "RETIRED"
     },
     {
       "api_id": "trace.f3.validated.v1.retired-catchall",
@@ -121,7 +132,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "RETIRED_410",
-      "known_limitation": "OPTIONS intentionally returns the retirement payload rather than 204. No v1 data remains available."
+      "known_limitation": "OPTIONS intentionally returns the retirement payload rather than 204. No v1 data remains available.",
+      "frontend_consumption_class": "RETIRED"
     },
     {
       "api_id": "trace.f3.open-inquiry.v1.list",
@@ -141,7 +153,8 @@
       "public_held_boundary": "OPEN_INQUIRY_ONLY; unresolved and isolated from validated products; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY_ISOLATED",
-      "known_limitation": "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag. External human review remains pending."
+      "known_limitation": "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag. External human review remains pending.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.open-inquiry.v1.detail",
@@ -161,7 +174,8 @@
       "public_held_boundary": "OPEN_INQUIRY_ONLY; unresolved and isolated from validated products; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY_ISOLATED",
-      "known_limitation": "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag. External human review remains pending."
+      "known_limitation": "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag. External human review remains pending.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.root",
@@ -181,7 +195,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "SERVER_SIDE_SUPPORT"
     },
     {
       "api_id": "trace.f3.validated.v2.associations.get",
@@ -201,7 +216,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.capabilities.get",
@@ -221,7 +237,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.categories.list",
@@ -241,7 +258,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.exports.svg",
@@ -260,7 +278,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.exports.manifest",
@@ -279,7 +298,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.exports.png",
@@ -298,7 +318,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.maps.create",
@@ -317,7 +338,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.maps.get",
@@ -337,7 +359,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.maps.actions",
@@ -356,7 +379,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v2.vocabulary.get",
@@ -376,7 +400,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
-      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620."
+      "known_limitation": "A map exposes at most eight visible nodes. Map GET recognizes state_id; other query keys are currently ignored. PNG is fixed at 1080×1620.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f3.validated.v3.root",
@@ -396,7 +421,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.association-realizations.list",
@@ -416,7 +442,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.association-realizations.detail",
@@ -436,7 +463,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.associations.list",
@@ -456,7 +484,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.associations.detail",
@@ -476,7 +505,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.baseline-reconciliation.get",
@@ -496,7 +526,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.capabilities.get",
@@ -516,7 +547,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.composition-coherence-reviews.list",
@@ -536,7 +568,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.composition-coherence-reviews.detail",
@@ -556,7 +589,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.compositions.list",
@@ -576,7 +610,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.compositions.detail",
@@ -596,7 +631,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.concept-senses.list",
@@ -616,7 +652,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.concept-senses.detail",
@@ -636,7 +673,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.concepts.list",
@@ -656,7 +694,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.concepts.detail",
@@ -676,7 +715,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.control.association-realizations.list",
@@ -696,7 +736,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.association-realizations.detail",
@@ -716,7 +757,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.associations.list",
@@ -736,7 +778,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.associations.detail",
@@ -756,7 +799,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.composition-coherence-reviews.list",
@@ -776,7 +820,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.composition-coherence-reviews.detail",
@@ -796,7 +841,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.compositions.list",
@@ -816,7 +862,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.compositions.detail",
@@ -836,7 +883,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.concept-senses.list",
@@ -856,7 +904,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.concept-senses.detail",
@@ -876,7 +925,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.concepts.list",
@@ -896,7 +946,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.concepts.detail",
@@ -916,7 +967,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.exports.list",
@@ -936,7 +988,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.exports.detail",
@@ -956,7 +1009,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.incidences.list",
@@ -976,7 +1030,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.incidences.detail",
@@ -996,7 +1051,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.navigation-states.list",
@@ -1016,7 +1072,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.navigation-states.detail",
@@ -1036,7 +1093,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.scopes.list",
@@ -1056,7 +1114,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.scopes.detail",
@@ -1076,7 +1135,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.transitions.list",
@@ -1096,7 +1156,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.transitions.detail",
@@ -1116,7 +1177,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.workflows.list",
@@ -1136,7 +1198,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.control.workflows.detail",
@@ -1156,7 +1219,8 @@
       "public_held_boundary": "SYNTHETIC_RESEARCH_CONTROL_ONLY; never active product fact; held records excluded.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "INTERNAL_RESEARCH_CONTROL"
     },
     {
       "api_id": "trace.f3.validated.v3.active.exports.list",
@@ -1176,7 +1240,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.exports.detail",
@@ -1196,7 +1261,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.incidences.list",
@@ -1216,7 +1282,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.incidences.detail",
@@ -1236,7 +1303,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.navigation-states.list",
@@ -1256,7 +1324,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.navigation-states.detail",
@@ -1276,7 +1345,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.scopes.list",
@@ -1296,7 +1366,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.scopes.detail",
@@ -1316,7 +1387,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.transitions.list",
@@ -1336,7 +1408,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.transitions.detail",
@@ -1356,7 +1429,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.workflows.list",
@@ -1376,7 +1450,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "trace.f3.validated.v3.active.workflows.detail",
@@ -1396,7 +1471,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
-      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      "known_limitation": "Query parameters are currently ignored. Identifiers are non-empty and limited to 512 characters. Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     },
     {
       "api_id": "read.release.v1",
@@ -1416,7 +1492,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "No public release listing endpoint."
+      "known_limitation": "No public release listing endpoint.",
+      "frontend_consumption_class": "SERVER_SIDE_SUPPORT"
     },
     {
       "api_id": "read.archive-overview.v1",
@@ -1436,7 +1513,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "Selected release only."
+      "known_limitation": "Selected release only.",
+      "frontend_consumption_class": "SERVER_SIDE_SUPPORT"
     },
     {
       "api_id": "read.claim-detail.v1",
@@ -1456,7 +1534,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "No claim is generated at request time."
+      "known_limitation": "No claim is generated at request time.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.corpus-detail.v1",
@@ -1476,7 +1555,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "No unrestricted corpus payload."
+      "known_limitation": "No unrestricted corpus payload.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.folder-types.v1",
@@ -1496,7 +1576,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "No caller-selected order."
+      "known_limitation": "No caller-selected order.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.folders.v1",
@@ -1516,7 +1597,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "Repository-standard cursor pagination."
+      "known_limitation": "Repository-standard cursor pagination.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.folder-detail.v1",
@@ -1536,7 +1618,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "Unknown folder returns 404."
+      "known_limitation": "Unknown folder returns 404.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.folder-members.v1",
@@ -1556,7 +1639,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "Public membership projection only."
+      "known_limitation": "Public membership projection only.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.release-manifest.v1",
@@ -1576,7 +1660,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "Manifest response is the compact repository version envelope."
+      "known_limitation": "Manifest response is the compact repository version envelope.",
+      "frontend_consumption_class": "SERVER_SIDE_SUPPORT"
     },
     {
       "api_id": "read.relation-detail.v1",
@@ -1596,7 +1681,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "No relation is inferred at request time."
+      "known_limitation": "No relation is inferred at request time.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.legacy-search.v1",
@@ -1616,7 +1702,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "Frozen v1 title/ID contract; Global Search v2 is /api/search/v1."
+      "known_limitation": "Frozen v1 title/ID contract; Global Search v2 is /api/search/v1.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "read.surface-detail.v1",
@@ -1636,7 +1723,8 @@
       "public_held_boundary": "PUBLISHED_RELEASE_PROJECTION_ONLY; held and review-only records fail closed.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_READ_ONLY",
-      "known_limitation": "No image is implied by metadata availability."
+      "known_limitation": "No image is implied by metadata availability.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.shared.read-v1.atlas",
@@ -1656,7 +1744,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
-      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "trace.shared.read-v1.objects.list",
@@ -1676,7 +1765,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
-      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "trace.f1.context.object-context.v1",
@@ -1696,7 +1786,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
-      "known_limitation": "No pagination or client sorting. The workspace is not linked into public navigation by this integration."
+      "known_limitation": "No pagination or client sorting. The workspace is not linked into public navigation by this integration.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.shared.read-v1.objects.neighborhood",
@@ -1716,7 +1807,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
-      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "trace.shared.read-v1.relation-types.list",
@@ -1736,7 +1828,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
-      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "trace.shared.read-v1.relation-types.detail",
@@ -1756,7 +1849,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
-      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable."
+      "known_limitation": "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged. Current relation and neighborhood baselines are empty or unavailable.",
+      "frontend_consumption_class": "LEGACY_COMPATIBILITY"
     },
     {
       "api_id": "trace.f2.spacetime.atlas.v1",
@@ -1776,7 +1870,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
-      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration."
+      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f2.spacetime.geography-records.v1",
@@ -1796,7 +1891,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
-      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration."
+      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "trace.f2.spacetime.periods.v1",
@@ -1816,7 +1912,8 @@
       "public_held_boundary": "GOVERNED_PUBLIC_TRACE_ONLY; held records excluded; evidence and product-state gates remain authoritative.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
-      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration."
+      "known_limitation": "Governed periods and geography identities are fixed by the committed projection. The workspace is not linked into public navigation by this integration.",
+      "frontend_consumption_class": "FRONTEND_REQUIRED_NOW"
     },
     {
       "api_id": "read.visual-registry-current.v1",
@@ -1836,7 +1933,8 @@
       "public_held_boundary": "NO_RECORD_PAYLOAD; fail-closed capability response.",
       "ai_involvement": "NONE",
       "implementation_status": "IMPLEMENTED_FAIL_CLOSED",
-      "known_limitation": "No visual registry is selected."
+      "known_limitation": "No visual registry is selected.",
+      "frontend_consumption_class": "FAIL_CLOSED"
     }
   ]
 }
