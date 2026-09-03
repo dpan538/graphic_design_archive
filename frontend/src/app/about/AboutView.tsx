@@ -1,9 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import SiteNav from "@/components/site/SiteNav";
 import styles from "./about.module.css";
@@ -22,6 +19,7 @@ import {
   openingStatement,
   pipelineStages,
   purposeLead,
+  rationaleLead,
   REPO_URL,
   rightsProse,
   scaleFigures,
@@ -31,146 +29,137 @@ import {
   visualReferences,
 } from "./content";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+/* About — set like Source, like the rest of the sheet (FRONTEND_DESIGN_DECISION.md
+   §7a): each section opens on a solid colour plate carrying its numeral
+   oversized and cropped by the plate's edge, its title in the heavy rounded
+   face, and one small line-drawn mark; below the plate, paper and ink, with
+   the section's colour returned as pills, discs and colour heads. The last
+   section turns the sheet over: a yellow plate on an ink ground. Nothing
+   moves on scroll. */
 
-/* ---- Per-section geometric device (varied, not one repeated ring) ---- */
+type Tone = "blue" | "red" | "yellow" | "green" | "teal" | "night";
 
-type MotifKind =
-  | "grooves"
-  | "fan"
-  | "registration"
-  | "chart"
-  | "rings"
-  | "seal";
+const SECTIONS: { id: string; n: string; sec: Tone; kicker: string; title: string }[] = [
+  { id: "purpose", n: "1", sec: "blue", kicker: "Purpose", title: "An archive made to be read, located, and explored." },
+  { id: "methodology", n: "2", sec: "red", kicker: "Methodology", title: "Provenance before interpretation." },
+  { id: "visual", n: "3", sec: "yellow", kicker: "Visual design rationale", title: "One idea per cover, set like a stamp." },
+  { id: "scale", n: "4", sec: "green", kicker: "The archive in numbers", title: "A large raw pool, cleaned to a verified core." },
+  { id: "contact", n: "5", sec: "teal", kicker: "Contact & citation", title: "Reach the project, and cite it." },
+  { id: "boundaries", n: "6", sec: "night", kicker: "Claim boundaries & rights", title: "What the archive supports, and what it does not claim." },
+];
 
-function Motif({ kind }: { kind: MotifKind }) {
+/* one line-drawn mark per section — the only thing that changes down the page */
+function Mark({ id }: { id: string }) {
   const common = {
-    viewBox: "0 0 100 100",
+    viewBox: "0 0 200 110",
+    className: styles.plateMark,
     fill: "none",
     stroke: "currentColor",
-    strokeWidth: 2.5,
-    strokeLinecap: "round",
-  } as const;
-  const solid = { fill: "currentColor", stroke: "none" } as const;
-  let shape: React.ReactNode = null;
-
-  switch (kind) {
-    // §1 — record grooves / a reading eye
-    case "grooves":
-      shape = (
-        <>
-          {[15, 26, 37, 48].map((r) => (
-            <circle key={r} cx="74" cy="78" r={r} />
+    strokeWidth: 4,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+  switch (id) {
+    case "purpose": // reading: rings around a point
+      return (
+        <svg {...common}>
+          <circle cx={100} cy={55} r={46} />
+          <circle cx={100} cy={55} r={30} />
+          <circle cx={100} cy={55} r={14} />
+          <circle cx={100} cy={55} r={4} fill="currentColor" />
+        </svg>
+      );
+    case "methodology": // gates, one after another
+      return (
+        <svg {...common}>
+          {[0, 1, 2, 3, 4].map((i) => (
+            <rect key={i} x={12 + i * 37} y={20 + (i % 2) * 6} width={26} height={70 - (i % 2) * 12} rx={13} />
           ))}
-          <circle cx="74" cy="78" r="4" {...solid} />
-        </>
+        </svg>
       );
-      break;
-    // §2 — a radiating fan from the corner (Steinweiss)
-    case "fan":
-      shape = (
-        <>
-          {[22, 35, 48, 61, 74].map((r) => (
-            <path key={r} d={`M ${100 - r} 100 A ${r} ${r} 0 0 1 100 ${100 - r}`} />
-          ))}
-          <path d="M 100 100 L 40 66" />
-          <path d="M 100 100 L 66 40" />
-        </>
+    case "visual": // a registration mark
+      return (
+        <svg {...common}>
+          <circle cx={100} cy={55} r={36} />
+          <path d="M100 4 v102 M49 55 h102" />
+          <path d="M100 55 h36 a36 36 0 0 1 -36 36 z" fill="currentColor" stroke="none" />
+        </svg>
       );
-      break;
-    // §3 — a printer's registration mark
-    case "registration":
-      shape = (
-        <>
-          <circle cx="72" cy="74" r="20" />
-          <path d="M 72 42 L 72 106" />
-          <path d="M 40 74 L 104 74" />
-          <path d="M 72 74 L 92 74 A 20 20 0 0 1 72 94 Z" {...solid} />
-        </>
-      );
-      break;
-    // §4 — a bar chart on a baseline, with one data point
-    case "chart":
-      shape = (
-        <>
-          <path d="M 34 96 L 100 96" />
+    case "scale": // bars on a baseline
+      return (
+        <svg {...common}>
+          <path d="M14 96 h172" />
           {[
-            [40, 18],
-            [53, 34],
-            [66, 26],
-            [79, 50],
-            [92, 40],
+            [24, 22],
+            [58, 44],
+            [92, 34],
+            [126, 70],
+            [160, 56],
           ].map(([x, h]) => (
-            <rect key={x} x={x} y={96 - h} width="8" height={h} />
+            <rect key={x} x={x} y={96 - h} width={20} height={h} rx={6} />
           ))}
-          <circle cx="83" cy="46" r="3.5" {...solid} />
-        </>
+        </svg>
       );
-      break;
-    // §5 — two interlocking rings (reach / connect)
-    case "rings":
-      shape = (
-        <>
-          <circle cx="65" cy="78" r="22" />
-          <circle cx="87" cy="78" r="22" />
-          <circle cx="65" cy="78" r="3" {...solid} />
-          <circle cx="87" cy="78" r="3" {...solid} />
-        </>
+    case "contact": // two rings, linked
+      return (
+        <svg {...common}>
+          <circle cx={78} cy={55} r={38} />
+          <circle cx={122} cy={55} r={38} />
+        </svg>
       );
-      break;
-    // §6 — a seal with a line drawn through it (a boundary)
-    case "seal":
-      shape = (
-        <>
-          <circle cx="74" cy="76" r="34" />
-          <circle cx="74" cy="76" r="24" />
-          <path d="M 34 76 L 114 76" />
-        </>
+    case "boundaries": // a seal, and a line drawn through it
+      return (
+        <svg {...common}>
+          <circle cx={100} cy={55} r={46} />
+          <circle cx={100} cy={55} r={30} />
+          <path d="M14 55 h172" />
+        </svg>
       );
-      break;
+    default:
+      return null;
   }
+}
 
+function Plate({ s }: { s: (typeof SECTIONS)[number] }) {
   return (
-    <div className={styles.motif} aria-hidden="true">
-      <svg {...common}>{shape}</svg>
+    <div className={styles.plate}>
+      <span className={styles.plateNum} aria-hidden="true">
+        {s.n}
+      </span>
+      <div className={styles.plateText}>
+        <span className={styles.plateKicker}>
+          Section {s.n} · {s.kicker}
+        </span>
+        <h2 className={styles.plateTitle}>{s.title}</h2>
+      </div>
+      <Mark id={s.id} />
     </div>
   );
 }
 
-function Band({
-  num,
-  kicker,
-  title,
-  motif,
-}: {
-  num: string;
-  kicker: string;
-  title: string;
-  motif: MotifKind;
-}) {
+/* the pull-statement: a solid stub with one cropped glyph, an outlined body */
+function Statement({ label, children }: { label?: string; children: ReactNode }) {
   return (
-    <div className={styles.band} data-animate="band">
-      <Motif kind={motif} />
-      <p className={styles.bandKicker}>{kicker}</p>
-      <div className={styles.bandHead}>
-        <span className={styles.bandNum} data-parallax>
-          {num}
-        </span>
-        <h2 className={styles.bandTitle}>{title}</h2>
+    <div className={styles.statement}>
+      <span className={styles.stub} aria-hidden="true">
+        <span className={styles.stubGlyph}>&ldquo;</span>
+      </span>
+      <div className={styles.statementBody}>
+        {label ? <span className={styles.statementLabel}>{label}</span> : null}
+        <p>{children}</p>
       </div>
     </div>
   );
 }
 
-function CitationCard({
-  tone,
-  style,
-  text,
-}: {
-  tone: string;
-  style: string;
-  text: string;
-}) {
+const FlowArrow = () => (
+  <svg className={styles.flowArrow} viewBox="0 0 28 20" aria-hidden="true">
+    <path d="M2 10 h22 m-8 -8 l8 8 l-8 8" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+function CitationCard({ tone, style, text }: { tone: string; style: string; text: string }) {
   const [copied, setCopied] = useState(false);
   const timer = useRef<number | null>(null);
 
@@ -196,13 +185,7 @@ function CitationCard({
     <article className={styles.cite} data-tone={tone}>
       <div className={styles.citeHead}>
         <span className={styles.citeStyle}>{style}</span>
-        <button
-          type="button"
-          className={styles.copyBtn}
-          data-copied={copied || undefined}
-          onClick={copy}
-          aria-label={`Copy ${style} citation`}
-        >
+        <button type="button" className={styles.copyBtn} data-copied={copied || undefined} onClick={copy} aria-label={`Copy ${style} citation`}>
           {copied ? "Copied" : "Copy"}
         </button>
       </div>
@@ -212,348 +195,273 @@ function CitationCard({
 }
 
 export default function AboutView() {
-  const root = useRef<HTMLDivElement>(null);
-
-  const [accessDate, setAccessDate] = useState<Date>(
-    () => new Date("2026-08-30T00:00:00"),
-  );
+  /* the access date in the citations is today's; the first render uses a
+     fixed date so server and client agree, then the real one takes over */
+  const [accessDate, setAccessDate] = useState<Date>(() => new Date("2026-08-30T00:00:00"));
   useEffect(() => setAccessDate(new Date()), []);
   const citations = useMemo(() => buildCitations(accessDate), [accessDate]);
 
-  useGSAP(
-    () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      gsap.utils.toArray<HTMLElement>("[data-animate]").forEach((g) => {
-        const kids = Array.from(g.children);
-        if (g.dataset.animate === "masthead") {
-          gsap.from(kids, {
-            y: 16,
-            duration: 0.8,
-            ease: "power2.out",
-            stagger: 0.07,
-          });
-          return;
-        }
-        gsap.from(kids, {
-          y: 20,
-          duration: 0.7,
-          ease: "power2.out",
-          stagger: 0.06,
-          scrollTrigger: { trigger: g, start: "top 85%", once: true },
-        });
-      });
-
-      gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
-        const plate = el.closest("section");
-        if (!plate) return;
-        gsap.to(el, {
-          yPercent: -16,
-          ease: "none",
-          scrollTrigger: {
-            trigger: plate,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      });
-
-      document.addEventListener("visibilitychange", ScrollTrigger.refresh);
-      return () =>
-        document.removeEventListener("visibilitychange", ScrollTrigger.refresh);
-    },
-    { scope: root },
-  );
+  const S = Object.fromEntries(SECTIONS.map((s) => [s.id, s])) as Record<string, (typeof SECTIONS)[number]>;
 
   return (
-    <div className={styles.page} ref={root}>
+    <div className={styles.page}>
       <a href="#main" className="skip-link">
         Skip to content
       </a>
       <SiteNav active="about" />
 
       <main id="main">
-        {/* Masthead */}
-        <header className={styles.masthead} data-animate="masthead">
-          <p className={styles.mastKicker}>
-            About
-            <span className={styles.draftTag}>Working draft &middot; not final</span>
-          </p>
-          <h1 className={styles.mastTitle}>{openingStatement}</h1>
-          <div className={styles.mastSide}>
-            <p className={styles.mastLead}>{openingLead}</p>
-            <p className={styles.mastMeta}>{openingMeta}</p>
+        <header className={styles.masthead}>
+          <div className={styles.mastText}>
+            <p className={styles.kicker}>About</p>
+            <h1 className={styles.title}>{openingStatement}</h1>
+            <p className={styles.lead}>{openingLead}</p>
+            <p className={styles.meta}>{openingMeta}</p>
+          </div>
+          <div className={styles.stamp} aria-hidden="true">
+            <span className={styles.stampLine}>Modern Graphic Design Archive</span>
+            <span className={styles.stampWords}>
+              <span className={styles.stampWord} data-row="tail">ABOUT</span>
+              <span className={styles.stampWord} data-row="head">ABOUT</span>
+            </span>
+            <span className={styles.stampFoot}>Brisbane · since 2024</span>
           </div>
         </header>
 
         {/* 1 — Purpose */}
-        <section id="purpose" className={styles.plate} data-tone="blue">
-          <Band
-            num="1"
-            kicker="Purpose"
-            title="An archive made to be read, located, and explored."
-            motif="grooves"
-          />
-          <div className={styles.body} data-animate="body">
-            <div className={styles.rail}>
-              <span className={styles.railKicker}>What it is for</span>
-              Reading objects in context, locating them by place and period, and
-              exploring how the evidence connects.
-            </div>
-            <div className={styles.main}>
-              <p className={styles.pull}>{purposeLead}</p>
-              <p className={styles.subLabel}>Audiences</p>
-              <div className={styles.grid3}>
-                {audiences.map((a) => (
-                  <div key={a.title} className={styles.card} data-tick={a.tone}>
-                    <h3>{a.title}</h3>
-                    <p>{a.body}</p>
-                  </div>
-                ))}
+        <section id="purpose" className={styles.section} data-sec={S.purpose.sec}>
+          <div className={styles.inner}>
+            <Plate s={S.purpose} />
+            <div className={styles.secGrid}>
+              <div className={styles.gloss}>
+                <span className={styles.glossKicker}>What it is for</span>
+                Reading objects in context, locating them by place and period, and exploring how the evidence connects.
+              </div>
+              <div className={styles.secMain}>
+                <Statement>{purposeLead}</Statement>
+                <p className={styles.subHead}>Audiences</p>
+                <div className={styles.grid3}>
+                  {audiences.map((a) => (
+                    <div key={a.title} className={styles.card} data-tone={a.tone}>
+                      <span className={styles.cardDisc} aria-hidden="true" />
+                      <h3>{a.title}</h3>
+                      <p>{a.body}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* 2 — Methodology */}
-        <section id="methodology" className={styles.plate} data-tone="red">
-          <Band
-            num="2"
-            kicker="Methodology"
-            title="Provenance before interpretation."
-            motif="fan"
-          />
-          <div className={styles.body} data-animate="body">
-            <div className={styles.rail}>
-              <span className={styles.railKicker}>Archive &amp; research method</span>
-              Gathering is not publishing. Every record you can read here has
-              passed source, rights, classification, completeness, and reading
-              gates.
-            </div>
-            <div className={styles.main}>
-              <div className={styles.proseCols}>
-                {methodProse.map((p) => (
-                  <p key={p.slice(0, 24)}>{p}</p>
-                ))}
+        <section id="methodology" className={styles.section} data-sec={S.methodology.sec}>
+          <div className={styles.inner}>
+            <Plate s={S.methodology} />
+            <div className={styles.secGrid}>
+              <div className={styles.gloss}>
+                <span className={styles.glossKicker}>Archive &amp; research method</span>
+                Gathering is not publishing. Every record you can read here has passed source, rights, classification, completeness, and
+                reading gates.
               </div>
+              <div className={styles.secMain}>
+                <div className={styles.prose}>
+                  {methodProse.map((p, i) => (
+                    <p key={p.slice(0, 24)} className={i === 0 ? styles.dropcap : undefined}>
+                      {p}
+                    </p>
+                  ))}
+                </div>
 
-              <p className={styles.subLabel}>Evidence protocol</p>
-              <dl className={styles.defs}>
-                {evidenceProtocol.map((e) => (
-                  <div key={e.term}>
-                    <dt>{e.term}</dt>
-                    <dd>{e.def}</dd>
-                  </div>
-                ))}
-              </dl>
-
-              <p className={styles.subLabel}>How a record reaches the page</p>
-              <div className={styles.flow} aria-label="Production pipeline">
-                {pipelineStages.map((step, i) => (
-                  <Fragment key={step}>
-                    <span className={styles.flowStep}>{step}</span>
-                    {i < pipelineStages.length - 1 ? (
-                      <span className={styles.flowArrow} aria-hidden="true">
-                        →
+                <p className={styles.subHead}>Evidence protocol</p>
+                <dl className={styles.defs}>
+                  {evidenceProtocol.map((e, i) => (
+                    <div key={e.term} className={styles.def}>
+                      <span className={styles.defN} aria-hidden="true">
+                        {i + 1}
                       </span>
-                    ) : null}
-                  </Fragment>
-                ))}
-              </div>
+                      <dt>{e.term}</dt>
+                      <dd>{e.def}</dd>
+                    </div>
+                  ))}
+                </dl>
 
-              <div className={styles.prose}>
-                <p>{designResearchNote}</p>
+                <p className={styles.subHead}>How a record reaches the page</p>
+                <div className={styles.flow} aria-label="Production pipeline">
+                  {pipelineStages.map((step, i) => (
+                    <Fragment key={step}>
+                      <span className={styles.flowStep}>{step}</span>
+                      {i < pipelineStages.length - 1 ? <FlowArrow /> : null}
+                    </Fragment>
+                  ))}
+                </div>
+
+                <Statement label="The interface is part of the method">{designResearchNote}</Statement>
               </div>
             </div>
           </div>
         </section>
 
         {/* 3 — Visual design rationale */}
-        <section id="visual" className={styles.plate} data-tone="yellow">
-          <Band
-            num="3"
-            kicker="Visual design rationale"
-            title="Built like a printed catalogue."
-            motif="registration"
-          />
-          <div className={styles.body} data-animate="body">
-            <div className={styles.rail}>
-              <span className={styles.railKicker}>Combined, not copied</span>
-              Three references synthesised into one language for reading
-              evidence.
-            </div>
-            <div className={styles.main}>
-              <div className={styles.prose}>
-                <p>
-                  The interface is set the way a printed reference catalogue is:{" "}
-                  <span className={styles.kw} data-tone="ink">colour as a coding system</span>,
-                  a heavy line holding the structure, and one clear idea per
-                  section. It draws on{" "}
-                  <span className={styles.kw} data-tone="red">Alex Steinweiss</span>, who
-                  gave each record cover a single announced idea;{" "}
-                  <span className={styles.kw} data-tone="blue">New York editorial
-                  illustration</span>, for flat bright colour held by a black
-                  line; and{" "}
-                  <span className={styles.kw} data-tone="green">spot-colour printing</span>,
-                  where a few inks and one line block do all the work.
-                </p>
+        <section id="visual" className={styles.section} data-sec={S.visual.sec}>
+          <div className={styles.inner}>
+            <Plate s={S.visual} />
+            <div className={styles.secGrid}>
+              <div className={styles.gloss}>
+                <span className={styles.glossKicker}>Combined, not copied</span>
+                Six references — three of them from one record label — synthesised into one language for reading evidence.
               </div>
+              <div className={styles.secMain}>
+                <div className={styles.prose}>
+                  <p className={styles.dropcap}>{rationaleLead}</p>
+                  <p>
+                    The centre of it is <span className={styles.kw} data-tone="red">Columbia Records</span> between 1940 and 1960:
+                    Alex Steinweiss&rsquo;s one idea per cover, S. Neil Fujita&rsquo;s painted fields of colour, and Jim Flora&rsquo;s
+                    crowds of figures. The <span className={styles.kw} data-tone="green">postage stamp</span> gives that idiom its
+                    economy — a field, a cropped figure, a small device; the{" "}
+                    <span className={styles.kw} data-tone="blue">pictogram</span> gives the crowd its grid; and the
+                    engraver&rsquo;s line gives the opening circles their hand.
+                  </p>
+                </div>
 
-              <p className={styles.subLabel}>References</p>
-              <div className={styles.grid2}>
-                {visualReferences.map((r) => (
-                  <div key={r.title} className={styles.card} data-tick={r.tone}>
-                    <h3>{r.title}</h3>
-                    <p className={styles.cardMeta}>{r.meta}</p>
-                    <p>{r.body}</p>
-                  </div>
-                ))}
-              </div>
+                <p className={styles.subHead}>References</p>
+                <div className={styles.refs}>
+                  {visualReferences.map((r) => (
+                    <div key={r.title} className={styles.ref} data-tone={r.tone}>
+                      <h3 className={styles.refHead}>{r.title}</h3>
+                      <div className={styles.refBody}>
+                        <p className={styles.refMeta}>{r.meta}</p>
+                        <p>{r.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-              <p className={styles.subLabel}>Type system</p>
-              <div className={styles.typeList}>
-                {typeSystem.map((t) => (
-                  <div key={t.role} className={styles.typeRow}>
-                    <span>{t.role}</span>
-                    <span>{t.face}</span>
-                  </div>
-                ))}
+                <p className={styles.subHead}>Type system</p>
+                <div className={styles.typeList}>
+                  {typeSystem.map((t) => (
+                    <div key={t.role} className={styles.typeRow}>
+                      <span>{t.role}</span>
+                      <span>{t.face}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* 4 — Scale */}
-        <section id="scale" className={styles.plate} data-tone="green">
-          <Band
-            num="4"
-            kicker="The archive in numbers"
-            title="A large raw pool, cleaned to a verified core."
-            motif="chart"
-          />
-          <div className={styles.body} data-animate="body">
-            <div className={styles.rail}>
-              <span className={styles.railKicker}>Gathered, then reduced</span>
-              What is public now is a fraction of what has been collected — the
-              rest is held until its evidence is complete.
-            </div>
-            <div className={styles.main}>
-              <div className={styles.prose}>
-                <p>{scaleLead}</p>
+        <section id="scale" className={styles.section} data-sec={S.scale.sec}>
+          <div className={styles.inner}>
+            <Plate s={S.scale} />
+            <div className={styles.secGrid}>
+              <div className={styles.gloss}>
+                <span className={styles.glossKicker}>Gathered, then reduced</span>
+                What is public now is a fraction of what has been collected — the rest is held until its evidence is complete.
               </div>
-              <div className={styles.figures}>
-                {scaleFigures.map((f) => (
-                  <div key={f.label} className={styles.figure}>
-                    <div className={styles.figureValue} data-tone={f.tone}>
-                      {f.value}
+              <div className={styles.secMain}>
+                <div className={styles.prose}>
+                  <p className={styles.dropcap}>{scaleLead}</p>
+                </div>
+                <div className={styles.figures}>
+                  {scaleFigures.map((f) => (
+                    <div key={f.label} className={styles.figure} data-tone={f.tone}>
+                      <div className={styles.figureValue}>{f.value}</div>
+                      <div className={styles.figureLabel}>{f.label}</div>
                     </div>
-                    <div className={styles.figureLabel}>{f.label}</div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                <Statement label="Coverage">{scaleNote}</Statement>
               </div>
-              <p className={styles.scaleNote}>{scaleNote}</p>
             </div>
           </div>
         </section>
 
         {/* 5 — Contact & citation */}
-        <section id="contact" className={styles.plate} data-tone="teal">
-          <Band
-            num="5"
-            kicker="Contact & citation"
-            title="Reach the project, and cite it."
-            motif="rings"
-          />
-          <div className={styles.body} data-animate="body">
-            <div className={styles.rail}>
-              <span className={styles.railKicker}>Get in touch</span>
-              Questions, corrections, and source leads are welcome through any of
-              these.
-            </div>
-            <div className={styles.main}>
-              <p className={styles.subLabel}>Contact</p>
-              <dl className={styles.contact}>
-                {contact.map((c) => (
-                  <div key={c.label}>
-                    <dt data-tone={c.tone}>{c.label}</dt>
-                    <dd>
-                      {c.links.map((l, i) => (
-                        <Fragment key={l.text}>
-                          {i > 0 ? <span className={styles.sep}> · </span> : null}
-                          {l.href ? (
-                            <a href={l.href} target="_blank" rel="noreferrer">
-                              {l.text}
-                            </a>
-                          ) : (
-                            l.text
-                          )}
-                        </Fragment>
-                      ))}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              <p className={styles.subLabel}>How to cite this project</p>
-              <div className={styles.citeGrid}>
-                {citations.map((c) => (
-                  <CitationCard
-                    key={c.style}
-                    tone={c.tone}
-                    style={c.style}
-                    text={c.text}
-                  />
-                ))}
+        <section id="contact" className={styles.section} data-sec={S.contact.sec}>
+          <div className={styles.inner}>
+            <Plate s={S.contact} />
+            <div className={styles.secGrid}>
+              <div className={styles.gloss}>
+                <span className={styles.glossKicker}>Get in touch</span>
+                Questions, corrections, and source leads are welcome through any of these.
               </div>
-              <p className={styles.hint}>{citeHint}</p>
+              <div className={styles.secMain}>
+                <p className={styles.subHead}>Contact</p>
+                <dl className={styles.contact}>
+                  {contact.map((c) => (
+                    <div key={c.label} className={styles.contactRow}>
+                      <dt data-tone={c.tone}>{c.label}</dt>
+                      <dd>
+                        {c.links.map((l, i) => (
+                          <Fragment key={l.text}>
+                            {i > 0 ? <span className={styles.sep}> · </span> : null}
+                            {l.href ? (
+                              <a href={l.href} target="_blank" rel="noreferrer">
+                                {l.text}
+                              </a>
+                            ) : (
+                              l.text
+                            )}
+                          </Fragment>
+                        ))}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <p className={styles.subHead} id="cite">
+                  How to cite this project
+                </p>
+                <div className={styles.citeGrid}>
+                  {citations.map((c) => (
+                    <CitationCard key={c.style} tone={c.tone} style={c.style} text={c.text} />
+                  ))}
+                </div>
+                <p className={styles.hint}>{citeHint}</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 6 — Claim boundaries & rights */}
-        <section id="boundaries" className={styles.plate} data-tone="ink">
-          <Band
-            num="6"
-            kicker="Claim boundaries & rights"
-            title="What the archive supports, and what it does not claim."
-            motif="seal"
-          />
-          <div className={styles.body} data-animate="body">
-            <div className={styles.rail}>
-              <span className={styles.railKicker}>The honest edge</span>
-              Each boundary is a deliberate limit, not a gap to be filled later
-              by inference. Expand any row for detail.
-            </div>
-            <div className={styles.main}>
-              <div className={styles.acc}>
-                {claimBoundaries.map((b) => (
-                  <details key={b.area} className={styles.accItem}>
-                    <summary>
-                      <span className={styles.accArea}>{b.area}</span>
-                      <span className={styles.accSummary}>
-                        <span className={styles.bTag}>Supports&nbsp;— </span>
-                        {b.supports}
-                      </span>
-                    </summary>
-                    <div className={styles.accBody}>
-                      <span className={styles.bNot}>
+        {/* 6 — Claim boundaries & rights: the sheet turned over */}
+        <section id="boundaries" className={styles.section} data-sec={S.boundaries.sec}>
+          <div className={styles.inner}>
+            <Plate s={S.boundaries} />
+            <div className={styles.secGrid}>
+              <div className={styles.gloss}>
+                <span className={styles.glossKicker}>The honest edge</span>
+                Each boundary is a deliberate limit, not a gap to be filled later by inference. Open any row for what is not claimed.
+              </div>
+              <div className={styles.secMain}>
+                <div className={styles.acc}>
+                  {claimBoundaries.map((b) => (
+                    <details key={b.area} className={styles.accItem}>
+                      <summary>
+                        <span className={styles.accArea}>{b.area}</span>
+                        <span className={styles.accSummary}>
+                          <span className={styles.bTag}>Supports&nbsp;— </span>
+                          {b.supports}
+                        </span>
+                      </summary>
+                      <div className={styles.accBody}>
                         <span className={styles.bTag}>Does not claim&nbsp;— </span>
                         {b.notClaim}
-                      </span>
-                    </div>
-                  </details>
-                ))}
-              </div>
+                      </div>
+                    </details>
+                  ))}
+                </div>
 
-              <p className={styles.subLabel}>Rights</p>
-              <div className={styles.prose}>
-                <p>{rightsProse}</p>
+                <p className={styles.subHead}>Rights</p>
+                <div className={styles.prose}>
+                  <p>{rightsProse}</p>
+                </div>
+                <a href="/source" className={styles.sourceLink}>
+                  Full provenance &amp; permissions on Source
+                  <ArrowRight size={18} strokeWidth={3} aria-hidden="true" />
+                </a>
               </div>
-              <a href="/source" className={styles.sourceLink}>
-                Full provenance &amp; permissions on Source
-                <ArrowRight size={17} strokeWidth={3} aria-hidden="true" />
-              </a>
             </div>
           </div>
         </section>
