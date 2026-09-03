@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
       "./generated/trace-exploration-v3/read-model.json",
     ],
   },
+  // Production-only: the dev server runs Turbopack (see package.json "dev"),
+  // which does not read this hook. `next build` still uses Webpack, so the
+  // cache setting below continues to apply where it was written for.
   webpack: (config, { dev }) => {
     if (!dev) {
       config.cache = false;

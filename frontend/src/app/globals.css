@@ -90,7 +90,7 @@ h4 {
   --paper: #f8f5ec;
   --paper-2: #efe9d9;
   --ink: #181510;
-  --ink-2: #4a4335;
+  --ink-2: #3d372c;
   --on-dark: #f8f3e6;
 
   /* Retro spot colours — luminous, Steinweiss / New York editorial */
@@ -146,6 +146,27 @@ h4 {
   --hair: 1px solid var(--ink);
 
   --focus: var(--blue);
+}
+
+/* ---- Mobile token overrides (§4a) --------------------------------- *
+   Phones self-illuminate and run brighter than reflective paper: lift the
+   ground toward white, deepen ink a touch, and raise spot-colour purity so
+   section coding and links keep their contrast under aggressive display
+   colour management. Token overrides only — no per-component colour forks. */
+
+@media (max-width: 640px) {
+  :root {
+    --paper: #fcfaf2;
+    --paper-2: #ece4d2;
+    --ink: #141009;
+
+    --blue: #1f37e2;
+    --blue-deep: #1a2fb8;
+    --red: #e23c1a;
+    --red-deep: #c7331a;
+    --green-deep: #23803f;
+    --teal-deep: #0c7f7f;
+  }
 }
 
 /* ---- Base element typography ------------------------------------- */
