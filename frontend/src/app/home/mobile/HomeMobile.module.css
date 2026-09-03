@@ -1,0 +1,154 @@
+.page {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.main {
+  padding-bottom: var(--s-9);
+}
+
+.kicker {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--on-dark) 72%, transparent);
+}
+
+.label {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* ---- 01 Identity — bold statement on a spot-colour band (ref: OKE) ---- */
+
+.identity {
+  padding: var(--s-7) var(--page-gutter) var(--s-8);
+  background: var(--blue);
+  color: var(--on-dark);
+  border-bottom: var(--keyline);
+  border-color: var(--ink);
+}
+.identityText {
+  margin-top: var(--s-4);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 6.6vw, 2.2rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  color: var(--on-dark);
+}
+
+/* ---- Blocks ---- */
+
+.block {
+  padding: var(--s-6) var(--page-gutter);
+  border-top: var(--keyline);
+  border-color: var(--ink);
+}
+.block:first-of-type {
+  border-top: none;
+}
+
+.since {
+  margin-top: var(--s-3);
+  font-family: var(--font-num);
+  font-size: var(--fs-body-lg);
+}
+
+.ledger {
+  margin-top: var(--s-4);
+  display: grid;
+  gap: var(--s-4);
+  border-top: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  padding-top: var(--s-4);
+}
+.ledger dt {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2.4rem, 11vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.ledger dd {
+  margin-top: 5px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.body {
+  margin-top: var(--s-5);
+  font-family: var(--font-num);
+  font-size: var(--fs-body-sm);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+/* ---- 03 Entries ---- */
+
+.entries {
+  margin-top: var(--s-4);
+  border-top: var(--keyline);
+  border-color: var(--ink);
+}
+.entries li {
+  border-bottom: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 28%, transparent);
+}
+.entry {
+  display: grid;
+  gap: 6px;
+  padding: var(--s-5) 0;
+}
+.entryHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+}
+.entryN {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--blue);
+}
+.entryName {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 9vw, 2.6rem);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.entryLine {
+  font-family: var(--font-num);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.entryNote {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--red);
+}
+
+/* ---- 04 Status ---- */
+
+.statusText {
+  margin-top: var(--s-3);
+  font-family: var(--font-num);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}

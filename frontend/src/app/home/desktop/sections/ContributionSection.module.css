@@ -1,0 +1,550 @@
+@property --local-progress {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+/* 02 · Contribution — a deliberate visual replication of the Coreaxis
+   reference: an explanatory white upper half over a blue lower half, with a
+   concept diagram on the left of the blue and a ruled table on the right.
+   Same rule as Identity: scrubbed values decide what is visible, so a stage
+   is never blank because an animation did not run. */
+
+.wrap {
+  /* This section runs denser than the rest of the site: three columns of
+     explanation over a chart. Stepping the body down 2px locally keeps the
+     upper half from crowding the lower one. */
+  --fs-contrib-body: 0.9375rem;
+  --ink: #14181a;
+  --paper-top: #faf8f4;
+  --blue: #2b57a8;
+  --rule: color-mix(in srgb, #fbfaf7 62%, transparent);
+  --rule-w: 1.5px;
+
+  /* The lower half grows as the section is scrolled, taking room from the
+     upper half — the reference's proportion, animated. */
+  --grow: clamp(0, calc((var(--local-progress, 0) - 0.08) * 2.1), 1);
+  /* Scrolling retires the explanation and keeps only the three figures, so
+     the lower half can take real space. This is also what stops the third
+     column clipping: the text that would overflow is gone by then. */
+  --textOut: clamp(0, calc((var(--local-progress, 0) - 0.12) * 3.2), 1);
+  /* Opacity runs ahead of the height collapse, so the text is already
+     invisible by the time its box starts closing — otherwise you watch a
+     paragraph get guillotined mid-sentence, which reads as a bug. */
+  --textFade: clamp(0, calc(var(--textOut) * 3.4), 1);
+  /* And the collapse waits until the fade has completed, so a shrinking box
+     is never showing readable text. */
+  --textShrink: clamp(0, calc((var(--textOut) - 0.32) * 1.5), 1);
+  /* The concept diagram builds after the panel has started opening. */
+  /* Already drawn at rest. The section has to read as a finished page the
+     moment it arrives, before any scrolling — an empty chart panel was the
+     first thing the reader saw. */
+  --histoIn: 1;
+  /* The field only starts once the histogram has cleared. */
+  /* Scene-visible progress: 0 when the canvas is revealed, 1 when the field
+     is complete. The scene's own draw ranges are mapped onto this window. */
+  --build: clamp(0, calc((var(--local-progress, 0) - 0.4) * 1.724), 1);
+  /* A real dissolve, over its own stretch — the histogram used to vanish. */
+  --histoOut: clamp(0, calc((var(--local-progress, 0) - 0.3) * 8.3), 1);
+  /* Rows and the statement arrive in sequence, not all together. */
+  /* Rows are present from the very start — they are the section's headings,
+     not a reveal. (They also used to top out at 2.24, so row 03 could never
+     reach full opacity: a real bug, not a pacing choice.) */
+  --closeIn: clamp(0, calc((var(--local-progress, 0) - 0.66) * 5), 1);
+
+  height: 100%;
+  display: grid;
+  /* The lower half takes room from the upper as it grows, but only as much
+     as the explanation can spare — measured: the upper content needs ~352px
+     at this scale, and a steeper growth was clipping the third column. */
+  /* 4:5 at rest — the lower half is already the larger of the two before
+     any scrolling. It was previously squeezed to 57/43 purely to leave room
+     for the growth animation, which inverted the intended proportion. */
+  grid-template-rows: calc(50% - var(--grow) * 24%) 1fr;
+  overflow: hidden;
+  background: var(--paper-top);
+}
+
+/* ================= Upper half ================= */
+
+.upper {
+  overflow: hidden;
+  background: var(--paper-top);
+  color: var(--ink);
+}
+.upperInner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Tightened to fit the 4:5 proportion without clipping the third column
+     (measured: 11px of overflow before this). */
+  gap: clamp(12px, 1.5vh, 20px);
+  padding: clamp(42px, 5.4vh, 72px) clamp(40px, 4.5vw, 78px);
+}
+
+.trail {
+  display: flex;
+  gap: 10px;
+  font-family: var(--font-num);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: color-mix(in srgb, var(--ink) 52%, transparent);
+}
+.trailSep {
+  margin-right: 10px;
+  color: color-mix(in srgb, var(--ink) 32%, transparent);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 2.9vw, 2.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.intro {
+  margin: 0;
+  /* Never compress below the text. As a shrinkable flex item this was losing
+     3px off its second line, and a line cut just above the baseline reads as a
+     row of dots under the paragraph — it looked like a rendering artefact. */
+  flex: 0 0 auto;
+  overflow: hidden;
+  opacity: calc(1 - var(--textFade));
+  max-height: calc((1 - var(--textShrink)) * 7rem);
+  max-width: 96ch;
+  font-family: var(--font-body);
+  font-size: var(--fs-contrib-body);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--ink) 74%, transparent);
+}
+
+/* Type comes from the global tokens, not ad-hoc rem values. Prose uses
+   --font-body, numerals and labels use --font-num, and body sits on the
+   project's 18px floor (--fs-body-sm) rather than the ~12px the reference's
+   mono captions implied — matching the reference's *structure* must not
+   mean abandoning this project's own type system. */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-4) clamp(var(--s-6), 3vw, var(--s-8));
+  padding-top: var(--s-3);
+  border-top: 1.5px solid color-mix(in srgb, var(--ink) 26%, transparent);
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* The figure is the column's marker. */
+.figure {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.55rem, 2.3vw, 2.1rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.figureLabel {
+  margin: 5px 0 calc(var(--s-3) - var(--textOut) * var(--s-2));
+  font-family: var(--font-num);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* --green-deep, not --green: the lighter accent drops under 3:1 against the
+     paper ground at this size. */
+  color: var(--green-deep);
+  font-weight: 600;
+}
+
+.columnTitle {
+  overflow: hidden;
+  opacity: calc(1 - var(--textFade));
+  max-height: calc((1 - var(--textShrink)) * 3rem);
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  /* The margin has to retire with the box. Height collapsed to 0 but this
+     bottom margin stayed, leaving ~18px of dead space under the last visible
+     ink — so the white half measured centred while reading bottom-heavy. */
+  margin: 0 0 calc((1 - var(--textShrink)) * var(--s-3));
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0;
+  color: var(--ink);
+}
+.bullet {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.columnBody {
+  margin: 0;
+  overflow: hidden;
+  opacity: calc(1 - var(--textFade));
+  max-height: calc((1 - var(--textShrink)) * 12rem);
+  font-family: var(--font-body);
+  font-size: var(--fs-contrib-body);
+  line-height: 1.46;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+  text-wrap: pretty;
+}
+
+/* ================= Lower half ================= */
+
+.lower {
+  background: var(--blue);
+  color: #fbfaf7;
+  overflow: hidden;
+}
+.lowerInner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.2vw, 34px);
+  padding: clamp(18px, 2.4vh, 30px) clamp(40px, 4.5vw, 78px);
+}
+
+/* ---- Left: the concept diagram ---- */
+
+.diagram {
+  position: relative;
+  margin: 0;
+  display: grid;
+  /* Explicit rows: the chart owns all remaining height, and the axis and
+     caption get their own bands. Absolutely positioning all three was what
+     let them pile onto each other in the corner. */
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  min-height: 0;
+  border: var(--rule-w) solid var(--rule);
+  padding: clamp(8px, 1.1vh, 14px);
+}
+.svg {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+/* Annotations sit with the field, appearing as it is built. */
+/* In the chart cell, top-left, and only present once the field exists. */
+/* The chart's name — the section heading lives on the right. */
+.chartName[data-stage="histo"] {
+  opacity: calc(1 - var(--histoOut));
+}
+.chartName[data-stage="field"] {
+  opacity: clamp(0, calc((var(--build) - 0.06) * 5), 1);
+}
+.chartName {
+  grid-area: 1 / 1;
+  align-self: start;
+  margin: 0;
+  padding: 2px 0 0 2px;
+  z-index: 2;
+  font-family: var(--font-num);
+  font-size: 0.84rem;
+  letter-spacing: 0.06em;
+  color: color-mix(in srgb, #fbfaf7 78%, transparent);
+}
+/* Their own band under the chart — overlaying them on the plot area meant
+   they sat on top of the bars. */
+.notes {
+  grid-area: 2 / 1;
+  display: grid;
+  gap: 4px;
+  padding: 7px 0 0 2px;
+  pointer-events: none;
+}
+.notes[data-stage="field"] {
+  grid-area: 2 / 1;
+}
+.note {
+  font-family: var(--font-num);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, #fbfaf7 76%, transparent);
+  /* --n comes from nth-child, not from the data-n attribute: `var(--n)` was
+     undefined, which made the whole calc invalid and silently fell back to
+     opacity 1 — so the field's annotations sat on top of the histogram. */
+}
+.notes[data-stage="histo"] {
+  opacity: calc(1 - var(--histoOut));
+}
+.notes[data-stage="field"] {
+  opacity: clamp(0, calc((var(--build) - 0.3) * 4), 1);
+}
+.note::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  margin-right: 7px;
+  vertical-align: middle;
+  background: currentColor;
+}
+
+
+/* Two stages in the same frame, with a clean hand-off: the histogram is
+   fully gone before the field begins. They are different objects, not one
+   object being deformed — the earlier morph was a shortcut. */
+.histo,
+.sceneMount {
+  grid-area: 1 / 1;
+  position: relative;
+  min-height: 0;
+}
+.histo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: calc(1 - var(--histoOut));
+}
+/* Explicit height: with a viewBox the SVG keeps its intrinsic aspect ratio
+   under `flex: 1 1 auto` and collapsed to a sliver in the corner. */
+.histoSvg {
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: block;
+}
+/* The gap between the two IS the finding: what is held. */
+.bin[data-tier="canonical"] {
+  fill: color-mix(in srgb, #fbfaf7 30%, transparent);
+}
+.bin[data-tier="public"] {
+  fill: #fbfaf7;
+}
+.bin {
+  fill: color-mix(in srgb, #fbfaf7 84%, transparent);
+  transform-box: fill-box;
+  transform-origin: bottom;
+  /* Bins rise left-to-right across the indexed span. */
+  /* --i is a FRACTION of the span, not a raw index: the old form compared a
+     raw index against a literal 60, so with 227 bins every bar from 60 on was
+     scaled to zero — the chart was truncated at a quarter of its width, and
+     because the 1979 peak sits at index 179 the tallest bar was among the ones
+     cut, which is why the plot also looked far too short. */
+  transform: scaleY(clamp(0, calc((var(--histoIn) * 1.25 - var(--i, 0)) * 12), 1));
+}
+.histoAxis {
+  grid-area: 3 / 1;
+  padding-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 6px;
+  font-family: var(--font-num);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  color: color-mix(in srgb, #fbfaf7 70%, transparent);
+  opacity: calc(1 - var(--histoOut));
+}
+.sceneMount {
+  /* Revealed while still EMPTY, so the build is visible. */
+  opacity: clamp(0, calc(var(--build) * 30), 1);
+  /* two per cent smaller: the tallest stems were grazing the caption */
+  transform: scale(0.98);
+  transform-origin: 50% 100%;
+  /* Clears the chart's name, which shares this grid cell and was being drawn
+     straight through by the tallest stems. */
+  padding-top: 27px;
+}
+
+/* ---- Right: the ruled table ---- */
+
+/* Row bodies come up one at a time across the histogram's own stretch. */
+.table {
+  /* Tracks --grow deliberately. The bodies used to finish opening by lp 0.25
+     while the lower half was only a third of the way through taking its
+     space, so the panel overflowed in the middle of the scroll even though
+     both ends fitted. Room and text now arrive together. */
+  --rowsIn: clamp(0, calc((var(--local-progress, 0) - 0.1) * 1.9), 1);
+}
+
+.table {
+  display: grid;
+  /* One stacking cell for the two stages, then the summary line and the
+     footer. min-content, not minmax(0,auto): the latter let the grid compress
+     each row below its own text and clip 16px off every one of them. */
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  border: var(--rule-w) solid var(--rule);
+  min-height: 0;
+}
+/* The six headings, present at both ends of the scroll. They SHARE the band
+   rather than stacking at the top of it: top-aligned, the closed state left a
+   block of dead space above the summary line, which is the same emptiness the
+   two-stage version had at the other end. */
+.rows {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(min-content, auto));
+  align-content: start;
+  min-height: 0;
+}
+
+/* The summary line, under the points it summarises, with the year on its
+   baseline rather than in a strip of its own. */
+.tagline {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: clamp(13px, 1.7vh, 20px) clamp(12px, 1.2vw, 20px);
+  border-top: var(--rule-w) solid var(--rule);
+  align-items: center;
+  column-gap: clamp(12px, 1.2vw, 20px);
+}
+.tagline > .footYear {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  padding: 0;
+  border-left: none;
+}
+.headA,
+.headB {
+  grid-area: 1 / 1;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.15rem, 1.55vw, 1.55rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #fbfaf7;
+}
+.headA {
+  opacity: calc(1 - var(--histoOut));
+}
+.headB {
+  opacity: clamp(0, calc((var(--build) - 0.25) * 4), 1);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  /* stretch, not start: the numeral cell was only as tall as its own text, so
+     its right-hand rule stopped partway down and left every row visibly
+     unclosed. */
+  align-items: stretch;
+  border-bottom: var(--rule-w) solid var(--rule);
+  /* Rows arrive one at a time rather than as a block. */
+}
+.rowNum {
+  padding: clamp(4px, 0.55vh, 6px) 0 0 clamp(12px, 1.2vw, 20px);
+  font-family: var(--font-num);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, #fbfaf7 76%, transparent);
+  border-right: var(--rule-w) solid var(--rule);
+}
+.rowMain {
+  display: grid;
+  gap: 4px;
+  /* 1px a side off each of six rows — the end state was 13px over, and this
+     is cheaper than clipping the closing paragraph. */
+  /* Retracts as the bodies open. Measured slack in the panel: 148px closed,
+     35px fully open — so 7px a side across five rows (70px) fills the closed
+     state without ever reaching the open state's budget. An earlier attempt
+     used 13px across SIX larger rows and overran the panel. */
+  padding: calc(clamp(4px, 0.5vh, 7px) + (1 - var(--rowsIn)) * 7px)
+    clamp(12px, 1.2vw, 20px);
+}
+.rowLabel {
+  /* These are the section's six headings — they were set in the numeral face
+     at body scale, which read as captions rather than as the spine of the
+     panel. */
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  color: #fbfaf7;
+}
+.rowBody {
+  /* Each body OPENS as the reader reaches it, rather than holding its space
+     from the start. Reserving it meant the panel had to be tall enough for
+     all six explanations before a single one was legible, which is what
+     overflowed the 1:1 rest proportion. The lower half grows on the same
+     progress, so the room appears exactly as the text needs it. */
+  --open: clamp(0, calc(var(--rowsIn) * 5.6 - var(--r, 0)), 1);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.44;
+  color: color-mix(in srgb, #fbfaf7 66%, transparent);
+  text-wrap: pretty;
+  overflow: hidden;
+  opacity: var(--open);
+  max-height: calc(var(--open) * 5.2rem);
+}
+
+
+.fieldDetail {
+  margin: 0;
+  padding-inline: clamp(12px, 1.2vw, 20px);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, #fbfaf7 74%, transparent);
+  text-wrap: pretty;
+  align-self: center;
+  --open: clamp(0, calc((var(--build) - 0.5) * 3.4), 1);
+  overflow: hidden;
+  /* The box opens BEFORE the text lights. Sharing one value with max-height
+     made the paragraph faintly readable while its box was still expanding —
+     clipped by 8px and sitting off-centre in a container that had not finished
+     growing. Same principle as the upper half's --textFade/--textShrink pair,
+     in the opposite direction: there the fade leads the collapse, here it
+     trails the expansion. Clipping is possible below --open 0.48, so nothing
+     is legible until well past it. */
+  opacity: clamp(0, calc((var(--open) - 0.6) / 0.4), 1);
+  /* Generous on purpose: max-height only caps, it never stretches the box,
+     so a ceiling above the paragraph's natural height costs no layout while
+     still collapsing cleanly to nothing at --open: 0. */
+  max-height: calc(var(--open) * 11rem);
+  padding-block: calc(var(--open) * clamp(9px, 1.1vh, 14px));
+}
+.tableFoot {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  font-family: var(--font-num);
+  font-size: 0.7rem;
+  color: color-mix(in srgb, #fbfaf7 84%, transparent);
+}
+.tableFoot > span:first-child {
+  padding: clamp(6px, 0.8vh, 10px) clamp(12px, 1.2vw, 20px);
+}
+.footYear {
+  padding: clamp(6px, 0.8vh, 10px) clamp(12px, 1.2vw, 20px);
+  border-left: var(--rule-w) solid var(--rule);
+}
+
+/* ---- Reduced motion: the finished composition, nothing animated ---- */
+
+.wrap[data-reduced] {
+  --grow: 1;
+  --build: 1;
+  --histoIn: 1;
+  --rows: 3;
+  --closeIn: 1;
+  height: auto;
+  grid-template-rows: auto auto;
+}
+.wrap[data-reduced] .upperInner {
+  padding-block: var(--s-7);
+}
+.wrap[data-reduced] .bin {
+  transform: none;
+}
+
+
+
+
+
+

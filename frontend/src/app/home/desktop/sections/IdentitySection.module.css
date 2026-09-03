@@ -1,0 +1,844 @@
+@property --local-progress {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --dotEnter {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+@property --dotBack {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --go {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+/* 01 · Identity — HOMEPAGE_IDENTITY_SEQUENCE_v1.md §F (v2.1).
+   Two layers: a scroll layer (header + gallery) that translates, and a
+   pinned layer that never moves. Visibility is declarative — scrubbed from
+   --local-progress or gated on [data-act] — so a stage can never end up
+   blank because a timed animation was interrupted. Only the MOTION is
+   timed: the keyframes at the bottom, and the wordmark's timeline.
+
+   The pacing, in local progress (section weight 8):
+     0.00–0.09  gallery travels, ground goes to black
+     0.09–0.14  the eight frames fly down and converge
+     0.13–0.17  they merge into one ring; 0.17–0.19 the ring hands over
+     0.175+     study I draws itself (act 2), once the ring has merged
+     0.30–0.545 the film drives the scroll: IV gathers, the eye opens and
+                holds, the last step to VI; input is refused meanwhile
+     0.22–0.28  the eye and the engraving arrive; 0.30–0.34 a step to the eye,
+                and it opens; 0.34–0.42 on the eye — it follows the pointer
+     0.42–0.45  the last step, to the engraving
+     0.45–0.50  the studies leave; 0.455–0.515 the sentence draws
+     0.60–0.68  the sentence bursts; the field blooms
+     0.68–0.71  every mark becomes a person; 0.71–0.765 the crowd runs
+     0.765–0.81 the set switches off: a line, a point, dark
+     0.815      the wordmark: point → line → serif → sans → bold (act 7)
+     0.985      sprung through into Contribution (act 8)                    */
+
+.wrap {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  /* the opening is a page of the same paper as About and Source, set the
+     way a museum sets a collection page — a serif statement, quiet captions,
+     empty plates on hairlines; by 0.09 the ground has gone to black and
+     everything on it to paper, through one variable (--fg) */
+  --fg: color-mix(in srgb, var(--paper) calc(var(--darken) * 100%), var(--ink));
+  --fg-2: color-mix(in srgb, var(--fg) 72%, transparent);
+  color: var(--fg);
+
+  --pane-w: calc(100vw - var(--nav-w));
+  --sphere-size: clamp(17rem, 23.5vw, 27.5rem);
+  --sphere-gap: clamp(2.6rem, 3.4vw, 4.4rem);
+  --sphere-step: calc(var(--sphere-size) + var(--sphere-gap));
+  --sphere-fit: 2;
+  --paper: #fbfaf7;
+  --black: #0a0a0c;
+
+  --darken: clamp(0, calc(var(--local-progress, 0) / 0.09), 1);
+  background: color-mix(in srgb, var(--black) calc(var(--darken) * 100%), #f8f5ec);
+
+  --scrollOut: clamp(0, calc((var(--local-progress, 0) - 0.068) * 45), 1);
+  --framesIn: clamp(0, calc((var(--local-progress, 0) - 0.09) * 20), 1);
+  --ringMerge: clamp(0, calc((var(--local-progress, 0) - 0.13) * 25), 1);
+  /* the merged ring is study I's base circle exactly, so it can simply
+     hand over the instant the row exists (act 2, 0.175) — no redraw */
+  --ringOut: clamp(0, calc((var(--local-progress, 0) - 0.175) * 200), 1);
+  /* the beats run back to back, so the film never idles. The eye and the
+     engraving come in (0.19–0.25) and the row moves WITH them (0.20–0.26):
+     one motion that ends with the eye centred — not an arrival and then a
+     step. The eye's lids part (0.26–0.30); a HOLD on the open eye, where
+     it looks about and follows the pointer; the last step, to the
+     engraving (0.30–0.45). The film plays each at its own pace. */
+  --arrived: clamp(0, calc((var(--local-progress, 0) - 0.19) * 33.3), 2);
+  --panExtra: clamp(0, calc((var(--local-progress, 0) - 0.2) * 16.7), 1);
+  --eyeLift: clamp(0, calc((var(--local-progress, 0) - 0.26) * 25), 1);
+  --panExtra2: clamp(0, calc((var(--local-progress, 0) - 0.3) * 6.67), 1);
+  /* the row exists only from act 2 (display, below) and fades up from the
+     same 0.175 — so its first painted frame already carries study I's
+     draw-in; a frame of the finished figure before it was the flicker */
+  --spheresIn: clamp(0, calc((var(--local-progress, 0) - 0.175) * 200), 1);
+  --spheresOut: clamp(0, calc((var(--local-progress, 0) - 0.45) * 20), 1);
+  --bridgeIn: clamp(0, calc((var(--local-progress, 0) - 0.455) * 16.67), 1);
+  --scatter: clamp(0, calc((var(--local-progress, 0) - 0.6) * 16.67), 1);
+  --gridIn: clamp(0, calc((var(--local-progress, 0) - 0.605) * 13), 1);
+  /* the crowd: bodies appear, then everyone runs; then the set goes off.
+     (--gridIn, --crowd and --run are the field's beats as documented; the
+     field itself is a canvas drawn by identity/CrowdField.tsx from the
+     same formulas — nothing in CSS reads them any more) */
+  --crowd: clamp(0, calc((var(--local-progress, 0) - 0.69) * 33), 1);
+  --run: clamp(0, calc((var(--local-progress, 0) - 0.72) * 18), 1);
+  --crtA: clamp(0, calc((var(--local-progress, 0) - 0.765) * 50), 1);
+  --crtB: clamp(0, calc((var(--local-progress, 0) - 0.785) * 66), 1);
+  --crtC: clamp(0, calc((var(--local-progress, 0) - 0.8) * 100), 1);
+  --blackIn: clamp(0, calc((var(--local-progress, 0) - 0.795) * 66), 1);
+}
+
+/* ================= Act I · scroll layer ================= */
+.scrollLayer {
+  position: absolute;
+  inset: 0;
+  height: 300%;
+  padding-inline: clamp(48px, 8vw, 120px);
+  transform: translateY(calc(var(--scrollY) * -1%)) scale(calc(1 - var(--scrollOut) * 0.07));
+  opacity: calc(1 - var(--scrollOut));
+  --scrollY: calc(66.7 * clamp(0, calc(var(--local-progress, 0) / 0.09), 1));
+}
+.headerRegion {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(40px, 6vw, 88px);
+  padding-top: clamp(40px, 6vh, 76px);
+  padding-bottom: var(--s-8);
+}
+.headline {
+  flex: 0 0 34%;
+  margin: 0;
+  font-family: var(--font-statement);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(2rem, 3.1vw, 2.9rem);
+  line-height: 1.38;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+}
+.headlineAccent {
+  font-style: italic;
+}
+.copy {
+  flex: 1 1 auto;
+  display: grid;
+  gap: var(--s-5);
+  max-width: 50rem;
+  margin: 0;
+}
+.para {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.175rem;
+  line-height: 1.6;
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+
+/* ---- the collection grid, set the way a museum sets one ---- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  column-gap: clamp(28px, 3vw, 52px);
+  row-gap: 0;
+  padding-bottom: var(--s-9);
+}
+.card {
+  margin: 0;
+  padding: clamp(28px, 3vh, 40px) 0 clamp(36px, 4vh, 56px);
+  border-top: 1px solid color-mix(in srgb, var(--fg) 20%, transparent);
+  /* arrives with mass, caption after its plate */
+  animation: plateIn 1.4s cubic-bezier(0.3, 0.6, 0.2, 1) both;
+  animation-delay: calc(0.2s + var(--i, 0) * 0.11s);
+}
+.plateBand {
+  height: clamp(190px, 23vh, 310px);
+  display: flex;
+  align-items: flex-end;
+}
+.plate {
+  position: relative;
+  height: 100%;
+  aspect-ratio: var(--ratio, 4 / 5);
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* an empty plate on the sheet: paper-2 with the one softened outline the
+     whole site uses; once the ground is black it is a paper print */
+  background: color-mix(in srgb, var(--paper) calc(var(--darken) * 100%), #efe9d9);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, #181510 38%, transparent),
+    0 18px 40px -26px rgba(0, 0, 0, calc(0.22 + var(--darken) * 0.6));
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card:hover .plate {
+  transform: translateY(-4px);
+}
+/* a registration cross where the image would be */
+.plateMark {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  opacity: 0.42;
+}
+.plateMark::before,
+.plateMark::after {
+  content: "";
+  position: absolute;
+  background: #14181a;
+}
+.plateMark::before {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+}
+.plateMark::after {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
+.caption {
+  display: grid;
+  gap: 3px;
+  padding-top: 16px;
+  animation: captionIn 1.1s cubic-bezier(0.3, 0.6, 0.2, 1) both;
+  animation-delay: calc(0.5s + var(--i, 0) * 0.11s);
+}
+.creator {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--fg);
+}
+.workLine {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: color-mix(in srgb, var(--fg) 78%, transparent);
+}
+.workLine em {
+  font-style: italic;
+  color: var(--fg);
+}
+.detail {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: color-mix(in srgb, var(--fg) 58%, transparent);
+}
+
+/* ================= Act II · pinned layer ================= */
+.pinnedLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* Nothing is in the DOM's style pass unless its act is on: the row's
+   ~6,000 marks and the crowd's 1,352 people all read --local-progress, and
+   recomputing them on every scroll frame of the whole section was the
+   jank. Off stage they are display: none. */
+.wrap:not([data-act="1"]):not([data-act="2"]) .frames,
+.wrap[data-act="6"] .sphereViewport,
+.wrap[data-act="7"] .sphereViewport,
+.wrap[data-act="8"] .sphereViewport,
+.wrap:not([data-act="5"]):not([data-act="6"]) .bridge,
+.wrap:not([data-act="5"]):not([data-act="6"]) .rules,
+.wrap:not([data-act="6"]) .screen,
+.wrap:not([data-act="6"]) .crtLine {
+  display: none;
+}
+
+/* ---- the frames: eight outlines fly down and become one ring ---- */
+.frames {
+  position: absolute;
+  inset: 0;
+  opacity: clamp(0, calc(var(--framesIn) * 8), 1);
+}
+.frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* lands exactly on study I's base circle (r 196 of a 440 stage) */
+  width: calc(var(--fw) * 1px + (var(--sphere-size) * 0.891 - var(--fw) * 1px) * var(--framesIn));
+  height: calc(var(--fh) * 1px + (var(--sphere-size) * 0.891 - var(--fh) * 1px) * var(--framesIn));
+  border: 1px solid var(--paper);
+  border-radius: calc(var(--framesIn) * 50%);
+  --ease: calc(var(--framesIn) * var(--framesIn) * (3 - 2 * var(--framesIn)));
+  transform: translate(
+      calc(-50% + (1 - var(--ease)) * var(--fx) * 1vw),
+      calc(-50% + (1 - var(--ease)) * var(--fy) * 1vh)
+    )
+    rotate(calc((1 - var(--ease)) * (var(--i) - 3.5) * 6deg));
+  opacity: calc(1 - var(--ringMerge) * min(var(--i), 1) - var(--ringOut));
+}
+
+/* ---- the row of studies ---- */
+.sphereViewport {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  opacity: calc(var(--spheresIn) * (1 - var(--spheresOut)));
+  transform: scale(calc(1 - var(--spheresOut) * 0.32));
+  --edge-mask: linear-gradient(
+    to right,
+    transparent 0,
+    transparent var(--sphere-size),
+    #000 calc(var(--sphere-size) * 2.1),
+    #000 100%
+  );
+  -webkit-mask-image: var(--edge-mask);
+  mask-image: var(--edge-mask);
+}
+.sphereRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sphere-gap);
+  will-change: transform;
+  padding-left: calc(var(--pane-w) / 2 - var(--sphere-size) / 2);
+  transform: translateX(
+    calc(
+      -1 * (max(0, calc(var(--arrived) - var(--sphere-fit))) + var(--panExtra) + var(--panExtra2)) *
+        var(--sphere-step)
+    )
+  );
+}
+.study {
+  flex: 0 0 auto;
+  width: var(--sphere-size);
+  display: grid;
+  justify-items: center;
+  --enter: clamp(0, calc(var(--arrived) - var(--i, 0) + 1), 1);
+  --steps-panned: calc(max(0, calc(var(--arrived) - var(--sphere-fit))) + var(--panExtra) + var(--panExtra2));
+  --k: calc(var(--i, 0) - var(--steps-panned));
+  --recede: clamp(0, calc((var(--k) + 2.6) / 1.4), 1);
+  --eEnter: calc(var(--enter) * var(--enter) * (3 - 2 * var(--enter)));
+  transform: translateX(calc((1 - var(--eEnter)) * var(--pane-w)))
+    scale(calc(0.78 + var(--recede) * 0.22));
+  will-change: transform;
+}
+.stage {
+  position: relative;
+  width: var(--sphere-size);
+  aspect-ratio: 1;
+}
+.studySvg,
+.studyCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+/* III arrives dim and LIGHTS UP as the row brings it to the centre — the
+   one study that asks to be looked at, and where the film hands the page
+   back; resting there (act 5) it breathes until the reader moves */
+.study[data-i="2"] .studyCanvas {
+  filter: brightness(calc(0.55 + var(--panExtra2) * 0.6))
+    drop-shadow(0 0 calc(var(--panExtra2) * 26px) rgba(251, 250, 247, calc(var(--panExtra2) * 0.35)));
+}
+.wrap[data-act="5"] .study[data-i="2"] .studyCanvas {
+  animation: engravingGlow 2.6s ease-in-out infinite;
+}
+@keyframes engravingGlow {
+  0%,
+  100% {
+    filter: brightness(1.12) drop-shadow(0 0 22px rgba(251, 250, 247, 0.3));
+  }
+  50% {
+    filter: brightness(1.32) drop-shadow(0 0 42px rgba(251, 250, 247, 0.55));
+  }
+}
+/* a stack of layers: each layer is an HTML box carrying one transform over
+   an SVG that never changes */
+.stack,
+.eyeStage {
+  position: absolute;
+  inset: 0;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transform-origin: 50% 50%;
+}
+.layerSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+/* idle motion — on the layers, never inside the SVGs */
+.spinSlow {
+  animation: spin 110s linear infinite;
+}
+.spinSlowReverse {
+  animation: spin 150s linear infinite reverse;
+}
+.precess {
+  animation: precess 14s ease-in-out infinite alternate;
+}
+/* nothing idles unless the row is on stage */
+.wrap:not([data-act="2"]):not([data-act="3"]):not([data-act="4"]):not([data-act="5"]) .layer {
+  animation-play-state: paused;
+}
+
+.ringBase,
+.loop {
+  fill: none;
+  stroke: var(--paper);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+/* the studies leave with the viewport's contraction and fade; the
+   engraving alone unrolls (below) */
+
+/* I · the line */
+.ringBase {
+  stroke-width: 1.1;
+  opacity: 0.9;
+}
+.loop {
+  stroke-width: 0.7;
+  opacity: 0.78;
+}
+/* the base circle is never drawn — it IS the ring the frames merged into;
+   only the loops draw, over the film's 5.5 s hold */
+.wrap[data-act="2"] .loop {
+  animation: drawIn 2.2s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+  animation-delay: calc(0.3s + var(--i, 0) * 0.045s);
+}
+
+/* V · the eye */
+/* the sclera and the iris are images (Eye.tsx) — their colours are in the
+   image */
+.eyeLook {
+  animation: look 17s steps(1, end) infinite;
+}
+/* the pointer's offset is written straight to the follow layer's transform
+   (Eye.tsx); this is only its easing */
+.eyeFollow {
+  transition: transform 420ms cubic-bezier(0.3, 0.6, 0.2, 1);
+}
+/* the lids (Eye.tsx): two black plates whose edges are arcs of the eye's
+   own circle. Closed, the arcs meet at the centre; each moved by the
+   circle's radius — 48.64% of the stage — they coincide with the circle
+   and the eye is whole. Scrubbed on --eyeLift, linear: the film's own
+   ease is the lids' ease. The blink is the same move, briefly, on the
+   inner layers, on its own clock. Transforms only — nothing repaints. */
+.lidPlate path {
+  fill: var(--black);
+}
+.lidUpper {
+  transform: translateY(calc(var(--eyeLift, 0) * -48.64%));
+}
+.lidLower {
+  transform: translateY(calc(var(--eyeLift, 0) * 48.64%));
+}
+.lidBlinkUpper {
+  animation: lidBlinkUpper 8.5s ease-in-out infinite;
+}
+.lidBlinkLower {
+  animation: lidBlinkLower 8.5s ease-in-out infinite;
+}
+.lidSeam {
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  top: 50%;
+  height: 1px;
+  background: var(--paper);
+  opacity: calc(0.5 * clamp(0, 1 - var(--eyeLift, 0) * 5, 1));
+}
+/* the lid line, drawn round the eye: reads as lids when open */
+.lidLine ellipse {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.2;
+  stroke-opacity: 0.55;
+}
+
+/* III · the engraving — on its way out it unrolls: stretched flat as the
+   ruled sheet comes up under the sentence */
+.study[data-i="2"] .stage {
+  transform: scaleX(calc(1 + var(--spheresOut) * 3.2)) scaleY(calc(1 - var(--spheresOut) * 0.4));
+  transform-origin: 50% 50%;
+}
+
+/* ---- the ruled sheet ---- */
+.rules {
+  position: absolute;
+  inset: clamp(24px, 4vh, 48px) clamp(24px, 3vw, 60px);
+  width: calc(100% - 2 * clamp(24px, 3vw, 60px));
+  height: calc(100% - 2 * clamp(24px, 4vh, 48px));
+  pointer-events: none;
+}
+.rule {
+  stroke: var(--paper);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  /* sweeps down as the engraving unrolls; fades as the letters fill */
+  /* the sweep is complete by half the unravel; the fade waits for the
+     letters — an earlier pairing faded the sheet before it had reached
+     the bottom, and the page read as half-ruled */
+  opacity: calc(
+    clamp(0, calc(var(--spheresOut) * 3.2 - var(--i, 0) / 44 * 1.6), 1) *
+      clamp(0, calc(1.95 - var(--bridgeIn) * 2), 1) * 0.42
+  );
+}
+
+/* ---- the screen: the field, the crowd, the set switched off ---- */
+.screen {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  transform: scale(calc(1 - var(--crtB) * 0.996), calc(1 - var(--crtA) * 0.996));
+  filter: brightness(calc(1 + var(--crtA) * 1.8));
+  opacity: calc(1 - var(--crtC));
+  will-change: transform, opacity;
+}
+.crtLine {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  width: calc((100% - 2 * clamp(24px, 3vw, 60px)) * (1 - var(--crtB) * 0.995));
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-shadow: 0 0 18px 4px rgba(255, 255, 255, 0.85);
+  opacity: calc(var(--crtA) * (1 - var(--crtC)));
+  pointer-events: none;
+}
+
+/* ---- the sentence: outlines drawn, filled, then burst ---- */
+.bridge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: clamp(48px, 8vw, 120px);
+  opacity: clamp(0, calc(var(--bridgeIn) * 4), 1);
+  transform: translateY(calc((1 - var(--bridgeIn)) * 26px));
+}
+.bridgeSvg {
+  height: clamp(2rem, 2.8vw, 2.6rem);
+  width: auto;
+  max-width: 100%;
+  overflow: visible;
+}
+.bridgeGlyph {
+  --gDraw: clamp(0, calc(var(--bridgeIn) * 1.5 - var(--gi, 0) / var(--gn, 1) * 0.5), 1);
+  --gFill: clamp(0, calc((var(--gDraw) - 0.7) * 3.4), 1);
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: translate(calc(var(--scatter) * var(--dx, 0) * 1px), calc(var(--scatter) * var(--dy, 0) * 1px))
+    scale(calc(1 - var(--scatter) * 0.55));
+  opacity: calc(1 - var(--scatter));
+}
+.bridgeGlyph path {
+  fill: var(--paper);
+  fill-opacity: var(--gFill);
+  stroke: var(--paper);
+  stroke-width: 12;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--gDraw));
+  stroke-opacity: calc(1 - var(--gFill) * 0.6);
+}
+
+/* ---- the field ---- */
+.field {
+  position: absolute;
+  inset: clamp(24px, 4vh, 48px) clamp(24px, 3vw, 60px);
+  width: calc(100% - 2 * clamp(24px, 3vw, 60px));
+  height: calc(100% - 2 * clamp(24px, 4vh, 48px));
+  overflow: visible;
+}
+/* the field is one canvas (identity/CrowdField.tsx); its marks, their
+   flight, the bodies and the run are drawn there from the section's
+   progress, off the main thread */
+
+/* ================= Act III · black, the wordmark, the lines ================= */
+.closing {
+  position: absolute;
+  inset: 0;
+  background: var(--black);
+  display: grid;
+  place-items: center;
+  opacity: var(--blackIn);
+}
+.closingInner {
+  display: grid;
+  justify-items: center;
+  gap: clamp(20px, 3vh, 34px);
+  text-align: center;
+  transform: translateY(4%);
+  /* nothing of Act III is on screen until its act; then the film plays */
+  opacity: 0;
+}
+.wrap[data-act="7"] .closingInner,
+.wrap[data-act="8"] .closingInner {
+  opacity: 1;
+}
+.wrap[data-act="8"] .closingInner {
+  animation: launchThrough 0.86s cubic-bezier(0.62, -0.42, 0.28, 1.5) forwards;
+}
+.wordmark {
+  display: block;
+  height: clamp(8.6rem, 12.4vw, 14rem);
+  width: auto;
+  overflow: visible;
+}
+.wordGlyph {
+  fill: var(--paper);
+  stroke: var(--paper);
+  stroke-width: 0;
+  stroke-linejoin: round;
+}
+.wordDot {
+  fill: var(--paper);
+}
+.taglineStack {
+  display: grid;
+}
+.tagline {
+  grid-area: 1 / 1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.34em;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.3vw, 2.05rem);
+}
+.tagline[data-stage="first"] {
+  color: var(--yellow);
+  opacity: 0;
+}
+.tagline[data-stage="settled"] {
+  color: var(--sky);
+  opacity: 0;
+}
+/* the film, timed from the act's entry: the wordmark's road runs to 9.5 s,
+   the three stamps follow at 9.8 s, 0.7 s apart, hold, clear at 13.6 s; the
+   settled line resolves from 14.0 s and holds */
+.wrap[data-act="7"] .tagline[data-stage="first"],
+.wrap[data-act="8"] .tagline[data-stage="first"] {
+  animation: lineHold 13.8s steps(1) forwards;
+}
+.wrap[data-act="7"] .stamp,
+.wrap[data-act="8"] .stamp {
+  animation: stamp 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(9.8s + var(--i, 0) * 0.7s);
+}
+.wrap[data-act="7"] .tagline[data-stage="settled"],
+.wrap[data-act="8"] .tagline[data-stage="settled"] {
+  animation: lineIn 0.2s linear 14s forwards;
+}
+.wrap[data-act="7"] .resolve,
+.wrap[data-act="8"] .resolve {
+  animation: resolve 1.3s cubic-bezier(0.3, 0.6, 0.2, 1) both;
+  animation-delay: calc(14s + var(--i, 0) * 0.16s);
+}
+.stamp,
+.resolve {
+  display: inline-block;
+  white-space: pre;
+}
+
+/* ---- keyframes: drama is overshoot and settle, never a ramp ---- */
+@keyframes plateIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(1.04);
+    filter: blur(6px);
+  }
+}
+@keyframes captionIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes drawIn {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes look {
+  0%, 14% { transform: translate(0, 0); }
+  15%, 30% { transform: translate(-30px, -12px); }
+  31%, 42% { transform: translate(24px, 14px); }
+  43%, 58% { transform: translate(6px, -22px); }
+  59%, 72% { transform: translate(-22px, 16px); }
+  73%, 88% { transform: translate(30px, -4px); }
+  89%, 100% { transform: translate(0, 0); }
+}
+@keyframes lidBlinkUpper {
+  0%, 46%, 50.5%, 100% { transform: translateY(0); }
+  47.8%, 48.5% { transform: translateY(48.64%); }
+}
+@keyframes lidBlinkLower {
+  0%, 46%, 50.5%, 100% { transform: translateY(0); }
+  47.8%, 48.5% { transform: translateY(-48.64%); }
+}
+@keyframes precess {
+  from {
+    transform: rotate(-5deg) scaleX(0.96);
+  }
+  to {
+    transform: rotate(5deg) scaleX(1.04);
+  }
+}
+@keyframes tick {
+  to {
+    transform: rotate(calc(var(--a, 0deg) + 360deg));
+  }
+}
+@keyframes run {
+  to {
+    offset-distance: 100%;
+  }
+}
+@keyframes drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-9%);
+  }
+}
+@keyframes gleam {
+  from {
+    background-position: 0 0, 0 0;
+    filter: saturate(1);
+  }
+  to {
+    background-position: 12% 8%, 0 0;
+    filter: saturate(1.15);
+  }
+}
+@keyframes lineHold {
+  0% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes lineIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes stamp {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(6px);
+    letter-spacing: 0.14em;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+    letter-spacing: 0;
+  }
+}
+@keyframes resolve {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(1.06);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes launchThrough {
+  0% {
+    transform: translateY(4%) scale(1);
+    opacity: 1;
+  }
+  26% {
+    transform: translateY(6.5%) scale(0.955);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-34%) scale(1.62);
+    opacity: 0;
+  }
+}
+
+/* ---- reduced motion: the finished states, still ---- */
+.wrap[data-reduced] {
+  height: auto;
+  overflow: visible;
+  background: #3c4242;
+}
+.wrap[data-reduced] .scrollLayer {
+  position: static;
+  height: auto;
+  transform: none;
+  opacity: 1;
+  padding-block: var(--s-7);
+}
+.wrap[data-reduced] .headerRegion {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.wrap[data-reduced] .card,
+.wrap[data-reduced] .caption {
+  animation: none;
+}
+.wrap[data-reduced] .pinnedLayer {
+  display: none;
+}
+.wrap[data-reduced] .closing {
+  position: static;
+  opacity: 1;
+  padding: var(--s-9) clamp(48px, 8vw, 120px);
+}
+.wrap[data-reduced] .closingInner {
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+.wrap[data-reduced] .tagline[data-stage="first"] {
+  display: none;
+}
+.wrap[data-reduced] .tagline[data-stage="settled"],
+.wrap[data-reduced] .resolve {
+  opacity: 1;
+  animation: none;
+}
