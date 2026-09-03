@@ -1,5 +1,7 @@
-/* Object Page — layout exploration.
-   Fixture record shaped to the real read API `SurfaceDetail` DTO:
+/* Object Page — the record type, and one sample record.
+   Live pages build their record from the sealed projection (lib/fromDocument.ts);
+   the sample below is kept for the type and for design review only. Shaped to
+   the real read API `SurfaceDetail` DTO:
    surfaceId · title · creditedLabels[] · displayDate · year · placeLabel ·
    mediumLabel · typeLabel · sourceLabel · publicationLayer · deliveryState ·
    citation{label,href}|null · folderIds[] · description|null.
