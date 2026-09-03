@@ -1,0 +1,135 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+/* ---- Masthead — small, but with an intro line and clear steps ---- */
+
+.mast {
+  padding: var(--s-5) var(--page-gutter) var(--s-4);
+}
+
+.kicker {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 11vw, 2.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+
+.lede {
+  margin-top: var(--s-3);
+  font-family: var(--font-statement);
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.count {
+  margin-top: var(--s-3);
+  font-family: var(--font-num);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-2);
+}
+.count b {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.stripe {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  height: 8px;
+}
+.stripe span:nth-child(1) {
+  background: var(--sky);
+}
+.stripe span:nth-child(2) {
+  background: var(--coral);
+}
+.stripe span:nth-child(3) {
+  background: var(--yellow);
+}
+
+/* ---- One sticky control row ---- */
+
+.control {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--page-gutter);
+  background: var(--paper);
+  border-top: var(--keyline);
+  border-bottom: var(--keyline);
+  border-color: var(--ink);
+}
+
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  padding: var(--s-2) var(--s-3);
+  background: var(--ink);
+  color: var(--on-dark);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.filterBtn .n {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 3px;
+  font-family: var(--font-num);
+  font-size: 0.68rem;
+  color: var(--ink);
+  background: var(--yellow);
+}
+
+.slice {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.right {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.cnt {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.reset {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--red);
+  border-bottom: 2px solid var(--red);
+}

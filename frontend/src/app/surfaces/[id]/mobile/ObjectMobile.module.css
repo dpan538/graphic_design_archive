@@ -1,0 +1,67 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+/* ---- Compact back bar — short label, no "Index · Search →" (§4a img 3) ---- */
+
+.backbar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--page-gutter);
+  border-bottom: var(--hair);
+  border-color: var(--ink);
+}
+
+.backTile {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--keyline-2);
+}
+
+.crumb {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-body-sm);
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+/* ---- Back to top — appears after the first screen ---- */
+
+.toTop {
+  position: fixed;
+  right: var(--page-gutter);
+  bottom: var(--s-5);
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--s-2) var(--s-4);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-dark);
+  background: var(--ink);
+  border: var(--keyline-2);
+  border-color: var(--ink);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
+}
+
+.toTop[data-show] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}

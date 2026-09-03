@@ -1,0 +1,174 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+  --index-max: 78rem;
+}
+
+/* ---- 01 Masthead — an open hero; the empty right holds the theme key ---- */
+
+.mast {
+  border-bottom: var(--keyline);
+  border-color: var(--ink);
+}
+
+.mastInner {
+  max-width: var(--index-max);
+  margin-inline: auto;
+  padding: var(--s-8) var(--page-gutter) var(--s-7);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 27rem;
+  gap: var(--s-8);
+  align-items: end;
+}
+
+.mastText {
+  min-width: 0;
+}
+
+.kicker {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.8rem, 5.4vw, 4.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+
+.lede {
+  margin-top: var(--s-5);
+  max-width: 40rem;
+  font-family: var(--font-statement);
+  font-size: clamp(1.35rem, 2vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.intro {
+  margin-top: var(--s-4);
+  max-width: 40rem;
+  font-family: var(--font-num);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.intro b {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.note {
+  margin-top: var(--s-5);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 42%, transparent);
+}
+
+/* ---- Theme key ---- */
+
+/* the theme key: beside the intro, level with it, three names to a row,
+   and foldable — a <details> that opens by default */
+.legend {
+  border-left: var(--keyline-2);
+  padding-left: var(--s-4);
+}
+
+.legendHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px var(--s-3);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.legendHead::-webkit-details-marker {
+  display: none;
+}
+.legendHead::before {
+  content: "–";
+  font-family: var(--font-num);
+  font-weight: 400;
+  width: 0.9em;
+  color: var(--ink-2);
+}
+.legend:not([open]) .legendHead::before {
+  content: "+";
+}
+
+.legendNote {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.legendList {
+  margin-top: var(--s-3);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px var(--s-4);
+  font-family: var(--font-num);
+  font-size: 0.82rem;
+  color: var(--ink-2);
+}
+
+.legendList li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--ink) 40%, transparent);
+}
+
+/* Spot-colour rule — Steinweiss / editorial, an accent not a legend. */
+.stripe {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  height: 10px;
+  max-width: var(--index-max);
+  margin-inline: auto;
+}
+.stripe span:nth-child(1) {
+  background: var(--sky);
+}
+.stripe span:nth-child(2) {
+  background: var(--coral);
+}
+.stripe span:nth-child(3) {
+  background: var(--yellow);
+}
+
+@media (max-width: 900px) {
+  .mastInner {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+  }
+  .legend {
+    border-left: none;
+    border-top: var(--keyline-2);
+    padding-left: 0;
+    padding-top: var(--s-4);
+  }
+  .legendList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

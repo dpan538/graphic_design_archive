@@ -1,0 +1,154 @@
+.wrap {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.block {
+  border-top: 2px solid var(--l-src, var(--teal-deep));
+  padding-top: var(--s-3);
+}
+
+.head {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--l-src, var(--teal-deep));
+}
+
+.note {
+  margin-top: 2px;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.copyRow {
+  margin-top: var(--s-3);
+}
+
+.copyBtn {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  padding: var(--s-2) var(--s-4);
+  border: var(--keyline-2);
+  color: var(--ink);
+}
+
+.copyBtn[data-copied="true"] {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--on-dark);
+}
+
+/* Folded non-essential detail */
+.fold {
+  margin-top: var(--s-3);
+  border-top: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 22%, transparent);
+}
+
+.fold > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--s-3) 0;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--l-src, var(--teal-deep));
+  cursor: pointer;
+}
+
+.fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold > summary::before {
+  content: "+";
+  font-family: var(--font-num);
+  font-weight: 400;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.fold[open] > summary::before {
+  content: "–";
+}
+
+.fold[open] > summary {
+  color: var(--ink-2);
+}
+
+.foldBody {
+  padding-bottom: var(--s-2);
+}
+
+.kv {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.kv > div {
+  display: grid;
+  gap: 2px;
+}
+
+.kv dt {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.kv dd {
+  font-size: 1.1875rem;
+  line-height: 1.4;
+}
+
+.citeText {
+  margin-top: var(--s-2);
+  font-family: var(--font-num);
+  font-weight: 400;
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.srcLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  font-family: var(--font-label);
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 2px solid var(--l-src, var(--teal-deep));
+}
+
+.foldLink {
+  display: inline-block;
+  margin-top: var(--s-3);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink);
+  border-bottom: 2px solid var(--l-src, var(--teal-deep));
+}
+
+.aboutNote {
+  margin-top: var(--s-3);
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.aboutNote a {
+  border-bottom: 1.5px solid currentColor;
+}

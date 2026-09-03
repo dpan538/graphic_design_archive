@@ -1,0 +1,96 @@
+.directory {
+  padding: 0 var(--page-gutter) var(--s-9);
+}
+
+/* ---- Year band — the top of the hierarchy ---- */
+
+.group {
+  padding-top: var(--s-5);
+}
+
+.year {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 3px solid var(--ink);
+  font-family: var(--font-num);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.yearN {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  gap: 4px;
+  padding: var(--s-4) 0;
+  border-bottom: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+/* ---- Title — the object; a clear tap target, not a heavy headline ---- */
+
+.title {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.32;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ink) 26%, transparent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+/* ---- Record line — quiet support ---- */
+
+.meta {
+  font-family: var(--font-num);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+/* ---- Empty state ---- */
+
+.state {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-top: var(--s-5);
+}
+.stateHint {
+  margin-top: var(--s-2);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-2);
+}
+.stateBtn {
+  margin-top: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  border: var(--keyline-2);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
