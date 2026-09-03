@@ -1,0 +1,162 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+/* ---- Back bar (breadcrumb row) — carries the record tag on the right ---- */
+
+.backbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--page-gutter);
+  border-bottom: var(--hair);
+  border-color: var(--ink);
+}
+
+.backLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  min-width: 0;
+}
+
+.backTile {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--keyline-2);
+}
+
+.backTile:hover {
+  background: var(--paper-2);
+}
+
+.crumb {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.06em;
+  color: var(--ink-2);
+}
+
+.crumb b {
+  color: var(--ink);
+}
+
+/* ---- Record tag — CSS ticket stub (barcode · number · stamp) ---- */
+
+.recTag {
+  display: inline-flex;
+  align-items: stretch;
+  flex: none;
+  height: 30px;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  font-family: var(--font-num);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+}
+
+.recBars {
+  width: 26px;
+  align-self: stretch;
+  border-right: 1.5px solid var(--ink);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0 1.5px,
+    transparent 1.5px 3px,
+    var(--ink) 3px 4px,
+    transparent 4px 7px,
+    var(--ink) 7px 9px,
+    transparent 9px 10.5px,
+    var(--ink) 10.5px 11.5px,
+    transparent 11.5px 14px
+  );
+}
+
+.recNo {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--s-3) 0 10px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: var(--fs-label);
+}
+
+.recStamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  padding: 0 10px;
+  border-left: 1.5px dashed color-mix(in srgb, var(--on-dark) 60%, transparent);
+  background: var(--ink);
+  color: var(--on-dark);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-label);
+}
+
+/* ---- Preview toolbar (test harness only) ---- */
+
+.previewBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-5);
+  padding: var(--s-3) var(--page-gutter);
+  background: var(--ink);
+  color: var(--on-dark);
+  font-size: var(--fs-body-sm);
+}
+
+.previewBar > span:first-child {
+  font-family: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--on-dark) 62%, transparent);
+}
+
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1.5px solid color-mix(in srgb, var(--on-dark) 40%, transparent);
+}
+
+.seg button {
+  padding: var(--s-1) var(--s-3);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--on-dark) 80%, transparent);
+  border-right: 1.5px solid color-mix(in srgb, var(--on-dark) 30%, transparent);
+}
+
+.seg button:last-child {
+  border-right: none;
+}
+
+.seg button[data-on="true"] {
+  background: var(--on-dark);
+  color: var(--ink);
+}
+
+.segLabel {
+  font-family: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--on-dark) 55%, transparent);
+  margin-right: var(--s-2);
+}

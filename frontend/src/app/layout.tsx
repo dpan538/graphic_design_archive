@@ -39,15 +39,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  /* Parallel slot for navigations intercepted as overlays (Search), so the
+     page they were opened from stays mounted underneath. */
+  modal: React.ReactNode;
 }) {
   return (
     <html
       lang="en"
       className={`${baskervville.variable} ${instrumentSans.variable} ${inter.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        {modal}
+      </body>
     </html>
   );
 }

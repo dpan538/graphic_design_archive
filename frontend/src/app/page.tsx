@@ -1,84 +1,25 @@
-import ArchiveShell from "@/components/archive/shell/ArchiveShell";
-import Link from "next/link";
-import { publicSearchFacets } from "@/features/search-v2/service.server";
-import styles from "./HomePage.module.css";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { resolveView } from "@/lib/device";
+import HomeDesktop from "./home/desktop/HomeDesktop";
+import HomeMobile from "./home/mobile/HomeMobile";
 
-function starterHref(starter: ReturnType<typeof publicSearchFacets>["starterQueries"][number]): string {
-  const parameters = new URLSearchParams();
-  if (starter.query) parameters.set("q", starter.query);
-  for (const [key, value] of Object.entries(starter.filters)) parameters.set(key, String(value));
-  return `/search?${parameters.toString()}`;
-}
+export const metadata: Metadata = {
+  title: "Modern Graphic Design Archive",
+  description:
+    "A digital humanities research archive for modern graphic design history — verified records, explicit provenance, and evidence-bounded computational research.",
+};
 
-function HomeArchiveBox({ publicCount }: { publicCount: number }) {
-  return (
-    <details className="home-archive-summary">
-      <summary>
-        <span>Public objects</span>
-        <strong>{publicCount.toLocaleString("en-US")}</strong>
-        <small>searchable object pages</small>
-      </summary>
-      <dl>
-        <div>
-          <dt>Search scope</dt>
-          <dd>{publicCount.toLocaleString("en-US")}</dd>
-        </div>
-        <div>
-          <dt>held included</dt>
-          <dd>0</dd>
-        </div>
-      </dl>
-    </details>
-  );
-}
+/* Homepage (§7e) — a reading page. Server device split (§4a): the User-Agent
+   (or ?view=) picks the scroll-choreographed desktop page or the pared-back
+   mobile stack. Copy is final per §2a / §7e; no API. */
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const [sp, hdrs] = await Promise.all([searchParams, headers()]);
+  const view = resolveView(sp.view, hdrs.get("user-agent"));
 
-export default function HomePage() {
-  const facets = publicSearchFacets();
-
-  return (
-    <ArchiveShell
-      mainScroll
-      main={(
-        <main className={styles.main}>
-          <header className={styles.intro}>
-            <p className={styles.eyebrow}>Graphic Design Archive</p>
-            <h1>Find an object or enter a research space.</h1>
-            <p>Global Search and TRACE are parallel ways into the archive. Search opens public object pages; TRACE supports desktop research workflows.</p>
-          </header>
-
-          <div className={styles.strategies}>
-            <section className={`${styles.card} ${styles.searchCard}`} aria-labelledby="home-search-title">
-              <p className={styles.availability}>Desktop and mobile · public objects</p>
-              <h2 id="home-search-title">Global Search</h2>
-              <p>Search {facets.documentCount.toLocaleString("en-US")} public objects by ID, title, credited name, or place, then refine by year, type, theme, or movement.</p>
-              <form className={styles.form} action="/search" method="get" role="search">
-                <label className="sr-only" htmlFor="home-search-query">Search public archive objects</label>
-                <input id="home-search-query" name="q" type="search" maxLength={160} autoComplete="off" placeholder="Object ID, title, credited name, or place" />
-                <button type="submit">Search</button>
-              </form>
-              <ul className={styles.starters} aria-label="Curated Search starters">
-                {facets.starterQueries.map((starter) => <li key={starter.id}><Link href={starterHref(starter)}>{starter.label}</Link></li>)}
-              </ul>
-              <Link className={styles.routeLink} href="/search">Open the complete Search workspace →</Link>
-            </section>
-
-            <section className={styles.card} aria-labelledby="home-trace-title">
-              <p className={styles.availability}>Desktop research environment</p>
-              <h2 id="home-trace-title">TRACE</h2>
-              <p>Explore public research context, spacetime, validated associations, and clearly separated open inquiry.</p>
-              <Link className={styles.routeLink} href="/trace">Enter TRACE →</Link>
-            </section>
-          </div>
-
-          <nav className={styles.browse} aria-label="Other archive routes">
-            <span>Browse the archive structure:</span>
-            <Link href="/folders">Folders</Link>
-            <Link href="/index">Index</Link>
-            <Link href="/about">About</Link>
-          </nav>
-        </main>
-      )}
-      cornerCard={<HomeArchiveBox publicCount={facets.documentCount} />}
-    />
-  );
+  return view === "mobile" ? <HomeMobile /> : <HomeDesktop />;
 }

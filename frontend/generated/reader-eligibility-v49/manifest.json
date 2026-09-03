@@ -1,0 +1,108 @@
+{
+  "format": "gda-reader-eligibility-v1-manifest",
+  "release_id": "v49-api-contract-fresh-c",
+  "release_manifest_sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+  "canonical_input_sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+  "search_index_sha256": "6d6604e4f0e8694b9eadcd0f2f69fb54ddfe27f284e5b6bf9718a3251dc1bd09",
+  "rules_version": "gda-reader-eligibility-rules-v1",
+  "rules": {
+    "eligibility_floor": [
+      "public (Search v2 projection)",
+      "trace.tier === source_verified (inherited)",
+      "a human-readable title, by the provenance rules below"
+    ],
+    "TITLE_IS_SOURCE_IDENTIFIER": "title equals one of the record's own source identifiers (sourceRecordId, sourceObjectKey, sourceLocator, surfaceId, or the system number in its source URL) and carries at most four letters",
+    "TITLE_NUMERIC_ONLY": "title carries no letters",
+    "TITLE_EMPTY": "title is empty",
+    "note": "Rules read the record's own provenance fields; no rule inspects the text for 'meaningfulness'. Short real titles (PKZ, Mir, A-Z) stay INDEX_ELIGIBLE."
+  },
+  "counts": {
+    "public": 7995,
+    "index_eligible": 5423,
+    "record_only": 2572,
+    "by_reason": {
+      "TITLE_IS_SOURCE_IDENTIFIER": 2567,
+      "TITLE_NUMERIC_ONLY": 5
+    },
+    "by_source": {
+      "Art Institute of Chicago API": {
+        "public": 561,
+        "index_eligible": 554,
+        "record_only": 7
+      },
+      "Biblioteca Nacional Digital de Chile": {
+        "public": 67,
+        "index_eligible": 67,
+        "record_only": 0
+      },
+      "Library of Congress loc.gov API": {
+        "public": 41,
+        "index_eligible": 41,
+        "record_only": 0
+      },
+      "Cooper Hewitt Collection GraphQL API": {
+        "public": 84,
+        "index_eligible": 84,
+        "record_only": 0
+      },
+      "V&A Collections API": {
+        "public": 3505,
+        "index_eligible": 957,
+        "record_only": 2548
+      },
+      "Digital Commonwealth / Boston Public Library": {
+        "public": 2,
+        "index_eligible": 2,
+        "record_only": 0
+      },
+      "Desain Grafis Indonesia": {
+        "public": 76,
+        "index_eligible": 76,
+        "record_only": 0
+      },
+      "Gallica / BnF APIs": {
+        "public": 8,
+        "index_eligible": 8,
+        "record_only": 0
+      },
+      "Library of Congress Prints and Photographs API": {
+        "public": 2300,
+        "index_eligible": 2297,
+        "record_only": 3
+      },
+      "Malaysia Design Archive": {
+        "public": 48,
+        "index_eligible": 48,
+        "record_only": 0
+      },
+      "National Library of Norway Catalogue API": {
+        "public": 522,
+        "index_eligible": 522,
+        "record_only": 0
+      },
+      "Nasjonalmuseet Design collection / DigitaltMuseum": {
+        "public": 96,
+        "index_eligible": 96,
+        "record_only": 0
+      },
+      "Pacific Community Digital Library": {
+        "public": 165,
+        "index_eligible": 165,
+        "record_only": 0
+      },
+      "Yale University Art Gallery Linked Art": {
+        "public": 438,
+        "index_eligible": 436,
+        "record_only": 2
+      },
+      "Victoria and Albert Museum Collections API": {
+        "public": 82,
+        "index_eligible": 70,
+        "record_only": 12
+      }
+    }
+  },
+  "generated_at": "2026-09-03T00:00:00Z",
+  "eligibility_sha256": "28f292899329166029ab25b6ed8623286ba85f9ab3ff1732ac5576e701c11027",
+  "eligibility_bytes": 455842
+}

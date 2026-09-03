@@ -1,0 +1,44 @@
+.note {
+  animation: fade 0.45s ease both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+.label {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+
+.line {
+  margin-top: 2px;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.line:first-of-type {
+  margin-top: 5px;
+}
+
+.tokens {
+  margin-top: var(--s-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4);
+}
+
+.token {
+  font-family: var(--font-num);
+  font-size: 1rem;
+  color: var(--ink);
+  border-bottom: 2px solid var(--teal);
+  padding-bottom: 1px;
+}

@@ -82,7 +82,7 @@ export const designResearchNote =
 /* ---- 3 · Visual design rationale ---------------------------- */
 
 export const rationaleLead =
-  "The interface is designed the way a printed reference catalogue is set: colour used as a coding system, a heavy line holding the structure, and one clear idea per section. Three references were combined into a single language — not copied.";
+  "The interface is set in the idiom of the Columbia Records covers of 1940–1960: one announced idea per cover, flat luminous colour held by a black line, a device repeated with rhythm. It is carried by the postage stamp's economy — colour as a field, one figure cropped by its frame — and drawn with the engraver's line. Six references, combined into one language, not copied.";
 
 export const visualReferences: {
   tone: "blue" | "red" | "yellow" | "green" | "teal" | "coral";
@@ -93,35 +93,47 @@ export const visualReferences: {
   {
     tone: "red",
     title: "Alex Steinweiss",
-    meta: "Invented the illustrated album cover · Columbia Records · 1940",
-    body: "One concept per cover, a limited but luminous palette, expressive display lettering, and a single graphic device repeated with rhythm. Each section here is treated as a cover: a single idea, announced.",
+    meta: "Columbia Records art director from 1939 · the first illustrated album cover, 1940",
+    body: "One concept per cover, announced; a limited but luminous palette; a single graphic device repeated with rhythm. Every section of this site is treated as a cover: one idea, one colour, one device.",
   },
   {
     tone: "blue",
-    title: "New York editorial illustration",
-    meta: "New Yorker / New York Times idiom",
-    body: "Flat, bright colour held by a confident black line, ordered density, warmth, and wit — with no gradient, shadow, or fake depth.",
+    title: "S. Neil Fujita",
+    meta: "Columbia Records design director 1954–1960 · Time Out, Mingus Ah Um, 1959",
+    body: "Colour as abstract field: painted blocks that carry the whole cover, type set small and sure beside them. The plates here are Fujita's fields — a solid colour doing the work, the name set against it.",
   },
   {
     tone: "yellow",
-    title: "Spot-colour printing",
-    meta: "A few bright inks plus a black line block",
-    body: "Colour is a coding system — each section owns one — and is also worn as a full block. It is never the only carrier of meaning; a label, a position, and the black line carry it too.",
+    title: "Jim Flora",
+    meta: "Columbia Records, 1942–1950 · the jazz covers of 1947",
+    body: "Cartoon-modern crowds: figures reduced to dots, teeth and lines, packed into a field and set running. The homepage's field of marks that breaks into a crowd is drawn in Flora's key — an archive is a record of people.",
   },
   {
     tone: "green",
-    title: "A serif counterpoint",
-    meta: "Baskervville, kept for the opening voice",
-    body: "A quiet transitional serif is held for the opening statement and for emphasis — a counterweight to the bright colour and the heavy display type.",
+    title: "The postage stamp",
+    meta: "SOZPHILEX 77, DDR 1977 · EFTA 50 years, Swiss Post, Demian Conrad 2010 · HKSAR 25, Hongkong Post 2022",
+    body: "The stamp is the Columbia cover reduced to its economy: a field of colour, one oversized figure cropped by its own frame, a name set larger than the plate, one small line-drawn device. Every section opens on such a plate.",
+  },
+  {
+    tone: "teal",
+    title: "Pictogram systems",
+    meta: "Tokyo 1964, Masaru Katsumi · Munich 1972, Otl Aicher",
+    body: "Figures reduced to a head and a body on a grid, legible at any size. Where Flora gives the crowd its energy, the pictogram gives it its discipline: the field is a grid of marks before it is a crowd.",
+  },
+  {
+    tone: "coral",
+    title: "The engraver's line",
+    meta: "Copperplate hatching · the halftone screen · the ruled loop",
+    body: "The printed image before photography — the hand that engraved stamps and banknotes. A circle rendered by lines, by dots, and by a lit engraving opens the homepage, white on black, so the first thing a reader sees is drawing, never a picture of an object.",
   },
 ];
 
 export const typeSystem: { role: string; face: string }[] = [
-  { role: "Opening voice", face: "Baskervville — statement and emphasis" },
-  { role: "Section titles", face: "LINE Seed JP ExtraBold" },
-  { role: "Labels", face: "LINE Seed JP Bold" },
-  { role: "Body", face: "Instrument Sans — 18px floor, 19px reading" },
-  { role: "Figures", face: "Inter — tabular, in tables" },
+  { role: "Titles and numerals", face: "LINE Seed JP ExtraBold — plates, cropped figures, the wordmark's final face" },
+  { role: "Labels and pills", face: "LINE Seed JP Bold — on the 17px floor" },
+  { role: "Body", face: "Instrument Sans — 19px reading, 18px small" },
+  { role: "Set-apart statements", face: "Baskervville — pull statements and the wordmark's second line" },
+  { role: "Figures", face: "Inter — tabular, in tables and citations" },
 ];
 
 /* ---- 4 · Scale (public-facing; no engineering internals) ---- */
@@ -272,4 +284,4 @@ export const claimBoundaries: {
 export const rightsProse =
   "Modern Graphic Design Archive is an index and research interface. Copyright, database rights, moral rights, trademarks, personality rights, cultural protocols, and access terms may remain with original creators, publishers, institutions, estates, communities, or source platforms. Project-authored text, data normalization, and this interface design are research outputs, and no blanket reuse licence is granted. Individual object images and scans remain governed by their holding source.";
 
-export const footerNote = "Interface in progress · not yet public";
+export const footerNote = "Text and citation · no assumed imagery";

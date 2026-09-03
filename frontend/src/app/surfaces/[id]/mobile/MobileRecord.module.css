@@ -1,0 +1,85 @@
+.record {
+  /* Mobile coding colours — a touch more purity for the brighter, whiter ground
+     the mobile token overrides give (globals.css §4a). Cascades to children. */
+  --l-visual: var(--ink);
+  --l-ident: #1f34e0;
+  --l-meta: #0b8f3d;
+  --l-desc: #a86807;
+  --l-src: #067f7f;
+  padding: var(--s-5) var(--page-gutter) var(--s-9);
+}
+
+.head {
+  margin-bottom: var(--s-5);
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--l-src);
+  margin-bottom: var(--s-2);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 7.6vw, 2.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.identLine {
+  margin-top: var(--s-4);
+  padding-bottom: var(--s-3);
+  border-bottom: 3px solid var(--ink);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.sec + .sec {
+  margin-top: var(--s-6);
+}
+
+.layerHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding-bottom: var(--s-2);
+  margin-bottom: var(--s-4);
+  border-bottom: 3px solid var(--lc, var(--ink));
+}
+
+.layerNum {
+  font-family: var(--font-num);
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: var(--lc, var(--ink));
+}
+
+.layerName {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lc, var(--ink));
+}
+
+.recordNotice {
+  margin-top: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid color-mix(in srgb, var(--ink) 40%, transparent);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}

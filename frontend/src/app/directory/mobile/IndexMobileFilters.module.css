@@ -1,0 +1,242 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--ink) 40%, transparent);
+}
+
+.sheet {
+  position: relative;
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border-top: var(--keyline);
+  border-color: var(--ink);
+  animation: up 0.2s ease;
+}
+
+@keyframes up {
+  from {
+    transform: translateY(16px);
+    opacity: 0.5;
+  }
+}
+
+.head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s-4) var(--page-gutter);
+  border-bottom: var(--keyline);
+  border-color: var(--ink);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--ink);
+  border: var(--keyline-2);
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* ---- Accordion section ---- */
+
+.section {
+  border-bottom: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 25%, transparent);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  padding: var(--s-4) var(--page-gutter);
+  text-align: left;
+}
+
+.sectionHead svg {
+  flex: none;
+  transition: transform 0.14s ease;
+}
+.sectionHead svg[data-open] {
+  transform: rotate(180deg);
+}
+
+.sectionLabel {
+  flex: none;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.sectionLabel[data-accent="blue"] {
+  color: var(--blue);
+}
+.sectionLabel[data-accent="green"] {
+  color: var(--green-deep);
+}
+
+.sectionValue {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+  font-family: var(--font-num);
+  font-size: var(--fs-body-sm);
+  color: var(--ink-2);
+}
+
+.sectionBody {
+  padding: 0 var(--page-gutter) var(--s-5);
+  display: grid;
+  gap: var(--s-3);
+}
+
+/* ---- Controls ---- */
+
+.select {
+  width: 100%;
+  padding: var(--s-3);
+  border: var(--keyline-2);
+  background: var(--paper);
+  font-family: var(--font-num);
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+.yearRange {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  color: var(--ink-2);
+}
+.yearInput {
+  width: 6.5rem;
+  padding: var(--s-3);
+  border: var(--keyline-2);
+  background: var(--paper);
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+.eras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-2);
+}
+.era {
+  padding: var(--s-2) var(--s-1);
+  border: var(--keyline-2);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.76rem;
+  color: var(--ink);
+}
+.era[data-on] {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.decades {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--s-2);
+}
+.decade {
+  padding: var(--s-2) 0;
+  border: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 45%, transparent);
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.86rem;
+  color: var(--ink-2);
+}
+.decade[data-on] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--on-dark);
+}
+
+.order {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: var(--keyline-2);
+}
+.orderBtn {
+  padding: var(--s-3);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  border-right: var(--keyline-2);
+}
+.orderBtn:last-child {
+  border-right: none;
+}
+.orderBtn[data-on] {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.badge {
+  padding: var(--s-2) var(--s-3);
+  border: var(--keyline-2);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--ink);
+  background: var(--paper);
+}
+.badge[data-on] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-dark);
+}
+
+.apply {
+  flex: none;
+  padding: var(--s-4);
+  background: var(--ink);
+  color: var(--on-dark);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}

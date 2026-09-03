@@ -1,0 +1,51 @@
+.filters {
+  margin-top: var(--s-4);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-2);
+}
+
+.lab {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 2px;
+}
+
+.year {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--ink-2);
+}
+
+.year input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--s-2);
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--ink);
+}
+
+.filters select {
+  width: 100%;
+  padding: var(--s-2) 2.5rem var(--s-2) var(--s-3);
+  border: 2px solid var(--ink);
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23181510' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: var(--font-num);
+  font-size: 1rem;
+  color: var(--ink);
+}

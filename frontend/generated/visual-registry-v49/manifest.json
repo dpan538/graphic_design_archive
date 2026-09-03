@@ -1,0 +1,17 @@
+{
+  "format": "gda-visual-registry-v1-manifest",
+  "release_id": "v49-api-contract-fresh-c",
+  "count": 0,
+  "note": "The visual registry is the only source of MGDA_DISPLAYABLE_VISUAL. It is hand-promoted from the census's candidate sheets (promotion-candidates-batch-*.json) with a reviewer's decision and evidence; the frontend never promotes an image state on its own. Zero entries in v49.",
+  "entry_schema": {
+    "stableId": "public record id",
+    "imageUrl": "the verified remote image URL (https)",
+    "host": "image host",
+    "licence": "the item's licence or public-domain statement, as recorded at the source",
+    "attribution": "the attribution line to render with the image",
+    "sourceUrl": "the original source record",
+    "promotedAt": "YYYY-MM-DD",
+    "reviewer": "who decided",
+    "evidence": "{ endpointCheckedAt, rightsReviewed, providerTerms }"
+  }
+}

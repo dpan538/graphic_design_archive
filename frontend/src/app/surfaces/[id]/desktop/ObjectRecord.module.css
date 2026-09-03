@@ -1,0 +1,169 @@
+.record {
+  /* Higher-purity coding colours — they must read against the cream ground.
+     These cascade into every child component module. */
+  --l-visual: var(--ink);
+  --l-ident: #1f34e0;
+  --l-meta: #0f9040;
+  --l-desc: #b5710a;
+  --l-src: #0a8f8f;
+  padding: var(--s-6) var(--page-gutter) var(--s-8);
+}
+
+.inner {
+  max-width: 66rem;
+  margin-inline: auto;
+}
+
+.mt {
+  margin-top: var(--s-4);
+}
+
+/* ---- Header — a clear (not loose) gap below sets the hierarchy ---- */
+
+.header {
+  margin-bottom: var(--s-6);
+}
+
+.recEyebrow {
+  display: block;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--l-src);
+  margin-bottom: var(--s-3);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  /* A readability measure, not a hard clamp — the sample title sets in 2 lines,
+     never forced to a third. `balance` evens the two lines. */
+  max-width: 36ch;
+  text-wrap: balance;
+}
+
+.identLine {
+  margin-top: var(--s-5);
+  padding-bottom: var(--s-3);
+  border-bottom: 3px solid var(--ink);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--fs-label);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.identLine span {
+  white-space: nowrap;
+}
+
+.identLine .sep {
+  color: color-mix(in srgb, var(--ink) 42%, transparent);
+  margin: 0 var(--s-2);
+  font-weight: 400;
+}
+
+/* ---- Sections — tight inside, clearly stepped between (hierarchy) ---- */
+
+.sec + .sec {
+  margin-top: var(--s-7);
+}
+
+.layerHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 3px solid var(--lc, var(--ink));
+}
+
+.layerNum {
+  font-family: var(--font-num);
+  font-weight: 300;
+  font-size: var(--fs-label);
+  color: var(--lc, var(--ink));
+}
+
+.layerName {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--lc, var(--ink));
+}
+
+/* ---- Visual record placement — sit close under the identity rule, and give
+   real air before section 03 (the only spacing fault the owner flagged). ---- */
+
+.vbWrap {
+  margin-top: var(--s-4);
+  margin-bottom: var(--s-7);
+}
+
+/* ============================================== Layout 5 — editorial spread */
+
+.record[data-layout="5"] .spreadHead {
+  max-width: 66rem;
+  margin-inline: auto;
+  margin-bottom: var(--s-7);
+}
+
+.record[data-layout="5"] .title {
+  /* Big editorial headline, but still ~2 lines for a title of this length. */
+  max-width: 34ch;
+  font-size: clamp(2.3rem, 4.2vw, 3.5rem);
+}
+
+.record[data-layout="5"] .rule5 {
+  margin-top: var(--s-3);
+  border-top: 4px solid var(--ink);
+}
+
+.footBand {
+  /* Theme overrides consumed by Provenance.module.css via --block-*. */
+  --block-rule: color-mix(in srgb, var(--on-dark) 55%, transparent);
+  --block-accent: var(--on-dark);
+  --block-muted: color-mix(in srgb, var(--on-dark) 74%, transparent);
+  --block-btn-fg: var(--on-dark);
+  --block-btn-border: color-mix(in srgb, var(--on-dark) 55%, transparent);
+  margin-top: var(--s-8);
+  padding: var(--s-7) var(--page-gutter);
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.footInner {
+  max-width: 66rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.3fr 0.85fr;
+  gap: var(--s-6);
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 900px) {
+  .footInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* the record-only notice, under the identity line */
+.recordNotice {
+  max-width: 46rem;
+  margin-top: var(--s-5);
+  padding: var(--s-4) var(--s-5);
+  border: 1px solid color-mix(in srgb, var(--ink) 40%, transparent);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}

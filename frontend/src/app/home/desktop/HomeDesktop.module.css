@@ -1,0 +1,188 @@
+.page {
+  --home-gutter: clamp(24px, 5vw, 72px);
+  --home-max: 82rem;
+  --hero-bg: #2f3434;
+  --hero-text: #faf7f0;
+  --hero-dim: #f0e8d5;
+  /* Fallback only — the real value is measured from the header at runtime
+     (HomeDesktop.tsx). Hardcoded, it went stale as the header grew: 4.75rem
+     (76px) against a header that renders 95px, so the pinned frame sat 19px
+     under the masthead and overran the viewport bottom by the same amount. */
+  --nav-top: 4.75rem;
+  /* Contribution's two panel colours (ContributionSection.module.css) —
+     hoisted here so any section can reference them; e.g. Identity's title
+     and body copy use --contrib-top as their "light" text colour. */
+  --contrib-top: #fbfaf7;
+  --contrib-bottom: #1f4b73;
+  /* Left-nav column width. A token because section content needs it to
+     position against the whole viewport rather than against its own pane
+     (e.g. Identity's first sphere centres on the screen, not the pane). */
+  --nav-w: 19.8rem;
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Tall scroll container — its height (set inline from the section weights in
+   HomeDesktop.tsx) is the pinned block's total scroll distance. */
+.split {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.navFrame {
+  position: sticky;
+  top: var(--nav-top);
+  height: calc(100dvh - var(--nav-top));
+  display: grid;
+  /* Capped to the actual rendered width of "Archive" specifically (~267px
+     measured via a text-node Range — the wordmark's two lines are block-
+     level and box-equal width, so measuring the element box itself gives
+     the wrong, wider number), not the longer "Modern Graphic Design" line
+     above it, +50px. */
+  grid-template-columns: minmax(220px, var(--nav-w)) 1fr;
+  /* the rail keeps its dark ground on every section — the pages around it
+     were designed against it, and a light rail pulled the eye to the right */
+  --rail-fg: var(--hero-text);
+  --rail-line: color-mix(in srgb, var(--hero-text) 16%, transparent);
+  background: var(--hero-bg);
+  overflow: hidden;
+}
+
+/* ---- Left nav — constant ground, never swapped ---- */
+
+/* Grid, not flex column: a `max-content` column is exactly as wide as its
+   widest child ("Enter the Archive"), and `justify-content: center` centers
+   that whole column as one block within the left nav's own width — the four
+   items share that one width and read left-aligned within it, rather than
+   each being centered independently as its own line. Row 1 is the spacer;
+   it needs an actual grid item (the ::before below) to occupy it, because
+   grid auto-placement fills row 1 with the first real child regardless of
+   which row a track was "meant" for — an empty, unclaimed track does not
+   get skipped on its own. */
+.leftNav {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: calc(46% + 50px) repeat(4, auto);
+  justify-content: center;
+  row-gap: var(--s-2);
+  padding-inline: var(--s-6);
+  padding-bottom: var(--s-7);
+  border-right: 1px solid var(--rail-line);
+  color: var(--rail-fg);
+}
+.leftNav::before {
+  content: "";
+}
+
+/* the four titles, lower left, in the heavy face; the active one at full
+   ink with a thin rule in its section's colour, the others held back —
+   readable on the paper and, inverted, on the film's black */
+.navItem {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 100%;
+  gap: var(--s-3);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(0.8rem, 1.5vw, 1.15rem);
+  letter-spacing: -0.01em;
+  color: var(--rail-fg);
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.navItem[data-active="true"],
+.navItem:hover,
+.navItem:focus-visible {
+  opacity: 1;
+}
+
+.navLabel {
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.navItem[data-active="true"] .navLabel {
+  border-bottom-color: var(--nav-accent);
+}
+
+.navN {
+  font-family: var(--font-num);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: inherit;
+  opacity: 0.7;
+}
+/* ---- Right pane — content swaps per section ---- */
+
+.rightPane {
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionSlot {
+  position: absolute;
+  inset: 0;
+  /* Dealt, not dissolved — see HomeDesktop.tsx. The card travels its own
+     full height, at full opacity throughout, and its own opaque ground is
+     what hides the section beneath it. */
+  transform: translate3d(0, calc((1 - var(--enter, 0)) * 100%), 0);
+  will-change: transform;
+  /* The card must be opaque edge to edge or the outgoing section shows
+     through it mid-draw. */
+  background: var(--hero-bg, #14181a);
+  overflow: hidden;
+}
+/* Found root cause of the "text looks grey, then turns white" report: before
+   JS hydrates and the ScrollTrigger effect runs `apply(0)`, --opacity is
+   unset on every slot, so every slot (including Identity, the section that's
+   active by default) falls back to the shared `0`-fallback above and paints
+   fully transparent on first paint. White text composited at a fraction of
+   full opacity over the dark ground reads as grey, not as "not yet white" —
+   the colour value was never wrong, the ancestor's opacity was. Identity is
+   always DOM-order first, so give it a `1` fallback instead: correct from
+   the very first paint, and superseded the instant JS sets a real value. */
+.sectionSlot:first-child {
+  /* Bottom of the deck: seated before JS ever runs, so the first paint is
+     already correct rather than arriving from somewhere. */
+  transform: translate3d(0, calc((1 - var(--enter, 1)) * 100%), 0);
+}
+.sectionSlot[data-visible="false"] {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navFrame {
+    position: static;
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+  .leftNav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: var(--s-5);
+    border-right: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--hero-text) 16%, transparent);
+    padding-inline: var(--home-gutter);
+  }
+  .leftNav::before {
+    content: none;
+  }
+  .rightPane {
+    display: block;
+  }
+  .sectionSlot {
+    position: static;
+    opacity: 1;
+    transform: none;
+    overflow: visible;
+    margin-bottom: var(--s-9);
+    min-height: 60vh;
+  }
+}

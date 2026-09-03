@@ -1,0 +1,50 @@
+.grid {
+  margin-top: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: var(--keyline-2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-2) var(--s-4);
+}
+
+.field {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.year {
+  width: 100%;
+  padding: 6px var(--s-3);
+  border: var(--keyline-2);
+  background: var(--paper);
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+/* Custom chevron — kept clear of the box edge. */
+.select {
+  width: 100%;
+  padding: 6px 2.25rem 6px var(--s-3);
+  border: var(--keyline-2);
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23181510' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: var(--font-num);
+  font-size: 1rem;
+  color: var(--ink);
+}

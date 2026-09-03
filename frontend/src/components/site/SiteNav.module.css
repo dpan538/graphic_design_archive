@@ -88,13 +88,25 @@
   pointer-events: none;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  /* Fixed, not viewport-relative — every label (incl. all-caps "TRACE") reads
+     at the same size regardless of window width; a vw-based size previously
+     made it look like specific labels were bigger when really the two were
+     just seen at different viewport widths. */
+  font-size: 3.4rem;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: var(--blue);
+  color: var(--ink);
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* It sits directly on the page content below the header, with no background
+   of its own, so its colour follows what's under it: cream page -> ink text
+   (the logo tile's black); this homepage's dark hero ground -> the header's
+   own cream, so it still reads as "belonging" to the header. */
+.reveal[data-tone="dark"] {
+  color: var(--paper);
 }
 
 .reveal[data-shown="true"] {
@@ -107,7 +119,8 @@
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 0.5em;
-  color: var(--ink-2);
+  color: inherit;
+  opacity: 0.62;
 }
 
 @media (max-width: 760px) {
@@ -134,6 +147,19 @@
     height: 26px;
   }
   .reveal {
+    display: none;
+  }
+}
+
+/* Mobile variant (§4a): the mobile path filters to MGDA · Index · About in the
+   component; this just tightens spacing for the shorter bar. */
+.header[data-variant="mobile"] .list {
+  gap: 10px;
+}
+
+/* Below ~400px the wordmark drops to the monogram tile alone. */
+@media (max-width: 400px) {
+  .wordmark {
     display: none;
   }
 }

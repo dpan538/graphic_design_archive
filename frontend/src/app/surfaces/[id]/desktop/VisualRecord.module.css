@@ -1,0 +1,154 @@
+.vb {
+  padding-top: var(--s-1);
+}
+
+.vbLabel {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--l-visual, var(--ink));
+}
+
+/* the modes stack: sentence, action, then the alt-text row (§3d) */
+.vbBody {
+  display: grid;
+  gap: 0;
+  margin-top: var(--s-3);
+}
+
+.vbFrame {
+  flex: none;
+  align-self: flex-start;
+  border: var(--keyline-2);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 8px,
+    color-mix(in srgb, var(--ink) 8%, transparent) 8px 9px
+  );
+}
+
+.vbFrame[data-ratio="portrait"] {
+  width: 132px;
+  aspect-ratio: 2 / 3;
+}
+.vbFrame[data-ratio="landscape"] {
+  width: 188px;
+  aspect-ratio: 3 / 2;
+}
+.vbFrame[data-ratio="square"] {
+  width: 128px;
+  aspect-ratio: 1 / 1;
+}
+.vbFrame[data-lowres] {
+  outline: 2px dashed color-mix(in srgb, var(--ink) 30%, transparent);
+  outline-offset: -6px;
+}
+
+.vbInfo {
+  display: grid;
+  gap: var(--s-2);
+  min-width: 0;
+  max-width: 52rem;
+}
+
+.vbInfo > div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: var(--s-3);
+  align-items: baseline;
+}
+
+.vbInfo dt {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.vbInfo dd {
+  font-size: 1.1875rem;
+  line-height: 1.45;
+}
+
+.vbHint {
+  color: color-mix(in srgb, var(--ink) 58%, transparent);
+  font-size: var(--fs-label);
+}
+
+.srcLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  font-family: var(--font-label);
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 2px solid var(--l-src, var(--teal-deep));
+  padding-bottom: 1px;
+}
+
+/* ---- modes (§3d) ---- */
+.vbLead {
+  max-width: 46rem;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+
+.srcAction {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  padding: var(--s-3) var(--s-5);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--on-dark);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  transition: background-color 0.14s ease;
+}
+
+.srcAction:hover {
+  background: var(--blue);
+}
+
+.srcHost {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.srcHost::before {
+  content: "· ";
+}
+
+.vbInfo {
+  margin-top: var(--s-5);
+}
+
+.vbFigure {
+  margin: 0;
+}
+
+.vbImage {
+  display: block;
+  max-width: min(100%, 52rem);
+  height: auto;
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  background: var(--paper-2);
+}
+
+.vbCaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  margin-top: var(--s-3);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}

@@ -1,0 +1,191 @@
+{
+  "format": "gda-visual-availability-census-v1-manifest",
+  "release_id": "v49-api-contract-fresh-c",
+  "canonical_input_sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+  "search_index_sha256": "6d6604e4f0e8694b9eadcd0f2f69fb54ddfe27f284e5b6bf9718a3251dc1bd09",
+  "endpoint_verification": {
+    "first_pass_at": "2026-09-03T08:02:40.331Z",
+    "last_pass_at": "2026-09-03T08:05:14.764Z",
+    "method": "HEAD, then GET with Range: bytes=0-0 where HEAD is refused; 20 s timeout; redirects followed",
+    "checked": 155,
+    "ok": 128
+  },
+  "statuses": {
+    "MGDA_DISPLAYABLE_VISUAL": "listed in the v49 visual registry (positive rights) — reserved; the registry holds 0 records",
+    "REMOTE_VISUAL_CANDIDATE_VERIFIED": "Search delivery REMOTE_IMAGE and the recorded image endpoint returns an image (200/206, image/*)",
+    "REMOTE_VISUAL_CANDIDATE_UNVERIFIED": "Search delivery REMOTE_IMAGE but the endpoint refused, rate-limited or missed",
+    "SOURCE_VIEWER_AVAILABLE": "Search delivery SOURCE_VIEWER with a source record URL — 'View visual at source'",
+    "SOURCE_LINK_ONLY": "Search delivery LINK_ONLY with a source record URL",
+    "CITATION_ONLY": "Search delivery CITATION_ONLY — no visual route",
+    "NO_VALID_VISUAL_ROUTE": "no source URL and no image route"
+  },
+  "counts": {
+    "public": 7995,
+    "visual_registry_displayable": 0,
+    "by_visual": {
+      "SOURCE_VIEWER_AVAILABLE": 7763,
+      "REMOTE_VISUAL_CANDIDATE_VERIFIED": 128,
+      "REMOTE_VISUAL_CANDIDATE_UNVERIFIED": 27,
+      "CITATION_ONLY": 50,
+      "SOURCE_LINK_ONLY": 27
+    },
+    "by_reading_x_visual": {
+      "INDEX_ELIGIBLE × SOURCE_VIEWER_AVAILABLE": 5203,
+      "INDEX_ELIGIBLE × REMOTE_VISUAL_CANDIDATE_VERIFIED": 116,
+      "INDEX_ELIGIBLE × REMOTE_VISUAL_CANDIDATE_UNVERIFIED": 27,
+      "INDEX_ELIGIBLE × CITATION_ONLY": 50,
+      "INDEX_ELIGIBLE × SOURCE_LINK_ONLY": 27,
+      "RECORD_ONLY × SOURCE_VIEWER_AVAILABLE": 2560,
+      "RECORD_ONLY × REMOTE_VISUAL_CANDIDATE_VERIFIED": 12
+    },
+    "by_source_x_visual": {
+      "Art Institute of Chicago API": {
+        "SOURCE_VIEWER_AVAILABLE": 536,
+        "REMOTE_VISUAL_CANDIDATE_UNVERIFIED": 25
+      },
+      "Biblioteca Nacional Digital de Chile": {
+        "SOURCE_VIEWER_AVAILABLE": 67
+      },
+      "Library of Congress loc.gov API": {
+        "REMOTE_VISUAL_CANDIDATE_VERIFIED": 6,
+        "REMOTE_VISUAL_CANDIDATE_UNVERIFIED": 1,
+        "CITATION_ONLY": 4,
+        "SOURCE_LINK_ONLY": 27,
+        "SOURCE_VIEWER_AVAILABLE": 3
+      },
+      "Cooper Hewitt Collection GraphQL API": {
+        "SOURCE_VIEWER_AVAILABLE": 84
+      },
+      "V&A Collections API": {
+        "CITATION_ONLY": 19,
+        "SOURCE_VIEWER_AVAILABLE": 3486
+      },
+      "Digital Commonwealth / Boston Public Library": {
+        "SOURCE_VIEWER_AVAILABLE": 2
+      },
+      "Desain Grafis Indonesia": {
+        "SOURCE_VIEWER_AVAILABLE": 75,
+        "CITATION_ONLY": 1
+      },
+      "Gallica / BnF APIs": {
+        "SOURCE_VIEWER_AVAILABLE": 8
+      },
+      "Library of Congress Prints and Photographs API": {
+        "SOURCE_VIEWER_AVAILABLE": 2300
+      },
+      "Malaysia Design Archive": {
+        "CITATION_ONLY": 26,
+        "SOURCE_VIEWER_AVAILABLE": 22
+      },
+      "National Library of Norway Catalogue API": {
+        "SOURCE_VIEWER_AVAILABLE": 522
+      },
+      "Nasjonalmuseet Design collection / DigitaltMuseum": {
+        "SOURCE_VIEWER_AVAILABLE": 55,
+        "REMOTE_VISUAL_CANDIDATE_VERIFIED": 40,
+        "REMOTE_VISUAL_CANDIDATE_UNVERIFIED": 1
+      },
+      "Pacific Community Digital Library": {
+        "SOURCE_VIEWER_AVAILABLE": 165
+      },
+      "Yale University Art Gallery Linked Art": {
+        "SOURCE_VIEWER_AVAILABLE": 438
+      },
+      "Victoria and Albert Museum Collections API": {
+        "REMOTE_VISUAL_CANDIDATE_VERIFIED": 82
+      }
+    },
+    "priority_1_remote_image": {
+      "total": 155,
+      "by_host": {
+        "upload.wikimedia.org": {
+          "records": 7,
+          "endpoint_ok": 6,
+          "rights_reviewed": 7,
+          "attribution_recorded": 7,
+          "image_state": {
+            "IMG03": 7
+          },
+          "reading": {
+            "INDEX_ELIGIBLE": 7
+          }
+        },
+        "www.artic.edu": {
+          "records": 25,
+          "endpoint_ok": 0,
+          "rights_reviewed": 25,
+          "attribution_recorded": 25,
+          "image_state": {
+            "IMG03": 25
+          },
+          "reading": {
+            "INDEX_ELIGIBLE": 25
+          }
+        },
+        "ms01.nasjonalmuseet.no": {
+          "records": 41,
+          "endpoint_ok": 40,
+          "rights_reviewed": 41,
+          "attribution_recorded": 41,
+          "image_state": {
+            "IMG03": 41
+          },
+          "reading": {
+            "INDEX_ELIGIBLE": 41
+          }
+        },
+        "framemark.vam.ac.uk": {
+          "records": 82,
+          "endpoint_ok": 82,
+          "rights_reviewed": 0,
+          "attribution_recorded": 82,
+          "image_state": {
+            "IMG02": 82
+          },
+          "reading": {
+            "INDEX_ELIGIBLE": 70,
+            "RECORD_ONLY": 12
+          }
+        }
+      },
+      "gates": {
+        "all_recorded_gates_pass_pending_registry": 46,
+        "blocked_endpoint": 27,
+        "blocked_item_rights_unreviewed": 82
+      }
+    },
+    "priority_2_legacy_img03": {
+      "canonical_total": 7370,
+      "public": 73,
+      "reader_facing": 73,
+      "remote_image": 73,
+      "note": "the legacy IMG03 pool intersects the public projection in only the records counted here; the rest are HELD"
+    },
+    "priority_3_source_viewer": 7763
+  },
+  "provider_terms": {
+    "framemark.vam.ac.uk": {
+      "source": "V&A Collections API",
+      "terms": "V&A item rights and image-permission statements control display; image presence is not reuse permission.",
+      "embedding": "IIIF image service; item-level permission unresolved (rightsReviewed=false on every record)"
+    },
+    "ms01.nasjonalmuseet.no": {
+      "source": "Nasjonalmuseet Design collection / DigitaltMuseum",
+      "terms": "Display remains source-hosted and linked to the full object record; per-item licence carried by DigitaltMuseum.",
+      "embedding": "source image URL; open_candidate items reviewed (rightsReviewed=true); per-item licence and attribution still to be confirmed"
+    },
+    "www.artic.edu": {
+      "source": "Art Institute of Chicago API",
+      "terms": "AIC is_public_domain and item-page evidence control promotion; IIIF identifiers alone do not authorize display.",
+      "embedding": "IIIF image API; the endpoint refuses these requests (403) — remote embedding not available as recorded"
+    },
+    "upload.wikimedia.org": {
+      "source": "Wikimedia Commons (LOC-derived)",
+      "terms": "Commons licence fields control admission; only open-licence records are admitted; attribution and a source link are required.",
+      "embedding": "direct file URL; rate-limited for bursts (429); attribution required"
+    }
+  },
+  "generated_at": "2026-09-03T00:00:00Z",
+  "census_sha256": "8f78ad0b650ee6e3515e6a8c7f4b5dd60f7072db672e928e313f2c86ed86cb8c",
+  "census_bytes": 1511434
+}

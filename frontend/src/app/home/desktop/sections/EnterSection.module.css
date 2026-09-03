@@ -1,0 +1,230 @@
+/* All three MUST be registered. Unregistered custom properties substitute as
+   raw token text, so --eased expanded into nested calc()s multiplied together
+   — invalid — and the whole transform was dropped to identity, silently
+   killing the per-card entrance. Registered, they compute to real numbers and
+   the multiplication is legal. */
+@property --in {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --u {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+@property --eased {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+/* 03 · Enter the Archive.
+
+   The section's ground IS the first "card" — the title sits directly on it,
+   and the three real cards stack over it. Colours are page-scoped rather than
+   global tokens: they are lighter, flatter relatives of --green / --sky chosen
+   to sit together as one stack, not to restate the system accents. */
+.wrap {
+  /* Two corrections, in order. The set was first too DULL — S 0.30–0.42
+     against Contribution's S 0.59 — so it was pushed to that section's exact
+     luminance (0.102 / 6.93:1). That overshot: three saturated grounds at
+     6.93:1 under white text read as harsh.
+
+     These sit between: saturation 0.34–0.42, white at ~5.2:1. Softer than
+     Contribution's blue rather than equal to it, which is the deliberate
+     trade — eye comfort over numeric parity with the section above. Still
+     clear margin over the 4.5:1 the 20px copy needs; the ~4.9:1 alternative
+     left almost none. */
+  --ground-top: #f4e7dc;
+  --ground-bottom: #ecdccd;
+  --card-index: #327b43;
+  --card-search: #765cbc;
+  --card-trace: #4d6f9b;
+  --card-ink: #ffffff;
+  --lift: 12px;
+
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--ground-top), var(--ground-bottom));
+  color: var(--ink);
+}
+
+/* Ink, not white. The cards carry white text; the title sits on the pale
+   ground, where white would land near 1.6:1. */
+.title {
+  position: relative;
+  z-index: 1;
+  /* The ground band is a quarter of the pane and the title centres in it —
+     measured on ink, not on the box: the heading's own leading sits above the
+     cap height, so a box-centred line reads low. */
+  height: 25%;
+  display: flex;
+  align-items: center;
+  --in: clamp(0, calc(var(--enter, 1) / 0.3), 1);
+  transform: translateY(calc((1 - var(--in)) * -60%));
+  margin: 0;
+  padding: 0 clamp(40px, 4.5vw, 78px);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: #3a3833;
+  text-wrap: balance;
+}
+
+/* Every card is full width and anchored to the bottom; only the heights
+   differ, so each one leaves the band above it visible. 1 : 0.75 : 0.5 : 0.25
+   counting the ground as the first surface, which lands every band on the
+   same quarter of the pane — ground, Index, Search and TRACE each show 25%. */
+.stack {
+  position: absolute;
+  inset: 0;
+}
+.card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  text-decoration: none;
+  color: var(--card-ink);
+  /* Each card is --lift TALLER than its band and hangs that much below the
+     pane, where .wrap clips it. Its visible top edge is unchanged, but the
+     spare body means a lift reveals more of THIS card rather than the one
+     behind it. Height cannot be transitioned here — interpolating 25% to
+     calc(25% + 12px) does not animate at all — so the lift is a transform,
+     which does. */
+  height: calc(var(--h) + var(--lift));
+  bottom: calc(var(--lift) * -1);
+  /* Two transforms on one property: the entrance offset (scrubbed) and the
+     hover lift (transitioned). Composed here so they never fight.
+
+     --eased is ease-out-back applied to the scrub: the card travels a little
+     past its band and settles back, so an insert has weight instead of just
+     stopping. Endpoints are exact — in=0 gives 0, in=1 gives 1 — so the rest
+     state is untouched. */
+  --u: calc(var(--in, 1) - 1);
+  --eased: calc(
+    1 + 2.2 * var(--u) * var(--u) * var(--u) + 1.2 * var(--u) * var(--u)
+  );
+  transform: translateY(calc((1 - var(--eased)) * 118% + var(--hover-y, 0px)));
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.card[data-card="index"] {
+  --h: 75%;
+  --in: clamp(0, calc((var(--enter, 1) - 0.18) / 0.34), 1);
+  background: var(--card-index);
+  z-index: 1;
+}
+.card[data-card="search"] {
+  --h: 50%;
+  --in: clamp(0, calc((var(--enter, 1) - 0.38) / 0.34), 1);
+  background: var(--card-search);
+  z-index: 2;
+}
+.card[data-card="trace"] {
+  --h: 25%;
+  --in: clamp(0, calc((var(--enter, 1) - 0.58) / 0.34), 1);
+  background: var(--card-trace);
+  z-index: 3;
+  /* Back to white. The pale sand sat too far from the other two cards to read
+     as one set, and it was the only card that had to break the white-ink rule
+     to stay legible. Blue at 5.62:1 keeps the three within 4.65–6.38. */
+}
+
+/* Content sits in the band the card actually shows — its own top strip — not
+   in the middle of a box that is mostly hidden behind the card in front. */
+.cardInner {
+  /* One left axis: the name, the condition and the description all start on
+     the same edge as the title above them. Columns put the copy on a second
+     axis, which read as a different layout rather than one card. The space on
+     the right is used by letting the lines RUN wide — each is a single line at
+     this measure — not by pushing text into a separate column. */
+  display: block;
+  padding: clamp(16px, 2.1vh, 26px) clamp(40px, 4.5vw, 78px) 0;
+}
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(14px, 1.6vw, 26px);
+  margin-bottom: clamp(8px, 1.1vh, 14px);
+}
+.cardBody {
+  display: block;
+  /* Generous, not unlimited — long enough that both lines stay single at this
+     size, short enough to stay a readable measure. */
+  max-width: 96ch;
+}
+.cardName {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.4vw, 2.35rem);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.cardVerb {
+  /* The masthead's italic serif — the same voice as "Archive" in the
+     wordmark. */
+  font-family: var(--font-statement);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 1.7vw, 1.7rem);
+  color: var(--card-ink);
+}
+.cardNote {
+  white-space: nowrap;
+  font-family: var(--font-num);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--card-ink) 85%, transparent);
+}
+/* The condition first — it is what tells a reader whether this is their way
+   in — then what the destination actually does. */
+.cardWhen {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--card-ink);
+}
+.cardLine {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.45;
+  /* Full strength, not 84%: the copy on the two saturated cards is already
+     at the edge of legibility, and dimming it was costing ~0.5 of a contrast
+     ratio for no design gain. */
+  color: var(--card-ink);
+  text-wrap: pretty;
+}
+
+/* The top edge rises into the band above; the bottom stays covered. */
+.card:hover,
+.card:focus-visible {
+  --hover-y: calc(var(--lift) * -1);
+}
+.card:focus-visible {
+  outline: 2px solid var(--card-ink);
+  outline-offset: -4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+  .card:hover,
+  .card:focus-visible {
+    --hover-y: 0px;
+  }
+  .card {
+    --in: 1;
+  }
+}

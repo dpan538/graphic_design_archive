@@ -1,0 +1,28 @@
+.descBody {
+  font-size: var(--fs-body);
+  line-height: 1.62;
+}
+
+/* Column count set by content-fit (fitLayout.ts) — 1 = single measure. */
+.descBody[data-cols="1"] {
+  max-width: 44rem;
+}
+.descBody[data-cols="2"] {
+  columns: 2;
+  column-gap: var(--s-7);
+}
+.descBody[data-cols="3"] {
+  columns: 3;
+  column-gap: var(--s-7);
+}
+.descBody[data-cols="4"] {
+  columns: 4;
+  column-gap: var(--s-6);
+}
+
+@media (max-width: 900px) {
+  .descBody[data-cols="3"],
+  .descBody[data-cols="4"] {
+    columns: 2;
+  }
+}

@@ -1,0 +1,970 @@
+/* 04 · Research Status — one light ground, the mirrored ranked stream built
+   on it from nothing (HOMEPAGE_DESIGN_v1.md §6). Every scrubbed value below
+   is written in viewport-heights of scroll, --v, which HomeDesktop's weight
+   of 6 defines.
+
+   Type: nothing below 17px except the figure's own end labels, which the
+   owner asked to be a fifth smaller with more air (14px, ≥22px pitch); the
+   lens brings them to 22–28px at its stations. */
+
+@property --u1 { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --u2 { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --u3 { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --e1 { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --e2 { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --e3 { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --k { syntax: "<number>"; inherits: false; initial-value: 1; }
+@property --px { syntax: "<number>"; inherits: false; initial-value: 0.5; }
+@property --py { syntax: "<number>"; inherits: false; initial-value: 0.5; }
+@property --draw { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --cu { syntax: "<number>"; inherits: false; initial-value: 1; }
+@property --b { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --sa { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --si { syntax: "<number>"; inherits: false; initial-value: 1; }
+@property --so { syntax: "<number>"; inherits: false; initial-value: 1; }
+@property --su { syntax: "<number>"; inherits: false; initial-value: 1; }
+@property --pg { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+.wrap {
+  --ground: #f9f8f4;
+  --ink: #17161a;
+  --ink-2: #55535b;
+  --ink-3: #8b8892;
+  --rule: rgba(23, 22, 26, 0.12);
+  --rose: #ff3f9a;
+  --blue: #2b6cff;
+  --fs: 17px;
+
+  /* viewport-heights scrolled through the section */
+  --v: calc(var(--local-progress, 0) * 6);
+  /* the figure is built over the first 2 */
+  --draw: clamp(0, calc(var(--v) / 2), 1);
+  /* stops: figure (0–3.75) → the strip (half a page) → the reading (a page) */
+  --s1: clamp(0, calc((var(--v) - 3.8) / 0.45), 1);
+  --s2: clamp(0, calc((var(--v) - 5.0) / 0.4), 1);
+  /* the strip grows across half a page of scroll once it is in view */
+  --pg: clamp(0, calc((var(--v) - 4.1) / 0.5), 1);
+  /* the reading comes up while the strip is still finishing, so the frame
+     that holds both shows the strip over a title, not over a blank */
+  --rg: clamp(0, calc((var(--v) - 4.4) / 0.7), 1);
+  /* the wall of places rolls from 0.5 until the figure leaves */
+  --ls: clamp(0, calc((var(--v) - 0.5) / 3.3), 1);
+
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: var(--ground);
+  color: var(--ink);
+  font-size: var(--fs);
+}
+/* 2.5 pane-heights: figure 1 · strip 0.5 · reading 1. Stops at −1 and −1.5. */
+.pages {
+  height: 250%;
+  transform: translateY(calc((var(--s1) * 0.4 + var(--s2) * 0.2) * -100%));
+  will-change: transform;
+}
+
+/* ================= plate 1 ================= */
+.plate {
+  position: relative;
+  height: 40%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(380px, 27%, 460px);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  column-gap: clamp(28px, 2.6vw, 48px);
+  row-gap: clamp(10px, 1.4vh, 16px);
+  padding: clamp(18px, 2.4vh, 28px) clamp(26px, 2.2vw, 40px) clamp(18px, 2.2vh, 26px) clamp(28px, 2.4vw, 44px);
+  box-sizing: border-box;
+}
+
+/* ---- head ---- */
+.head {
+  grid-column: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ink);
+}
+.headA {
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.headB {
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- the figure: sheet · labels, and the lens ---- */
+.figure {
+  grid-column: 1;
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+.chartRow {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  padding: 18px 0 30px;
+  box-sizing: border-box;
+
+  /* Three stations after the build; each move takes a quarter viewport,
+     the rest of its 0.75 is a hold. Station values arrive as inline vars. */
+  --u1: clamp(0, calc((var(--v) - var(--t1)) / 0.4), 1);
+  --u2: clamp(0, calc((var(--v) - var(--t2)) / 0.4), 1);
+  --u3: clamp(0, calc((var(--v) - var(--t3)) / 0.4), 1);
+  /* smoothstep: the lens glides and stops; overshoot was tried and read
+     as flippant rather than dramatic */
+  --e1: calc(var(--u1) * var(--u1) * (3 - 2 * var(--u1)));
+  --e2: calc(var(--u2) * var(--u2) * (3 - 2 * var(--u2)));
+  --e3: calc(var(--u3) * var(--u3) * (3 - 2 * var(--u3)));
+  --k: calc(1 + (var(--k1) - 1) * var(--e1) + (var(--k2) - var(--k1)) * var(--e2) + (var(--k3) - var(--k2)) * var(--e3));
+  --px: calc(0.5 + (var(--x1) - 0.5) * var(--e1) + (var(--x2) - var(--x1)) * var(--e2) + (var(--x3) - var(--x2)) * var(--e3));
+  --py: calc(0.5 + (var(--y1) - 0.5) * var(--e1) + (var(--y2) - var(--y1)) * var(--e2) + (var(--y3) - var(--y2)) * var(--e3));
+  transform-origin: 0 0;
+  transform: translate(calc((0.5 - var(--k) * var(--px)) * 100%), calc((0.5 - var(--k) * var(--py)) * 100%)) scale(var(--k));
+  will-change: transform;
+}
+.sheet {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+}
+/* Stretched to the box, not fitted: the figure takes every pixel it is
+   given. Strokes are non-scaling; the blur is in user units and reads the
+   same at any stretch this layout produces. */
+.chart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -30%;
+  height: 160%;
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+/* ---------- the growth, in --draw (0 → 1 over 1.5 viewport-heights) ----------
+   0.00–0.10  the axis draws itself left to right; ticks and grid come up
+   0.02–0.87  the bands GROW out of the axis one five-year slice at a time:
+              slice b rises at 0.02 + 0.03·b over 0.10, eased, scaled about
+              the axis — nothing is revealed, everything is grown
+   0.14–0.92  the halation develops a little behind the growth front
+   0.80–1.00  the striae print
+   0.84–0.97  the end labels light one by one */
+.gridLines line {
+  stroke: var(--rule);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: clamp(0, calc(var(--draw) / 0.1), 1);
+}
+.axisLine {
+  stroke: var(--ink);
+  stroke-width: 1;
+  stroke-opacity: 0.6;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - clamp(0, calc(var(--draw) / 0.1), 1));
+}
+/* No blend on the bands themselves — only the halation multiplies. Blending
+   780 drawn paths per frame was the single largest paint cost. */
+.bandDefs path {
+  opacity: 0.9;
+}
+/* The growth layers: each box is one bin, 4% of the sheet wide, spanning the
+   chart SVGs' 160% height so the axis sits at its exact middle. The SVG
+   inside is the full sheet width (25 boxes) shifted so its bin lands in the
+   box. Only the box transforms — a composited property, no repaint. */
+.grow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -30%;
+  height: 160%;
+  pointer-events: none;
+}
+.sliceBox {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: calc((var(--b) - 0.5) * 4%);
+  width: 4%;
+  overflow: hidden;
+  /* each slice rises over 0.2 of the draw, starting 0.028 after its
+     neighbour, so five are always in motion together — a wave, not steps */
+  --cu: clamp(0, calc((var(--draw) - 0.02 - var(--b) * 0.028) / 0.2), 1);
+  /* smoothstep: each slice rises and stops */
+  --sa: calc(var(--cu) * var(--cu) * (3 - 2 * var(--cu)));
+  transform-origin: 50% 50%;
+  transform: scaleY(var(--sa));
+  will-change: transform;
+}
+.sliceSvg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: calc((0.5 - var(--b)) * 100%);
+  width: 2500%;
+  /* the global reset caps svg at 100% of its box; this one must be the
+     full sheet width, twenty-five boxes */
+  max-width: none;
+  overflow: visible;
+}
+/* Runs the same 30% past the sheet as the chart SVGs, so the halation is
+   not cut at the sheet's edge where a bin overruns — that cut read as a
+   band laid across the 1965 spike. */
+.haloWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -30%;
+  height: 160%;
+  pointer-events: none;
+  /* its own layer: the two blurs are rastered once and the moving mask is
+     composited over them, instead of re-running the filters every frame */
+  will-change: transform;
+  mask-image: linear-gradient(
+    90deg,
+    #000 calc(clamp(0, calc((var(--draw) - 0.14) / 0.75), 1) * 100% - 6%),
+    transparent calc(clamp(0, calc((var(--draw) - 0.14) / 0.75), 1) * 100% + 2%)
+  );
+}
+.haloWrap .chart {
+  top: 0;
+  height: 100%;
+}
+.haloWide {
+  filter: url(#rb-halo-wide);
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+}
+.halo {
+  filter: url(#rb-halo);
+  opacity: 0.64;
+  mix-blend-mode: multiply;
+}
+.striae path {
+  fill: url(#rb-striae);
+  opacity: calc(0.34 * clamp(0, calc((var(--draw) - 0.8) / 0.2), 1));
+}
+.ticksY {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: clamp(0, calc(var(--draw) / 0.1), 1);
+}
+.ticksY span {
+  position: absolute;
+  left: 0;
+  transform: translateY(-60%);
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.tickZero {
+  color: var(--ink) !important;
+}
+.axisX {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+  border-top: 1px solid var(--rule);
+  pointer-events: none;
+}
+.axisX span {
+  opacity: clamp(0, calc((var(--draw) - 0.08 - var(--i, 0) * 0.16) / 0.08), 1);
+}
+
+/* ---- end labels: coloured names, the figure's own type ---- */
+.labels {
+  position: relative;
+  flex: 0 0 clamp(200px, 17vw, 260px);
+}
+.leaders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.leaders line {
+  stroke-width: 1;
+  stroke-opacity: 0.45;
+  vector-effect: non-scaling-stroke;
+  opacity: clamp(0, calc((var(--draw) - 0.84 - var(--i, 0) * 0.003) / 0.04), 1);
+}
+.label {
+  position: absolute;
+  left: 20%;
+  max-width: 80%;
+  transform: translate(calc((1 - clamp(0, calc((var(--draw) - 0.84 - var(--i, 0) * 0.003) / 0.04), 1)) * 10px), -50%);
+  opacity: clamp(0, calc((var(--draw) - 0.84 - var(--i, 0) * 0.003) / 0.04), 1);
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.label[data-group] {
+  font-weight: 450;
+}
+.labelName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.labelNum {
+  flex: 0 0 auto;
+  font-family: var(--font-num);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- foot: caption block and legend ---- */
+.foot {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(24px, 2.4vw, 48px);
+  align-items: end;
+  padding-top: 10px;
+  border-top: 1px solid var(--ink);
+}
+.captions {
+  position: relative;
+  min-height: calc(3 * 1.4 * 18px + 28px);
+}
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+  opacity: clamp(0, calc(min((var(--v) - var(--a)) * 5, (var(--b) - var(--v)) * 5)), 1);
+  transform: translateY(calc((1 - clamp(0, calc((var(--v) - var(--a)) * 5), 1)) * 6px));
+}
+.captionIdx {
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.captionText {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.legend {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 18px;
+  font-size: 17px;
+}
+.legend div {
+  display: grid;
+  gap: 2px;
+  border-top: 1px solid var(--rule);
+  padding-top: 5px;
+  min-width: 0;
+}
+.legend dt {
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.legend dd {
+  margin: 0;
+  font-family: var(--font-num);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- the margin ---- */
+.aside {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vh, 22px);
+  min-height: 0;
+}
+.slots {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.slot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* 0.22 vh in, 0.22 vh out; the entry slides 18px with the section's
+     ease-out-back so a table arrives rather than appears */
+  --si: clamp(0, calc((var(--v) - var(--a)) / 0.22), 1);
+  --so: clamp(0, calc((var(--b) - var(--v)) / 0.22), 1);
+  --sa: calc(var(--si) * var(--si) * (3 - 2 * var(--si)));
+  opacity: min(var(--si), var(--so));
+  transform: translateY(calc((1 - var(--sa)) * 18px));
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+.slotName {
+  margin: 0;
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ink);
+}
+.rows {
+  display: grid;
+  align-content: start;
+  min-height: 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 56px 4em 6.2em;
+  gap: 10px;
+  align-items: center;
+  font-size: 17px;
+  line-height: 1.12;
+  padding: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.row[data-two] {
+  grid-template-columns: minmax(0, 1fr) 90px 4.2em;
+  line-height: 1.36;
+}
+.rowName {
+  font-family: var(--font-body);
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rowNum {
+  font-family: var(--font-num);
+  color: var(--ink);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.rowSub {
+  font-family: var(--font-num);
+  color: var(--ink-3);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.rowSub[data-held] {
+  color: var(--rose);
+}
+.rowBar {
+  position: relative;
+  height: 7px;
+}
+.rowBar i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--w) * 100%);
+}
+.barHeld {
+  background: var(--rose);
+  opacity: 0.3;
+}
+/* Bars borrow the ribbon's hue where the place is on the figure, so the
+   margin reads as the same drawing; the glow is the figure's halation. */
+.barPub {
+  background: var(--c, var(--ink));
+  box-shadow: 0 0 7px color-mix(in srgb, var(--c, var(--ink)) 55%, transparent);
+}
+.barRose {
+  background: var(--rose);
+  box-shadow: 0 0 7px rgba(255, 63, 154, 0.55);
+}
+.rightsBlock {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  min-height: 0;
+}
+.facts {
+  margin: 0;
+  display: grid;
+  gap: 4px;
+  font-size: 17px;
+}
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--rule);
+  padding: 2px 0;
+}
+.facts dt {
+  font-family: var(--font-body);
+  color: var(--ink-2);
+}
+.facts dd {
+  margin: 0;
+  font-family: var(--font-num);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* the wheel in the rights slot: places × decades */
+.radial {
+  display: grid;
+  gap: 8px;
+  min-height: 0;
+  --sp: clamp(0, calc((var(--v) - 2.85) / 0.6), 1);
+}
+.radialName {
+  margin: 0;
+  font-family: var(--font-num);
+  font-size: 17px;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.radialRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 12px;
+  align-items: center;
+  min-height: 0;
+}
+.radialSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+.spokes line {
+  stroke: var(--ink);
+  stroke-opacity: 0.32;
+  stroke-width: 0.7;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - clamp(0, calc(var(--sp) / 0.35), 1));
+}
+.blocks path {
+  opacity: clamp(0, calc((var(--sp) * 1.25 - 0.3 - var(--d, 0) / 13) / 0.12), 1);
+}
+.radialLegend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.radialLegend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.2;
+  color: var(--ink-2);
+}
+.radialLegend i {
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  background: var(--c);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--c) 55%, transparent);
+}
+.radialLegend span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* the wall of every place */
+.wall {
+  flex: 0 0 27%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  opacity: clamp(0, calc((var(--v) - 0.5) * 6), 1);
+}
+.wallView {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  container-type: size;
+  mask-image: linear-gradient(180deg, transparent 0, #000 6%, #000 92%, transparent 100%);
+}
+.wallList {
+  display: grid;
+  grid-template-columns: 1fr;
+  transform: translateY(calc(var(--ls) * (100cqh - 100%)));
+  will-change: transform;
+}
+.wallRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3.6em 56px;
+  gap: 12px;
+  align-items: center;
+  font-size: 17px;
+  line-height: 1.32;
+  border-bottom: 1px solid var(--rule);
+}
+.share {
+  position: relative;
+  height: 5px;
+  background: rgba(255, 63, 154, 0.22);
+}
+.share i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--w) * 100%);
+  background: var(--c, var(--ink));
+}
+
+/* ================= plate 2 · the year strip ================= */
+.pano {
+  position: relative;
+  height: 20%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: clamp(10px, 1.4vh, 16px);
+  padding: clamp(18px, 2.4vh, 28px) clamp(40px, 4.5vw, 78px) clamp(18px, 2.4vh, 28px);
+  box-sizing: border-box;
+  border-top: 1px solid var(--rule);
+}
+.panoHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 32px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ink);
+}
+.panoTitle {
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.sub {
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+}
+.panoHead .sub {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Decade totals sit over their own columns: each block is positioned by
+   its first year and sized by its year count, on the strip's 227 columns. */
+.decades {
+  position: relative;
+  height: 44px;
+}
+.decade {
+  position: absolute;
+  left: calc(var(--i0) / 227 * 100%);
+  width: calc(var(--n) / 227 * 100%);
+  display: grid;
+  gap: 1px;
+  font-family: var(--font-num);
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  opacity: clamp(0, calc((var(--pg) * 1.15 - var(--i0) / 227) / 0.12), 1);
+}
+/* The 2020s block is seven years wide; it starts at its own year and is
+   allowed to run into the plate's padding rather than back over the 2010s. */
+.decade:last-child {
+  width: auto;
+}
+.decade b {
+  font-weight: 400;
+  color: var(--ink-3);
+}
+.decade i {
+  font-style: normal;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.strip {
+  position: relative;
+  margin: 0;
+  min-height: 0;
+  padding-bottom: 30px;
+}
+.stripSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+/* Each year rises from the strip's floor as the growth front passes it;
+   the front crosses the 227 years over half a page of scroll. Public is
+   blue, held rose; the column's depth of colour is its record count. */
+.stripHeld rect,
+.stripPub rect {
+  --su: clamp(0, calc((var(--pg) * 1.15 - var(--i) / 227) / 0.14), 1);
+  transform-origin: 0 100px;
+  transform: scaleY(calc(var(--su) * var(--su) * (3 - 2 * var(--su))));
+  opacity: var(--k);
+}
+.stripHeld rect {
+  fill: var(--rose);
+}
+.stripPub rect {
+  fill: var(--blue);
+}
+/* The glow is one effect on the SVG element (a composited filter), not a
+   filter inside the SVG — inside, it re-ran on every one of the 454 column
+   transforms while the strip grew. */
+.stripSvg {
+  will-change: transform, filter;
+  filter: drop-shadow(0 0 8px rgba(43, 108, 255, 0.34)) drop-shadow(0 0 8px rgba(255, 63, 154, 0.34));
+}
+.stripYears {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+.stripYears i {
+  font-style: normal;
+}
+
+/* ================= the reading, a page ================= */
+.reading {
+  height: 40%;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  gap: clamp(18px, 2.6vh, 30px);
+  padding: clamp(28px, 4vh, 44px) clamp(40px, 4.5vw, 78px) clamp(20px, 2.6vh, 30px);
+  box-sizing: border-box;
+  border-top: 1px solid var(--rule);
+}
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(34px, 3vw, 50px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  opacity: clamp(0, calc(var(--rg) / 0.3), 1);
+}
+.intro {
+  margin: 0;
+  max-width: 70ch;
+  font-family: var(--font-body);
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  text-wrap: pretty;
+  opacity: clamp(0, calc((var(--rg) - 0.08) / 0.3), 1);
+}
+.releaseRow {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 28px;
+  font-size: 17px;
+  opacity: clamp(0, calc((var(--rg) - 0.16) / 0.3), 1);
+}
+.releaseRow div {
+  border-top: 1px solid var(--ink);
+  padding-top: 8px;
+}
+.releaseRow dt {
+  font-family: var(--font-num);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.releaseRow dd {
+  margin: 6px 0 0;
+  font-family: var(--font-num);
+  font-size: 22px;
+  color: var(--ink);
+}
+.lists {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(32px, 4vw, 72px);
+  align-content: start;
+  min-height: 0;
+}
+.listHead {
+  margin: 0 0 8px;
+  font-family: var(--font-num);
+  font-size: 17px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  opacity: clamp(0, calc((var(--rg) - 0.2) / 0.3), 1);
+}
+.item {
+  display: grid;
+  grid-template-columns: minmax(190px, 16vw) minmax(0, 1fr);
+  gap: clamp(14px, 1.6vw, 28px);
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  opacity: clamp(0, calc((var(--rg) - 0.24 - var(--i, 0) * 0.06) / 0.3), 1);
+  transform: translateY(calc((1 - clamp(0, calc((var(--rg) - 0.24 - var(--i, 0) * 0.06) / 0.3), 1)) * 8px));
+}
+.term {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.line {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.readingFoot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 48px);
+  padding-top: 12px;
+  border-top: 1px solid var(--ink);
+  opacity: clamp(0, calc((var(--rg) - 0.5) / 0.3), 1);
+}
+.exits {
+  display: flex;
+  gap: clamp(16px, 2vw, 32px);
+  white-space: nowrap;
+}
+.exit {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+}
+.exit:hover,
+.exit:focus-visible {
+  border-bottom-width: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap {
+    --v: 1.5;
+    --pg: 1;
+    --rg: 1;
+    height: auto;
+    overflow: visible;
+  }
+  .pages {
+    height: auto;
+    transform: none;
+  }
+  .plate {
+    height: 100vh;
+  }
+  .pano,
+  .reading {
+    height: auto;
+  }
+  .pano {
+    min-height: 50vh;
+  }
+  .chartRow {
+    transform: none;
+  }
+  .slot {
+    position: static;
+    opacity: 1;
+    transform: none;
+  }
+  .slots {
+    display: grid;
+    gap: 20px;
+    overflow: auto;
+  }
+  .wallList {
+    transform: none;
+  }
+  .wallView {
+    overflow: auto;
+  }
+  .caption {
+    position: static;
+    opacity: 1;
+    margin-bottom: 8px;
+  }
+  .wall {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,144 @@
+.vb {
+  padding-top: var(--s-1);
+}
+
+.label {
+  display: block;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--l-visual, var(--ink));
+}
+
+/* Stacked, not beside the text. Small — identification only. Drawn at the
+   object's own ratio so the shape is legible; never cropped or up-scaled. */
+.frame {
+  display: block;
+  margin-top: var(--s-3);
+  border: var(--keyline-2);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 8px,
+    color-mix(in srgb, var(--ink) 8%, transparent) 8px 9px
+  );
+}
+
+.frame[data-ratio="portrait"] {
+  width: 116px;
+  aspect-ratio: 2 / 3;
+}
+.frame[data-ratio="landscape"] {
+  width: 184px;
+  aspect-ratio: 3 / 2;
+}
+.frame[data-ratio="square"] {
+  width: 132px;
+  aspect-ratio: 1 / 1;
+}
+
+.info {
+  display: grid;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+}
+
+.info > div {
+  display: grid;
+  gap: 2px;
+}
+
+.info dt {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.info dd {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.clamp[data-open] {
+  display: block;
+  overflow: visible;
+}
+
+.hint {
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+.more {
+  margin-top: 4px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--l-src, var(--teal-deep));
+}
+
+.srcLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  font-family: var(--font-label);
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 2px solid var(--l-src, var(--teal-deep));
+  padding-bottom: 1px;
+}
+
+/* ---- modes (§3d) ---- */
+.lead {
+  margin-top: var(--s-3);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  padding: var(--s-3) var(--s-5);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--on-dark);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+}
+
+.figure {
+  margin: var(--s-3) 0 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  background: var(--paper-2);
+}
+
+.caption {
+  display: grid;
+  gap: 4px;
+  margin-top: var(--s-3);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}

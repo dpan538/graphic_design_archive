@@ -417,51 +417,87 @@ const datasets: SourceEntry[] = [
 
 const design: SourceEntry[] = [
   {
-    name: "Alex Steinweiss — illustrated album covers",
-    org: "Columbia Records, from 1940",
-    type: "Design-history precedent",
+    name: 'Alex Steinweiss — Columbia Records covers',
+    org: 'Columbia Records, art director from 1939; the first illustrated album cover, 1940',
+    type: 'Design-history precedent',
     role: ["Design reference"],
-    identifier: "Interface visual language only",
-    coverage: "One announced idea per cover; a limited, luminous palette; a single repeated graphic device.",
-    material: "Historical precedent — not held or reproduced",
+    identifier: 'Interface visual language only',
+    coverage: 'One announced idea per cover; a limited, luminous palette; a single graphic device repeated with rhythm.',
+    material: 'Historical precedent — not held or reproduced',
     acquired: "Cited as design influence",
-    rights: "Referenced for design methodology. Does not participate in archive object validation.",
+    rights: 'Referenced for design methodology. Does not participate in archive object validation.',
     status: "Reference only",
   },
   {
-    name: "New York editorial illustration",
-    org: "New Yorker / New York Times idiom",
-    type: "Design-history precedent",
+    name: 'S. Neil Fujita — Columbia Records covers',
+    org: 'Columbia Records, design director 1954–1960 (Time Out; Mingus Ah Um, 1959)',
+    type: 'Design-history precedent',
     role: ["Design reference"],
-    identifier: "Interface visual language only",
-    coverage: "Flat, bright colour held by a confident black line; ordered density; no gradient or false depth.",
-    material: "Genre precedent — not held or reproduced",
+    identifier: 'Interface visual language only',
+    coverage: 'Colour as abstract field; painted blocks carrying the cover, with type set small beside them. The plates.',
+    material: 'Historical precedent — not held or reproduced',
     acquired: "Cited as design influence",
-    rights: "Referenced for design methodology. Not an object-evidence source.",
+    rights: 'Referenced for design methodology. Not an object-evidence source.',
     status: "Reference only",
   },
   {
-    name: "Spot-colour printing / reference-catalogue setting",
-    org: "Print and editorial tradition",
-    type: "Design-history precedent",
+    name: 'Jim Flora — Columbia Records covers',
+    org: 'Columbia Records, 1942–1950 (the jazz covers of 1947)',
+    type: 'Design-history precedent',
     role: ["Design reference"],
-    identifier: "Interface visual language only",
-    coverage: "Colour as a coding system; a heavy line block holding structure; ledger and table grammar.",
-    material: "Genre precedent — not held or reproduced",
+    identifier: 'Interface visual language only',
+    coverage: "Cartoon-modern crowds: figures reduced to dots and lines, packed into a field. The homepage's field and crowd.",
+    material: 'Historical precedent — not held or reproduced',
     acquired: "Cited as design influence",
-    rights: "Referenced for design methodology. Not an object-evidence source.",
+    rights: 'Referenced for design methodology. Not an object-evidence source.',
     status: "Reference only",
   },
   {
-    name: "Transitional-serif typography (Baskerville lineage)",
-    org: "Eighteenth-century type tradition",
-    type: "Typographic precedent",
+    name: 'Postage stamp design, 1970s–2020s',
+    org: 'SOZPHILEX 77 (Deutsche Post der DDR, 1977) · EFTA 50 years (Swiss Post, Demian Conrad, 2010) · HKSAR 25 (Hongkong Post, 2022)',
+    type: 'Design-history precedent',
     role: ["Design reference"],
-    identifier: "Baskervville (typeface) — interface use only",
-    coverage: "A quiet serif counterweight for the opening statement and emphasis.",
-    material: "Typeface and tradition",
+    identifier: 'Interface visual language only',
+    coverage: 'Colour as a field, not a rule; one oversized figure cropped by its frame; a name set larger than its plate; a small line-drawn device.',
+    material: 'Historical precedent — not held or reproduced',
     acquired: "Cited as design influence",
-    rights: "Typeface used under its own open licence. Not an object-evidence source.",
+    rights: 'Referenced for design methodology. Does not participate in archive object validation.',
+    status: "Reference only",
+  },
+  {
+    name: 'Pictogram systems — Tokyo 1964, Munich 1972',
+    org: 'Olympic design programmes (Tokyo 1964: Masaru Katsumi; Munich 1972: Otl Aicher)',
+    type: 'Design-history precedent',
+    role: ["Design reference"],
+    identifier: 'Interface visual language only',
+    coverage: 'Figures reduced to a head and a body on a grid; a crowd drawn as marks.',
+    material: 'Historical precedent — not held or reproduced',
+    acquired: "Cited as design influence",
+    rights: 'Referenced for design methodology. Not an object-evidence source.',
+    status: "Reference only",
+  },
+  {
+    name: "The engraver's line — copperplate hatching, halftone, ruled loops",
+    org: 'Print and security-printing tradition',
+    type: 'Design-history precedent',
+    role: ["Design reference"],
+    identifier: 'Interface visual language only',
+    coverage: "A circle rendered by lines, by dots, and by a lit engraving; white line on black. The homepage's opening studies.",
+    material: 'Genre precedent — not held or reproduced',
+    acquired: "Cited as design influence",
+    rights: 'Referenced for design methodology. Not an object-evidence source.',
+    status: "Reference only",
+  },
+  {
+    name: 'LINE Seed JP, Instrument Sans and Baskervville (typefaces)',
+    org: 'LY Corporation · Instrument · Baskervville project',
+    type: 'Typographic precedent',
+    role: ["Design reference"],
+    identifier: 'Interface use only',
+    coverage: "A heavy rounded grotesque for titles and numerals; a plain grotesque for reading on a 17px floor; a transitional serif for the wordmark's second line and set-apart statements.",
+    material: 'Typefaces',
+    acquired: "Cited as design influence",
+    rights: 'Typefaces used under their own open licences (SIL Open Font License). Not an object-evidence source.',
     status: "Reference only",
   },
 ];
@@ -547,6 +583,9 @@ export const transformationCaveat =
 
 /* ---- 5 · Rights & permissions ----------------------------- */
 
+export const rightsIntro =
+  "Rights are assessed per source and per kind of material. A source's descriptive metadata, the text it publishes, and any image it holds are three separate questions with three separate answers: a record can be fully citable while its image cannot be shown. The three columns set out what each assessment covers; the outcome for each source is carried in its register entry above.";
+
 export const rightsGlobalVisual =
   "The presence of an image at an external source does not constitute reproduction permission within Modern Graphic Design Archive. Current archive object pages do not assume image-display rights.";
 
@@ -570,6 +609,9 @@ export const rightsColumns: { key: string; title: string; body: string }[] = [
 
 /* ---- 6 · Evidence & source status ------------------------ */
 
+export const statusIntro =
+  "Each entry in the register carries one status. It records how far the project has verified the source itself — its identity and the relevant record — and how it may be used, not whether anything built on it holds. A status is fixed with the release it belongs to; like any other change at a source, a change of status requires a new capture and a new release.";
+
 export const evidenceStatusLegend: { status: string; meaning: string }[] = [
   { status: "Verified source", meaning: "Source identity and the relevant record have been directly verified." },
   { status: "Public record", meaning: "Eligible for public archive presentation in the current release." },
@@ -582,6 +624,9 @@ export const evidenceStatusNote =
   "A source appearing in this register means the material exists and has been recorded. It does not mean that a TRACE association or historical relation built with it has been validated. Validation status is carried separately, in TRACE.";
 
 /* ---- 7 · Version & reproducibility ---------------------- */
+
+export const versionIntro =
+  "The archive is published as sealed releases, and everything on this site — the register above, the object pages, the search index — belongs to one of them. The ledger names the current release; the integrity record beneath it gives the identifiers and digests that bind this page to that release, so that what is shown today can be checked against the sealed inputs later.";
 
 export const versionRecord: { label: string; value: string }[] = [
   { label: "Archive release", value: "v49 — current public release (sealed)" },
