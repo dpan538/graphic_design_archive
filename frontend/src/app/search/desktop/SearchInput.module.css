@@ -1,0 +1,51 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border: var(--keyline-2);
+  border-color: var(--ink);
+  background: var(--paper);
+}
+
+.wrap svg {
+  flex: none;
+  color: var(--ink);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.input::placeholder {
+  color: color-mix(in srgb, var(--ink) 52%, transparent);
+  font-weight: 800;
+}
+.input:focus {
+  outline: none;
+}
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clr {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  color: var(--ink);
+  border: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+.clr:hover {
+  background: var(--ink);
+  color: var(--on-dark);
+}

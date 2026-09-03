@@ -1,0 +1,219 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.backdrop {
+  flex: 1;
+  min-height: 0;
+  padding: var(--s-4) 20px;
+  background: color-mix(in srgb, var(--ink) 18%, var(--paper));
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ---- The ticket — right-aligned, fixed height, results scroll inside ---- */
+
+.ticket {
+  width: 350px;
+  max-width: 100%;
+  align-self: flex-start;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 2px dashed var(--ink);
+  padding: 0 var(--s-4) var(--s-4);
+}
+
+/* About three result rows, then scroll — keeps the ticket short. */
+.scroll {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: 19rem;
+  overflow-y: auto;
+  margin: 0 calc(-1 * var(--s-4));
+  padding: 0 var(--s-4);
+}
+
+/* Filter collapse toggle */
+.filterToggle {
+  margin-top: var(--s-3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+.filterToggle svg {
+  color: var(--ink);
+  transition: transform 0.14s ease;
+}
+.filterToggle svg[data-open] {
+  transform: rotate(180deg);
+}
+.filterN {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.05rem;
+  height: 1.05rem;
+  padding: 0 3px;
+  font-family: var(--font-num);
+  font-size: 0.68rem;
+  color: var(--on-dark);
+  background: var(--teal-deep);
+}
+
+/* System suggests slot — light, appears only when there is content */
+.suggestsSlot {
+  flex: none;
+  margin: 0 calc(-1 * var(--s-4));
+  padding: var(--s-3) var(--s-4) 0;
+  border-top: 2px dashed var(--ink);
+}
+
+/* ---- Header ---- */
+
+.head {
+  margin-top: var(--s-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--s-3);
+  border-bottom: 2px solid var(--ink);
+}
+
+.mark {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--ink);
+  border: var(--keyline-2);
+}
+
+/* ---- Fields ---- */
+
+.field {
+  margin-top: var(--s-3);
+}
+
+.lab {
+  display: block;
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 5px;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  border: 2px solid var(--ink);
+}
+.inputWrap svg {
+  flex: none;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.input::placeholder {
+  color: color-mix(in srgb, var(--ink) 42%, transparent);
+  font-weight: 800;
+}
+.input:focus {
+  outline: none;
+}
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clr {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: var(--ink);
+  border: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+
+/* ---- Query state / starters ---- */
+
+.qstate {
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 2px dashed var(--ink);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+  font-family: var(--font-num);
+  font-size: var(--fs-body-sm);
+  color: var(--ink);
+}
+.qstate b {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.clear {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  border-bottom: 2px solid var(--teal-deep);
+}
+
+.starters {
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 2px dashed var(--ink);
+}
+.starters ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: 6px;
+}
+.starters button {
+  padding: 4px var(--s-2);
+  border: 2px solid var(--ink);
+  font-family: var(--font-num);
+  font-size: 0.9rem;
+  color: var(--ink);
+}

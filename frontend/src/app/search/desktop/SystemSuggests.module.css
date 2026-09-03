@@ -1,0 +1,50 @@
+/* Light — no box, no fill. A hairline and quiet type. Fades in. */
+.note {
+  animation: fade 0.45s ease both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+.label {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+
+.line {
+  margin-top: 3px;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.line:first-of-type {
+  margin-top: var(--s-2);
+}
+
+.tokens {
+  margin-top: var(--s-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+}
+
+/* Inline text tokens, not buttons. */
+.token {
+  font-family: var(--font-num);
+  font-size: 1.0625rem;
+  color: var(--ink);
+  border-bottom: 2px solid var(--teal);
+  padding-bottom: 1px;
+}
+.token:hover {
+  color: var(--teal-deep);
+  border-bottom-color: var(--teal-deep);
+}

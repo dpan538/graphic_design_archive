@@ -1,0 +1,118 @@
+.empty {
+  margin-top: var(--s-4);
+  padding: var(--s-4) 0;
+  font-size: var(--fs-body-sm);
+  color: var(--ink-2);
+}
+
+.mount {
+  margin-top: var(--s-3);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  padding: var(--s-3) 0;
+  border-bottom: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 20%, transparent);
+}
+.row:first-child {
+  padding-top: 0;
+}
+
+.line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 1.22;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+.title:hover {
+  color: var(--blue);
+  text-decoration-color: var(--blue);
+}
+
+.chip {
+  flex: none;
+  white-space: nowrap;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
+}
+.chip[data-grade="perfect"] {
+  color: var(--teal-deep);
+}
+
+.meta {
+  margin-top: 4px;
+  font-family: var(--font-num);
+  font-size: 0.98rem;
+  color: var(--ink-2);
+}
+
+.tags {
+  margin-top: 2px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 64%, transparent);
+}
+
+/* ---- Pagination ---- */
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: var(--keyline-2);
+}
+
+.pager button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: var(--s-1) var(--s-3);
+  border: var(--keyline-2);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.pager button:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+.pager button:disabled {
+  opacity: 0.32;
+}
+
+.pageOf {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}

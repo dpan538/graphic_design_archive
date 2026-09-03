@@ -1,24 +1,31 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import ArchiveShell from "@/components/archive/shell/ArchiveShell";
-import SearchWorkspace from "@/features/search-v2/ui/SearchWorkspace";
-import type { SearchWorkspaceFacets } from "@/features/search-v2/ui/SearchWorkspace";
-import { publicSearchFacets } from "@/features/search-v2/service.server";
+import { headers } from "next/headers";
+import { resolveView } from "@/lib/device";
+import SearchDesktop from "./desktop/SearchDesktop";
+import SearchMobile from "./mobile/SearchMobile";
 
 export const metadata: Metadata = {
-  title: "Search the public v49 archive — Modern Graphic Design History",
-  description: "Deterministic multilingual lexical search over 7,995 rights-safe public archive records.",
+  title: "Search — Modern Graphic Design Archive",
+  description:
+    "A global Search window: find one public archive object by query, year, object type, theme or movement. URL-backed state; text and citation only, no assumed imagery.",
 };
 
-export default function SearchPage() {
-  const source = publicSearchFacets();
-  const facets: SearchWorkspaceFacets = {
-    documentCount: source.documentCount,
-    year: source.year,
-    objectTypes: source.objectTypes,
-    themes: source.themes,
-    movements: source.movements,
-    starterQueries: source.starterQueries,
-  };
-  return <ArchiveShell activeNav="search" mainScroll main={<Suspense fallback={<p className="read-platform" role="status">Loading Search…</p>}><SearchWorkspace facets={facets} /></Suspense>} />;
+/* Search is a global utility window (§7d), URL-backed at /search. Server device
+   split (§4a): the User-Agent (or ?view=) picks the desktop catalogue-card or
+   the mobile ticket treatment; they share only lib/. Fixture-backed — the live
+   search.public-objects.v1 / guidance APIs are not wired. */
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const [sp, hdrs] = await Promise.all([searchParams, headers()]);
+  const view = resolveView(sp.view, hdrs.get("user-agent"));
+
+  return (
+    <Suspense fallback={null}>
+      {view === "mobile" ? <SearchMobile /> : <SearchDesktop />}
+    </Suspense>
+  );
 }
