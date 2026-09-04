@@ -1011,6 +1011,253 @@ calls.
 
 ---
 
+## 7f. TRACE landing — the entry to three research views (2026-09-03 → 2026-09-04, settled after fourteen owner reviews)
+
+This is the maintenance record for `/trace`. Anyone changing the page should be able to
+find here what each part is, why it is so, which numbers hold it together, and which
+practices the owner has rejected.
+
+### Route, scope, boundary
+
+- `/trace` (`frontend/src/app/trace/page.tsx`) is the shared entry to the three functions,
+  not a fourth surface. The former Exploration reference page moved to
+  `/trace/exploration`; Context Canvas and Spacetime keep `/trace/context-canvas` and
+  `/trace/spacetime`.
+- Desktop only by policy (§4): the server checks the mobile hint
+  (`isLikelyMobileTraceRequest`) and returns `TraceDesktopRequired` before any research
+  runtime is imported.
+- The page answers four things only — what TRACE is, what each view is for, how the three
+  relate, how a computed result may and may not be read — and carries nothing else: no
+  recents, trending, recommendations, AI-generated questions, marketing call to action, or
+  "System suggests". Nothing on the landing computes, ranks or suggests.
+- Baseline figures are read at build time from the governed manifests
+  (`generated/trace-context-v1`, `trace-spacetime-v1`, `trace-exploration-v1`,
+  `trace-open-inquiry-v1`), never typed in: 7,995 public objects · 23 periods · 93 governed
+  geographies · 21 evidence-qualified associations · 11 open inquiries · years 1800–2026.
+
+### The concept, in the owner's words
+
+TRACE explores the design history no single record can show on its own — the traces left
+between records: the context an object sits in; the gathering and absence of records in
+time and space; the associations observable between concepts under evidence; the questions
+the material still cannot answer. The three views ask three levels of question — Context
+Canvas, *Where does this object sit?*; Spacetime, *Where and when do records gather?*;
+Exploration, *What becomes worth questioning when records are considered together?* — and
+never *what history means*. The foot states it: "TRACE is an evidence-bounded environment
+for reading history between records…", and the closing block opens on "TRACE the design
+history no single record can show on its own." — TRACE set as the title word and read as
+the verb.
+
+### Files
+
+| File | Holds |
+|---|---|
+| `trace/page.tsx` | server route: mobile guard, baseline from the manifests, `<TraceDesktop>` |
+| `trace/lib/content.ts` | every string: title, line, lead, `WAYS` (name · href · question · brief · boundary · does), `BETWEEN`, `PRINCIPLES`, `BASELINE_NOTE`, `TRACE_DEFINITION`, `CLOSING_WORD` + `CLOSING`, `CAPTIONS` (screen · at · x · y · text · align · kind · width) |
+| `trace/desktop/TraceDesktop.tsx` | the client stage: `SCRIPT`, the scroll handler (`apply`), the text layer, the dock, the leader lines, the closing block, the dev freeze hook |
+| `trace/desktop/TraceDesktop.module.css` | the register and every text region (`[data-screen]`) |
+| `trace/desktop/instruments.ts` | the scene: the bus, the budgets, `boxesFor`, the five screens, the blend, the HUD, the wires, the reactive components |
+| `trace/desktop/Instrument.tsx` | one canvas running one program at ~30 fps while visible |
+| `trace/desktop/world-outline.ts` | generated: the governed coastlines and the mapped geographies' marks |
+| `trace/desktop/icons.tsx` | the three glyphs |
+| `trace/exploration/page.tsx` | Function 3's reference page at its own route |
+
+### The flow: five screens, one scene
+
+The scene is one pinned sheet — `.sceneWrap` is 800vh so every screen can be read; `.scene`
+is sticky under the nav — with two canvases (the set behind the text; the field's outer
+rings in front, over the text), one clock and one scroll state. `SCRIPT` maps the scene's
+scroll `sp` (0 as it pins, 1 as it releases) to the system's state `s` (0..4, fractional
+between screens):
+
+| scroll | state | |
+|---|---|---|
+| 0 – 0.10 | 0 | **TRACE** holds |
+| 0.10 – 0.18 | 0 → 1 | transformation |
+| 0.18 – 0.32 | 1 | **Context Canvas** holds |
+| 0.32 – 0.40 | 1 → 2 | transformation |
+| 0.40 – 0.54 | 2 | **Spacetime** holds |
+| 0.54 – 0.60 | 2 → 3 | transformation |
+| 0.60 – 0.76 | 3 | **Between records** holds (`PATTERN_HOLD`, shared with the scene) |
+| 0.76 – 0.82 | 3 → 4 | transformation |
+| 0.82 – 1 | 4 | **Exploration** holds |
+
+Between screens the whole set TRANSFORMS: every screen is a `Frame` built on the same fixed
+budgets — N = 1,400 particles, M = 96 polylines of V = 48 vertices, padded with parked
+points and lines — and `blend()` moves every particle and every vertex index by index
+(`smooth()` easing; anchors switch at the half). Each screen has its own layout
+(`boxesFor(k)`: `main`, `left`, `right`, `strip` as fractions of the sheet), so the
+composition moves, not only the figures. Drawn flat, depth implied by dot size, ring
+foreshortening and particle density — **no perspective camera**.
+
+### The components — each exactly once (4 + 3 + 3 + 3, plus reactive ones)
+
+Boxes are (x, y, w, h) as fractions of the sheet.
+
+- **0 TRACE.** The SPHERE (main 0.56, 0.20, 0.41 × 0.50): 36 meridians × 25 points, coral
+  to paper to mint down its height, the column at the bus's period lit; a crown mark is the
+  cursor. The FUNNEL (left 0.05, 0.62, 0.22 × 0.34): twelve dotted rings down a bright axis
+  into a spiral, the ring at `period % 12` lit, delivering FLOW every 5 s. The STRIP (0.50,
+  0.06, 0.18 × 0.035): 23 cells, the window at `periodF`. The LATTICE (right 0.50, 0.78,
+  0.44 × 0.17): a grid sunk toward a coral mass standing at `periodF`'s place on the small
+  time axis (the governed years at its ends), one orbit — "time is linear · context is not".
+- **1 Context Canvas.** The CHAIN (main 0.03, 0.24, 0.50 × 0.45): five overlapping rings, the
+  record's coral inner ring in the middle one, the context ring the walk has reached in sky,
+  a line through. The NETWORK (left 0.03, 0.79, 0.42 × 0.18): 4-6-6-6-4 layered nodes, the
+  walk's path lit. The HALFTONE (right 0.66, 0.64, 0.31 × 0.32): a dot field sized by a
+  gradient centred where the walk is. Reactive: the PRISM (0.52 w, 0.70 h; 0.10 w × 0.20 h),
+  arcs running outward each time a walk completes.
+- **2 Spacetime — a flight interface: map and time.** The WORLD MAP (main 0.05, 0.14,
+  0.57 × 0.50): the release's coastlines (`public/trace-spacetime-v1/natural-earth-50m-admin0-v5.1.1.geojson`,
+  rings under 4 sq° dropped, Douglas–Peucker at 1.1°, 194 rings / 1,804 points in
+  `world-outline.ts`) as ~1,200 points in an equirectangular frame (lon −170..180,
+  lat −56..84) with a 30° graticule; one aggregate mark per MAPPED geography (81) at its
+  feature's label point, radius 3 + 11·√(n / max) by source-assignment count (UK 3,214 · US
+  1,175 · Norway 562 · Germany 427 · Russia 231 · France 224 lead); the held one
+  (`region = period % 6`) coral with a dotted bearing line from the frame's centre;
+  aggregate-only geographies stay off the map by the registry's policy. The GEOGRAPHY TAPE
+  (left 0.64, 0.16, 0.05 × 0.40), vertical: the six largest as bars. The TIME TAPE (right
+  0.05, 0.68, 0.57 × 0.05): 23 ticks, the cursor at `periodF` bracketed in coral, the
+  governed years at its ends. Reactive: the LEDGER (0.72 w, 0.74 h; 0.25 w × 0.18 h), six
+  rows × 23 columns, the bus's column and row read together. No scan.
+- **3 Between records.** Built literally from the owner's prototype (Exploration's former
+  scope): seven rings, one inside the next (main 0.46, 0.08, 0.50 × 0.86), each
+  `[cx + sc·sin(5u + φ), cy + 0.9·sc·sin(4u)]` with `sc = R·(0.22 + 0.78·k/6)`, 200 coral
+  particles each (r 1.2, +1.6 at the head; the head at `u = t·0.045`), on the scope's two
+  scales and nothing else — no tracking brackets (`frame: 0`), the field faded out. The
+  figures never change; across the hold the scroll blends each ring continuously between an
+  eight-segment sampling and its smooth form (`round = sin(π·prog)`), so the scroll cannot
+  stutter. Its readout line: "a pattern, not a claim".
+- **4 Exploration.** The DIAL (main 0.05, 0.10, 0.46 × 0.54): a ring the sweep lights, a
+  satellite with its crosshair, the open-inquiry ring apart in sand. The WAVE (right 0.03,
+  0.75, 0.52 × 0.21): a packet whose centre follows the sweep, bumping on the pulse; the
+  inquiry LOOP apart at its right. Reactive: the OSCILLON (0.58 w, 0.06 h; 0.36 w × 0.16 h)
+  sheared by the sweep; the PULSES from the satellite.
+- **Everywhere.** The QUANTA field (concentric and offset rings; the outer rings on the
+  front canvas over the text; faded out on screen 3), the readout TILES (0.72 w, 0.06 h),
+  the tracking brackets on the main form, the wires. The tiles, the halftone and the
+  ledger's cells are hash-seeded texture, not data. Binding the ledger to the governed
+  atlas cells (373 non-zero) is an open item.
+
+### The bus
+
+Every component reads from one signal bus and some write to it (`bus`, `computeBus()`):
+
+| signal | tempo | writes | reads |
+|---|---|---|---|
+| PERIOD | 23 buckets scanned by the clock (~83 s per cycle) and pushed on by the scroll (`setScroll`); `periodF` continuous | `periodChangedAt`, `region = period % 6` | sphere column, funnel ring, strip window, lattice mass, map's held mark, geography tape bar, time-tape cursor, ledger column and row |
+| WALK | one step every 4.2 s | `walkDoneAt` on a completed path | chain's context ring, network path, halftone centre, prism |
+| SWEEP | 0.22 rad/s | `pulseAt` when it passes the satellite | dial, oscillon shear |
+| PULSE | on the sweep's pass | — | wave bump, inquiry loop, pulses |
+| FLOW | the funnel's delivery every 5 s | `flowAt` | lattice well depth |
+
+Rules: everything that MOVES follows `periodF`, never the integer bucket, so the scroll
+never steps; every decay is 2–3 s (exchanges are slow — no high-frequency flicker); the
+wires are the couplings drawn and run only between FIXED anchors (frame edges, tape ends,
+the tiles, the readout), never after a moving mark, so nothing jumps.
+
+### The text layer
+
+- **Hero** (screen 0, left `--s-5`, top 13 %, width 46 %): `TRACE` in the statement face,
+  solid; the line broken before "One" — "Three research views." / "One governed archive."
+  (`max-width: 30ch`); the lead. The readout line (top left, sand capitals) belongs to
+  screen 0 only.
+- **Notes**, one per view, each in its own empty region: Context Canvas right 3 % / top
+  22 % / width 38 %, ranged right — name, question, brief, boundary, what the function does
+  (three composition templates, the same rows in text, a public-safe export); Spacetime
+  right 3 % / top 20 % / width 26 % — name, question, brief, boundary (the "what it does"
+  paragraph removed at the owner's ask); Between records left `--s-5 + 20px` / top 12 % /
+  width 38 % — name, question, brief, boundary; Exploration right 3 % / top 24 % / width
+  38 %, ranged right — name, question, brief, what the function does (the validated map of
+  at most eight concepts with its plain-text tree and exports; the eleven scoped inquiries
+  apart). A note fades in as its screen settles.
+- **Captions** (`CAPTIONS`): inserted into the scene as the scroll goes on, positioned in
+  sheet percentages; right-aligned ones are positioned from the right (`right:`) so they
+  never wrap word by word. Two kinds: LABELS in the technical face beside a component
+  ("one record, and the contexts it is filed in", "23 periods — when", "association —
+  generic, non-directional", "open inquiry — held apart"…) accumulate; PARAGRAPHS in the
+  reading face take turns — on each screen only the latest paragraph the scroll has reached
+  is shown, in one place — so no two paragraphs share the sheet, and the page is never pure
+  animation. The first screen carries labels only.
+- **Rules, checked in the browser at each frozen state** (all empty on screens 0–4 at
+  1960 × 1130): no text box intersects another; every caption lies at least 24 px outside
+  every component box; no paragraph ends on a lone last word (`text-wrap: pretty` on every
+  paragraph, `balance` on the question and the closing line).
+
+### The entries
+
+A fixed column on the right (`.dock`): the nav's 60 px control (2 px paper border,
+inverted on hover / focus), in line with the nav's Source icon, vertically centred in the
+viewport, never scrolling away, with the nav's own reveal (the name in the heading face
+beside the column, level with the hovered control) and the names as accessible labels. No
+numbers — the views have no order. The glyphs (`icons.tsx`) are 38 px on a 24-unit grid,
+stroke 1.8, round caps, each mark's bounding box centred on (12,12): Context Canvas is
+*connect* (one node joined to two); Spacetime is a compass (preferred to a map pin);
+Exploration is an open eye that shines. While a view's screen holds a leader line draws
+from the scene's anchor mark (top right) to its icon, an elbow, and is gone once the scene
+releases (`sp ≥ 0.985`). There are no other controls.
+
+### The closing block
+
+Its own section after the scene, with the ground held dark to the end of the scroll
+(`document.documentElement.style.background`) so nothing pale shows past it:
+
+1. the headline "**TRACE** the design history no single record can show on its own."
+   (statement face, `balance`, 24ch) — joined to TRACE the control by a fixed line
+   (`.footLead`: from the headline's right edge, across to the nav TRACE icon's column, up
+   to the header's edge) shown only once the headline has come up past 45 % of the
+   viewport;
+2. the definition paragraph at the left, and the identity tagline beside it at the right,
+   shown only at the page's very end (`max − scrollY < 8`);
+3. Shared research principles (titles only) beside Current TRACE baseline (the ledger from
+   the manifests, and the baseline note).
+
+### Register
+
+Ground `#050506`, paper `#efe9dd`, sand `#c9a37b` for labels and rules, red spine
+`#c8322b` as a 1 px segmented hairline at the sheet's left edge inside the scene only,
+growing with the scroll; a 28 px dot grid at 9 %, film grain at 4.5 %; coral 240,135,106 ·
+mint 95,191,179 · sky 79,168,222 only for what carries a signal. Type: title
+`clamp(6rem, 10.5vw, 12rem)` statement italic, solid; line `clamp(1.9rem, 2.6vw, 2.6rem)`;
+view names `clamp(2.6rem, 3.6vw, 3.8rem)`; questions `clamp(1.25rem, 1.5vw, 1.5rem)`
+italic; labels in the numeric face at `--fs-label` (the 17 px floor), 0.08em tracking,
+with a 1 px sand rule; paragraphs in the reading face at 82 % paper; closing
+`clamp(2.6rem, 4vw, 4.2rem)`; tagline `clamp(2rem, 2.6vw, 2.6rem)`; principles 1.25rem;
+ledger numerals 1.5rem tabular. No new fonts.
+
+### Motion and performance
+
+Each canvas runs ~30 fps while on screen and the pane is visible, one frame otherwise;
+DPR capped at 2; reduced motion holds the clock at 0 (a static scene, the draw-in
+complete). The set draws itself in once over 2.4 s on arrival. The scroll handler is
+rAF-throttled; the page's CSS variables (`--tp`, `--sp`) come from scroll only; no timed
+page animation, no easing on scroll, no scroll-jacking.
+
+### Verification method
+
+The browser harness cannot scroll and screenshot a pinned stage and runs no animation
+frames while hidden, so the dev hook `window.__mgdaTrace.freeze(sp)` (absent in production
+builds) pins the scene at a scroll progress and dispatches one synchronous frame
+(`mgda:frame`). Each screen is verified at its hold's midpoint (sp 0.05 · 0.25 · 0.47 ·
+0.68 · 0.91) at 1960 × 1130: a screenshot, and three DOM checks — bounding-box intersection
+between all visible text boxes, the 24 px distance from every caption to every component
+box (`boxesFor` mirrored in the check), and the word count of each paragraph's last line
+(Range per word). The foot is checked with the body translated up (`document.body.style.transform`)
+and the tagline by comparing `max − 300` (opacity 0) with `max` (opacity 1).
+
+### Bad practice — removed, do not reintroduce
+
+A perspective camera or side-view "3-to-2" rendering (it broke the picture); human figures
+of any kind; the moiré star; a scan sweeping the map; corner registration marks; numeric
+"system lines" printing the bus's counters under the notes (WALK 3 / 5 …); components
+repeated across screens (the globe, the spiral, the scope in two places); twelve components
+on one screen (a pile-up); an outlined title; a grey sheet; paragraphs appearing together;
+captions positioned from the left when ranged right; wires that follow moving marks;
+integer period steps under the scroll; "Start with" intros and 01/02/03 numbering on the
+entries; any recents, trending, recommendation or "System suggests" on the landing.
+
+---
+
 ## 8. Rounds
 
 Every round ships **desktop + mobile together**; mobile is designed ground-up per
@@ -1021,7 +1268,7 @@ Every round ships **desktop + mobile together**; mobile is designed ground-up pe
 3. **Homepage** (§7e) — a reading page: 01 Identity · 02 Contribution · 03 Enter the Archive · 04 Research status; dark-grey ground + spot colour, a scroll-driven grid + text↔heading transform on desktop, pared-back stack on mobile. Copy final per §2a. **+ Global Search** — now a **global utility window** (§7d), `Search` nav icon on every page (mobile nav = `MGDA · Index · Search · About`), URL-backed at `/search`; desktop = long ticket, mobile = ticket, System suggests = light contextual annotation. *(Search ✅ fixture-backed; Homepage in progress this round.)*
 4. **Object Page** — ✅ desktop (5 layout treatments + content-fit) **and** mobile (single-column, alt-text clamp, folded Source/Provenance, back-to-top). Split into `page.tsx` (server UA device split) + `lib/` + `desktop/` + `mobile/`, per-component files — **this is the template every later page follows** (§6). **Wired to the sealed v49 public projection (2026-09-03):** `page.tsx` reads the record from the governed Search v2 artifact (`getPublicSearchIndex().byId`) and maps it with `lib/fromDocument.ts`; an ID outside the projection is a 404. Medium, description and a source-record URL are not in the public projection and are omitted; no frame ever stands in for an image, on desktop or mobile. Delivery-state wording is provisional (§9H).
 5. **Index** — ✅ desktop **and** mobile at `/directory` (§7c): searchable place selector, year range + separate order, theme badges, editorial active-state line, dense year-grouped catalogue, empty/loading/error states. **Wired to the sealed v49 public projection (2026-09-03):** `GET /api/index/v1` serves the reader-facing objects (5,423 of 7,995 public records — §3b) as one compact catalogue built from the Search v2 and reader-eligibility artifacts (`lib/catalogue.server.ts`); the directory files it in pages of 200 with a "show the next" foot. Places are the source-recorded labels (145 values) — verified structured geography is still pending (§3), so the filter is labelled "Place (as recorded)". Themes are the release's eight governed themes. The Index keeps its own earlier setting (serif lede, small theme key, small control bar); only its colours changed (2026-09-03): the stripe is the site's own sky / coral / yellow instead of blue / red / yellow; the theme dots are eight distinct spot colours; the theme key sits under the intro as a three-across strip (a deep-tone cut was tried and withdrawn as too dark and undistinguished).
-6. TRACE entry + mobile fallback + desktop shell.
+6. **TRACE entry** (§7f) — ✅ built (`/trace`): five-screen scroll scene on one signal bus, the three icon entries, the closing block; Exploration's reference page moved to `/trace/exploration`. Desktop only by policy; mobile gets the desktop-required notice.
 7. Context Canvas.
 8. Spacetime.
 9. Exploration (Validated Exploration + Open Inquiry, hard separation).
