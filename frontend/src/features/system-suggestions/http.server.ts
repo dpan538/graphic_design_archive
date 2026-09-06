@@ -11,6 +11,10 @@ const HEADERS = {
   "Content-Type": "application/json; charset=utf-8",
   "X-Content-Type-Options": "nosniff",
 };
+/* surfaces whose product is not released in v49 (Spacetime, 2026-09-05):
+   the service and its gate stay as frozen research infrastructure; the
+   public path answers with the release boundary instead of guidance */
+const DEFERRED_SURFACES: ReadonlySet<string> = new Set(["TRACE_SPACETIME"]);
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS_PER_WINDOW = 30;
 const buckets = new Map<string, { startedAt: number; count: number }>();
@@ -43,6 +47,21 @@ function rateAllowed(request: Request, now = Date.now()): boolean {
   return bucket.count <= MAX_REQUESTS_PER_WINDOW;
 }
 
+/* the surface named by a request body, before validation, so that a
+   deferred surface answers with its release boundary whatever else the
+   body carries; anything unreadable falls through to the parser's own error */
+function deferredSurfaceOf(text: string): string | null {
+  if (text.length > MAX_REQUEST_BYTES) return null;
+  try {
+    const value: unknown = JSON.parse(text);
+    if (!value || typeof value !== "object") return null;
+    const surface = (value as { surface?: unknown }).surface;
+    return typeof surface === "string" && DEFERRED_SURFACES.has(surface) ? surface : null;
+  } catch {
+    return null;
+  }
+}
+
 export function systemSuggestionsOptionsResponse(): Response {
   return new NextResponse(null, { status: 204, headers: HEADERS });
 }
@@ -56,7 +75,10 @@ export async function handleSystemSuggestionsRequest(request: Request): Promise<
   if (Number.isFinite(declaredLength) && declaredLength > MAX_REQUEST_BYTES) return problem("REQUEST_TOO_LARGE", "request body exceeds 16384 bytes", 413);
   if (!rateAllowed(request)) return problem("RATE_LIMITED", "Too many System Suggestions requests; retry later", 429, { "Retry-After": "60" });
   try {
-    const parsed = parseBoundedJsonBody(await request.text());
+    const text = await request.text();
+    const deferred = deferredSurfaceOf(text);
+    if (deferred) return problem("SURFACE_NOT_RELEASED", `${deferred} is not released in v49`, 404);
+    const parsed = parseBoundedJsonBody(text);
     const response = await createSystemSuggestions(parsed);
     return NextResponse.json(response, { headers: HEADERS });
   } catch (error) {

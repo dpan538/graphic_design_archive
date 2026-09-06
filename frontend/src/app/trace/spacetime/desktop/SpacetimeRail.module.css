@@ -1,0 +1,376 @@
+/* 01 — the rail: the canvas's register; the period profile as figures
+   in the reading face, the top concentration set apart; the layer as a
+   stack of two with a line of brief each; the style as a small row */
+
+.rail {
+  display: grid;
+  align-content: start;
+  gap: var(--s-4);
+}
+
+.header {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.kicker,
+.label,
+.labelQuiet,
+.summary,
+.summaryQuiet {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.kicker a {
+  color: inherit;
+  border-bottom: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+  text-decoration: none;
+}
+
+.kicker a:hover,
+.kicker a:focus-visible {
+  border-bottom-color: var(--t-sand);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.statement {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--t-fg) 82%, transparent);
+  text-wrap: balance;
+}
+
+.group,
+.groupQuiet {
+  display: grid;
+  gap: var(--s-1);
+  padding-top: var(--s-3);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.groupQuiet {
+  border-top-style: dashed;
+}
+
+.label,
+.labelQuiet {
+  letter-spacing: 0.08em;
+}
+
+.labelQuiet {
+  color: color-mix(in srgb, var(--t-sand) 80%, transparent);
+}
+
+.period {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--t-fg);
+}
+
+.count {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.3;
+  color: var(--t-fg);
+}
+
+.sub {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  text-wrap: pretty;
+}
+
+/* the top concentration */
+.top {
+  display: grid;
+  gap: 2px;
+  margin-top: var(--s-2);
+  padding-left: var(--s-3);
+  border-left: 3px solid var(--sp-blue);
+}
+
+.topPlace {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.3;
+  color: var(--t-fg);
+}
+
+/* the window: previous · current · next totals */
+.window {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-2);
+  margin: var(--s-2) 0 0;
+}
+
+.window div {
+  display: grid;
+  gap: 1px;
+  padding-top: var(--s-1);
+  border-top: 1.5px solid color-mix(in srgb, var(--t-fg) 25%, transparent);
+}
+
+.window div[data-role="current"] {
+  border-top-color: var(--sp-red);
+}
+
+.window dt {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.window div[data-role="current"] dt {
+  color: var(--t-fg);
+  font-weight: 700;
+}
+
+.window dd {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.3;
+  color: var(--t-fg);
+}
+
+.fold {
+  display: grid;
+  gap: var(--s-1);
+  margin-top: var(--s-1);
+}
+
+.summary,
+.summaryQuiet {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 28px;
+  letter-spacing: 0.08em;
+  color: var(--t-fg);
+  cursor: pointer;
+  list-style: none;
+}
+
+.summaryQuiet {
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.summary::-webkit-details-marker,
+.summaryQuiet::-webkit-details-marker {
+  display: none;
+}
+
+.summary::before,
+.summaryQuiet::before {
+  content: "+";
+}
+
+.fold[open] .summary::before,
+.fold[open] .summaryQuiet::before {
+  content: "−";
+}
+
+.summary:hover,
+.summaryQuiet:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.help {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+}
+
+.help dt {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.help dd {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  text-wrap: pretty;
+}
+
+/* the layer: two stacked choices with a brief each */
+.stack {
+  display: grid;
+  margin-top: var(--s-1);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  min-height: 48px;
+  padding: var(--s-2) var(--s-3);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.option + .option {
+  border-top: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.optionMark {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 4px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+.option[aria-checked="true"] .optionMark {
+  background: currentColor;
+}
+
+.optionText {
+  display: grid;
+  gap: 1px;
+}
+
+.optionWord {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.optionBrief {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.3;
+  opacity: 0.72;
+  text-wrap: pretty;
+}
+
+.option:hover,
+.option:focus-visible,
+.option[aria-checked="true"] {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+/* the style: a small row */
+.segments {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--s-1);
+  border: 1px solid color-mix(in srgb, var(--t-fg) 45%, transparent);
+}
+
+.segment {
+  min-height: 28px;
+  padding: 0 var(--s-1);
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  background: transparent;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.segment + .segment {
+  border-left: 1px solid color-mix(in srgb, var(--t-fg) 45%, transparent);
+}
+
+.segment:hover,
+.segment:focus-visible {
+  color: var(--t-fg);
+}
+
+.segment[aria-checked="true"] {
+  color: var(--t-fg);
+  box-shadow: inset 0 -2px 0 var(--t-fg);
+}
+
+/* the way to the ranking */
+.table {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  width: 100%;
+  min-height: 40px;
+  padding: 0 var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.table:hover,
+.table:focus-visible,
+.table[aria-expanded="true"] {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.tableWord {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tableCount {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  opacity: 0.72;
+}
+
+.rail :is(button, summary, a):focus-visible {
+  outline: 2px solid var(--t-fg);
+  outline-offset: -2px;
+}

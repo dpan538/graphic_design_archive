@@ -8,9 +8,10 @@ import openInquiryRegistry from "../../../generated/trace-open-inquiry-v1/open-i
 import type { Baseline } from "./lib/content";
 import TraceDesktop from "./desktop/TraceDesktop";
 
-/* /trace — the shared entry to the three research environments (Context
-   Canvas, Spacetime, Exploration). It is not a fourth function: it explains
-   and organises the three. Desktop-only by policy (§4): a mobile request gets
+/* /trace — the shared entry to the research environments: Context Canvas
+   and Exploration, released; Spacetime, a research direction under review
+   that keeps its place in the sequence and has no entry (2026-09-05). It
+   is not a further function: it explains and organises them. Desktop-only by policy (§4): a mobile request gets
    the desktop-required notice before any research runtime is imported. The
    baseline figures are read from the governed projections' manifests, never
    typed in. */
@@ -18,7 +19,7 @@ import TraceDesktop from "./desktop/TraceDesktop";
 export const metadata: Metadata = {
   title: "TRACE",
   description:
-    "The research environment of the Modern Graphic Design Archive: three views — Context Canvas, Spacetime, Exploration — over one governed public archive, with provenance and evidence boundaries kept in view.",
+    "The research environment of the Modern Graphic Design Archive: two views — Context Canvas and Exploration — over one governed public archive, with provenance and evidence boundaries kept in view; Spacetime is a research direction under review, not released in v49.",
 };
 
 export default async function TracePage() {

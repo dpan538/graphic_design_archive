@@ -1,0 +1,85 @@
+/* Spacetime, desktop — the register (§7h): the canvas's paper, black
+   type and label grey; the map on the canvas ground as a fine line map
+   — warm ink for the coast, pale warm land, pale blue for mapped land,
+   cobalt for what is counted, signal red for what is chosen, mint for
+   what the pointer is over, amber for what cannot be plotted, a neutral
+   grey for the neighbouring periods — never a gradient, never a value
+   hue, never a solid disc.
+   Type one step smaller than the reading pages: labels 14 px, prose
+   15 px, names 16 px. Under the nav: the rail at the left, the map as
+   the body, PLACE CONTEXT at the right when a geography is selected,
+   the dock's column reserved past them. The page does not scroll. */
+
+.page {
+  --t-bg: #e8e6e0;
+  --t-fg: #0a0a0b;
+  --t-grey: #c4c3be;
+  --t-sand: #5f5e5a;
+  --t-hi: #e4472c;
+  --c-canvas: #f2f0eb;
+  --sp-ink: #5b554d;
+  --sp-blue: #2f5fb8;
+  --sp-blue-deep: #1f4491;
+  --sp-red: #e4472c;
+  --sp-coral: #f5d5cb;
+  --sp-mint: #cfe3d6;
+  --sp-amber: #d49454;
+  --sp-neutral: #a9a49b;
+  --sp-land: #ebe8e0;
+  --sp-land-mapped: #dbe4f0;
+  --sp-hairline: #a8a196;
+  --focus: var(--t-fg);
+  --c-fs-label: 0.875rem;
+  --c-fs-body: 0.9375rem;
+  --c-fs-chip: 1rem;
+  --nav-h: 96px;
+  position: relative;
+  isolation: isolate;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--t-bg);
+  color: var(--t-fg);
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  column-gap: var(--s-5);
+  height: calc(100vh - var(--nav-h));
+  padding: var(--s-3) calc(var(--page-gutter) + 60px + var(--s-5)) var(--s-3) var(--page-gutter);
+}
+
+.main[data-panel="open"] {
+  grid-template-columns: 17rem minmax(0, 1fr) 18rem;
+}
+
+.rail,
+.right {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--t-sand) 45%, transparent) transparent;
+  padding-right: var(--s-2);
+}
+
+.right {
+  position: relative;
+  z-index: 2;
+  padding-right: 0;
+}
+
+.centre {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--s-2);
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* the drawer region: one drawer at a time under the map, never both;
+   the map keeps at least six tenths of the column */

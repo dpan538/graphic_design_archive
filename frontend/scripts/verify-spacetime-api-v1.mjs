@@ -210,7 +210,15 @@ function verifySourceBoundaries() {
   assert.equal(forbiddenClientModules.length, 0, "Spacetime client graph reaches server projection artifacts");
 
   const pageSource = readFileSync(pagePath, "utf8");
-  assert(pageSource.includes("getGovernedSpacetimePeriodsDataset"), "Spacetime RSC does not read the projection directly");
+  // 2026-09-05: Spacetime is deferred from the product. Its route is a release
+  // boundary that must import none of the Spacetime runtime; the reader
+  // expectation below applies only while the route mounts the workspace.
+  const deferredBoundary = pageSource.includes("SPACETIME_RELEASE_NOTE") && !pageSource.includes("SpacetimeDesktop");
+  if (deferredBoundary) {
+    assert(!/trace-v49\/spacetime|\.\/desktop\/|\.\/lib\/years|SystemSuggestions/u.test(pageSource), "deferred Spacetime boundary imports Spacetime runtime");
+  } else {
+    assert(pageSource.includes("getGovernedSpacetimePeriodsDataset"), "Spacetime RSC does not read the projection directly");
+  }
   assert(!/\bfetch\s*\(/u.test(pageSource), "Spacetime RSC self-fetches its own API");
   assert(!pageSource.includes("/api/v1/"), "Spacetime RSC contains an internal API round trip");
 

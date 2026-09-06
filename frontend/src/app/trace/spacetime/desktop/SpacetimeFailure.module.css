@@ -1,0 +1,76 @@
+.page {
+  --t-bg: #e8e6e0;
+  --t-fg: #0a0a0b;
+  --t-sand: #5f5e5a;
+  --c-fs-label: 0.875rem;
+  --c-fs-body: 0.9375rem;
+  min-height: 100dvh;
+  background: var(--t-bg);
+  color: var(--t-fg);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 18rem minmax(0, 1fr);
+  gap: var(--s-6);
+  padding: var(--s-6) calc(var(--page-gutter) + 60px + var(--s-5)) var(--s-6) var(--page-gutter);
+}
+
+.left {
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+}
+
+.kicker {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.statement,
+.note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--t-fg) 82%, transparent);
+  text-wrap: pretty;
+}
+
+.failure {
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+  max-width: 48ch;
+  padding: var(--s-5);
+  border: 1px solid color-mix(in srgb, var(--t-fg) 35%, transparent);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.message {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+}

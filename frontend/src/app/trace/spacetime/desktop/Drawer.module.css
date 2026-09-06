@@ -1,0 +1,73 @@
+/* the drawer: a rule, two tabs in the label voice, the close at the
+   right; the body scrolls inside, the map above keeps its size */
+
+.drawer {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: var(--s-2);
+  min-height: 0;
+  max-height: calc((100vh - var(--nav-h)) * 0.3);
+  padding-top: var(--s-2);
+  border-top: 1px solid color-mix(in srgb, var(--t-fg) 35%, transparent);
+}
+
+.drawer:focus-visible {
+  outline: 2px solid var(--t-fg);
+  outline-offset: -2px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+
+.tab,
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 30px;
+  padding: 0 var(--s-2);
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  background: transparent;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.14s ease, background-color 0.14s ease;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--t-fg);
+  box-shadow: inset 0 -2px 0 var(--t-fg);
+}
+
+.tab:hover,
+.tab:focus-visible,
+.close:hover,
+.close:focus-visible {
+  color: var(--t-bg);
+  background: var(--t-fg);
+  outline: none;
+}
+
+.tabCount {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.72;
+}
+
+.close {
+  margin-left: auto;
+}
+
+.body {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}

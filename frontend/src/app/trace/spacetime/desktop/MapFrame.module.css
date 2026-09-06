@@ -1,0 +1,472 @@
+/* 02 — the map's frame: a fine line map. Coast: a firm warm ink line,
+   drawn under everything so the fills leave its outer edge. Boundary: a
+   hairline on every land path. Land: a pale warm tone on the canvas
+   ground; mapped land a pale blue; hover mint; the selection a pale
+   coral with a red edge. Nothing solid: rings in cobalt for the
+   distribution, three bars for the temporal window, the sealed dots
+   and patterns as they are. */
+
+.frame {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: var(--s-1);
+  min-height: 0;
+}
+
+.stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--t-fg) 35%, transparent);
+  background-color: var(--c-canvas);
+}
+
+.coast,
+.marks,
+.glyphs {
+  position: absolute;
+  inset: 0;
+}
+
+.coast,
+.glyphs {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.coast path {
+  fill: var(--c-canvas);
+  stroke: var(--sp-ink);
+  stroke-width: 1.1;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.marks {
+  display: grid;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.stage[data-state="loading"] .marks,
+.stage[data-state="loading"] .glyphs {
+  opacity: 0.55;
+}
+
+.land {
+  fill: var(--sp-land);
+  stroke: var(--sp-hairline);
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
+  transition: fill 0.12s ease;
+}
+
+.mappedLand {
+  fill: var(--sp-land-mapped);
+  cursor: pointer;
+}
+
+.mappedLand:hover {
+  fill: var(--sp-mint);
+}
+
+.selectedLand,
+.selectedLand:hover {
+  fill: var(--sp-coral);
+  stroke: var(--sp-red);
+  stroke-width: 1.3;
+}
+
+/* the sealed marks: the solid disc never shows — the ring overlay draws
+   the distribution; the density's remainder anchor is a ring; the dots
+   stay small */
+.stage[data-mode="aggregate"] .aggregateMark,
+.stage[data-mode="aggregate"] .selectedMark,
+.stage[data-layer="temporal"] .aggregateMark,
+.stage[data-layer="temporal"] .selectedMark,
+.stage[data-layer="temporal"] .densityMark {
+  display: none;
+}
+
+.aggregateMark,
+.selectedMark {
+  fill: color-mix(in srgb, var(--sp-blue) 10%, transparent);
+  stroke: var(--sp-blue);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+}
+
+.selectedMark {
+  stroke: var(--sp-red);
+  fill: color-mix(in srgb, var(--sp-red) 12%, transparent);
+}
+
+.densityMark {
+  fill: var(--sp-blue);
+  stroke: none;
+  cursor: pointer;
+}
+
+.stage[data-layer="temporal"] .patternPrimitive,
+.patternPrimitive {
+  fill: color-mix(in srgb, var(--sp-blue) 62%, transparent);
+  stroke: color-mix(in srgb, var(--sp-blue) 62%, transparent);
+}
+
+/* the glyph overlay */
+.glyphs {
+  pointer-events: none;
+}
+
+.ring,
+.glyph {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.ringOuter,
+.ringInner {
+  fill: color-mix(in srgb, var(--sp-blue) 10%, transparent);
+  stroke: var(--sp-blue);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  transition: stroke 0.12s ease, fill 0.12s ease;
+}
+
+.ring[data-tier="0"] .ringOuter {
+  stroke-width: 1;
+}
+
+.ringInner {
+  fill: none;
+}
+
+.ringCentre {
+  fill: var(--sp-blue);
+}
+
+.ring[data-hover] .ringOuter {
+  fill: color-mix(in srgb, var(--sp-mint) 60%, transparent);
+  stroke: var(--sp-blue-deep);
+}
+
+.ring[data-selected] .ringOuter,
+.ring[data-selected] .ringInner {
+  stroke: var(--sp-red);
+  fill: color-mix(in srgb, var(--sp-red) 12%, transparent);
+}
+
+.ring[data-selected] .ringCentre {
+  fill: var(--sp-red);
+}
+
+.glyphBase {
+  fill: color-mix(in srgb, var(--t-fg) 30%, transparent);
+}
+
+.glyphBar {
+  fill: var(--sp-neutral);
+  stroke: var(--c-canvas);
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.glyphBar[data-role="current"] {
+  fill: var(--sp-blue);
+}
+
+.glyph[data-selected] .glyphBar[data-role="current"] {
+  fill: var(--sp-red);
+}
+
+.glyph[data-hover] .glyphBar[data-role="current"] {
+  fill: var(--sp-blue-deep);
+}
+
+.glyphMissing {
+  fill: color-mix(in srgb, var(--t-fg) 25%, transparent);
+}
+
+.glyphCompact {
+  fill: color-mix(in srgb, var(--sp-blue) 10%, transparent);
+  stroke: var(--sp-blue);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+/* the focused place's dot field */
+.focusField circle {
+  fill: var(--sp-red);
+  fill-opacity: 0.72;
+}
+
+/* the interaction-led labels */
+.label {
+  position: absolute;
+  display: grid;
+  gap: 1px;
+  transform: translate(14px, -50%);
+  padding: 3px 8px;
+  border-left: 3px solid var(--sp-blue);
+  background: var(--c-canvas);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--t-fg) 25%, transparent);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.label[data-selected] {
+  border-left-color: var(--sp-red);
+}
+
+.labelName {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-label);
+  line-height: 1.2;
+  color: var(--t-fg);
+}
+
+.labelCount {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+/* NOT PLOTTED: the companion list, top left */
+.notPlotted {
+  position: absolute;
+  left: var(--s-4);
+  top: var(--s-4);
+  display: grid;
+  gap: var(--s-1);
+  max-width: 24rem;
+  padding: var(--s-2) var(--s-3);
+  border-left: 3px solid var(--sp-amber);
+  background: color-mix(in srgb, var(--c-canvas) 92%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--t-fg) 20%, transparent);
+}
+
+.notPlottedTitle {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.notPlottedNote {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.notPlottedList {
+  display: grid;
+  gap: 1px;
+  margin: var(--s-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notPlottedRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: end;
+  gap: var(--s-3);
+  width: 100%;
+  min-height: 24px;
+  padding: 2px 0;
+  color: var(--t-fg);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.notPlottedRow:hover .notPlottedName,
+.notPlottedRow:focus-visible .notPlottedName {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.notPlottedRow[data-selected] .notPlottedName {
+  color: var(--sp-red);
+  font-weight: 600;
+}
+
+.notPlottedName {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.miniGlyph {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 16px;
+}
+
+.miniBar {
+  width: 4px;
+  min-height: 1px;
+  background: var(--sp-neutral);
+}
+
+.miniBar[data-role="current"] {
+  background: var(--sp-blue);
+}
+
+.notPlottedRow[data-selected] .miniBar[data-role="current"] {
+  background: var(--sp-red);
+}
+
+.miniBar[data-role="missing"] {
+  background: color-mix(in srgb, var(--t-fg) 25%, transparent);
+}
+
+.notPlottedCount {
+  min-width: 3ch;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  text-align: right;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+/* the caption corner */
+.caption {
+  position: absolute;
+  right: var(--s-4);
+  top: var(--s-4);
+  display: grid;
+  gap: var(--s-2);
+  max-width: 30ch;
+  margin: 0;
+  padding: var(--s-2) var(--s-3);
+  border-left: 3px solid var(--t-fg);
+  background: var(--c-canvas);
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+  color: var(--t-fg);
+  text-wrap: pretty;
+}
+
+.retry {
+  justify-self: start;
+  min-height: 32px;
+  padding: 0 var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.retry:hover,
+.retry:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+/* the frame's feet */
+.legend,
+.boundary {
+  position: absolute;
+  bottom: var(--s-3);
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  pointer-events: none;
+}
+
+.legend {
+  left: var(--s-4);
+  display: grid;
+  gap: 2px;
+  max-width: 44ch;
+}
+
+.projection {
+  font-family: var(--font-num);
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--t-fg) 50%, transparent);
+}
+
+.boundary {
+  right: var(--s-4);
+  max-width: 40ch;
+  text-align: right;
+  color: var(--t-fg);
+}
+
+/* the tools line */
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  min-height: 32px;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  min-height: 32px;
+}
+
+.tools button {
+  min-height: 32px;
+  padding: 0 var(--s-2);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: transparent;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.14s ease, background-color 0.14s ease;
+}
+
+.tools button:hover,
+.tools button:focus-visible {
+  color: var(--t-bg);
+  background: var(--t-fg);
+  outline: none;
+}
+
+.status {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

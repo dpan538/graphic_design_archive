@@ -1,42 +1,40 @@
 import type { Metadata } from "next";
-import { isLikelyMobileTraceRequest, TraceDesktopRequired } from "@/features/trace-v49/mobile.server";
+import Link from "next/link";
+import SiteNav from "@/components/site/SiteNav";
+import spacetimeManifest from "../../../../generated/trace-spacetime-v1/manifest.json";
+import { SPACETIME_RELEASE_NOTE, SPACETIME_STATUS } from "../lib/content";
 import styles from "./page.module.css";
 
-export const dynamic = "force-dynamic";
+/* /trace/spacetime — the release boundary (2026-09-05). Spacetime is not
+   released in v49: the TRACE landing keeps its screen as a research
+   direction under review, and this route states the boundary. Nothing
+   of the Spacetime runtime is imported here — no workspace, no GIS, no
+   governed reader, no System suggests; the projection, its readers, its
+   API and its audits stay frozen as research infrastructure
+   (docs/frontend/SPACETIME_RESEARCH_READINESS_CENSUS_v1.md). The two
+   figures are read from the projection's manifest, never typed in. */
 
 export const metadata: Metadata = {
-  title: "Spacetime functional atlas — TRACE v49",
-  description: "Unlinked governed Spacetime GIS and timeline functional foundation for TRACE v49.",
-  robots: {
-    index: false,
-    follow: false,
-  },
+  title: "Spacetime — TRACE",
+  description: `Spacetime — ${SPACETIME_STATUS.toLowerCase()}. ${SPACETIME_RELEASE_NOTE}`,
+  robots: { index: false, follow: false },
 };
 
-function Failure({ message }: Readonly<{ message: string }>) {
+export default function SpacetimeBoundaryPage() {
   return (
-    <main className={styles.failure}>
-      <p>TRACE v49 · fail-closed governed Spacetime workspace</p>
-      <h1>Spacetime atlas unavailable</h1>
-      <p role="alert">{message}</p>
-      <p>No map projection or archive record payload was sent to the client.</p>
-    </main>
+    <>
+      <SiteNav active="trace" />
+      <main id="main" className={styles.boundary}>
+        <p className={styles.eyebrow}>TRACE · Spacetime</p>
+        <h1 className={styles.title}>{SPACETIME_STATUS}</h1>
+        <p className={styles.lead}>{SPACETIME_RELEASE_NOTE}</p>
+        <p className={styles.note}>
+          Spacetime examines how recorded geographic context changes across time. The governed projection behind it — {spacetimeManifest.counts.timeBuckets} decade periods, {spacetimeManifest.counts.governedGeographyEntries} governed geographies — remains frozen as research infrastructure and is not mounted on any public page.
+        </p>
+        <p className={styles.back}>
+          <Link href="/trace">Return to TRACE</Link>
+        </p>
+      </main>
+    </>
   );
-}
-
-export default async function SpacetimePage() {
-  if (await isLikelyMobileTraceRequest()) return <TraceDesktopRequired functionName="Spacetime" />;
-  try {
-    const [{ SpacetimeWorkspace }, spacetimeReader] = await Promise.all([
-      import("@/features/trace-v49/spacetime/map"),
-      import("@/features/trace-v49/spacetime/governed/reader.server"),
-    ]);
-    const { getGovernedSpacetimePeriodsDataset, lookupGovernedSpacetimeAtlas } = spacetimeReader;
-    const periods = getGovernedSpacetimePeriodsDataset();
-    const atlas = lookupGovernedSpacetimeAtlas(periods.defaultPeriodId);
-    if (!atlas.ok) return <Failure message={atlas.message} />;
-    return <SpacetimeWorkspace periods={periods} initialAtlas={atlas.data} />;
-  } catch {
-    return <Failure message="The governed Spacetime projection failed its integrity checks." />;
-  }
 }

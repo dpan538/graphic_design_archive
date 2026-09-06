@@ -279,6 +279,21 @@
   color: color-mix(in srgb, var(--t-paper) 85%, transparent);
 }
 
+/* a direction under review: its status, stated plainly and quietly — the
+   caption's face on a hairline, no control beneath it */
+.noteStatus {
+  display: inline-block;
+  margin-top: var(--s-4);
+  padding-top: var(--s-2);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 70%, transparent);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
 /* the captions: explanatory, inserted into the scene with the scroll */
 .cap {
   position: absolute;

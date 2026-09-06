@@ -1,0 +1,110 @@
+/* 05 — the place ranking: a ledger — rank in the numeric face, the
+   place as a text control, figures tabular and right-aligned; the
+   chosen row carries a red bar; "Not plotted" as a light amber mark */
+
+.table {
+  display: grid;
+  gap: var(--s-2);
+  min-height: 0;
+}
+
+.table:focus-visible {
+  outline: 2px solid var(--t-fg);
+  outline-offset: -2px;
+}
+
+.note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+}
+
+.grid th,
+.grid td {
+  padding: var(--s-1) var(--s-2) var(--s-1) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--t-sand) 40%, transparent);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.grid thead th {
+  position: sticky;
+  top: 0;
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.number {
+  text-align: right !important;
+}
+
+.rank {
+  width: 3ch;
+  font-family: var(--font-num);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.choose {
+  padding: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.3;
+  color: var(--t-fg);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.choose:hover:not(:disabled),
+.choose:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  outline: none;
+}
+
+.choose:disabled {
+  cursor: progress;
+}
+
+.unplotted {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  margin-left: var(--s-2);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--t-fg) 55%, transparent);
+  cursor: help;
+}
+
+.unplotted::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--sp-amber);
+  background: repeating-linear-gradient(135deg, var(--sp-amber) 0 2px, transparent 2px 4px);
+}
+
+.grid tr[data-selected] th,
+.grid tr[data-selected] td {
+  background: color-mix(in srgb, var(--sp-blue) 10%, var(--t-bg));
+}
+
+.grid tr[data-selected] td:first-child {
+  box-shadow: inset 4px 0 0 var(--sp-red);
+}

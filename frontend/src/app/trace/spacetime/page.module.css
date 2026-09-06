@@ -1,32 +1,64 @@
-.failure {
+/* the release boundary: one column of text on the archive's paper, in
+   the site's own faces — no figure, no map, no control but the way back */
+
+.boundary {
   display: grid;
   align-content: center;
-  min-height: 100dvh;
-  padding: clamp(28px, 7vw, 96px);
-  color: #1c2525;
-  background: #ecece7;
-  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  gap: var(--s-3);
+  min-height: calc(100dvh - 80px);
+  max-width: 62ch;
+  margin: 0 auto;
+  padding: var(--s-7) var(--page-gutter);
+  color: var(--t-fg);
 }
 
-.failure h1,
-.failure p {
-  max-width: 780px;
+.eyebrow {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.title {
   margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
-.failure h1 {
-  margin: 7px 0 18px;
-  font-size: clamp(2rem, 6vw, 4.6rem);
+.lead {
+  margin: var(--s-3) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg, 1.125rem);
+  line-height: 1.5;
+  text-wrap: pretty;
 }
 
-.failure p:first-child {
-  color: #53615f;
-  font-family: var(--font-plex-mono), ui-monospace, monospace;
-  font-size: 0.68rem;
+.note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body, 1rem);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  text-wrap: pretty;
+}
+
+.back {
+  margin: var(--s-4) 0 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.failure p + p {
-  margin-top: 10px;
+.back a {
+  color: var(--t-fg);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }

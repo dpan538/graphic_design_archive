@@ -265,7 +265,7 @@ export const ENTRIES: {
     name: "TRACE",
     verb: "Explore.",
     when: "When you have a research question rather than a single record.",
-    line: "Use Context Canvas, Spacetime, and Exploration to examine governed research representations.",
+    line: "Use Context Canvas and Exploration to examine governed research representations.",
     href: "/trace",
     note: "Desktop only",
   },

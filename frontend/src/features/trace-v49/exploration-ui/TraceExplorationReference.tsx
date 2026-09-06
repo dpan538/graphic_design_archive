@@ -70,7 +70,6 @@ export default function TraceExplorationReference({ validated, openInquiry }: Tr
 
       <nav className={styles.functionLinks} aria-label="TRACE functions">
         <Link href="/trace/context-canvas"><strong>Context Canvas</strong><span>Public project-curated medium, theme, and movement context.</span></Link>
-        <Link href="/trace/spacetime"><strong>Spacetime</strong><span>Recorded temporal and geographic aggregate context.</span></Link>
       </nav>
 
       <div className={styles.layers}>

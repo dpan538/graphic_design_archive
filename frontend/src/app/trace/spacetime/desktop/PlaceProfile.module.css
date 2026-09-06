@@ -1,0 +1,257 @@
+/* 03 — Place profile: the heading in the label voice, the place's name
+   in the heading face; the period's figures; the three-period window
+   as a small ledger, the current column set apart in red; the folds;
+   the guidance at the foot */
+
+.panel {
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+  min-height: 0;
+  padding-left: var(--s-3);
+  border-left: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.heading,
+.subheading,
+.fact dt,
+.summary {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.identity {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.label {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--t-fg);
+  text-wrap: balance;
+}
+
+.kind {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.unplotted {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.unplotted::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--sp-amber);
+  background: repeating-linear-gradient(135deg, var(--sp-amber) 0 2px, transparent 2px 4px);
+}
+
+.note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  text-wrap: pretty;
+}
+
+.now {
+  display: grid;
+  gap: 2px;
+}
+
+.period {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  color: var(--t-fg);
+}
+
+.records {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.35;
+  color: var(--t-fg);
+  text-wrap: pretty;
+}
+
+.rank {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.35;
+  color: var(--t-fg);
+}
+
+/* the window ledger */
+.window {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+}
+
+.grid th,
+.grid td {
+  padding: 3px 0;
+  text-align: right;
+  border-bottom: 1px solid color-mix(in srgb, var(--t-sand) 40%, transparent);
+}
+
+.grid th[scope="row"] {
+  text-align: left;
+  font-family: var(--font-num);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.grid thead th {
+  font-family: var(--font-num);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--t-fg) 25%, transparent);
+}
+
+.grid [data-role="current"] {
+  color: var(--t-fg);
+  font-weight: 600;
+}
+
+.grid thead th[data-role="current"] {
+  border-bottom-color: var(--sp-red);
+}
+
+.facts {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+}
+
+.fact {
+  display: grid;
+  gap: 2px;
+}
+
+.fact dd {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--t-fg) 88%, transparent);
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.primary,
+.secondary {
+  min-height: 36px;
+  padding: 0 var(--s-3);
+  border: 1.5px solid var(--t-fg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.primary {
+  color: var(--t-bg);
+  background: var(--t-fg);
+}
+
+.primary:hover,
+.primary:focus-visible {
+  color: var(--t-fg);
+  background: var(--t-bg);
+}
+
+.secondary {
+  border-color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+  color: var(--t-bg);
+  background: var(--t-fg);
+}
+
+.fold {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 32px;
+  color: var(--t-fg);
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary::before {
+  content: "+";
+}
+
+.fold[open] .summary::before {
+  content: "−";
+}
+
+.summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.panel :is(button, summary, a):focus-visible {
+  outline: 2px solid var(--t-fg);
+  outline-offset: -2px;
+}

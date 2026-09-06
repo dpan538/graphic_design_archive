@@ -1,1 +1,16 @@
-export { default as SpacetimeWorkspace } from "./SpacetimeWorkspace";
+export {
+  default as SpacetimeWorkspace,
+  MapGraphic,
+  deriveSpacetimePeriodProfile,
+  deriveSpacetimeTemporalWindow,
+  precisionSummary,
+  rankSpacetimeRows,
+  useSpacetimeWorkspace,
+  type MapGraphicClassNames,
+  type SpacetimeLayer,
+  type SpacetimePeriodProfile,
+  type SpacetimePeriodStat,
+  type SpacetimeRankedRow,
+  type SpacetimeTemporalSeries,
+  type SpacetimeWorkspaceOptions,
+} from "./SpacetimeWorkspace";

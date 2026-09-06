@@ -4,10 +4,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import SiteNav from "@/components/site/SiteNav";
 import { IDENTITY_TAGLINE } from "@/app/home/lib/content";
-import { BASELINE_NOTE, BETWEEN, CAPTIONS, CLOSING, CLOSING_WORD, PRINCIPLES, TRACE_DEFINITION, TRACE_LEAD, TRACE_LINE, TRACE_TITLE, WAYS, type Baseline } from "../lib/content";
+import { BASELINE_NOTE, BETWEEN, CAPTIONS, CLOSING, CLOSING_WORD, PRINCIPLES, SPACETIME_RELEASE_NOTE, TRACE_DEFINITION, TRACE_LEAD, TRACE_LINE, TRACE_TITLE, WAYS, type Baseline } from "../lib/content";
 import Instrument from "./Instrument";
 import { PATTERN_HOLD, sceneFrontProgram, sceneProgram, setAxisYears, setScroll } from "./instruments";
-import { ContextGlyph, ExplorationGlyph, SpacetimeGlyph } from "./icons";
+import { ContextGlyph, ExplorationGlyph } from "./icons";
 import styles from "./TraceDesktop.module.css";
 
 /* TRACE landing, desktop (FRONTEND_DESIGN_DECISION.md §7f).
@@ -28,11 +28,14 @@ import styles from "./TraceDesktop.module.css";
    another; every label sits at least 24 px from the figures' boxes; no
    paragraph ends on a lone last word (text-wrap: pretty).
 
-   The three entries are the dock: a fixed column of the nav's 60 px
-   controls, vertically centred, in line with the nav's Source icon, with
-   the nav's own hover reveal — the page's only controls. While a view's
-   screen holds a leader line draws from the scene's anchor to its icon
-   (gone once the scene releases). The closing block follows the scene:
+   The entries are the dock: a fixed column of the nav's 60 px controls,
+   vertically centred, in line with the nav's Source icon, with the nav's
+   own hover reveal — the page's only controls. Only the released views
+   have one: Spacetime keeps its screen, its note and its place in the
+   sequence as a research direction under review (2026-09-05), with its
+   status stated and no control, no link and no leader line. While a
+   released view's screen holds a leader line draws from the scene's
+   anchor to its icon (gone once the scene releases). The closing block follows the scene:
    the line "TRACE the design history no single record can show on its
    own." joined by a fixed line to the nav's TRACE control once the
    headline has come up the page; the definition; the identity tagline
@@ -44,7 +47,9 @@ import styles from "./TraceDesktop.module.css";
    frame, because the browser harness cannot scroll and screenshot a
    pinned stage. */
 
-const GLYPHS = { context: ContextGlyph, spacetime: SpacetimeGlyph, exploration: ExplorationGlyph } as const;
+const GLYPHS = { context: ContextGlyph, exploration: ExplorationGlyph } as const;
+/* the views with an entry — the dock, the leaders */
+const ENTRIES = WAYS.filter((w) => !w.deferred);
 /* the scene's scroll (0..1) → the system's state (0..4): five screens —
    TRACE · Context Canvas · Spacetime · Between records · Exploration —
    holds, and the transformations between (PATTERN_HOLD is shared with
@@ -226,13 +231,13 @@ export default function TraceDesktop({ baseline }: { baseline: Baseline }) {
     const sr = st.getBoundingClientRect();
     const fr = an.getBoundingClientRect();
     const icons = Array.from(dk.querySelectorAll<HTMLElement>("a"));
-    WAYS.forEach((_, i) => {
+    WAYS.forEach((w, i) => {
       const k = VIEW_SCREEN[i];
       const near = clamp01(1 - Math.abs(s - k) / 0.42);
       const settled = clamp01((near - 0.55) / 0.45);
       const note = notes.current[i];
       const lead = leads.current[i];
-      const icon = icons[i];
+      const icon = w.deferred ? undefined : icons[ENTRIES.indexOf(w)];
       if (note) {
         note.style.opacity = String(settled);
         note.style.transform = `translateY(${(1 - settled) * 8}px)`;
@@ -291,11 +296,11 @@ export default function TraceDesktop({ baseline }: { baseline: Baseline }) {
       </a>
       <SiteNav active="trace" revealTone="dark" />
 
-      {/* the three entries: fixed, centred, under the nav's Source icon;
-          hover reveals the name the way the nav does */}
+      {/* the entries: fixed, centred, under the nav's Source icon; hover
+          reveals the name the way the nav does; a deferred view has none */}
       <nav className={styles.dock} aria-label="TRACE functions" ref={dock}>
         <ol role="list">
-          {WAYS.map((w, i) => {
+          {ENTRIES.map((w, i) => {
             const Glyph = GLYPHS[w.key as keyof typeof GLYPHS];
             return (
               <li key={w.key}>
@@ -315,7 +320,7 @@ export default function TraceDesktop({ baseline }: { baseline: Baseline }) {
           })}
         </ol>
         <span className={styles.dockReveal} data-shown={revealed !== null} style={{ top: `${(revealed ?? 0) * 74 + 30}px` }} aria-hidden="true">
-          {revealed !== null ? WAYS[revealed].name : ""}
+          {revealed !== null ? ENTRIES[revealed].name : ""}
         </span>
       </nav>
 
@@ -342,7 +347,7 @@ export default function TraceDesktop({ baseline }: { baseline: Baseline }) {
               {[
                 `Sealed release v49 · ${fmt(baseline.objects)} public objects`,
                 `Context Canvas · ${fmt(baseline.objects)} public objects`,
-                `Spacetime · ${baseline.periods} periods · ${baseline.geographies} geographies`,
+                `Spacetime · a research direction under review · not released in v49`,
                 `Between records · a pattern, not a claim`,
                 `Exploration · ${baseline.associations} associations · ${baseline.inquiries} open inquiries`,
               ].map((line, i) => (
@@ -380,6 +385,7 @@ export default function TraceDesktop({ baseline }: { baseline: Baseline }) {
                   <p className={styles.noteBrief}>{w.brief}</p>
                   {w.boundary ? <p className={styles.noteBoundary}>{w.boundary}</p> : null}
                   {w.does ? <p className={styles.noteDoes}>{w.does}</p> : null}
+                  {w.status ? <p className={styles.noteStatus}>{w.status}</p> : null}
                 </div>
               ))}
               {/* the interlayer's own text */}
@@ -408,7 +414,7 @@ export default function TraceDesktop({ baseline }: { baseline: Baseline }) {
             ))}
 
             <svg className={styles.leads} aria-hidden="true">
-              {WAYS.map((w, i) => (
+              {WAYS.map((w, i) => w.deferred ? null : (
                 <path
                   key={w.key}
                   pathLength={1}
@@ -456,9 +462,7 @@ export default function TraceDesktop({ baseline }: { baseline: Baseline }) {
               </div>
               <div>
                 <dt>Spacetime</dt>
-                <dd>
-                  <b>{baseline.periods}</b> periods · <b>{baseline.geographies}</b> governed geographies
-                </dd>
+                <dd>{SPACETIME_RELEASE_NOTE}</dd>
               </div>
               <div>
                 <dt>Exploration</dt>

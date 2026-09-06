@@ -98,7 +98,7 @@ function deriveSelectionViewBox(
   return `${Number((minimumX - padding).toFixed(3))} ${Number((minimumY - padding).toFixed(3))} ${Number((width + padding * 2).toFixed(3))} ${Number((height + padding * 2).toFixed(3))}`;
 }
 
-function precisionSummary(
+export function precisionSummary(
   value: PublicSpacetimePrecisionBreakdown,
 ): string {
   return [
@@ -113,7 +113,33 @@ function precisionSummary(
     .join(", ");
 }
 
-function MapGraphic({
+export interface MapGraphicClassNames {
+  readonly map: string;
+  readonly land: string;
+  readonly mappedLand: string;
+  readonly selectedLand: string;
+  readonly aggregateMark: string;
+  readonly densityMark: string;
+  readonly selectedMark: string;
+  readonly patternPrimitive: string;
+}
+
+const DEFAULT_MAP_CLASS_NAMES: MapGraphicClassNames = Object.freeze({
+  map: styles.map,
+  land: styles.land,
+  mappedLand: styles.mappedLand,
+  selectedLand: styles.selectedLand,
+  aggregateMark: styles.aggregateMark,
+  densityMark: styles.densityMark,
+  selectedMark: styles.selectedMark,
+  patternPrimitive: styles.patternPrimitive,
+});
+
+/* the map's SVG — the governed geometry's paths, the marks of the
+   current rendering mode, the selection — shared by the functional view
+   below and the desktop presentation, which passes its own class names;
+   the geometry, projection and marks are the GIS module's */
+export function MapGraphic({
   atlas,
   geometry,
   marks,
@@ -121,6 +147,9 @@ function MapGraphic({
   viewBox,
   selectedGeographyId,
   onSelect,
+  classNames = DEFAULT_MAP_CLASS_NAMES,
+  titleId = "spacetime-map-title",
+  descriptionId = "spacetime-map-description",
 }: Readonly<{
   atlas: PublicSpacetimeAtlasDataset;
   geometry: PreparedSpacetimeProjection;
@@ -129,6 +158,9 @@ function MapGraphic({
   viewBox: string;
   selectedGeographyId: string | null;
   onSelect: (geographyId: string) => void;
+  classNames?: MapGraphicClassNames;
+  titleId?: string;
+  descriptionId?: string;
 }>) {
   const geographyByGeometryId = useMemo(() => {
     const result = new Map<string, string>();
@@ -149,13 +181,13 @@ function MapGraphic({
 
   return (
     <svg
-      className={styles.map}
+      className={classNames.map}
       viewBox={viewBox}
       role="img"
-      aria-labelledby="spacetime-map-title spacetime-map-description"
+      aria-labelledby={`${titleId} ${descriptionId}`}
     >
-      <title id="spacetime-map-title">Recorded geographic context for {atlas.selectedPeriod.label}</title>
-      <desc id="spacetime-map-description">
+      <title id={titleId}>Recorded geographic context for {atlas.selectedPeriod.label}</title>
+      <desc id={descriptionId}>
         Aggregate map of records whose recorded temporal extent overlaps this period. Marks are derived layout positions, not object coordinates.
       </desc>
       {mode === "texture" ? (
@@ -173,7 +205,7 @@ function MapGraphic({
                   cx={pattern.primitive.cx}
                   cy={pattern.primitive.cy}
                   r={pattern.primitive.radius}
-                  className={styles.patternPrimitive}
+                  className={classNames.patternPrimitive}
                 />
               ) : (
                 <line
@@ -182,7 +214,7 @@ function MapGraphic({
                   x2={pattern.primitive.x2}
                   y2={pattern.primitive.y2}
                   strokeWidth={pattern.primitive.strokeWidth}
-                  className={styles.patternPrimitive}
+                  className={classNames.patternPrimitive}
                 />
               )}
             </pattern>
@@ -199,7 +231,7 @@ function MapGraphic({
             <path
               key={geometryId}
               d={geometry.pathById.get(geometryId) ?? ""}
-              className={`${styles.land} ${geographyId ? styles.mappedLand : ""} ${selected ? styles.selectedLand : ""}`}
+              className={`${classNames.land} ${geographyId ? classNames.mappedLand : ""} ${selected ? classNames.selectedLand : ""}`}
               style={mode === "texture" && pattern
                 ? { fill: deriveNativePatternFillUrl(pattern) }
                 : undefined}
@@ -219,7 +251,7 @@ function MapGraphic({
                   cx={dot.x}
                   cy={dot.y}
                   r={2.1}
-                  className={mark.geography.geographyId === selectedGeographyId ? styles.selectedMark : styles.densityMark}
+                  className={mark.geography.geographyId === selectedGeographyId ? classNames.selectedMark : classNames.densityMark}
                   onClick={() => onSelect(mark.geography.geographyId)}
                 />
                 ))
@@ -236,7 +268,7 @@ function MapGraphic({
                       ? mark.density.anchorRemainderCount
                       : mark.geography.recordCount,
                   ) * 0.75))}
-                  className={mark.geography.geographyId === selectedGeographyId ? styles.selectedMark : styles.aggregateMark}
+                  className={mark.geography.geographyId === selectedGeographyId ? classNames.selectedMark : classNames.aggregateMark}
                   onClick={() => onSelect(mark.geography.geographyId)}
                 />
               ) : null}
@@ -282,17 +314,138 @@ function RecordList({
   );
 }
 
-export default function SpacetimeWorkspace({
-  periods,
-  initialAtlas,
-}: Readonly<{
-  periods: PublicSpacetimePeriodsDataset;
-  initialAtlas: PublicSpacetimeAtlasDataset;
-}>) {
+/* ---- the temporal window (§7h): previous / current / next, derived
+   from three governed period atlases and nothing else — a geography's
+   records, its share of each period's public denominator and its rank
+   among that period's recorded geographies. Deterministic; the guidance
+   only voices it. ---- */
+
+export type SpacetimeLayer = "distribution" | "temporal";
+
+export interface SpacetimePeriodStat {
+  readonly periodId: string;
+  readonly label: string;
+  readonly records: number;
+  readonly denominator: number;
+  readonly share: number;
+  readonly rank: number;
+  readonly geographies: number;
+}
+
+export interface SpacetimeTemporalSeries {
+  readonly geographyId: string;
+  readonly label: string;
+  readonly mappingState: PublicSpacetimeAtlasDataset["accessibleRows"][number]["mappingState"];
+  readonly previous: SpacetimePeriodStat | null;
+  readonly current: SpacetimePeriodStat | null;
+  readonly next: SpacetimePeriodStat | null;
+}
+
+export interface SpacetimeRankedRow {
+  readonly row: PublicSpacetimeAtlasDataset["accessibleRows"][number];
+  readonly rank: number;
+  readonly share: number;
+}
+
+/* the period's rows ranked: records descending, then the label */
+export function rankSpacetimeRows(atlas: PublicSpacetimeAtlasDataset): readonly SpacetimeRankedRow[] {
+  const sorted = [...atlas.accessibleRows].sort((a, b) => b.recordCount - a.recordCount || a.label.localeCompare(b.label, "en"));
+  return Object.freeze(sorted.map((row, index) => Object.freeze({
+    row,
+    rank: index + 1,
+    share: row.denominator > 0 ? row.recordCount / row.denominator : 0,
+  })));
+}
+
+function periodStatsOf(atlas: PublicSpacetimeAtlasDataset | null): ReadonlyMap<string, SpacetimePeriodStat> {
+  if (!atlas) return new Map();
+  const ranked = rankSpacetimeRows(atlas);
+  return new Map(ranked.map(({ row, rank, share }) => [row.geographyId, Object.freeze({
+    periodId: atlas.selectedPeriod.periodId,
+    label: atlas.selectedPeriod.label,
+    records: row.recordCount,
+    denominator: row.denominator,
+    share,
+    rank,
+    geographies: ranked.length,
+  })]));
+}
+
+export function deriveSpacetimeTemporalWindow(
+  previous: PublicSpacetimeAtlasDataset | null,
+  current: PublicSpacetimeAtlasDataset,
+  next: PublicSpacetimeAtlasDataset | null,
+): ReadonlyMap<string, SpacetimeTemporalSeries> {
+  const before = periodStatsOf(previous);
+  const now = periodStatsOf(current);
+  const after = periodStatsOf(next);
+  const ids = new Map<string, { label: string; mappingState: SpacetimeTemporalSeries["mappingState"] }>();
+  for (const atlas of [current, previous, next]) {
+    if (!atlas) continue;
+    for (const row of atlas.accessibleRows) if (!ids.has(row.geographyId)) ids.set(row.geographyId, { label: row.label, mappingState: row.mappingState });
+  }
+  return new Map([...ids].map(([geographyId, meta]) => [geographyId, Object.freeze({
+    geographyId,
+    label: meta.label,
+    mappingState: meta.mappingState,
+    previous: previous ? (before.get(geographyId) ?? Object.freeze({ periodId: previous.selectedPeriod.periodId, label: previous.selectedPeriod.label, records: 0, denominator: previous.counts.denominator, share: 0, rank: 0, geographies: previous.accessibleRows.length })) : null,
+    current: now.get(geographyId) ?? Object.freeze({ periodId: current.selectedPeriod.periodId, label: current.selectedPeriod.label, records: 0, denominator: current.counts.denominator, share: 0, rank: 0, geographies: current.accessibleRows.length }),
+    next: next ? (after.get(geographyId) ?? Object.freeze({ periodId: next.selectedPeriod.periodId, label: next.selectedPeriod.label, records: 0, denominator: next.counts.denominator, share: 0, rank: 0, geographies: next.accessibleRows.length })) : null,
+  })]));
+}
+
+export interface SpacetimePeriodProfile {
+  readonly records: number;
+  readonly geographies: number;
+  readonly top: Readonly<{ label: string; records: number; share: number }> | null;
+  readonly previous: Readonly<{ label: string; records: number }> | null;
+  readonly next: Readonly<{ label: string; records: number }> | null;
+}
+
+export function deriveSpacetimePeriodProfile(
+  atlas: PublicSpacetimeAtlasDataset,
+  periods: PublicSpacetimePeriodsDataset,
+): SpacetimePeriodProfile {
+  const index = periods.periods.findIndex((period) => period.periodId === atlas.selectedPeriod.periodId);
+  const ranked = rankSpacetimeRows(atlas);
+  const first = ranked[0];
+  const before = index > 0 ? periods.periods[index - 1] : null;
+  const after = index >= 0 && index < periods.periods.length - 1 ? periods.periods[index + 1] : null;
+  return Object.freeze({
+    records: atlas.counts.denominator,
+    geographies: ranked.length,
+    top: first ? Object.freeze({ label: first.row.label, records: first.row.recordCount, share: first.share }) : null,
+    previous: before ? Object.freeze({ label: before.label, records: before.recordCount }) : null,
+    next: after ? Object.freeze({ label: after.label, records: after.recordCount }) : null,
+  });
+}
+
+const compare = (a: number | null | undefined, b: number | null | undefined, more: string, less: string, same: string): string | null =>
+  a === null || a === undefined || b === null || b === undefined ? null : a > b ? more : a < b ? less : same;
+
+export interface SpacetimeWorkspaceOptions {
+  /* what "compare public aggregate counts" does in the presentation: the
+     functional view scrolls to its table; the desktop opens its drawer */
+  readonly onCompareCounts?: () => void;
+}
+
+/* the workspace's one orchestration (§7h): the period, the atlas, the
+   geometry, the selection, the record pages and the guidance context —
+   request epochs, projection, mapping, pagination and API semantics as
+   sealed. The functional view below and the desktop presentation both
+   read this hook; neither carries a second copy. */
+export function useSpacetimeWorkspace(
+  periods: PublicSpacetimePeriodsDataset,
+  initialAtlas: PublicSpacetimeAtlasDataset,
+  options: SpacetimeWorkspaceOptions = {},
+) {
   const [atlas, setAtlas] = useState(initialAtlas);
   const [selectedPeriodId, setSelectedPeriodId] = useState(initialAtlas.selectedPeriod.periodId);
   const [selectedGeographyId, setSelectedGeographyId] = useState<string | null>(null);
   const [mode, setMode] = useState<SpacetimeRendererMode>("aggregate");
+  const [layer, setLayer] = useState<SpacetimeLayer>("distribution");
+  const [adjacent, setAdjacent] = useState<Readonly<{ previous: PublicSpacetimeAtlasDataset | null; next: PublicSpacetimeAtlasDataset | null; state: RequestState }>>({ previous: null, next: null, state: "idle" });
+  const adjacentControllerRef = useRef<AbortController | null>(null);
   const [viewBox, setViewBox] = useState(FULL_MAP_VIEWBOX);
   const [geometry, setGeometry] = useState<PreparedSpacetimeProjection | null>(null);
   const [geometryState, setGeometryState] = useState<RequestState>("loading");
@@ -345,8 +498,10 @@ export default function SpacetimeWorkspace({
     periods.geometry.geometryArtifactId,
   ]);
 
+  const [failedPeriodId, setFailedPeriodId] = useState<string | null>(null);
   const selectPeriod = useCallback((periodId: string) => {
     if (periodId === selectedPeriodIdRef.current) return;
+    setFailedPeriodId(null);
     selectedPeriodIdRef.current = periodId;
     requestGateRef.current.abort("records");
     setSelectedGeographyId(null);
@@ -370,6 +525,7 @@ export default function SpacetimeWorkspace({
       if (!spacetimeAtlasResultMatches(identity, nextAtlas)) {
         selectedPeriodIdRef.current = atlasRef.current.selectedPeriod.periodId;
         setSelectedPeriodId(atlasRef.current.selectedPeriod.periodId);
+        setFailedPeriodId(periodId);
         setAtlasState("error");
         return;
       }
@@ -380,6 +536,7 @@ export default function SpacetimeWorkspace({
       if (!ticket.isCurrent()) return;
       selectedPeriodIdRef.current = atlasRef.current.selectedPeriod.periodId;
       setSelectedPeriodId(atlasRef.current.selectedPeriod.periodId);
+      setFailedPeriodId(periodId);
       setAtlasState("error");
     });
   }, [
@@ -391,7 +548,34 @@ export default function SpacetimeWorkspace({
 
   useEffect(() => () => {
     requestGateRef.current.abortAll();
+    adjacentControllerRef.current?.abort();
   }, []);
+
+  /* the adjacent periods' atlases, for the temporal window: the same read
+     API, one request each, the last period change winning */
+  const currentPeriodId = atlas.selectedPeriod.periodId;
+  useEffect(() => {
+    adjacentControllerRef.current?.abort();
+    const controller = new AbortController();
+    adjacentControllerRef.current = controller;
+    const index = periods.periods.findIndex((period) => period.periodId === currentPeriodId);
+    const before = index > 0 ? periods.periods[index - 1] : null;
+    const after = index >= 0 && index < periods.periods.length - 1 ? periods.periods[index + 1] : null;
+    setAdjacent({ previous: null, next: null, state: "loading" });
+    const load = (period: PublicSpacetimePeriodsDataset["periods"][number] | null) => period
+      ? readApi<PublicSpacetimeAtlasDataset>(`${apiPath(releaseId, "atlas")}?period=${encodeURIComponent(period.periodId)}`, manifestSha256, controller.signal)
+        .then((result) => spacetimeAtlasResultMatches(Object.freeze({ spacetimeProjectionSha256, periodId: period.periodId }), result) ? result : null)
+      : Promise.resolve(null);
+    void Promise.all([load(before), load(after)])
+      .then(([previous, next]) => {
+        if (controller.signal.aborted) return;
+        setAdjacent({ previous, next, state: "ready" });
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setAdjacent({ previous: null, next: null, state: "error" });
+      });
+    return () => controller.abort();
+  }, [currentPeriodId, manifestSha256, periods.periods, releaseId, spacetimeProjectionSha256]);
 
   const loadRecordPage = useCallback((after?: string) => {
     if (!selectedGeographyId) return;
@@ -453,6 +637,16 @@ export default function SpacetimeWorkspace({
     [atlas, geometry, mode, selectedGeographyId],
   );
   const marks = renderer?.marks ?? Object.freeze([]);
+  /* the selected geography's sealed density field, for the focused view
+     of the desktop, whatever the style */
+  const selectedDensity = useMemo(() => {
+    if (!geometry || !selectedGeographyId) return null;
+    const model = deriveSpacetimeRendererModel({ atlas, projection: geometry, mode: "density", selectedGeographyId });
+    return model.marks.find((mark) => mark.geography.geographyId === selectedGeographyId)?.density ?? null;
+  }, [atlas, geometry, selectedGeographyId]);
+  const temporal = useMemo(() => deriveSpacetimeTemporalWindow(adjacent.previous, atlas, adjacent.next), [adjacent.next, adjacent.previous, atlas]);
+  const ranking = useMemo(() => rankSpacetimeRows(atlas), [atlas]);
+  const profile = useMemo(() => deriveSpacetimePeriodProfile(atlas, periods), [atlas, periods]);
   const recordPage = recordAccumulator?.page ?? null;
   const records = recordAccumulator?.records ?? Object.freeze([]);
   const selectedIndex = periods.periods.findIndex((period) => period.periodId === selectedPeriodId);
@@ -474,32 +668,146 @@ export default function SpacetimeWorkspace({
     setSelectedGeographyId(null);
     setViewBox(FULL_MAP_VIEWBOX);
   }, [clearRecords]);
-  const suggestionContext = useMemo<TraceSuggestionContext>(() => ({
-    stateType: `SPACETIME_${mode.toUpperCase()}_VIEW`,
-    labels: [atlas.selectedPeriod.label, ...(selectedGeography ? [selectedGeography.label] : [])],
-    counts: {
-      publicDenominator: atlas.counts.denominator,
-      mappedRecords: atlas.counts.mappedRecords,
-      unmappedRecords: atlas.counts.unmappedRecords,
-      selectedRecords: selectedGeography?.recordCount ?? 0,
-    },
-    validActionIds: [
-      ...(atlas.accessibleRows.length ? ["SELECT_GEOGRAPHY", "COMPARE_PUBLIC_COUNTS"] : []),
-      ...(selectedGeographyId ? ["RESET_VIEW"] : []),
-    ],
-    evidenceClass: "PUBLIC_AGGREGATE",
-  }), [atlas.accessibleRows.length, atlas.counts.denominator, atlas.counts.mappedRecords, atlas.counts.unmappedRecords, atlas.selectedPeriod.label, mode, selectedGeography, selectedGeographyId]);
+  /* the guidance context: the period, the geography, its class and
+     mapping state as labels; the public counts and the temporal window's
+     deterministic facts — the selection's records, share and rank in the
+     previous, current and next period (from the three governed atlases)
+     — and the comparisons they state, as words; never anything the model
+     would have to derive */
+  const previousPeriod = selectedIndex > 0 ? periods.periods[selectedIndex - 1] : null;
+  const nextPeriod = selectedIndex >= 0 && selectedIndex < periods.periods.length - 1 ? periods.periods[selectedIndex + 1] : null;
+  const selectedMapped = atlas.mappedGeographies.find((item) => item.geographyId === selectedGeographyId)
+    ?? atlas.aggregateOnlyGeographies.find((item) => item.geographyId === selectedGeographyId)
+    ?? atlas.unmappedGeographies.find((item) => item.geographyId === selectedGeographyId)
+    ?? null;
+  const selectedSeries = selectedGeographyId ? temporal.get(selectedGeographyId) ?? null : null;
+  const suggestionContext = useMemo<TraceSuggestionContext>(() => {
+    const series = selectedSeries;
+    const comparisons = series?.current ? [
+      compare(series.current.records, series.previous?.records, "count higher than in the previous period", "count lower than in the previous period", "count equal to the previous period"),
+      compare(series.current.share, series.previous?.share, "share larger than in the previous period", "share smaller than in the previous period", "share equal to the previous period"),
+      compare(series.current.share, series.next?.share, "share larger than in the next period", "share smaller than in the next period", "share equal to the next period"),
+    ].filter((item): item is string => item !== null) : [];
+    return {
+      stateType: `SPACETIME_${layer.toUpperCase()}_${mode.toUpperCase()}_VIEW`,
+      labels: [
+        atlas.selectedPeriod.label,
+        ...(selectedGeography ? [selectedGeography.label, selectedGeography.mappingState] : []),
+        ...(selectedMapped ? [selectedMapped.geographyClass] : []),
+        ...(previousPeriod ? [previousPeriod.label] : []),
+        ...(nextPeriod ? [nextPeriod.label] : []),
+        ...comparisons,
+      ],
+      counts: {
+        publicDenominator: atlas.counts.denominator,
+        selectedRecords: selectedGeography?.recordCount ?? 0,
+        selectedRank: series?.current?.rank ?? 0,
+        geographyCount: atlas.accessibleRows.length,
+        previousPeriodRecords: previousPeriod?.recordCount ?? 0,
+        previousSelectedRecords: series?.previous?.records ?? 0,
+        nextPeriodRecords: nextPeriod?.recordCount ?? 0,
+        nextSelectedRecords: series?.next?.records ?? 0,
+      },
+      validActionIds: [
+        ...(atlas.accessibleRows.length ? ["SELECT_GEOGRAPHY", "COMPARE_PUBLIC_COUNTS"] : []),
+        ...(selectedGeographyId ? ["RESET_VIEW"] : []),
+      ],
+      evidenceClass: "PUBLIC_AGGREGATE",
+    };
+  }, [atlas.accessibleRows.length, atlas.counts.denominator, atlas.selectedPeriod.label, layer, mode, nextPeriod, previousPeriod, selectedGeography, selectedGeographyId, selectedMapped, selectedSeries]);
+  const { onCompareCounts } = options;
   const applySuggestion = useCallback((suggestion: ApprovedSuggestion) => {
     const actionId = suggestion.action.parameters.actionId;
     if (actionId === "SELECT_GEOGRAPHY") {
       const row = atlas.accessibleRows.find((candidate) => candidate.geographyId !== selectedGeographyId);
       if (row) selectGeography(row.geographyId);
     } else if (actionId === "COMPARE_PUBLIC_COUNTS") {
+      if (onCompareCounts) {
+        onCompareCounts();
+        return;
+      }
       const table = document.getElementById("spacetime-accessible-table");
       table?.scrollIntoView({ behavior: "smooth", block: "start" });
       table?.focus();
     } else if (actionId === "RESET_VIEW") resetMap();
-  }, [atlas.accessibleRows, resetMap, selectGeography, selectedGeographyId]);
+  }, [atlas.accessibleRows, onCompareCounts, resetMap, selectGeography, selectedGeographyId]);
+
+  const retryPeriod = useCallback(() => {
+    if (failedPeriodId) selectPeriod(failedPeriodId);
+  }, [failedPeriodId, selectPeriod]);
+  const loadMore = useCallback(() => {
+    if (recordPage?.pageInfo.endCursor) loadRecordPage(recordPage.pageInfo.endCursor);
+  }, [loadRecordPage, recordPage]);
+
+  return {
+    periods,
+    atlas,
+    atlasState,
+    layer,
+    setLayer,
+    adjacent,
+    temporal,
+    ranking,
+    profile,
+    selectedSeries,
+    selectedDensity,
+    failedPeriodId,
+    geometry,
+    geometryState,
+    mode,
+    setMode,
+    viewBox,
+    fullViewBox: FULL_MAP_VIEWBOX,
+    selectedPeriodId,
+    selectedIndex,
+    selectedGeographyId,
+    selectedGeography,
+    selectedDetail: selectedMapped,
+    marks,
+    records,
+    recordPage,
+    recordsState,
+    selectPeriod,
+    retryPeriod,
+    selectGeography,
+    resetMap,
+    loadRecordPage,
+    loadMore,
+    suggestionContext,
+    applySuggestion,
+  };
+}
+
+export default function SpacetimeWorkspace({
+  periods,
+  initialAtlas,
+}: Readonly<{
+  periods: PublicSpacetimePeriodsDataset;
+  initialAtlas: PublicSpacetimeAtlasDataset;
+}>) {
+  const {
+    atlas,
+    atlasState,
+    geometry,
+    geometryState,
+    mode,
+    setMode,
+    viewBox,
+    selectedPeriodId,
+    selectedIndex,
+    selectedGeographyId,
+    selectedGeography,
+    marks,
+    records,
+    recordPage,
+    recordsState,
+    selectPeriod,
+    selectGeography,
+    resetMap,
+    loadRecordPage,
+    suggestionContext,
+    applySuggestion,
+  } = useSpacetimeWorkspace(periods, initialAtlas);
 
   return (
     <main className={styles.workspace}>

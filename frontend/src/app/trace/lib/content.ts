@@ -1,15 +1,19 @@
 /* TRACE landing page copy — final wording set by the owner (FRONTEND_DESIGN_DECISION.md §7f).
-   The page answers four things only: what TRACE is; what each of the three
-   functions is for; how they relate; how the computed results may and may not
-   be read. No recents, no trending, no recommendations, no AI-generated
+   The page answers four things only: what TRACE is; what each view is for
+   (two released — Context Canvas, Exploration — and Spacetime, a research
+   direction under review that keeps its place in the sequence but has no
+   entry); how they relate; how the computed results may and may not be
+   read. No recents, no trending, no recommendations, no AI-generated
    questions, no marketing CTA, no System suggests on the landing. */
 
 export const TRACE_TITLE = "TRACE";
-export const TRACE_LINE = "Three research views. One governed archive.";
+export const TRACE_LINE = "Two research views. One governed archive.";
 export const TRACE_LEAD =
   "TRACE examines the public archive through contextual, spatial and associative structures without treating computational representation as historical certainty.";
 
-/* the three views — no order among them, so no numbers */
+/* the views — no order among them, so no numbers. A DEFERRED view keeps
+   its screen in the sequence and its note, states its status, and has no
+   href, no control and no leader line: it cannot be entered. */
 export type Way = {
   key: string;
   name: string;
@@ -18,7 +22,17 @@ export type Way = {
   brief: string;
   boundary: string;
   does: string;
+  deferred?: true;
+  status?: string;
 };
+
+/* Spacetime's release boundary, in the owner's words (2026-09-05): not
+   failed — not released, because the archive does not yet meet the
+   coverage threshold; the projection stays frozen as research
+   infrastructure (docs/frontend/SPACETIME_RESEARCH_READINESS_CENSUS_v1.md) */
+export const SPACETIME_STATUS = "Not available in this release";
+export const SPACETIME_RELEASE_NOTE =
+  "Spacetime is not released in v49 because the current archive does not yet meet the geographic and temporal coverage threshold required for this research surface.";
 
 export const WAYS: Way[] = [
   {
@@ -33,11 +47,13 @@ export const WAYS: Way[] = [
   {
     key: "spacetime",
     name: "Spacetime",
-    href: "/trace/spacetime",
-    question: "Where and when do records gather?",
-    brief: "Examine where records in the archive are concentrated across governed periods and regional contexts.",
-    boundary: "Map positions represent aggregate recorded context, not exact object coordinates or movement paths.",
+    href: "",
+    question: "A research direction under review.",
+    brief: "Spacetime examines how recorded geographic context changes across time. The current v49 archive is not yet geographically balanced enough to support this as a public comparative research surface.",
+    boundary: "",
     does: "",
+    deferred: true,
+    status: SPACETIME_STATUS,
   },
   {
     key: "exploration",
@@ -81,7 +97,7 @@ export const BETWEEN = {
 export type Caption = { screen: number; at: number; x: number; y: number; text: string; align?: "left" | "right"; kind?: "label" | "para"; width?: number };
 export const CAPTIONS: Caption[] = [
   { screen: 0, at: 0.2, x: 78, y: 15, text: "the public archive · 7,995 records" },
-  { screen: 0, at: 0.5, x: 5, y: 56, text: "records pass through three views" },
+  { screen: 0, at: 0.5, x: 5, y: 56, text: "records pass through context, distribution, association" },
   { screen: 0, at: 0.8, x: 94, y: 73, text: "time is linear · context is not", align: "right" },
   { screen: 1, at: 0.1, x: 4, y: 17, width: 30, text: "one record, and the contexts it is filed in" },
   { screen: 1, at: 0.3, x: 4, y: 7, kind: "para", width: 30, text: "Not who it influenced — where it sits. A single record is read against the medium, theme and movement contexts the project has filed it in." },
