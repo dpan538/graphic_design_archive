@@ -22,9 +22,16 @@ reader_projection:          # frontend/generated/reader-eligibility-v49/manifest
   record_only_entries: 2572
   rules: gda-reader-eligibility-rules-v1
 sources:
-  public_set_institutions: 15
-  distinct_source_labels: 272   # frontend/src/data/status-v49.json (meta.sources)
+  public_set_institutions: 15       # major bulk-API institutions the v49 volume is drawn from
+  distinct_source_labels: 272       # frontend/src/data/status-v49.json (meta.sources) -- sources named on the 15,923 canonical objects
   places: 424
+source_discovery:                   # a historical capture stage, audited 2026-09-06; recoverable via the
+                                     # v49-data-api-closure-20260821 tag (git show <tag>:<path>), predates the hygiene pass
+  candidate_institutions_evaluated: 19940       # data/active_source_success_sources_v1.csv
+  institutions_reaching_a_public_surface: 12342
+  institutions_captured_but_held: 5983
+  institutions_registered_only: 1615
+  raw_candidate_records_captured: 19973         # sum of 44 tracked data/capture_batch_*_records.csv files
 research_layer:             # docs/research/EXPLORATION_CURRENT.md
   validated_pairwise_generic_associations: 21
   open_inquiry_higher_order_hypotheses: 11
@@ -64,7 +71,7 @@ entry_points:
 
 | Layer | What it is | Where to look |
 | --- | --- | --- |
-| Source capture and reconciliation | Capture across fifteen institutional APIs and collections (V&A, Library of Congress, Art Institute of Chicago, Yale, Cooper Hewitt, National Library of Norway, Nasjonalmuseet, Gallica/BnF, Biblioteca Nacional de Chile, Malaysia Design Archive, Desain Grafis Indonesia, Pacific Community Digital Library and others), period and region strategies, fallback and ingest policies, then reconciliation into one canonical population of 15,923 objects | `docs/capture/`, `docs/methodology/`, `docs/releases/v49/DATA_INPUT_MANIFEST.json` |
+| Source capture and reconciliation | A global source-discovery effort — a historical registry names 19,940 candidate institutions evaluated (libraries, galleries, cultural centres and archives across Africa, Latin America and the Caribbean, MENA, Southeast Asia, Eastern Europe, and South and Central Asia, alongside major bulk-API institutions: V&A, Library of Congress, Art Institute of Chicago, Yale, Cooper Hewitt, National Library of Norway, Nasjonalmuseet, Gallica/BnF, Biblioteca Nacional de Chile, Malaysia Design Archive, Desain Grafis Indonesia, Pacific Community Digital Library and others) — then period and region strategies, fallback and ingest policies, and reconciliation down to one canonical population of 15,923 objects drawing on 272 distinct source labels | `docs/capture/`, `docs/methodology/`, `docs/releases/v49/DATA_INPUT_MANIFEST.json` |
 | PostgreSQL database | 14 forward-only migrations, 20 SQL functions, 14 database tests, roles and views; a v48 → v49 replay with an expected baseline and a rehearsal script; the release frozen by manifest and checksum | `database/`, `database/data-migrations/v48-to-v49/`, `database/FREEZE_V49.json` |
 | Read API | 18 documented read-only endpoints under an OpenAPI 3.1 contract, with examples, an error catalog and a product route map; served by the frontend's server side through a dedicated read-only database role | `docs/api/v49-read-api-openapi.yaml`, `docs/api/v49-read-api-catalog.md`, `docs/api/product-api-map.v1.json` |
 | Reader-eligibility projection | A governed split of the 7,995 public records into 5,423 reader-facing objects and 2,572 record-only entries (titles that are source identifiers or numbers), with per-record reasons, a rules version and checksums; Index, Search and object pages all join against it | `frontend/generated/reader-eligibility-v49/`, `frontend/src/features/reader-eligibility/` |
@@ -81,7 +88,9 @@ entry_points:
 | Canonical objects / assignments | 15,923 / 47,982 | `docs/releases/v49/RELEASE_MANIFEST.json` |
 | Publicly eligible / held | 7,995 / 7,928 | `docs/releases/v49/RELEASE_MANIFEST.json` |
 | Reader-facing objects / record-only entries | 5,423 / 2,572 | `frontend/generated/reader-eligibility-v49/manifest.json` |
-| Distinct source labels / object-type labels / places | 272 / 271 / 424 | `frontend/src/data/status-v49.json` |
+| Distinct source labels / object-type labels / places (final v49 release) | 272 / 271 / 424 | `frontend/src/data/status-v49.json` |
+| Candidate institutions evaluated in source discovery (historical stage) | 19,940 | `data/active_source_success_sources_v1.csv` at `v49-data-api-closure-20260821` |
+| Raw candidate records captured across tracked capture batches (historical stage) | 19,973 | `data/capture_batch_*_records.csv` (44 files) at `v49-data-api-closure-20260821` |
 | Validated pairwise generic associations | 21 | `docs/research/EXPLORATION_CURRENT.md` |
 | Open Inquiry higher-order hypotheses / known excluded structures | 11 / 9 | `docs/research/EXPLORATION_CURRENT.md` |
 | Accepted typed historical relations / positive visual rights | 0 / 0 (fail-closed) | `database/FROZEN_V49.md` |
@@ -115,6 +124,7 @@ reader · Index (5,423) · Search · Object records (7,995) · About · TRACE
 
 - **Evidence over inference.** A described record is not a cleared image; metadata, rights and evidence are assessed separately, and clearing one never implies clearing another.
 - **Absence is a finding.** What the archive leaves out stays recorded, countable and labelled unresolved; the year chart on the homepage draws the held share rather than omitting it.
+- **Discovery is broader than release, on purpose.** Source discovery reached far past the institutions the release draws its volume from: a historical registry, recoverable from the `v49-data-api-closure-20260821` tag once the v48 → v49 hygiene pass moved it out of the active tree, names 19,940 candidate institutions evaluated across a long-tail global search — 12,342 of which reached at least one public surface, 5,983 captured but held, 1,615 registered and never captured — alongside roughly 19,973 raw candidate records across the tracked capture batches. A source being surveyed, or even captured, does not by itself clear evidence, rights or publication conditions; the frozen v49 release narrows this to 272 distinct source labels across 15,923 canonical objects, and the discovery effort continues past the release boundary.
 - **Reproducible releases.** Releases are identified, hashed and re-derivable; a result can be returned to and checked against the state that produced it. The v49 files enumerated by `database/FREEZE_V49.json` are immutable; later work targets database version 50 with a new forward-only migration and a new ADR.
 - **TRACE, in its governed public language:**
 
