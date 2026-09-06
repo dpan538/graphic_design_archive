@@ -1,11 +1,14 @@
 name: small-db-integration
 on:
   pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 jobs:
   sealed-fixture:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update && sudo apt-get install -y postgresql-16
-      - run: GDA_PG_BIN=/usr/lib/postgresql/16/bin database/scripts/run-phase2c-small-db-integration.sh
+      - run: GDA_PG_BIN=/usr/lib/postgresql/16/bin sh scripts/ci/run-current-db-integration.sh

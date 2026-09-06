@@ -88,6 +88,9 @@ scripts/build_sqlite_snapshot.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False
 scripts/calibrate_main_sub_text_full_role_sample_v1.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/calibrate_main_sub_text_review_second_pass_v1.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/check_db_skeleton.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/ci/README.md,CURRENT_REPOSITORY_MAINTENANCE,False,False,False,True,False,KEEP_ACTIVE
+scripts/ci/current-db-entrypoints.sql,CURRENT_REPOSITORY_MAINTENANCE,False,False,False,True,False,KEEP_ACTIVE
+scripts/ci/run-current-db-integration.sh,CURRENT_REPOSITORY_MAINTENANCE,False,False,False,True,False,KEEP_ACTIVE
 scripts/contemporary_noise_filter.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/discovery_signal_policy.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/dry_run_loc_manual_img03_apply_v1.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
