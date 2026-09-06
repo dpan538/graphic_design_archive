@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 325,
+  "scriptCount": 328,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -892,6 +892,36 @@
       "current_ci_required": false,
       "retained_audit_role": true,
       "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/ci/README.md",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/ci/current-db-entrypoints.sql",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/ci/run-current-db-integration.sh",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
     },
     {
       "path": "scripts/contemporary_noise_filter.py",
