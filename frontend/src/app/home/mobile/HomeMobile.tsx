@@ -160,7 +160,7 @@ export default function HomeMobile() {
         {/* ================= 03 · Research status ================= */}
         <section className={styles.status} aria-labelledby="status-title">
           {/* the ribbon sheet, grown out of its axis by the scroll */}
-          <PinnedFigure className={styles.sheetWrap} height="200dvh">
+          <PinnedFigure className={styles.sheetWrap} height="200svh">
             <p className={styles.label}>03 · Research status · {RELEASE.version}</p>
             <p className={styles.figureHead}>
               {fmt(IN_RANGE)} records · {RB_Y0}–{RB_Y1}
@@ -210,7 +210,7 @@ export default function HomeMobile() {
           </PinnedFigure>
 
           {/* the wheel, spokes then blocks decade by decade, by the scroll */}
-          <PinnedFigure className={styles.wheelWrap} height="190dvh">
+          <PinnedFigure className={styles.wheelWrap} height="190svh">
             <figure className={styles.wheel}>
               <figcaption className={styles.figureName}>
                 Places × decades · 1900s → 2020s
@@ -244,12 +244,13 @@ export default function HomeMobile() {
           </PinnedFigure>
 
           {/* the year strip, raised a column at a time, by the scroll */}
-          <PinnedFigure className={styles.stripWrap} height="150dvh">
+          <PinnedFigure className={styles.stripWrap} height="150svh">
             <figure className={styles.strip}>
               <figcaption className={styles.figureName}>
                 Every year · 1800–2026 · {fmt(STATUS.meta.objects)} records
                 <span className={styles.figureSub}>one column a year · blue is public · pink is held · depth of colour is records on a square-root scale</span>
               </figcaption>
+              <div className={styles.plotBox}>
               <svg viewBox={`0 0 ${stripCols.length} ${S_H}`} className={styles.stripSvg} preserveAspectRatio="none" aria-hidden="true">
                 <g className={styles.stripPub}>
                   {stripCols.map((c) => (
@@ -262,6 +263,7 @@ export default function HomeMobile() {
                   ))}
                 </g>
               </svg>
+              </div>
               <span className={styles.stripYears} aria-hidden="true">
                 {STRIP_YEARS.map((y) => (
                   <i key={y}>{y}</i>

@@ -1,9 +1,11 @@
 "use client";
 
+import YearInput from "@/components/site/YearInput";
+
 import { useEffect, useState, type ReactNode } from "react";
 import { ChevronDown, X } from "lucide-react";
 import { themeInk } from "../lib/palette";
-import { clampYearTo, decadesFor, erasFor, summarize, VISUAL_OPTIONS, type FilterState, type Order } from "../lib/filter";
+import { decadesFor, erasFor, summarize, VISUAL_OPTIONS, type FilterState, type Order } from "../lib/filter";
 import type { CatalogueBounds } from "../lib/catalogue";
 import styles from "./IndexMobileFilters.module.css";
 
@@ -33,7 +35,6 @@ export default function IndexMobileSheet({
   const [openKey, setOpenKey] = useState<SectionKey | null>(null);
   const DECADES = decadesFor(bounds);
   const ERAS = erasFor(bounds);
-  const clampYear = (n: number) => clampYearTo(bounds, n);
 
   useEffect(() => {
     if (!open) return;
@@ -95,26 +96,24 @@ export default function IndexMobileSheet({
             onToggle={() => toggle("year")}
           >
             <div className={styles.yearRange}>
-              <input
+              <YearInput
                 className={styles.yearInput}
                 type="number"
                 inputMode="numeric"
                 aria-label="From year"
                 value={state.yearFrom}
-                onChange={(e) =>
-                  patch({ yearFrom: Math.min(clampYear(+e.target.value), state.yearTo) })
-                }
+                min={bounds.yearMin} max={state.yearTo}
+                  onCommit={(value) => patch({ yearFrom: value ?? bounds.yearMin })}
               />
               <span aria-hidden="true">—</span>
-              <input
+              <YearInput
                 className={styles.yearInput}
                 type="number"
                 inputMode="numeric"
                 aria-label="To year"
                 value={state.yearTo}
-                onChange={(e) =>
-                  patch({ yearTo: Math.max(clampYear(+e.target.value), state.yearFrom) })
-                }
+                min={state.yearFrom} max={bounds.yearMax}
+                  onCommit={(value) => patch({ yearTo: value ?? bounds.yearMax })}
               />
             </div>
             <div className={styles.eras}>

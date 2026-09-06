@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown, Search as SearchIcon, X } from "lucide-react";
 import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
 import shell from "@/components/site/mobile/MobileShell.module.css";
+import { useSearchDialog } from "../lib/useSearchDialog";
 import { useLiveSearch, useSearchFacets, useSearchGuidance } from "../lib/live";
 import {
   activeFilterCount,
@@ -17,6 +18,7 @@ import {
 import SearchMobileFilters from "./SearchMobileFilters";
 import SearchMobileResults from "./SearchMobileResults";
 import SearchMobileSuggests from "./SearchMobileSuggests";
+import { useSearchViewport } from "./useSearchViewport";
 import styles from "./SearchMobile.module.css";
 
 /* Mobile Search — the ticket window. Opened from the bar it is an OVERLAY on
@@ -60,18 +62,14 @@ export default function SearchMobile({ asOverlay = false }: { asOverlay?: boolea
     else window.location.href = "/";
   };
 
-  /* the host page holds still under the overlay */
-  useEffect(() => {
-    if (!asOverlay) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previous;
-    };
-  }, [asOverlay]);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  useSearchViewport(viewportRef, asOverlay);
+  const cardRef = useRef<HTMLElement>(null);
+  useSearchDialog(cardRef, close);
   const engaged = hasQuery(state);
   /* the live public search API, its dictionaries and the shared guidance (lib/live.ts) */
-  const live = useLiveSearch(state, engaged);
+  const [retryKey, setRetryKey] = useState(0);
+  const live = useLiveSearch(state, engaged, retryKey);
   const facets = useSearchFacets();
   const guidance = useSearchGuidance(live);
   const { total, page, pageCount, pageIndex } = live;
@@ -81,11 +79,11 @@ export default function SearchMobile({ asOverlay = false }: { asOverlay?: boolea
     /* The overlay's own rules are written at double specificity, so the
        shell's paper and height can never win over the scrim whichever
        stylesheet loads last. It sits beneath the bar, which stays live. */
-    <div className={`${shell.shell} ${asOverlay ? styles.overlay : styles.page}`} data-search-overlay={asOverlay || undefined}>
+    <div ref={viewportRef} className={`${shell.shell} ${asOverlay ? styles.overlay : styles.page}`} data-search-overlay={asOverlay || undefined}>
       {asOverlay ? null : <SiteNavMobile active="search" />}
 
       <div className={styles.backdrop} onClick={asOverlay ? (event) => { if (event.target === event.currentTarget) close(); } : undefined}>
-        <section className={styles.ticket} role={asOverlay ? "dialog" : undefined} aria-modal={asOverlay || undefined} aria-label="Search the archive">
+        <section ref={cardRef} className={styles.ticket} role={asOverlay ? "dialog" : undefined} aria-modal={asOverlay || undefined} aria-label="Search the archive">
           <div className={styles.head}>
             <span className={styles.mark}>Search</span>
             <button type="button" className={styles.close} onClick={close} aria-label="Close search">
@@ -166,7 +164,7 @@ export default function SearchMobile({ asOverlay = false }: { asOverlay?: boolea
           {engaged ? (
             <div className={styles.scroll} aria-busy={live.loading || undefined}>
               {live.error ? (
-                <p className={styles.lab} role="status">{live.error}</p>
+                <div role="status"><p className={styles.lab}>{live.error}</p><button type="button" onClick={() => setRetryKey((key) => key + 1)}>Retry Search</button></div>
               ) : live.stateHash === null ? null : (
                 <SearchMobileResults
                   page={page}

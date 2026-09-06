@@ -10,7 +10,7 @@
    a late answer for an earlier state is dropped. */
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MOVEMENTS, OBJECT_TYPES, THEMES, YEAR_MAX, YEAR_MIN, type SearchRecord } from "./fixture";
+import type { SearchRecord } from "./fixture";
 import { PAGE_SIZE, type MatchReason, type SearchResult, type SearchState } from "./query";
 
 export type SearchStarter = { label: string; apply: Partial<SearchState> };
@@ -25,7 +25,7 @@ export type SearchFacets = {
   live: boolean;
 };
 
-const FALLBACK_FACETS: SearchFacets = { objectTypes: [...OBJECT_TYPES], themes: [...THEMES], movements: [...MOVEMENTS], yearMin: YEAR_MIN, yearMax: YEAR_MAX, starters: [], live: false };
+const FALLBACK_FACETS: SearchFacets = { objectTypes: [], themes: [], movements: [], yearMin: 0, yearMax: 0, starters: [], live: false };
 
 type ApiResult = {
   objectId: string;
@@ -115,7 +115,7 @@ async function fetchPage(state: SearchState, cursor: string | null, signal: Abor
   return body;
 }
 
-export function useLiveSearch(state: SearchState, engaged: boolean): LiveSearch {
+export function useLiveSearch(state: SearchState, engaged: boolean, retryKey = 0): LiveSearch {
   const [live, setLive] = useState<LiveSearch>({ loading: false, error: null, total: 0, results: [], page: [], pageCount: 1, pageIndex: 0, stateHash: null, filters: null, query: "" });
   /* the cursors already walked, per query */
   const cursors = useRef<Map<string, (string | null)[]>>(new Map());
@@ -162,7 +162,7 @@ export function useLiveSearch(state: SearchState, engaged: boolean): LiveSearch 
       setLive((current) => ({ ...current, loading: false, error: error instanceof Error ? error.message : "The public Search service is temporarily unavailable." }));
     });
     return () => controller.abort();
-  }, [key, pageIndex, engaged, state]);
+  }, [key, pageIndex, engaged, state, retryKey]);
 
   return live;
 }
@@ -188,14 +188,14 @@ export function useSearchFacets(): SearchFacets {
           objectTypes: (body.objectTypes ?? []).map((item) => item.value),
           themes: (body.themes ?? []).map((item) => item.value),
           movements: (body.movements ?? []).map((item) => item.value),
-          yearMin: body.year?.min ?? YEAR_MIN,
-          yearMax: body.year?.max ?? YEAR_MAX,
+          yearMin: body.year?.min ?? 0,
+          yearMax: body.year?.max ?? 0,
           starters,
           live: true,
         });
       })
       .catch(() => {
-        // the fixture dictionaries stand until the live facets answer
+        // No design dictionaries are substituted when the authoritative service fails.
       });
     return () => controller.abort();
   }, []);
@@ -233,7 +233,7 @@ function applyOf(action: GuidanceResponse["suggestions"][number]["action"]): Par
    only the answer for the current state hash is shown */
 export function useSearchGuidance(live: LiveSearch): Guidance | null {
   const [guidance, setGuidance] = useState<{ stateHash: string; value: Guidance } | null>(null);
-  const request = useMemo(() => (live.stateHash && !live.loading && live.filters ? { query: live.query, filters: live.filters, total: live.total, stateHash: live.stateHash } : null), [live.stateHash, live.loading, live.filters, live.query, live.total]);
+  const request = useMemo(() => (live.stateHash && !live.loading && !live.error && live.filters ? { query: live.query, filters: live.filters, total: live.total, stateHash: live.stateHash } : null), [live.stateHash, live.loading, live.error, live.filters, live.query, live.total]);
   useEffect(() => {
     if (!request) return;
     const controller = new AbortController();
@@ -254,5 +254,5 @@ export function useSearchGuidance(live: LiveSearch): Guidance | null {
       });
     return () => controller.abort();
   }, [request]);
-  return guidance && live.stateHash === guidance.stateHash ? guidance.value : null;
+  return guidance && !live.loading && !live.error && live.stateHash === guidance.stateHash ? guidance.value : null;
 }

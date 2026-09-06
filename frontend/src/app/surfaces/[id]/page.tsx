@@ -1,3 +1,4 @@
+import { safeJsonLd, site } from "@/features/machine-reading/project";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
@@ -33,6 +34,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const parts = [doc.creditedLabel, doc.displayDate, doc.place].filter(Boolean).join(" · ");
   return {
     title: doc.title,
+    alternates: { canonical: `/surfaces/${encodeURIComponent(doc.stableId)}` },
+    robots: { index: readerEligibilityOf(doc.stableId) === "INDEX_ELIGIBLE", follow: true },
     description: `${doc.objectType}${parts ? " · " + parts : ""}. Source: ${doc.sourceLabel}. Record ${doc.stableId}.`,
   };
 }
@@ -51,5 +54,5 @@ export default async function SurfacePage({
   const recordOnly = readerEligibilityOf(doc.stableId) === "RECORD_ONLY";
   const view = resolveView(sp.view, hdrs.get("user-agent"));
 
-  return view === "mobile" ? <ObjectMobile rec={rec} recordOnly={recordOnly} /> : <ObjectDesktop rec={rec} recordOnly={recordOnly} />;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd({ "@context": "https://schema.org", "@type": "WebPage", url: `${site}/surfaces/${encodeURIComponent(doc.stableId)}`, name: doc.title, identifier: doc.stableId, description: `${doc.objectType} · ${doc.displayDate}. Source: ${doc.sourceLabel}.`, isPartOf: { "@id": `${site}/#website` } }) }} />{view === "mobile" ? <ObjectMobile rec={rec} recordOnly={recordOnly} /> : <ObjectDesktop rec={rec} recordOnly={recordOnly} />}</>;
 }

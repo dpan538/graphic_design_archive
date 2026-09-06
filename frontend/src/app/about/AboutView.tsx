@@ -1,5 +1,7 @@
 "use client";
 
+import ImplementationNote from "@/components/site/ImplementationNote";
+
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import SiteNav from "@/components/site/SiteNav";
@@ -273,6 +275,7 @@ export default function AboutView() {
                   ))}
                 </div>
 
+                <ImplementationNote />
                 <p className={styles.subHead}>Evidence protocol</p>
                 <dl className={styles.defs}>
                   {evidenceProtocol.map((e, i) => (

@@ -9,7 +9,7 @@ import { useStageProgress } from "./useStageProgress";
    once the growth is complete. Progress is written to --p; the stylesheet
    derives the growth (--g) and each figure's own drawing from it. Without
    JavaScript --p is unset and the finished figure stands. */
-export default function PinnedFigure({ children, className, height = "190dvh" }: { children: ReactNode; className?: string; height?: string }) {
+export default function PinnedFigure({ children, className, height = "190svh" }: { children: ReactNode; className?: string; height?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const onProgress = useCallback((p: number) => {
     ref.current?.style.setProperty("--p", p.toFixed(3));

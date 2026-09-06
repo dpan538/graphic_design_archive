@@ -12,9 +12,12 @@ export function useStageProgress(ref: RefObject<HTMLElement | null>, onProgress:
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const probe = document.createElement("div");
+    probe.style.cssText = "position:fixed;height:100svh;visibility:hidden;pointer-events:none";
+    document.body.append(probe);
     const compute = () => {
       const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
+      const vh = probe.getBoundingClientRect().height;
       const span = rect.height - vh;
       const p = span > 0 ? Math.min(1, Math.max(0, -rect.top / span)) : 1;
       const near = rect.top < vh * 1.25 && rect.bottom > -vh * 0.25;
@@ -24,6 +27,7 @@ export function useStageProgress(ref: RefObject<HTMLElement | null>, onProgress:
     window.addEventListener("resize", compute);
     compute();
     return () => {
+      probe.remove();
       window.removeEventListener("scroll", compute);
       window.removeEventListener("resize", compute);
     };

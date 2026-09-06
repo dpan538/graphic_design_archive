@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown, GripHorizontal, X } from "lucide-react";
 import SiteNav from "@/components/site/SiteNav";
-import { STARTERS } from "../lib/fixture";
+import { useSearchDialog } from "../lib/useSearchDialog";
 import {
   activeFilterCount,
   EMPTY_STATE,
@@ -62,6 +62,7 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
 
   // ---- drag ----
   const cardRef = useRef<HTMLElement>(null);
+  useSearchDialog(cardRef, close);
   const grab = useRef<{ dx: number; dy: number } | null>(null);
   const [pos, setPos] = useState<Pos | null>(null);
 
@@ -94,17 +95,19 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
   };
 
   const engaged = hasQuery(state);
-  const live = useLiveSearch(state, engaged);
+  const [retryKey, setRetryKey] = useState(0);
+  const live = useLiveSearch(state, engaged, retryKey);
   const facets = useSearchFacets();
   const guidance = useSearchGuidance(live);
   const { total, page, pageCount, pageIndex } = live;
-  const starters = facets.starters.length ? facets.starters.slice(0, 4) : STARTERS.map((s) => ({ label: s, apply: { q: s, after: 0 } }));
+  const starters = facets.starters.slice(0, 4);
 
   const panel = (
     <>
       <button
         type="button"
         className={styles.scrim}
+        tabIndex={-1}
         aria-label="Close search"
         onClick={close}
       />
@@ -113,6 +116,7 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
         ref={cardRef}
         className={styles.ticket}
         role="dialog"
+        aria-modal="true"
         aria-label="Search the archive"
         style={pos ? { left: pos.x, top: pos.y, right: "auto" } : undefined}
       >
@@ -203,7 +207,7 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
         {engaged ? (
           <div className={styles.scroll} aria-busy={live.loading || undefined}>
             {live.error ? (
-              <p className={styles.qsum} role="status">{live.error}</p>
+              <div role="status"><p className={styles.qsum}>{live.error}</p><button type="button" onClick={() => setRetryKey((key) => key + 1)}>Retry Search</button></div>
             ) : live.stateHash === null ? null : (
               <SearchResults
                 page={page}

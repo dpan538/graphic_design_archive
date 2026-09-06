@@ -1,8 +1,8 @@
 /* back to top: a fixed control at the foot of the phone, shown once the reader is down the page */
 .toTop {
   position: fixed;
-  right: var(--s-4);
-  bottom: calc(var(--s-4) + env(safe-area-inset-bottom));
+  right: calc(var(--s-4) + var(--safe-right));
+  bottom: calc(var(--s-4) + var(--safe-bottom));
   z-index: 40;
   display: flex;
   align-items: center;

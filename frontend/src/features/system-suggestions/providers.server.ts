@@ -8,7 +8,7 @@ export const DEEPSEEK_DEFAULT_BASE_URL = "https://api.deepseek.com";
 export const DEEPSEEK_RESPONSES_PATH = "/responses";
 export const DEEPSEEK_DEFAULT_MODEL = "deepseek-v4-flash";
 /* the release pass prompt: the model composes from fact statements (facts.server.ts) */
-export const SYSTEM_SUGGESTIONS_PROMPT_VERSION = "gda-system-suggests-facts-v2";
+export const SYSTEM_SUGGESTIONS_PROMPT_VERSION = "gda-system-suggests-facts-v5";
 export const SYSTEM_SUGGESTIONS_MAX_WORDS = 45;
 export const SYSTEM_SUGGESTIONS_MAX_SENTENCES = 2;
 export const SYSTEM_SUGGESTIONS_MAX_OUTPUT_TOKENS = 512;
@@ -119,12 +119,8 @@ export function factsFallbackNote(facts: SurfaceFacts): string {
       return countWords(join(first, dimension)) <= SYSTEM_SUGGESTIONS_MAX_WORDS ? join(first, dimension) : first;
     }
     case "TRACE_VALIDATED_EXPLORATION": {
-      if (facts.pairs.length === 1) return text("E3");
-      const seedLine = text("E2");
-      const count = facts.counts.qualifiedAssociations ?? 0;
-      const number = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight"][count] ?? String(count);
-      if (seedLine) return `${seedLine.replace(/\.$/u, "")} through ${number} evidence-qualified generic ${count === 1 ? "association" : "associations"}.`;
-      return text("E1");
+      const pair = facts.pairs[0];
+      return pair ? `In this view, ${pair.a} is paired with ${pair.b}.` : text("E1");
     }
     case "TRACE_OPEN_INQUIRY":
       return join(text("Q1"), text("Q3"));
@@ -160,17 +156,17 @@ export class StaticFallbackProvider implements GuidanceProvider {
 const SHARED_RULES = [
   "You write the 'System suggests' note for one surface of the Modern Graphic Design Archive.",
   "You receive FACT STATEMENTS, each with an id, the labels and counts they use, and an allowlist of suggestions.",
-  "Compose one sentence, at most two, at most forty-five words in total, plain prose, from the statements only: choose the statements that matter for this state, join or shorten them, vary their wording.",
+  "Compose one sentence, at most two, at most forty-five words in total, plain prose, from the statements only: choose one or two complete supplied fact statements and copy their text exactly. Separate two statements with one space. Do not paraphrase, merge, extend or shorten a statement. Keep the note within 320 characters as well as forty-five words; omit the optional second statement if either limit would be exceeded.",
   "Add nothing: no fact, label, number, source, evidence, record, date, place, person, cause, influence, sequence, importance, similarity, strength, confidence, likelihood or reason that the statements do not state.",
   "Never merge two pairings into one, never say a term is paired, associated, linked or connected with a term the statements do not pair it with, never turn a count of associations into a count of sources, records or objects.",
   "Never call an association weak, strong, similar, semantic or co-occurring. Never promise what a refinement will find. Never say that something set aside or not recorded is missing, absent, lost or never existed.",
-  "Return used_fact_ids naming the statements you drew on and suggestion_ids only from the allowlist, zero when none helps. No Markdown, identifiers, URLs, disclaimers or reasoning in the note.",
+  "Return used_fact_ids naming the statements you drew on and suggestion_ids only from the allowlist, zero when none helps. Never exceed the surface action limit: Search 2, Context 1, Exploration 0, Inquiry 1. No Markdown, identifiers, URLs, disclaimers or reasoning in the note.",
 ].join(" ");
 const SURFACE_RULES: Readonly<Record<string, string>> = {
-  SEARCH_RESULTS: "Describe the current result set and, if one is worth it, which approved refinement narrows it. A zero-result Search means this query matched nothing here; it says nothing about the archive or history.",
-  TRACE_CONTEXT: "Describe the object's recorded context: what stands on the canvas and what is set aside. Set aside is still recorded. A dimension not recorded in the projection is not a claim about the object's history.",
-  TRACE_VALIDATED_EXPLORATION: "Narrate the pairing or pairings visible in this view; with several, prefer the ones the first term takes part in. Do not explain why any pairing exists, and do not instruct the reader.",
-  TRACE_OPEN_INQUIRY: "Say what bounded question the inquiry considers between the listed terms and that its current evidence does not qualify it for the validated graph. Never frame it as likely, probable or possible.",
+  SEARCH_RESULTS: "Use the exact result-count statement S1. Optionally append one complete supplied aggregate statement only if both length limits permit it. Select helpful refinement actions through suggestion_ids, without adding prose about them. A zero-result Search means this query matched nothing here; it says nothing about the archive or history.",
+  TRACE_CONTEXT: "Copy the selected-object statement C1 exactly. Optionally append one exact supplied dimension statement that says what is on the canvas or set aside, if both length limits permit it. Do not rewrite dimensions as a claim about what the canvas records. Set aside is still recorded. A dimension not recorded in the projection is not a claim about the object's history.",
+  TRACE_VALIDATED_EXPLORATION: "Choose one supplied explicit pair statement beginning with In this view, and copy it exactly. Do not combine it with a count or list of other labels. If there is no pair statement, choose the supplied visible-term count statement. Do not explain why any pairing exists, and do not instruct the reader.",
+  TRACE_OPEN_INQUIRY: "Copy Q1 and Q3 exactly, in that order, separated by a space. Omit Q2 scope details and Q4; the inquiry UI already shows those details. Preserve all listed participants and the exact evidence qualification. Never frame it as likely, probable or possible.",
 };
 export function instructionFor(surface: string): string {
   return `${SHARED_RULES} ${SURFACE_RULES[surface] ?? ""}`.trim();
@@ -195,26 +191,28 @@ export function providerOutputText(payload: unknown): string {
   if (!payload || typeof payload !== "object") throw new ProviderFailure("PROVIDER_OUTPUT_INVALID", "response is not an object");
   const response = payload as { error?: unknown; status?: unknown; incomplete_details?: { reason?: unknown }; output?: unknown; output_text?: unknown };
   if (response.error) throw new ProviderFailure("PROVIDER_ERROR", "response carries an error");
-  if (typeof response.status === "string" && response.status !== "completed") throw new ProviderFailure("PROVIDER_INCOMPLETE", `response status ${response.status}${typeof response.incomplete_details?.reason === "string" ? ` (${response.incomplete_details.reason})` : ""}`);
+  if (response.status === "failed") throw new ProviderFailure("PROVIDER_ERROR", "response failed");
+  if (response.status !== "completed") throw new ProviderFailure("PROVIDER_INCOMPLETE", `response status ${response.status}${typeof response.incomplete_details?.reason === "string" ? ` (${response.incomplete_details.reason})` : ""}`);
   const parts: string[] = [];
   if (Array.isArray(response.output)) {
     for (const item of response.output) {
       if (!item || typeof item !== "object") continue;
-      const entry = item as { type?: unknown; role?: unknown; content?: unknown };
+      const entry = item as { type?: unknown; role?: unknown; status?: unknown; content?: unknown };
       if (entry.type === "reasoning") continue;
-      if (entry.type !== undefined && entry.type !== "message") continue;
-      if (entry.role !== undefined && entry.role !== "assistant") continue;
+      if (entry.type !== "message") continue;
+      if (entry.role !== "assistant") continue;
+      if (entry.status !== "completed") throw new ProviderFailure("PROVIDER_INCOMPLETE", "assistant message not completed");
       if (!Array.isArray(entry.content)) continue;
       for (const part of entry.content) {
         if (!part || typeof part !== "object") continue;
         const piece = part as { type?: unknown; text?: unknown };
-        if (piece.type !== undefined && piece.type !== "output_text") continue;
+        if (piece.type !== "output_text") continue;
         if (typeof piece.text === "string") parts.push(piece.text);
       }
     }
   }
   let text = parts.join("").trim();
-  if (!text && typeof response.output_text === "string") text = response.output_text.trim();
+
   if (!text) throw new ProviderFailure("PROVIDER_OUTPUT_MISSING", "response carries no assistant text");
   return text;
 }
@@ -223,10 +221,11 @@ export function parseProviderDraft(text: string): ProviderDraft {
   let parsed: unknown;
   try { parsed = JSON.parse(text); } catch { throw new ProviderFailure("PROVIDER_OUTPUT_INVALID", "assistant text is not JSON"); }
   if (!parsed || typeof parsed !== "object") throw new ProviderFailure("PROVIDER_OUTPUT_INVALID", "assistant JSON is not an object");
+  if (Array.isArray(parsed) || Object.keys(parsed).sort().join(",") !== "note,suggestion_ids,used_fact_ids") throw new ProviderFailure("PROVIDER_OUTPUT_INVALID", "unexpected schema fields");
   const result = parsed as { note?: unknown; suggestion_ids?: unknown; used_fact_ids?: unknown };
   if (typeof result.note !== "string") throw new ProviderFailure("PROVIDER_OUTPUT_INVALID", "note missing");
   const ids = (value: unknown, label: string): string[] => {
-    if (value === undefined) return [];
+
     if (!Array.isArray(value) || value.some((id) => typeof id !== "string")) throw new ProviderFailure("PROVIDER_OUTPUT_INVALID", `${label} invalid`);
     return value as string[];
   };
@@ -268,7 +267,7 @@ export class DeepSeekGuidanceProvider implements GuidanceProvider {
             properties: {
               note: { type: "string", maxLength: 320 },
               used_fact_ids: idList(factIds, 12),
-              suggestion_ids: idList(suggestionIds, 4),
+              suggestion_ids: idList(suggestionIds, MAX_ACTIONS[facts.surface]),
             },
           },
         },

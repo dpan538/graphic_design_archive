@@ -5,6 +5,8 @@ import AboutMobile from "../about/mobile/AboutMobile";
 import SourceView from "./SourceView";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/source", types: { "text/markdown": "/source.md" } },
+  openGraph: { url: "/source", type: "website" },
   title: "Source",
   description:
     "Provenance, acquisition status, rights conditions, transformation record, evidence status, and reproducibility for the materials incorporated into Modern Graphic Design Archive.",

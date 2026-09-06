@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { projectJsonLd, safeJsonLd } from "@/features/machine-reading/project";
+import type { Metadata, Viewport } from "next";
 import { Baskervville, Instrument_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -27,6 +28,8 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover" };
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://mgdarchive.com"),
   title: {
@@ -51,6 +54,7 @@ export default function RootLayout({
       lang="en"
       className={`${baskervville.variable} ${instrumentSans.variable} ${inter.variable}`}
     >
+      <head><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(projectJsonLd) }} /></head>
       <body>
         {children}
         {modal}

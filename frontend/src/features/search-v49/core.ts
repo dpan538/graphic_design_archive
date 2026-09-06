@@ -1,3 +1,4 @@
+import { caseFold16, normalize16, isMark16, isLatin16, isNumber16, isLatinOrNumber16, isSeparator16 } from "@/features/search-v49/unicode16";
 import { createHash } from "node:crypto";
 import type { SearchMatchExplanation, SearchMatchType } from "@/lib/read-platform/types";
 
@@ -64,7 +65,7 @@ export class SearchInputError extends Error {
 }
 
 export function caseFoldV1(value: string): string {
-  return value.toLowerCase().replaceAll("ß", "ss").replaceAll("ς", "σ");
+  return caseFold16(value);
 }
 
 function collapseSeparators(value: string): string {
@@ -73,27 +74,27 @@ function collapseSeparators(value: string): string {
     .replace(/[\u2010-\u2015\u2212_-]+/gu, " ")
     .replace(/[\u2018\u2019\u02bc'`]+/gu, " ")
     .replace(/[\\/]+/gu, " ")
-    .replace(/[\p{P}\p{S}]+/gu, " ")
+    .replace(/./gu, character => isSeparator16(character) ? " " : character)
     .replace(/\s+/gu, " ")
     .trim();
 }
 
 export function normalizeSearchText(value: string, form: "NFC" | "NFKC" = "NFC"): string {
-  return collapseSeparators(caseFoldV1(value.normalize(form)));
+  return collapseSeparators(caseFoldV1(normalize16(value, form)));
 }
 
 export function foldLatinDiacritics(value: string): string {
   let output = "";
   let latinStarter = false;
-  for (const character of value.normalize("NFD")) {
-    if (/\p{M}/u.test(character)) {
+  for (const character of normalize16(value, "NFD")) {
+    if (isMark16(character)) {
       if (!latinStarter) output += character;
       continue;
     }
-    latinStarter = /\p{Script=Latin}/u.test(character);
+    latinStarter = isLatin16(character);
     output += character;
   }
-  return output.normalize("NFC");
+  return normalize16(output, "NFC");
 }
 
 const compact = (value: string) => value.replace(/\s+/gu, "");
@@ -106,7 +107,7 @@ export function hydrateSearchDocument(tuple: SearchDocumentTuple): SearchDocumen
   return {
     stableId, title, primary, compatibility, latinFolded,
     compactPrimary: compact(primary), compactCompatibility: compact(compatibility), compactLatinFolded: compact(latinFolded),
-    normalizedId: caseFoldV1(stableId.normalize("NFKC")),
+    normalizedId: caseFoldV1(normalize16(stableId, "NFKC")),
     tokens: tokens(primary), compatibilityTokens: tokens(compatibility), latinFoldedTokens: tokens(latinFolded),
   };
 }
@@ -129,7 +130,7 @@ export function parseSearchQuery(rawInput: string): ParsedSearchQuery {
 
 function editLimit(token: string): number {
   const length = Array.from(token).length;
-  if (/\p{N}/u.test(token) || length < 4) return 0;
+  if (Array.from(token).some(isNumber16) || length < 4) return 0;
   return length <= 8 ? 1 : 2;
 }
 
@@ -160,12 +161,12 @@ type TokenMatch = { score: number; signal: string; typo: boolean };
 
 function bestTokenMatch(queryToken: string, documentTokens: readonly string[]): TokenMatch | null {
   let best: TokenMatch | null = null;
-  const onePointLatin = Array.from(queryToken).length === 1 && /^[\p{Script=Latin}\p{N}]$/u.test(queryToken);
+  const onePointLatin = Array.from(queryToken).length === 1 && Array.from(queryToken).every(isLatinOrNumber16);
   for (const documentToken of documentTokens) {
     let match: TokenMatch | null = null;
     if (documentToken === queryToken) match = { score: 1800, signal: "token_exact", typo: false };
     else if (!onePointLatin && documentToken.startsWith(queryToken)) match = { score: 1450, signal: "token_prefix", typo: false };
-    else if ((Array.from(queryToken).length >= 2 || /[^\p{Script=Latin}\p{N}]/u.test(queryToken)) && documentToken.includes(queryToken)) match = { score: 1100, signal: "token_substring", typo: false };
+    else if ((Array.from(queryToken).length >= 2 || Array.from(queryToken).some(character => !isLatinOrNumber16(character))) && documentToken.includes(queryToken)) match = { score: 1100, signal: "token_substring", typo: false };
     else {
       const limit = editLimit(queryToken);
       const distance = boundedOsaDistance(queryToken, documentToken, limit);
@@ -181,7 +182,7 @@ function explain(query: ParsedSearchQuery, score: number, matchType: SearchMatch
 }
 
 export function scoreDocument(document: SearchDocument, query: ParsedSearchQuery): RankedSearchDocument | null {
-  const queryId = caseFoldV1(query.raw.normalize("NFKC"));
+  const queryId = caseFoldV1(normalize16(query.raw, "NFKC"));
   if (queryId === document.normalizedId) {
     const score = 30000;
     return { document, score, explanation: explain(query, score, "identifier", ["stableId"], ["stable_id_exact"]) };

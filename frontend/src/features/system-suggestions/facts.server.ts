@@ -28,7 +28,7 @@ import type {
   SystemSuggestionSurface,
 } from "./types";
 
-export const SYSTEM_SUGGESTS_FACTS_VERSION = "gda-system-suggests-facts/v2";
+export const SYSTEM_SUGGESTS_FACTS_VERSION = "gda-system-suggests-facts/v3";
 
 export interface FactStatement {
   readonly id: string;
@@ -228,7 +228,7 @@ function explorationFacts(reference: ExplorationReference, shown: SystemSuggesti
   const statements: FactStatement[] = [];
   statements.push({ id: "E1", text: `This view shows ${numberWord(ordered.length)} ${ordered.length === 1 ? "term" : "terms"} and ${numberWord(pairs.length)} evidence-qualified generic ${pairs.length === 1 ? "association" : "associations"}.` });
   const others = ordered.filter((label) => label !== seed);
-  if (others.length) statements.push({ id: "E2", text: `${capital(seed)} is shown here alongside ${listOf(others)}.` });
+  if (others.length) statements.push({ id: "E2", text: `The visible terms are ${listOf(ordered)}.` });
   pairs.forEach((pair, index) => statements.push({ id: `E${index + 3}`, text: `In this view, ${pair.a} is paired with ${pair.b}.` }));
   checkShown(shown, counts);
   return finish({

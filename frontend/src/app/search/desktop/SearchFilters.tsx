@@ -1,5 +1,6 @@
 "use client";
 
+import YearInput from "@/components/site/YearInput";
 import type { SearchState } from "../lib/query";
 import type { SearchFacets } from "../lib/live";
 import styles from "./SearchFilters.module.css";
@@ -21,41 +22,42 @@ export default function SearchFilters({
   const OBJECT_TYPES = facets.objectTypes;
   const THEMES = facets.themes;
   const MOVEMENTS = facets.movements;
-  const clampYear = (n: number) =>
-    Math.min(YEAR_MAX, Math.max(YEAR_MIN, Math.round(n) || YEAR_MIN));
   return (
     <div className={styles.grid}>
       <label className={styles.field}>
         <span className={styles.label}>From</span>
-        <input
+        <YearInput
+          disabled={!facets.live}
           className={styles.year}
           type="number"
           inputMode="numeric"
-          placeholder={String(YEAR_MIN)}
-          value={state.yearFrom ?? ""}
-          onChange={(e) =>
-            patch({ yearFrom: e.target.value ? clampYear(+e.target.value) : null })
-          }
+          placeholder={facets.live ? String(YEAR_MIN) : ""}
+          value={state.yearFrom}
+          min={YEAR_MIN}
+          max={YEAR_MAX}
+          onCommit={(value) => patch({ yearFrom: value })}
         />
       </label>
 
       <label className={styles.field}>
         <span className={styles.label}>To</span>
-        <input
+        <YearInput
+          disabled={!facets.live}
           className={styles.year}
           type="number"
           inputMode="numeric"
-          placeholder={String(YEAR_MAX)}
-          value={state.yearTo ?? ""}
-          onChange={(e) =>
-            patch({ yearTo: e.target.value ? clampYear(+e.target.value) : null })
-          }
+          placeholder={facets.live ? String(YEAR_MAX) : ""}
+          value={state.yearTo}
+          min={YEAR_MIN}
+          max={YEAR_MAX}
+          onCommit={(value) => patch({ yearTo: value })}
         />
       </label>
 
       <label className={styles.field}>
         <span className={styles.label}>Object type</span>
         <select
+          disabled={!facets.live}
           className={styles.select}
           value={state.objectType ?? ""}
           onChange={(e) => patch({ objectType: e.target.value || null })}
@@ -72,6 +74,7 @@ export default function SearchFilters({
       <label className={styles.field}>
         <span className={styles.label}>Theme</span>
         <select
+          disabled={!facets.live}
           className={styles.select}
           value={state.theme ?? ""}
           onChange={(e) => patch({ theme: e.target.value || null })}
@@ -88,6 +91,7 @@ export default function SearchFilters({
       <label className={styles.field}>
         <span className={styles.label}>Movement</span>
         <select
+          disabled={!facets.live}
           className={styles.select}
           value={state.movement ?? ""}
           onChange={(e) => patch({ movement: e.target.value || null })}

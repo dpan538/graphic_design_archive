@@ -10,7 +10,7 @@
 }
 
 .main {
-  padding-bottom: calc(var(--s-6) + env(safe-area-inset-bottom));
+  padding-bottom: var(--s-6);
 }
 
 /* ---- masthead ---- */

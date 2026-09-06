@@ -1,0 +1,25 @@
+name: mgda-redis-integration
+services:
+  redis:
+    image: redis@sha256:ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf
+    pull_policy: never
+    restart: unless-stopped
+    user: "${MGDA_REDIS_UID}:${MGDA_REDIS_GID}"
+    entrypoint: ["/usr/local/bin/redis-server", "/config/redis.conf"]
+    ports: ["127.0.0.1:16420:6379"]
+    volumes:
+      - ${MGDA_REDIS_STATE}/redis.conf:/config/redis.conf:ro
+      - ${MGDA_REDIS_STATE}/users.acl:/config/users.acl:ro
+      - ${MGDA_REDIS_STATE}/tls/ca.crt:/tls/ca.crt:ro
+      - ${MGDA_REDIS_STATE}/tls/server.crt:/tls/server.crt:ro
+      - ${MGDA_REDIS_STATE}/tls/server.key:/tls/server.key:ro
+      - ${MGDA_REDIS_STATE}/data:/data
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    stop_grace_period: 15s
+    healthcheck:
+      test: [CMD-SHELL, "redis-cli --tls --cacert /tls/ca.crt -h localhost -p 6379 PING 2>&1 | grep -q NOAUTH"]
+      interval: 15s
+      timeout: 3s
+      retries: 3

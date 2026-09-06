@@ -1,3 +1,4 @@
+import { caseFold16, normalize16, isMark16, isLatin16, isNumber16, isLatinOrNumber16, isSeparator16 } from "@/features/search-v49/unicode16";
 import { createHash } from "node:crypto";
 import {
   boundedOsaDistance,
@@ -135,7 +136,7 @@ export function hydratePublicSearchDocument(tuple: PublicSearchDocumentTuple): P
   const [stableId, title, creditedLabel, displayDate, yearStart, yearEnd, place, objectType, themes, movements, sourceLabel, deliveryState] = tuple;
   return {
     stableId,
-    normalizedId: caseFoldV1(stableId.normalize("NFKC")),
+    normalizedId: caseFoldV1(normalize16(stableId, "NFKC")),
     title,
     creditedLabel,
     displayDate,
@@ -214,7 +215,7 @@ export function matchesPublicSearchFilters(document: PublicSearchDocument, filte
 
 function editLimit(token: string): number {
   const length = Array.from(token).length;
-  if (/\p{N}/u.test(token) || length < 4) return 0;
+  if (Array.from(token).some(isNumber16) || length < 4) return 0;
   return length <= 8 ? 1 : 2;
 }
 
@@ -222,9 +223,9 @@ type TokenMatch = { score: number; signal: string; field: SearchTextField; typo:
 
 function tokenMatch(queryToken: string, documentToken: string): Omit<TokenMatch, "field"> | null {
   if (documentToken === queryToken) return { score: 1800, signal: "token_exact", typo: false };
-  const onePointLatin = Array.from(queryToken).length === 1 && /^[\p{Script=Latin}\p{N}]$/u.test(queryToken);
+  const onePointLatin = Array.from(queryToken).length === 1 && Array.from(queryToken).every(isLatinOrNumber16);
   if (!onePointLatin && documentToken.startsWith(queryToken)) return { score: 1450, signal: "token_prefix", typo: false };
-  if ((Array.from(queryToken).length >= 2 || /[^\p{Script=Latin}\p{N}]/u.test(queryToken)) && documentToken.includes(queryToken)) {
+  if ((Array.from(queryToken).length >= 2 || Array.from(queryToken).some(character => !isLatinOrNumber16(character))) && documentToken.includes(queryToken)) {
     return { score: 1100, signal: "token_substring", typo: false };
   }
   const limit = editLimit(queryToken);
@@ -293,7 +294,7 @@ function explanationLabel(matchType: MatchType, fields: readonly SearchTextField
 }
 
 function scorePublicSearchDocument(document: PublicSearchDocument, query: ParsedSearchQuery, filters: PublicSearchFilters): RankedPublicSearchDocument | null {
-  const queryId = caseFoldV1(query.raw.normalize("NFKC"));
+  const queryId = caseFoldV1(normalize16(query.raw, "NFKC"));
   if (queryId === document.normalizedId) {
     const score = 30000;
     return { document, score, explanation: { label: "Exact stable ID", matchType: "identifier", matchedFields: ["stableId"], signals: ["stable_id_exact"], score } };

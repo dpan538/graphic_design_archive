@@ -36,7 +36,7 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const frontendRoot = join(here, "..");
 const repoRoot = join(frontendRoot, "..");
-const outDir = join(repoRoot, "docs/qa/exploration-presentation-verification-v1");
+const outDir = process.env.EXPLORATION_QA_DIR ?? join(repoRoot, "docs/qa/exploration-presentation-verification-v1");
 const goldenDir = join(outDir, "golden");
 const goldenMode = process.env.EXPLORATION_GOLDEN ?? "check";
 const baseUrl = process.env.EXPLORATION_BASE_URL ?? "http://localhost:3000";
@@ -297,7 +297,7 @@ const VIEW = types.VIEW_FRAME;
 }
 
 /* ======================= BLACK-BOX (HTTP) ======================= */
-const http = async (path, init) => fetch(`${baseUrl}${path}`, init);
+const http = async (path, init) => fetch(`${baseUrl}${path}`, { ...init, signal: AbortSignal.timeout(30000) });
 const inlineSvg = (html) => {
   const start = html.indexOf(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${VIEW.x} ${VIEW.y} ${VIEW.width} ${VIEW.height}"`);
   const end = html.indexOf("</svg>", start);

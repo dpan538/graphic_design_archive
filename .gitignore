@@ -109,3 +109,10 @@ profiles-local/
 generated/public_surfaces_v1_shards/
 frontend/public/data/public_surface_shards_v1/
 generated/public_surfaces_prefreeze_candidate_v1.json
+
+# Persistent local integration secrets, certificates and Redis data (never publish)
+.local/redis-integration/
+
+# Ephemeral Vercel build metadata and privately retained frozen public inputs
+.vercel/
+.mgda-private-public/

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Info, Search, TableOfContents } from "lucide-react";
@@ -16,6 +17,19 @@ export type SiteNavMobileKey = "index" | "search" | "about";
    2026-09-06): a soft navigation the modal route intercepts, so the host
    page stays mounted under the window. */
 export default function SiteNavMobile({ active }: { active?: SiteNavMobileKey }) {
+  const header = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const node = header.current;
+    if (!node) return;
+    const measure = () => document.documentElement.style.setProperty("--measured-mobile-bar-h", `${node.getBoundingClientRect().height}px`);
+    const observer = new ResizeObserver(measure);
+    observer.observe(node);
+    measure();
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty("--measured-mobile-bar-h");
+    };
+  }, []);
   const pathname = usePathname();
   const router = useRouter();
   const searchOpen = pathname === "/search";
@@ -25,7 +39,7 @@ export default function SiteNavMobile({ active }: { active?: SiteNavMobileKey })
     { key: "about", label: "About", href: "/about", Icon: Info },
   ];
   return (
-    <header className={styles.header} data-nav="mobile">
+    <header ref={header} className={styles.header} data-nav="mobile">
       <Link href="/" className={styles.monogram} aria-label="Modern Graphic Design Archive — home">MGDA</Link>
       <nav aria-label="Primary">
         <ul className={styles.list} role="list">

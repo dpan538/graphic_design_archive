@@ -4,8 +4,15 @@
    same ink — so the mobile trees share nothing with the desktop but the
    token names. Nothing here is a breakpoint: the desktop never loads it. */
 
-.shell {
+.shell, :global(html):has(.shell) {
   --paper: #fffdf9;
+}
+
+.shell {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
   --paper-2: #f7f2e7;
   --ink: #121110;
   --ink-2: #37322b;
@@ -26,12 +33,14 @@
 
   /* the phone's type scale: the 17 px floor holds; display sizes are set per page */
   /* the bar's box, for anything that pins beneath it */
-  --bar-h: 87px;
+  --bar-h: var(--measured-mobile-bar-h, calc(87px + var(--safe-top)));
 
   --fs-label: 1.0625rem;
   --fs-body-sm: 1.0625rem;
   --fs-body: 1.125rem;
 
+  /* Shell owns side and bottom insets; the nav owns the top. */
+  padding: 0 var(--safe-right) var(--safe-bottom) var(--safe-left);
   min-height: 100dvh;
   background: var(--paper);
   color: var(--ink);

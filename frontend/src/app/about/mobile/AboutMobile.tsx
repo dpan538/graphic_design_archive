@@ -1,5 +1,7 @@
 "use client";
 
+import ImplementationNote from "@/components/site/ImplementationNote";
+
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
 import TopButton from "@/components/site/mobile/TopButton";
@@ -182,6 +184,7 @@ export default function AboutMobile({ focus }: { focus?: "source" }) {
           <Plate s={S.methodology} />
           <div className={styles.body}>
             {methodProse.map((p) => <p key={p.slice(0, 24)} className={styles.prose}>{p}</p>)}
+            <ImplementationNote />
             <p className={styles.subhead}>Pipeline</p>
             <ol role="list" className={styles.pipeline}>
               {pipelineStages.map((stage, i) => <li key={stage}><span className={styles.stageNum}>{i + 1}</span>{stage}</li>)}
