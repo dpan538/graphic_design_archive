@@ -12,6 +12,7 @@ This contract supersedes the historical Upstash prerequisite. Import readiness i
 | Install Command | `npm ci` |
 | Build Command | `npm run build:vercel` |
 | Output Directory | Leave the Next.js default; do not override with a local directory |
+| Git LFS | Leave disabled for the app build: current runtime assets are ordinary Git objects; historical LFS audit resources are not runtime inputs |
 | Production branch | Keep `main` until the candidate is reviewed and merged under the normal PR process |
 | Domain | Do not configure `mgdarchive.com` until first deployment acceptance and explicit authorization |
 
@@ -23,7 +24,7 @@ Hobby's Vercel Authentication **Standard Protection does not protect the product
 
 For a protected first run, the owner can create the project **without deploying** (`vercel project add mgda --scope dpan538s-projects`), configure the card above and Settings → Deployment Protection → Vercel Authentication → Standard Protection, then connect GitHub with production branch `main`. From Deployments → Create Deployment, choose the candidate non-production branch and Preview target. Verify the dialog's target and the actual unauthenticated access boundary before sharing it. Do not generate shareable bypass links. If the account's UI cannot separate project creation/configuration from production deployment, stop before Deploy and use project-only creation; do not activate a paid protection upgrade as a workaround. This is an owner action after Import preparation, not performed by the agent.
 
-Sources: [project-only CLI](https://vercel.com/docs/cli/project), [protection scope](https://vercel.com/docs/deployment-protection). Hobby remains subject to personal/non-commercial use and resource limits.
+Sources: [Git LFS setting](https://vercel.com/docs/project-configuration/git-settings), [project-only CLI](https://vercel.com/docs/cli/project), [protection scope](https://vercel.com/docs/deployment-protection). Hobby remains subject to personal/non-commercial use and resource limits.
 
 ## Server environment (never NEXT_PUBLIC)
 
