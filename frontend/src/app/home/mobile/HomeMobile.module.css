@@ -4,7 +4,7 @@
    status figures grow in once, when they arrive. */
 
 .page {
-  min-height: 100dvh;
+  min-height: 100svh;
   background: var(--paper);
   color: var(--ink);
 }
@@ -63,19 +63,22 @@
   --w: clamp(0, calc((var(--p, 0) - 0.34) / 0.22), 1);
   --d: clamp(0, calc((var(--p, 0) - 0.58) / 0.12), 1);
   position: relative;
-  height: 340dvh;
+  height: 340svh;
   background: var(--paper);
 }
 .openingStage {
+  /* Extend the dark scene behind the side insets without moving its text. */
+  margin-left: calc(-1 * var(--safe-left));
+  margin-right: calc(-1 * var(--safe-right));
   position: sticky;
   top: var(--bar-h);
-  height: calc(100dvh - var(--bar-h));
+  height: calc(100svh - var(--bar-h));
   overflow: hidden;
   display: grid;
   align-content: center;
   justify-items: center;
   gap: var(--s-5);
-  padding: 0 var(--page-gutter);
+  padding: 0 calc(var(--page-gutter) + var(--safe-right)) 0 calc(var(--page-gutter) + var(--safe-left));
   background: var(--black);
   color: var(--paper);
 }
@@ -167,12 +170,12 @@
 
 .contrib {
   position: relative;
-  height: 300dvh;
+  height: 300svh;
 }
 .contribStage {
   position: sticky;
   top: var(--bar-h);
-  height: calc(100dvh - var(--bar-h));
+  height: calc(100svh - var(--bar-h));
   overflow: hidden;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -466,7 +469,7 @@
 .pinStage {
   position: sticky;
   top: var(--bar-h);
-  height: calc(100dvh - var(--bar-h));
+  height: calc(100svh - var(--bar-h));
   overflow: hidden;
   display: grid;
   grid-template-rows: minmax(0, 1fr);
@@ -485,7 +488,7 @@
   grid-template-rows: minmax(0, 1fr);
 }
 .stripWrap .pinStage {
-  height: calc((100dvh - var(--bar-h)) * 0.75);
+  height: calc((100svh - var(--bar-h)) * 0.75);
 }
 
 /* the sheet fills the page between the head and the legend */

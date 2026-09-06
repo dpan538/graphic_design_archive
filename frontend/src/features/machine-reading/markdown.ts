@@ -1,0 +1,5 @@
+import { openingStatement, openingLead, purposeLead, methodProse, rightsProse } from "@/app/about/content";
+import { overviewText, overviewLayers, overviewNote, acquisitionNotes, rightsIntro, rightsGlobalVisual, versionIntro, reproNote } from "@/app/source/content";
+import { implementation, site } from "./project";
+export const aboutMarkdown = ["# Modern Graphic Design Archive — About", openingStatement, openingLead, purposeLead, "## Method", ...methodProse, "## Project implementation", ...implementation.map(x => `### ${x.title}\n\n${x.text}`), "## Rights", rightsProse, `[Source](${site}/source) · [Public reading](${site}/read-api)`].join("\n\n") + "\n";
+export const sourceMarkdown = ["# Modern Graphic Design Archive — Source", overviewText, ...overviewLayers.map(x => `## ${x.label}\n\n${x.note}`), overviewNote, "## Acquisition", ...acquisitionNotes, "## Rights", rightsIntro, rightsGlobalVisual, "## Version and reproducibility", versionIntro, reproNote, `[Full source register](${site}/source)`].join("\n\n") + "\n";

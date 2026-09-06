@@ -1,5 +1,6 @@
 import "server-only";
 
+import type { RateLimitResult } from "./rate-limiter.server";
 import { guidanceCacheKey, mergeInFlight, readGuidanceCache, readLastGoodGuidance, storeGuidance } from "./cache.server";
 import { approvedCandidatesFromFacts, legacyTraceCandidates, MAX_ACTIONS, verifiedSearchReference } from "./candidates.server";
 import { buildSurfaceFacts, type SurfaceFacts } from "./facts.server";
@@ -28,7 +29,7 @@ import { parseSystemSuggestionsRequest } from "./schema.server";
 import type { ApprovedSuggestion, SystemSuggestionsInput, SystemSuggestionsRequest, SystemSuggestionsRequestV2, SystemSuggestionsResponse, TraceSuggestionContext } from "./types";
 
 type Environment = Readonly<Record<string, string | undefined>>;
-type ServiceDependencies = { environment?: Environment; fetchImpl?: typeof fetch; timeoutMsForTest?: number; now?: () => number };
+type ServiceDependencies = { environment?: Environment; fetchImpl?: typeof fetch; timeoutMsForTest?: number; now?: () => number; admission?: RateLimitResult };
 
 export class UnsafeProviderOutput extends Error {}
 
@@ -103,10 +104,14 @@ export function assertFactualNote(rawNote: string, facts: SurfaceFacts): string 
   const sentences = sentencesOf(note);
   if (sentences.length < 1 || sentences.length > SYSTEM_SUGGESTIONS_MAX_SENTENCES) throw new UnsafeProviderOutput("sentence count");
   if (note.split(/\s+/u).filter(Boolean).length > SYSTEM_SUGGESTIONS_MAX_WORDS) throw new UnsafeProviderOutput("word count");
-  /* a disclaimer may name a claim only to deny it; the one permitted "because" is the inquiry's evidence */
-  const asserted = note
-    .replace(/\b(?:without (?:asserting|implying|claiming|suggesting)|rather than|not|neither|nor|never)\b[^.;]*/giu, " ")
-    .replace(/\bbecause (?:its |the |current )?evidence[^.;]*/giu, " ");
+  // Only exact supplied data is exempt from claim vocabulary checks.
+  let asserted = note;
+  for (const statement of [...facts.statements].sort((a,b) => b.text.length-a.text.length)) {
+    const dataMasked = statement.text.replace(new RegExp(facts.labels.length ? facts.labels.map(escape).sort((a,b)=>b.length-a.length).join("|") : "(?!)", "giu"), " DATA ");
+    asserted = asserted.replace(new RegExp(escape(statement.text), "giu"), () => dataMasked);
+  }
+  for (const label of facts.labels) asserted = asserted.replace(new RegExp(`["“]${escape(label)}["”]`, "giu"), " DATA ");
+  asserted = asserted.replace(/The current evidence does not qualify this question for the validated graph\./giu, " ");
   const forbiddenAll = FORBIDDEN_ALL.exec(asserted);
   if (forbiddenAll) throw new UnsafeProviderOutput(`forbidden claim: ${forbiddenAll[0]}`);
   if (facts.surface === "TRACE_VALIDATED_EXPLORATION" || facts.surface === "TRACE_OPEN_INQUIRY") {
@@ -117,11 +122,28 @@ export function assertFactualNote(rawNote: string, facts: SurfaceFacts): string 
   /* numbers: only the counts the facts state */
   const allowed = allowedNumbers(facts);
   for (const value of numbersIn(note)) if (!allowed.has(value)) throw new UnsafeProviderOutput(`unsupplied number ${value}`);
+  const quantity = /\b(\d[\d,]*|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s+((?:public |matching )?objects?|terms?|(?:evidence-qualified )?generic associations?)\b/giu;
+  const expectedQuantity = (noun: string) => /association/iu.test(noun) ? facts.counts.qualifiedAssociations : /term/iu.test(noun) ? facts.counts.visibleTerms : facts.counts.exactResultCount;
+  let quantityText = note;
+  for (const label of [...facts.labels].sort((a,b) => b.length-a.length)) quantityText = quantityText.replace(new RegExp(`(?<![\\p{L}\\p{N}])${escape(label)}(?![\\p{L}\\p{N}])`, "giu"), " DATA ");
+  for (const match of quantityText.matchAll(quantity)) {
+    const value = numbersIn(match[1]!)[0];
+    const expected = expectedQuantity(match[2]!);
+    if (expected !== undefined && value !== expected) throw new UnsafeProviderOutput("quantity does not match its fact");
+  }
+  if (facts.surface === "SEARCH_RESULTS") {
+    // An allowed number cannot be borrowed from another aggregate or date.
+    const aggregates = /\b(\d[\d,]*|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) of (?:the )?(\d[\d,]*) matching objects (?:is|are) ([^.!?]+)[.!?]?/giu;
+    const signature = (match: RegExpMatchArray) => `${numbersIn(match[1]!)[0]}|${numbersIn(match[2]!)[0]}|${match[3]!.trim().toLowerCase()}`;
+    const supplied = new Set(facts.statements.flatMap(statement => [...statement.text.matchAll(aggregates)].map(signature)));
+    const claims = note.replace(QUOTED, " DATA ");
+    for (const match of claims.matchAll(aggregates)) if (!supplied.has(signature(match))) throw new UnsafeProviderOutput("aggregate quantity or scope mismatch");
+  }
   /* quoted terms: only supplied labels */
   const lower = facts.labels.map((label) => label.toLowerCase());
   for (const quoted of note.match(QUOTED) ?? []) {
     const term = quoted.slice(1, -1).toLowerCase();
-    if (!lower.some((label) => label === term || label.includes(term))) throw new UnsafeProviderOutput("unsupplied quoted term");
+    if (!lower.some((label) => label === term)) throw new UnsafeProviderOutput("unsupplied quoted term");
   }
   /* relations: a sentence that pairs names exactly one supplied pair; a co-visibility sentence may list the visible terms */
   const pairSet = new Set(facts.pairs.flatMap((pair) => [`${pair.a.toLowerCase()}|${pair.b.toLowerCase()}`, `${pair.b.toLowerCase()}|${pair.a.toLowerCase()}`]));
@@ -131,10 +153,14 @@ export function assertFactualNote(rawNote: string, facts: SurfaceFacts): string 
     const pairs = stripped.match(new RegExp(PAIRING.source, "giu")) ?? [];
     if (facts.surface === "TRACE_VALIDATED_EXPLORATION") {
       const predicate = pairs.filter((word) => !/^with$/iu.test(word) || !COVISIBLE.test(stripped));
+      if (COVISIBLE.test(stripped) && named.labels.length > 2) throw new UnsafeProviderOutput("ambiguous multi-term narration");
       if (predicate.length === 0) continue;
       if (named.labels.length === 0) continue;
       if (named.labels.length !== 2) throw new UnsafeProviderOutput(`pairing names ${named.labels.length} terms`);
       if (!pairSet.has(`${named.labels[0]?.toLowerCase()}|${named.labels[1]?.toLowerCase()}`)) throw new UnsafeProviderOutput(`pairing not shown: ${named.labels.join(" / ")}`);
+      const [a, b] = named.labels.map(label => `["“]?${escape(label)}["”]?`);
+      const explicitPair = new RegExp(`^(?:In this view,?\\s+)?(?:${a}\\s+(?:is\\s+)?(?:paired|associated|connected|linked|related)\\s+(?:with|to)\\s+${b}|${a}\\s+and\\s+${b}\\s+are\\s+paired)(?:\\s+(?:here|in this view))?[.!]?$`, "iu");
+      if (!explicitPair.test(sentence)) throw new UnsafeProviderOutput("unverified text in pairing sentence");
     } else if (facts.surface === "TRACE_OPEN_INQUIRY") {
       const claims = pairs.filter((word) => !/^(?:between|with)$/iu.test(word));
       if (claims.length) throw new UnsafeProviderOutput(`inquiry asserts a relation: ${claims[0]}`);
@@ -174,17 +200,12 @@ function assertLegacyNote(note: string, request: SystemSuggestionsRequest): void
 }
 
 async function legacyResponse(request: SystemSuggestionsRequest, providerStatus: string): Promise<SystemSuggestionsResponse> {
-  const context = request.context as TraceSuggestionContext;
-  const candidates = request.surface === "SEARCH_RESULTS" ? [] : legacyTraceCandidates(request.surface, context);
-  const limit = request.surface === "TRACE_SPACETIME" ? SPACETIME_GUIDANCE_MAX_ACTIONS : isExplorationNarration(request) ? EXPLORATION_NARRATION_MAX_ACTIONS : MAX_ACTIONS[request.surface];
-  let note = legacyFallbackNote(request);
-  try { assertLegacyNote(note, request); } catch { note = "Guidance is unavailable for this state."; }
   return {
     schemaVersion: "gda-system-suggestions-response/v1",
     surface: request.surface,
     stateHash: request.stateHash,
-    note,
-    suggestions: candidates.slice(0, limit),
+    note: "Guidance is unavailable for this legacy state. Open a current view to request a verified description.",
+    suggestions: [],
     sourceClass: "STATIC_FALLBACK",
     promptVersion: SYSTEM_SUGGESTIONS_PROMPT_VERSION,
     providerStatus,
@@ -237,10 +258,19 @@ export async function createSystemSuggestions(rawRequest: unknown, dependencies:
   const config = environmentConfig(environment, dependencies.timeoutMsForTest);
   const now = dependencies.now ?? Date.now;
   const key = guidanceCacheKey({ surface: facts.surface, releaseVersion: facts.releaseVersion, contextFingerprint: facts.contextFingerprint, promptVersion: SYSTEM_SUGGESTIONS_PROMPT_VERSION, language: SYSTEM_SUGGESTIONS_LANGUAGE, modelConfigVersion: modelConfigVersion(config) });
-  if (config.mode === "static" || config.mode === "off") return fallback(facts, candidates, "PROVIDER_DISABLED", stateHash);
-  if (!config.apiKey) return fallback(facts, candidates, "NO_KEY", stateHash);
   const cached = readGuidanceCache(key, now());
   if (cached) return { ...cached, stateHash, providerStatus: `${cached.providerStatus}_CACHED` };
+  const unavailable = dependencies.admission?.status === "LIMITER_UNAVAILABLE";
+  if (unavailable || dependencies.admission?.status === "LIMIT_REACHED") {
+    const status = dependencies.admission!.status;
+    const lastGood = readLastGoodGuidance(key, now());
+    if (lastGood) return { ...lastGood, stateHash, providerStatus: `LAST_GOOD_AFTER_${status}` };
+    return fallback(facts, candidates, status, stateHash);
+  }
+  if (config.mode === "static" || config.mode === "off") return fallback(facts, candidates, "PROVIDER_DISABLED", stateHash);
+  if (!config.apiKey) return fallback(facts, candidates, "NO_KEY", stateHash);
+  // Internal test dependencies may supply a mock transport; real calls require admission.
+  if (!dependencies.admission && !dependencies.fetchImpl) return fallback(facts, candidates, "LIMITER_UNAVAILABLE", stateHash);
   return mergeInFlight(key, async () => {
     const provider = new DeepSeekGuidanceProvider({ apiKey: config.apiKey, baseUrl: config.baseUrl, model: config.model, timeoutMs: config.timeoutMs, temperature: config.temperature, fetchImpl: dependencies.fetchImpl ?? fetch });
     try {

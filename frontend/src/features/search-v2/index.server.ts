@@ -1,3 +1,4 @@
+import { SEARCH_UNICODE_VERSION, supportsSearchUnicode16 } from "@/features/search-v49/unicode16";
 import "server-only";
 
 import { createHash } from "node:crypto";
@@ -94,7 +95,7 @@ export function getPublicSearchIndex(): PublicSearchIndex {
     && manifest.index_bytes === Buffer.byteLength(serializedDocuments)
     && manifest.facets_sha256 === sha256(serializedFacets)
     && manifest.facets_bytes === Buffer.byteLength(serializedFacets)
-    && manifest.unicode_version === process.versions.unicode
+    && manifest.unicode_version === SEARCH_UNICODE_VERSION && supportsSearchUnicode16()
     && manifest.searchable_fields.join("\u0000") === "stable_id\u0000title\u0000credited_label\u0000place"
     && manifest.filterable_fields.join("\u0000") === "year_range\u0000object_type\u0000theme\u0000movement";
   if (!valid) throw new Error("public Search v2 artifact failed its release, checksum, count, Unicode, or field-policy gate");

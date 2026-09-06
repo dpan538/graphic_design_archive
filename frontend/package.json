@@ -77,7 +77,19 @@
     "typecheck:runtime": "tsc --project tsconfig.runtime-acceptance.json --pretty false",
     "test:read-platform": "node scripts/verify-read-platform-contract.mjs",
     "verify:system-suggestions-release-v1": "node --conditions=react-server scripts/verify-system-suggestions-release-v1.mjs",
-    "verify:system-suggestions-live-v1": "node --conditions=react-server scripts/verify-system-suggestions-live-v1.mjs"
+    "verify:system-suggestions-live-v1": "node --conditions=react-server scripts/verify-system-suggestions-live-v1.mjs",
+    "test:system-suggestions-live-runner": "node scripts/test-system-suggestions-live-runner.mjs",
+    "verify:system-suggestions-final-v2": "node --conditions=react-server scripts/verify-system-suggestions-final-v2.mjs",
+    "audit:mobile-desktop-coupling": "node scripts/audit-mobile-desktop-coupling.mjs",
+    "build:vercel": "node scripts/prepare-vercel-public.mjs && NODE_OPTIONS=--max-old-space-size=4096 next build && npm run scan:public-artifacts",
+    "test:machine-reading": "node scripts/test-machine-reading.mjs",
+    "test:vercel-public": "node scripts/test-vercel-public.mjs",
+    "check:hosted-redis": "node scripts/check-hosted-redis.mjs",
+    "scan:public-artifacts": "node scripts/scan-public-artifacts.mjs",
+    "test:search-unicode16": "node scripts/test-search-unicode16.mjs",
+    "verify:search-unicode16": "node scripts/generate-search-unicode16.mjs --check",
+    "test:mobile-safe-area": "node scripts/test-mobile-safe-area.mjs",
+    "verify:hosted-redis": "node --conditions=react-server scripts/verify-hosted-redis.mjs"
   },
   "engines": {
     "node": "22.x"
@@ -88,6 +100,7 @@
     "@types/three": "^0.185.4",
     "d3-geo": "^3.1.1",
     "gsap": "^3.15.0",
+    "ioredis": "^5.11.1",
     "lucide-react": "^1.37.0",
     "next": "^15.5.18",
     "react": "19.0.0",
@@ -101,6 +114,7 @@
     "@fontsource-variable/instrument-sans": "^5.3.0",
     "@fontsource/baskervville": "^5.3.0",
     "@fontsource/instrument-sans": "^5.3.0",
+    "@playwright/test": "1.58.2",
     "@types/d3-geo": "^3.1.0",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",

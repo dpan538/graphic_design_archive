@@ -15,6 +15,7 @@ import {
   summarize,
   type FilterState,
 } from "../lib/filter";
+import { rememberDirectory, restoreDirectory } from "../lib/history";
 import { fetchCatalogue, type Catalogue } from "../lib/catalogue";
 import IndexMobileSheet from "./IndexMobileFilters";
 import IndexMobileDirectory from "./IndexMobileDirectory";
@@ -35,7 +36,9 @@ export default function IndexMobile() {
     fetchCatalogue()
       .then((c) => {
         setCat(c);
-        setState((s) => s ?? defaultState(c));
+        const restored = restoreDirectory(c);
+        setState((s) => s ?? restored.state);
+        setShown(restored.shown);
       })
       .catch(() => setFailed(true));
   }, []);
@@ -45,7 +48,7 @@ export default function IndexMobile() {
   const active = state ?? defaultState(bounds);
   const rows = useMemo(() => (cat && state ? filterRecords(cat.records, state) : []), [cat, state]);
   const groups = useMemo(() => groupByYear(rows.slice(0, shown)), [rows, shown]);
-  useEffect(() => setShown(PAGE), [state]);
+  useEffect(() => { if (cat && state) rememberDirectory(cat.releaseId, state, shown); }, [cat, state, shown]);
   const pristine = isPristine(active, bounds);
   const sum = summarize(active, bounds);
   const activeCount =
@@ -54,8 +57,8 @@ export default function IndexMobile() {
     active.themes.length +
     (active.visual !== "all" ? 1 : 0);
 
-  const patch = (p: Partial<FilterState>) => setState((s) => ({ ...(s ?? defaultState(bounds)), ...p }));
-  const reset = () => setState(defaultState(bounds));
+  const patch = (p: Partial<FilterState>) => { setShown(PAGE); setState((s) => ({ ...(s ?? defaultState(bounds)), ...p })); };
+  const reset = () => { setShown(PAGE); setState(defaultState(bounds)); };
 
   return (
     <div className={`${shell.shell} ${styles.page}`}>

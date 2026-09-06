@@ -1,3 +1,4 @@
+import { SEARCH_UNICODE_VERSION, supportsSearchUnicode16 } from "@/features/search-v49/unicode16";
 import "server-only";
 
 import { createHash } from "node:crypto";
@@ -69,7 +70,7 @@ export function getSearchIndex(): SearchIndex {
     && payload.documents.length === manifest.document_count
     && manifest.index_sha256 === sha
     && manifest.index_bytes === Buffer.byteLength(serialized)
-    && manifest.unicode_version === process.versions.unicode
+    && manifest.unicode_version === SEARCH_UNICODE_VERSION && supportsSearchUnicode16()
     && manifest.public_fields.join("\u0000") === "stableId\u0000title"
     && manifest.runtime_bounds.max_query_code_points === 160
     && manifest.runtime_bounds.max_query_tokens === 24

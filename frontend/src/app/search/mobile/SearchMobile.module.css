@@ -1,17 +1,22 @@
 /* Two ways to stand: the page (direct visit, with the bar) and the overlay
    (opened from the bar: a scrim over the host page, the ticket on top). */
 .page {
-  position: relative;
+  position: fixed;
+  inset: var(--search-visible-top, 0px) 0 auto;
   isolation: isolate;
-  min-height: 100dvh;
+  height: var(--search-visible-height, 100dvh);
+  min-height: 0;
+  overflow-y: auto;
 }
 /* the overlay: beneath the bar, over the page; doubled class so these rules
    outrank the shell's paper and height regardless of stylesheet order */
 .overlay.overlay {
   position: fixed;
-  top: var(--bar-h);
+  top: var(--search-visible-top, var(--bar-h));
+  height: var(--search-visible-height, calc(100dvh - var(--bar-h)));
+  padding: 0;
   right: 0;
-  bottom: 0;
+  bottom: auto;
   left: 0;
   z-index: 60;
   min-height: 0;
@@ -22,7 +27,7 @@
 
 .backdrop {
   min-height: 100%;
-  padding: var(--s-4) var(--page-gutter) calc(var(--s-8) + env(safe-area-inset-bottom));
+  padding: var(--s-4) var(--page-gutter) var(--s-8);
 }
 .page .backdrop {
   background: var(--paper);
@@ -217,4 +222,11 @@
   font-family: var(--font-num);
   font-size: var(--fs-label);
   color: var(--ink);
+}
+
+/* The fixed overlay is outside the host shell's box; own its insets once. */
+.overlay .backdrop {
+  padding-right: calc(var(--page-gutter) + var(--safe-right));
+  padding-left: calc(var(--page-gutter) + var(--safe-left));
+  padding-bottom: calc(var(--s-8) + var(--safe-bottom));
 }

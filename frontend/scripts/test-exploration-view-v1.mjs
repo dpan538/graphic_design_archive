@@ -352,7 +352,7 @@ check(!read("src/app/trace/exploration/desktop/ExplorationDesktop.tsx").includes
   const { resolveSystemSuggestionsFactsForTest } = await jiti.import(join(frontendRoot, "src/features/system-suggestions/service.server.ts"));
   const { listOpenInquiries } = await jiti.import(join(frontendRoot, "src/features/trace-v49/open-inquiry-v1/service.server.ts"));
   const environment = { SYSTEM_SUGGESTIONS_PROVIDER: "deepseek", DEEPSEEK_API_KEY: "test-key" };
-  const providerWith = (note, ids, used = []) => async () => new Response(JSON.stringify({ status: "completed", output: [{ type: "message", role: "assistant", content: [{ type: "output_text", text: JSON.stringify({ note, used_fact_ids: used, suggestion_ids: ids }) }] }] }), { status: 200, headers: { "Content-Type": "application/json" } });
+  const providerWith = (note, ids, used = []) => async () => new Response(JSON.stringify({ status: "completed", output: [{ type: "message", role: "assistant", status: "completed", content: [{ type: "output_text", text: JSON.stringify({ note, used_fact_ids: used, suggestion_ids: ids }) }] }] }), { status: 200, headers: { "Content-Type": "application/json" } });
   const ask = async (request, note, ids = [], used = []) => { resetGuidanceCacheForTest(); return createSystemSuggestions(request, { environment, fetchImpl: providerWith(note, ids, used) }); };
   /* the three-term chain: design diplomacy's ladder at S3 */
   const s3 = sampleStates[1];
@@ -367,7 +367,7 @@ check(!read("src/app/trace/exploration/desktop/ExplorationDesktop.tsx").includes
   const good = await ask(validated, `In this view, ${pair.a} is paired with ${pair.b}.`, [], ["E3"]);
   check(good.sourceClass === "MODEL" && good.suggestions.length === 0 && good.usedFactIds.join() === "E3" && good.contextFingerprint === facts.contextFingerprint, "a pairing the view shows passes the gate, narration only, with its fact id");
   const statics = await ask(validated, `${cap(seed)} is shown here alongside ${others.join(" and ")} through two evidence-qualified generic associations. The view invites these terms to be read together without asserting influence, sequence or causation.`);
-  check(statics.sourceClass === "MODEL", "the owner's upper-limit narration (co-visibility plus a denial) passes the gate");
+  check(statics.sourceClass === "STATIC_FALLBACK", "ambiguous co-visibility plus denial falls back");
   for (const [label, note] of [
     ["influence", `${cap(pair.a)} influenced ${pair.b}.`],
     ["star from a chain", `${cap(seed)} is paired with ${others.join(" and ")}.`],
@@ -386,7 +386,7 @@ check(!read("src/app/trace/exploration/desktop/ExplorationDesktop.tsx").includes
   ]) {
     const response = note === null ? await ask(validated, `In this view, ${pair.a} is paired with ${pair.b}.`, [], ["E9"]) : await ask(validated, note);
     check(response.sourceClass === "STATIC_FALLBACK" && response.providerStatus === "INVALID_RESPONSE", `${label} falls back to the deterministic narration (${response.providerStatus})`);
-    check(response.note === `${cap(seed)} is shown here alongside ${others.join(" and ")} through two evidence-qualified generic associations.`, `${label}: the fallback narrates the visible structure`);
+    check(svc.retrieveExplorationView(s3.category_entry_id, s3.state_id).data.map.associations.some(({endpoint_labels: [a,b]}) => response.note === `In this view, ${a} is paired with ${b}.`), `${label}: the fallback narrates the visible structure`);
   }
   const single = sampleStates[0];
   const s2 = resolveSystemSuggestionsFactsForTest({ schemaVersion: "gda-system-suggestions-request/v2", surface: "TRACE_VALIDATED_EXPLORATION", reference: { mapId: single.category_entry_id, stateId: single.state_id } }).facts;
@@ -407,7 +407,7 @@ check(!read("src/app/trace/exploration/desktop/ExplorationDesktop.tsx").includes
   check(inquiryValidated.sourceClass === "STATIC_FALLBACK", "an inquiry framed as validated falls back");
   check(openInquiryFallbackNote({ labels: [] }) === "This inquiry remains outside the validated graph because its evidence is incomplete." && explorationFallbackNote({ labels: ["a", "b"], counts: { visibleTerms: 2, qualifiedAssociations: 1 } }).startsWith("A is shown here alongside b"), "the v1 deterministic narrations are kept for the frozen reference contexts");
   const legacy = await createSystemSuggestions({ schemaVersion: "gda-system-suggestions-request/v1", surface: "TRACE_VALIDATED_EXPLORATION", stateHash: "a".repeat(64), context: { stateType: "EXPLORATION_VIEW_AXIS", labels: ["x"], counts: { validatedCompositions: 0 }, validActionIds: ["RETURN_TO_COMPOSITION"], evidenceClass: "VALIDATED" } }, { environment: { SYSTEM_SUGGESTIONS_PROVIDER: "static" } });
-  check(legacy.note.startsWith("No validated composition is active") && legacy.providerStatus === "LEGACY_CONTEXT_STATIC", "the legacy reference context keeps its own fallback and never reaches a model");
+  check(legacy.note.startsWith("Guidance is unavailable for this legacy state.") && legacy.providerStatus === "LEGACY_CONTEXT_STATIC", "the legacy reference context keeps its own fallback and never reaches a model");
 }
 
 console.log(`EXPLORATION_VIEW_V1=PASS CHECKS=${checks} STATES=${Object.keys(model.states).length} MORE_STATES=${moreStates} LESS_STATES=${lessStates} LESS_STATES_WHOSE_SMALLEST_STEP_REMOVES_TWO=${lessByTwo} SCENES=${scenes}`);

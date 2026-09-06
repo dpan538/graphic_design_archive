@@ -34,8 +34,25 @@ function serviceResponse<T>(result: ExplorationViewResult<T>): Response {
 }
 
 async function readJson(request: Request): Promise<unknown> {
-  const text = await request.text();
-  if (text.length > MAX_BODY_BYTES) throw new Error("REQUEST_LIMIT_EXCEEDED");
+  if (!request.body) throw new SyntaxError("Empty JSON body");
+  const reader = request.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let bytes = 0;
+  try {
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      bytes += value.byteLength;
+      if (bytes > MAX_BODY_BYTES) { await reader.cancel(); throw new Error("REQUEST_LIMIT_EXCEEDED"); }
+      chunks.push(value);
+    }
+  } finally { reader.releaseLock(); }
+  const body = new Uint8Array(bytes);
+  let offset = 0;
+  for (const chunk of chunks) { body.set(chunk, offset); offset += chunk.byteLength; }
+  let text: string;
+  try { text = new TextDecoder("utf-8", { fatal: true }).decode(body); }
+  catch { throw new SyntaxError("Invalid UTF-8"); }
   return JSON.parse(text) as unknown;
 }
 

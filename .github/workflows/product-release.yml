@@ -1,0 +1,39 @@
+name: Product release boundary
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches: ["codex/vercel-import-ready"]
+permissions:
+  contents: read
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run audit:mobile-desktop-coupling
+      - run: npm run test:vercel-public
+      - run: npm run test:machine-reading
+      - run: npm run test:search-unicode16
+      - run: npm run test:search-v2-api
+      - run: npm run test:system-suggestions
+      - run: MGDA_EPHEMERAL_BUILD=1 npm run build:vercel
+      - name: HTTP reading and public boundary
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3100 > /tmp/mgda-app.log 2>&1 &
+          APP_PID=$!
+          trap 'kill "$APP_PID"' EXIT
+          for attempt in $(seq 1 30); do curl -fsS http://127.0.0.1:3100/llms.txt >/dev/null && break; sleep 1; done
+          MGDA_BASE_URL=http://127.0.0.1:3100 npm run test:machine-reading -- --require-http
+          MGDA_BASE_URL=http://127.0.0.1:3100 npm run test:mobile-safe-area

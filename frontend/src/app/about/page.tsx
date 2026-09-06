@@ -5,6 +5,8 @@ import AboutView from "./AboutView";
 import AboutMobile from "./mobile/AboutMobile";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about", types: { "text/markdown": "/about.md" } },
+  openGraph: { url: "/about", type: "website" },
   title: "About & Methodology",
   description:
     "Project identity, archive and design research methodology, visual-design references, claim boundaries, and how to cite the Modern Graphic Design Archive.",

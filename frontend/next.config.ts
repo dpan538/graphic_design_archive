@@ -32,9 +32,15 @@ const nextConfig: NextConfig = {
   // Production-only: the dev server runs Turbopack (see package.json "dev"),
   // which does not read this hook. `next build` still uses Webpack, so the
   // cache setting below continues to apply where it was written for.
-  webpack: (config, { dev }) => {
+  webpack: (config, { dev, webpack }) => {
     if (!dev) {
       config.cache = false;
+      // Retired studies import the pre-release mock corpus. Exclude their entire
+      // dependency trees from production chunks, rather than hiding their links.
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /[\\/]src[\\/]app[\\/](?:contents|folders|main-sheets|sub-sheets|text-pages|cards|bookmarks|badges|slips|appendix|reading-notes|trace[\\/]types)(?:[\\/].*)?[\\/]page\.tsx$/,
+        path.join(__dirname, "src/components/archive/ProductionUnavailablePage.tsx"),
+      ));
     }
     return config;
   },

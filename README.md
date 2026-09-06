@@ -1,11 +1,24 @@
 # Graphic Design Archive (MGDA)
 
-A rights-aware, PostgreSQL-backed research archive for modern graphic design history, built end to end by one person: source capture across fifteen institutional APIs and collections, reconciliation into a canonical population, a frozen versioned database and read-only API, and a research-grade public frontend (Index, Search, Object records, TRACE research views) that never touches the database directly. Release v49 is closed, frozen and byte-anchored; every public figure on this page is read from a file in this repository.
+<!-- BEGIN CURRENT READING CONTRACT -->
+## Current release candidate
+
+MGDA is a rights-aware reading and research interface, not a complete design history. Dai Pan leads research, data governance, design and implementation, with AI-assisted development and verification. See [About / implementation](https://mgdarchive.com/about#implementation) and [Source](https://mgdarchive.com/source) for the public explanation; remote production acceptance remains pending.
+
+The Next.js / React / TypeScript application reads generated, versioned public projections. PostgreSQL and Python support research and preparation, rather than a required live database connection for public page reads. Index, Search, Object reading, Context Canvas and Exploration are implemented; Spacetime is not released. Redis supplies shared request limits; optional DeepSeek notes are fact-gated with deterministic fallback. Ordinary reading does not call DeepSeek.
+
+The sealed release contains **7,995 public records**: **5,423 reader-facing objects** and **2,572 record-only entries**. Normal Search and Index use reader-facing eligibility; exact identifiers can retrieve public record-only entries. Held material is excluded from public reading. Publication of metadata does not grant image reuse or training permission.
+
+[Machine reading index](https://mgdarchive.com/llms.txt) · [Public read API](https://mgdarchive.com/read-api). Local acceptance, provider tests, CI and remote deployment are distinct evidence categories; automated assertions are not independent user scenarios.
+<!-- END CURRENT READING CONTRACT -->
+
+
+A rights-aware research archive for modern graphic design history, led by Dai Pan with AI-assisted development: source capture across fifteen institutional APIs and collections, reconciliation into a canonical population, a frozen versioned database and read-only API, and a research-grade public frontend (Index, Search, Object records, TRACE research views) that never touches the database directly. Release v49 is closed, frozen and byte-anchored; every public figure on this page is read from a file in this repository.
 
 ```yaml
 # machine-readable summary (all values verifiable at the paths given)
 project: Graphic Design Archive (MGDA)
-author: Dai Pan (潘岱) — sole author (git log: 256 commits, 2026-05-31 → 2026-09-06)
+author: Dai Pan (潘岱) — project lead; AI-assisted development and verification
 domain: digital humanities · design history · research infrastructure
 release:
   id: v49
@@ -22,9 +35,16 @@ reader_projection:          # frontend/generated/reader-eligibility-v49/manifest
   record_only_entries: 2572
   rules: gda-reader-eligibility-rules-v1
 sources:
-  public_set_institutions: 15
-  distinct_source_labels: 272   # frontend/src/data/status-v49.json (meta.sources)
+  public_set_institutions: 15       # major bulk-API institutions the v49 volume is drawn from
+  distinct_source_labels: 272       # frontend/src/data/status-v49.json (meta.sources) -- sources named on the 15,923 canonical objects
   places: 424
+source_discovery:                   # a historical capture stage, audited 2026-09-06; recoverable via the
+                                     # v49-data-api-closure-20260821 tag (git show <tag>:<path>), predates the hygiene pass
+  named_source_registry_entries: 19940       # data/active_source_success_sources_v1.csv
+  entries_flagged_archive_active_public_surface: 12342
+  entries_flagged_captured_not_public_surface: 5983
+  entries_flagged_pre_surface_only: 1615
+  capture_csv_rows: 19899                       # 46 data/capture_batch_*_records.csv files at the named historical tag; not deduplicated objects
 research_layer:             # docs/research/EXPLORATION_CURRENT.md
   validated_pairwise_generic_associations: 21
   open_inquiry_higher_order_hypotheses: 11
@@ -34,15 +54,15 @@ research_layer:             # docs/research/EXPLORATION_CURRENT.md
 api:
   read_endpoints: 18        # docs/api/v49-read-api-openapi.yaml
   product_route_map_entries: 91   # docs/api/product-api-map.v1.json
-  database_access: read-only role; frontend never connects to PostgreSQL
+  database_access: generated public projections at runtime; separate research database read-only role
 database:
   migrations: 14
   functions: 20
   tests: 14
   next_version: 50          # database/VERSION
 stack: [PostgreSQL, Python, Next.js (App Router), React 19, TypeScript strict, CSS Modules, three.js]
-ci_workflows: 6             # .github/workflows
-verification_scripts: { frontend_package_scripts: 48, frontend_script_files: 89 }
+ci_workflows: 7             # six retained research workflows plus product-release.yml
+verification_scripts: frontend/package.json  # current runnable entrypoints; assertions are not user scenarios
 audits: 41                  # docs/audits
 adrs: 6                     # docs/adr
 licences: { software: MIT (LICENSE), interface_design: FRONTEND_DESIGN_LICENSE.md }
@@ -64,15 +84,15 @@ entry_points:
 
 | Layer | What it is | Where to look |
 | --- | --- | --- |
-| Source capture and reconciliation | Capture across fifteen institutional APIs and collections (V&A, Library of Congress, Art Institute of Chicago, Yale, Cooper Hewitt, National Library of Norway, Nasjonalmuseet, Gallica/BnF, Biblioteca Nacional de Chile, Malaysia Design Archive, Desain Grafis Indonesia, Pacific Community Digital Library and others), period and region strategies, fallback and ingest policies, then reconciliation into one canonical population of 15,923 objects | `docs/capture/`, `docs/methodology/`, `docs/releases/v49/DATA_INPUT_MANIFEST.json` |
+| Source capture and reconciliation | A global source-discovery effort — a historical registry names 19,940 named source-registry entries (libraries, galleries, cultural centres and archives across Africa, Latin America and the Caribbean, MENA, Southeast Asia, Eastern Europe, and South and Central Asia, alongside major bulk-API institutions: V&A, Library of Congress, Art Institute of Chicago, Yale, Cooper Hewitt, National Library of Norway, Nasjonalmuseet, Gallica/BnF, Biblioteca Nacional de Chile, Malaysia Design Archive, Desain Grafis Indonesia, Pacific Community Digital Library and others) — then period and region strategies, fallback and ingest policies, and reconciliation down to one canonical population of 15,923 objects drawing on 272 distinct source labels | `docs/capture/`, `docs/methodology/`, `docs/releases/v49/DATA_INPUT_MANIFEST.json` |
 | PostgreSQL database | 14 forward-only migrations, 20 SQL functions, 14 database tests, roles and views; a v48 → v49 replay with an expected baseline and a rehearsal script; the release frozen by manifest and checksum | `database/`, `database/data-migrations/v48-to-v49/`, `database/FREEZE_V49.json` |
-| Read API | 18 documented read-only endpoints under an OpenAPI 3.1 contract, with examples, an error catalog and a product route map; served by the frontend's server side through a dedicated read-only database role | `docs/api/v49-read-api-openapi.yaml`, `docs/api/v49-read-api-catalog.md`, `docs/api/product-api-map.v1.json` |
+| Read API | 18 documented read-only endpoints under an OpenAPI 3.1 contract, with examples, an error catalog and a product route map; a research database contract; current public app reading uses generated projections and the narrower `/read-api` contract | `docs/api/v49-read-api-openapi.yaml`, `docs/api/v49-read-api-catalog.md`, `docs/api/product-api-map.v1.json` |
 | Reader-eligibility projection | A governed split of the 7,995 public records into 5,423 reader-facing objects and 2,572 record-only entries (titles that are source identifiers or numbers), with per-record reasons, a rules version and checksums; Index, Search and object pages all join against it | `frontend/generated/reader-eligibility-v49/`, `frontend/src/features/reader-eligibility/` |
-| Public frontend | Next.js App Router, TypeScript strict, CSS Modules. Home, Index, Search (live API with cursor paging and facets), Object records, About and Source. Desktop and mobile are two separate trees that share only `lib/` and content, enforced by a 539-check coupling audit | `frontend/src/app/`, `frontend/scripts/audit-mobile-desktop-coupling.mjs` |
+| Public frontend | Next.js App Router, TypeScript strict, CSS Modules. Home, Index, Search (live API with cursor paging and facets), Object records, About and Source. Desktop and mobile are two separate trees that share only `lib/` and content, enforced by the automated coupling audit | `frontend/src/app/`, `frontend/scripts/audit-mobile-desktop-coupling.mjs` |
 | TRACE research views | Context Canvas (one object among governed representations) and Exploration (a bounded generative visual explorer with sixteen pure-graphic templates and five reference export forms over the frozen Exploration V2 state machine); Open Inquiry as a reading layer | `frontend/src/app/trace/`, `frontend/src/features/trace-v49/`, `docs/research/EXPLORATION_CURRENT.md` |
 | "System suggests" | A bounded language-model annotation: a server-side fact layer, a relation gate that rejects any note naming a number, term or pairing not on screen, a cache, and a provider disclosed only on the About page | `frontend/src/features/system-suggestions/`, `docs/qa/system-suggestions-release-v1/` |
 | Design system | A stamp-sheet visual language (flat colour, black keylines, one idea per section) with a written design decision record; a 17 px mobile type floor; every round measured in the browser before it ships | `docs/frontend/FRONTEND_DESIGN_DECISION.md`, `docs/design/` |
-| Engineering governance | Six CI workflows, repository hygiene and freeze verifiers, 41 audit packages, 6 ADRs, immutable tags and a documented change policy | `.github/workflows/`, `scripts/repository/`, `docs/audits/`, `docs/adr/` |
+| Engineering governance | Six retained research CI workflows plus the product-release workflow, repository hygiene and freeze verifiers, 41 audit packages, 6 ADRs, immutable tags and a documented change policy | `.github/workflows/`, `scripts/repository/`, `docs/audits/`, `docs/adr/` |
 
 ## Numbers you can check
 
@@ -81,7 +101,9 @@ entry_points:
 | Canonical objects / assignments | 15,923 / 47,982 | `docs/releases/v49/RELEASE_MANIFEST.json` |
 | Publicly eligible / held | 7,995 / 7,928 | `docs/releases/v49/RELEASE_MANIFEST.json` |
 | Reader-facing objects / record-only entries | 5,423 / 2,572 | `frontend/generated/reader-eligibility-v49/manifest.json` |
-| Distinct source labels / object-type labels / places | 272 / 271 / 424 | `frontend/src/data/status-v49.json` |
+| Distinct source labels / object-type labels / places (final v49 release) | 272 / 271 / 424 | `frontend/src/data/status-v49.json` |
+| Named source-registry entries (historical stage) | 19,940 | `data/active_source_success_sources_v1.csv` at `v49-data-api-closure-20260821` |
+| Capture CSV rows, not deduplicated objects (historical tag) | 19,899 | `data/capture_batch_*_records.csv` (46 files) at `v49-data-api-closure-20260821` |
 | Validated pairwise generic associations | 21 | `docs/research/EXPLORATION_CURRENT.md` |
 | Open Inquiry higher-order hypotheses / known excluded structures | 11 / 9 | `docs/research/EXPLORATION_CURRENT.md` |
 | Accepted typed historical relations / positive visual rights | 0 / 0 (fail-closed) | `database/FROZEN_V49.md` |
@@ -98,13 +120,13 @@ reconciliation → canonical population (one byte-pinned payload, DATA_INPUT_MAN
         │  v48 → v49 replay, expected baseline, rehearsal
         ▼
 PostgreSQL v49 (frozen: migrations, functions, roles, views, FREEZE_V49.json)
-        │  read-only API role only
+        │  governed export / checksum verification
         ▼
-Read API · 18 endpoints · OpenAPI 3.1 · read-only
-        │  the frontend never opens a database connection
+Generated public read models · research database API remains separate
+        │  public frontend reads projections, not a live research database
         ▼
 Next.js frontend
-   ├── desktop tree ─┐  share only lib/ and content; a 539-check audit
+   ├── desktop tree ─┐  share only lib/ and content; an automated coupling audit
    └── mobile tree  ─┘  keeps them apart
         │
         ▼
@@ -115,6 +137,7 @@ reader · Index (5,423) · Search · Object records (7,995) · About · TRACE
 
 - **Evidence over inference.** A described record is not a cleared image; metadata, rights and evidence are assessed separately, and clearing one never implies clearing another.
 - **Absence is a finding.** What the archive leaves out stays recorded, countable and labelled unresolved; the year chart on the homepage draws the held share rather than omitting it.
+- **Discovery is broader than release, on purpose.** Source discovery reached far past the institutions the release draws its volume from: a historical registry, recoverable from the `v49-data-api-closure-20260821` tag once the v48 → v49 hygiene pass moved it out of the active tree, names 19,940 named source-registry entries across a long-tail global search — 12,342 classified there as archive_active_public_surface, 5,983 as captured_not_public_surface, and 1,615 as pre_surface_only — alongside 19,899 CSV rows across the 46 capture-batch files at that tag. A source being surveyed, or even captured, does not by itself clear evidence, rights or publication conditions; the frozen v49 release narrows this to 272 distinct source labels across 15,923 canonical objects, and the discovery effort continues past the release boundary. These are historical registry classifications, not an independent verification of 19,940 institutions or a second count of the current public archive.
 - **Reproducible releases.** Releases are identified, hashed and re-derivable; a result can be returned to and checked against the state that produced it. The v49 files enumerated by `database/FREEZE_V49.json` are immutable; later work targets database version 50 with a new forward-only migration and a new ADR.
 - **TRACE, in its governed public language:**
 
@@ -144,7 +167,7 @@ reader · Index (5,423) · Search · Object records (7,995) · About · TRACE
 | TRACE | `/trace/context-canvas`, `/trace/exploration` | The research views, desktop only by policy |
 
 - Desktop and mobile are two component trees under every route (`desktop/`, `mobile/`), chosen on the server; a mobile change cannot reach the desktop except through a shared `lib/` module or content file, which the audit names.
-- Verification is scripted: 48 test and verify entries in `frontend/package.json`, design-contract tests (`frontend/scripts/test-mobile-design.mjs`), API contract tests (`frontend/scripts/test-search-v2-api.mjs`), a presentation verifier with SSIM gates for Exploration, and release reviews under `docs/qa/`.
+- Verification is scripted through the current test and verify entries in `frontend/package.json`, design-contract tests (`frontend/scripts/test-mobile-design.mjs`), API contract tests (`frontend/scripts/test-search-v2-api.mjs`), a presentation verifier with SSIM gates for Exploration, and release reviews under `docs/qa/`.
 
 ## Engineering practice
 
@@ -170,7 +193,7 @@ reader · Index (5,423) · Search · Object records (7,995) · About · TRACE
 | Full-stack TypeScript | Next.js App Router with server-side adapters, strict typing, client hooks for live search, cursor paging and guidance (`frontend/src/`) |
 | Research governance and honest computation | Fail-closed rights, evidence-qualified associations, an explicitly labelled open-inquiry layer, a gate that blocks any language-model note not grounded in on-screen facts (`docs/research/`, `frontend/src/features/system-suggestions/`) |
 | Interface design | A written design system and decision record, a separate mobile tree with a measured type floor, a generative visual engine with verification gates (`docs/frontend/`, `frontend/src/features/trace-v49/exploration-view/`) |
-| Engineering discipline | Six CI workflows, 41 audit packages, 6 ADRs, immutable tags, a documented change policy (`.github/workflows/`, `docs/audits/`, `docs/adr/`) |
+| Engineering discipline | Six retained research CI workflows plus the product-release workflow, 41 audit packages, 6 ADRs, immutable tags, a documented change policy (`.github/workflows/`, `docs/audits/`, `docs/adr/`) |
 
 ## Run it
 
@@ -230,4 +253,4 @@ The exhaustive PostgreSQL-backed API harness is documented in `docs/audits/v49-a
 
 ## Author
 
-Dai Pan (潘岱) — project lead, sole author. Contact and citation guidance: the About page of the running site, or `frontend/src/app/about/content.ts`.
+Dai Pan (潘岱) — project lead, with AI-assisted development and verification. Contact and citation guidance: the About page of the running site, or `frontend/src/app/about/content.ts`.

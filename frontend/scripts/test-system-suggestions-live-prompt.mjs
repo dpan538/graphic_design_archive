@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {readFileSync} from 'node:fs';
+import {dirname,join} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=join(dirname(fileURLToPath(import.meta.url)),'..');
+const require=createRequire(import.meta.url);
+const jiti=require('jiti')(import.meta.url,{tryNative:false,alias:{'@':join(root,'src'),'server-only':join(root,'scripts/server-only-marker.mjs')}});
+const svc=await jiti.import(join(root,'src/features/system-suggestions/service.server.ts'));
+const p=await jiti.import(join(root,'src/features/system-suggestions/providers.server.ts'));
+const rows=readFileSync(join(root,'../docs/qa/system-suggestions-live-completion-v3/runs/2026-09-06T07-02-26-756Z-85ada998/system-suggests-live-results.jsonl'),'utf8').trim().split('\n').map(JSON.parse).filter(x=>x.execution==='EXECUTED');
+const expected={SEARCH_RESULTS:'No public objects match this Search for the text "zzqx-no-match".',TRACE_CONTEXT:'The selected object is AIDS Crisis, a poster. Medium: Poster on the canvas.',TRACE_VALIDATED_EXPLORATION:'In this view, trade is paired with design diplomacy.',TRACE_OPEN_INQUIRY:'This open inquiry considers a bounded question between commodification, mediation and mobile object. The current evidence does not qualify this question for the validated graph.'};
+let count=0;
+for(const row of rows){const facts=svc.resolveSystemSuggestionsFactsForTest({schemaVersion:'gda-system-suggestions-request/v2',surface:row.surface,reference:row.reference}).facts;if(row.surface!=='SEARCH_RESULTS'){assert.throws(()=>svc.assertFactualNote(row.provider_note,facts));count++;}assert.equal(svc.assertFactualNote(expected[row.surface],facts),expected[row.surface]);assert.match(p.instructionFor(row.surface),/copy their text exactly/);count++;}
+assert.equal(p.SYSTEM_SUGGESTIONS_PROMPT_VERSION,'gda-system-suggests-facts-v5');count++;
+const iq=rows.find(row=>row.surface==='TRACE_OPEN_INQUIRY');
+const input=svc.resolveSystemSuggestionsFactsForTest({schemaVersion:'gda-system-suggestions-request/v2',surface:iq.surface,reference:iq.reference});
+const provider=new p.DeepSeekGuidanceProvider({apiKey:'offline',model:'deepseek-v4-flash',baseUrl:'https://api.deepseek.com',temperature:0,timeoutMs:2500,fetchImpl:async()=>{throw Error('no network')}});
+assert.ok(input.candidates.length>1);assert.equal(provider.body(input).text.format.schema.properties.suggestion_ids.maxItems,1);count++;
+console.log(JSON.stringify({test_nature:'UNIT_MOCK',case:'Reproduced live responses remain rejected; exact authoritative statements pass; prompt version invalidates old cache',result:'PASS',checks:count,external_requests:0}));

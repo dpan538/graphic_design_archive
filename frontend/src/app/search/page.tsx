@@ -6,6 +6,8 @@ import SearchDesktop from "./desktop/SearchDesktop";
 import SearchMobile from "./mobile/SearchMobile";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
+  alternates: { canonical: "/search" },
   title: "Search — Modern Graphic Design Archive",
   description:
     "A global Search window: find one public archive object by query, year, object type, theme or movement. URL-backed state; text and citation only, no assumed imagery.",
@@ -13,8 +15,7 @@ export const metadata: Metadata = {
 
 /* Search is a global utility window (§7d), URL-backed at /search. Server device
    split (§4a): the User-Agent (or ?view=) picks the desktop catalogue-card or
-   the mobile ticket treatment; they share only lib/. Fixture-backed — the live
-   search.public-objects.v1 / guidance APIs are not wired. */
+   the mobile ticket treatment; they share lib/ and the live public Search / guidance APIs. */
 export default async function SearchPage({
   searchParams,
 }: {

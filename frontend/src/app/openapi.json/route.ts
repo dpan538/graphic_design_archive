@@ -1,0 +1,7 @@
+export const dynamic = "force-static";
+const ok = { "200": { description: "Public versioned projection; eligibility and response details at /read-api." }, "503": { description: "Unavailable; retry later with bounded backoff." } };
+export function GET() { return Response.json({ openapi: "3.1.0", info: { title: "MGDA public reading", version: "1", description: "Implemented release-candidate read routes. No model, export generation, write or research-control endpoints. Remote production acceptance remains separate. See /read-api." }, servers: [{ url: "https://mgdarchive.com" }], paths: {
+ "/api/search/v1": { get: { summary: "Reader-facing Search; exact public IDs may return record-only entries", parameters: ["q", "yearFrom", "yearTo", "objectType", "theme", "movement", "first", "after"].map(name => ({ name, in: "query", required: false, schema: name === "first" ? { type: "integer", minimum: 1, maximum: 50 } : ["yearFrom", "yearTo"].includes(name) ? { type: "integer", minimum: 0 } : { type: "string" } })), responses: { ...ok, "400": { description: "Invalid input or cursor" }, "405": { description: "Method not allowed" }, "414": { description: "URL too long" } } } },
+ "/api/search/v1/facets": { get: { summary: "Public Search facet vocabulary", responses: ok } },
+ "/api/index/v1": { get: { summary: "Reader-facing compact catalogue; one unpaginated response", responses: { "200": ok["200"] } } },
+} }); }

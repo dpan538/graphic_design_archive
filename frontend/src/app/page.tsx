@@ -5,6 +5,8 @@ import HomeDesktop from "./home/desktop/HomeDesktop";
 import HomeMobile from "./home/mobile/HomeMobile";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { url: "/", type: "website" },
   title: "Modern Graphic Design Archive",
   description:
     "A digital humanities research archive for modern graphic design history — verified records, explicit provenance, and evidence-bounded computational research.",

@@ -1,5 +1,6 @@
 "use client";
 
+import YearInput from "@/components/site/YearInput";
 import type { SearchState } from "../lib/query";
 import type { SearchFacets } from "../lib/live";
 import styles from "./SearchMobileFilters.module.css";
@@ -20,35 +21,36 @@ export default function SearchMobileFilters({
   const OBJECT_TYPES = facets.objectTypes;
   const THEMES = facets.themes;
   const MOVEMENTS = facets.movements;
-  const clampYear = (n: number) =>
-    Math.min(YEAR_MAX, Math.max(YEAR_MIN, Math.round(n) || YEAR_MIN));
   return (
     <div className={styles.filters}>
       <div className={styles.year}>
-        <input
+        <YearInput
+          disabled={!facets.live}
           type="number"
           inputMode="numeric"
-          placeholder={String(YEAR_MIN)}
+          placeholder={facets.live ? String(YEAR_MIN) : ""}
           aria-label="From year"
-          value={state.yearFrom ?? ""}
-          onChange={(e) =>
-            patch({ yearFrom: e.target.value ? clampYear(+e.target.value) : null })
-          }
+          value={state.yearFrom}
+          min={YEAR_MIN}
+          max={YEAR_MAX}
+          onCommit={(value) => patch({ yearFrom: value })}
         />
         <span aria-hidden="true">—</span>
-        <input
+        <YearInput
+          disabled={!facets.live}
           type="number"
           inputMode="numeric"
-          placeholder={String(YEAR_MAX)}
+          placeholder={facets.live ? String(YEAR_MAX) : ""}
           aria-label="To year"
-          value={state.yearTo ?? ""}
-          onChange={(e) =>
-            patch({ yearTo: e.target.value ? clampYear(+e.target.value) : null })
-          }
+          value={state.yearTo}
+          min={YEAR_MIN}
+          max={YEAR_MAX}
+          onCommit={(value) => patch({ yearTo: value })}
         />
       </div>
 
       <select
+          disabled={!facets.live}
         aria-label="Object type"
         value={state.objectType ?? ""}
         onChange={(e) => patch({ objectType: e.target.value || null })}
@@ -62,6 +64,7 @@ export default function SearchMobileFilters({
       </select>
 
       <select
+          disabled={!facets.live}
         aria-label="Theme"
         value={state.theme ?? ""}
         onChange={(e) => patch({ theme: e.target.value || null })}
@@ -75,6 +78,7 @@ export default function SearchMobileFilters({
       </select>
 
       <select
+          disabled={!facets.live}
         aria-label="Movement"
         value={state.movement ?? ""}
         onChange={(e) => patch({ movement: e.target.value || null })}

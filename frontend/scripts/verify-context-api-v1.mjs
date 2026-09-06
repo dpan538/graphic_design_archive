@@ -258,13 +258,26 @@ assert(governedValidationIdCount === 0, `validation-only governed IDs exposed: $
 assert(heldObjectsExposed === 0, `held Context objects exposed: ${heldObjectsExposed}`);
 
 const sourceFiles = listSourceFiles(join(frontendRoot, "src"));
-const generatedImporters = sourceFiles.filter((path) => readFileSync(path, "utf8").includes("generated/trace-context-v1"));
-assert(
-  generatedImporters.length === 1 && generatedImporters[0].endsWith("/governed/reader.server.ts"),
-  `governed corpus import boundary drifted: ${generatedImporters.join(",")}`,
-);
-const readerSource = readFileSync(generatedImporters[0], "utf8");
-assert(readerSource.startsWith('import "server-only";'), "governed corpus reader lost its server-only guard");
+const generatedImporters = sourceFiles.filter((path) => /from ["'][^"']*generated\/trace-context-v1\//u.test(readFileSync(path, "utf8")));
+const metadataImports = new Map([
+  ["/app/trace/page.tsx", ["manifest.json"]],
+  ["/app/trace/context-canvas/page.tsx", ["manifest.json"]],
+  ["/app/trace/context-canvas/lib/coverage.server.ts", ["terms.json"]],
+  ["/app/trace/context-canvas/lib/stress-fixture.server.ts", ["explanation-registry.json"]],
+]);
+for (const path of generatedImporters) {
+  const source = readFileSync(path, "utf8");
+  assert(!/^\s*["']use client["'];/u.test(source), `generated Context resource imported by client: ${path}`);
+  if (path.endsWith("/governed/reader.server.ts")) {
+    assert(source.includes('import "server-only";'), "governed corpus reader lost its server-only guard");
+    continue;
+  }
+  const allowed = [...metadataImports].find(([suffix]) => path.endsWith(suffix))?.[1];
+  const resources = [...source.matchAll(/from ["'][^"']*generated\/trace-context-v1\/([^"']+)["']/gu)].map(match => match[1]);
+  assert(allowed && resources.every(name => allowed.includes(name)), `governed corpus import boundary drifted: ${path}`);
+  if (path.endsWith(".server.ts")) assert(source.includes('import "server-only";'), `metadata server guard missing: ${path}`);
+}
+assert(generatedImporters.some(path => path.endsWith("/governed/reader.server.ts")), "governed corpus reader is required");
 const clientServerReaderImports = sourceFiles.filter((path) => {
   const source = readFileSync(path, "utf8");
   return /^\s*["']use client["'];/u.test(source)
