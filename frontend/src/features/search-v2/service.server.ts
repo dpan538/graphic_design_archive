@@ -10,6 +10,7 @@ import {
   type RankedPublicSearchDocument,
 } from "./core";
 import { getPublicSearchIndex, type PublicSearchFacetValue } from "./index.server";
+import { getReaderEligibilityIndex, type ReaderEligibility } from "@/features/reader-eligibility/index.server";
 
 export type PublicSearchServiceInput = {
   query?: string;
@@ -54,10 +55,24 @@ export function validatePublicSearchRequest(input: PublicSearchServiceInput): Pu
   return request;
 }
 
+/* The reader-facing rule (FRONTEND_DESIGN_DECISION §3b, owner 2026-09-03 and
+   2026-09-06): normal Search — a query, filters, or both — answers from the
+   READER-FACING objects only, the same 5,423 the Index files. A record-only
+   entry (a public record whose title is its source identifier) is returned
+   only when the reader typed that identifier, or the stable ID, in full: an
+   exact record lookup, labelled as such. Ranking runs over every public
+   document so an exact lookup can find it; the join happens after. */
+const EXACT_LOOKUP_MATCH_TYPES: ReadonlySet<string> = new Set(["identifier", "exact_title", "normalized_title"]);
+export const RECORD_ONLY_LABEL = "Record-only archive entry";
+
 export function searchPublicObjects(input: PublicSearchServiceInput) {
   const index = getPublicSearchIndex();
   const request = validatePublicSearchRequest(input);
-  const ranked = rankPublicSearchDocuments(index.documents, request);
+  const eligibility = getReaderEligibilityIndex();
+  const eligibilityOf = (stableId: string): ReaderEligibility => eligibility.byId.get(stableId)?.eligibility ?? "RECORD_ONLY";
+  const ranked = rankPublicSearchDocuments(index.documents, request).filter(
+    (item) => eligibilityOf(item.document.stableId) === "INDEX_ELIGIBLE" || EXACT_LOOKUP_MATCH_TYPES.has(item.explanation.matchType),
+  );
   const page = pagePublicSearchResults({
     ranked,
     request,
@@ -83,6 +98,7 @@ export function searchPublicObjects(input: PublicSearchServiceInput) {
     stateHash: page.stateHash,
     results: page.nodes.map(({ document, explanation }) => ({
       objectId: document.stableId,
+      readerEligibility: eligibilityOf(document.stableId),
       title: document.title,
       creditedLabel: document.creditedLabel,
       displayDate: document.displayDate,
@@ -94,7 +110,7 @@ export function searchPublicObjects(input: PublicSearchServiceInput) {
       sourceLabel: document.sourceLabel,
       deliveryState: document.deliveryState,
       objectPageRoute: `/surfaces/${encodeURIComponent(document.stableId)}`,
-      matchExplanation: explanation.label,
+      matchExplanation: eligibilityOf(document.stableId) === "RECORD_ONLY" ? `${explanation.label} · ${RECORD_ONLY_LABEL}` : explanation.label,
       audit: {
         score: explanation.score,
         matchType: explanation.matchType,
@@ -123,6 +139,8 @@ export function publicSearchFacets() {
       searchIndexSha256: index.manifest.index_sha256,
     },
     documentCount: index.manifest.document_count,
+    /* what normal Search answers from: the reader-facing objects, as the Index */
+    readerFacingCount: getReaderEligibilityIndex().manifest.counts.index_eligible,
     year: index.facets.year,
     objectTypes: index.facets.object_types,
     themes: index.facets.themes,

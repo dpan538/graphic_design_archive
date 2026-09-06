@@ -30,6 +30,28 @@ await check(async () => {
   assert.match(body.stateHash, /^[0-9a-f]{64}$/);
 });
 
+/* The reader-facing rule (owner, 2026-09-03 / 2026-09-06): normal Search — a
+   query, filters, or both — answers from the reader-facing objects only, as
+   the Index does; a record-only entry answers only to its full stable ID or
+   its full identifier title, and says so. */
+await check(async () => {
+  const facets = await (await facetsRoute.GET(request("/api/search/v1/facets"))).json();
+  assert.equal(typeof facets.readerFacingCount, "number");
+  assert.ok(facets.readerFacingCount < facets.documentCount);
+  const filtered = await (await route.GET(request("/api/search/v1?objectType=Poster&first=50"))).json();
+  assert.ok(filtered.pageInfo.totalExact <= facets.readerFacingCount, "a filtered search never exceeds the reader-facing count");
+  assert.ok(filtered.results.every((item) => item.readerEligibility === "INDEX_ELIGIBLE"), "filtered results are reader-facing objects");
+  const worded = await (await route.GET(request("/api/search/v1?q=poster&first=50"))).json();
+  assert.ok(worded.results.every((item) => item.readerEligibility === "INDEX_ELIGIBLE"), "a worded search returns reader-facing objects");
+  const byId = await (await route.GET(request("/api/search/v1?q=SURF-HISTORICALAICTRACE2026V1R0156"))).json();
+  assert.equal(byId.pageInfo.totalExact, 1);
+  assert.equal(byId.results[0].readerEligibility, "RECORD_ONLY");
+  assert.equal(byId.results[0].matchExplanation, "Exact stable ID · Record-only archive entry");
+  const byTitle = await (await route.GET(request(`/api/search/v1?q=${encodeURIComponent(byId.results[0].title)}`))).json();
+  assert.equal(byTitle.results[0].objectId, "SURF-HISTORICALAICTRACE2026V1R0156");
+  assert.match(byTitle.results[0].matchExplanation, /Record-only archive entry$/);
+});
+
 await check(async () => {
   const response = await route.GET(request("/api/search/v1?objectType=Poster&yearFrom=1960&yearTo=1969&first=10"));
   const body = await response.json();
