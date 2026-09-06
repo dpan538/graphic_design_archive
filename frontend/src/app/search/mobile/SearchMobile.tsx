@@ -71,8 +71,7 @@ export default function SearchMobile({ asOverlay = false }: { asOverlay?: boolea
   }, [asOverlay]);
   const engaged = hasQuery(state);
   /* the live public search API, its dictionaries and the shared guidance (lib/live.ts) */
-  const [retryKey, setRetryKey] = useState(0);
-  const live = useLiveSearch(state, engaged, retryKey);
+  const live = useLiveSearch(state, engaged);
   const facets = useSearchFacets();
   const guidance = useSearchGuidance(live);
   const { total, page, pageCount, pageIndex } = live;
@@ -167,7 +166,7 @@ export default function SearchMobile({ asOverlay = false }: { asOverlay?: boolea
           {engaged ? (
             <div className={styles.scroll} aria-busy={live.loading || undefined}>
               {live.error ? (
-                <div role="status"><p className={styles.lab}>{live.error}</p><button type="button" onClick={() => setRetryKey((key) => key + 1)}>Retry Search</button></div>
+                <p className={styles.lab} role="status">{live.error}</p>
               ) : live.stateHash === null ? null : (
                 <SearchMobileResults
                   page={page}
