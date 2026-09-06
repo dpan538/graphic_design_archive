@@ -1,0 +1,341 @@
+/* 02 — the rail's controls: the template row; the three dimensions as
+   plain lines (dot, word, status) — the dot in the dimension's colour,
+   never the only carrier; the way to the rows as one outlined control. */
+
+.controls {
+  display: grid;
+  gap: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.label {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.template {
+  display: grid;
+  gap: var(--s-1);
+}
+
+/* the select draws its own chevron, set in from the edge */
+.template select {
+  min-height: 36px;
+  padding: 0 36px 0 var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background-color: var(--t-bg);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'><path d='M3 5l4 4 4-4' fill='none' stroke='%230a0a0b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  cursor: pointer;
+  transition: border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.template select:hover:not(:disabled) {
+  border-color: var(--t-fg);
+  background: color-mix(in srgb, var(--t-fg) 6%, var(--t-bg));
+}
+
+.template select:disabled {
+  color: color-mix(in srgb, var(--t-fg) 45%, transparent);
+  border-color: color-mix(in srgb, var(--t-fg) 25%, transparent);
+  cursor: default;
+}
+
+/* the layout's one-line brief: tight leading; the room goes between
+   the rail's groups, not between these lines */
+.note {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  text-wrap: pretty;
+}
+
+.dimensions {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.list {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.dimension {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.dimensionLine {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+/* the "+" that opens a dimension's available context */
+.plus {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.plus:hover:not(:disabled),
+.plus:focus-visible,
+.plus[aria-expanded="true"] {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.plus:disabled {
+  color: color-mix(in srgb, var(--t-fg) 45%, transparent);
+  border-color: color-mix(in srgb, var(--t-fg) 25%, transparent);
+  cursor: default;
+}
+
+/* the inline list of available context, under its dimension */
+.available {
+  display: grid;
+  gap: var(--s-2);
+  margin: var(--s-1) 0 var(--s-2) 18px;
+  padding: var(--s-2) var(--s-3);
+  border-left: 3px solid var(--k);
+}
+
+.availableTitle {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.availableList {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.availableItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.availableLabel {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+.dimension[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.dimension[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.dimension[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.focus {
+  display: grid;
+  grid-template-columns: 10px auto minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: var(--s-2);
+  min-width: 0;
+  min-height: 32px;
+  padding: 2px 0;
+  text-align: left;
+  color: var(--t-fg);
+  cursor: pointer;
+}
+
+.focus:hover:not(:disabled) .word,
+.focus:focus-visible .word {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.focus:disabled {
+  cursor: default;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  align-self: center;
+  background: var(--k);
+}
+
+.dimension[data-none] .dot {
+  background: transparent;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 45%, transparent);
+}
+
+.word {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* "N on canvas · M available" wraps at the separator when the rail is
+   narrow — never clipped */
+.status {
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  text-align: right;
+}
+
+.dimension[data-none] .status {
+  color: color-mix(in srgb, var(--t-fg) 55%, transparent);
+}
+
+.add,
+.rows {
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.add {
+  min-height: 32px;
+  padding: 0 var(--s-3);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.add:hover:not(:disabled),
+.add:focus-visible,
+.rows:hover,
+.rows:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.rows {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--s-2) var(--s-3);
+  text-align: left;
+}
+
+.rowsWord {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rowsNote {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  opacity: 0.72;
+}
+
+/* Focus: the compact selector for the dimension read in full */
+.focusRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-1);
+  margin-top: var(--s-2);
+}
+
+.focusWord {
+  margin-right: var(--s-1);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.focusOption {
+  min-height: 30px;
+  padding: 0 var(--s-2) 0 calc(var(--s-2) + 8px);
+  position: relative;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.focusOption::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  transform: translateY(-50%);
+  background: var(--k);
+}
+
+.focusOption[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.focusOption[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.focusOption[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.focusOption:hover:not(:disabled),
+.focusOption:focus-visible,
+.focusOption[aria-pressed="true"] {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.focusOption:disabled {
+  color: color-mix(in srgb, var(--t-fg) 45%, transparent);
+  border-color: color-mix(in srgb, var(--t-fg) 25%, transparent);
+  cursor: default;
+}

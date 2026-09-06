@@ -1,0 +1,262 @@
+/* 04 — the inspector: a labelled column; the kind as a dot + word, the
+   name in the heading face, fields as label / value pairs in the reading
+   face; folds for the long lists; one outlined action at the foot. */
+
+.inspector {
+  display: grid;
+  align-content: start;
+  gap: var(--s-4);
+  min-height: 0;
+  overflow: auto;
+  padding-right: var(--s-2);
+}
+
+.label,
+.sub {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.sub {
+  margin-top: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.body {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.body[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.body[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.body[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.subLabel {
+  margin-top: var(--s-2);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.idle,
+.note {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--t-fg) 82%, transparent);
+  text-wrap: pretty;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  flex: none;
+}
+
+.dot[data-kind="object"] {
+  background: var(--k-object);
+}
+
+.dot[data-kind="medium"] {
+  background: var(--k-medium);
+}
+
+.dot[data-kind="theme"] {
+  background: var(--k-theme);
+}
+
+.dot[data-kind="movement_context"] {
+  background: var(--k-movement);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.18;
+  color: var(--t-fg);
+  text-wrap: pretty;
+}
+
+.role {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+}
+
+.fields {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.field {
+  display: grid;
+  gap: 2px;
+}
+
+.field dt {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.field dd {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--t-fg) 88%, transparent);
+  text-wrap: balance;
+}
+
+.mono {
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+}
+
+.fold summary {
+  display: inline-block;
+  margin-left: calc(-1 * var(--s-1));
+  padding: var(--s-1);
+  cursor: pointer;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+  list-style: none;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.fold summary:hover,
+.fold summary:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+  outline: none;
+}
+
+.fold summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2em;
+}
+
+.fold[open] summary::before {
+  content: "−";
+}
+
+.fold > :not(summary) {
+  margin-top: var(--s-2);
+}
+
+.list {
+  display: grid;
+  gap: var(--s-2);
+  padding-left: 1.1em;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--t-fg) 82%, transparent);
+}
+
+.actions {
+  margin-top: var(--s-2);
+}
+
+.action,
+.link {
+  display: inline-block;
+  min-height: 36px;
+  padding: 0 var(--s-3);
+  line-height: 33px;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.action:hover:not(:disabled),
+.action:focus-visible,
+.link:hover,
+.link:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.action:disabled {
+  color: color-mix(in srgb, var(--t-fg) 45%, transparent);
+  border-color: color-mix(in srgb, var(--t-fg) 25%, transparent);
+  cursor: default;
+}
+
+/* the small text controls inside the technical fold */
+.small {
+  display: inline-block;
+  min-height: 28px;
+  margin-left: var(--s-2);
+  padding: 0 var(--s-2);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.small:hover,
+.small:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.actions .small {
+  margin-left: 0;
+}

@@ -1,3 +1,6 @@
+import eligibilityJson from "../../../../../generated/reader-eligibility-v49/eligibility.json";
+import eligibilityManifestJson from "../../../../../generated/reader-eligibility-v49/manifest.json";
+import type { GovernedContextExampleOption, GovernedContextExampleRole, GovernedContextObjectEntry } from "./types";
 import "server-only";
 
 import { createHash } from "node:crypto";
@@ -200,6 +203,21 @@ interface GovernedContextIndex {
   readonly explanationByCode: ReadonlyMap<string, PublicContextExplanation>;
   readonly info: GovernedContextProjectionInfo;
   readonly sampleOptions: readonly GovernedContextSampleOption[];
+  /* the reader-facing objects, for the canvas's object chooser: title
+     search and the worked examples read this; the deterministic samples
+     above stay a QA tool */
+  readonly objects: readonly GovernedContextObjectEntry[];
+  readonly exampleOptions: readonly GovernedContextExampleOption[];
+  /* the object the canvas opens on when none is asked for and none is
+     remembered: reader-facing, governed context in all three dimensions,
+     the most representations (ties by stable ID) */
+  readonly landingRecord: GovernedContextSampleOption;
+}
+
+/* a title folded for search: lower case, diacritics stripped, spaces
+   squeezed — "Kestavalla" finds "Kestävällä" */
+export function foldForSearch(value: string): string {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/gu, "").toLowerCase().replace(/\s+/gu, " ").trim();
 }
 
 let cachedIndex: GovernedContextIndex | null = null;
@@ -531,6 +549,60 @@ function buildIndex(): GovernedContextIndex {
     });
   }));
 
+  /* the reader-facing verdicts: the sealed reader-eligibility projection
+     read directly (its own loader verifies against the Search index,
+     which the Context branch must never reach) and gated here on its
+     format, its release, its checksum and its count against this cohort */
+  const eligibility = eligibilityJson as unknown as Readonly<{ format: string; release_id: string; rules_version: string; entries: readonly (readonly [string, string, string | null])[] }>;
+  const eligibilityManifest = eligibilityManifestJson as unknown as Readonly<{ release_id: string; rules_version: string; eligibility_sha256: string; counts: Readonly<{ public: number }> }>;
+  const eligibilitySerialized = `${JSON.stringify(eligibility)}\n`;
+  assert(eligibility.format === "gda-reader-eligibility-v1", "reader eligibility format differs");
+  assert(eligibility.release_id === SOURCE_RELEASE.id && eligibilityManifest.release_id === SOURCE_RELEASE.id, "reader eligibility release differs");
+  assert(eligibility.rules_version === eligibilityManifest.rules_version, "reader eligibility rules differ");
+  assert(eligibilityManifest.eligibility_sha256 === createHash("sha256").update(eligibilitySerialized).digest("hex"), "reader eligibility checksum differs");
+  assert(eligibility.entries.length === eligibilityManifest.counts.public && eligibility.entries.length === recordById.size, "reader eligibility count differs from the public cohort");
+  const readerFacingById = new Map(eligibility.entries.map(([id, verdict]) => [id, verdict === "INDEX_ELIGIBLE"] as const));
+  assert(readerFacingById.size === eligibility.entries.length, "reader eligibility names a stable ID twice");
+
+  /* the chooser's objects: every public record with its title folded for
+     search and its reader-facing verdict; the examples are picked from
+     the reader-facing ones by fixed criteria, first by stable ID — never
+     by hand */
+  const objects = Object.freeze(orderedRecords.map((record) => {
+    const counts = { medium: 0, theme: 0, movement_context: 0 };
+    for (const representation of record.representations) counts[representation.kind] += 1;
+    return Object.freeze({
+      stableId: record.selectedRecord.surfaceId,
+      title: record.selectedRecord.title,
+      folded: foldForSearch(record.selectedRecord.title),
+      readerFacing: record.availability === "ready" && (readerFacingById.get(record.selectedRecord.surfaceId) ?? false),
+      counts: Object.freeze(counts),
+    });
+  }));
+  const readerFacing = objects.filter((entry) => entry.readerFacing);
+  const kindsOf = (entry: GovernedContextObjectEntry) => [entry.counts.medium, entry.counts.theme, entry.counts.movement_context].filter((n) => n > 0).length;
+  const total = (entry: GovernedContextObjectEntry) => entry.counts.medium + entry.counts.theme + entry.counts.movement_context;
+  const taken = new Set<string>();
+  const pick = (role: GovernedContextExampleRole, fits: (entry: GovernedContextObjectEntry) => boolean): GovernedContextExampleOption | null => {
+    const entry = readerFacing.find((candidate) => !taken.has(candidate.stableId) && fits(candidate));
+    if (!entry) return null;
+    taken.add(entry.stableId);
+    return Object.freeze({ stableId: entry.stableId, title: entry.title, role, counts: entry.counts });
+  };
+  const exampleOptions = Object.freeze([
+    pick("three_contexts", (e) => kindsOf(e) === 3 && total(e) === 3),
+    pick("medium_theme", (e) => e.counts.medium >= 1 && e.counts.theme >= 1 && e.counts.movement_context === 0 && total(e) === 2),
+    pick("two_themes", (e) => e.counts.theme >= 2),
+    pick("two_movements", (e) => e.counts.movement_context >= 2 && kindsOf(e) === 3),
+    pick("other_language", (e) => /[^\u0000-\u007f]/u.test(e.title) && kindsOf(e) >= 2),
+  ].filter((entry): entry is GovernedContextExampleOption => entry !== null));
+  assert(exampleOptions.length >= 4, "governed Context examples did not resolve");
+  const landingEntry = [...readerFacing]
+    .filter((entry) => kindsOf(entry) === 3)
+    .sort((a, b) => total(b) - total(a) || (a.stableId < b.stableId ? -1 : 1))[0] ?? readerFacing[0] ?? objects[0];
+  assert(landingEntry, "governed Context landing record did not resolve");
+  const landingRecord = Object.freeze({ stableId: landingEntry.stableId, title: landingEntry.title });
+
   const publicPayloadText = canonicalBytes({ explanations, records, terms }).toString("utf8");
   assert(!publicPayloadText.includes("ctxv49:"), "validation-only ID entered governed projection");
   assert(!RAW_SOURCE_TERM_PATTERN.test(publicPayloadText), "raw source term entered governed projection");
@@ -552,6 +624,9 @@ function buildIndex(): GovernedContextIndex {
     recordById,
     explanationByCode,
     sampleOptions,
+    objects,
+    exampleOptions,
+    landingRecord,
     info: Object.freeze({
       projectionId: TRACE_CONTEXT_PUBLIC_PROJECTION_ID,
       projectionSha256: manifest.projectionSha256,
@@ -681,6 +756,38 @@ export function getGovernedContextProjectionInfo(): GovernedContextProjectionInf
 
 export function getGovernedContextSampleOptions(): readonly GovernedContextSampleOption[] {
   return getIndex().sampleOptions;
+}
+
+export function getGovernedContextExampleOptions(): readonly GovernedContextExampleOption[] {
+  return getIndex().exampleOptions;
+}
+
+export function getGovernedContextLandingRecord(): GovernedContextSampleOption {
+  return getIndex().landingRecord;
+}
+
+/* the chooser's search: a public record ID (or its prefix) finds any
+   public record; words find reader-facing titles only — record-only
+   objects (a source identifier for a title) stay reachable by ID alone */
+export function searchGovernedContextObjects(query: string, limit = 8): readonly GovernedContextObjectEntry[] {
+  const raw = query.trim().slice(0, 80);
+  if (raw.length === 0) return Object.freeze([]);
+  const objects = getIndex().objects;
+  const upper = raw.toUpperCase();
+  if (/^SURF(?:-|$)/u.test(upper)) {
+    return Object.freeze(objects.filter((entry) => entry.stableId.startsWith(upper)).slice(0, limit));
+  }
+  const folded = foldForSearch(raw);
+  if (folded.length < 2) return Object.freeze([]);
+  const starts: GovernedContextObjectEntry[] = [];
+  const within: GovernedContextObjectEntry[] = [];
+  for (const entry of objects) {
+    if (!entry.readerFacing) continue;
+    if (entry.folded.startsWith(folded)) starts.push(entry);
+    else if (entry.folded.includes(folded)) within.push(entry);
+    if (starts.length >= limit) break;
+  }
+  return Object.freeze([...starts, ...within].slice(0, limit));
 }
 
 export function lookupGovernedContextDataset(

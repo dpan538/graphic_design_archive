@@ -1,0 +1,170 @@
+/* Context Canvas, desktop — the register (§7g), the owner's palette
+   for this view after two technical sheets: grey-white paper as the
+   ground, black type, light grey for the rules and the fields' fill,
+   the light blue #a9c2e4 for the selected object's plate — the page's
+   core colour, the saturation everything else is set to; one
+   highlight, coral, for what is selected; and one accent per dimension
+   — Medium cyan, Theme green, Movement warm orange — hues from two
+   reference posters (a colour chart, a conference poster) at the light
+   blue's saturation; used the same way
+   on the canvas, in the rail, the rows and the inspector: thin
+   outlines, small bars and dots, never a fill, never the only carrier
+   (the word is always there). (--t-sand is the label grey, black
+   softened to read on the paper.) The three dimensions are told apart by their words,
+   never by colour. Type one step smaller than the reading pages so the
+   whole workspace reads in one screen: labels 14 px, prose 15 px, chips
+   16 px. Film grain at 4.5 %. Under the nav: a narrow rail at the left,
+   the canvas as the body (about two thirds of the workspace), a narrow
+   inspector at the right, and the dock's column reserved past them. The
+   page itself does not scroll: the rail and the inspector scroll inside. */
+
+.page {
+  --t-bg: #e8e6e0;
+  --t-fg: #0a0a0b;
+  --t-grey: #c4c3be;
+  --t-blue: #a9c2e4;
+  --t-hi: #dd745f;
+  --t-sand: #5f5e5a;
+  --k-object: var(--t-blue);
+  /* the canvas ground: the ticket's grey-white, a step brighter than the
+     page's paper, so the canvas stands out from the workspaces around it
+     (the owner's, 2026-09-05) */
+  --c-canvas: #f2f0eb;
+  --k-medium: #53b3c6;
+  --k-theme: #3fa684;
+  --k-movement: #d49454;
+  --focus: var(--t-fg);
+  --c-fs-label: 0.875rem;
+  --c-fs-body: 0.9375rem;
+  --c-fs-chip: 1rem;
+  --nav-h: 96px;
+  position: relative;
+  isolation: isolate;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--t-bg);
+  color: var(--t-fg);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  column-gap: var(--s-5);
+  height: calc(100vh - var(--nav-h));
+  padding: var(--s-3) calc(var(--page-gutter) + 60px + var(--s-5)) var(--s-3) var(--page-gutter);
+}
+
+/* the three workspaces: normal (rail expanded, inspector closed),
+   inspect (rail expanded, inspector open), canvas focus (rail compact,
+   inspector closed) — and compact with the inspector open */
+.main[data-inspector="open"] {
+  grid-template-columns: 17rem minmax(0, 1fr) 17rem;
+}
+
+.main[data-rail="compact"] {
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+
+.main[data-rail="compact"][data-inspector="open"] {
+  grid-template-columns: 11rem minmax(0, 1fr) 17rem;
+}
+
+.railToggle {
+  position: absolute;
+  right: var(--s-2);
+  top: 0;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.railToggle:hover,
+.railToggle:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.rail,
+.right {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--t-sand) 45%, transparent) transparent;
+}
+
+.rail {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+  padding-right: var(--s-2);
+}
+
+/* rings on focus are drawn inside the control: the rail scrolls and
+   would clip a ring outside its edge (the owner saw a select's frame
+   "blocked" on the left) */
+.rail :is(button, input, select, summary, a):focus-visible {
+  outline: 2px solid var(--t-fg);
+  outline-offset: -2px;
+}
+
+.centre {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: var(--s-1);
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* the inspector's column paints above the (positioned) stage, so a
+   wider-than-its-track canvas can never cover it */
+.right {
+  position: relative;
+  z-index: 2;
+  background: var(--t-bg);
+}
+
+/* 06 — the light aside at the rail's foot (only while a useful action
+   stands) */
+.suggests {
+  min-height: 0;
+}
+
+/* the ghost that follows a dragged Add control */
+.ghost {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 60;
+  padding: var(--s-1) var(--s-3);
+  border: 1.5px solid var(--t-fg);
+  background: var(--t-bg);
+  color: var(--t-fg);
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  white-space: nowrap;
+  pointer-events: none;
+}

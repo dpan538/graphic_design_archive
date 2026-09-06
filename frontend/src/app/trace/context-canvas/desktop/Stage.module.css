@@ -1,0 +1,253 @@
+/* 03 — the stage: one framed paper ground (a 1 px black rule at 35 %)
+   with the 28 px dot grid inside; the world moves under it; the fields
+   are thin outlines in their dimension's accent with a small accent bar
+   and the word inside, top left — no fill (a field not recorded: a faint
+   dashed rule, grey bar, fainter word);
+   a caption (loading, or the valid empty state) sits in the ground's
+   top-right corner, in its own empty area. */
+
+.stage {
+  position: relative;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--t-fg) 35%, transparent);
+  background-color: var(--c-canvas);
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--t-fg) 14%, transparent) 1px, transparent 1.3px);
+  background-size: 28px 28px;
+  background-position: 14px 14px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.stage[data-interaction="PANNING"],
+.stage[data-interaction="NODE_DRAGGING"] {
+  cursor: grabbing;
+}
+
+.stage:focus-visible {
+  outline: 3px solid var(--t-fg);
+  outline-offset: -3px;
+}
+
+.world {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+}
+
+/* the fields — grouping drawn, never a line between two things */
+.field {
+  position: absolute;
+  box-sizing: border-box;
+  border: 1.5px solid var(--k);
+  pointer-events: none;
+}
+
+.field[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.field[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.field[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.field[data-state="not_recorded"] {
+  border: 1px dashed color-mix(in srgb, var(--t-fg) 30%, transparent);
+}
+
+/* a compact marker: one line, the head vertically centred */
+.field[data-compact="true"] .fieldHead {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.field[data-state="set_aside"] {
+  border-style: dashed;
+}
+
+.fieldHead {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* the tiny accent bar before the word */
+.fieldHead::before {
+  content: "";
+  align-self: center;
+  width: 16px;
+  height: 5px;
+  background: var(--k);
+}
+
+.field[data-state="not_recorded"] .fieldHead::before {
+  background: color-mix(in srgb, var(--t-fg) 30%, transparent);
+}
+
+.fieldWord {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.field[data-state="not_recorded"] .fieldWord {
+  color: color-mix(in srgb, var(--t-fg) 45%, transparent);
+}
+
+.fieldNote {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+/* the caption: loading, or the valid empty state */
+.caption {
+  position: absolute;
+  right: var(--s-5);
+  top: var(--s-5);
+  width: 30ch;
+  display: grid;
+  gap: var(--s-2);
+}
+
+.captionLead {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.45;
+  color: var(--t-fg);
+  text-wrap: pretty;
+}
+
+.captionNote {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  text-wrap: pretty;
+}
+
+/* the one claim boundary, the canvas's footer */
+.claim {
+  position: absolute;
+  left: var(--s-4);
+  bottom: var(--s-3);
+  max-width: 60ch;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  pointer-events: none;
+}
+
+/* the synthetic fixture's banner */
+.banner {
+  position: absolute;
+  left: var(--s-4);
+  top: var(--s-3);
+  max-width: 64ch;
+  padding-left: var(--s-3);
+  border-left: 3px solid var(--t-hi);
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.4;
+  color: var(--t-fg);
+  text-wrap: pretty;
+  pointer-events: none;
+}
+
+/* the "+ n available" hint in a field's head */
+.fieldHint {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+/* the wires: one 1 px neutral line per connection, stronger while its
+   chip is hovered or selected; the wording on a paper tab at the middle */
+.wires {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.wires polyline {
+  fill: none;
+  stroke: color-mix(in srgb, var(--t-fg) 42%, transparent);
+  stroke-width: 1;
+  stroke-linejoin: miter;
+  transition: stroke 0.14s ease, stroke-width 0.14s ease;
+}
+
+.wires polyline[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.wires polyline[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.wires polyline[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+/* focus feedback only: the dimension's accent, a hair thicker */
+.wires polyline[data-active="true"] {
+  stroke: var(--k);
+  stroke-width: 1.5;
+}
+
+.wireLabel {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 2px 6px;
+  background: var(--c-canvas);
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.2;
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  pointer-events: none;
+}
+
+.wireLabel[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.wireLabel[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.wireLabel[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.wireLabel[data-active="true"] {
+  color: var(--t-fg);
+  box-shadow: inset 0 -2px 0 var(--k);
+}
+
+/* a wording on an outer vertical lane reads upward, still on its knockout */
+.wireLabel[data-vertical="true"] {
+  writing-mode: vertical-rl;
+  transform: translate(-50%, -50%) rotate(180deg);
+  padding: 6px 2px;
+}

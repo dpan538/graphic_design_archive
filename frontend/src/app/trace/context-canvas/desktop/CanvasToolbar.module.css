@@ -1,0 +1,99 @@
+/* 03 · 07 — the toolbar: one line of small text controls in the numeric
+   face at the 17 px floor, sand rules between the groups, the export as
+   the one outlined control; the status line at the right, quiet. */
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  min-width: 0;
+  min-height: 32px;
+}
+
+.tools {
+  display: flex;
+  flex: 0 1 auto;
+  min-width: 0;
+  align-items: center;
+  gap: var(--s-1);
+}
+
+.tools button {
+  min-height: 32px;
+  min-width: 32px;
+  padding: 0 var(--s-2);
+  color: color-mix(in srgb, var(--t-fg) 82%, transparent);
+  background: transparent;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.14s ease, background-color 0.14s ease;
+}
+
+.tools button:hover:not(:disabled),
+.tools button:focus-visible {
+  color: var(--t-bg);
+  background: var(--t-fg);
+}
+
+.tools button:disabled {
+  color: color-mix(in srgb, var(--t-fg) 38%, transparent);
+  cursor: default;
+}
+
+.zoom {
+  min-width: 4ch;
+  text-align: center;
+  font-size: var(--c-fs-label);
+  color: var(--t-sand);
+}
+
+.rule {
+  width: 1px;
+  height: 20px;
+  margin: 0 var(--s-2);
+  background: color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.export {
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent) !important;
+  color: var(--t-fg) !important;
+}
+
+.export:hover:not(:disabled),
+.export:focus-visible {
+  color: var(--t-bg) !important;
+  background: var(--t-fg) !important;
+}
+
+.export:disabled {
+  color: color-mix(in srgb, var(--t-fg) 38%, transparent) !important;
+  border-color: color-mix(in srgb, var(--t-fg) 25%, transparent) !important;
+}
+
+.status {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--s-3);
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  text-align: right;
+}
+
+.status span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.alert {
+  color: var(--k-object);
+}

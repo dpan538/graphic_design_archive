@@ -1,0 +1,109 @@
+/* the compact rail: the expand control at its head, the title, three
+   indicator lines with the dimension's dot */
+
+.compact {
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+}
+
+.expand,
+.indicator {
+  color: var(--t-fg);
+  background: transparent;
+  cursor: pointer;
+}
+
+.expand {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  font-family: var(--font-num);
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.expand:hover,
+.expand:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--c-fs-chip);
+  line-height: 1.2;
+  text-wrap: pretty;
+}
+
+.list {
+  display: grid;
+  gap: var(--s-1);
+  padding-top: var(--s-2);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.list li[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.list li[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.list li[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.indicator {
+  display: grid;
+  grid-template-columns: 10px auto;
+  align-items: baseline;
+  column-gap: var(--s-2);
+  width: 100%;
+  min-height: 28px;
+  padding: 2px 0;
+  text-align: left;
+}
+
+.indicator:disabled {
+  cursor: default;
+}
+
+.indicator:hover:not(:disabled) .word,
+.indicator:focus-visible .word {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  align-self: center;
+  background: var(--k);
+}
+
+.list li[data-none] .dot {
+  background: transparent;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 45%, transparent);
+}
+
+.word {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.status {
+  grid-column: 2;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}

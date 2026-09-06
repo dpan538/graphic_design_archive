@@ -1,0 +1,246 @@
+/* 01 — the object chooser: a search, the examples, the ID behind a fold,
+   the QA samples behind theirs (development only). Titles carry the
+   choice; IDs are the second line. Rings on focus are drawn inside the
+   control, so the rail's edge never clips them. */
+
+.chooser {
+  display: grid;
+  gap: var(--s-2);
+  padding-top: var(--s-3);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.chooser[data-standalone="true"] {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.heading,
+.headingRow {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.toggle {
+  display: inline-flex;
+  gap: var(--s-1);
+  min-height: 32px;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.body {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.search,
+.examples,
+.form {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.label {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+}
+
+.examples .label {
+  font-family: var(--font-num);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.input,
+.button {
+  min-width: 0;
+  width: 100%;
+  min-height: 36px;
+  padding: 0 var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+}
+
+.input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.button {
+  width: auto;
+  justify-self: start;
+  font-family: var(--font-num);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.button:hover {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.hint {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  text-wrap: pretty;
+}
+
+.results {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.result {
+  display: grid;
+  gap: 2px;
+  padding: var(--s-2) var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 25%, transparent);
+  color: var(--t-fg);
+  text-decoration: none;
+  transition: border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.result:hover,
+.result:focus-visible {
+  border-color: var(--t-fg);
+  background: color-mix(in srgb, var(--t-fg) 6%, var(--t-bg));
+}
+
+.result[aria-current="page"] {
+  border-color: var(--t-fg);
+  box-shadow: inset 4px 0 0 var(--k-object);
+}
+
+.resultTitle {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.resultRole {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+  text-wrap: pretty;
+}
+
+.resultMeta {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  overflow-wrap: anywhere;
+}
+
+/* the folds: the exact ID, and the QA samples */
+.fold {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.summary {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary::before {
+  content: "+";
+  font-family: var(--font-num);
+}
+
+.fold[open] .summary::before {
+  content: "−";
+}
+
+.summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.fold[data-qa="true"] {
+  padding-top: var(--s-2);
+  border-top: 1px dashed color-mix(in srgb, var(--t-fg) 30%, transparent);
+}
+
+.qaList {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding-left: 1.6em;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.qaLink {
+  display: grid;
+  gap: 1px;
+  color: var(--t-fg);
+  text-decoration: none;
+}
+
+.qaLink:hover .resultTitle,
+.qaLink:focus-visible .resultTitle {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.qaLink .resultTitle {
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+}
+
+/* rings drawn inside: nothing for the rail's edge to clip */
+.chooser :is(input, button, summary, a):focus-visible {
+  outline: 2px solid var(--t-fg);
+  outline-offset: -2px;
+}

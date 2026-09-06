@@ -1,0 +1,230 @@
+/* 05 — the rows panel, folded under the canvas: one summary line (the
+   title and a note); open, three labelled columns, one per dimension,
+   each row a selectable line (the label; then the governed connection
+   word and whether it is on the canvas) with its action beside it; the
+   selected row carries a paper rule at its left; set-aside rows dim. */
+
+.panel {
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.summary {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  min-height: 30px;
+  padding: var(--s-1) var(--s-1);
+  margin-left: calc(-1 * var(--s-1));
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.summary:hover,
+.summary:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+  outline: none;
+}
+
+.summary:hover .label,
+.summary:hover .note,
+.summary:hover::before,
+.summary:focus-visible .label,
+.summary:focus-visible .note,
+.summary:focus-visible::before {
+  color: inherit;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2em;
+  font-family: var(--font-num);
+  font-size: var(--c-fs-label);
+  color: var(--t-sand);
+}
+
+.panel[open] .summary::before {
+  content: "−";
+}
+
+.label {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.note {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+  white-space: nowrap;
+}
+
+/* open, the panel takes at most a third of the viewport and scrolls
+   inside, so the canvas stays the page's body */
+.rows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--s-6);
+  row-gap: var(--s-3);
+  align-content: start;
+  max-height: 34vh;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: var(--s-2) var(--s-1) var(--s-3) 0;
+  scrollbar-width: thin;
+}
+
+.head {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copy,
+.small {
+  min-height: 32px;
+  padding: 0 var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  background: var(--t-bg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.copy:hover,
+.copy:focus-visible,
+.small:hover:not(:disabled),
+.small:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.small:disabled {
+  color: color-mix(in srgb, var(--t-fg) 45%, transparent);
+  border-color: color-mix(in srgb, var(--t-fg) 25%, transparent);
+  cursor: default;
+}
+
+.add {
+  cursor: grab;
+  touch-action: none;
+}
+
+.group {
+  display: grid;
+  align-content: start;
+  gap: var(--s-2);
+  min-width: 0;
+}
+
+.kind {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.kind[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.kind[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.kind[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  background: var(--k);
+}
+
+.none {
+  padding-left: calc(10px + var(--s-2));
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.items {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-1);
+  padding-left: var(--s-2);
+  border-left: 2px solid transparent;
+}
+
+.item[data-selected="true"] {
+  border-left-color: var(--t-hi);
+}
+
+.item[data-visible="false"] .select {
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.select {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  padding: var(--s-1) 0;
+  text-align: left;
+  color: var(--t-fg);
+  cursor: pointer;
+}
+
+.select:hover .itemLabel,
+.select:focus-visible .itemLabel {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.itemLabel {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+.itemState {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.itemActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+  padding-bottom: var(--s-1);
+}

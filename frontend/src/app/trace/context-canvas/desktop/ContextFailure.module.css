@@ -1,0 +1,88 @@
+/* 08 — the failure page shares the register (tokens as ContextDesktop) */
+
+.page {
+  --t-bg: #e8e6e0;
+  --t-fg: #0a0a0b;
+  --t-grey: #c4c3be;
+  --t-blue: #a9c2e4;
+  --t-hi: #dd745f;
+  --t-sand: #5f5e5a;
+  --k-object: var(--t-blue);
+  --k-medium: #53b3c6;
+  --k-theme: #3fa684;
+  --k-movement: #d49454;
+  --focus: var(--t-fg);
+  --c-fs-label: 0.875rem;
+  --c-fs-body: 0.9375rem;
+  --c-fs-chip: 1rem;
+  --nav-h: 96px;
+  min-height: 100vh;
+  background: var(--t-bg);
+  color: var(--t-fg);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 18rem minmax(0, 1fr);
+  column-gap: var(--s-8);
+  min-height: calc(100vh - var(--nav-h));
+  padding: var(--s-6) calc(var(--page-gutter) + 60px + var(--s-5)) var(--s-6) var(--page-gutter);
+}
+
+.left {
+  min-width: 0;
+}
+
+.failure {
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+  max-width: 44rem;
+  padding-top: var(--s-6);
+}
+
+.code {
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1.05;
+  color: var(--t-fg);
+}
+
+.message,
+.note {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--t-fg) 82%, transparent);
+  text-wrap: pretty;
+}
+
+.retry {
+  display: inline-block;
+  width: max-content;
+  min-height: 36px;
+  margin-top: var(--s-2);
+  padding: 0 var(--s-3);
+  line-height: 33px;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  color: var(--t-fg);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.retry:hover,
+.retry:focus-visible {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}

@@ -1,0 +1,124 @@
+/* 03 — the items: the object as a light-blue plate, the chips as paper
+   lines with a black rule, black type on both; selected = the coral highlight
+   (the plate's outline; the chip's fill); keyboard focus = the page's
+   focus ring. Long labels clamp and carry their full text as the item's
+   title and accessible name. */
+
+.object,
+.chip {
+  position: absolute;
+  box-sizing: border-box;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  overflow: hidden;
+}
+
+.object:active,
+.chip:active {
+  cursor: grabbing;
+}
+
+/* the selected object */
+.object {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  padding: var(--s-3) var(--s-4);
+  background: var(--k-object);
+  color: var(--t-fg);
+  border: 1.5px solid var(--k-object);
+}
+
+.object[data-selected="true"] {
+  border-color: var(--t-fg);
+  box-shadow: 0 0 0 2px var(--t-hi);
+}
+
+.objectKicker {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.objectTitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+}
+
+.objectId {
+  margin-top: var(--s-1);
+  font-size: var(--c-fs-label);
+  line-height: 1.3;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  opacity: 0.9;
+}
+
+.objectMeta {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+/* a contextual representation */
+.chip {
+  display: grid;
+  align-items: center;
+  padding: var(--s-1) var(--s-3) var(--s-1) calc(var(--s-3) + 5px);
+  border: 1px solid color-mix(in srgb, var(--t-fg) 55%, transparent);
+  border-left: 5px solid var(--k);
+  background: var(--c-canvas);
+  color: var(--t-fg);
+}
+
+.chip[data-kind="medium"] {
+  --k: var(--k-medium);
+}
+
+.chip[data-kind="theme"] {
+  --k: var(--k-theme);
+}
+
+.chip[data-kind="movement_context"] {
+  --k: var(--k-movement);
+}
+
+.chip[data-kind="context"] {
+  --k: var(--t-fg);
+}
+
+.chip[data-selected="true"] {
+  background: var(--t-hi);
+  color: var(--t-fg);
+  border-color: var(--t-hi);
+}
+
+.chipLabel {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-chip);
+  line-height: 1.25;
+  text-wrap: balance;
+}

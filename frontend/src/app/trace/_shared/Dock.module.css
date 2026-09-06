@@ -1,0 +1,91 @@
+/* the dock — the landing's, verbatim in measure: 60 px controls, 14 px
+   apart, 2 px border, inverted on hover / focus and for the current
+   view; the name revealed beside the column in the heading face. Below
+   the three, a short rule and the inspector's toggle in the same
+   measure — set apart, not a fourth function. */
+
+.dock {
+  position: fixed;
+  right: var(--page-gutter);
+  top: 50vh;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: grid;
+  justify-items: center;
+}
+
+.dock ol {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* the local tools, set apart from the three entries */
+.tools {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.rule {
+  width: 28px;
+  height: 1px;
+  margin: 14px 0 0;
+  background: color-mix(in srgb, var(--t-fg) 45%, transparent);
+}
+
+.item[aria-disabled="true"] {
+  color: color-mix(in srgb, var(--t-fg) 38%, transparent);
+  border-color: color-mix(in srgb, var(--t-fg) 30%, transparent);
+  cursor: default;
+}
+
+.item[aria-disabled="true"]:hover,
+.item[aria-disabled="true"]:focus-visible {
+  background: var(--t-bg);
+  color: color-mix(in srgb, var(--t-fg) 38%, transparent);
+}
+
+.item {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  color: var(--t-fg);
+  background: var(--t-bg);
+  border: 2px solid var(--t-fg);
+  cursor: pointer;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+
+.item:hover,
+.item:focus-visible,
+.item[data-active] {
+  background: var(--t-fg);
+  color: var(--t-bg);
+  outline: none;
+}
+
+.reveal {
+  position: absolute;
+  right: calc(100% + var(--s-6));
+  transform: translateY(-50%) translateX(10px);
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--t-fg);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: translateY(-50%);
+}

@@ -31,6 +31,25 @@ export interface GovernedContextSampleOption {
   readonly title: string;
 }
 
+/* the object chooser (§7g): every public record with its title folded
+   for search and its reader-facing verdict; the worked examples, picked
+   by fixed criteria */
+export interface GovernedContextObjectEntry {
+  readonly stableId: string;
+  readonly title: string;
+  readonly folded: string;
+  readonly readerFacing: boolean;
+  readonly counts: Readonly<{ medium: number; theme: number; movement_context: number }>;
+}
+
+export type GovernedContextExampleRole = "three_contexts" | "medium_theme" | "two_themes" | "two_movements" | "other_language";
+
+export interface GovernedContextExampleOption extends GovernedContextSampleOption {
+  readonly role: GovernedContextExampleRole;
+  readonly counts: Readonly<{ medium: number; theme: number; movement_context: number }>;
+}
+
+
 export interface PublicContextRepresentationProvenance {
   readonly provenanceId: string;
   readonly basis: "project_curated_typed_membership";
