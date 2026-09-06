@@ -1,0 +1,74 @@
+/* the view: the stamp on the canvas ground, centred, as tall as the
+   stage allows; the status line under it */
+
+.stage {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100%;
+  min-height: 0;
+  border: 1px solid color-mix(in srgb, var(--t-fg) 35%, transparent);
+  background-color: var(--c-canvas);
+}
+
+/* the sheet's one track is sized by the stage, never by the picture's
+   intrinsic size, so the stamp's height can be a percentage of it */
+.sheet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  place-items: center;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  padding: var(--s-4);
+  transition: opacity 0.16s ease;
+}
+
+.sheet[data-busy="true"] {
+  opacity: 0.55;
+}
+
+/* the picture: full-frame, as large as the sheet allows, centred, flat — no shadow */
+.picture {
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+  aspect-ratio: 3 / 4;
+  max-width: 100%;
+}
+
+.picture :global(svg) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* the system pointer is hidden over the stage while the drawn cursor is active */
+.stage[data-cursor="drawn"] {
+  cursor: none;
+}
+
+/* the terms' and associations' regions never show */
+.picture :global([data-layer="terms"] rect),
+.picture :global([data-layer="associations"] rect) {
+  stroke: none;
+  fill: none;
+}
+
+.status,
+.notice {
+  margin: 0;
+  padding: var(--s-2) var(--s-3);
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  border-top: 1px solid color-mix(in srgb, var(--t-fg) 20%, transparent);
+}
+
+.status {
+  color: var(--t-sand);
+}
+
+.notice {
+  color: var(--t-hi);
+}

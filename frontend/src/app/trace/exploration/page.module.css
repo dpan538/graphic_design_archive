@@ -1,0 +1,49 @@
+/* the failure page: one column of text on the paper; nothing mounted */
+
+.failure {
+  display: grid;
+  align-content: center;
+  gap: var(--s-3);
+  min-height: calc(100dvh - 80px);
+  max-width: 62ch;
+  margin: 0 auto;
+  padding: var(--s-7) var(--page-gutter);
+  color: var(--t-fg);
+}
+
+.eyebrow {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--t-fg) 62%, transparent);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body, 1rem);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--t-fg) 72%, transparent);
+}
+
+.back a {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

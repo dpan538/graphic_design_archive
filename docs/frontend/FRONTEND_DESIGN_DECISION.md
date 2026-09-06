@@ -1,3 +1,30 @@
+### Register — the owner's palette for this view
+
+Grey-white paper `#e8e6e0` as the ground, black `#0a0a0b` type (82 % for prose; labels
+`#5f5e5a`), light grey `#c4c3be` for rules. The light blue `#a9c2e4` of the object's plate
+is the page's core colour and the saturation everything else is set to (the owner,
+2026-09-05): coral `#dd745f` as the one highlight (selection); Medium cyan `#53b3c6`,
+Theme green `#3fa684`, Movement warm orange `#d49454` — hues from two reference posters
+(a colour chart; a conference poster) at that saturation — used the same way in every
+template, on the canvas (the field's outline and accent bar, the chip's bar), in the rail
+and the rows (dots) and in the inspector (the dimension's dot): lines and small marks,
+never a fill, never the only carrier (the word is always there), never a reading of
+strength, confidence or rank. A template may not change the palette.
+
+### The export
+
+The PNG is the reference renderer's (`export-png.ts`, untouched): 224 × 104 boxes joined by
+orthogonal connectors with a label at each connector's middle, and a public-safe footer.
+That renderer was built for a lane layout; drawn over the canvas's own arrangement its
+labels landed on the boxes (the owner's export of 2026-09-04). The composition is therefore
+exported in its lanes — the object at the left, its contexts in one column 232 px to the
+right, in the projection's order (`lib/arrange.ts exportLayout`) — the same visible set as
+the canvas, only the positions differ. Checked in the browser by rendering the export SVG
+itself (dev hook `window.__mgdaContextCanvas.exportSvg()`): no text lies on a box or on
+another text. What the renderer still does that a later export round must settle: labels
+truncated at 18 display units ("Portfolio Cove…"), kind names as `archive_object`, the
+projection hash in the footer, no legend, no MGDA identity.
+
 # Frontend Design Decision
 
 Single source of truth for the Modern Graphic Design Archive frontend redesign.
@@ -30,7 +57,7 @@ Modern Graphic Design Archive
 ├── Index          — archive browsing / classification directory; desktop + mobile (NEW, approved scope)
 └── TRACE          — desktop-only research environment (mobile → lightweight fallback)
       ├── Context Canvas       (Function 1)
-      ├── Spacetime            (Function 2)
+      ├── Spacetime            (Function 2 — DEFERRED / NOT RELEASED in v49; a research direction under review, shown on the landing, no entry)
       └── Exploration          (Function 3)
             ├── Validated Exploration   — evidence-qualified, deterministic
             └── Open Inquiry            — explicitly unresolved, isolated, read-only
@@ -102,7 +129,7 @@ its usability.**
 | 3 | Object Page | `/surfaces/{id}` | One archive object — text + citation only, no image | desktop + mobile |
 | 4 | TRACE | `/trace` | Entry to the three research functions | desktop (mobile → fallback) |
 | 5 | Context Canvas | `/trace/context-canvas` | TRACE Function 1 | desktop (mobile → fallback) |
-| 6 | Spacetime | `/trace/spacetime` | TRACE Function 2 | desktop (mobile → fallback) |
+| 6 | Spacetime | `/trace/spacetime` | TRACE Function 2 — **deferred, not released in v49**: the route is a release boundary, not a surface | desktop + mobile (a text page) |
 | 7 | Exploration | `/trace/exploration` | TRACE Function 3 — Validated Exploration + Open Inquiry | desktop (mobile → fallback) |
 | 8 | About | `/about` | Project identity, methodology, design rationale, citation, claim boundaries | desktop + mobile |
 | 9 | Source | `/source` | Full provenance, source-by-source licensing, rights, permissions | desktop + mobile |
@@ -114,8 +141,8 @@ internal engineering codename only.
 
 - **Object Page is never a direct Homepage action.** It is reached only *through*
   a function — Search results or Index directory results.
-- **Context Canvas / Spacetime / Exploration are reached only via `/trace`**, never
-  from the Homepage.
+- **Context Canvas / Exploration are reached only via `/trace`**, never from the
+  Homepage (Spacetime, deferred, is reached from nowhere: no dock control, no link).
 - **Search is visually part of the Homepage** as a distinct expandable search
   window, but it owns its own route and real URL state (`q`, `yearFrom`, `yearTo`,
   `objectType`, `theme`, `movement`, `after`). It is not a URL-less modal.
@@ -220,7 +247,7 @@ About
   ├─ Source            ← provenance · rights / licence · source register
   └─ Rights & permissions
 
-TRACE  (+ Context Canvas · Spacetime · Exploration)
+TRACE  (+ Context Canvas · Exploration; Spacetime deferred, shown as a direction under review)
   └─ unavailable on mobile — address-disabled (see below)
 ```
 
@@ -1235,15 +1262,39 @@ page animation, no easing on scroll, no scroll-jacking.
 
 ### Verification method
 
-The browser harness cannot scroll and screenshot a pinned stage and runs no animation
-frames while hidden, so the dev hook `window.__mgdaTrace.freeze(sp)` (absent in production
-builds) pins the scene at a scroll progress and dispatches one synchronous frame
-(`mgda:frame`). Each screen is verified at its hold's midpoint (sp 0.05 · 0.25 · 0.47 ·
-0.68 · 0.91) at 1960 × 1130: a screenshot, and three DOM checks — bounding-box intersection
-between all visible text boxes, the 24 px distance from every caption to every component
-box (`boxesFor` mirrored in the check), and the word count of each paragraph's last line
-(Range per word). The foot is checked with the body translated up (`document.body.style.transform`)
-and the tagline by comparing `max − 300` (opacity 0) with `max` (opacity 1).
+The fixed synthetic stress fixture (`lib/stress-fixture.server.ts`; development builds,
+`?state=stress` and `?state=stress-missing`): a long title, attribution and type; Medium 4
+terms (one long), Theme 6 (two long), Movement 3 — or none; opened with one Theme term set
+aside, a Theme term selected, the inspector and the rows open. Layout testing only,
+banner-labelled; the real workload is 3 nodes (P50 and P95) and 5 at most.
+`npm run test:context-canvas-design` (`scripts/test-context-canvas-design.mjs`, jiti over
+the governed reader) checks, for four real objects (3, 4, 4 and 5 nodes) and both stress
+variants under every layout: the three wordings; every wire starts on the object and ends
+on its chip, straight or orthogonal, every visible chip on exactly one wire, none for a
+dimension not recorded, wordings 20 px from either card and never on one another; the same
+ids, fields and wording under every layout; the ticket export (labels as titles, the
+wordings on the branches, the MGDA mark, no full hash, identifier or publication state in
+sight, the binding in <desc>); the clipboard tables.
+In the browser at 1960 × 1130: the object with all three contexts, a selected context with
+the inspector and coverage, Movement not recorded, loading / empty / the two failures,
+the rows open, a set-aside context with the "+" and System suggests, the four layouts on
+the stress fixture; DOM checks — no text box intersects another (closed folds excluded),
+wire wordings clear of cards and field words, no paragraph ends on a lone word, the
+minimum font size, no page scroll; the ticket SVG rendered inline and measured (no text on
+text, nothing outside the sheet). Functional runs on real records: add / remove / undo /
+redo, Fit against Reset, reload persistence and object switching. Gates: `tsc`,
+`typecheck:runtime`, `test:read-platform`, `verify-context-canvas-v49`,
+`rehearse-context-runtime-v1`, `test:context-canvas-design`, the hygiene audit.
+
+### Interactive text is never grey
+
+The owner's rule (2026-09-05): grey (`--t-sand`) is for labels only. Anything the reader
+can act on — the "Change the selected object" summary, the inspector's folds, the rows'
+disclosure line, the template select — is set in black and inverts (black ground, paper
+text) on hover and focus, so nothing that can be clicked looks disabled. The stage is
+positioned and could paint over a neighbouring column; the inspector's column is therefore
+positioned above it, and the canvas column's track is `minmax(0, 1fr)` with its overflow
+hidden so a wide toolbar can never widen the column past its track.
 
 ### Bad practice — removed, do not reintroduce
 
@@ -1258,6 +1309,781 @@ entries; any recents, trending, recommendation or "System suggests" on the landi
 
 ---
 
+## 7g. Context Canvas — TRACE Function 1 (2026-09-04, owner's brief of the same day)
+
+The maintenance record for `/trace/context-canvas`. The function is the reference
+implementation's, unchanged; this round re-set what is seen.
+
+### Route, scope, boundary
+
+- `/trace/context-canvas?record={SURF-…}` (`frontend/src/app/trace/context-canvas/page.tsx`).
+  Desktop only by policy (§4): the server checks the mobile hint and returns the mobile nav
+  plus `TraceDesktopRequired` before any research runtime is imported; the governed imports
+  stay inside one `await Promise.all` after the guard (the suggestions UI test reads the file
+  for that order).
+- The selected object is the projection's first deterministic sample unless `?record=`
+  names a public stable ID; changing it is the existing behaviour (an ID, or one of the
+  twelve samples), folded in the rail. No new picker, no Search.
+- The product logic is untouched: composition state, reducer, entity and row derivations,
+  persistence (browser-local, keyed to release · projection · record), and the PNG export
+  are `features/trace-v49/context/canvas/*` as before; the route no longer renders that
+  folder's reference UI (`ContextCanvas.tsx` and its parts stay for their tests).
+- Context is project-curated archival positioning only. The page never draws a line between
+  two things, never ranks a context, never reads distance as strength, never shows
+  `ROLE` / `STATE` / hashes on the canvas, and never names a provider.
+
+### What the page reads as
+
+One selected archive object → three governed contextual dimensions → inspect and compare.
+The owner's IA: 01 the head (TRACE · CONTEXT CANVAS · "See how one archive object is
+positioned within project-curated context." · the selected object's title and stable ID) ·
+02 the controls (template; Medium / Theme / Movement availability and inclusion; the
+existing add action; the way to the rows) · 03 the spatial canvas · 04 the inspector ·
+05 the accessible rows · 06 System suggests · 07 export · 08 the shared states.
+
+### Layout (1960 × 1130) — three workspaces
+
+Under the nav: the rail at the left, the canvas as the body, the inspector at the right
+only while open, the dock's 60 px column reserved past them. The page does not scroll;
+the rail and the inspector scroll inside. Three workspaces (the owner's, 2026-09-05):
+NORMAL — rail expanded (17rem), inspector closed: the canvas is 1,300 × 920 px, 72 % of
+the usable width; INSPECT — the inspector open (17rem), the canvas 1,020 px; CANVAS
+FOCUS — the rail compact (11rem), the canvas 1,400 px, 78 %. The inspector is closed by
+default, opens itself when a context (or the object) is selected, and closes from its own
+control in the dock. Under the three view entries, past a rule, the page's two LOCAL TOOLS
+— not a fourth and fifth function: the inspector's toggle (a split-view glyph, revealed as
+"Inspector" / "Close inspector") and the global ADD CONTEXT "+" (revealed as "Add
+context", or "No context to add" and disabled when the object has nothing governed left).
+The "+" opens the right panel as ADD CONTEXT (`AddContextPanel`): the governed context
+this object carries that is not on the canvas, grouped Medium · Theme · Movement — "No
+additional context" where none — each with one Add; adding puts the term in its field,
+selects and focuses it, shows its wire, updates the rows and counts, and hands the panel
+back to the inspector. Nothing can be searched for, typed or made from blank canvas. The
+rail's per-dimension "N on canvas · M available [+]" stays as the secondary way. The rail's
+"‹" collapses it to the compact form (the title, three dimension indicators, "›" to expand;
+the choice kept per browser). The canvas: the stage (a 1 px black rule, the 28 px dot
+grid), the toolbar under it as one 32 px line, and the rows panel folded beneath as one
+30 px disclosure line.
+
+### The canvas (`lib/arrange.ts`, `desktop/Stage.tsx`, `desktop/CanvasItem.tsx`)
+
+World units at zoom 1. The OBJECT (320 × 140) stands once: the light-blue plate with
+"Selected object", the title (two lines), the stable ID, year · type — no more. Its
+contexts stand in three FIELDS — thin 1.5 px outlines in the dimension's accent with a
+16 × 5 px accent bar before the dimension's word inside at the top left; no fill — as
+CHIPS (280 × 52), a paper line with a black rule and a 5 px accent bar at the left edge,
+the governed label only, one size everywhere. A field is the union of its default place
+(wherever the object now stands) and its chips wherever they have been dragged, so its
+label never lies; a dimension with nothing on the canvas is a COMPACT marker (236 × 36,
+one line: the word and "Not recorded" or "n set aside"), never a large empty region. Chips
+are laid out in the projection's order; Arrange and Reset restore the layout; Fit never
+zooms past 1. The one claim boundary — "Context describes archival positioning, not
+historical influence." — stands once, as the canvas's footer; the inspector does not
+repeat it.
+
+### The connections — one class, three wordings (the owner's, 2026-09-05)
+
+Governed Context V1 has exactly one connection class, the selected object to one of its
+context representations, and the registry reads it three ways: Medium "classified as",
+Theme "themed as", Movement "curated within" (`connectionLabel`, the adapter's contract).
+The canvas draws them as WIRES (`connectorsOf` in `lib/arrange.ts`, `Stage`): a 1 px
+neutral line from the side of the object plate that faces the chip to the chip's facing
+side, the wording on a paper tab at the middle; no arrowhead, no weight, no colour of its
+own; 1.5 px and darker only while its chip is hovered or selected. Never between two
+terms, never between two objects, never for a dimension not recorded; the count of wires
+equals the count of representations on the canvas. Overview and Focus wire every chip (the
+ring is 120 px so the wording has room); Columns wires each column once (96 px); Dense
+draws none and prints the wording in the band's head. The rows' accessible names carry the
+same wording ("Theme context (themed as)"). No other relation exists on this page: not
+object–object, not term–term, not influence, similarity, causation, hierarchy or
+chronology — those questions belong to Exploration, and Region to Spacetime.
+
+### Adding context — the rail's "+" (the owner's, 2026-09-05)
+
+Each dimension line reads "N on canvas · M available" (the "· M available" only while
+M > 0; "Not recorded" where the object carries none). While M > 0 the line ends in a "+"
+(`aria-expanded`, `aria-controls`) that opens that dimension's AVAILABLE list inline —
+each term with an Add. Add places the already-governed representation in its field
+(`slotFor`), the reducer selects it, the chip takes keyboard focus, the inspector opens
+on it, the rows update, its wire appears with its wording, the count falls, and the list
+closes when nothing is left. A field with more of its kind available says "+ n available"
+in its head (an assist; the rail is the control). Dragging a row's Add onto the canvas
+remains the secondary way. Nothing can be created from blank canvas: a reader only places
+what the server already approved. Real workloads are small — of 7,995 objects, 7,884
+carry two representations, 106 three, 5 four; the canvas's default is P50 = 3 nodes and
+its maximum 5 (`SURF-LOCTRACE2026R00867`: one Medium, one Theme, two Movements). The
+synthetic 4 / 6 / 3 fixture stays a defensive layout test, never a product target.
+
+### Entering, choosing the object, and what a reload keeps (the owner's, 2026-09-05)
+
+Entering `/trace/context-canvas` always opens a canvas — never a chooser page (the owner
+rejected one: "无法理解也无法找到正确的交互部分"). Without `?record=` the route sends the
+reader, as a redirect to its own `?record=` address, to the object opened most recently in
+this browser — a first-party cookie (`mgda-context-last`, the public stable ID and nothing
+else) the canvas sets and renews for thirty minutes — or else to the LANDING record: the
+reader-facing object carrying governed context in all three dimensions with the most
+representations, ties by stable ID (`getGovernedContextLandingRecord`; in v49 that is the
+1 · 1 · 2 record "Solidarity with the people of Southern Africa"). The rail's chooser
+(`ObjectChooser`), folded under "Change the selected object", is the way to another object:
+- SEARCH by title or ID (`/api/trace/v1/context-objects?q=`, through the governed reader):
+  words find READER-FACING titles only (the reader-eligibility projection's verdict; case
+  and diacritics do not matter — "Kestavalla" finds "Kestävällä"); a public record ID or its
+  prefix finds any of the 7,995 governed public records, record-only ones included, marked
+  "record-only". Results are links; the title is what a result is known by, the ID and the
+  count of contexts its second line. Arrow down from the box into the results, Enter opens.
+- START WITH AN EXAMPLE: five objects picked from the reader-facing ones by fixed criteria,
+  first by stable ID, never by hand (`getGovernedContextExampleOptions`): one context of
+  each kind; Medium and Theme with Movement not recorded; two Themes; two Movements (four
+  contexts — the most any v49 object carries); a title in another language.
+- OPEN BY RECORD ID, behind a fold: the exact public record ID, any governed public record;
+  held records fail closed as before.
+- QA SAMPLES, behind their own fold and only in development or with `?qa=1`: the
+  projection's twelve deterministic samples — "12 of 7,995 governed public records, evenly
+  spaced by stable public ID. For deterministic testing; not a representative sample." The
+  sampling (index = floor(i × 7994 / 11): 0, 726, 1453, 2180, 2906, 3633, 4360, 5087, 5813,
+  6540, 7267, 7994) and its tests stay; the production interface never calls them a
+  reader's sample, and the native select is gone.
+An object opens with one representation of each dimension on the canvas and the rest left
+to add — "1/2 on canvas", "+ 1 available" — so every canvas shows every relation and the
+add is there to be found (development previews open whole). A reload restores the reader's
+composition — its membership, what was set aside, what was selected — and lays it out
+again under the layout as it is now; positions from another layout or an earlier
+arrangement are never drawn. In v49 no object carries more than four representations and
+110 carry all three dimensions.
+
+### The canvas ground (the owner's, 2026-09-05)
+
+The stage's ground is the ticket's grey-white (`--c-canvas`, `#f2f0eb`), a step brighter
+than the page's paper; the rail, the inspector, the rows and the toolbar stay on the paper.
+The chips and the wording knockouts take the ground's colour, so the canvas and its export
+are one sheet and the canvas stands out from the workspaces around it.
+
+### Moving things — a drag ends in a verdict (the owner's, 2026-09-05)
+
+The owner dragged chips across the canvas and the fields — drawn around wherever their
+chips stand — grew into one another, the wordings floated, the picture read as nested
+boxes. So a drag ends in a VERDICT (`dropVerdict` in `lib/arrange.ts`, on the drag's end):
+a context may be moved within its own field's chip area (never over the field's word, in
+Dense never into the label column), never onto another item; the object stays where its
+fields are laid out around it. Anything else is put back where it started and the status
+line says why ("‘Poster’ stays in Medium: a context moves within its own field." / "…was
+put back: items never stand on one another." / "The object stays where its fields are laid
+out around it; drag the ground to pan."). While the drag lasts the wire follows the chip
+and its field reaches for it; the verdict decides. The rail's count reads "n/T on canvas"
+— what stands, out of what the object carries (the compact rail and the ticket's key say
+the same) — so the reader sees at once how much there is to add. The object's plate is
+320 × 156, room for a title clamped to two lines, a stable ID that breaks after a hyphen
+onto a second line, and the year · type line; focus rings in the rail are drawn
+inside the control (the rail scrolls and clipped a ring outside its edge, which read as a
+"blocked" frame); the layout's one-line brief keeps a tight leading, the room going between
+the rail's groups.
+
+### The wires — one connection class, three wordings (the owner's, 2026-09-05)
+
+Governed Context V1 has one connection class — the selected object to one of its context
+representations — read as the registry's three wordings: Medium "classified as", Theme
+"themed as", Movement "curated within"; nothing else is ever drawn (no term–term,
+object–object, causal, similarity, influence, hierarchy or chronology relation; nothing
+for a dimension not recorded). `connectorsOf` in `lib/arrange.ts` routes them: orthogonal
+1 px neutral wires, no arrowhead, no weight, from the object's card to the actual chip —
+right edge → Theme chip's left edge, left edge → Medium chip's right edge, bottom edge →
+Movement chip's top edge, or the nearest clear side (the wider gap decides). A chip
+approached from the side has its own wire (lane 34 px past the object's edge); a stack
+approached from above (Columns, Focus's compact stacks) is one wire to its first chip and
+the stack is the wire's group; Dense's bands are reached from one lane 34 px outside the
+bands' left edge, one wire per band into its first chip, the wording inside the band's
+label column. A wire never passes through another field or a card: when the straight
+approach is blocked (Focus — the second compact stack under the first) the wire leaves
+the object's side, takes an outer lane down the clearer side and enters the chip from
+that side, its wording turned along the lane. The wording sits ON the wire and interrupts
+it (a paper knockout), on the longest run outside the field — at least 20 px from every
+card, 24 px from the field's word, never on another field's outline — and wordings that
+would lie on one another slide along their own run until apart. A wire whose chip is
+hovered or selected turns 1.5 px in the dimension's accent: focus, never strength. A
+field's word never carries the wording. Rings: 160 px in Overview and Focus (room for the
+wording), 110 px in Columns, 72 px in Dense.
+
+### Four templates — layout only (the owner's, 2026-09-05)
+
+The public control is CANVAS LAYOUT, never "template": the governed composition template
+stays the one "Context overview" (`context-overview` v2, the contract's name), and the
+four reader-facing choices are layout presets over exactly the same governed object and
+contexts (`LAYOUTS` in `lib/content.ts`, `arrangeWith` in `lib/arrange.ts`; a per-browser
+choice). A layout may never add or remove a context, change membership, importance,
+order, evidence, coverage, the selected object or the semantic colours; switching one
+keeps the selected object, the canvas's membership, the selected term and the inspector,
+and changes positions and the fit only (the reducer clears the selection on a commit, so
+the tree re-selects).
+
+| layout | the object | the fields | extra control |
+|---|---|---|---|
+| Overview (default) | at the centre | Medium left, Theme right, Movement below, each 72 px from the plate; a Movement row wider than the object and its rings stands below the side columns | none |
+| Focus | at the left | the chosen dimension read in full beside it (two columns past six chips); the other two compact beneath the object — the same chips, no smaller: larger means "being read", not "more important" | a compact FOCUS selector — Medium · Theme · Movement — a dimension the object carries nothing of disabled; it opens on the selected term's dimension, else the first with a chip |
+| Columns | above | three equal columns, Medium · Theme · Movement, 24 px apart — for comparison, no line across | none |
+| Dense | above | three bands, the word in a 176 px label column at the left, chips three to a row — nearest to a research index; long labels wrap to two lines and keep their full text as the chip's title | none |
+
+### The rail, the inspector, the rows, the suggestions
+
+- Rail (`PageHeader`, `ContextControls`): the head; the template select (one governed
+  template — the control stays LIVE with its one option, and the note says so; a greyed
+  control read as broken); the three dimensions as lines
+  "MEDIUM · 1 on canvas" / "MOVEMENT · Not recorded" (a line brings its field into view;
+  a set-aside context gets an Add); one control opens the rows. Not filters.
+- Inspector (`Inspector`), five things and one fold (the owner's, 2026-09-05): for a
+  context — the dimension (dot + word), the label, "Project-curated context", "Why it
+  appears" (the registry's one sentence), Coverage — "N of 7,995 public records carry this
+  classification." (from `generated/trace-context-v1/terms.json` via
+  `lib/coverage.server.ts`; the cohort from the manifest) — and "Source basis" (the
+  registry's sentence). Then "Technical provenance ▸": Release (short, "v49"), Projection,
+  Integrity as the checksum's first eight characters with "Copy full", and "Copy technical
+  provenance" (the full release identity, manifest, policy versions, identifiers,
+  decision, publication, the permitted reading and what is not established — everything
+  the contract and the governance policy's explainability requirements record, copied,
+  never displayed). Then the existing add / remove. No separate reading-rules fold: the
+  canvas's footer carries the one interpretation boundary. Idle (opened by hand with
+  nothing selected): one sentence and the technical fold. For the object: its four
+  source-reported fields and a link to its record page.
+- Rows (`ContextRows`): a `<details>` panel under the toolbar, folded by default (open, at
+  most a third of the viewport, scrolling inside), three columns (Medium · Theme ·
+  Movement), "Not recorded" where none; each row selects its chip and brings it into view,
+  a chip selected marks its row; "Go to chip" moves focus onto the chip; Add / Remove on
+  the row's own line; "on canvas" / "set aside" as the visible state (the connection word
+  stays in the row's accessible name). "Copy context" puts the same presentation on the
+  clipboard as tables — `text/html` (a real table, for notes and documents) and
+  `text/plain` as a Markdown table (for chats, editors) — an Object table (Title, Date,
+  Attribution, Type, Source, ID; empty fields omitted), a Context table (Dimension ·
+  Context, one row per term on the canvas, "Not recorded" or "n set aside" where none),
+  the one interpretation boundary, and "MGDA · v49 · Context Canvas"; no hashes, no
+  connection or publication language. One PRESENTATION MODEL (`lib/presentation.ts`)
+  feeds the canvas's fields, the rows and the clipboard, so the three can never say
+  different things.
+- System suggests: the shared panel (`tone="dark"`), rendered only while a context is set
+  aside, so every suggestion carries an existing action (`EXPAND_*`); no `RETURN_TO_OBJECT`.
+  The fallback note's wording is the provider's — an open item for the guidance round.
+- Toolbar (`CanvasToolbar`): − % + · Fit · Arrange · Undo · Redo · Reset · Export PNG, with
+  the status line (`aria-live`) at its right. "Reset view" of the reference was the same
+  call as Fit and was folded into it.
+- Export (`lib/export-card.ts`, rasterised by the reference's `downloadContextCanvasPng`):
+  an MGDA TICKET, 1800 × 1200 — a grey-white ticket (`#f2f0eb`, a step brighter than the
+  page's paper so it reads and shares well; square-cut, never rounded) laid on black, a
+  hairline frame inset 14 px on either side of a perforated rule with round notches parting
+  the long body (70 %) from the stub; the body sits on the canvas's own 28 px dot grid at
+  16 %, the plates, words and notes on paper knockouts. The body: CONTEXT MAP as a tree after a table-of-contents diagram — the selected
+  object's plate at the left, a spine, one branch per dimension with the wording ON the
+  branch, the terms on the canvas as leaves in the dimension colours (the selected one
+  coral); a dimension with nothing on the canvas is named and marked "Not recorded" (or "n
+  set aside") and gets no branch. The stub: two thin decorative bars (the brand sheet's
+  lavender `#a785fe` and blue `#537cde` — decoration only, never a ground), the MGDA mark on
+  an ink tile with the wordmark (the nav's own), CONTEXT CANVAS · RESEARCH RECORD, the
+  title, year · attribution, source, the stable ID as the serial, the dimension key with
+  counts, the interpretation boundary, "v49 · trace-context-v1 · 825f6eca" and the site,
+  and a line of microtext along the edge. Type is set for the sheet, not the screen: 14 px
+  the smallest upright line (kickers), leaves 20, dimension words 18, the stub's title 30,
+  the boundary 19 — on an 1800 px sheet. Membership, selection, wording and colours are
+  preserved; the geometry is normalised (never the screen's pixels); a tree taller than the
+  body (only a synthetic fixture — the real workload is five nodes) is scaled down as one,
+  never cut, and a long stable ID breaks after a hyphen on the plate and the stub. No full
+  hash, internal identifier, publication state or suggestion is printed; the full binding
+  is in <desc>. The reference's SVG renderer stays for its tests.
+### States
+
+Loading (the canvas held in `INITIALIZING`, `aria-busy`, the controls disabled, a caption
+in the stage's corner; dev preview `?state=loading`) · populated · `availability="empty"`
+(the object alone, three fields "Not recorded", the canonical sentence in the corner; dev
+preview `?state=empty` — the v49 projection never produces it) · one dimension not
+recorded (most records: 7,884 of 7,995 carry medium and theme only) · set aside · the
+failure page (`ContextFailure`: the reader's own code and message, the requested ID kept in
+the open change-object forms, "Retry the same request" for the same governed request; no
+dataset mounted) · partial: not supported, the dataset is one integrity-bound unit ·
+mobile: the desktop-required notice.
+
+### Register — the owner's palette for this view
+
+Grey-white paper `#e8e6e0` as the ground, black `#0a0a0b` type (82 % for prose; labels
+`#5f5e5a`), light grey `#c4c3be` for rules; light blue `#a9c2e4` for the object's plate;
+coral `#e8917d` as the one highlight (selection); and one restrained accent per dimension
+— Medium cyan `#2f9fc6`, Theme green `#3a9a78`, Movement warm orange `#d4842e` — used the
+same way on the canvas (field outline, accent bars), in the rail and the rows (dots) and
+in the inspector (the dimension's dot): thin lines and small marks, never a fill, never
+the only carrier (the word is always there), never a reading of strength, confidence or
+rank. Type one step smaller than the reading pages so the workspace reads in one
+screen: labels 14 px (`--c-fs-label`), prose 15 px, chips and row labels 16 px, the page
+name 28 px, plate and inspector names 20 px — a per-page exception to the 17 px floor, at
+the owner's instruction. Film grain at 4.5 %; the dock as on the landing.
+
+### Verification method
+
+`npm run test:context-canvas-design` (`scripts/test-context-canvas-design.mjs`, the
+page's pure modules against the governed projection through jiti): the three wordings per
+kind on four real objects (the default 3-node object, two 4-node objects including the one
+with two Themes, the 5-node maximum) and the two stress variants; under every layout the
+same ids, three fields with the right states, no two items overlapping, every connector
+from the object with the contract's wording and none for a dimension not recorded, one
+wire per representation in Overview and Focus, one per column in Columns, none in Dense;
+the research card in every layout (1800 × 1200, no arrowheads, no full hash, no internal
+identifier, no publication language, no suggestions, the fingerprint, the boundary, every
+label as a `<title>`, the binding in `<desc>`); the clipboard tables. In the browser at
+1960 × 1130 (a fresh tab, zero console errors): the add flow on the two-Theme object —
+remove, "+", the available list, Add → the chip back in its field, focused, selected, the
+inspector on it, the rows updated, its wire and wording; undo, redo; Fit against Reset;
+remove one, switch to Columns, reload → the composition and the layout restored, the
+viewport fitted again; then the 5-node object untouched by the other's composition; the
+stress fixture in the four layouts, the loading, empty and failure states, the mobile
+notice. The card is rendered inline and measured (no text on text, nothing past the
+sheet). The harness cannot deliver key presses to a hidden pane, so keyboard activation of
+"+" and Add is verified as native buttons in Tab order with accessible names, and left to
+a live check.
+
+### Bad practice — removed, do not reintroduce
+
+Cards with `ROLE` / `STATE` rows on the canvas; three equal columns; a permanently open
+inspector eating the canvas's width; a "+" for the inspector's toggle; a second full
+metadata card in the rail; the dataset's hashes in the inspector by default; a permanent
+System suggests panel with a generic note; lines, arrows or connectors between the object
+and its contexts; grey cells as fields; colour as the only carrier of a dimension, or as a
+fill; region labels closer than 24 px to a chip; a control bar floating over the canvas
+that overflows it; "Reset view" beside Fit; a disabled template select; grey text on
+anything clickable.
+
+---
+
+### 7h · Spacetime — Space × Time over the sealed GIS (2026-09-05, third pass) — FROZEN / DEFERRED_FROM_PRODUCT
+
+**The question, upgraded (the owner's).** Not "where are this decade's records" — a map
+with a decade filter is weaker than a sorted table when 1,630 of 1,898 records sit in one
+country — but *how does the archive's geographic concentration change across time?* Space
+and Time meet on the map itself. The GIS is the sealed Codex implementation — Natural Earth
+5.1.1 50m, Equal Earth, 93 governed geographies (81 mapped · 11 aggregate-only · 1
+unmapped), 23 decade periods with INTERVAL_OVERLAP membership, aggregate / density /
+texture rendering, selection and focus, matching-record retrieval, three read APIs, audited
+SEALED_PASS — untouched. The presentation is `src/app/trace/spacetime/desktop/*` over
+`useSpacetimeWorkspace` (`features/trace-v49/spacetime/map/SpacetimeWorkspace.tsx`, whose
+functional view stays for the runtime and API scripts): the one orchestration, now also
+holding the two ADJACENT ATLASES (the same read API, one request each, the last period
+change winning) and the deterministic derivations over them — `rankSpacetimeRows`,
+`deriveSpacetimePeriodProfile`, `deriveSpacetimeTemporalWindow` — the desktop fetches and
+derives nothing of its own (`test:spacetime-design` reads the source for this).
+
+**The IA.** 01 PERIOD PROFILE (the rail) — what this decade looks like: "1980s · 1,898
+public records · 22 recorded geographies · Top concentration: United Kingdom, 1,630 records
+· 85.9% of public archive records in this period", the previous and next periods' totals
+beside it; mapped / not mapped and the precision mix behind "Data quality". Then the
+research control, MAP LAYER — Distribution (where this period's records gather) ·
+Temporal (how each place's records stand in the previous, this and the next period) — and
+under it, small and secondary, MAP STYLE: Aggregate · Density · Texture, three drawings of
+the same data ("About the styles" folded); the way to the PLACE RANKING. 02 the MAP. 03
+PLACE PROFILE (the right column, only once a place is chosen; not an inspector): the
+place, its class ("Not plotted on the map" only when it applies), "1980s · 49 records ·
+2.6% of public archive records in this period · Rank #3 of 22 recorded geographies", then
+AROUND THIS PERIOD — a three-column ledger, Records · Share · Rank in the previous, this and
+the next period (United States: 226 / 49 / 129; 20.6% / 2.6% / 29.3%; #1 / #3 / #2), the
+current column set apart, "—" where a period has no neighbour, "…" while the neighbours
+load; Data quality folded; the qualification only for a place without a position; View
+matching records · World view; provenance folded; SYSTEM SUGGESTS at the foot. 04 RECORD
+EVIDENCE — the matching records, in the one drawer, whose other tab is the PLACE RANKING:
+Place · Records · Share of period · Rank, records descending, a light amber "Not plotted"
+mark (its reason on hover) instead of a mapping-state column.
+
+**The map, redrawn (the owner's reference sheets: fine line maps, dot-matrix counts, glyph
+marks; the solid disc is BAD PRACTICE, never again).** Three orders of line and one of
+tone from the Natural Earth geometry alone: the coast a firm warm ink line (an under-layer
+of every land path's stroke, the fills leaving its outer edge), boundaries hairlines, land
+a pale warm tone on the canvas ground, mapped land a pale blue; hover mint; the selection
+a pale coral with a red edge. DISTRIBUTION · Aggregate draws each mapped place's records as
+a RING at its governed anchor — the radius the sealed count policy (`max(4, min(18, 3 +
+0.75√n))`), the form the sealed count tier: a thin ring (1–4), a ring (5–24), a ring with
+its centre (25–99), a double ring (100 or more) — in cobalt, red when chosen; the sealed
+marks' solid circles are never shown. Density keeps the sealed dots, small; Texture the
+sealed tier pattern, quiet. TEMPORAL draws, at the same anchor, THREE BARS — records in
+the previous, this and the next period, one scale for every place (the window's most,
+on a square root, 2–20 px), the current bar in cobalt, its neighbours a neutral grey, the
+chosen place's current bar red, a dash where a period has no neighbour; at world scale
+only places of the third sealed tier (25 records) and above carry the full glyph, the rest a
+small ring until hovered or chosen; a focused view shows every glyph. No growth or decline
+colours, no arrows, no trend. NOT PLOTTED: in the Temporal layer the aggregate-only and
+unmapped places stand in a companion list at the map's corner with the same three bars —
+a place that cannot be placed still has its temporal evidence. A chosen place, focused,
+shows its sealed dot field — one dot a record — inside its geometry in red (the owner's
+sixth sheet). Labels are interaction-led: the chosen place and the hovered one, name and
+this period's count (the three counts in the Temporal layer). FIT is gone (the map fits
+itself); WORLD VIEW appears only with a selection or a focus and clears the selection and
+the extent, nothing else. The projection is the sealed Equal Earth (fitted uniformly; the
+curve of Australia is the projection's own, not a distortion) — the GIS offers one other,
+Natural Earth I, and switching would be a one-line change the owner has not asked for.
+
+**The period rail.** One column a year, 1800 to 2026 — public records by recorded year
+from the release's frozen per-record status dataset (`lib/years.server.ts`, its 7,995
+checked against the projection's cohort) on a square root; the decades as the units of
+choice, the chosen one's columns red, full years at the fifties, short forms between. In
+the Temporal layer the window shows itself: the previous and next decades' columns in
+cobalt under a cobalt rule, the rest faded, PREVIOUS · CURRENT · NEXT under the three; a
+chosen place adds its three counts as a small row beneath. No animation.
+
+**System suggests, on the window.** The context carries eight counts — the period's
+public total, the place's records, its rank, the count of recorded geographies, and the
+previous and next periods' totals and the place's records in them — and, as labels, the
+comparisons those counts state ("share larger than in the previous period"); the model may
+voice them, never derive them. The deterministic fallback: "United States accounts for 49
+of 1,898 public records in the 1980s, ranking third among 22 recorded geographies. Its
+share of the public archive is smaller here than in the 1970s." The gate is unchanged: one
+to three sentences, sixty words, no forbidden word, no percentage, no number the context
+did not supply, two actions at most.
+
+**Verification.** `npm run test:spacetime-design` (the desktop over the one orchestration,
+no fetch of its own; the layer before the style; no Fit; World view gated; the ring form
+and the sealed radius; the tier-led level of detail; the three-bar glyph with the current
+bar apart and no growth colour; the not-plotted companion; the window on three real
+atlases — United States 226 / 49 / 129, ranks 1 / 3 / 2, the United Kingdom's 1,630 of
+1,898 at rank 1, the first period without a previous; the guidance gate and fallback).
+Browser at 1960 × 1130: the ten states of the previous pass plus the Temporal layer at
+world scale and focused. The sealed gates stay green.
+
+**Withdrawal from the product (2026-09-05, the owner's decision).** Spacetime is not released in
+v49 because the current archive does not yet meet the geographic and temporal coverage
+threshold required for this research surface — not failed, deferred. The research-readiness
+census (`docs/frontend/SPACETIME_RESEARCH_READINESS_CENSUS_v1.md`; `scripts/spacetime/`) found
+the archive steep: of 93 governed geographies only 8 pass a STRICT research gate and 7 more a
+RELAXED one, and before the 1890s no decade has more than two geographies with five records. A
+world map of every governed geography would draw a coverage the archive does not have. What
+changed, and only this: the TRACE landing keeps the Spacetime screen — its timing, its place in
+the sequence, the instrument's map and tapes — but the note now reads *A research direction
+under review* with the owner's two sentences and the status NOT AVAILABLE IN THIS RELEASE, and
+has no control, no link and no leader line; the dock (landing and shared) carries the two
+released views; "Three research views" became "Two research views"; the baseline ledger states
+the release boundary instead of figures; `/trace/spacetime` is a text boundary page that imports
+no workspace, GIS, reader or guidance; the exploration reference view and the homepage no longer
+link or name it as available; the System Suggestions public path answers `TRACE_SPACETIME` with
+`SURFACE_NOT_RELEASED` (404) while the service and its gate stay. Untouched, as frozen research
+infrastructure: `features/trace-v49/spacetime/*` (GIS, governed readers, read API — still served
+under `/api/v1/releases/{release}/trace/spacetime/*`), the generated projection and its audits,
+the desktop workspace files of this section, the design and runtime tests (the design test and
+the suggestions-UI test now describe a surface that is not mounted and are not part of the
+release gate), and the census. Reopening Spacetime is a governance round over the census's
+registry, not a frontend change.
+
+## 7i. Exploration — a bounded generative visual explorer (2026-09-06)
+
+**The product (the owner's).** *Choose one starting point. MGDA generates a governed
+exploratory view from validated associations. You may reveal more or less complexity or
+move to another permitted view; the underlying tree, associations and map remain
+system-defined.* Exploration is not a graph editor and not a research inspector: the
+picture is the product, the description reads it. The user does four things — choose a
+starting point, make the view simpler or richer, ask for another view, export the
+stamp — and nothing else: no adding a term, deleting a node, drawing an edge,
+drag-to-connect, choosing an association, a topology, a tree or a position, editing a
+relation, tuning confidence, composing concepts or generating a node.
+
+**The data is V2, and it is small.** The active authority is the Round 16A Exploration
+V2 production read model (`generated/trace-exploration-v2/production-read-model.json`)
+and its state machine; V3 is a fail-closed research schema with no active product
+state and is never read. The census (2026-09-05, confirmed by the owner's independent
+recount): 4 categories; 81 category entries with only 10 distinct labels — category ×
+topology slots, not words; 31 vocabulary terms of which 26 seed a composition and 5
+have no qualified association; 21 pair associations; 228 compositions of 2 / 3 / 4
+terms (42 / 162 / 24), 45 distinct by node-and-association set; 5,760 states whose
+visible term count is only ever 2, 3 or 4 (1,080 / 3,528 / 1,152) — the interface's
+"8" is a ceiling the data never reaches; 120 distinct pictures by visible terms +
+associations + focus. A real MORE (a legal EXPAND that adds a visible term) exists in
+1,032 states, always with exactly one target; a real LESS in 2,160 (in some the
+smallest legal reduction removes two terms); 2,664 states can go neither way. The
+product accepts this as a small, exact combinatorial system and does not inflate it.
+
+**The service (`features/trace-v49/exploration-view/`, API
+`/api/trace/exploration-view/v1`).** A view layer over V2 that never adds a term, an
+association or a transition and never touches the frozen V2 renderer, controller,
+service or derivations (byte-identical to HEAD; the sealed export ledger still
+replays). Starting points are the 26 seed WORDS, grouped by governed category; a word
+resolves to a governed initial state — the entry's initial state, then one
+SELECT_COMPOSITION when the canonical composition is another (six words have no
+canonical entry; the resolver also prefers a root with a real More, stable id as the
+tie-break). MORE / LESS are offered only when a legal V2 transition changes the
+visible count, resolved server-side through the transition index (the smallest
+change first); ANOTHER VIEW rotates deterministically through the distinct pictures
+of the same category and the same `seed_node_id` (never another starting point,
+never across categories; a pool of one says SINGLE VIEW). Every view restores from
+`map · state · template · variant` byte-identically; the same input renders the same
+bytes; a stale hash or another map's state is refused.
+
+**Content state × presentation state.** Two states, kept apart: V2's content (starting
+word, composition, visible terms, associations, complexity, focus) and the
+presentation (template, variant, seed). Eight templates — pure graphic, no word
+inside the picture — replicate the owner's reference stamps in form and extend them:
+DOT ROWS (France 1985 Télévision: rows of alternating dots, one row a term, a row of
+black-and-grey pairs an association), SPOTS (South Africa R10: a lattice of large
+spots in a stepped colour sequence, a column a term, an association row keeps only
+its two columns), CHEVRON BANDS (Germany 1973: a band a term, an association the
+cross-hatch where two bands meet), CROSS FIELD (Canada 1983: a halftone of crosses
+whose size follows the terms' cross-shaped figures and the corridors between
+associated terms), LINES AND BARS (Sweden 2026: thin lines, a band of bars a term, a
+shared row of short bars an association); MODULAR GRID (Venezuela 1975: the focused
+term a three-cell circle cut by the grid, other terms quartered circles, an
+association a path of rings), RAYS (the Bundespost homage: a sector a term, an arc
+band an association), OVERLAP (its translucent panels: an association is an
+overlap). Each has three variants; positions, sizes, bar lengths, dot radii and
+colours are fixed tables and the seed — never confidence, strength, support status or
+evidence; nothing means direction, cause, chronology or importance. Template and
+variant are selected by a deterministic seed (FNV-1a of state hash and salt); More /
+Less keep the treatment; Another view moves to the next compatible template. The
+page's SVG and the PNG are one scene; the export adds only the stamp's furniture
+(issuer, term count as the denomination, the starting word as the caption, a tiny
+provenance line) under its own render version `trace-exploration-stamp-png-v1`
+and export id `TEP1-…`; the frozen v2 export (`portrait-png-v2`, `TEV2-…`) is
+untouched.
+
+**The page (`/trace/exploration`, desktop; the Context Canvas register).** LEFT RAIL:
+STARTING POINT as one unmistakable state — the word, its category, CHANGE — then
+COMPLEXITY (− · n terms · +, each step disabled with the view's own boundary: *This
+view is at its richest / simplest*), ANOTHER VIEW (*View n of m for this starting
+point* / *A single view*), EXPORT PNG, and at the foot the secondary entry OPEN
+INQUIRY · 11. CHANGE enters a selection state: the rail becomes one task — the 26
+words in four governed groups, the current word filled, marked ✓ CURRENT and not a
+candidate; available words plain on a hairline; hover / keyboard focus inverted with a
+leading mark; disabled greyed — with KEEP CURRENT STARTING POINT to leave; Complexity,
+Another view, Export and the inquiry entry are hidden until a word is chosen. BODY:
+the stamp, inline, pure graphic, with a status line. RIGHT: DESCRIPTION, open when a
+view is first generated; once the reader closes it, More / Less / Another view leave
+it closed; the dock's one tool is Description. Its order: SYSTEM SUGGESTS in its own
+bounded card (the reading entry; narration only, no action — the rail carries the
+controls) → WHAT IS SHOWN (the exact terms and association pairs the V2 state
+supplies, the deterministic counterpart) → PRESENTATION (template · variant; layout,
+colour, scale and position carry no historical meaning) → TECHNICAL PROVENANCE,
+folded. Open Inquiry is a right drawer, never a peer mode: it begins, in order, with
+*Open inquiry* · *Evidence remains incomplete.* · *This is not a validated historical
+association.*, then the eleven questions as an index, one at a time, with its own
+bounded System suggests at the foot; nothing from it enters the view, its
+controls, its candidates or the export.
+
+**System suggests, an association narrator.** For `TRACE_VALIDATED_EXPLORATION` and
+`TRACE_OPEN_INQUIRY` only: one or two sentences, forty-five words, from the visible
+labels, association pairs and counts alone; no cause, influence, chronology,
+sequence, diffusion, hierarchy, importance, strength or confidence — a disclaimer may
+name a claim only to deny it (*without asserting influence, sequence or causation*;
+*rather than causal or directional*); no unsupplied number, no percentage; at most one
+action, and the page asks for none. The deterministic fallback narrates the visible
+structure: *Propaganda is shown here alongside exhibition and trade through two
+evidence-qualified generic associations. These connections are exploratory rather
+than causal or directional.*; the inquiry fallback: *This inquiry considers a bounded
+question between … ; it remains outside the validated graph because its evidence is
+incomplete.* Global provider, model and the other surfaces are unchanged.
+
+**Verification.** `npm run test:exploration-view-v1`: the 26 starting points resolve
+to their own seed (the six two-step words included, the five isolated words refused);
+over all 5,760 states More / Less availability equals the existence of a legal
+transition that changes the visible count and applying them changes it by the
+smallest legal step; Another view keeps the starting point and the category, cycles
+the deduplicated pool and returns to the first picture; restore is byte-identical;
+every template × variant lays out 2-, 3- and 4-term views inside the field with no
+word in the view and the furniture on the export; the PNG is 1080 × 1620 from the
+same scene; the frozen v2 files are byte-identical to HEAD and three sealed export
+rows replay; the page reads no V3 and exposes no raw action; the narration gate. The
+existing gates (`test:trace-exploration-v2`, `test:system-suggestions`,
+`test:read-platform`, the canvas design test, hygiene) stay green.
+
+**Copy pass (2026-09-06, the owner's P0–P2).** No engineering language and no repeated
+information on the surface: the rail's statement is two sentences; the starting point is
+the word, its category and CHANGE; the selection state says *Keep current*; the complexity
+notes are *Simplest available view.* / *Richest available view.* / *The only available
+size.*; the export is *Export current view* with the size as weak metadata; the status
+line is *word · n terms · n associations*. In DESCRIPTION, System suggests narrates one
+concrete sentence about this picture and the fixed boundary sits once beneath it
+(*Associations shown here are exploratory, not causal or directional. The view is
+generated from validated associations; its structure is system-defined.*); WHAT IS SHOWN
+is the counts and the exact pairs, once; PRESENTATION is *template · variant* and *Layout
+and styling are presentational only.* Open Inquiry cards read *n terms · Open inquiry*;
+the relation form and the inquiry id live under Technical provenance; the evidence gap
+and source boundary are product sentences.
+
+**Verification suite (2026-09-06; `npm run verify:exploration-presentation-v1`, outputs
+in `docs/qa/exploration-presentation-verification-v1/`).** Proves the eight templates are
+deterministic, state-conditioned generation. The presentation FINGERPRINT
+(`exploration-view/fingerprint.ts`) hashes the generated structure only — template,
+variant, ground, every primitive's kind, role, coordinates, dimensions, radii, path,
+rotation, opacity and inks, the terms' and associations' regions — never a word, title,
+export id, provenance string or seed. White-box gates: identical input → identical
+fingerprint and SVG; every real More transition changes the geometry; every pair of
+distinct root pictures within a starting point's pool differs; the eight templates give
+eight fingerprints and eight grammars on the same state while the research state, terms
+and associations stay identical; every variant differs, research identical; no
+Math.random / Date / performance / environment in the presentation path; the export
+line changes only the furniture; an unknown template, variant or state fails closed;
+eight distinct layout functions; the page's SVG and the export derive from one scene.
+Black-box, on the running server: 3 governed states (design diplomacy's 2 → 3 → 4
+ladder) × 8 templates = 24 views, five page reloads each with one SVG hash equal to the
+API's, five PNG exports each with one SHA-256; the S4 variants; pHash and SSIM over
+every template pair per state and every variant pair — an exact or pHash-identical
+pair is a hard failure, SSIM > 0.9 or pHash ≤ 6 a review flag for the owner's eye, never
+a verdict. Metamorphic: same state / other template keeps the research and changes the
+picture; same template / other state (the owner's LINES pair, and the ladder) changes
+the picture within one grammar; More / Less are server transitions with the presentation
+regenerated from the returned state; Another view keeps the starting point and never
+repeats the previous picture. The suite exposed one defect, fixed in this round: the
+templates had reduced the state's seed through small moduli, so different states with the
+same term count could collapse onto one picture (6 of 66 pool pairs; the owner's
+production-site / material-displacement LINES pair); every template now draws many
+independent bits of the seed (`pick(seed, salt, n)`), and the gates hold with no
+change to any template's grammar.
+
+**Second visual engine (2026-09-06; the owner's "视觉细节和视觉算法的重构").** The
+owner's critique of the first engine: the templates lacked surprise and detail (the
+references have gradients and grain, which the first engine had refused); the view sat
+as a stamp-minus-text instead of a full-frame picture; variants only recoloured (the
+suite's SPOTS/0~1 and CROSSFIELD/0~2 review flags); the grammar counted primitives
+without spatial relation; the layout was coupled to the term count. The rebuild:
+
+- *Structural engine* (`exploration-view/skeleton.ts`). For n terms a SKELETON FAMILY
+  is chosen from n and the variant — 2: opposed / diagonal / stacked; 3: triangle /
+  chain / arc; 4: clusters / diamond / run; 5–8: ring / rows / spiral — then bent by the
+  state's SEMANTIC FIELD (radial / shear / lattice, kind, strength and sign read from
+  the semantic hash; clamped to 8 % margins), then jittered by the presentation seed
+  (`pick(seed, salt, n)` per parameter, FNV-1a of state hash + template:variant in
+  `seed.ts`). The variant is STRUCTURAL: it changes the skeleton family and the
+  CONNECTION MODE an association's shape runs in (direct / orthogonal elbow / arc) and
+  the field's density — never only the inks. The owner's fourth layer (force-directed
+  by association density) was not built: with n − 1 associations in every V2 state the
+  density is degenerate, and drawing more would fabricate edges. No template draws a
+  connector that is not a visible V2 association (gated).
+- *Sixteen templates* (`templates.ts`), each a pure-graphic idiom drawn on the
+  skeleton's positions, with gradients (`SceneDef` linear / radial) and a grain
+  (feTurbulence, fixed seed, one 240 px tile repeated as a pattern so the filter is
+  rasterised once, not per frame): DOTS, SPOTS, CHEVRON, CROSSFIELD, LINES, GRID, RAYS,
+  OVERLAP (rebuilt) + HALFTONE, STRIPES, PETALS, WAVES, CUBES, ARCS, MOIRE, SCATTER.
+  The field responds to the terms (denser, larger, warmer near a motif); the association
+  is the shape two motifs share, laid along the variant's route. Gradients and grain
+  are allowed inside the Exploration picture from this round (the reference stamps carry
+  them); the site's §2 rule stands elsewhere.
+- *The view is the picture* (`render.ts` `renderExplorationViewSvg`): the 840 × 1120
+  frame alone, centred and as large as the sheet allows, flat — no paper, no
+  furniture, no word, no shadow, and nothing in it changes on hover or click (the
+  owner: view 不需要 drop shadow，hover 也不需要有变动). What answers the pointer is
+  the CURSOR alone (`desktop/StageCursor.tsx`): over the stage the system pointer is
+  hidden and a drawn cursor — a ring and a dot — follows it on the animation frame;
+  over a term's motif the ring opens and four corners appear in the motif's ink, over
+  an association's shape it becomes a crosshair, near the picture's edge it contracts,
+  with the button down it shrinks. It never flickers: a GEOMETRIC DEADZONE (a term or
+  association counts only inside its own region rect, never on a stray primitive), a
+  STABILITY GATE (a new reading must hold 70 ms before the cursor changes) and a
+  CROSSFADE (the parts fade out and in). Fine pointers only; reduced motion drops the
+  ease; the element takes no pointer events and is hidden from assistive technology. No
+  region outline ever reaches the page (线框不至于暴露到前端); the terms' and
+  associations' regions stay in the SVG as invisible data for the tests and the cursor.
+- *The page opens on design diplomacy drawn as the modular grid* (`page.tsx`
+  LANDING_TEMPLATE): the largest governed pool, in the treatment of the owner's
+  reference picture; a restored URL or a named start keeps its own presentation. (The
+  owner tried production for its contrast and asked for the page to be restored the
+  same day.)
+- *Five export forms* (`forms.ts`, `renderExplorationExportSvg`, PNG at the form's
+  size): the owner's five reference stamps replicated in form — Télévision 1985
+  (1400 × 980, inset frame, serif), South Africa R10 (900 × 1800, wave edge, label box),
+  Germany 1973 (1400 × 900, black ground, capitals block, red number), Canada 1983
+  (1200 × 1000, cream, rotated number and issuer), Sweden 2026 (1100 × 1450, mono) —
+  with the archive's identity in the issuer's place: the MGDA block, the number of terms
+  alone as the denomination (the owner: 不要叫 2 terms，直接 2), the starting word as
+  the subject, TRACE as the postal mark, and, so the sheet is a research product, the
+  LEDGER — the terms shown, the associations drawn as pairs, the category, the
+  presentation (template · variant), the release and the export id. No hash, no date.
+  Text and picture never share ground: the picture takes the image area, and the image
+  area spans at least 80 % of the paper's width or height on every form (the owner's
+  "full width or full height" for the PNG, measured; the acceptance test holds the
+  line), the number of terms is a hint in the text area (the German form's
+  red corner mark, never over the grid — the owner: 图形是最大展示，terms 数量仅作为
+  hint), and every furniture line is MEASURED (`estimateTextWidth`, a conservative
+  advance per face) and WRAPPED to its column (`flow`, at the ledger's separators;
+  upright lines advance down, the South African form's rotated lines advance in
+  columns). The acceptance test lays out every distinct picture (45) on every form
+  (225 layouts) and fails if any line leaves the paper, stands on the picture, crosses
+  the frame line or overlaps another line. The PNG is rasterised at EXPORT_SCALE = 2
+  (Télévision 2800 × 1960, South Africa 1800 × 3600, Treaty 2800 × 1800, World Council
+  2400 × 2080, Streaming 2200 × 2900) — the owner's 导出精度需要提高.
+  Each template is matched to one form (`EXPLORATION_FORM_OF_TEMPLATE`: 3–4 templates
+  per form); the export re-lays the same template, variant and seed for the form's
+  image area, so the picture and the stamp share one skeleton and one set of
+  associations while the frame differs. The manifest carries `form_id`, `form_name`,
+  `dimensions` and the `seed_chain`; the rail's export note reads *form · PNG w × h*
+  from the presentation DTO.
+- *Verification suite, second edition.* The fingerprint now covers the frame and every
+  definition; the grammar adds the terms' spread. New white-box gates: every variant
+  moves the terms (> 30 px mean) — `variant_is_structural`; between term counts the
+  shared terms move > 30 px — `topological_phase_transition`; two states of one count
+  under one seed lie differently and inside the margins — `semantic_field_bends_skeleton`;
+  connectors equal the state's visible associations exactly — `no_fabricated_edges`;
+  the seed chain derives as documented — `seed_chain_derivation`; sixteen distinct layout
+  functions. Black-box: 3 states × 16 templates = 48 views (five reloads, five exports,
+  form and dimensions checked), the S4 variants, a 12-request export burst against the
+  render limiter (MAX_IN_FLIGHT 4 → 429 REQUEST_LIMIT_EXCEEDED, byte-identical 200s,
+  recovery), a view-weight budget (≤ 400 KB, ≤ 6,000 primitives per picture). The
+  REVIEW class is gone; the ACCEPTABLE VISUAL DELTA is a hard threshold per kind,
+  measured on the view pictures (not the furnished exports): same state / other
+  template SSIM < 0.90 and pHash > 0; same template / other state SSIM < 0.65; same
+  state / other variant SSIM < 0.85; golden image SSIM ≥ 0.99. Goldens: the 48
+  variant-0 view pictures under `docs/qa/exploration-presentation-verification-v1/golden/`
+  (declared Git LFS in `.gitattributes`; `EXPLORATION_GOLDEN=update` rewrites them). The
+  matrix (`visual-generation-matrix.json`, format v2) records `layout_seed_used`,
+  `skeleton_family`, `semantic_field` and `term_anchors` per entry; the contact sheets
+  are `exploration-48-view-contact-sheet.png` and `exploration-export-forms-sheet.png`.
+
+## 7j. System Suggests — release-readiness pass (2026-09-06)
+
+**Scope.** The four active surfaces — SEARCH_RESULTS (1–2 sentences, ≤ 45 words, 0–2
+approved refinements), TRACE_CONTEXT (0–1 real action), TRACE_VALIDATED_EXPLORATION
+(narration only), TRACE_OPEN_INQUIRY (0–1 reading action). TRACE_SPACETIME stays deferred:
+the public path answers 404 before any provider. The label is *System suggests* everywhere;
+the model and provider are described on About / Methodology only; no avatar, no history,
+no input box. 45 words is a ceiling, never a target.
+
+**Facts, not words.** Request schema v2 (`features/system-suggestions/schema.server.ts`):
+the page names its state — Search: query + filters, with the count it shows; Context
+Canvas: the object and the governed representation ids on the canvas; Exploration: the
+map and state; Open Inquiry: the inquiry id — and the server resolves the facts from the
+authoritative reader (`facts.server.ts`: the public Search service, the governed Context
+projection, the Exploration V2 map through the view service, the Open Inquiry registry),
+checks the shown counts against them, and builds STATEMENTS (deterministic sentences with
+ids), the labels and pairs the note may name, the counts it may state, the actions the
+page can really take, and one fingerprint over all of it. Only public-safe fields enter.
+A v1 TRACE context that describes its own facts (the frozen reference workspaces) is
+answered deterministically and never reaches a model.
+
+**The model expresses; the system owns facts and actions.** The model receives the
+statements, labels, counts and the allowlist and returns `note`, `used_fact_ids`,
+`suggestion_ids`. The gate (`assertFactualNote`) re-reads the note against the facts:
+every number a supplied count; every quoted term a supplied label; a sentence that pairs
+names exactly one shown pair (A—B and B—C never A—C; a chain never a star); no source or
+record counts; no weak / strong / similar / semantic / co-occurring; no promise of what a
+refinement will find; nothing set aside or not recorded called missing, absent or never
+existed; no likely / possible / validated framing of an inquiry; no cause, influence,
+sequence, history. A note that fails falls back to the deterministic note from the same
+facts — never a trimmed model sentence. Exploration's single pair reads *In this view, X is
+paired with Y.*; WHAT IS SHOWN remains the exact ledger, and each pair carries the program's
+*View association details* entry (endpoints, the public basis, *Source details are not
+public in this release.*). The Open Inquiry disclosure is fixed UI text in its order.
+
+**Provider.** DeepSeek Responses, `deepseek-v4-flash`, `reasoning.effort: none`, temperature
+0 (a 0.2 comparison through `SYSTEM_SUGGESTIONS_TEMPERATURE`), `max_output_tokens 512`, no
+tools, no streaming, strict JSON schema, `store: false`, timeout 2.5 s (cap 5 s). Only
+assistant message `output_text` parts are read; reasoning items are skipped; an error,
+incomplete or empty response fails closed with its own status; 429 is rate-limited. Zero
+suggestions is a legal answer; the ceilings are per surface.
+
+**Cache.** Key = surface · release/data version · context fingerprint · prompt version ·
+language · model configuration; 500 entries, Search 5 min, governed surfaces 30 min;
+in-flight requests for one key merged; a last-good copy (6 h) answers a provider failure for
+the same facts; the panel drops any answer that is not its latest request's. A template
+change is not a new key; the same four words with other edges are.
+
+**The live Search window** (`app/search/desktop`) now runs on the public search API —
+results, exact counts, cursor paging, the live dictionaries and year range — and asks the
+shared endpoint for its guidance with the count it shows; the fixture remains only behind the
+mobile ticket, which is outside this desktop pass. The in-process rate limiter (30 per
+requester per minute) is not a cross-instance quota.
+
+**Verification.** `npm run test:system-suggestions` (41 checks), `npm run
+test:trace-system-suggestions-ui` (29), `npm run verify:system-suggestions-release-v1`
+(the matrix: Search, Context Canvas, Validated Exploration, Open Inquiry, input and safety,
+provider, cache and race, product boundary, the dev server; 86 cases → `docs/qa/
+system-suggestions-release-v1/system-suggests-test-cases.jsonl` and
+`SYSTEM_SUGGESTS_RELEASE_REVIEW.md`), `npm run verify:system-suggestions-live-v1` (the real
+provider on 4 × 5 × 3 = 60 fixed public-safe cases, recording latency, usage, status and the
+gated note; SKIPPED with reason when no key is present — never claimed from mock runs).
+
 ## 8. Rounds
 
 Every round ships **desktop + mobile together**; mobile is designed ground-up per
@@ -1269,9 +2095,9 @@ Every round ships **desktop + mobile together**; mobile is designed ground-up pe
 4. **Object Page** — ✅ desktop (5 layout treatments + content-fit) **and** mobile (single-column, alt-text clamp, folded Source/Provenance, back-to-top). Split into `page.tsx` (server UA device split) + `lib/` + `desktop/` + `mobile/`, per-component files — **this is the template every later page follows** (§6). **Wired to the sealed v49 public projection (2026-09-03):** `page.tsx` reads the record from the governed Search v2 artifact (`getPublicSearchIndex().byId`) and maps it with `lib/fromDocument.ts`; an ID outside the projection is a 404. Medium, description and a source-record URL are not in the public projection and are omitted; no frame ever stands in for an image, on desktop or mobile. Delivery-state wording is provisional (§9H).
 5. **Index** — ✅ desktop **and** mobile at `/directory` (§7c): searchable place selector, year range + separate order, theme badges, editorial active-state line, dense year-grouped catalogue, empty/loading/error states. **Wired to the sealed v49 public projection (2026-09-03):** `GET /api/index/v1` serves the reader-facing objects (5,423 of 7,995 public records — §3b) as one compact catalogue built from the Search v2 and reader-eligibility artifacts (`lib/catalogue.server.ts`); the directory files it in pages of 200 with a "show the next" foot. Places are the source-recorded labels (145 values) — verified structured geography is still pending (§3), so the filter is labelled "Place (as recorded)". Themes are the release's eight governed themes. The Index keeps its own earlier setting (serif lede, small theme key, small control bar); only its colours changed (2026-09-03): the stripe is the site's own sky / coral / yellow instead of blue / red / yellow; the theme dots are eight distinct spot colours; the theme key sits under the intro as a three-across strip (a deep-tone cut was tried and withdrawn as too dark and undistinguished).
 6. **TRACE entry** (§7f) — ✅ built (`/trace`): five-screen scroll scene on one signal bus, the three icon entries, the closing block; Exploration's reference page moved to `/trace/exploration`. Desktop only by policy; mobile gets the desktop-required notice.
-7. Context Canvas.
-8. Spacetime.
-9. Exploration (Validated Exploration + Open Inquiry, hard separation).
+7. **Context Canvas** (§7g) — ✅ built (`/trace/context-canvas`): one selected object on a light-blue plate, three labelled fields (Medium · Theme · Movement) around it, a narrow rail and inspector, the rows folded beneath; the reference's state, persistence and PNG export unchanged. Desktop only by policy.
+8. **Spacetime** (§7h) — ⏸ deferred from the product (2026-09-05; not released in v49, see the withdrawal note at the end of §7h); had been built (`/trace/spacetime`): the reading workspace over the sealed GIS — the period rail of 23 decades, the map as the body in cobalt / signal red / mint on the canvas ground, PLACE CONTEXT with the bounded System suggests at its foot, the matching records and the geography table as drawers, the shared TRACE dock; `npm run test:spacetime-design` (49 checks) + the sealed Spacetime gates. *(Mobile → the desktop-required notice, as the canvas.)*
+9. **Exploration** (§7i) — ✅ built (`/trace/exploration`): the bounded generative visual explorer over Exploration V2 — 26 starting words, More / Less as real transitions, Another view within the starting point, sixteen pure-graphic templates on a skeleton + semantic-field engine with five reference export forms (2026-09-06 second engine), the Description with System suggests as an association narrator, Open Inquiry as a reading drawer; `npm run test:exploration-view-v1`, `npm run verify:exploration-presentation-v1`.
 10. Cross-screen consistency + WCAG 2.1 AA audit + handoff specs; remove/replace legacy routes.
 
 ---

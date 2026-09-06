@@ -1,0 +1,108 @@
+/* the drawn cursor: fixed, above everything, no pointer events; its parts
+   fade and scale by state — transitions on the small SVG only, the picture
+   is never touched */
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  color: var(--cursor-ink, var(--t-fg));
+  opacity: 0;
+  transition: opacity 0.12s ease, color 0.18s ease;
+  will-change: transform;
+}
+
+.cursor[data-visible="true"] {
+  opacity: 1;
+}
+
+.cursor svg {
+  display: block;
+  overflow: visible;
+}
+
+.ring {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  transform-origin: 22px 22px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.dot {
+  fill: currentColor;
+  transform-origin: 22px 22px;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.corners,
+.cross,
+.edge {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: square;
+  transform-origin: 22px 22px;
+  opacity: 0;
+  transform: scale(0.6);
+  /* the crossfade: a part leaving fades in 0.12 s; a part arriving waits 0.1 s and fades in over 0.16 s */
+  transition: transform 0.16s ease 0.1s, opacity 0.12s ease;
+}
+
+/* over a term: the ring opens, the corners appear in the motif's ink */
+.cursor[data-state="term"] .ring {
+  transform: scale(1.5);
+}
+
+.cursor[data-state="term"] .corners {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.16s ease 0.1s, opacity 0.16s ease 0.1s;
+}
+
+/* over an association: a crosshair, the ring small */
+.cursor[data-state="association"] .ring {
+  transform: scale(0.55);
+}
+
+.cursor[data-state="association"] .cross {
+  opacity: 0.9;
+  transform: scale(1);
+  transition: transform 0.16s ease 0.1s, opacity 0.16s ease 0.1s;
+}
+
+/* near the picture's edge: the ring contracts, two marks point in */
+.cursor[data-state="edge"] .ring {
+  transform: scale(0.7);
+  opacity: 0.7;
+}
+
+.cursor[data-state="edge"] .edge {
+  opacity: 0.8;
+  transform: scale(1);
+  transition: transform 0.16s ease 0.1s, opacity 0.16s ease 0.1s;
+}
+
+/* the button down: everything small */
+.cursor[data-state="pressed"] .ring {
+  transform: scale(0.5);
+}
+
+.cursor[data-state="pressed"] .dot {
+  transform: scale(1.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor,
+  .ring,
+  .dot,
+  .corners,
+  .cross,
+  .edge {
+    transition: none;
+  }
+}

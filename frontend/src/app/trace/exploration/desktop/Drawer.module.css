@@ -1,0 +1,315 @@
+/* the right drawer, shared by About this view and Open Inquiry: light,
+   ranged left, folds for anything beyond the facts */
+
+.drawer {
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+}
+
+.title,
+.facts dt,
+.fold summary {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.title {
+  margin: 0;
+  color: var(--t-fg);
+}
+
+.close,
+.back {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--t-fg);
+  cursor: pointer;
+}
+
+.close {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 62%, transparent);
+  font-family: var(--font-num);
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.close:hover {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.back {
+  justify-self: start;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.facts {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+}
+
+.facts dd {
+  margin: 2px 0 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+}
+
+.factWord {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.375rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.boundary,
+.disclosure,
+.small,
+.questionTitle {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.boundary {
+  font-size: var(--c-fs-body);
+  color: color-mix(in srgb, var(--t-fg) 78%, transparent);
+}
+
+.disclosure {
+  font-size: var(--c-fs-body);
+  font-weight: 600;
+}
+
+.small {
+  font-size: var(--c-fs-label);
+  color: var(--t-sand);
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  margin: var(--s-1) 0;
+  border: 0;
+  background: color-mix(in srgb, var(--t-sand) 55%, transparent);
+}
+
+.fold {
+  padding-top: var(--s-2);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 45%, transparent);
+}
+
+.fold summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.fold summary::before {
+  content: "+ ";
+}
+
+.fold[open] summary::before {
+  content: "− ";
+}
+
+.fold > :not(summary) {
+  margin-top: var(--s-2);
+}
+
+.list {
+  display: grid;
+  gap: var(--s-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  display: grid;
+  gap: 2px;
+}
+
+.pair {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-body);
+}
+
+.pairNote {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  line-height: 1.35;
+  color: var(--t-sand);
+}
+
+.questions {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: question;
+}
+
+.question {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: var(--s-2) var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg) 45%, transparent);
+  background: var(--t-bg);
+  color: var(--t-fg);
+  text-align: left;
+  cursor: pointer;
+}
+
+.question:hover {
+  background: var(--t-fg);
+  color: var(--t-bg);
+}
+
+.questionWords {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-body);
+  line-height: 1.3;
+}
+
+.questionNote {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-label);
+  opacity: 0.72;
+}
+
+.questionTitle {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.focusable {
+  margin: 0;
+}
+
+.suggests {
+  padding-top: var(--s-2);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 45%, transparent);
+}
+
+/* ---- DESCRIPTION: System suggests first, in its own bounded card ---- */
+.suggestsCard {
+  padding: var(--s-3) var(--s-3) var(--s-3);
+  border: 1.5px solid var(--t-fg);
+  background: var(--c-canvas);
+  max-width: 34rem;
+}
+
+/* the card's heading tracked and small; the narration one step larger
+   than the metadata; an action, when one is offered, small */
+.suggestsCard :global(aside) {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.suggestsCard :global(aside[data-tone][data-variant]) > h2 {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.suggestsCard :global(aside[data-tone][data-variant]) > p {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  color: var(--t-fg);
+  text-wrap: pretty;
+}
+
+.suggestsCard :global(aside[data-tone][data-variant]) button {
+  font-size: var(--c-fs-label);
+}
+
+.section {
+  display: grid;
+  gap: var(--s-1);
+  padding-top: var(--s-2);
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 45%, transparent);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand);
+}
+
+.counts {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+}
+
+.termsLine {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body);
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--t-fg) 78%, transparent);
+}
+
+.ledger {
+  display: grid;
+  gap: 2px;
+  margin: var(--s-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ledgerRow {
+  padding: 4px 0;
+  border-top: 1px solid color-mix(in srgb, var(--t-sand) 30%, transparent);
+}
+
+.questionIndex {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label);
+  letter-spacing: 0.08em;
+  color: var(--t-sand);
+}

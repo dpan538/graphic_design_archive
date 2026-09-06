@@ -42,6 +42,10 @@
     "test:context-api-v1": "node --conditions=react-server scripts/verify-context-api-v1.mjs",
     "test:context-governance-v1": "node --expose-gc --conditions=react-server scripts/verify-context-governance-v1.mjs",
     "test:context-runtime-v1": "node --expose-gc --conditions=react-server scripts/rehearse-context-runtime-v1.mjs",
+    "test:spacetime-design": "node --conditions=react-server scripts/test-spacetime-design.mjs",
+    "test:exploration-view-v1": "node --conditions=react-server scripts/test-exploration-view-v1.mjs",
+    "verify:exploration-presentation-v1": "node --conditions=react-server scripts/verify-exploration-presentation-v1.mjs",
+    "test:context-canvas-design": "node --conditions=react-server scripts/test-context-canvas-design.mjs",
     "generate:spacetime-v1": "node scripts/generate-trace-spacetime-v1.mjs",
     "verify:spacetime-v1-projection": "node scripts/generate-trace-spacetime-v1.mjs --check",
     "test:spacetime-governance-v1": "node --expose-gc --conditions=react-server scripts/verify-spacetime-governance-v1.mjs",
@@ -71,7 +75,9 @@
     "asset:a11y-check": "node scripts/asset-a11y-check.js",
     "lint": "next lint",
     "typecheck:runtime": "tsc --project tsconfig.runtime-acceptance.json --pretty false",
-    "test:read-platform": "node scripts/verify-read-platform-contract.mjs"
+    "test:read-platform": "node scripts/verify-read-platform-contract.mjs",
+    "verify:system-suggestions-release-v1": "node --conditions=react-server scripts/verify-system-suggestions-release-v1.mjs",
+    "verify:system-suggestions-live-v1": "node --conditions=react-server scripts/verify-system-suggestions-live-v1.mjs"
   },
   "engines": {
     "node": "22.x"

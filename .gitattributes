@@ -18,3 +18,5 @@ docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/comman
 docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/*.stderr.log -whitespace
 docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011*/http-cases.tsv -whitespace
 frontend/generated/trace-exploration-v2-higher-order/*.json filter=lfs diff=lfs merge=lfs -text
+docs/qa/exploration-presentation-verification-v1/**/*.png filter=lfs diff=lfs merge=lfs -text
+docs/qa/exploration-presentation-verification-v1/*.png filter=lfs diff=lfs merge=lfs -text

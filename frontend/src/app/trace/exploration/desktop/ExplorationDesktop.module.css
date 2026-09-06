@@ -1,0 +1,84 @@
+/* Exploration, desktop — the Context Canvas register (§7g) carried over:
+   grey-white paper, black type, the label grey, the canvas ground a step
+   brighter; labels 14 px, prose 15 px, chips 16 px; film grain. Under the
+   nav: the rail at the left, the view as the body, one optional drawer at
+   the right, the dock's column reserved past them. The page does not
+   scroll: the rail and the drawer scroll inside. */
+
+.page {
+  --t-bg: #e8e6e0;
+  --t-fg: #0a0a0b;
+  --t-grey: #c4c3be;
+  --t-blue: #a9c2e4;
+  --t-hi: #dd745f;
+  --t-sand: #5f5e5a;
+  --c-canvas: #f2f0eb;
+  --c-fs-label: 0.875rem;
+  --c-fs-body: 0.9375rem;
+  --c-fs-chip: 1rem;
+  --nav-h: 96px;
+  position: relative;
+  isolation: isolate;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--t-bg);
+  color: var(--t-fg);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  column-gap: var(--s-5);
+  height: calc(100vh - var(--nav-h));
+  padding: var(--s-3) calc(var(--page-gutter) + 60px + var(--s-5)) var(--s-3) var(--page-gutter);
+}
+
+.main[data-drawer="description"],
+.main[data-drawer="inquiry"] {
+  grid-template-columns: 17rem minmax(0, 1fr) 20rem;
+}
+
+.rail,
+.drawer {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--t-sand) 45%, transparent) transparent;
+}
+
+.rail {
+  position: relative;
+  padding-right: var(--s-2);
+}
+
+.rail :is(button, a, summary):focus-visible,
+.drawer :is(button, a, summary, p):focus-visible {
+  outline: 2px solid var(--t-fg);
+  outline-offset: -2px;
+}
+
+.centre {
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.drawer {
+  padding-left: var(--s-4);
+  border-left: 1px solid color-mix(in srgb, var(--t-sand) 45%, transparent);
+}
