@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 329,
+  "scriptCount": 325,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -3248,46 +3248,6 @@
       "category": "AUDIT_PROVENANCE_REPRODUCTION",
       "current_runtime_required": false,
       "current_api_required": false,
-      "current_database_required": false,
-      "current_ci_required": false,
-      "retained_audit_role": true,
-      "decision": "DOCUMENTED_ALLOWLIST"
-    },
-    {
-      "path": "frontend/scripts/verify-system-suggestions-release-v1.mjs",
-      "category": "FRONTEND_VERIFICATION",
-      "current_runtime_required": false,
-      "current_api_required": true,
-      "current_database_required": false,
-      "current_ci_required": false,
-      "retained_audit_role": true,
-      "decision": "DOCUMENTED_ALLOWLIST"
-    },
-    {
-      "path": "frontend/scripts/verify-system-suggestions-live-v1.mjs",
-      "category": "FRONTEND_VERIFICATION",
-      "current_runtime_required": false,
-      "current_api_required": true,
-      "current_database_required": false,
-      "current_ci_required": false,
-      "retained_audit_role": true,
-      "decision": "DOCUMENTED_ALLOWLIST"
-    },
-    {
-      "path": "frontend/scripts/verify-exploration-presentation-v1.mjs",
-      "category": "FRONTEND_VERIFICATION",
-      "current_runtime_required": false,
-      "current_api_required": true,
-      "current_database_required": false,
-      "current_ci_required": false,
-      "retained_audit_role": true,
-      "decision": "DOCUMENTED_ALLOWLIST"
-    },
-    {
-      "path": "frontend/scripts/test-exploration-view-v1.mjs",
-      "category": "FRONTEND_VERIFICATION",
-      "current_runtime_required": false,
-      "current_api_required": true,
       "current_database_required": false,
       "current_ci_required": false,
       "retained_audit_role": true,
