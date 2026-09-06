@@ -73,6 +73,7 @@ export default function ContributionStage() {
           <figure className={styles.chart}>
             <figcaption className={styles.chartLabel}>{YEAR_BINS_LABEL}</figcaption>
             <div className={styles.histo}>
+              <div className={styles.plotBox}>
               <svg viewBox="0 0 460 200" preserveAspectRatio="none" className={styles.histoSvg} aria-hidden="true">
                 {(["canonical", "public"] as const).map((tier, t) =>
                   BINS.map((row) => {
@@ -91,6 +92,7 @@ export default function ContributionStage() {
                   }),
                 )}
               </svg>
+              </div>
               <div className={styles.axis}>
                 <span>{first}</span>
                 <span>

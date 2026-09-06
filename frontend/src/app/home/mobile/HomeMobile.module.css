@@ -64,7 +64,9 @@
   --d: clamp(0, calc((var(--p, 0) - 0.58) / 0.12), 1);
   position: relative;
   height: 340svh;
-  background: var(--paper);
+  /* Cover the extra visible area when Safari hides its bars, using the
+     scene's existing black-to-paper transition rather than a new band. */
+  background: color-mix(in srgb, var(--paper) calc(var(--w) * 100%), var(--black));
 }
 .openingStage {
   /* Extend the dark scene behind the side insets without moving its text. */
@@ -280,7 +282,14 @@
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 6px;
 }
+.plotBox {
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+}
 .histoSvg {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -706,6 +715,8 @@
   margin: 0;
 }
 .stripSvg {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;

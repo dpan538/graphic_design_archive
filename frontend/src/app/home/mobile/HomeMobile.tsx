@@ -250,6 +250,7 @@ export default function HomeMobile() {
                 Every year · 1800–2026 · {fmt(STATUS.meta.objects)} records
                 <span className={styles.figureSub}>one column a year · blue is public · pink is held · depth of colour is records on a square-root scale</span>
               </figcaption>
+              <div className={styles.plotBox}>
               <svg viewBox={`0 0 ${stripCols.length} ${S_H}`} className={styles.stripSvg} preserveAspectRatio="none" aria-hidden="true">
                 <g className={styles.stripPub}>
                   {stripCols.map((c) => (
@@ -262,6 +263,7 @@ export default function HomeMobile() {
                   ))}
                 </g>
               </svg>
+              </div>
               <span className={styles.stripYears} aria-hidden="true">
                 {STRIP_YEARS.map((y) => (
                   <i key={y}>{y}</i>

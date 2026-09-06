@@ -12,15 +12,15 @@
    outrank the shell's paper and height regardless of stylesheet order */
 .overlay.overlay {
   position: fixed;
-  top: var(--search-visible-top, var(--bar-h));
-  height: var(--search-visible-height, calc(100dvh - var(--bar-h)));
+  top: var(--bar-h);
+  height: calc(100dvh - var(--bar-h));
   padding: 0;
   right: 0;
   bottom: auto;
   left: 0;
   z-index: 60;
   min-height: 0;
-  overflow-y: auto;
+  overflow: hidden;
   background: color-mix(in srgb, var(--ink) 58%, transparent);
   contain: layout paint style;
 }
@@ -226,6 +226,11 @@
 
 /* The fixed overlay is outside the host shell's box; own its insets once. */
 .overlay .backdrop {
+  /* Keep the scrim behind Safari chrome; only the ticket scrollport shrinks. */
+  margin-top: calc(var(--search-visible-top, var(--bar-h)) - var(--bar-h));
+  height: var(--search-visible-height, 100%);
+  min-height: 0;
+  overflow-y: auto;
   padding-right: calc(var(--page-gutter) + var(--safe-right));
   padding-left: calc(var(--page-gutter) + var(--safe-left));
   padding-bottom: calc(var(--s-8) + var(--safe-bottom));

@@ -9,11 +9,13 @@ const results=[];
 const ua='Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
 let failures=0;
 for(const [engine,launcher] of Object.entries({chromium,webkit})) {
- const browser=await launcher.launch({headless:true});
+ // Use the native macOS backend: SwiftShader Vulkan can fail context creation
+ // on this host after repeated WebGL scenes. Linux keeps its default backend.
+ const browser=await launcher.launch({headless:true,args:engine==='chromium'&&process.platform==='darwin'?['--use-angle=metal']:[]});
  const context=await browser.newContext({viewport:{width:390,height:844},userAgent:ua,isMobile:true,hasTouch:true,deviceScaleFactor:1});
  const page=await context.newPage();
  const errors=[]; page.on('pageerror',e=>errors.push(e.message));
- const run=async(name,fn)=>{try{await fn();results.push({engine,name,type:'BROWSER_ENGINE_SIMULATION',status:'PASS'});}catch(e){failures++;results.push({engine,name,type:'BROWSER_ENGINE_SIMULATION',status:'FAIL',error:e.message});} writeFileSync(out+'/results.json',JSON.stringify(results,null,2));};
+ const run=async(name,fn)=>{try{await fn();results.push({engine,name,type:'BROWSER_ENGINE_SIMULATION',status:'PASS'});}catch(e){failures++;results.push({engine,name,type:'BROWSER_ENGINE_SIMULATION',status:'FAIL',error:e.message,url:page.url()});await page.screenshot({path:`${out}/${engine}-failure-${results.length}.png`,timeout:2000}).catch(()=>{});} writeFileSync(out+'/results.json',JSON.stringify(results,null,2));};
  const shot=async(name)=>page.screenshot({path:`${out}/${engine}-${name}.png`});
  const settle=async()=>{await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(150);};
  const bounds=async()=>page.evaluate(()=>{
@@ -27,6 +29,30 @@ for(const [engine,launcher] of Object.entries({chromium,webkit})) {
   const tags=html.match(/<meta[^>]*name="viewport"[^>]*>/g)||[];assert.equal(tags.length,1);assert.match(tags[0],/viewport-fit=cover/);assert.doesNotMatch(tags[0],/maximum-scale|user-scalable/);
   await page.goto(base+'/');await settle();const b=await bounds();assert.equal(b.root,'rgb(255, 253, 249)');assert.equal(b.body,b.root);assert.equal(b.overflow,false);await shot('home-first');
  });
+ await run('Chart plot/axis separation with safe-area height reduction',async()=>{
+  for(const height of [844,667]) {
+   await page.setViewportSize({width:390,height});await page.goto(base+'/');await settle();
+   await page.addStyleTag({content:'[class*="MobileShell_shell"] { --safe-top: 59px !important; --safe-bottom: 34px !important; }'});
+   for(const kind of ['histo','strip']) {
+    const plot=page.locator(`[class*="HomeMobile_${kind}Svg"]`);await plot.scrollIntoViewIfNeeded();await settle();
+    if(kind==='strip') {
+     await plot.evaluate(el=>{const pin=el.closest('[class*="HomeMobile_pin__"]'), r=pin.getBoundingClientRect();scrollTo(0,r.top+scrollY+Math.max(0,r.height-innerHeight)*0.9);});await settle();
+     assert.ok(await plot.evaluate(el=>[...el.querySelectorAll('rect')].some(r=>r.getBoundingClientRect().height>1)));
+    }
+    const geometry=await plot.evaluate(el=>{
+     const box=el.parentElement, axis=box.nextElementSibling;
+     const b=box.getBoundingClientRect(),g=el.getBoundingClientRect(),a=axis.getBoundingClientRect();
+     return {height:b.height,svgBottom:g.bottom,boxBottom:b.bottom,axisTop:a.top,axisBottom:a.bottom,left:g.left,right:g.right,width:innerWidth};
+    });
+    assert.ok(geometry.height>0,JSON.stringify(geometry));
+    assert.ok(geometry.axisTop-geometry.svgBottom>=5,JSON.stringify(geometry));
+    assert.ok(Math.abs(geometry.svgBottom-geometry.boxBottom)<1,JSON.stringify(geometry));
+    assert.ok(geometry.left>=16&&geometry.right<=geometry.width-16,JSON.stringify(geometry));
+    await shot(`chart-${kind}-${height}`);
+   }
+  }
+  await page.setViewportSize({width:390,height:844});await page.goto(base+'/');await settle();
+ });
  await run('Search inset, dynamic visible height, close and scroll restore',async()=>{
   await page.evaluate(()=>scrollTo(0,380));const y=await page.evaluate(()=>scrollY);
   await page.locator('nav a[aria-label="Search"]').click();await page.getByRole('dialog').waitFor();await insets();await settle();
@@ -35,11 +61,11 @@ for(const [engine,launcher] of Object.entries({chromium,webkit})) {
   await page.getByRole('searchbox',{name:'Search query'}).fill('poster');
   const layoutHeight=await page.evaluate(()=>innerHeight);
   await page.evaluate(()=>{Object.defineProperty(visualViewport,'height',{configurable:true,get:()=>420});visualViewport.dispatchEvent(new Event('resize'));});await settle();
-  const visualOnly=await page.locator('[data-search-overlay]').boundingBox();assert.ok(visualOnly.y+visualOnly.height<=421);assert.equal(await page.evaluate(()=>innerHeight),layoutHeight);await shot('simulated-visual-only-keyboard');
+  const visualOnly=await page.locator('[data-search-overlay] > div').boundingBox();assert.ok(visualOnly.y+visualOnly.height<=421);assert.equal(await page.evaluate(()=>innerHeight),layoutHeight);await shot('simulated-visual-only-keyboard');
   await page.evaluate(()=>{delete visualViewport.height;visualViewport.dispatchEvent(new Event('resize'));});await settle();
   // Viewport reduction is a layout defense test, not a real OS keyboard.
   await page.setViewportSize({width:390,height:480});await settle();
-  const o=await page.locator('[data-search-overlay]').boundingBox();assert.ok(o.y+o.height<=481);
+  const o=await page.locator('[data-search-overlay] > div').boundingBox();assert.ok(o.y+o.height<=481);
   await page.getByRole('button',{name:'Close search',exact:true}).scrollIntoViewIfNeeded();await shot('search-reduced-viewport');
   await page.setViewportSize({width:390,height:844});await settle();
   await page.getByRole('button',{name:'Close search',exact:true}).click();await page.waitForURL(base+'/');await settle();
