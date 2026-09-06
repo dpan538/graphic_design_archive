@@ -13,13 +13,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { MOVEMENTS, OBJECT_TYPES, THEMES, YEAR_MAX, YEAR_MIN, type SearchRecord } from "./fixture";
 import { PAGE_SIZE, type MatchReason, type SearchResult, type SearchState } from "./query";
 
+export type SearchStarter = { label: string; apply: Partial<SearchState> };
 export type SearchFacets = {
   objectTypes: string[];
   themes: string[];
   movements: string[];
   yearMin: number;
   yearMax: number;
-  starters: string[];
+  /* the index's starter queries: a label, and the state it applies (a query and/or filters) */
+  starters: SearchStarter[];
   live: boolean;
 };
 
@@ -171,15 +173,24 @@ export function useSearchFacets(): SearchFacets {
     const controller = new AbortController();
     fetch("/api/search/v1/facets", { headers: { Accept: "application/json" }, cache: "no-store", signal: controller.signal })
       .then((response) => (response.ok ? response.json() : null))
-      .then((body: { objectTypes?: { value: string }[]; themes?: { value: string }[]; movements?: { value: string }[]; year?: { min: number; max: number }; starterQueries?: string[] } | null) => {
+      .then((body: { objectTypes?: { value: string }[]; themes?: { value: string }[]; movements?: { value: string }[]; year?: { min: number; max: number }; starterQueries?: (string | { id?: string; label?: string; query?: string; filters?: Record<string, string | number> })[] } | null) => {
         if (!body || controller.signal.aborted) return;
+        const starters: SearchStarter[] = (body.starterQueries ?? []).map((item) => {
+          if (typeof item === "string") return { label: item, apply: { q: item, after: 0 } };
+          const apply: Partial<SearchState> = { q: item.query ?? "", after: 0 };
+          for (const [field, value] of Object.entries(item.filters ?? {})) {
+            if (field === "yearFrom" || field === "yearTo") apply[field] = Number(value);
+            else if (field === "objectType" || field === "theme" || field === "movement") apply[field] = String(value);
+          }
+          return { label: item.label ?? item.query ?? "", apply };
+        }).filter((item) => item.label);
         setFacets({
           objectTypes: (body.objectTypes ?? []).map((item) => item.value),
           themes: (body.themes ?? []).map((item) => item.value),
           movements: (body.movements ?? []).map((item) => item.value),
           yearMin: body.year?.min ?? YEAR_MIN,
           yearMax: body.year?.max ?? YEAR_MAX,
-          starters: body.starterQueries ?? [],
+          starters,
           live: true,
         });
       })

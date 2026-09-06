@@ -11,7 +11,7 @@
 .kicker {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.74rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--on-dark) 72%, transparent);
@@ -20,7 +20,7 @@
 .label {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.74rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink);
@@ -83,7 +83,7 @@
   margin-top: 5px;
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.76rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -121,7 +121,7 @@
 .entryN {
   font-family: var(--font-num);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--fs-label);
   color: var(--blue);
 }
 .entryName {
@@ -148,7 +148,7 @@
 .statusText {
   margin-top: var(--s-3);
   font-family: var(--font-num);
-  font-size: 0.95rem;
+  font-size: var(--fs-label);
   line-height: 1.55;
   color: var(--ink-2);
 }

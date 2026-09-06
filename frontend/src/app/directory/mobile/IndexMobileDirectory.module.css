@@ -26,7 +26,7 @@
 .yearN {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.66rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--ink) 45%, transparent);
@@ -50,8 +50,8 @@
 .title {
   display: block;
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 1.125rem;
+  font-weight: 500;
+  font-size: var(--fs-body);
   line-height: 1.32;
   color: var(--ink);
   text-decoration: underline;
@@ -64,7 +64,7 @@
 
 .meta {
   font-family: var(--font-num);
-  font-size: 0.9rem;
+  font-size: var(--fs-label);
   line-height: 1.5;
   color: var(--ink-2);
 }
@@ -89,7 +89,7 @@
   border: var(--keyline-2);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink);

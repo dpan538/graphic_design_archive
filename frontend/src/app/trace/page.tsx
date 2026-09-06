@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SiteNav from "@/components/site/SiteNav";
+import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
 import { isLikelyMobileTraceRequest, TraceDesktopRequired } from "@/features/trace-v49/mobile.server";
 import contextManifest from "../../../generated/trace-context-v1/manifest.json";
 import spacetimeManifest from "../../../generated/trace-spacetime-v1/manifest.json";
@@ -26,7 +27,7 @@ export default async function TracePage() {
   if (await isLikelyMobileTraceRequest()) {
     return (
       <>
-        <SiteNav variant="mobile" active="trace" />
+        <SiteNavMobile />
         <TraceDesktopRequired />
       </>
     );

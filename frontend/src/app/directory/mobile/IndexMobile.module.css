@@ -4,38 +4,57 @@
   overflow-x: clip;
 }
 
-/* ---- Masthead — small, but with an intro line and clear steps ---- */
+/* ---- The opening: a sky plate carrying the kicker, the count as a numeral
+   cropped by the plate's foot, and the population line ---- */
 
-.mast {
-  padding: var(--s-5) var(--page-gutter) var(--s-4);
+.opening {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-content: start;
+  gap: var(--s-3);
+  min-height: 224px;
+  padding: var(--s-5) var(--s-5) 96px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--sky) 92%, var(--paper));
 }
 
 .kicker {
+  position: relative;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.openingNum {
+  position: absolute;
+  right: -0.03em;
+  bottom: -0.3em;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(2.2rem, 11vw, 2.8rem);
-  line-height: 0.9;
-  letter-spacing: -0.035em;
+  font-size: 6.6rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.openingLine {
+  position: relative;
+  max-width: 78%;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.4;
   color: var(--ink);
 }
 
-.lede {
-  margin-top: var(--s-3);
-  font-family: var(--font-statement);
-  font-size: 1.2rem;
-  line-height: 1.35;
-  color: var(--ink);
-}
-
-.count {
-  margin-top: var(--s-3);
+.openingLine b {
   font-family: var(--font-num);
-  font-size: var(--fs-body-sm);
-  color: var(--ink-2);
-}
-.count b {
   font-weight: 700;
-  color: var(--ink);
 }
 
 .stripe {
@@ -79,7 +98,7 @@
   color: var(--on-dark);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.76rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -90,7 +109,7 @@
   height: 1rem;
   padding: 0 3px;
   font-family: var(--font-num);
-  font-size: 0.68rem;
+  font-size: var(--fs-label);
   color: var(--ink);
   background: var(--yellow);
 }
@@ -103,7 +122,7 @@
   text-overflow: ellipsis;
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -119,7 +138,7 @@
 .cnt {
   font-family: var(--font-num);
   font-variant-numeric: tabular-nums;
-  font-size: 0.78rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   color: var(--ink);
 }
@@ -127,7 +146,7 @@
 .reset {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--red);

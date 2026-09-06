@@ -18,7 +18,7 @@
 .list dt {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.74rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--l-meta, var(--green-deep));

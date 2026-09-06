@@ -1,0 +1,36 @@
+/* The mobile shell (§4a, 2026-09-06): every mobile page root carries this
+   class. It re-declares the site's tokens for the phone — a whiter paper,
+   spot colours a step brighter and more saturated than the desktop's, the
+   same ink — so the mobile trees share nothing with the desktop but the
+   token names. Nothing here is a breakpoint: the desktop never loads it. */
+
+.shell {
+  --paper: #fffdf9;
+  --paper-2: #f7f2e7;
+  --ink: #121110;
+  --ink-2: #37322b;
+  --on-dark: #fffaf0;
+
+  --blue: #2b4cff;
+  --blue-deep: #1d38d6;
+  --red: #ff4a2a;
+  --red-deep: #d93a1d;
+  --yellow: #ffcf33;
+  --green: #33b95e;
+  --green-deep: #2a934b;
+  --teal: #17b0b0;
+  --teal-deep: #128c8c;
+  --sky: #4db6ff;
+  --coral: #ff8763;
+  --pink: #ff78b0;
+
+  /* the phone's type scale: the 17 px floor holds; display sizes are set per page */
+  --fs-label: 1.0625rem;
+  --fs-body-sm: 1.0625rem;
+  --fs-body: 1.125rem;
+
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+}

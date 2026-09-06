@@ -17,7 +17,7 @@
   display: block;
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--l-src);
@@ -39,7 +39,7 @@
   border-bottom: 3px solid var(--ink);
   font-family: var(--font-num);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: var(--fs-label);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -69,7 +69,7 @@
 .layerName {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--lc, var(--ink));

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowUp } from "lucide-react";
-import SiteNav from "@/components/site/SiteNav";
+import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
+import shell from "@/components/site/mobile/MobileShell.module.css";
 import type { ObjectRecord as Rec } from "../lib/fixture";
 import MobileRecord from "./MobileRecord";
 import styles from "./ObjectMobile.module.css";
@@ -20,11 +21,11 @@ export default function ObjectMobile({ rec, recordOnly = false }: { rec: Rec; re
   }, []);
 
   return (
-    <div className={styles.page}>
+    <div className={`${shell.shell} ${styles.page}`}>
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <SiteNav variant="mobile" />
+      <SiteNavMobile />
 
       <div className={styles.backbar}>
         <button

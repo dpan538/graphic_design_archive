@@ -6,7 +6,7 @@
   display: block;
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--l-visual, var(--ink));
@@ -52,7 +52,7 @@
 .info dt {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -84,7 +84,7 @@
   margin-top: 4px;
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   color: var(--l-src, var(--teal-deep));
 }

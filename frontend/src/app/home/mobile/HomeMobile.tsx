@@ -1,5 +1,6 @@
 import Link from "next/link";
-import SiteNav from "@/components/site/SiteNav";
+import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
+import shell from "@/components/site/mobile/MobileShell.module.css";
 import {
   CONTRIBUTION_BODY,
   CONTRIBUTION_LEDGER,
@@ -14,8 +15,8 @@ import styles from "./HomeMobile.module.css";
    flat grey ground, no grid choreography. */
 export default function HomeMobile() {
   return (
-    <div className={styles.page}>
-      <SiteNav variant="mobile" />
+    <div className={`${shell.shell} ${styles.page}`}>
+      <SiteNavMobile />
 
       <main className={styles.main}>
         <section className={styles.identity}>

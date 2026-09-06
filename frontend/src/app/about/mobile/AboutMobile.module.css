@@ -1,0 +1,574 @@
+/* About, mobile — the sheet of stamps set for the phone: full-width colour
+   plates with a cropped numeral, paper and ink beneath, folds for the long
+   matter. 17 px floor throughout. Section colours as tokens, with the plate
+   softened 8 % toward the paper and the numeral the same colour at 90 %. */
+
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+.main {
+  padding-bottom: calc(var(--s-9) + env(safe-area-inset-bottom));
+}
+
+/* ---- masthead ---- */
+
+.masthead {
+  padding: var(--s-6) var(--s-5) var(--s-5);
+  border-bottom: 3px solid var(--ink);
+}
+
+.eyebrow {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.statement {
+  margin-top: var(--s-3);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 9.6vw, 2.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.lead {
+  margin-top: var(--s-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.meta {
+  margin-top: var(--s-4);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.contents {
+  margin-top: var(--s-5);
+}
+
+.contents ol {
+  display: grid;
+  gap: 2px;
+}
+
+.contents a {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 44px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.contentsNum {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  font-family: var(--font-num);
+  font-weight: 700;
+  color: var(--on-dark);
+  background: var(--sec, var(--ink));
+}
+
+/* ---- sections and plates ---- */
+
+.section {
+  --sec: var(--ink);
+  --on-plate: var(--on-dark);
+  scroll-margin-top: 80px;
+}
+
+.section[data-sec="blue"] { --sec: var(--blue); }
+.section[data-sec="red"] { --sec: var(--red); }
+.section[data-sec="yellow"] { --sec: var(--yellow); --on-plate: var(--ink); }
+.section[data-sec="green"] { --sec: var(--green); }
+.section[data-sec="teal"] { --sec: var(--teal); }
+.section[data-sec="coral"] { --sec: var(--coral); --on-plate: var(--ink); }
+.section[data-sec="night"] { --sec: var(--ink); }
+
+.contentsNum[data-sec="blue"] { background: var(--blue); }
+.contentsNum[data-sec="red"] { background: var(--red); }
+.contentsNum[data-sec="yellow"] { background: var(--yellow); color: var(--ink); }
+.contentsNum[data-sec="green"] { background: var(--green); }
+.contentsNum[data-sec="teal"] { background: var(--teal); }
+.contentsNum[data-sec="coral"] { background: var(--coral); color: var(--ink); }
+.contentsNum[data-sec="night"] { background: var(--ink); }
+
+.plate {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 84px;
+  align-items: end;
+  gap: var(--s-4);
+  min-height: 176px;
+  margin-top: var(--s-6);
+  padding: var(--s-5) var(--s-5) var(--s-5) 112px;
+  background: color-mix(in srgb, var(--sec) 92%, var(--paper));
+  color: var(--on-plate);
+}
+
+.plateNum {
+  position: absolute;
+  left: -0.05em;
+  bottom: -0.34em;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 9.5rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--on-plate);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.plateText {
+  position: relative;
+  display: grid;
+  gap: var(--s-2);
+}
+
+.kicker {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  /* the global heading rule would paint it ink; on a plate it takes the plate's colour */
+  color: var(--on-plate);
+}
+
+.mark {
+  position: relative;
+  width: 84px;
+  height: 46px;
+}
+
+/* ---- the body on paper ---- */
+
+.body {
+  display: grid;
+  gap: var(--s-4);
+  padding: var(--s-5) var(--s-5) 0;
+}
+
+.prose {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.small {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.subhead {
+  margin-top: var(--s-3);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sec);
+}
+
+.section[data-sec="yellow"] .subhead,
+.section[data-sec="coral"] .subhead {
+  color: var(--ink);
+}
+
+.link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+/* cards (audiences) and references */
+.cards,
+.refs {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.card,
+.ref {
+  --k: var(--ink);
+  padding: var(--s-4) var(--s-4) var(--s-4) var(--s-5);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 80%, transparent);
+  border-left: 8px solid var(--k);
+}
+
+.card[data-tone="blue"], .ref[data-tone="blue"] { --k: var(--blue); }
+.card[data-tone="red"], .ref[data-tone="red"] { --k: var(--red); }
+.card[data-tone="green"], .ref[data-tone="green"] { --k: var(--green); }
+.card[data-tone="yellow"], .ref[data-tone="yellow"] { --k: var(--yellow); }
+.card[data-tone="teal"], .ref[data-tone="teal"] { --k: var(--teal); }
+.card[data-tone="coral"], .ref[data-tone="coral"] { --k: var(--coral); }
+
+.cardTitle,
+.refTitle {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.cardBody,
+.refBody {
+  margin-top: var(--s-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+}
+
+.refMeta {
+  margin-top: var(--s-1);
+  font-family: var(--font-num);
+  font-size: var(--fs-label);
+  color: var(--ink-2);
+}
+
+/* pipeline and layers */
+.pipeline,
+.layers {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.pipeline li,
+.layers li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+}
+
+.stageNum {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: var(--on-dark);
+  background: var(--ink);
+}
+
+/* definition lists */
+.defs {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.defs > div {
+  display: grid;
+  gap: 2px;
+  padding-bottom: var(--s-3);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.defs dt {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.defs dt[data-tone="blue"] { color: var(--blue); }
+.defs dt[data-tone="red"] { color: var(--red); }
+.defs dt[data-tone="teal"] { color: var(--teal); }
+.defs dt[data-tone="coral"] { color: var(--red-deep); }
+
+.defs dd {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.mono dd {
+  font-family: var(--font-num);
+  word-break: break-all;
+}
+
+/* figures */
+.figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3);
+}
+
+.figure {
+  --k: var(--ink);
+  display: grid;
+  gap: 2px;
+  padding: var(--s-4);
+  color: var(--on-dark);
+  background: var(--k);
+}
+
+.figure[data-tone="blue"] { --k: var(--blue); background-color: var(--blue); }
+.figure[data-tone="red"] { --k: var(--red); background-color: var(--red); }
+.figure[data-tone="green"] { --k: var(--green); background-color: var(--green); }
+.figure[data-tone="teal"] { --k: var(--teal); background-color: var(--teal); }
+.figure[data-tone="yellow"] { --k: var(--yellow); background-color: var(--yellow); color: var(--ink); }
+.figure[data-tone="coral"] { --k: var(--coral); background-color: var(--coral); color: var(--ink); }
+
+.figureValue {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.figureLabel {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  line-height: 1.3;
+}
+
+/* citations */
+.cites {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.cite {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  border: 1.5px solid var(--ink);
+}
+
+.citeStyle {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.citeText {
+  font-family: var(--font-num);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.copy {
+  justify-self: start;
+  min-height: 44px;
+  padding: 0 var(--s-4);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: var(--on-dark);
+  background: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+/* folds */
+.fold {
+  border: 1.5px solid var(--ink);
+}
+
+.foldHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 var(--s-4);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  list-style: none;
+  cursor: pointer;
+}
+
+.foldHead::-webkit-details-marker {
+  display: none;
+}
+
+.foldHead::after {
+  content: "+";
+  font-family: var(--font-num);
+  font-size: 1.4rem;
+}
+
+.fold[open] .foldHead::after {
+  content: "–";
+}
+
+.foldBody {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4) var(--s-4);
+  border-top: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+/* the source register */
+.register {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.entry {
+  display: grid;
+  gap: 2px;
+  padding-bottom: var(--s-3);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.entryName {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--fs-body);
+  line-height: 1.2;
+}
+
+.entryMeta {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.pill {
+  display: inline-block;
+  padding: 1px 10px;
+  margin-right: var(--s-2);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+}
+
+/* claims */
+.claims {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.claim {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  border: 1.5px solid var(--ink);
+}
+
+.claimArea {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.claimLine {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+}
+
+.claimKey {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+}
+
+.claimKey[data-no] {
+  color: var(--red-deep);
+}
+
+/* back to top: a fixed control at the foot of the phone, shown once the reader is down the page */
+.toTop {
+  position: fixed;
+  right: var(--s-4);
+  bottom: calc(var(--s-4) + env(safe-area-inset-bottom));
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 48px;
+  padding: 0 var(--s-4);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: var(--on-dark);
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.toTop[data-show] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.endTop {
+  justify-self: start;
+  min-height: 48px;
+  padding: 0 var(--s-4);
+  margin-top: var(--s-5);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+}
+
+.foot {
+  margin-top: var(--s-4);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}

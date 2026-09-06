@@ -8,7 +8,7 @@
 .lab {
   font-family: var(--font-num);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--teal-deep);
@@ -30,7 +30,7 @@
   background: var(--paper);
   font-family: var(--font-num);
   font-variant-numeric: tabular-nums;
-  font-size: 1rem;
+  font-size: var(--fs-label);
   text-align: center;
   color: var(--ink);
 }
@@ -46,6 +46,6 @@
   appearance: none;
   -webkit-appearance: none;
   font-family: var(--font-num);
-  font-size: 1rem;
+  font-size: var(--fs-label);
   color: var(--ink);
 }

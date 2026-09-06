@@ -98,7 +98,7 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
   const facets = useSearchFacets();
   const guidance = useSearchGuidance(live);
   const { total, page, pageCount, pageIndex } = live;
-  const starters = facets.starters.length ? facets.starters.slice(0, 4) : STARTERS;
+  const starters = facets.starters.length ? facets.starters.slice(0, 4) : STARTERS.map((s) => ({ label: s, apply: { q: s, after: 0 } }));
 
   const panel = (
     <>
@@ -189,9 +189,9 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
               <p className={styles.startersLabel}>Try</p>
               <ul role="list">
                 {starters.map((s) => (
-                  <li key={s}>
-                    <button type="button" onClick={() => patch({ q: s })}>
-                      {s}
+                  <li key={s.label}>
+                    <button type="button" onClick={() => sync({ ...EMPTY_STATE, ...s.apply })}>
+                      {s.label}
                     </button>
                   </li>
                 ))}

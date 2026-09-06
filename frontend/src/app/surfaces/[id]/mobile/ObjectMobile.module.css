@@ -47,7 +47,7 @@
   padding: var(--s-2) var(--s-4);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--on-dark);

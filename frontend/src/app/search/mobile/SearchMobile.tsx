@@ -3,18 +3,18 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown, Search as SearchIcon, X } from "lucide-react";
-import SiteNav from "@/components/site/SiteNav";
+import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
+import shell from "@/components/site/mobile/MobileShell.module.css";
 import { STARTERS } from "../lib/fixture";
+import { useLiveSearch, useSearchFacets, useSearchGuidance } from "../lib/live";
 import {
   activeFilterCount,
   EMPTY_STATE,
   hasQuery,
   parseSearch,
-  runSearch,
   toParams,
   type SearchState,
 } from "../lib/query";
-import { suggestFor } from "../lib/suggest";
 import SearchMobileFilters from "./SearchMobileFilters";
 import SearchMobileResults from "./SearchMobileResults";
 import SearchMobileSuggests from "./SearchMobileSuggests";
@@ -56,12 +56,16 @@ export default function SearchMobile() {
   };
 
   const engaged = hasQuery(state);
-  const { total, page, pageCount, pageIndex, results } = runSearch(state);
-  const suggest = engaged && total > 0 ? suggestFor(state, results) : null;
+  /* the live public search API, its dictionaries and the shared guidance (lib/live.ts) */
+  const live = useLiveSearch(state, engaged);
+  const facets = useSearchFacets();
+  const guidance = useSearchGuidance(live);
+  const { total, page, pageCount, pageIndex } = live;
+  const starters = facets.starters.length ? facets.starters.slice(0, 4) : STARTERS.map((s) => ({ label: s, apply: { q: s, after: 0 } }));
 
   return (
-    <div className={styles.page}>
-      <SiteNav variant="mobile" active="search" />
+    <div className={`${shell.shell} ${styles.page}`}>
+      <SiteNavMobile active="search" />
 
       <div className={styles.backdrop}>
         <section className={styles.ticket} role="dialog" aria-label="Search the archive">
@@ -116,7 +120,7 @@ export default function SearchMobile() {
             />
           </button>
 
-          {filtersOpen ? <SearchMobileFilters state={state} patch={patch} /> : null}
+          {filtersOpen ? <SearchMobileFilters state={state} patch={patch} facets={facets} /> : null}
 
           {engaged ? (
             <div className={styles.qstate}>
@@ -131,10 +135,10 @@ export default function SearchMobile() {
             <div className={styles.starters}>
               <span className={styles.lab}>Try ;</span>
               <ul role="list">
-                {STARTERS.map((s) => (
-                  <li key={s}>
-                    <button type="button" onClick={() => patch({ q: s })}>
-                      {s}
+                {starters.map((s) => (
+                  <li key={s.label}>
+                    <button type="button" onClick={() => sync({ ...EMPTY_STATE, ...s.apply })}>
+                      {s.label}
                     </button>
                   </li>
                 ))}
@@ -143,22 +147,26 @@ export default function SearchMobile() {
           )}
 
           {engaged ? (
-            <div className={styles.scroll}>
-              <SearchMobileResults
-                page={page}
-                total={total}
-                pageIndex={pageIndex}
-                pageCount={pageCount}
-                onPage={(n) => sync({ ...state, after: n })}
-              />
+            <div className={styles.scroll} aria-busy={live.loading || undefined}>
+              {live.error ? (
+                <p className={styles.lab} role="status">{live.error}</p>
+              ) : live.stateHash === null ? null : (
+                <SearchMobileResults
+                  page={page}
+                  total={total}
+                  pageIndex={pageIndex}
+                  pageCount={pageCount}
+                  onPage={(n) => sync({ ...state, after: n })}
+                />
+              )}
             </div>
           ) : null}
 
-          {suggest && (suggest.lines.length || suggest.suggestions.length) ? (
+          {guidance ? (
             <div className={styles.suggestsSlot}>
               <SearchMobileSuggests
-                lines={suggest.lines}
-                suggestions={suggest.suggestions}
+                lines={[guidance.note]}
+                suggestions={guidance.suggestions}
                 onApply={(a) => sync({ ...state, ...a })}
               />
             </div>

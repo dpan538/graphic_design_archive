@@ -12,7 +12,7 @@
 .label {
   font-family: var(--font-num);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--teal-deep);
@@ -37,7 +37,7 @@
 
 .token {
   font-family: var(--font-num);
-  font-size: 1rem;
+  font-size: var(--fs-label);
   color: var(--ink);
   border-bottom: 2px solid var(--teal);
   padding-bottom: 1px;

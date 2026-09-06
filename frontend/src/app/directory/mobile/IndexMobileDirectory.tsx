@@ -75,15 +75,9 @@ export default function IndexMobileDirectory({
                 <Link className={styles.title} href={`/surfaces/${r.id}`}>
                   {r.title}
                 </Link>
+                {/* one light line: type · place — no note, no theme list (the filter carries themes) */}
                 <p className={styles.meta}>
-                  {[
-                    r.themes.join(", ") || null,
-                    r.designer ?? "Designer not recorded",
-                    r.place,
-                    r.type,
-                  ]
-                    .filter(Boolean)
-                    .join("  ·  ")}
+                  {[r.type, r.place].filter(Boolean).join("  ·  ")}
                 </p>
               </li>
             ))}

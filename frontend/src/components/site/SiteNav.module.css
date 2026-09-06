@@ -151,12 +151,6 @@
   }
 }
 
-/* Mobile variant (§4a): the mobile path filters to MGDA · Index · About in the
-   component; this just tightens spacing for the shorter bar. */
-.header[data-variant="mobile"] .list {
-  gap: 10px;
-}
-
 /* Below ~400px the wordmark drops to the monogram tile alone. */
 @media (max-width: 400px) {
   .wordmark {

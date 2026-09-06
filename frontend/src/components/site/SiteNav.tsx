@@ -8,7 +8,6 @@ import { Info, Link2, Search, TableOfContents, Waypoints } from "lucide-react";
 import styles from "./SiteNav.module.css";
 
 export type SiteNavKey = "index" | "trace" | "search" | "about" | "source";
-export type SiteNavVariant = "desktop" | "mobile";
 
 type IconType = ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>;
 
@@ -21,8 +20,6 @@ type NavItem = {
   reveal?: string;
   href: string;
   Icon: IconType;
-  /* Absent from the mobile bar — see §4a. Mobile nav is MGDA · Index · About. */
-  mobileHide?: boolean;
 };
 
 /* Top-right order, per the IA: Index · TRACE · Search · About · Source.
@@ -30,19 +27,19 @@ type NavItem = {
    Source = a link (it points out to original sources, not "read"/"index"). */
 const ITEMS: NavItem[] = [
   { key: "index", label: "Index", href: "/directory", Icon: TableOfContents },
-  { key: "trace", label: "TRACE", reveal: "Trace", href: "/trace", Icon: Waypoints, mobileHide: true },
+  { key: "trace", label: "TRACE", reveal: "Trace", href: "/trace", Icon: Waypoints },
   { key: "search", label: "Search", href: "/search", Icon: Search },
   { key: "about", label: "About", href: "/about", Icon: Info },
-  { key: "source", label: "Source", href: "/source", Icon: Link2, mobileHide: true },
+  { key: "source", label: "Source", href: "/source", Icon: Link2 },
 ];
 
+/* The desktop bar only (§4a): the mobile path has its own bar in
+   components/site/mobile and never imports this file. */
 export default function SiteNav({
   active,
-  variant = "desktop",
   revealTone = "light",
 }: {
   active?: SiteNavKey;
-  variant?: SiteNavVariant;
   /* Colour of the hover/focus destination label (§ below) — it sits directly
      on the page content under the header, not on a background of its own, so
      it needs to know whether that content is light (cream, most pages — ink
@@ -50,15 +47,13 @@ export default function SiteNav({
      legible. */
   revealTone?: "light" | "dark";
 }) {
-  const mobile = variant === "mobile";
   const pathname = usePathname();
   const router = useRouter();
   const [revealed, setRevealed] = useState<NavItem | null>(null);
-  // The mobile path ships only its three items — no hidden DOM, no hover reveal.
-  const items = mobile ? ITEMS.filter((i) => !i.mobileHide) : ITEMS;
+  const items = ITEMS;
 
   return (
-    <header className={styles.header} data-variant={variant}>
+    <header className={styles.header} data-variant="desktop">
       <Link href="/" className={styles.brand} aria-label="Modern Graphic Design Archive — home">
         <span className={styles.monogram} aria-hidden="true">MGDA</span>
         <span className={styles.wordmark}>
@@ -77,16 +72,14 @@ export default function SiteNav({
                action the panel's own close button and scrim use, so the page
                underneath is restored instead of pushed over again. */
             const isOpenPanel = item.key === "search" && pathname === "/search";
-            const hover = mobile
-              ? undefined
-              : {
-                  onMouseEnter: () => setRevealed(item),
-                  onMouseLeave: () =>
-                    setRevealed((cur) => (cur?.key === item.key ? null : cur)),
-                  onFocus: () => setRevealed(item),
-                  onBlur: () =>
-                    setRevealed((cur) => (cur?.key === item.key ? null : cur)),
-                };
+            const hover = {
+              onMouseEnter: () => setRevealed(item),
+              onMouseLeave: () =>
+                setRevealed((cur) => (cur?.key === item.key ? null : cur)),
+              onFocus: () => setRevealed(item),
+              onBlur: () =>
+                setRevealed((cur) => (cur?.key === item.key ? null : cur)),
+            };
             return (
               <li key={item.key}>
                 <Link
@@ -96,6 +89,7 @@ export default function SiteNav({
                   aria-current={isActive ? "page" : undefined}
                   aria-expanded={item.key === "search" ? isOpenPanel : undefined}
                   data-active={isActive || undefined}
+                  scroll={item.key !== "search"}
                   onClick={
                     isOpenPanel
                       ? (e) => {
@@ -114,17 +108,15 @@ export default function SiteNav({
         </ul>
       </nav>
 
-      {!mobile ? (
-        /* Decorative: hovered/focused destination name, in the empty page space. */
-        <div
-          className={styles.reveal}
-          aria-hidden="true"
-          data-shown={revealed ? "true" : "false"}
-          data-tone={revealTone}
-        >
-          <span>{revealed ? (revealed.reveal ?? revealed.label) : ""}</span>
-        </div>
-      ) : null}
+      {/* Decorative: hovered/focused destination name, in the empty page space. */}
+      <div
+        className={styles.reveal}
+        aria-hidden="true"
+        data-shown={revealed ? "true" : "false"}
+        data-tone={revealTone}
+      >
+        <span>{revealed ? (revealed.reveal ?? revealed.label) : ""}</span>
+      </div>
     </header>
   );
 }

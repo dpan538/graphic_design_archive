@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { SlidersHorizontal } from "lucide-react";
-import SiteNav from "@/components/site/SiteNav";
+import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
+import shell from "@/components/site/mobile/MobileShell.module.css";
 import {
   defaultState,
   FALLBACK_BOUNDS,
@@ -56,19 +57,22 @@ export default function IndexMobile() {
   const reset = () => setState(defaultState(bounds));
 
   return (
-    <div className={styles.page}>
+    <div className={`${shell.shell} ${styles.page}`}>
       <a href="#directory" className="skip-link">
         Skip to directory
       </a>
-      <SiteNav variant="mobile" active="index" />
+      <SiteNavMobile active="index" />
 
-      <header className={styles.mast}>
+      {/* the opening: one plate — the kicker, the count as a cropped numeral, the population line; no annotation */}
+      <header className={styles.opening}>
         <h1 className={styles.kicker}>Index</h1>
-        <p className={styles.lede}>
-          The archive as a working directory — filed by place, year and theme.
-        </p>
-        <p className={styles.count}>
-          <b>{(cat?.count ?? 5423).toLocaleString()}</b> reader-facing objects{cat ? ` · of ${cat.publicCount.toLocaleString()} public records` : failed ? " · the directory couldn’t load" : " · loading…"}
+        <span className={styles.openingNum} aria-hidden="true">{cat ? cat.count.toLocaleString() : ""}</span>
+        <p className={styles.openingLine}>
+          {cat ? (
+            <>
+              <b>{cat.count.toLocaleString()}</b> reader-facing objects · of {cat.publicCount.toLocaleString()} public records
+            </>
+          ) : failed ? "The directory couldn’t load." : "Loading the directory…"}
         </p>
       </header>
       <span className={styles.stripe} aria-hidden="true">

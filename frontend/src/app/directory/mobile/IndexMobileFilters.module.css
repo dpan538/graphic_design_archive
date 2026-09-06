@@ -90,7 +90,7 @@
   flex: none;
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink);
@@ -159,7 +159,7 @@
   border: var(--keyline-2);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.76rem;
+  font-size: var(--fs-label);
   color: var(--ink);
 }
 .era[data-on] {
@@ -178,7 +178,7 @@
   border-color: color-mix(in srgb, var(--ink) 45%, transparent);
   font-family: var(--font-num);
   font-variant-numeric: tabular-nums;
-  font-size: 0.86rem;
+  font-size: var(--fs-label);
   color: var(--ink-2);
 }
 .decade[data-on] {
@@ -196,7 +196,7 @@
   padding: var(--s-3);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: var(--fs-label);
   color: var(--ink-2);
   border-right: var(--keyline-2);
 }
@@ -218,7 +218,7 @@
   border: var(--keyline-2);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: var(--fs-label);
   color: var(--ink);
   background: var(--paper);
 }
@@ -235,7 +235,7 @@
   color: var(--on-dark);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;

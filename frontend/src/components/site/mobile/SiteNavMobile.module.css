@@ -1,0 +1,56 @@
+/* The mobile top bar: the monogram tile and three icon tiles, nothing
+   else — no wordmark, no hover reveal. Tiles are 48 px squares. */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: calc(var(--s-3) + env(safe-area-inset-top)) var(--s-5) var(--s-3);
+  background: var(--paper);
+  border-bottom: 3px solid var(--ink);
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  height: 48px;
+  padding: 0 var(--s-4);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--on-dark);
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  text-decoration: none;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.control[data-active] {
+  color: var(--on-dark);
+  background: var(--ink);
+}
+
+.control:active {
+  background: color-mix(in srgb, var(--ink) 12%, var(--paper));
+}

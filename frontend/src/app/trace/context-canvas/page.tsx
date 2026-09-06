@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import SiteNav from "@/components/site/SiteNav";
+import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
 import { isLikelyMobileTraceRequest, TraceDesktopRequired } from "@/features/trace-v49/mobile.server";
 import contextManifest from "../../../../generated/trace-context-v1/manifest.json";
 import { INVALID_RECORD_ID_MESSAGE, NAME, STATEMENT } from "./lib/content";
@@ -48,7 +49,7 @@ const PUBLIC_RECORD_ID_PATTERN = /^SURF-[A-Z0-9]+(?:-[A-Z0-9]+)*$/u;
 /* the object opened most recently in this browser: a first-party cookie
    the canvas sets and renews for thirty minutes (a public stable ID,
    nothing else) */
-export const LAST_RECORD_COOKIE = "mgda-context-last";
+const LAST_RECORD_COOKIE = "mgda-context-last";
 
 function parseRecordParameter(value: string | readonly string[] | undefined): ParsedRecord {
   if (value === undefined) return Object.freeze({ kind: "default" as const });
@@ -71,7 +72,7 @@ export default async function ContextCanvasPage({ searchParams }: ContextCanvasP
   if (await isLikelyMobileTraceRequest()) {
     return (
       <>
-        <SiteNav variant="mobile" active="trace" />
+        <SiteNavMobile />
         <TraceDesktopRequired functionName={NAME} />
       </>
     );

@@ -11,7 +11,7 @@
 .head {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--l-src, var(--teal-deep));
@@ -19,7 +19,7 @@
 
 .note {
   margin-top: 2px;
-  font-size: 0.9rem;
+  font-size: var(--fs-label);
   color: var(--ink-2);
 }
 
@@ -30,7 +30,7 @@
 .copyBtn {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.04em;
   padding: var(--s-2) var(--s-4);
   border: var(--keyline-2);
@@ -58,7 +58,7 @@
   padding: var(--s-3) 0;
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--l-src, var(--teal-deep));
@@ -102,7 +102,7 @@
 .kv dt {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -138,14 +138,14 @@
   margin-top: var(--s-3);
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: var(--fs-label);
   color: var(--ink);
   border-bottom: 2px solid var(--l-src, var(--teal-deep));
 }
 
 .aboutNote {
   margin-top: var(--s-3);
-  font-size: 0.9rem;
+  font-size: var(--fs-label);
   color: var(--ink-2);
 }
 

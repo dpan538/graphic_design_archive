@@ -2084,6 +2084,51 @@ system-suggestions-release-v1/system-suggests-test-cases.jsonl` and
 provider on 4 × 5 × 3 = 60 fixed public-safe cases, recording latency, usage, status and the
 gated note; SKIPPED with reason when no key is present — never claimed from mock runs).
 
+## 7k. Mobile — round M1 (2026-09-06, the owner's brief after the merge)
+
+From this round on, design work is mobile only; the desktop is frozen at main.
+The rules the owner set: every mobile file apart from the desktop's (no width
+switch inside one file); the mobile palette a step brighter and more saturated,
+the paper a touch whiter; the top bar the monogram tile and three icon controls
+only — Index · Search · About — with no wordmark; the Index without annotation
+lines, its opening designed, its list lighter; long object titles folded by
+default; Search on the live API; About with its own mobile tree, so the desktop
+bar with five icons can never appear on a phone, and with the research approach
+and the design rationale intact; Source stays inside About on the phone; the
+homepage untouched for now.
+
+- *Shell and bar.* `components/site/mobile/MobileShell.module.css` (the mobile
+  tokens: paper #fffdf9, blue #2b4cff, red #ff4a2a, yellow #ffcf33, green #33b95e,
+  teal #17b0b0, sky #4db6ff, coral #ff8763; the 17 px floor) and
+  `SiteNavMobile.tsx` (MGDA tile + Index · Search · About, 48 px tiles; Search
+  toggles the window closed as on the desktop). The desktop `SiteNav` no longer
+  carries a mobile variant; every mobile root (Home, Index, Search, Object, About,
+  the TRACE desktop-required notices) uses the mobile bar and the shell.
+- *About.* `app/about/mobile/AboutMobile.tsx`: seven sections on colour plates
+  with cropped numerals and line marks — Purpose · Methodology (research approach:
+  method prose, pipeline, evidence protocol, design-research note) · Visual design
+  rationale (the six references, the type system) · The archive in numbers ·
+  Contact & citation (copy buttons; citations built after mount) · Source (the
+  desktop /source folded in: overview layers, the register by group, acquisition,
+  transformation, rights conditions, evidence status, version and integrity) ·
+  Claim boundaries & rights. `about/page.tsx` and `source/page.tsx` split by device
+  on the server; `/source` on a phone is the About tree opened at Source.
+- *Index.* The opening is one sky plate: the kicker, the count as a numeral cropped
+  by the plate's foot, the population line (no annotation line); rows are the title
+  and one light line (type · place); the filter sheet unchanged. *Object.* A title
+  over 72 characters folds to three lines with a 44 px "Full title" control
+  (`MobileTitle.tsx`); the h1 keeps the full text. *Search.* The mobile ticket runs
+  on `app/search/lib/live.ts` (results, exact count, cursor paging, live
+  dictionaries) and the shared guidance endpoint; the fixture is gone from the
+  mobile path. Every mobile stylesheet size below the floor was raised to 17 px.
+- *Verification.* `node frontend/scripts/test-mobile-design.mjs` (61 checks: the
+  trees import no desktop nav or tree, carry the bar and the shell, About's seven
+  sections and its rationale and approach, Search on the live hooks, the Index
+  opening, the folded title); in the browser with a mobile user agent: three icons
+  and no wordmark on every page, the minimum font 17 px on Home, Index, Search,
+  Object and About, the Index numeral clear of its line, Search 508 = the API's
+  count with the guidance note, the long title folded, seven plates with marks.
+
 ## 8. Rounds
 
 Every round ships **desktop + mobile together**; mobile is designed ground-up per

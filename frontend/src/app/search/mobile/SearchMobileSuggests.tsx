@@ -1,6 +1,6 @@
 "use client";
 
-import type { Suggestion } from "../lib/suggest";
+import type { GuidanceSuggestion as Suggestion } from "../lib/live";
 import type { SearchState } from "../lib/query";
 import styles from "./SearchMobileSuggests.module.css";
 

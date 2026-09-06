@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteNav from "@/components/site/SiteNav";
+import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
 import { isLikelyMobileTraceRequest, TraceDesktopRequired } from "@/features/trace-v49/mobile.server";
 import { FAILURE_BACK, FAILURE_KICKER, FAILURE_NOTE, FAILURE_TITLE, NAME, STATEMENT } from "./lib/content";
 import styles from "./page.module.css";
@@ -35,7 +36,7 @@ export default async function ExplorationPage({ searchParams }: ExplorationPageP
   if (await isLikelyMobileTraceRequest()) {
     return (
       <>
-        <SiteNav variant="mobile" active="trace" />
+        <SiteNavMobile />
         <TraceDesktopRequired functionName={NAME} />
       </>
     );

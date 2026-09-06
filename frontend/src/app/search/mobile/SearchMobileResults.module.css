@@ -49,7 +49,7 @@
   white-space: nowrap;
   font-family: var(--font-num);
   font-weight: 700;
-  font-size: 0.62rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--ink) 64%, transparent);
@@ -61,7 +61,7 @@
 .meta {
   margin-top: 3px;
   font-family: var(--font-num);
-  font-size: 0.92rem;
+  font-size: var(--fs-label);
   color: var(--ink-2);
 }
 
@@ -74,7 +74,7 @@
   border-top: 2px solid var(--ink);
   font-family: var(--font-num);
   font-variant-numeric: tabular-nums;
-  font-size: 0.85rem;
+  font-size: var(--fs-label);
   color: var(--ink-2);
 }
 
@@ -86,7 +86,7 @@
   border: 2px solid var(--ink);
   font-family: var(--font-num);
   font-weight: 700;
-  font-size: 0.76rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink);

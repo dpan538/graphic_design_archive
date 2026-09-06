@@ -1,4 +1,5 @@
 import type { Rec } from "../lib/record";
+import MobileTitle from "./MobileTitle";
 import MobileVisual from "./MobileVisual";
 import MobileMeta from "./MobileMeta";
 import MobileDescription from "./MobileDescription";
@@ -23,7 +24,7 @@ export default function MobileRecord({ rec, recordOnly = false }: { rec: Rec; re
     <div className={styles.record}>
       <header className={styles.head}>
         <span className={styles.eyebrow}>{recordOnly ? "Archive record" : "MGDA record"}</span>
-        <h1 className={styles.title}>{rec.title}</h1>
+        <MobileTitle title={rec.title} />
         <p className={styles.identLine}>
           {[rec.surfaceId, rec.typeLabel, rec.displayDate, rec.placeLabel]
             .filter(Boolean)
