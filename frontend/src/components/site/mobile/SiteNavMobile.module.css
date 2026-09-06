@@ -1,5 +1,7 @@
 /* The mobile top bar: the monogram tile and three icon tiles, nothing
-   else — no wordmark, no hover reveal. Tiles are 48 px squares. */
+   else — no wordmark, no hover reveal. Tiles are 52 px squares, and the
+   logo's margin to the left edge equals its margin to the bar's top and
+   bottom edges (owner, 2026-09-06). */
 
 .header {
   position: sticky;
@@ -9,7 +11,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--s-4);
-  padding: calc(var(--s-3) + env(safe-area-inset-top)) var(--s-5) var(--s-3);
+  padding: calc(var(--s-4) + env(safe-area-inset-top)) var(--s-4) var(--s-4);
   background: var(--paper);
   border-bottom: 3px solid var(--ink);
 }
@@ -17,11 +19,11 @@
 .monogram {
   display: grid;
   place-items: center;
-  height: 48px;
-  padding: 0 var(--s-4);
+  height: 52px;
+  padding: 0 18px;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   letter-spacing: 0.04em;
   color: var(--on-dark);
   background: var(--ink);
@@ -38,8 +40,8 @@
 .control {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   color: var(--ink);
   background: var(--paper);
   border: 2px solid var(--ink);

@@ -8,28 +8,28 @@
   padding-top: var(--s-5);
 }
 
+/* the year band, light: one line, a hairline under it */
 .year {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--s-3);
   padding-bottom: var(--s-2);
-  border-bottom: 3px solid var(--ink);
+  border-bottom: var(--hair);
+  border-color: var(--ink);
   font-family: var(--font-num);
-  font-weight: 400;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
-  font-size: 1.8rem;
+  font-size: var(--fs-body);
   line-height: 1;
   color: var(--ink);
 }
 
 .yearN {
-  font-family: var(--font-label);
-  font-weight: 700;
+  font-family: var(--font-num);
+  font-weight: 400;
   font-size: var(--fs-label);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--ink) 45%, transparent);
+  color: var(--ink-2);
 }
 
 .rows {
@@ -50,14 +50,11 @@
 .title {
   display: block;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--fs-body);
   line-height: 1.32;
   color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--ink) 26%, transparent);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
 }
 
 /* ---- Record line — quiet support ---- */

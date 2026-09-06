@@ -22,6 +22,9 @@ type Props = {
   progressRef: RefObject<number>;
   active: boolean;
   staticFrame?: boolean;
+  /** Widen the frustum on narrow frames so the whole field stays inside
+   * (the phone's portrait mount); frames at 1.35:1 or wider are unchanged. */
+  fitWidth?: boolean;
 };
 
 /* Deterministic PRNG — visuals must not shuffle between reloads. */
@@ -37,7 +40,7 @@ function mulberry(seed: number) {
 
 const PALETTE = [0x4f8ef7, 0xf24b4b, 0xff8a3d, 0xffd93d, 0x4fd18b, 0xe86bb0, 0x9b7bf0];
 
-export default function ContributionScene({ progressRef, active, staticFrame }: Props) {
+export default function ContributionScene({ progressRef, active, staticFrame, fitWidth }: Props) {
   const mountRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef(0);
   const renderRef = useRef<(() => void) | null>(null);
@@ -222,7 +225,7 @@ export default function ContributionScene({ progressRef, active, staticFrame }: 
          tightening it scales the field up (~25% total across two passes)
          without moving the camera.
          Still wider than the original 8.6, which sliced the tallest stems. */
-      const half = 8.15;
+      const half = fitWidth && aspect < 1.35 ? 8.15 * (1.35 / aspect) : 8.15;
       camera.left = -half * aspect;
       camera.right = half * aspect;
       camera.top = half;
@@ -303,7 +306,7 @@ export default function ContributionScene({ progressRef, active, staticFrame }: 
       });
       renderer.dispose();
     };
-  }, [staticFrame, progressRef]);
+  }, [staticFrame, progressRef, fitWidth]);
 
   useEffect(() => {
     /* render only when the progress has moved — a still section costs no

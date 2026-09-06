@@ -25,6 +25,9 @@
   --pink: #ff78b0;
 
   /* the phone's type scale: the 17 px floor holds; display sizes are set per page */
+  /* the bar's box, for anything that pins beneath it */
+  --bar-h: 87px;
+
   --fs-label: 1.0625rem;
   --fs-body-sm: 1.0625rem;
   --fs-body: 1.125rem;

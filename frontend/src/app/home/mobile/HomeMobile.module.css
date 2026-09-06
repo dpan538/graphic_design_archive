@@ -1,154 +1,852 @@
+/* Homepage, mobile — the phone's own stylesheet. Black · white · blue, and
+   the figures' own data colours; no gradient, no shadow, nothing under 17 px.
+   The two sticky stages are short (0.8 and 1.1 viewports of scroll); the
+   status figures grow in once, when they arrive. */
+
 .page {
   min-height: 100dvh;
   background: var(--paper);
   color: var(--ink);
 }
-
 .main {
-  padding-bottom: var(--s-9);
+  padding-bottom: var(--s-6);
 }
 
-.kicker {
-  font-family: var(--font-label);
-  font-weight: 700;
-  font-size: var(--fs-label);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--on-dark) 72%, transparent);
-}
-
+/* ---- shared type ---- */
 .label {
   font-family: var(--font-label);
   font-weight: 700;
   font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: inherit;
 }
-
-/* ---- 01 Identity — bold statement on a spot-colour band (ref: OKE) ---- */
-
-.identity {
-  padding: var(--s-7) var(--page-gutter) var(--s-8);
-  background: var(--blue);
-  color: var(--on-dark);
-  border-bottom: var(--keyline);
-  border-color: var(--ink);
-}
-.identityText {
-  margin-top: var(--s-4);
+.title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(1.7rem, 6.6vw, 2.2rem);
-  line-height: 1.16;
+  font-size: 1.5rem;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.para {
+  margin-top: var(--s-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.figureName {
+  display: grid;
+  gap: 4px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: inherit;
+}
+.figureSub {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-label);
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* ================= 01 · Identity ================= */
+
+/* the desktop closing's colours; the stage holds for two viewports of scroll,
+   pinned beneath the bar so the wordmark never moves; the ground fades to
+   white, then the sentences come */
+.opening {
+  --black: #0a0a0c;
+  --w: clamp(0, calc((var(--p, 0) - 0.34) / 0.22), 1);
+  --d: clamp(0, calc((var(--p, 0) - 0.58) / 0.12), 1);
+  position: relative;
+  height: 340dvh;
+  background: var(--paper);
+}
+.openingStage {
+  position: sticky;
+  top: var(--bar-h);
+  height: calc(100dvh - var(--bar-h));
+  overflow: hidden;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: var(--s-5);
+  padding: 0 var(--page-gutter);
+  background: var(--black);
+  color: var(--paper);
+}
+.mark {
+  width: min(64vw, 300px);
+  color: var(--paper);
+}
+.wordmark {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.openingTag {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  text-align: center;
+  color: var(--sky);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 420ms ease-out, transform 420ms ease-out;
+}
+.opening[data-stage="tag"] .openingTag {
+  opacity: 1;
+  transform: none;
+}
+/* the paper that fades in with the scroll and leaves the page white */
+.wipe {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  opacity: var(--w);
+  will-change: opacity;
+}
+/* the two sentences, on the white, once the sheet is up */
+.describe {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  padding: var(--s-6) var(--page-gutter);
+  color: var(--ink);
+  opacity: var(--d);
+  transform: translateY(calc((1 - var(--d)) * 18px));
+  pointer-events: none;
+}
+.describeLead {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.625rem;
+  line-height: 1.22;
   letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+/* the key phrases, lit one after another on the scroll: the type itself
+   takes its colour — a different one for each — nothing laid over it; the
+   two short phrases never break across a line */
+.hl {
+  --k: clamp(0, calc((var(--p, 1) - var(--from, 0)) / 0.06), 1);
+  --to: var(--blue);
+  color: color-mix(in srgb, var(--to) calc(var(--k) * 100%), var(--ink));
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+/* About's plate colours 2 · 4 · 5: red, green, teal (owner, 2026-09-06) */
+.hl[data-i="0"] {
+  --to: var(--red);
+  white-space: nowrap;
+}
+.hl[data-i="1"] {
+  --to: var(--green);
+  white-space: nowrap;
+}
+.hl[data-i="2"] {
+  --to: var(--teal);
+}
+.describeLine {
+  margin-top: var(--s-5);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+/* ================= 02 · Contribution ================= */
+
+.contrib {
+  position: relative;
+  height: 300dvh;
+}
+.contribStage {
+  position: sticky;
+  top: var(--bar-h);
+  height: calc(100dvh - var(--bar-h));
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--page-gutter) var(--s-5);
+  background: var(--paper);
+  color: var(--ink);
+  transition: background-color 360ms ease, color 360ms ease;
+}
+.contrib[data-stage="b"] .contribStage {
+  background: var(--ink);
   color: var(--on-dark);
 }
-
-/* ---- Blocks ---- */
-
-.block {
-  padding: var(--s-6) var(--page-gutter);
-  border-top: var(--keyline);
-  border-color: var(--ink);
+.panelA,
+.panelB {
+  grid-row: 2;
+  grid-column: 1;
+  min-height: 0;
+  display: grid;
+  transition: opacity 320ms ease, transform 320ms ease;
 }
-.block:first-of-type {
-  border-top: none;
+/* page one: the year chart fills the page, the three figures stand at its foot */
+.panelA {
+  grid-template-rows: minmax(0, 1fr) auto;
 }
-
-.since {
-  margin-top: var(--s-3);
-  font-family: var(--font-num);
-  font-size: var(--fs-body-lg);
+/* page two: the field fills the page, the paragraph and the tagline at its foot */
+.panelB {
+  grid-template-rows: minmax(0, 1fr) auto auto;
+}
+.panelA {
+  opacity: 1;
+}
+.panelB {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+.contrib[data-stage="b"] .panelA {
+  opacity: 0;
+  pointer-events: none;
+}
+.contrib[data-stage="b"] .panelB {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.contrib[data-reduced] .contribStage,
+.contrib[data-reduced] .panelA,
+.contrib[data-reduced] .panelB {
+  transition: none;
 }
 
 .ledger {
-  margin-top: var(--s-4);
   display: grid;
-  gap: var(--s-4);
+  margin-top: var(--s-4);
   border-top: var(--hair);
-  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
-  padding-top: var(--s-4);
+  border-color: currentColor;
+}
+.ledger > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: 7px 0;
+  border-bottom: var(--hair);
+  border-color: color-mix(in srgb, currentColor 28%, transparent);
 }
 .ledger dt {
   font-family: var(--font-num);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  font-size: clamp(2.4rem, 11vw, 3rem);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+  font-size: 1.375rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
 }
 .ledger dd {
-  margin-top: 5px;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.3;
+  text-align: right;
+  opacity: 0.82;
+}
+
+.chart {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--s-3);
+}
+.panelB .chart {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+.chartLabel {
   font-family: var(--font-label);
   font-weight: 700;
   font-size: var(--fs-label);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ink-2);
+  line-height: 1.35;
 }
-
-.body {
-  margin-top: var(--s-5);
+.histo {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 6px;
+}
+.histoSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-bottom: var(--hair);
+  border-color: currentColor;
+}
+.bin[data-tier="canonical"] {
+  fill: var(--blue);
+  opacity: 0.24;
+}
+.bin[data-tier="public"] {
+  fill: var(--blue);
+}
+.axis {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
   font-family: var(--font-num);
-  font-size: var(--fs-body-sm);
-  line-height: 1.6;
-  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-label);
+  line-height: 1.3;
+}
+.axis span:nth-child(2) {
+  text-align: center;
+}
+.notes {
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+.notes li {
+  position: relative;
+  padding-left: 26px;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.4;
+}
+.notes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.32em;
+  width: 14px;
+  height: 14px;
+  background: var(--blue);
+}
+.notes li[data-glyph="pair"]::before {
+  background: color-mix(in srgb, var(--blue) 24%, transparent);
+  border: 2px solid var(--blue);
+  box-sizing: border-box;
+}
+.notes li[data-glyph="held"]::before {
+  background: transparent;
+  border: 2px solid currentColor;
+  box-sizing: border-box;
+}
+.notes li[data-glyph="omitted"]::before {
+  top: 0.62em;
+  height: 2px;
+  background: currentColor;
+}
+.notes li[data-glyph="dot"]::before {
+  border-radius: 50%;
+  background: #4fd18b;
+}
+.notes li[data-glyph="stem"]::before {
+  width: 3px;
+  left: 6px;
+  top: 0.1em;
+  height: 18px;
+  background: #ff8a3d;
+}
+.notes li[data-glyph="surface"]::before {
+  top: 0.55em;
+  height: 2px;
+  background: currentColor;
+}
+/* as large as the page allows, no taller than 0.85 of the width so the
+   scene's frame keeps its field inside */
+.fieldMount {
+  position: relative;
+  min-height: 0;
+  height: 100%;
+  max-height: calc(100vw * 0.9);
+  width: 100vw;
+  margin-inline: calc(-1 * var(--page-gutter));
+  align-self: center;
+  background: var(--ink);
+}
+.chartSub {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-label);
+  line-height: 1.35;
+  opacity: 0.8;
+}
+.stagePara {
+  margin-top: var(--s-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.45;
+}
+.stageTagline {
+  margin-top: var(--s-4);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--sky);
+}
+.fieldMount > div {
+  position: absolute;
+  inset: 0;
 }
 
-/* ---- 03 Entries ---- */
+/* ================= 03 · Enter ================= */
 
+.enter {
+  padding: var(--s-6) var(--page-gutter) var(--s-7);
+  border-top: var(--keyline);
+  border-color: var(--ink);
+}
 .entries {
-  margin-top: var(--s-4);
+  list-style: none;
+  margin: var(--s-5) 0 0;
+  padding: 0;
   border-top: var(--keyline);
   border-color: var(--ink);
 }
 .entries li {
   border-bottom: var(--hair);
-  border-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
 }
 .entry {
   display: grid;
-  gap: 6px;
+  gap: 4px;
   padding: var(--s-5) 0;
-}
-.entryHead {
-  display: flex;
-  align-items: baseline;
-  gap: var(--s-3);
-}
-.entryN {
-  font-family: var(--font-num);
-  font-weight: 700;
-  font-size: var(--fs-label);
-  color: var(--blue);
+  color: var(--ink);
+  text-decoration: none;
 }
 .entryName {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: clamp(2rem, 9vw, 2.6rem);
+  line-height: 1;
   letter-spacing: -0.025em;
+}
+.entryVerb {
+  margin-top: 4px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-body);
+  color: var(--blue);
+}
+.entryWhen {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* ================= 04 · Research status ================= */
+
+.status {
+  padding: 0;
+}
+.figureHead {
+  margin-top: calc(-1 * var(--s-2));
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-label);
+}
+
+/* ---- a figure on a pinned page: --p is the stage's scroll, --g the growth,
+   complete at 85 % so the finished figure stands before the page lets go ---- */
+.pin {
+  --g: clamp(0, calc(var(--p, 1) / 0.9), 1);
+  position: relative;
+}
+.pinStage {
+  position: sticky;
+  top: var(--bar-h);
+  height: calc(100dvh - var(--bar-h));
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  gap: var(--s-4);
+  padding: var(--s-4) var(--page-gutter) var(--s-5);
+  background: var(--paper);
   color: var(--ink);
 }
-.entryLine {
-  font-family: var(--font-num);
-  font-size: var(--fs-body-sm);
-  line-height: 1.5;
-  color: var(--ink-2);
+.sheetWrap .pinStage {
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
 }
-.entryNote {
-  font-style: normal;
-  font-weight: 700;
-  color: var(--red);
+/* the wheel and the strip each stand alone on their page; the strip's page
+   is three-quarter height — a panorama, not a filled screen */
+.wheelWrap .pinStage,
+.stripWrap .pinStage {
+  grid-template-rows: minmax(0, 1fr);
+}
+.stripWrap .pinStage {
+  height: calc((100dvh - var(--bar-h)) * 0.75);
 }
 
-/* ---- 04 Status ---- */
-
-.statusText {
-  margin-top: var(--s-3);
+/* the sheet fills the page between the head and the legend */
+.sheet {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  grid-template-rows: minmax(0, 1fr) auto;
+  column-gap: 8px;
+}
+.yearsY {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
   font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
   font-size: var(--fs-label);
-  line-height: 1.55;
+  line-height: 1;
   color: var(--ink-2);
+}
+.yearsY span {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+}
+.countsX {
+  position: relative;
+  grid-row: 2;
+  grid-column: 2;
+  height: 1.6em;
+  margin-top: 6px;
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-label);
+  line-height: 1;
+  color: var(--ink-2);
+}
+.countsX span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+}
+/* the two end labels sit inside the box, not astride its edge */
+.countsX span[data-edge="start"] {
+  transform: none;
+}
+.countsX span[data-edge="end"] {
+  transform: translateX(-100%);
+}
+.tickZero {
+  color: var(--ink);
+  font-weight: 700;
+}
+.sheetBox {
+  grid-row: 1;
+  grid-column: 2;
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+.sheetSvg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* the grid shows first, the axis draws itself, then the bands rise */
+.gridLines line {
+  stroke: var(--ink);
+  stroke-opacity: 0.16;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: clamp(0, calc(var(--g) / 0.08), 1);
+}
+.axisLine {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - clamp(0, calc(var(--g) / 0.14), 1));
+}
+/* every row grows OUT OF THE ZERO AXIS: the origin is the axis itself, and
+   each row takes a third of the run to stand, starting a little after the
+   row above it, so the sheet swells outward from the axis, 1900 first */
+.row {
+  --s: clamp(0, calc((var(--g) * 38 - var(--b)) / 12), 1);
+  --e: calc(var(--s) * var(--s) * (3 - 2 * var(--s)));
+  transform-box: view-box;
+  transform-origin: var(--axis, 50%) 50%;
+  transform: scaleX(max(0.001, var(--e)));
+}
+
+.legend {
+  display: grid;
+  border-top: var(--hair);
+  border-color: var(--ink);
+}
+.legend > div {
+  display: grid;
+  grid-template-columns: 8.5em 1fr;
+  gap: var(--s-3);
+  padding: 5px 0;
+  border-bottom: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 24%, transparent);
+  font-size: var(--fs-label);
+  line-height: 1.4;
+}
+.legend dt {
+  font-family: var(--font-label);
+  font-weight: 700;
+}
+.legend dd {
+  font-family: var(--font-body);
+  color: var(--ink-2);
+}
+
+.ranked {
+  display: grid;
+  gap: var(--s-4);
+}
+.rankedHead {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: var(--ink);
+}
+.rankedRows {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  counter-reset: rank;
+}
+.rankedRows li {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 5px 0;
+  font-size: var(--fs-label);
+}
+.rankedRows i {
+  width: 14px;
+  height: 14px;
+  background: var(--c);
+}
+.rankedRows span {
+  font-family: var(--font-body);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rankedRows b {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+}
+
+/* the wheel: the caption at the head, the legend at the foot, the wheel as
+   large as the page allows between them */
+.wheel {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--s-4);
+  margin: 0;
+}
+.wheelSvg {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  place-self: center;
+}
+.spokes line {
+  stroke: var(--ink);
+  stroke-opacity: 0.32;
+  stroke-width: 0.7;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - clamp(0, calc(var(--g) / 0.3), 1));
+}
+/* the blocks land decade by decade from the hub, as on the desktop */
+.blocks path {
+  opacity: clamp(0, calc((var(--g) * 1.25 - 0.3 - var(--d, 0) / 13) / 0.12), 1);
+}
+.wheelLegend {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px var(--s-4);
+  margin: 0;
+  padding: 0;
+}
+.wheelLegend li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+}
+.wheelLegend i {
+  width: 14px;
+  height: 14px;
+  background: var(--c);
+}
+
+/* the strip: the caption at the head, the panorama filling the page, the years beneath */
+.strip {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--s-3);
+  margin: 0;
+}
+.stripSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-bottom: var(--hair);
+  border-color: var(--ink);
+}
+/* raised a column at a time across the growth, as on the desktop */
+.stripPub rect,
+.stripHeld rect {
+  --su: clamp(0, calc((var(--g) * 1.15 - var(--i) / 227) / 0.14), 1);
+  transform-origin: 0 100px;
+  transform: scaleY(calc(var(--su) * var(--su) * (3 - 2 * var(--su))));
+  opacity: var(--k);
+}
+.stripPub rect {
+  fill: var(--blue);
+}
+.stripHeld rect {
+  fill: var(--pink);
+}
+.stripYears {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-label);
+  color: var(--ink-2);
+}
+.stripYears i {
+  font-style: normal;
+}
+
+/* the reading */
+.reading {
+  padding: var(--s-6) var(--page-gutter) var(--s-8);
+  border-top: var(--keyline);
+  border-color: var(--ink);
+}
+.reading .para {
+  margin-top: var(--s-3);
+}
+.release {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4) var(--s-4);
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: var(--hair);
+  border-color: var(--ink);
+}
+.release > div {
+  display: grid;
+  gap: 2px;
+  font-size: var(--fs-label);
+  line-height: 1.35;
+}
+.release dt {
+  font-family: var(--font-label);
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.release dd {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.lists {
+  display: grid;
+  margin-top: var(--s-6);
+  border-top: var(--hair);
+  border-color: var(--ink);
+}
+.listHead {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.item {
+  display: grid;
+  gap: 2px;
+  padding: 10px 0;
+  border-bottom: var(--hair);
+  border-color: color-mix(in srgb, var(--ink) 24%, transparent);
+}
+.term {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+}
+.line {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.fold {
+  border-bottom: var(--hair);
+  border-color: var(--ink);
+}
+.fold[open] {
+  padding-bottom: var(--s-4);
+}
+.summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 12px 0;
+  cursor: pointer;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.summaryCount {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-label);
+  color: var(--ink-2);
+}
+.summary::after {
+  content: "+";
+  font-family: var(--font-num);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--blue);
+}
+.fold[open] .summary::after {
+  content: "–";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .openingTag,
+  .panelA,
+  .panelB,
+  .contribStage,
+  .bands,
+  .spokes line,
+  .blocks path,
+  .stripSvg rect {
+    transition: none !important;
+  }
 }

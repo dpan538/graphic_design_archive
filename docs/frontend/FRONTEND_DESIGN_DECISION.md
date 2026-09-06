@@ -2129,6 +2129,169 @@ homepage untouched for now.
   Object and About, the Index numeral clear of its line, Search 508 = the API's
   count with the guidance note, the long title folded, seven plates with marks.
 
+## 7l. Mobile — round M2: the homepage, and five fixes (2026-09-06, the owner's briefs of the same day)
+
+**The homepage on the phone** (`app/home/mobile/`, its own tree, nothing shared with
+the desktop but `home/lib/`). The owner's brief: a simplification and a
+restructuring of the desktop page — every figure on a **pinned page that grows with
+the scroll and lets go once the growth is complete**; no exaggerated scroll
+choreography, short scroll per stage; no TRACE and no Source entry on the phone.
+
+- **01 Identity** — one pinned page (300 dvh), in the desktop closing's colours:
+  black `#0a0a0c`, the wordmark in paper (the finished `seed` face from
+  `identity-glyphs.json`, no gsap), the settled line in sky, broken before "for".
+  Progress `--p` (0…1 across the pin) drives everything: the line comes on at 0.16;
+  a paper sheet rises from the foot over 0.40–0.64 (`.wipe`, a translate bound to
+  `--p`); the two identity sentences fade in on the white over 0.68–0.84; the page
+  lets go into Contribution, the first continuous page.
+- **02 Contribution** — one pinned page (300 dvh). Page one: the ledger (40,000+ ·
+  15,923 · 7,995) and the per-year chart (`YEAR_TIERS`, public solid blue over
+  canonical faint) with `HISTO_NOTES`. At 0.32 the page switches (crossfade, ink
+  ground) to the desktop's field scene, **drawn by the scroll** over 0.42–0.94
+  through its own window (`progressRef` = 0.4 → 0.98), with `CONTRIBUTION_BODY` and
+  `FIELD_TAGLINE` beneath it on the same page. The scene mounts only when the stage
+  is near; reduced motion draws the finished frame.
+- **03 Enter** — `ENTER_TITLE`, Index and Search only. Search is a plain anchor (a
+  full navigation) so the intercepting modal never layers the window over the page.
+- **04 Research status** — three pinned figures, each grown by
+  `--g = clamp(0, --p / 0.85, 1)` so the finished figure stands before release, with
+  the desktop's own drawing rules: the ribbon sheet (200 dvh; `PUBLIC`/`HELD` from
+  `statusRibbons`, `scaleY(--g)` out of the axis, ticks and years as HTML at 17 px,
+  a four-row legend); the wheel (190 dvh; spokes by 0.3 of the growth, blocks decade
+  by decade from the hub); the year strip (170 dvh; a column at a time). Then the
+  reading: `STATUS_TITLE`, `STATUS_INTRO`, the release row, and three folds shut by
+  default — the ranked places (top five public, top five held, in ribbon colours),
+  Stable, Open. **No tables** on the phone (the owner deleted them), nothing after
+  the folds but the Top control.
+- **Mechanics** — `useStageProgress` reads the scroll position directly (one
+  rectangle per scroll event; no IntersectionObserver, no animation frame), so it
+  also runs in a throttled tab; `PinnedFigure` writes `--p` and the stylesheet does
+  the rest; `IdentityOpening` and `ContributionStage` use the same hook.
+- **Shared code moved, desktop unchanged in rendering** — `ContributionScene.tsx` →
+  `home/lib/`; the year strip and the wheel computations → `home/lib/statusFigures.ts`
+  (the desktop `StatusSection` imports them).
+
+**Second review of the same day (owner's screenshots).** Every pinned page now
+sits *beneath the bar* (`top: var(--bar-h)`, `height: calc(100dvh - var(--bar-h))`)
+and fills that height, so nothing moves when a page pins and no blank shows
+between pages: the wordmark is centred from the first frame and never shifts;
+the ground *fades* to white (opacity on `--p`) instead of rising; the sentences
+come on the white and hold until the page lets go. The Enter section is gone —
+Index and Search are the bar's own controls — and Research status is **03**.
+Contribution's first page puts the year chart first and the three figures
+beneath it (the weight had sat too high); the chart leaves **1965 off as an
+outlier** (850 records from one bulk capture flattened every year before 1900),
+scales to the next-highest year, and prints the omission as a note; the
+tagline stands on two lines. The three status figures fill their pages (the
+sheet between head and legend, the wheel as large as the page allows, the
+strip as a panorama) and grow more slowly (`--g = --p / 0.9` over 260 / 240 /
+220 dvh). Search is back to an **overlay on the page it was opened from**: the
+bar's control is an intercepted soft navigation, the modal slot renders the
+ticket over a 58 % ink scrim with the host page mounted beneath and its scroll
+locked, and the ticket's labels read `Search :` (colons, not semicolons); a
+direct visit to `/search` is still a page with the bar.
+
+**Five fixes from the owner's screenshots.** The bar: 52 px tiles, 28 px icons, the
+logo at 16 px from the left edge and 16 px from the bar's top and bottom edges,
+`--bar-h: 87px` on the shell for anything that pins beneath it. Search: a page of
+its own on the phone (paper, full width, no scrim, no dashed ticket, reached by full
+navigation from the bar and the homepage). About: the end keeps only the fixed Top
+control; the blank tail is gone. Index opening: on the paper, at least twice the
+old height (460 px minimum), the readable count (5,423) and the release total
+(7,995) as two whole uncropped figures, and a guiding paragraph that names the
+2,572 record-only entries and says every record stays reachable by its
+identifier. One `TopButton` component (`components/site/mobile/`) on About, Index
+and the homepage.
+
+**Third review (the owner: "you cannot keep designing in this offhand way").**
+Every pinned page is now a composed frame — head at the top, the figure
+filling the middle, the notes or numbers at the foot — with no dead area, and
+the type scale on the homepage runs from 17 px to 24 px only (titles 1.5 rem,
+fold heads 1.125 rem, the ledger's figures 1.375 rem with their labels in
+sentence case). The ribbon sheet is **grown the desktop's way, not stretched**:
+the band set is defined once and drawn through `<use>` in 26 boxes, one per
+five-year bin, each clipped to its column and scaled up from the axis on its
+own share of the growth (`--s = (--g · 31 − bin) / 5`, smoothstepped), after the
+grid shows and the axis draws itself. Contribution's first page: the year chart
+fills the page, the three figures stand at its foot; the second page: the
+field as large as the page allows (up to 0.85 of the width), the paragraph and
+the two-line tagline at the foot. The strip fills its page to the years; the
+wheel is centred with its legend at the foot. The reading: one keyline, a
+two-column release row, quiet folds.
+
+**Fourth review.** The identity page gained its own scroll: after the two
+sentences stand, the three key phrases (the desktop's `IDENTITY_MARKS`) are lit
+one after another by a flat band of sky running in from the left, on the last
+quarter of the pin (340 dvh). The field's frame widens its frustum on a
+portrait mount (`fitWidth`, `home/lib/ContributionScene`; frames at 1.5:1 or
+wider unchanged) so nothing is cropped. The ribbon sheet on the phone is now
+**the same mirrored ranked stream set as rows**, after the owner's two
+references (the barcode poster, the hairline panorama): time runs down the
+page, one row per five-year bin, the axis vertical, public blocks to its right
+and held to its left in the desktop's stacking order and rank colours — blocks,
+not curves, because at a phone's width the bands wobbled into noise; years
+down the left margin, counts along the foot, the scale the largest bin
+(1,212). It grows one row at a time out of the axis. The strip's page is
+three-quarter height (a panorama, not a filled screen); the reading follows
+beneath it while it is pinned.
+
+**Fifth review (nine notes and three follow-ups).** The identity phrases now
+take their own colours — blue, deep red, deep green — in the type itself, at
+1.625 rem with the two short phrases unbreakable and the hyphen non-breaking.
+**Search on the phone is an overlay beneath the bar**: the bar stays live, the
+scrim runs from the bar's foot, the ticket's labels lose their punctuation, the
+field is not auto-focused when the layer opens; the overlay's rules are written
+at double specificity so the shell's paper can never outrank the scrim (the
+cause of every "Search opens as a white page" report was stylesheet order). The
+field bleeds to the page edges and only widens its frame below 1.35:1. The
+sheet's axis is asymmetric — held to 750 on the left, public to 1,250 on the
+right, labels at 750 · 250 · 0 · 250 · 750 · 1,250 with the two end labels inside
+the box — and its rows grow **out of the zero axis** (origin on the axis, each
+row a third of the run, staggered). The wordmark's box is read off the outlines
+(the G overshoots the baseline by 58 units and was being cut). About: the
+card's tone bar is a pseudo-element with the tone named outright, the lead
+reads "Dai Pan 潘岱, China", the six references are folded cards. Index: the
+opening is the word at 4 rem, the two figures side by side over one share bar
+(67.8 % readable), the paragraph; 64 px above the word, 16 px below; the list at
+regular weight with a hairline year band and no underlines. The two dev-overlay
+issues were hot-reload artefacts of this session's edits (a dependency array
+that grew, a hook inserted by the concurrent session); a fresh load of Home and
+About logs nothing.
+
+**Search joins the reader-facing projection (2026-09-06, the owner's bug
+report: a Poster filter answered 7,058 while the Index files 5,423).** The
+public Search service now ranks every public document and then keeps only
+reader-facing objects, exactly as the Index does, except for an exact record
+lookup — the full stable ID, or a record-only entry's full identifier title —
+which still answers and is labelled "Record-only archive entry"; every result
+carries `readerEligibility`, and the facets answer carries `readerFacingCount`
+(5,423) beside `documentCount` (7,995). Poster: 7,058 public, 4,491
+reader-facing, the API now says 4,491. `test:search-v2-api` checks the rule.
+
+**Closing the round.** The identity phrases take About's plate colours 2 · 4 · 5
+(red, green, teal). `scripts/audit-mobile-desktop-coupling.mjs` (539 checks)
+states the device split as a contract: no desktop file imports a mobile file or
+stylesheet, no mobile file imports a desktop file or the desktop nav, no shared
+module or the global stylesheet names anything mobile, mobile stylesheets are
+imported only by mobile files, every device-split page branches on the server,
+and the one shared scene keeps its desktop frame unless the mobile-only prop is
+passed. What the two trees share on purpose: `lib/` and `content.ts` modules
+(one source of truth for copy and figures — the About lead's wording is such a
+change), the public APIs, and the site tokens.
+
+**Verification (2026-09-06, after the second review).** `node scripts/test-mobile-design.mjs` — 91 checks. In the browser with the mobile user agent: the opening's stage at 87 px with the wordmark centre fixed at 411 px through the pin, the ground fading 0 → 1 between 0.4 and 0.7 of the pin, the sentences at full opacity by 0.9; Contribution's first page ending 65 px inside its stage with the chart above the figures and the 1965 note printed, the second page 61 px inside; each status figure's page at 87 px when pinned, at its container's top when not (no gap before or after), content filling the page to its 24 px foot; the Search overlay fixed over the still-mounted homepage with the scrim, the dashed ticket at 16 px, the body scroll locked and the bar's control expanded. Earlier figures in this section were the first review's.
+In the browser with the mobile user agent: bar 87 px with 16/16/16 margins; Search
+on paper with no overlay; Index opening 540 px, figures unclipped; About tail 32 px
+with only the fixed Top; homepage minimum font 17 px, no `/trace` or `/source`
+link, identity `--p` 0 → 0.95 with the wipe fully up by 0.7 and the sentences at
+full opacity by 0.85, Contribution switching at 0.32 with the canvas mounted and
+both pages inside the viewport, Enter following at offset 0, each status figure's
+page pinned with the growth values matching the desktop formulas, every pinned
+page's content inside the viewport, folds shut, Top shown at the foot. The pane
+was hidden during this round, so scroll events were dispatched by hand and CSS
+transitions could not be watched; the live feel of the wipe, the crossfade and
+the growth is the owner's own check.
+
 ## 8. Rounds
 
 Every round ships **desktop + mobile together**; mobile is designed ground-up per
@@ -2136,7 +2299,7 @@ Every round ships **desktop + mobile together**; mobile is designed ground-up pe
 
 1. **About** — ✅ built (`/about`) + design foundation (tokens, fonts, reset, `SiteNav`). *(Mobile section order + folded Source per §4a — pending; `SiteNav` now takes `variant="mobile"`.)*
 2. **Source** — ✅ built (`/source`), academic register, folds by default. *(Brought forward — it was round 9.)*
-3. **Homepage** (§7e) — a reading page: 01 Identity · 02 Contribution · 03 Enter the Archive · 04 Research status; dark-grey ground + spot colour, a scroll-driven grid + text↔heading transform on desktop, pared-back stack on mobile. Copy final per §2a. **+ Global Search** — now a **global utility window** (§7d), `Search` nav icon on every page (mobile nav = `MGDA · Index · Search · About`), URL-backed at `/search`; desktop = long ticket, mobile = ticket, System suggests = light contextual annotation. *(Search ✅ fixture-backed; Homepage in progress this round.)*
+3. **Homepage** (§7e) — a reading page: 01 Identity · 02 Contribution · 03 Enter the Archive · 04 Research status; dark-grey ground + spot colour, a scroll-driven grid + text↔heading transform on desktop, pared-back stack on mobile. Copy final per §2a. **+ Global Search** — now a **global utility window** (§7d), `Search` nav icon on every page (mobile nav = `MGDA · Index · Search · About`), URL-backed at `/search`; desktop = long ticket, mobile = ticket, System suggests = light contextual annotation. *(Search ✅ live API; mobile Search a page of its own; Homepage desktop ✅, mobile ✅ 2026-09-06 per §7l.)*
 4. **Object Page** — ✅ desktop (5 layout treatments + content-fit) **and** mobile (single-column, alt-text clamp, folded Source/Provenance, back-to-top). Split into `page.tsx` (server UA device split) + `lib/` + `desktop/` + `mobile/`, per-component files — **this is the template every later page follows** (§6). **Wired to the sealed v49 public projection (2026-09-03):** `page.tsx` reads the record from the governed Search v2 artifact (`getPublicSearchIndex().byId`) and maps it with `lib/fromDocument.ts`; an ID outside the projection is a 404. Medium, description and a source-record URL are not in the public projection and are omitted; no frame ever stands in for an image, on desktop or mobile. Delivery-state wording is provisional (§9H).
 5. **Index** — ✅ desktop **and** mobile at `/directory` (§7c): searchable place selector, year range + separate order, theme badges, editorial active-state line, dense year-grouped catalogue, empty/loading/error states. **Wired to the sealed v49 public projection (2026-09-03):** `GET /api/index/v1` serves the reader-facing objects (5,423 of 7,995 public records — §3b) as one compact catalogue built from the Search v2 and reader-eligibility artifacts (`lib/catalogue.server.ts`); the directory files it in pages of 200 with a "show the next" foot. Places are the source-recorded labels (145 values) — verified structured geography is still pending (§3), so the filter is labelled "Place (as recorded)". Themes are the release's eight governed themes. The Index keeps its own earlier setting (serif lede, small theme key, small control bar); only its colours changed (2026-09-03): the stripe is the site's own sky / coral / yellow instead of blue / red / yellow; the theme dots are eight distinct spot colours; the theme key sits under the intro as a three-across strip (a deep-tone cut was tried and withdrawn as too dark and undistinguished).
 6. **TRACE entry** (§7f) — ✅ built (`/trace`): five-screen scroll scene on one signal bus, the three icon entries, the closing block; Exploration's reference page moved to `/trace/exploration`. Desktop only by policy; mobile gets the desktop-required notice.

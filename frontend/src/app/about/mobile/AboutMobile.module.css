@@ -10,7 +10,7 @@
 }
 
 .main {
-  padding-bottom: calc(var(--s-9) + env(safe-area-inset-bottom));
+  padding-bottom: calc(var(--s-6) + env(safe-area-inset-bottom));
 }
 
 /* ---- masthead ---- */
@@ -221,12 +221,25 @@
   gap: var(--s-3);
 }
 
+/* a card: a hairline frame, and the tone as an 8 px bar down its left edge —
+   drawn as a pseudo-element with the tone named outright (no custom-property
+   hop the bar could lose on the way: the owner saw it vanish, 2026-09-06) */
 .card,
 .ref {
   --k: var(--ink);
-  padding: var(--s-4) var(--s-4) var(--s-4) var(--s-5);
+  position: relative;
+  padding: var(--s-4) var(--s-4) var(--s-4) calc(var(--s-5) + 8px);
   border: 1.5px solid color-mix(in srgb, var(--ink) 80%, transparent);
-  border-left: 8px solid var(--k);
+}
+.card::before,
+.ref::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  bottom: -1.5px;
+  left: -1.5px;
+  width: 8px;
+  background: var(--ink);
 }
 
 .card[data-tone="blue"], .ref[data-tone="blue"] { --k: var(--blue); }
@@ -235,6 +248,12 @@
 .card[data-tone="yellow"], .ref[data-tone="yellow"] { --k: var(--yellow); }
 .card[data-tone="teal"], .ref[data-tone="teal"] { --k: var(--teal); }
 .card[data-tone="coral"], .ref[data-tone="coral"] { --k: var(--coral); }
+.card[data-tone="blue"]::before, .ref[data-tone="blue"]::before { background: var(--blue); }
+.card[data-tone="red"]::before, .ref[data-tone="red"]::before { background: var(--red); }
+.card[data-tone="green"]::before, .ref[data-tone="green"]::before { background: var(--green); }
+.card[data-tone="yellow"]::before, .ref[data-tone="yellow"]::before { background: var(--yellow); }
+.card[data-tone="teal"]::before, .ref[data-tone="teal"]::before { background: var(--teal); }
+.card[data-tone="coral"]::before, .ref[data-tone="coral"]::before { background: var(--coral); }
 
 .cardTitle,
 .refTitle {
@@ -253,10 +272,38 @@
 }
 
 .refMeta {
+  display: block;
   margin-top: var(--s-1);
   font-family: var(--font-num);
   font-size: var(--fs-label);
   color: var(--ink-2);
+}
+
+/* a reference card folds: the head is the tap target, a plus at its right */
+.refHead {
+  list-style: none;
+  position: relative;
+  padding-right: 28px;
+  cursor: pointer;
+}
+.refHead::-webkit-details-marker {
+  display: none;
+}
+.refHead::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: var(--font-num);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--k);
+}
+.ref[open] .refHead::after {
+  content: "–";
+}
+.ref .refBody {
+  margin-top: var(--s-3);
 }
 
 /* pipeline and layers */
@@ -521,47 +568,6 @@
   color: var(--red-deep);
 }
 
-/* back to top: a fixed control at the foot of the phone, shown once the reader is down the page */
-.toTop {
-  position: fixed;
-  right: var(--s-4);
-  bottom: calc(var(--s-4) + env(safe-area-inset-bottom));
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  gap: var(--s-2);
-  min-height: 48px;
-  padding: 0 var(--s-4);
-  font-family: var(--font-label);
-  font-weight: 700;
-  font-size: var(--fs-label);
-  color: var(--on-dark);
-  background: var(--ink);
-  border: 2px solid var(--ink);
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-  transition: opacity 0.16s ease, transform 0.16s ease;
-}
-
-.toTop[data-show] {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-}
-
-.endTop {
-  justify-self: start;
-  min-height: 48px;
-  padding: 0 var(--s-4);
-  margin-top: var(--s-5);
-  font-family: var(--font-label);
-  font-weight: 700;
-  font-size: var(--fs-label);
-  color: var(--ink);
-  background: var(--paper);
-  border: 2px solid var(--ink);
-}
 
 .foot {
   margin-top: var(--s-4);

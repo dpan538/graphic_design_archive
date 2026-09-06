@@ -18,19 +18,8 @@ export default async function SearchModal() {
   return (
     <Suspense fallback={null}>
       {view === "mobile" ? (
-        /* The mobile treatment is a full page, not a floating panel, so it
-           has to be lifted into an overlay to cover the host page. */
-        <div
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 60,
-            overflowY: "auto",
-            background: "var(--paper)",
-          }}
-        >
-          <SearchMobile />
-        </div>
+        /* the ticket over a scrim, the host page visible beneath */
+        <SearchMobile asOverlay />
       ) : (
         <SearchDesktop asModal />
       )}

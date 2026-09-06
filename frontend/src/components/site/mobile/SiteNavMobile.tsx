@@ -11,7 +11,10 @@ export type SiteNavMobileKey = "index" | "search" | "about";
    controls — Index · Search · About. No wordmark, no TRACE, no Source (Source
    lives inside About on the phone). Pressing Search while the Search window
    is open closes it (history.back), as on the desktop. This file is the
-   mobile path's own; the desktop nav is not imported here. */
+   mobile path's own; the desktop nav is not imported here.
+   Search opens as an overlay on the page the reader is on (owner,
+   2026-09-06): a soft navigation the modal route intercepts, so the host
+   page stays mounted under the window. */
 export default function SiteNavMobile({ active }: { active?: SiteNavMobileKey }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -38,7 +41,7 @@ export default function SiteNavMobile({ active }: { active?: SiteNavMobileKey })
                 scroll={item.key !== "search"}
                 onClick={item.key === "search" && searchOpen ? (event) => { event.preventDefault(); router.back(); } : undefined}
               >
-                <item.Icon size={26} strokeWidth={2.75} aria-hidden="true" />
+                <item.Icon size={28} strokeWidth={2.75} aria-hidden="true" />
               </Link>
             </li>
           ))}

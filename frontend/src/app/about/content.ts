@@ -165,7 +165,7 @@ export const contact: {
   {
     tone: "blue",
     label: "Project lead",
-    links: [{ text: "Dai Pan (潘岱), Brisbane" }],
+    links: [{ text: "Dai Pan 潘岱, China" }],
   },
   {
     tone: "red",

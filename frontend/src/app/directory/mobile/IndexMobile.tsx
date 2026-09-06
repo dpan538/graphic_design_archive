@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { SlidersHorizontal } from "lucide-react";
 import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
+import TopButton from "@/components/site/mobile/TopButton";
 import shell from "@/components/site/mobile/MobileShell.module.css";
 import {
   defaultState,
@@ -63,17 +64,36 @@ export default function IndexMobile() {
       </a>
       <SiteNavMobile active="index" />
 
-      {/* the opening: one plate — the kicker, the count as a cropped numeral, the population line; no annotation */}
+      {/* the opening (owner, 2026-09-06): on the paper, twice the height of the
+          old plate — the kicker, the readable count and the release total as two
+          uncropped figures, and a guiding paragraph */}
       <header className={styles.opening}>
-        <h1 className={styles.kicker}>Index</h1>
-        <span className={styles.openingNum} aria-hidden="true">{cat ? cat.count.toLocaleString() : ""}</span>
-        <p className={styles.openingLine}>
-          {cat ? (
-            <>
-              <b>{cat.count.toLocaleString()}</b> reader-facing objects · of {cat.publicCount.toLocaleString()} public records
-            </>
-          ) : failed ? "The directory couldn’t load." : "Loading the directory…"}
-        </p>
+        <h1 className={styles.word}>Index</h1>
+        {cat ? (
+          <>
+            {/* the two figures as one comparison: the readable share of the release */}
+            <div className={styles.compare}>
+              <p className={styles.figure}>
+                <b className={styles.figureNum}>{cat.count.toLocaleString()}</b>
+                <span className={styles.figureLabel}>reader-facing objects</span>
+              </p>
+              <p className={styles.figure} data-total="">
+                <b className={styles.figureNum}>{cat.publicCount.toLocaleString()}</b>
+                <span className={styles.figureLabel}>public records</span>
+              </p>
+              <span className={styles.share} aria-hidden="true">
+                <i style={{ width: `${((cat.count / cat.publicCount) * 100).toFixed(1)}%` }} />
+              </span>
+            </div>
+            <p className={styles.openingLine}>
+              Browse the public archive by year, place, object type and theme. Each entry opens a record with its source and citation.
+              The other {(cat.publicCount - cat.count).toLocaleString()} public records are catalogued but do not yet open as reader pages;
+              every one stays reachable by its identifier.
+            </p>
+          </>
+        ) : (
+          <p className={styles.openingLine}>{failed ? "The directory couldn’t load." : "Loading the directory…"}</p>
+        )}
       </header>
       <span className={styles.stripe} aria-hidden="true">
         <span />
@@ -127,6 +147,7 @@ export default function IndexMobile() {
         themes={cat?.themes ?? []}
         onClose={() => setSheet(false)}
       />
+      <TopButton />
     </div>
   );
 }

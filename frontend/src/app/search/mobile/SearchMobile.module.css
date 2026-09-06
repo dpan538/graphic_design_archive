@@ -1,29 +1,35 @@
+/* Two ways to stand: the page (direct visit, with the bar) and the overlay
+   (opened from the bar: a scrim over the host page, the ticket on top). */
 .page {
   position: relative;
   isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  overflow: hidden;
+  min-height: 100dvh;
+}
+/* the overlay: beneath the bar, over the page; doubled class so these rules
+   outrank the shell's paper and height regardless of stylesheet order */
+.overlay.overlay {
+  position: fixed;
+  top: var(--bar-h);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  min-height: 0;
+  overflow-y: auto;
+  background: color-mix(in srgb, var(--ink) 58%, transparent);
+  contain: layout paint style;
 }
 
 .backdrop {
-  flex: 1;
-  min-height: 0;
-  padding: var(--s-4) 20px;
-  background: color-mix(in srgb, var(--ink) 18%, var(--paper));
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
+  min-height: 100%;
+  padding: var(--s-4) var(--page-gutter) calc(var(--s-8) + env(safe-area-inset-bottom));
+}
+.page .backdrop {
+  background: var(--paper);
 }
 
-/* ---- The ticket — right-aligned, fixed height, results scroll inside ---- */
-
+/* the ticket: its own paper, the dashed edge, on either ground */
 .ticket {
-  width: 350px;
-  max-width: 100%;
-  align-self: flex-start;
-  max-height: 100%;
   display: flex;
   flex-direction: column;
   background: var(--paper);
@@ -31,12 +37,7 @@
   padding: 0 var(--s-4) var(--s-4);
 }
 
-/* About three result rows, then scroll — keeps the ticket short. */
 .scroll {
-  flex: 0 1 auto;
-  min-height: 0;
-  max-height: 19rem;
-  overflow-y: auto;
   margin: 0 calc(-1 * var(--s-4));
   padding: 0 var(--s-4);
 }

@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown, Search as SearchIcon, X } from "lucide-react";
 import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
 import shell from "@/components/site/mobile/MobileShell.module.css";
-import { STARTERS } from "../lib/fixture";
 import { useLiveSearch, useSearchFacets, useSearchGuidance } from "../lib/live";
 import {
   activeFilterCount,
@@ -20,9 +19,11 @@ import SearchMobileResults from "./SearchMobileResults";
 import SearchMobileSuggests from "./SearchMobileSuggests";
 import styles from "./SearchMobile.module.css";
 
-/* Mobile Search — a ticket window (~350px on a 390px screen), its own layout,
-   not a shrink of the desktop card. URL-backed; Close is history.back(). */
-export default function SearchMobile() {
+/* Mobile Search — the ticket window. Opened from the bar it is an OVERLAY on
+   the page the reader is on (asOverlay: a scrim over the host page, the
+   ticket on its own paper, the page's scroll locked); visited directly at
+   /search it is a page with the bar. URL-backed; Close is history.back(). */
+export default function SearchMobile({ asOverlay = false }: { asOverlay?: boolean }) {
   const router = useRouter();
   const params = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -35,7 +36,11 @@ export default function SearchMobile() {
   // Collapsed by default on the height-constrained ticket — the list comes first.
   const [filtersOpen, setFiltersOpen] = useState(false);
   useEffect(() => setState(urlState), [urlState]);
-  useEffect(() => inputRef.current?.focus(), []);
+  /* the page focuses its field; the overlay does not, so opening it costs no
+     keyboard animation on top of the layer itself */
+  useEffect(() => {
+    if (!asOverlay) inputRef.current?.focus();
+  }, [asOverlay]);
 
   const sync = useCallback(
     (next: SearchState) => {
@@ -55,29 +60,42 @@ export default function SearchMobile() {
     else window.location.href = "/";
   };
 
+  /* the host page holds still under the overlay */
+  useEffect(() => {
+    if (!asOverlay) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [asOverlay]);
   const engaged = hasQuery(state);
   /* the live public search API, its dictionaries and the shared guidance (lib/live.ts) */
-  const live = useLiveSearch(state, engaged);
+  const [retryKey, setRetryKey] = useState(0);
+  const live = useLiveSearch(state, engaged, retryKey);
   const facets = useSearchFacets();
   const guidance = useSearchGuidance(live);
   const { total, page, pageCount, pageIndex } = live;
-  const starters = facets.starters.length ? facets.starters.slice(0, 4) : STARTERS.map((s) => ({ label: s, apply: { q: s, after: 0 } }));
+  const starters = facets.starters.slice(0, 4);
 
   return (
-    <div className={`${shell.shell} ${styles.page}`}>
-      <SiteNavMobile active="search" />
+    /* The overlay's own rules are written at double specificity, so the
+       shell's paper and height can never win over the scrim whichever
+       stylesheet loads last. It sits beneath the bar, which stays live. */
+    <div className={`${shell.shell} ${asOverlay ? styles.overlay : styles.page}`} data-search-overlay={asOverlay || undefined}>
+      {asOverlay ? null : <SiteNavMobile active="search" />}
 
-      <div className={styles.backdrop}>
-        <section className={styles.ticket} role="dialog" aria-label="Search the archive">
+      <div className={styles.backdrop} onClick={asOverlay ? (event) => { if (event.target === event.currentTarget) close(); } : undefined}>
+        <section className={styles.ticket} role={asOverlay ? "dialog" : undefined} aria-modal={asOverlay || undefined} aria-label="Search the archive">
           <div className={styles.head}>
-            <span className={styles.mark}>Search ;</span>
+            <span className={styles.mark}>Search</span>
             <button type="button" className={styles.close} onClick={close} aria-label="Close search">
               <X size={18} strokeWidth={3} aria-hidden="true" />
             </button>
           </div>
 
           <div className={styles.field}>
-            <span className={styles.lab}>Query ;</span>
+            <span className={styles.lab}>Query</span>
             <div className={styles.inputWrap}>
               <SearchIcon size={16} strokeWidth={3} aria-hidden="true" />
               <input
@@ -108,7 +126,7 @@ export default function SearchMobile() {
             aria-expanded={filtersOpen}
             onClick={() => setFiltersOpen((v) => !v)}
           >
-            Filters ;
+            Filters
             {activeFilterCount(state) > 0 ? (
               <span className={styles.filterN}>{activeFilterCount(state)}</span>
             ) : null}
@@ -133,7 +151,7 @@ export default function SearchMobile() {
             </div>
           ) : (
             <div className={styles.starters}>
-              <span className={styles.lab}>Try ;</span>
+              <span className={styles.lab}>Try</span>
               <ul role="list">
                 {starters.map((s) => (
                   <li key={s.label}>
@@ -149,7 +167,7 @@ export default function SearchMobile() {
           {engaged ? (
             <div className={styles.scroll} aria-busy={live.loading || undefined}>
               {live.error ? (
-                <p className={styles.lab} role="status">{live.error}</p>
+                <div role="status"><p className={styles.lab}>{live.error}</p><button type="button" onClick={() => setRetryKey((key) => key + 1)}>Retry Search</button></div>
               ) : live.stateHash === null ? null : (
                 <SearchMobileResults
                   page={page}

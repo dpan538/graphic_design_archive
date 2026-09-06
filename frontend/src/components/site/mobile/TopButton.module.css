@@ -1,0 +1,28 @@
+/* back to top: a fixed control at the foot of the phone, shown once the reader is down the page */
+.toTop {
+  position: fixed;
+  right: var(--s-4);
+  bottom: calc(var(--s-4) + env(safe-area-inset-bottom));
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 48px;
+  padding: 0 var(--s-4);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  color: var(--on-dark);
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.toTop[data-show] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}

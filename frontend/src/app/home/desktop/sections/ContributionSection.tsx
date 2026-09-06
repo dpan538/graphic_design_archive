@@ -20,7 +20,7 @@ import {
 } from "../../lib/content";
 import styles from "./ContributionSection.module.css";
 
-const ContributionScene = dynamic(() => import("../three/ContributionScene"), { ssr: false });
+const ContributionScene = dynamic(() => import("../../lib/ContributionScene"), { ssr: false });
 
 type Props = {
   active: boolean;

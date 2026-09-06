@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { ArrowUp } from "lucide-react";
 import SiteNavMobile from "@/components/site/mobile/SiteNavMobile";
+import TopButton from "@/components/site/mobile/TopButton";
 import shell from "@/components/site/mobile/MobileShell.module.css";
 import {
   audiences,
@@ -140,14 +140,6 @@ export default function AboutMobile({ focus }: { focus?: "source" }) {
     document.getElementById(focus)?.scrollIntoView({ block: "start" });
   }, [focus]);
   const S = useMemo(() => Object.fromEntries(SECTIONS.map((s) => [s.id, s])) as Record<string, (typeof SECTIONS)[number]>, []);
-  const [showTop, setShowTop] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 640);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <div className={`${shell.shell} ${styles.page}`}>
@@ -210,12 +202,18 @@ export default function AboutMobile({ focus }: { focus?: "source" }) {
           <Plate s={S.visual} />
           <div className={styles.body}>
             <p className={styles.prose}>{rationaleLead}</p>
+            {/* six references as small folded cards: the name and the line stand,
+                the reading opens on a tap (owner, 2026-09-06) */}
             <ul role="list" className={styles.refs}>
               {visualReferences.map((r) => (
-                <li key={r.title} className={styles.ref} data-tone={r.tone}>
-                  <p className={styles.refTitle}>{r.title}</p>
-                  <p className={styles.refMeta}>{r.meta}</p>
-                  <p className={styles.refBody}>{r.body}</p>
+                <li key={r.title}>
+                  <details className={styles.ref} data-tone={r.tone}>
+                    <summary className={styles.refHead}>
+                      <span className={styles.refTitle}>{r.title}</span>
+                      <span className={styles.refMeta}>{r.meta}</span>
+                    </summary>
+                    <p className={styles.refBody}>{r.body}</p>
+                  </details>
                 </li>
               ))}
             </ul>
@@ -362,15 +360,11 @@ export default function AboutMobile({ focus }: { focus?: "source" }) {
             </ul>
             <p className={styles.prose}>{rightsProse}</p>
             <p className={styles.foot}>{footerNote}</p>
-            <button type="button" className={styles.endTop} onClick={toTop}>Back to top</button>
           </div>
         </section>
       </main>
 
-      <button type="button" className={styles.toTop} data-show={showTop || undefined} onClick={toTop}>
-        <ArrowUp size={18} strokeWidth={3} aria-hidden="true" />
-        Top
-      </button>
+      <TopButton />
     </div>
   );
 }
