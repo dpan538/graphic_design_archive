@@ -52,3 +52,101 @@
   margin: .2rem 0;
   font-weight: 600;
 }
+
+/* the canvas tone — the redesigned Context Canvas: its paper palette
+   (black type, a light-grey rule) and smaller scale; the label in the
+   numeric face, the note in the reading face, the tokens as outlined
+   text controls; still secondary, still absent until a response stands */
+.panel[data-tone="canvas"] {
+  margin: 0;
+  padding: var(--s-3) var(--s-4);
+  border-left: 2px solid #c4c3be;
+  color: #0a0a0b;
+  background: transparent;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.panel[data-tone="canvas"] h2 {
+  font: 500 0.875rem var(--font-num), ui-sans-serif, sans-serif;
+  letter-spacing: 0.08em;
+  color: #5f5e5a;
+}
+
+.panel[data-tone="canvas"] p {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, #0a0a0b 82%, transparent);
+  text-wrap: pretty;
+}
+
+.panel[data-tone="canvas"] .actions button {
+  min-height: 32px;
+  padding: 0 var(--s-3);
+  border: 1.5px solid color-mix(in srgb, #0a0a0b 62%, transparent);
+  color: #0a0a0b;
+  background: transparent;
+  font: 500 0.875rem var(--font-num), ui-sans-serif, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.panel[data-tone="canvas"] .actions button:hover,
+.panel[data-tone="canvas"] .actions button:focus-visible {
+  background: #0a0a0b;
+  color: #e8e6e0;
+}
+
+/* block: inside a host panel (Spacetime's Place context) — no frame of
+   its own, the host's rule above, the heading in the host's label voice */
+.panel[data-variant="block"] {
+  margin: 0;
+  padding: var(--s-3) 0 0;
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--t-sand, #5f5e5a) 55%, transparent);
+  background: transparent;
+  box-shadow: none;
+}
+
+.panel[data-variant="block"] h2 {
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label, 0.875rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-sand, #5f5e5a);
+}
+
+.panel[data-variant="block"] p {
+  font-family: var(--font-body);
+  font-size: var(--c-fs-body, 0.9375rem);
+  line-height: 1.4;
+  color: var(--t-fg, #0a0a0b);
+  text-wrap: pretty;
+}
+
+.panel[data-variant="block"] .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.panel[data-variant="block"] .actions button {
+  min-height: 32px;
+  padding: 0 var(--s-3);
+  border: 1.5px solid color-mix(in srgb, var(--t-fg, #0a0a0b) 62%, transparent);
+  color: var(--t-fg, #0a0a0b);
+  background: var(--t-bg, #e8e6e0);
+  font-family: var(--font-num);
+  font-weight: 500;
+  font-size: var(--c-fs-label, 0.875rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.panel[data-variant="block"] .actions button:hover,
+.panel[data-variant="block"] .actions button:focus-visible {
+  background: var(--t-fg, #0a0a0b);
+  color: var(--t-bg, #e8e6e0);
+}

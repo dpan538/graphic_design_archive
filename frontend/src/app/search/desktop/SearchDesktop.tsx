@@ -10,11 +10,10 @@ import {
   EMPTY_STATE,
   hasQuery,
   parseSearch,
-  runSearch,
   toParams,
   type SearchState,
 } from "../lib/query";
-import { suggestFor } from "../lib/suggest";
+import { useLiveSearch, useSearchFacets, useSearchGuidance } from "../lib/live";
 import SearchInput from "./SearchInput";
 import SearchFilters from "./SearchFilters";
 import SearchResults from "./SearchResults";
@@ -25,7 +24,10 @@ type Pos = { x: number; y: number };
 
 /* The desktop Search window — a long perforated ticket, draggable, anchored
    top-right, never taller than the viewport (results scroll inside).
-   State is URL-backed; Close is history.back(). */
+   State is URL-backed; Close is history.back(). Results, counts and the
+   dictionaries come from the live public search API (lib/live.ts); System
+   suggests comes from the shared guidance endpoint, asked with the query,
+   the filters and the count shown, never with the window's own reading. */
 export default function SearchDesktop({ asModal = false }: { asModal?: boolean } = {}) {
   const router = useRouter();
   const params = useSearchParams();
@@ -41,7 +43,10 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
     (next: SearchState) => {
       setState(next);
       const qs = toParams(next).toString();
-      router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
+      /* the URL follows the state through the history API: no soft navigation, so the
+         intercepting modal route never mounts a second window over the standalone page */
+      if (typeof window !== "undefined") window.history.replaceState(window.history.state, "", qs ? `/search?${qs}` : "/search");
+      else router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
     },
     [router],
   );
@@ -89,8 +94,11 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
   };
 
   const engaged = hasQuery(state);
-  const { total, page, pageCount, pageIndex, results } = runSearch(state);
-  const suggest = engaged && total > 0 ? suggestFor(state, results) : null;
+  const live = useLiveSearch(state, engaged);
+  const facets = useSearchFacets();
+  const guidance = useSearchGuidance(live);
+  const { total, page, pageCount, pageIndex } = live;
+  const starters = facets.starters.length ? facets.starters.slice(0, 4) : STARTERS;
 
   const panel = (
     <>
@@ -153,7 +161,7 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
             />
           </button>
 
-          {filtersOpen ? <SearchFilters state={state} patch={patch} /> : null}
+          {filtersOpen ? <SearchFilters state={state} patch={patch} facets={facets} /> : null}
 
           {engaged ? (
             <div className={styles.qstate}>
@@ -180,7 +188,7 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
             <div className={styles.starters}>
               <p className={styles.startersLabel}>Try</p>
               <ul role="list">
-                {STARTERS.map((s) => (
+                {starters.map((s) => (
                   <li key={s}>
                     <button type="button" onClick={() => patch({ q: s })}>
                       {s}
@@ -193,22 +201,26 @@ export default function SearchDesktop({ asModal = false }: { asModal?: boolean }
         </div>
 
         {engaged ? (
-          <div className={styles.scroll}>
-            <SearchResults
-              page={page}
-              total={total}
-              pageIndex={pageIndex}
-              pageCount={pageCount}
-              onPage={(n) => sync({ ...state, after: n })}
-            />
+          <div className={styles.scroll} aria-busy={live.loading || undefined}>
+            {live.error ? (
+              <p className={styles.qsum} role="status">{live.error}</p>
+            ) : live.stateHash === null ? null : (
+              <SearchResults
+                page={page}
+                total={total}
+                pageIndex={pageIndex}
+                pageCount={pageCount}
+                onPage={(n) => sync({ ...state, after: n })}
+              />
+            )}
           </div>
         ) : null}
 
-        {suggest && (suggest.lines.length || suggest.suggestions.length) ? (
+        {guidance ? (
           <div className={styles.suggestsSlot}>
             <SystemSuggests
-              lines={suggest.lines}
-              suggestions={suggest.suggestions}
+              lines={[guidance.note]}
+              suggestions={guidance.suggestions}
               onApply={(a) => sync({ ...state, ...a })}
             />
           </div>

@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { publicSearchStateHash } from "../search-v2/core";
 import { getPublicSearchIndex } from "../search-v2/index.server";
 import { searchPublicObjects } from "../search-v2/service.server";
+import type { SurfaceFacts } from "./facts.server";
 import type {
   ApprovedSuggestion,
   SearchSuggestionContext,
@@ -13,6 +14,8 @@ import type {
 } from "./types";
 import { SuggestionsInputError } from "./schema.server";
 
+/* the actions a surface may offer, by id: the label is the page's, the
+   action is the page's own control — nothing here is generated */
 const TRACE_ACTIONS: Readonly<Record<Exclude<SystemSuggestionSurface, "SEARCH_RESULTS">, Readonly<Record<string, string>>>> = {
   TRACE_CONTEXT: {
     EXPAND_MEDIUM: "Review medium context",
@@ -30,15 +33,71 @@ const TRACE_ACTIONS: Readonly<Record<Exclude<SystemSuggestionSurface, "SEARCH_RE
     FOCUS_VALIDATED_NODE: "Focus a validated node",
     REVIEW_VALIDATED_ASSOCIATION: "Review a validated association",
     RETURN_TO_COMPOSITION: "Return to the validated composition",
+    /* the Exploration view's own controls (§7i): each resolves to a legal V2 transition */
+    ANOTHER_VIEW: "Another view",
+    SHOW_MORE: "Show more",
   },
   TRACE_OPEN_INQUIRY: {
     REVIEW_EVIDENCE_GAP: "Review the evidence gap",
     REVIEW_SOURCE_BOUNDARY: "Review the source boundary",
     RETURN_TO_VALIDATED_EXPLORATION: "Return to validated exploration",
+    RETURN_TO_EXPLORATION: "Return to exploration",
   },
 };
 
+/* the ceiling per surface (release pass): Search 0–2 refinements, Context 0–1, Exploration narration only, Inquiry 0–1 */
+export const MAX_ACTIONS: Readonly<Record<SystemSuggestionSurface, number>> = {
+  SEARCH_RESULTS: 2,
+  TRACE_CONTEXT: 1,
+  TRACE_SPACETIME: 2,
+  TRACE_VALIDATED_EXPLORATION: 0,
+  TRACE_OPEN_INQUIRY: 1,
+};
+
 const idFor = (prefix: string, value: string) => `${prefix}-${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
+
+/* ---- v2: candidates from the facts ---- */
+
+function searchCandidatesFromFacts(facts: SurfaceFacts): ApprovedSuggestion[] {
+  const search = facts.search;
+  if (!search) return [];
+  const suggestions: ApprovedSuggestion[] = [];
+  const addFilter = (key: "objectType" | "theme" | "movement", value: string | null, label: (v: string) => string) => {
+    if (!value || search.filters[key] === value) return;
+    suggestions.push({ id: idFor(`search-${key}`, value), label: label(value), action: { kind: "SET_SEARCH_FILTER", parameters: { [key]: value } } });
+  };
+  if (search.topDecade) {
+    const yearFrom = Number(search.topDecade.slice(0, 4));
+    if (search.filters.yearFrom !== yearFrom || search.filters.yearTo !== yearFrom + 9) suggestions.push({ id: idFor("search-year", search.topDecade), label: `Focus on ${search.topDecade}`, action: { kind: "SET_SEARCH_FILTER", parameters: { yearFrom, yearTo: yearFrom + 9 } } });
+  }
+  addFilter("objectType", search.topObjectType, (v) => `Focus on ${v}`);
+  addFilter("theme", search.topTheme, (v) => `Use theme: ${v}`);
+  addFilter("movement", search.topMovement, (v) => `Use movement: ${v}`);
+  for (const key of ["movement", "theme", "objectType"] as const) {
+    if (search.filters[key]) suggestions.push({ id: `search-remove-${key}`, label: `Remove ${key.replace(/[A-Z]/g, (letter) => ` ${letter.toLowerCase()}`)} filter`, action: { kind: "REMOVE_SEARCH_FILTER", parameters: { field: key } } });
+  }
+  if (search.filters.yearFrom !== undefined || search.filters.yearTo !== undefined) suggestions.push({ id: "search-remove-year", label: "Remove year filter", action: { kind: "REMOVE_SEARCH_FILTER", parameters: { field: "year" } } });
+  /* a zero-result Search offers only removals: a narrowing cannot be promised to find more */
+  return (facts.counts.exactResultCount === 0 ? suggestions.filter((item) => item.action.kind === "REMOVE_SEARCH_FILTER") : suggestions).slice(0, 8);
+}
+
+function traceCandidatesFromFacts(facts: SurfaceFacts): ApprovedSuggestion[] {
+  if (facts.surface === "SEARCH_RESULTS" || facts.surface === "TRACE_SPACETIME") return [];
+  const allowlist = TRACE_ACTIONS[facts.surface];
+  return [...new Set(facts.validActionIds)]
+    .filter((actionId) => Object.hasOwn(allowlist, actionId))
+    .map((actionId) => ({
+      id: `trace-${facts.surface.toLowerCase().replaceAll("_", "-")}-${actionId.toLowerCase().replaceAll("_", "-")}`,
+      label: allowlist[actionId] as string,
+      action: { kind: "TRACE_ACTION" as const, parameters: { actionId } },
+    }));
+}
+
+export function approvedCandidatesFromFacts(facts: SurfaceFacts): ApprovedSuggestion[] {
+  return facts.surface === "SEARCH_RESULTS" ? searchCandidatesFromFacts(facts) : traceCandidatesFromFacts(facts);
+}
+
+/* ---- v1: the frozen reference contexts (Search verified against the service; TRACE never sent to a model) ---- */
 
 function verifyAggregateValues(context: SearchSuggestionContext): void {
   const index = getPublicSearchIndex();
@@ -65,7 +124,9 @@ function verifyAggregateValues(context: SearchSuggestionContext): void {
   }
 }
 
-function searchCandidates(request: SystemSuggestionsRequest, context: SearchSuggestionContext): ApprovedSuggestion[] {
+/* a v1 Search context is checked against the deterministic result set; when it holds, the request is the same as a v2 reference */
+export function verifiedSearchReference(request: SystemSuggestionsRequest): { query: string; filters: SearchSuggestionContext["filters"] } {
+  const context = request.context as SearchSuggestionContext;
   verifyAggregateValues(context);
   const expectedHash = publicSearchStateHash({ query: context.query, filters: context.filters });
   if (request.stateHash !== expectedHash) throw new SuggestionsInputError("INVALID_ARGUMENT", "stateHash does not match the Search query and filters");
@@ -79,32 +140,10 @@ function searchCandidates(request: SystemSuggestionsRequest, context: SearchSugg
   if (authoritative.pageInfo.totalExact !== context.exactResultCount || JSON.stringify(authoritativeAggregates) !== JSON.stringify(context.aggregates)) {
     throw new SuggestionsInputError("INVALID_ARGUMENT", "Search summary does not match the deterministic public result set");
   }
-  const suggestions: ApprovedSuggestion[] = [];
-  const addFilter = (key: "objectType" | "theme" | "movement", value: string, label: string) => {
-    if (context.filters[key] === value) return;
-    suggestions.push({ id: idFor(`search-${key}`, value), label, action: { kind: "SET_SEARCH_FILTER", parameters: { [key]: value } } });
-  };
-  const decade = context.aggregates.topDecades[0]?.value;
-  if (decade) {
-    const yearFrom = Number(decade.slice(0, 4));
-    if (context.filters.yearFrom !== yearFrom || context.filters.yearTo !== yearFrom + 9) {
-      suggestions.push({ id: idFor("search-year", decade), label: `Focus on ${decade}`, action: { kind: "SET_SEARCH_FILTER", parameters: { yearFrom, yearTo: yearFrom + 9 } } });
-    }
-  }
-  const objectType = context.aggregates.topObjectTypes[0]?.value;
-  if (objectType) addFilter("objectType", objectType, `Focus on ${objectType}`);
-  const theme = context.aggregates.topThemes[0]?.value;
-  if (theme) addFilter("theme", theme, `Use theme: ${theme}`);
-  const movement = context.aggregates.topMovements[0]?.value;
-  if (movement) addFilter("movement", movement, `Use movement: ${movement}`);
-  for (const key of ["movement", "theme", "objectType"] as const) {
-    if (context.filters[key]) suggestions.push({ id: `search-remove-${key}`, label: `Remove ${key.replace(/[A-Z]/g, (letter) => ` ${letter.toLowerCase()}`)} filter`, action: { kind: "REMOVE_SEARCH_FILTER", parameters: { field: key } } });
-  }
-  if (context.filters.yearFrom !== undefined || context.filters.yearTo !== undefined) suggestions.push({ id: "search-remove-year", label: "Remove year filter", action: { kind: "REMOVE_SEARCH_FILTER", parameters: { field: "year" } } });
-  return suggestions.slice(0, 8);
+  return { query: context.query, filters: context.filters };
 }
 
-function traceCandidates(surface: Exclude<SystemSuggestionSurface, "SEARCH_RESULTS">, context: TraceSuggestionContext): ApprovedSuggestion[] {
+export function legacyTraceCandidates(surface: Exclude<SystemSuggestionSurface, "SEARCH_RESULTS">, context: TraceSuggestionContext): ApprovedSuggestion[] {
   const allowlist = TRACE_ACTIONS[surface];
   const expectedEvidence = surface === "TRACE_CONTEXT" ? "PUBLIC_CONTEXT"
     : surface === "TRACE_SPACETIME" ? "PUBLIC_AGGREGATE"
@@ -116,13 +155,7 @@ function traceCandidates(surface: Exclude<SystemSuggestionSurface, "SEARCH_RESUL
     .slice(0, 8)
     .map((actionId) => ({
       id: `trace-${surface.toLowerCase().replaceAll("_", "-")}-${actionId.toLowerCase().replaceAll("_", "-")}`,
-      label: allowlist[actionId],
+      label: allowlist[actionId] as string,
       action: { kind: "TRACE_ACTION" as const, parameters: { actionId } },
     }));
-}
-
-export function approvedCandidates(request: SystemSuggestionsRequest): ApprovedSuggestion[] {
-  return request.surface === "SEARCH_RESULTS"
-    ? searchCandidates(request, request.context as SearchSuggestionContext)
-    : traceCandidates(request.surface, request.context as TraceSuggestionContext);
 }

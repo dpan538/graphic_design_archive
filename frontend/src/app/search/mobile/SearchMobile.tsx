@@ -41,7 +41,10 @@ export default function SearchMobile() {
     (next: SearchState) => {
       setState(next);
       const qs = toParams(next).toString();
-      router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
+      /* the URL follows the state through the history API: no soft navigation, so the
+         intercepting modal route never mounts a second window over the standalone page */
+      if (typeof window !== "undefined") window.history.replaceState(window.history.state, "", qs ? `/search?${qs}` : "/search");
+      else router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
     },
     [router],
   );

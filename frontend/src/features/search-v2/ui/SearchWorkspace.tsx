@@ -138,21 +138,12 @@ export default function SearchWorkspace({ facets }: { facets: SearchWorkspaceFac
       const response = await fetch("/api/system-suggestions/v1", {
         method: "POST",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
+        /* v2 (release pass): the page names its state; the server resolves the result set itself and confirms the count shown */
         body: JSON.stringify({
-          schemaVersion: "gda-system-suggestions-request/v1",
+          schemaVersion: "gda-system-suggestions-request/v2",
           surface: "SEARCH_RESULTS",
-          stateHash: result.stateHash,
-          context: {
-            query: result.query.text,
-            filters: result.query.filters,
-            exactResultCount: result.pageInfo.totalExact,
-            aggregates: {
-              topDecades: result.aggregateSummary.topDecades,
-              topObjectTypes: result.aggregateSummary.topObjectTypes,
-              topThemes: result.aggregateSummary.topThemes,
-              topMovements: result.aggregateSummary.topMovements,
-            },
-          },
+          reference: { query: result.query.text, filters: result.query.filters },
+          shown: { exactResultCount: result.pageInfo.totalExact },
         }),
         cache: "no-store",
         signal,

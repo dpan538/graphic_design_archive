@@ -21,7 +21,8 @@ const publicUiPaths = [
   "frontend/src/features/system-suggestions/ui/SystemSuggestionsPanel.tsx",
 ];
 const publicUi = publicUiPaths.map(read).join("\n");
-const about = read("frontend/src/app/about/page.tsx");
+/* the redesigned About page keeps its copy in content.ts; the disclosure sentence is read from both */
+const about = `${read("frontend/src/app/about/page.tsx")}\n${read("frontend/src/app/about/content.ts")}`;
 const searchClient = read("frontend/src/features/search-v2/ui/SearchWorkspace.tsx");
 const panel = read("frontend/src/features/system-suggestions/ui/SystemSuggestionsPanel.tsx");
 const provider = read("frontend/src/features/system-suggestions/providers.server.ts");
@@ -56,7 +57,7 @@ scanClientBundle(clientStaticRoot);
 
 const publicUiAiLabelCount = (publicUi.match(/\bAI\b|Powered by AI|Ask AI|AI suggests|model-generated/g) ?? []).length;
 const publicUiDeepSeekLabelCount = (publicUi.match(/DeepSeek/g) ?? []).length;
-const aboutDisclosureCount = (about.match(/Some short reading guides and suggested next steps may be generated with the assistance of DeepSeek V4 Flash\./g) ?? []).length;
+const aboutDisclosureCount = (about.match(/Some short reading guides and suggested next steps may be generated with the assistance of DeepSeek V4 Flash\.|assisted by DeepSeek V4 Flash\./g) ?? []).length;
 const openDisclosureCount = (panel.match(/Evidence remains incomplete\./g) ?? []).length === 1
   && (panel.match(/This is not a validated historical association\./g) ?? []).length === 1 ? 0 : 1;
 const searchClientTraceImportCount = (searchClient.match(/(?:features|lib)\/trace|generated\/trace|public\/data\/trace/g) ?? []).length;
@@ -68,10 +69,11 @@ const flags = {
   TRACE_RECORD_IN_SEARCH_INDEX_COUNT: searchManifest.trace_record_count,
   OPEN_INQUIRY_RECORD_IN_SEARCH_INDEX_COUNT: searchManifest.open_inquiry_record_count,
   SUGGESTIONS_NO_KEY_FALLBACK_PASS: service.includes('providerStatus, "NO_KEY"') || service.includes('"NO_KEY"'),
-  SUGGESTIONS_TIMEOUT_FALLBACK_PASS: service.includes('"TIMEOUT"'),
+  /* the release pass (2026-09-06) raises the timeout inside the provider (ProviderFailure "TIMEOUT") and the service maps it to the fallback status */
+  SUGGESTIONS_TIMEOUT_FALLBACK_PASS: service.includes('"TIMEOUT"') || (provider.includes('new ProviderFailure("TIMEOUT")') && service.includes("error.status")),
   SUGGESTIONS_PROVIDER_ERROR_FALLBACK_PASS: service.includes('"PROVIDER_ERROR"'),
   SUGGESTIONS_INVALID_JSON_FALLBACK_PASS: service.includes('"INVALID_RESPONSE"'),
-  SUGGESTIONS_UNKNOWN_ID_ACCEPTED_COUNT: service.includes("draft.suggestionIds.some((id) => !allow.has(id))") ? 0 : 1,
+  SUGGESTIONS_UNKNOWN_ID_ACCEPTED_COUNT: /suggestionIds\.some\(\(id\) => !allow\.has\(id\)\)/.test(service) ? 0 : 1,
   SUGGESTIONS_UNAPPROVED_URL_COUNT: /https\?:\\\/\\\/\|www\\\./.test(service) ? 0 : 1,
   SUGGESTIONS_RESULT_RANKING_MUTATION_COUNT: provider.includes("rankPublicSearch") || provider.includes("pagePublicSearch") ? 1 : 0,
   SUGGESTIONS_SEARCH_RESULT_MUTATION_COUNT: /setResponse\(|setItems\(|rankPublicSearch/.test(`${provider}\n${service}`) ? 1 : 0,

@@ -1,21 +1,28 @@
 "use client";
 
-import { MOVEMENTS, OBJECT_TYPES, THEMES } from "../lib/fixture";
-import { YEAR_MAX, YEAR_MIN, type SearchState } from "../lib/query";
+import type { SearchState } from "../lib/query";
+import type { SearchFacets } from "../lib/live";
 import styles from "./SearchFilters.module.css";
 
-const clampYear = (n: number) =>
-  Math.min(YEAR_MAX, Math.max(YEAR_MIN, Math.round(n) || YEAR_MIN));
-
 /* 02 Filters — two abreast, three rows: [From][To] · [Type][Theme] ·
-   [Movement][note]. */
+   [Movement][note]. The dictionaries and the year range are the live
+   index's (lib/live.ts). */
 export default function SearchFilters({
   state,
   patch,
+  facets,
 }: {
   state: SearchState;
   patch: (p: Partial<SearchState>) => void;
+  facets: SearchFacets;
 }) {
+  const YEAR_MIN = facets.yearMin;
+  const YEAR_MAX = facets.yearMax;
+  const OBJECT_TYPES = facets.objectTypes;
+  const THEMES = facets.themes;
+  const MOVEMENTS = facets.movements;
+  const clampYear = (n: number) =>
+    Math.min(YEAR_MAX, Math.max(YEAR_MIN, Math.round(n) || YEAR_MIN));
   return (
     <div className={styles.grid}>
       <label className={styles.field}>

@@ -4,7 +4,9 @@ import {
   SYSTEM_SUGGESTION_SURFACES,
   type AggregateValue,
   type SearchSuggestionContext,
+  type SystemSuggestionsInput,
   type SystemSuggestionsRequest,
+  type SystemSuggestionsRequestV2,
   type TraceSuggestionContext,
 } from "./types";
 
@@ -100,8 +102,60 @@ function traceContext(value: unknown): TraceSuggestionContext {
   };
 }
 
-export function parseSystemSuggestionsRequest(value: unknown): SystemSuggestionsRequest {
+/* v2: identifiers only — the reader's own ids, bounded and pattern-checked; the facts come from the server */
+const ID_PATTERN = /^[A-Za-z0-9][A-Za-z0-9:_\-.]{0,199}$/u;
+function boundedId(value: unknown, label: string): string {
+  const id = boundedString(value, label, 200);
+  if (!ID_PATTERN.test(id)) throw new SuggestionsInputError("INVALID_ARGUMENT", `${label} has an invalid format`);
+  return id;
+}
+function searchFilters(value: unknown): SearchSuggestionContext["filters"] {
+  const filters = record(value, "reference.filters");
+  exactKeys(filters, FILTER_KEYS, "reference.filters");
+  const parsed: SearchSuggestionContext["filters"] = {};
+  for (const key of ["yearFrom", "yearTo"] as const) if (filters[key] !== undefined) parsed[key] = boundedInteger(filters[key], `reference.filters.${key}`, 9999);
+  for (const key of ["objectType", "theme", "movement"] as const) if (filters[key] !== undefined) parsed[key] = boundedString(filters[key], `reference.filters.${key}`, 160);
+  return parsed;
+}
+function referenceFor(surface: SystemSuggestionsRequestV2["surface"], value: unknown): SystemSuggestionsRequestV2["reference"] {
+  const reference = record(value, "reference");
+  switch (surface) {
+    case "SEARCH_RESULTS":
+      exactKeys(reference, new Set(["query", "filters"]), "reference");
+      return { query: boundedString(reference.query, "reference.query", 160, true), filters: searchFilters(reference.filters ?? {}) };
+    case "TRACE_CONTEXT": {
+      exactKeys(reference, new Set(["objectId", "onCanvas"]), "reference");
+      if (!Array.isArray(reference.onCanvas) || reference.onCanvas.length > 64) throw new SuggestionsInputError("INVALID_ARGUMENT", "reference.onCanvas must list at most 64 ids");
+      return { objectId: boundedId(reference.objectId, "reference.objectId"), onCanvas: reference.onCanvas.map((id, index) => boundedId(id, `reference.onCanvas[${index}]`)) };
+    }
+    case "TRACE_VALIDATED_EXPLORATION":
+      exactKeys(reference, new Set(["mapId", "stateId"]), "reference");
+      return { mapId: boundedId(reference.mapId, "reference.mapId"), stateId: boundedId(reference.stateId, "reference.stateId") };
+    case "TRACE_OPEN_INQUIRY":
+      exactKeys(reference, new Set(["inquiryId"]), "reference");
+      return { inquiryId: boundedId(reference.inquiryId, "reference.inquiryId") };
+    default:
+      throw new SuggestionsInputError("INVALID_ARGUMENT", `${surface} takes no v2 reference`);
+  }
+}
+function shownCounts(value: unknown): Readonly<Record<string, number>> | undefined {
+  if (value === undefined) return undefined;
+  const shown = record(value, "shown");
+  if (Object.keys(shown).length > 8) throw new SuggestionsInputError("INVALID_ARGUMENT", "shown contains too many values");
+  const parsed: Record<string, number> = {};
+  for (const [key, count] of Object.entries(shown)) parsed[boundedString(key, "shown key", 48)] = boundedInteger(count, `shown.${key}`, 1_000_000);
+  return parsed;
+}
+
+export function parseSystemSuggestionsRequest(value: unknown): SystemSuggestionsInput {
   const input = record(value, "request");
+  if (input.schemaVersion === "gda-system-suggestions-request/v2") {
+    exactKeys(input, new Set(["schemaVersion", "surface", "reference", "shown"]), "request");
+    if (!SYSTEM_SUGGESTION_SURFACES.includes(input.surface as never)) throw new SuggestionsInputError("INVALID_ARGUMENT", "surface is unsupported");
+    const surface = input.surface as SystemSuggestionsRequestV2["surface"];
+    const shown = shownCounts(input.shown);
+    return { schemaVersion: "gda-system-suggestions-request/v2", surface, reference: referenceFor(surface, input.reference), ...(shown ? { shown } : {}) };
+  }
   exactKeys(input, new Set(["schemaVersion", "surface", "stateHash", "context"]), "request");
   if (input.schemaVersion !== "gda-system-suggestions-request/v1") throw new SuggestionsInputError("INVALID_ARGUMENT", "schemaVersion is unsupported");
   if (!SYSTEM_SUGGESTION_SURFACES.includes(input.surface as never)) throw new SuggestionsInputError("INVALID_ARGUMENT", "surface is unsupported");
@@ -116,7 +170,7 @@ export function parseSystemSuggestionsRequest(value: unknown): SystemSuggestions
   };
 }
 
-export function parseBoundedJsonBody(serialized: string): SystemSuggestionsRequest {
+export function parseBoundedJsonBody(serialized: string): SystemSuggestionsInput {
   if (Buffer.byteLength(serialized, "utf8") > MAX_REQUEST_BYTES) throw new SuggestionsInputError("REQUEST_TOO_LARGE", "request body exceeds 16384 bytes");
   try {
     return parseSystemSuggestionsRequest(JSON.parse(serialized));
